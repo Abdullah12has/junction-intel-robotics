@@ -12,13 +12,14 @@ VERIFIED
 - NPU system driver installed; synthetic PatchCore inference passed. Real defect detection unverified.
 
 NOW
+- Switching to Verda per user: RTX Pro 6000 96GB spot ($1.418/hour plus storage), SSH/CUDA hardware verified; SmolVLA job 6e96ec9e COMPLETED 10 epochs; model 6540166d saved on laptop, OpenVINO CPU inference finite, Mac backup hash-verified. Compute released, recovery disk retained. Both failed A100 allocations deleted. See docs/VERDA-TRAINING.md.
 - Off-laptop backup COMPLETE: Mac station-backups/2026-11-14,239files,1,206,801,997bytes; all SHA256 hashes match. See evidence/backup-verification.json.
 - Modal CLI authenticated as intel in workspace abdullah12-hassan7; token verified. Credential stored only in ~/.modal.toml.
 - Studio Modal target57e65864-ac75-4af2-b4d9-0af5246c6023: image built; deployment blocked by Modal requiring payment method for A10G. No training submitted. See docs/MODAL-SETUP.md.
 - Classification confirmed by user: rectangles defective, squares good. See docs/MENTOR-ANSWERS.md. Judging sequence/final rubric unanswered.
 - Git commits stay local per latest user instruction; do not push.
 - Tape bowls, mark and pick zone. Establish and photograph HOME physically; no guessed joint pose.
-- Preserve smoke data as evidence; create a NEW real dataset after rig/HOME are fixed.
+- User now authorizes first SmolVLA pilot on the seven inspection episodes. Preserve them; use a NEW real dataset after rig/HOME are fixed.
 
 DATA COLLECTION
 Exact task strings:
@@ -29,7 +30,7 @@ Aim60/30/30episodes; fallback40/20/20. Start/end at HOME. Aim8–12s without rus
 Flush/check counts every30episodes. Vision work proceeds independently on a separately owned camera.
 
 NEXT GATES
-- Modal Settings > Training Targets > Deploy/connect after login; if unavailable after~30minutes, test local SmolVLA compatibility.
+- Verda SmolVLA pilot completed. Test exported GPU inference and plan a supervised trial from HOME; recreate Verda compute only for the next training run.
 - At17:00 Helsinki launch SmolVLA and task-specific ACT using verified task splits.
 - Train detector only once real images/splits and camera ROI/exposure are fixed.
 - Test policies from HOME, then orchestrator and submission evidence.

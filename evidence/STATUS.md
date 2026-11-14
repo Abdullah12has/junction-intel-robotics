@@ -18,3 +18,7 @@ Updated 14 November 2026, Helsinki. Historical statements are preserved in STATU
 | Submission | Mentor answers, final rubric, video/deck and final evidence tables remain unverified. |
 
 See ../docs/GPU-TRAINING-RECOVERY.md and JSON evidence for exact job IDs and tests. A passed execution smoke test is not a passed task-success gate.
+
+## Verda SmolVLA pilot completed — 2026-11-14
+
+User authorized the seven-episode inspection pilot. Trained 10 epochs/2320 steps on RTX Pro 6000 96GB, final validation loss 0.27096. Model `6540166d-c6c7-4087-ba07-ec5571c37d3b` has an OpenVINO export. Three offline observations passed finite 50x6 output checks on laptop CPU (~1.5s each). No robot trial performed. Checkpoint/export backed up to Mac; all eight files match SHA256. Compute released, disk retained. See `docs/VERDA-TRAINING.md`.
