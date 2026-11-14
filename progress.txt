@@ -14,7 +14,8 @@ VERIFIED
 NOW
 - Off-laptop backup COMPLETE: Mac station-backups/2026-11-14,239files,1,206,801,997bytes; all SHA256 hashes match. See evidence/backup-verification.json.
 - Modal setup running as intel, waiting for browser login. Do not save login links or tokens to Git.
-- Ask mentors defect faces, judging sequence and final rubric BEFORE positioning inspection camera.
+- Classification confirmed by user: rectangles defective, squares good. See docs/MENTOR-ANSWERS.md. Judging sequence/final rubric unanswered.
+- Git commits stay local per latest user instruction; do not push.
 - Tape bowls, mark and pick zone. Establish and photograph HOME physically; no guessed joint pose.
 - Preserve smoke data as evidence; create a NEW real dataset after rig/HOME are fixed.
 
