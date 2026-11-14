@@ -1,0 +1,15 @@
+{
+  "name": "Junction Modal NVIDIA trainer",
+  "connection": {
+    "connection_mode": "modal",
+    "app_name": "physicalai-974fa8e742ef4432b1345e855a13e8da",
+    "function_name": "train",
+    "volume_name": "physicalai-training-974fa8e742ef4432b1345e855a13e8da",
+    "environment_name": "main"
+  },
+  "id": "57e65864-ac75-4af2-b4d9-0af5246c6023",
+  "created_at": null,
+  "updated_at": null,
+  "connection_mode": "modal",
+  "url": null
+}
