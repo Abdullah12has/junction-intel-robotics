@@ -1,0 +1,277 @@
+import { Grid, StatusLight } from '@adobe/react-spectrum';
+import { ActionButton, Flex, Heading, Item, Menu, MenuTrigger, toast, View } from '@geti-ui/ui';
+import { MoreMenu } from '@geti-ui/ui/icons';
+import { clsx } from 'clsx';
+import { NavLink, useNavigate, useParams } from 'react-router';
+
+import { $api } from '../../api/client';
+import { getApiErrorMessage, isResourceInUseError } from '../../api/errors';
+import { SchemaRuntimeSessionInfo } from '../../api/openapi-spec';
+import { paths } from '../../paths';
+import { useProjectId } from '../projects/use-project';
+import { sessionForRobot, useRuntimeSessions } from '../runtime-sessions/runtime-sessions';
+import RobotArm from './../../assets/robot-arm.webp';
+import { isUnavailableRobot, SchemaRobot } from './robot-types';
+
+import classes from './robots-list.module.css';
+
+const exportCalibration = async (_project_id: string, robot: SchemaRobot) => {
+    if (!('calibration' in robot.payload) || !robot.payload.calibration) {
+        return;
+    }
+    const downloadUrl = URL.createObjectURL(
+        new Blob([JSON.stringify(robot.payload.calibration, null, 4)], { type: 'application/json' })
+    );
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = `${robot.name}-calibration.json`;
+    link.click();
+    URL.revokeObjectURL(downloadUrl);
+};
+
+const useActiveRobotId = () => {
+    const { robot_id } = useParams<{ robot_id: string }>();
+
+    return robot_id;
+};
+
+const useDeleteRobot = (robot: SchemaRobot) => {
+    const { project_id } = useProjectId();
+    const activeRobotId = useActiveRobotId();
+    const navigate = useNavigate();
+    const deleteRobotMutation = $api.useMutation('delete', '/api/projects/{project_id}/robots/{robot_id}', {
+        meta: {
+            invalidates: [
+                ['get', '/api/projects/{project_id}/robots', { params: { path: { project_id } } }],
+                ['get', '/api/projects/{project_id}/robots/online', { params: { path: { project_id } } }],
+                [
+                    'get',
+                    '/api/projects/{project_id}/robots/{robot_id}',
+                    { params: { path: { project_id, robot_id: robot.id } } },
+                ],
+            ],
+        },
+    });
+
+    const deleteRobot = () => {
+        deleteRobotMutation.mutate(
+            { params: { path: { project_id, robot_id: robot.id } } },
+            {
+                onSuccess: () => {
+                    if (robot.id === activeRobotId) {
+                        navigate(paths.project.robots.index({ project_id }));
+                    }
+                },
+                onError: (error) => {
+                    if (isResourceInUseError(error)) {
+                        toast.info(getApiErrorMessage(error) ?? 'This robot is in use and cannot be deleted.');
+                        return;
+                    }
+                    toast.negative(getApiErrorMessage(error) ?? 'Failed to delete robot.');
+                },
+            }
+        );
+    };
+
+    return deleteRobot;
+};
+
+const MenuActions = ({ robot }: { robot: SchemaRobot }) => {
+    const { project_id } = useProjectId();
+    const deleteRobot = useDeleteRobot(robot);
+
+    const editPath = paths.project.robots.edit({ project_id, robot_id: robot.id });
+    const isSO101 = robot.type === 'SO101_Follower' || robot.type === 'SO101_Leader';
+    const isUnavailable = isUnavailableRobot(robot);
+
+    return (
+        <MenuTrigger>
+            <ActionButton aria-label={`Actions for ${robot.name}`} isQuiet>
+                <MoreMenu />
+            </ActionButton>
+            <Menu
+                selectionMode='single'
+                disabledKeys={
+                    !('calibration' in robot.payload) || !robot.payload.calibration ? ['export-calibration'] : []
+                }
+                onAction={async (action) => {
+                    if (action === 'delete') {
+                        deleteRobot();
+                    }
+                    if (action === 'export-calibration') {
+                        try {
+                            await exportCalibration(project_id, robot);
+                        } catch {
+                            toast.negative('Failed to export calibration.');
+                        }
+                    }
+                }}
+            >
+                {isUnavailable ? null : (
+                    <Item key='edit' href={editPath}>
+                        Edit
+                    </Item>
+                )}
+                {isSO101 ? <Item key='export-calibration'>Export calibration</Item> : null}
+                <Item key='delete'>Delete</Item>
+            </Menu>
+        </MenuTrigger>
+    );
+};
+
+export const ConnectionStatus = ({
+    status,
+    isUnavailable = false,
+}: {
+    status: 'online' | 'offline' | 'unknown';
+    isUnavailable?: boolean;
+}) => {
+    const Capitalize = (str: string) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+    return (
+        <StatusLight
+            variant={status === 'online' ? 'positive' : status === 'unknown' ? 'notice' : 'negative'}
+            UNSAFE_className={classes.connectionStatus}
+        >
+            {isUnavailable ? (
+                <View>Unavailable</View>
+            ) : status === 'unknown' ? (
+                <View>Loading...</View>
+            ) : (
+                <View>{Capitalize(status)}</View>
+            )}
+        </StatusLight>
+    );
+};
+
+const RobotListItem = ({
+    robot,
+    status,
+    isActive,
+    session,
+}: {
+    robot: SchemaRobot;
+    status: 'online' | 'offline' | 'unknown';
+    isActive: boolean;
+    session: SchemaRuntimeSessionInfo | undefined;
+}) => {
+    const isUnavailable = isUnavailableRobot(robot);
+    const connectionString = isUnavailable
+        ? undefined
+        : (('connection_string' in robot.payload ? robot.payload.connection_string : undefined) ??
+          ('connection_string_left' in robot.payload && 'connection_string_right' in robot.payload
+              ? `${robot.payload.connection_string_left} | ${robot.payload.connection_string_right}`
+              : undefined));
+    const serialNumber = !isUnavailable && 'serial_number' in robot.payload ? robot.payload.serial_number : undefined;
+
+    return (
+        <View
+            padding='size-200'
+            UNSAFE_className={clsx({
+                [classes.robotListItem]: true,
+                [classes.robotListItemActive]: isActive,
+            })}
+        >
+            <Flex justifyContent={'space-between'} direction='column' gap='size-200'>
+                <Grid areas={['icon name status', 'icon type status']} columns={['auto', '1fr']} columnGap={'size-100'}>
+                    <View gridArea={'icon'} padding='size-100'>
+                        <img src={RobotArm} style={{ maxWidth: '32px' }} alt='Robot arm icon' />
+                    </View>
+                    <Heading level={2} gridArea='name' UNSAFE_style={isActive ? { color: 'var(--energy-blue)' } : {}}>
+                        {robot.name}
+                    </Heading>
+                    <View gridArea='type' UNSAFE_style={{ fontSize: '14px' }}>
+                        {robot.type.replaceAll('_', ' ')}
+                        {isUnavailable ? ' (plugin unavailable)' : ''}
+                    </View>
+                    <View gridArea='status'>
+                        <ConnectionStatus status={status} isUnavailable={isUnavailable} />
+                        {session !== undefined && (
+                            <StatusLight variant='notice'>
+                                In use · {session.environment_name ?? 'runtime session'}
+                            </StatusLight>
+                        )}
+                    </View>
+                </Grid>
+                <Flex direction={'row'} justifyContent={'space-between'}>
+                    <View>
+                        <ul
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: 'var(--spectrum-global-dimension-size-10)',
+                                listStyleType: 'disc',
+                                fontSize: '10px',
+                            }}
+                        >
+                            {connectionString !== undefined && connectionString !== '' ? (
+                                <li style={{ marginLeft: 'var(--spectrum-global-dimension-size-200)' }}>
+                                    Connection string:{' '}
+                                    <pre style={{ margin: 0, display: 'inline' }}>{connectionString}</pre>
+                                </li>
+                            ) : null}
+
+                            {serialNumber !== undefined && serialNumber !== '' ? (
+                                <li style={{ marginLeft: 'var(--spectrum-global-dimension-size-200)' }}>
+                                    Serial number: <pre style={{ margin: 0, display: 'inline' }}>{serialNumber}</pre>
+                                </li>
+                            ) : null}
+                            <li style={{ marginLeft: 'var(--spectrum-global-dimension-size-200)' }}>
+                                ID: <pre style={{ margin: 0, display: 'inline' }}>{robot.id}</pre>
+                            </li>
+                        </ul>
+                    </View>
+                    <View alignSelf={'end'}>
+                        <MenuActions robot={robot} />
+                    </View>
+                </Flex>
+            </Flex>
+        </View>
+    );
+};
+
+export const RobotsList = () => {
+    const { project_id } = useProjectId();
+    const { data: projectRobots } = $api.useSuspenseQuery('get', '/api/projects/{project_id}/robots', {
+        params: { path: { project_id } },
+    });
+
+    const { data: onlineProjectRobots } = $api.useQuery('get', '/api/projects/{project_id}/robots/online', {
+        params: { path: { project_id } },
+        suspense: false,
+    });
+
+    const { data: runtimeSessions } = useRuntimeSessions();
+
+    return (
+        <Flex direction='column' gap='size-200'>
+            {projectRobots.map((robot) => {
+                const onlineRobot = onlineProjectRobots?.find((r) => r.id === robot.id);
+
+                const status = onlineRobot?.connection_status ?? 'unknown';
+
+                const to = paths.project.robots.show({
+                    project_id,
+                    robot_id: robot.id,
+                });
+
+                return (
+                    <NavLink key={robot.id} to={to}>
+                        {({ isActive }) => {
+                            return (
+                                <RobotListItem
+                                    robot={robot}
+                                    status={onlineProjectRobots === undefined ? 'unknown' : status}
+                                    isActive={isActive}
+                                    session={sessionForRobot(runtimeSessions, robot.id)}
+                                />
+                            );
+                        }}
+                    </NavLink>
+                );
+            })}
+        </Flex>
+    );
+};

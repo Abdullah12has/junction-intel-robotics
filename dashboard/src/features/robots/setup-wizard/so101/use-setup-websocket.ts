@@ -1,0 +1,348 @@
+import { useCallback, useRef, useState } from 'react';
+
+import useWebSocket from 'react-use-websocket';
+
+import { SchemaRobotType } from '../../robot-types';
+
+// ---------------------------------------------------------------------------
+// Types — mirrors the backend SO101SetupWorker protocol
+// ---------------------------------------------------------------------------
+
+export interface VoltageReading {
+    name: string;
+    motor_id: number;
+    raw: number | null;
+}
+
+export interface VoltageResult {
+    event: 'voltage_result';
+    readings: VoltageReading[];
+    avg_voltage: number | null;
+    voltage_ok: boolean;
+    expected_source: string;
+    robot_type: string;
+}
+
+export interface MotorProbeEntry {
+    name: string;
+    motor_id: number;
+    found: boolean;
+    model_number: number | null;
+    model_correct: boolean;
+}
+
+export interface CalibrationMotorStatus {
+    homing_offset: number;
+    range_min: number;
+    range_max: number;
+    is_calibrated: boolean;
+}
+
+export interface MotorProbeResult {
+    event: 'motor_probe_result';
+    motors: MotorProbeEntry[];
+    all_motors_ok: boolean;
+    found_count: number;
+    total_count: number;
+    calibration: {
+        motors: Record<string, CalibrationMotorStatus>;
+        all_calibrated: boolean;
+    } | null;
+}
+
+export interface MotorSetupProgress {
+    event: 'motor_setup_progress';
+    motor: string;
+    status: 'scanning' | 'success' | 'error';
+    message: string;
+}
+
+export interface HomingResult {
+    event: 'homing_result';
+    offsets: Record<string, number>;
+}
+
+export interface MotorPosition {
+    position: number;
+    min?: number;
+    max?: number;
+}
+
+export interface PositionsEvent {
+    event: 'positions';
+    motors: Record<string, MotorPosition>;
+}
+
+export interface CalibrationResult {
+    event: 'calibration_result';
+    calibration: Record<
+        string,
+        {
+            id: number;
+            drive_mode: number;
+            homing_offset: number;
+            range_min: number;
+            range_max: number;
+        }
+    >;
+}
+
+export interface StatusEvent {
+    event: 'status';
+    state: string;
+    phase: string;
+    message: string;
+}
+
+export interface StateWasUpdatedEvent {
+    event: 'state_was_updated';
+    /** Normalized positions keyed as "{motor_name}.pos" */
+    state: Record<string, number>;
+}
+
+export interface ErrorEvent {
+    event: 'error';
+    message: string;
+    error_code?: string;
+    port?: string | null;
+}
+
+export type SetupEvent =
+    | VoltageResult
+    | MotorProbeResult
+    | MotorSetupProgress
+    | HomingResult
+    | PositionsEvent
+    | CalibrationResult
+    | StatusEvent
+    | StateWasUpdatedEvent
+    | ErrorEvent
+    | { event: 'pong' };
+
+// ---------------------------------------------------------------------------
+// Hook
+// ---------------------------------------------------------------------------
+
+interface UseSetupWebSocketOptions {
+    projectId: string;
+    robotType: SchemaRobotType;
+    serialNumber?: string;
+    connectionString?: string;
+    enabled?: boolean;
+}
+
+export interface SetupWebSocketState {
+    /** Current backend phase */
+    phase: string | null;
+    /** Latest status message */
+    statusMessage: string | null;
+    /** Voltage check results */
+    voltageResult: VoltageResult | null;
+    /** Motor probe results */
+    probeResult: MotorProbeResult | null;
+    /** Motor setup progress per motor */
+    motorSetupProgress: Record<string, MotorSetupProgress>;
+    /** Homing offsets after centering */
+    homingResult: HomingResult | null;
+    /** Live positions during range recording */
+    positions: PositionsEvent | null;
+    /** Final calibration written to motors */
+    calibrationResult: CalibrationResult | null;
+    /** Normalized joint state for 3D preview (from state_was_updated events) */
+    jointState: Record<string, number> | null;
+    /** Latest error */
+    error: string | null;
+    /** Error code from the backend for contextual error UI */
+    errorCode: string | null;
+    /** Device port path from the backend (e.g. /dev/ttyACM0) for use in error remediation */
+    port: string | null;
+    /** Whether the websocket is connected */
+    isConnected: boolean;
+}
+
+export function useSetupWebSocket({
+    projectId,
+    robotType,
+    serialNumber,
+    connectionString,
+    enabled = true,
+}: UseSetupWebSocketOptions) {
+    const [state, setState] = useState<SetupWebSocketState>({
+        phase: null,
+        statusMessage: null,
+        voltageResult: null,
+        probeResult: null,
+        motorSetupProgress: {},
+        homingResult: null,
+        positions: null,
+        calibrationResult: null,
+        jointState: null,
+        error: null,
+        errorCode: null,
+        port: null,
+        isConnected: false,
+    });
+
+    const stateRef = useRef(state);
+    stateRef.current = state;
+
+    const handleMessage = useCallback((event: WebSocketEventMap['message']) => {
+        try {
+            const data = JSON.parse(event.data) as SetupEvent;
+
+            setState((prev) => {
+                switch (data.event) {
+                    case 'status':
+                        return {
+                            ...prev,
+                            phase: data.phase,
+                            statusMessage: data.message,
+                        };
+
+                    case 'voltage_result':
+                        return { ...prev, voltageResult: data };
+
+                    case 'motor_probe_result':
+                        return { ...prev, probeResult: data };
+
+                    case 'motor_setup_progress':
+                        return {
+                            ...prev,
+                            motorSetupProgress: {
+                                ...prev.motorSetupProgress,
+                                [data.motor]: data,
+                            },
+                        };
+
+                    case 'homing_result':
+                        return { ...prev, homingResult: data };
+
+                    case 'positions':
+                        return { ...prev, positions: data };
+
+                    case 'calibration_result':
+                        return { ...prev, calibrationResult: data };
+
+                    case 'state_was_updated':
+                        return { ...prev, jointState: data.state };
+
+                    case 'error':
+                        return {
+                            ...prev,
+                            error: data.message,
+                            errorCode: data.error_code ?? null,
+                            port: data.port ?? prev.port,
+                        };
+
+                    case 'pong':
+                        return prev;
+
+                    default:
+                        return prev;
+                }
+            });
+        } catch (err) {
+            console.error('Failed to parse setup websocket message:', err);
+        }
+    }, []);
+
+    const searchParams = new URLSearchParams({
+        robot_type: robotType,
+    });
+
+    if (serialNumber) {
+        searchParams.set('serial_number', serialNumber);
+    }
+
+    if (connectionString) {
+        searchParams.set('connection_string', connectionString);
+    }
+
+    const query = `?${searchParams.toString()}`;
+
+    const url = enabled && robotType ? `/api/projects/${projectId}/robots/setup/ws${query}` : null;
+
+    const { sendJsonMessage, readyState } = useWebSocket(url, {
+        onMessage: handleMessage,
+        onOpen: () => setState((prev) => ({ ...prev, isConnected: true, error: null, errorCode: null })),
+        onClose: (event: WebSocketEventMap['close']) =>
+            setState((prev) => ({
+                ...prev,
+                isConnected: false,
+                // Preserve errors already set by an 'error' event; otherwise use the
+                // close code to provide a fallback message.
+                error:
+                    prev.error ?? (event.code !== 1000 ? `Connection closed unexpectedly (code ${event.code})` : null),
+                errorCode: prev.errorCode ?? (event.code !== 1000 ? 'connection_closed' : null),
+            })),
+        onError: () =>
+            setState((prev) => ({ ...prev, error: 'WebSocket connection error', errorCode: 'connection_failed' })),
+        shouldReconnect: () => false, // Don't auto-reconnect — user should retry explicitly
+    });
+
+    // ------------------------------------------------------------------
+    // Command senders
+    // ------------------------------------------------------------------
+
+    const startMotorSetup = useCallback(() => {
+        sendJsonMessage({ command: 'start_motor_setup' });
+    }, [sendJsonMessage]);
+
+    const motorConnected = useCallback(
+        (motor: string) => {
+            sendJsonMessage({ command: 'motor_connected', motor });
+        },
+        [sendJsonMessage]
+    );
+
+    const finishMotorSetup = useCallback(() => {
+        sendJsonMessage({ command: 'finish_motor_setup' });
+    }, [sendJsonMessage]);
+
+    const startHoming = useCallback(() => {
+        sendJsonMessage({ command: 'start_homing' });
+    }, [sendJsonMessage]);
+
+    const startRecording = useCallback(() => {
+        sendJsonMessage({ command: 'start_recording' });
+    }, [sendJsonMessage]);
+
+    const stopRecording = useCallback(() => {
+        sendJsonMessage({ command: 'stop_recording' });
+    }, [sendJsonMessage]);
+
+    const reProbe = useCallback(() => {
+        // Clear previous results so the UI shows a loading state while rechecking
+        setState((prev) => ({ ...prev, voltageResult: null, probeResult: null, error: null, errorCode: null }));
+        sendJsonMessage({ command: 're_probe' });
+    }, [sendJsonMessage]);
+
+    const enterVerification = useCallback(() => {
+        sendJsonMessage({ command: 'enter_verification' });
+    }, [sendJsonMessage]);
+
+    const enterCalibration = useCallback(() => {
+        sendJsonMessage({ command: 'enter_calibration' });
+    }, [sendJsonMessage]);
+
+    const ping = useCallback(() => {
+        sendJsonMessage({ command: 'ping' });
+    }, [sendJsonMessage]);
+
+    return {
+        state,
+        readyState,
+        commands: {
+            startMotorSetup,
+            motorConnected,
+            finishMotorSetup,
+            startHoming,
+            startRecording,
+            stopRecording,
+            reProbe,
+            enterVerification,
+            enterCalibration,
+            ping,
+        },
+    };
+}

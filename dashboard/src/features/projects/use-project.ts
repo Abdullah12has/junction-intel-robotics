@@ -1,0 +1,30 @@
+import { useParams } from 'react-router';
+
+import { $api } from '../../api/client';
+import { SchemaProjectInput } from '../../api/openapi-spec';
+
+export function useOptionalProjectId() {
+    const { project_id } = useParams<{ project_id: string }>();
+
+    return { project_id };
+}
+
+export function useProjectId() {
+    const { project_id } = useOptionalProjectId();
+
+    if (project_id === undefined) {
+        throw new Error('Unknown project_id parameter');
+    }
+
+    return { project_id };
+}
+
+export function useProject(): SchemaProjectInput {
+    const { project_id } = useProjectId();
+
+    const { data: project } = $api.useSuspenseQuery('get', '/api/projects/{project_id}', {
+        params: { path: { project_id } },
+    });
+
+    return project;
+}

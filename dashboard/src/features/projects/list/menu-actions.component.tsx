@@ -1,0 +1,18 @@
+import { ActionButton, Item, Key, Menu, MenuTrigger } from '@geti-ui/ui';
+import { MoreMenu } from '@geti-ui/ui/icons';
+
+interface MenuActionsProps {
+    onAction: (key: Key) => void;
+}
+export const MenuActions = ({ onAction }: MenuActionsProps) => {
+    return (
+        <MenuTrigger>
+            <ActionButton isQuiet>
+                <MoreMenu />
+            </ActionButton>
+            <Menu onAction={onAction}>
+                <Item key={'delete'}>Delete</Item>
+            </Menu>
+        </MenuTrigger>
+    );
+};

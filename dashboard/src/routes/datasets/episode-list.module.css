@@ -1,0 +1,35 @@
+.episodePreviewList {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    position: relative;
+}
+
+.episodePreviewListInner {
+    position: absolute;
+    inset: 0;
+}
+
+.episodeItem {
+    background-color: var(--spectrum-global-color-gray-200);
+    padding: var(--spectrum-global-dimension-size-100);
+    border: 2px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.episodeItem:hover {
+    border: 2px solid var(--energy-blue);
+    cursor: pointer;
+}
+
+.episodeItem.active {
+    border: 2px solid var(--energy-blue);
+}
+
+.episodeCheckbox {
+    padding-right: var(--spectrum-global-dimension-size-50);
+}

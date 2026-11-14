@@ -1,0 +1,115 @@
+import { useState } from 'react';
+
+import {
+    Button,
+    ButtonGroup,
+    Content,
+    Dialog,
+    DialogTrigger,
+    Divider,
+    Form,
+    Heading,
+    Item,
+    Picker,
+    TextField,
+} from '@geti-ui/ui';
+import { v4 as uuidv4 } from 'uuid';
+
+import { $api } from '../../api/client';
+import { SchemaDatasetOutput } from '../../api/openapi-spec';
+
+interface NewDatasetFormProps {
+    project_id: string;
+    onDone: (dataset: SchemaDatasetOutput | undefined) => void;
+}
+export const NewDatasetForm = ({ project_id, onDone }: NewDatasetFormProps) => {
+    const saveMutation = $api.useMutation('post', '/api/dataset', {
+        meta: {
+            invalidates: [['get', '/api/projects/{project_id}', { params: { path: { project_id } } }]],
+        },
+    });
+    const [name, setName] = useState<string>('');
+    const [defaultTask, setDefaultTask] = useState<string>('');
+
+    const { data: environments } = $api.useSuspenseQuery('get', '/api/projects/{project_id}/environments', {
+        params: {
+            path: {
+                project_id,
+            },
+        },
+    });
+
+    const [environmentId, setEnvironmentId] = useState<string | undefined>(environments[0]?.id);
+
+    const save = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (environmentId !== undefined) {
+            const id = uuidv4();
+            const result = await saveMutation.mutateAsync({
+                body: {
+                    id,
+                    name,
+                    project_id,
+                    environment_id: environmentId,
+                    default_task: defaultTask,
+                },
+            });
+            onDone(result);
+        }
+    };
+
+    return (
+        <Form onSubmit={save} width={'size-6000'} validationBehavior='native'>
+            <Dialog>
+                <Heading>Create new dataset</Heading>
+                <Divider />
+                <Content>
+                    <Picker
+                        isRequired
+                        items={environments}
+                        selectedKey={environmentId}
+                        label='Environment'
+                        onSelectionChange={(m) => setEnvironmentId(m === null ? undefined : m.toString())}
+                        flex={1}
+                    >
+                        {(item) => <Item key={item.id}>{item.name}</Item>}
+                    </Picker>
+
+                    <TextField
+                        // eslint-disable-next-line jsx-a11y/no-autofocus
+                        autoFocus
+                        isRequired
+                        width='100%'
+                        label='Dataset name'
+                        value={name}
+                        onChange={setName}
+                    />
+
+                    <TextField width='100%' label='Task' value={defaultTask} onChange={setDefaultTask} />
+                </Content>
+                <ButtonGroup>
+                    <Button variant='secondary' onPress={() => onDone(undefined)}>
+                        Cancel
+                    </Button>
+                    <Button
+                        variant='accent'
+                        type='submit'
+                        isDisabled={name.trim() === '' || environmentId === undefined}
+                        isPending={saveMutation.isPending}
+                    >
+                        Save
+                    </Button>
+                </ButtonGroup>
+            </Dialog>
+        </Form>
+    );
+};
+export const NewDatasetLink = ({ project_id }: { project_id: string }) => {
+    return (
+        <DialogTrigger>
+            <Button variant='accent'>Create new dataset</Button>
+            {(close) => <NewDatasetForm project_id={project_id} onDone={close} />}
+        </DialogTrigger>
+    );
+};
