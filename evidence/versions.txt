@@ -1,0 +1,16 @@
+Station software snapshot, read over SSH on 2026-11-14 12:15 Helsinki (read-only queries)
+
+Host: HP OmniBook Ultra, Intel Core Ultra X9 388H, kernel 7.0.0-38-generic, on AC power
+Studio: junction2026 @ 17714488, with local uncommitted manual-jog backend patch (see backend-patches/manual-jog.patch)
+OpenVINO (Studio backend venv): 2026.4.1-22982-e213a147257
+OpenVINO available devices: CPU (Core Ultra X9 388H), GPU (Intel Graphics 0xb080, iGPU)
+NPU: NOT listed by OpenVINO. /dev/accel/accel0 exists (group render; user intel is in render),
+     but no libze_intel_npu userspace driver was found.
+Level Zero: libze1 1.28.2-2, libze-intel-gpu1 26.05.37020.3-1
+Modal: no ~/.modal.toml for user intel (backend not authenticated)
+Anomalib: no environment found
+Studio cameras: both RealSense D415 set to 424x240 @ 6 fps (preview setting, not for recording)
+Arms: leader 5B90148378 and follower 5B3D040939 both enumerated in /dev/serial/by-id
+
+Anomalib environment (installed 2026-11-14 12:20): ~/junction-cell/anomalib-env, Python 3.12.16
+torch 2.15.0+xpu (xpu available: Intel Graphics 0xb080), anomalib 2.7.0, openvino 2026.4.1

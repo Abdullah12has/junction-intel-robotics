@@ -113,11 +113,11 @@ Saturday 12:00 is the Intel technical session: send one person (E), keep recordi
 1. Backend Modal auth as the `intel` user: `uvx --python 3.13 --from 'modal[api-proxy-support]>=1.6.3,<2' modal setup`, then Studio → Settings → Training Targets → Modal → Deploy and connect. First image build takes several minutes.
 2. Get a **second teammate's Modal target** connected too. Only one job runs per target per policy type *(code)*; parallel jobs need a second account.
 3. Set the Hugging Face read token in Studio settings.
-4. R records 5 quick stage-1 episodes into a throwaway dataset. Train ACT, 1 epoch, A10G. Confirm the job returns an OpenVINO export. Export failures are only logged, not raised *(code)*; if the export is missing run `physicalai-studio models export <model_id> --backend openvino` on the laptop to see the real error.
+4. R records 5 quick stage-1 episodes into a throwaway dataset. Train ACT, 1 epoch. **Train it locally on the laptop's Intel GPU** (Studio supports a local target with device `xpu`), so this test needs no Modal login and doubles as on-device training evidence. Use Modal (A10G) only if local is too slow. Confirm the job returns an OpenVINO export. Export failures are only logged, not raised *(code)*; if the export is missing run `physicalai-studio models export <model_id> --backend openvino` on the laptop to see the real error.
 5. "Run model" on the arm from the Models page with device GPU. It will move badly; you are testing the plumbing. Set the control rate to the dataset fps (30) by hand *(code)*.
 6. Practise the dataset split you will need for ACT: download the dataset, `physicalai-studio datasets import-dir`, delete the other tasks' episodes. There is no merge *(code)*, so always record into one dataset and split copies.
 
-**Gate 1:** arm moved from an OpenVINO model trained on Modal. If this is not true by 11:30, get a mentor before recording 120 episodes.
+**Gate 1:** arm moved from an OpenVINO model trained in Studio (locally or on Modal). If this is not true by 11:30, get a mentor before recording 120 episodes.
 
 ### Phase 2a: record demonstrations (R + one helper, 3 h)
 
@@ -140,18 +140,20 @@ Rules:
 
 ### Phase 2b: build the detector (V, 3 h, parallel)
 
-1. Environment (never inside Studio's): `uv venv anomalib-env && source anomalib-env/bin/activate && uv pip install "anomalib[openvino,xpu]"`. If the `xpu` extra fails on `pytorch-triton-xpu`, install torch from `https://download.pytorch.org/whl/xpu` first, then `anomalib[openvino]`. Check `torch.xpu.is_available()`.
+1. Environment (never inside Studio's): `uv venv anomalib-env && source anomalib-env/bin/activate && uv pip install "anomalib[openvino,xpu]"`. **Done 14 Nov:** the environment is at `~/junction-cell/anomalib-env` on the laptop (the `xpu` extra failed, so torch came from `https://download.pytorch.org/whl/xpu`, then `anomalib[openvino]==2.7.0`). Run everything from `~/junction-cell` with `anomalib-env/bin/python cell/<script>`. Use `INSPECT_DEVICE=GPU` until the NPU driver is installed.
 2. Sort physical bricks into four trays and never mix them: **A** good/train, **B** good/validation, **C** good/held-out, plus defect bricks split **D1** validation and **D2** held-out. Never write IDs on bricks; pen marks are the defect.
 3. Capture at the inspection mark with `python cell/inspection.py capture <subdir>`: 150–250 `train/good` (every colour, small position and yaw offsets, the lighting range you expect), 30–50 `val/good`, all D1 into `val/defect`, C and D2 into `test_holdout/`.
-4. `python cell/train_export.py patchcore` (minutes). It exports FP16 OpenVINO and a static-shape copy for the NPU.
+4. `python cell/train_export.py patchcore` (minutes). It exports a static batch-1 FP16 OpenVINO model (needed for the NPU). An ONNX version-converter traceback in the log is harmless if the last line says `exported`.
 5. `python cell/inspection.py calibrate` writes `thresholds.json` from validation scores. `python cell/inspection.py holdout` reports held-out results. Run holdout once per model; do not tune on it.
 6. Benchmark the same model on all three devices and save the output:
-   `for D in CPU GPU NPU; do benchmark_app -m export/patchcore/weights/openvino/model_static.xml -d $D -hint latency -niter 300; done`
+   `for D in CPU GPU NPU; do benchmark_app -m export/patchcore/weights/openvino/model.xml -d $D -hint latency -niter 300; done`
 7. If NPU is slow or fails, try `coreset_sampling_ratio` lower, then `python cell/train_export.py efficientad` (pure CNN, 15–30 min, pre-download ImageNette now). Timebox NPU work to 45 minutes; GPU is an acceptable answer if you report why.
 
 **Gate 2b:** held-out false accepts = 0 and false rejects ≤ 1 in about 40 images, or you know which colour fails. If one colour is the problem, use a per-colour threshold before trying a new model.
 
 ### Phase 3: launch training (I, 14:00 sharp)
+
+First split the recorded dataset for the ACT jobs: with the dataset unloaded everywhere, `python3 cell/split_dataset.py <dataset_id>` on the laptop makes one copy per task string (source untouched). If Modal is still not connected, train ACT locally on `xpu` and SmolVLA on Modal once it is.
 
 Studio defaults are 5 epochs, batch 8 *(code)*: too little. There are no intermediate checkpoints and cancelling discards everything *(code)*, so cover the range with separate jobs:
 
@@ -167,7 +169,7 @@ Epoch counts are estimates aimed at roughly 8k and 16k SmolVLA steps and about 8
 
 ### Phase 4: build while training (14:00–17:00)
 
-- **I:** get [`cell/run_cell.py`](../cell/run_cell.py) running a full cycle with the smoke-test model. It is an untested draft: the WebSocket message shapes come from a code audit, so verify each command against the live backend in this order: connect, `load_environment`, read a state frame, `load_model`, `set_control` on, `set_control` off. Close Studio's own runtime page first; a second session gets `DeviceInUseError` *(code)*. Read HOME joint values from the state stream and paste them in.
+- **I:** get [`cell/run_cell.py`](../cell/run_cell.py) running a full cycle with the smoke-test model. On the laptop: `cd ~/junction-cell`, copy `cell/config.example.json` to `cell/config.json` and fill the environment and model ids. Close Studio's own runtime page first; a second session gets `DeviceInUseError` *(code)*. Then, in order: `anomalib-env/bin/python cell/run_cell.py check` (loads the environment, prints joints and camera keys, no motion), park the arm at HOME by teleop and run `... run_cell.py home`, then `... run_cell.py run 1` with a person at the power switch.
 - **V:** finish the device benchmark; wire `classify()` into the script; add the empty-spot reference image.
 - **E:** start the power/latency sampler and the trial CSV (section 7). Draft the deck skeleton and video shot list.
 - **R:** eat, rest. Then record 10 spare stage-2 episodes per bowl in case of a retrain.

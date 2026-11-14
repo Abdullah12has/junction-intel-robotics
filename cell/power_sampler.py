@@ -18,8 +18,10 @@ temp = first("/class/thermal/thermal_zone*/temp", "x86_pkg_temp")
 npu = first("/class/accel/accel*/device/npu_busy_time_us")
 gpu = first("/class/drm/card*/device/tile0/gt0/gtidle/idle_residency_ms")  # xe driver, render/compute GT
 bat = first("/class/power_supply/BAT*/power_now")
-for k, p in rapl.items():
-    if p and rd(p) is None: sys.exit(f"{p} unreadable: sudo chmod o+r /sys/class/powercap/intel-rapl:*/energy_uj")
+for k, p in list(rapl.items()):
+    if p and rd(p) is None:  # root-only by default; record everything else anyway
+        print(f"WARNING {p} unreadable, no watts. Fix: sudo chmod o+r /sys/class/powercap/intel-rapl:*/energy_uj", file=sys.stderr)
+        rapl[k] = None
 def snap(): return time.monotonic(), {k: rd(p) for k, p in rapl.items() if p}, rd(npu) if npu else None, rd(gpu) if gpu else None
 with open(sys.argv[1], "a", newline="") as f:
     w = csv.writer(f)

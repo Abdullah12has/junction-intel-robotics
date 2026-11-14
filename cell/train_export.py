@@ -1,4 +1,4 @@
-"""UNTESTED DRAFT: API names checked against anomalib lib/v2.7.0 source, never run on the station.
+"""Train + export an Anomalib model. PatchCore path run on the station 14 Nov with synthetic images only.
 
 Run in the anomalib venv:  python cell/train_export.py [patchcore|efficientad]
 
@@ -35,9 +35,10 @@ engine = Engine(accelerator=XPUAccelerator(), strategy=SingleXPUStrategy(), devi
 engine.fit(model=model, datamodule=dm)   # validation pass sets the F1 threshold and min/max
 engine.test(model=model, datamodule=dm)  # same images as validation: a sanity check, not our score
 
+# dynamic_axes={} gives a fully static [1,3,256,256] model, which the NPU needs. The default export
+# came out pinned to batch 2 on this stack (seen 14 Nov), which OpenVINOInferencer cannot feed.
 xml = engine.export(model=model.cpu(), export_type=ExportType.OPENVINO, export_root=f"export/{NAME}",
-                    input_size=SIZE, compression_type=CompressionType.FP16)
-m = ov.Core().read_model(xml)            # batch axis is exported dynamic; the NPU needs static
-m.reshape([1, 3, *SIZE])
-ov.save_model(m, str(xml).replace("model.xml", "model_static.xml"))
-print("exported", xml)
+                    input_size=SIZE, compression_type=CompressionType.FP16, onnx_kwargs={"dynamic_axes": {}})
+shape = ov.Core().read_model(xml).input(0).get_partial_shape()
+assert shape == ov.PartialShape([1, 3, *SIZE]), f"export is not static batch 1: {shape}"
+print("exported", xml, shape)
