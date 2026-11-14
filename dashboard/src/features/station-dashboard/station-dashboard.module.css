@@ -245,3 +245,23 @@
         padding: 0.5rem 0.25rem;
     }
 }
+
+@media (min-width: 1450px) {
+    .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        align-items: start;
+    }
+    .content > .panel {
+        grid-column: 1 / -1;
+    }
+    .feeds {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cameraImage {
+        height: 12rem;
+    }
+    .cameraHeading {
+        flex-wrap: wrap;
+    }
+}

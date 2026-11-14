@@ -3219,6 +3219,25 @@ export interface components {
          */
         JobStatus: "pending" | "running" | "completed" | "failed" | "canceled";
         /**
+         * JogJointCommand
+         * @description One small, finite move; no persistent velocity survives a lost connection.
+         */
+        JogJointCommand: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            command: "jog_joint";
+            /** Request Id */
+            request_id: string;
+            /** Joint */
+            joint: string;
+            /** Delta */
+            delta: number;
+            /** Observed At */
+            observed_at: number;
+        };
+        /**
          * LoadDatasetCommand
          * @description Record into this dataset. Needs an environment whose joints and cameras fit it.
          */
@@ -6253,6 +6272,7 @@ export type SchemaInferenceBackend = components['schemas']['InferenceBackend'];
 export type SchemaInferenceDeviceInfo = components['schemas']['InferenceDeviceInfo'];
 export type SchemaInstallPluginRequest = components['schemas']['InstallPluginRequest'];
 export type SchemaJobStatus = components['schemas']['JobStatus'];
+export type SchemaJogJointCommand = components['schemas']['JogJointCommand'];
 export type SchemaLoadDatasetCommand = components['schemas']['LoadDatasetCommand'];
 export type SchemaLoadEnvironmentCommand = components['schemas']['LoadEnvironmentCommand'];
 export type SchemaLoadModelCommand = components['schemas']['LoadModelCommand'];
@@ -7251,7 +7271,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["LoadEnvironmentCommand"] | components["schemas"]["UnloadEnvironmentCommand"] | components["schemas"]["ReloadEnvironmentCommand"] | components["schemas"]["SetControlCommand"] | components["schemas"]["LoadDatasetCommand"] | components["schemas"]["UnloadDatasetCommand"] | components["schemas"]["LoadModelCommand"] | components["schemas"]["UnloadModelCommand"] | components["schemas"]["StartEpisodeCommand"] | components["schemas"]["SaveEpisodeCommand"] | components["schemas"]["DiscardEpisodeCommand"];
+                    "application/json": components["schemas"]["LoadEnvironmentCommand"] | components["schemas"]["UnloadEnvironmentCommand"] | components["schemas"]["ReloadEnvironmentCommand"] | components["schemas"]["SetControlCommand"] | components["schemas"]["JogJointCommand"] | components["schemas"]["LoadDatasetCommand"] | components["schemas"]["UnloadDatasetCommand"] | components["schemas"]["LoadModelCommand"] | components["schemas"]["UnloadModelCommand"] | components["schemas"]["StartEpisodeCommand"] | components["schemas"]["SaveEpisodeCommand"] | components["schemas"]["DiscardEpisodeCommand"];
                 };
             };
             /** @description Validation Error */
