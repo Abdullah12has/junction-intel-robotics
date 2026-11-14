@@ -12,7 +12,7 @@ VERIFIED
 - NPU system driver installed; synthetic PatchCore inference passed. Real defect detection unverified.
 
 NOW
-- Off-laptop backup copying dataset/model/evidence to Mac station-backups/2026-11-14; completion requires verification.
+- Off-laptop backup COMPLETE: Mac station-backups/2026-11-14,239files,1,206,801,997bytes; all SHA256 hashes match. See evidence/backup-verification.json.
 - Modal setup running as intel, waiting for browser login. Do not save login links or tokens to Git.
 - Ask mentors defect faces, judging sequence and final rubric BEFORE positioning inspection camera.
 - Tape bowls, mark and pick zone. Establish and photograph HOME physically; no guessed joint pose.

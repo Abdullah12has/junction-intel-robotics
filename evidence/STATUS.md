@@ -13,7 +13,7 @@ Updated 14 November 2026, Helsinki. Historical statements are preserved in STATU
 | VLA | ACT is not a VLA. Local SmolVLA training untested; no Modal login file observed at default laptop location. Authentication elsewhere is not ruled out. |
 | Detector | Synthetic pipeline only. Real camera/ROI, defect data, split and accuracy unverified. |
 | Orchestrator | Standalone bounded policy tests ran; run_cell.py and split_dataset.py remain unvalidated end to end. |
-| Backup/Git | Local source/evidence edits exist; current dataset and model still need a verified off-laptop backup. Git push status must be checked against remote. |
+| Backup/Git | Dataset/model/evidence backed up to Mac station-backups/2026-11-14:239files,1.21GB,all SHA256 hashes match. Docs committed locally; Git push blocked by missing credentials and app write permission. |
 | Power | No verified watts measurement; previous powercap search inconclusive. |
 | Submission | Mentor answers, final rubric, video/deck and final evidence tables remain unverified. |
 
