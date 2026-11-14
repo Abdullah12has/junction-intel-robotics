@@ -1,0 +1,65 @@
+JUNCTION 2026 INTEL CHALLENGE - PROGRESS / HANDOFF
+Updated: Sat 14 Nov 2026, 12:35 Helsinki. Deadline: Sun 15 Nov 10:00 (aim to set FINAL at 09:00).
+
+READ FIRST
+  docs/EXECUTION-PLAN.md          the step-by-step plan, gates and schedule
+  evidence/STATUS.md              what is built and verified
+  docs/ROBOT-STATION-RUNBOOK.md   how to connect; check live sessions before touching the arms
+  docs/NPU-SETUP.md               how the NPU was made usable
+
+STATION
+  Laptop over Tailscale: intel@100.112.85.77 (SSH key ~/.ssh/junction_intel_ed25519,
+  use -o HostKeyAlias=192.168.202.209). Studio backend :7860, UI :3000 (tunnelled to the Mac).
+  Our working folder on the laptop: ~/junction-cell (scripts in cell/, Anomalib env in anomalib-env/).
+  At 12:15 a Studio session "Environment preview" held both arms and the arm camera. Do not
+  open the arms from a second session; only one session may own them.
+
+DONE
+  - Plan researched and written (docs/EXECUTION-PLAN.md): two-stage cell around a fixed
+    inspection spot; SmolVLA primary, ACT fallback from the same dataset; PatchCore detector.
+  - Anomalib 2.7.0 installed on the laptop (~/junction-cell/anomalib-env, torch XPU works).
+  - Detector pipeline works end to end on SYNTHETIC images: train on Intel GPU (~40 s),
+    static batch-1 FP16 OpenVINO export, threshold calibration, held-out check, heatmap that
+    localises the mark. PatchCore p50: 5.7 ms iGPU, 46 ms CPU.
+  - NPU usable per process via anomalib-env/bin/python-npu (another session; see docs/NPU-SETUP.md).
+    Plain `python` still sees only CPU and GPU.
+  - Studio can train locally on the laptop's Intel GPU (device xpu), so the smoke test does not
+    need Modal.
+  - Scripts in cell/: train_export.py, inspection.py, run_cell.py (check/home/run modes, config
+    in cell/config.json from config.example.json), split_dataset.py, ov_prove.py, power_sampler.py.
+  - Commits on main (not pushed): 25c9859, 0a34bc1 (dashboard joystick), cf5049a (cell + plan).
+
+NOT DONE / BLOCKED
+  - NO DATASET. Studio has no datasets, models or jobs. Demonstrations must be recorded by a
+    person on the leader arm. Nothing else downstream can start without this.
+  - Modal not logged in on the laptop. A person must run, as user intel:
+      uvx --python 3.13 --from 'modal[api-proxy-support]>=1.6.3,<2' modal setup
+    then Studio > Settings > Training Targets > Modal > Deploy and connect.
+  - Sudo: the supplied password was rejected by sudo (per docs/NPU-SETUP.md). Without sudo the
+    power sampler records temperature and NPU/iGPU busy time but NO watts. Needs:
+      sudo chmod o+r /sys/class/powercap/intel-rapl:*/energy_uj /sys/class/powercap/intel-rapl:*:*/energy_uj
+    Ask a mentor for the correct password. Do not write passwords into the repo.
+  - Both RealSense cameras are still at 424x240 @ 6 fps (preview setting). Set 640x480 @ 30
+    in Studio before recording.
+  - Inspection camera not mounted; CAM and ROI in cell/inspection.py are placeholders.
+  - run_cell.py, split_dataset.py and the camera capture paths have never run live.
+  - Temperature reading jumped 48 -> 97 C within a second in one probe; check against `sensors`
+    before reporting any thermal number.
+
+NEXT STEPS (in order; see the plan for details)
+  1. Mentor questions (plan section 3), especially: which brick faces carry defects?
+  2. Tape the rig: bowls (green = good, red = defective), inspection mark, 15x15 cm pick zone.
+     Choose HOME with the wrist camera facing the inspection mark (keeps multi-camera detection open).
+  3. Smoke test: record 5 throwaway episodes, train ACT 1 epoch locally on xpu, run it on the arm.
+  4. Record ~120 episodes into ONE dataset with these exact task strings:
+       move the brick to the inspection spot     (60)
+       put the brick in the green bowl           (30, bowl chosen by coin flip)
+       put the brick in the red bowl             (30)
+  5. In parallel: mount inspection camera, set CAM/ROI, capture real bricks by tray
+     (inspection.py capture ...), train, calibrate, held-out check.
+  6. Launch training: SmolVLA on Modal (or local), ACT per task after split_dataset.py.
+  7. cell/run_cell.py check -> home -> run 1, then close the loop with both bowls.
+  8. 30 logged trials, device table (ov_prove.py), power log, video, deck, submit.
+
+SHIFTED GATES (team started ~3 h late)
+  Smoke test passes 14:00 | training launched 17:00 | loop closed 23:00 | freeze Sun 08:00

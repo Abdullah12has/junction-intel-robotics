@@ -34,3 +34,7 @@ These are recovery commands based on the verified installation, not a fresh clea
 - Only deprecation warnings were emitted by imports. Full training/export was not rerun during this check.
 
 Official installation reference: https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html
+
+## NPU follow-up
+
+NPU inference now works through `anomalib-env/bin/python-npu`; see [NPU recovery](NPU-SETUP.md). This supersedes the earlier NPU enumeration limitation for processes using that launcher.
