@@ -41,3 +41,11 @@ Operator confirmed demonstration starting pose, brick position and clear workspa
 Stopped the existing recording session through Studio, confirmed no owners, then ran model control with both cameras at 30Hz, 3s gradual start, 20s duration. Monitoring guarded demonstrated joint/target range and stale feedback. Trial completed20.04s without guard faults, control stopped, and live session query returned an empty list. **Operator reported: moved but missed or dropped the brick. Task success is false.** No repeat motion authorized or performed afterward. This is a failed pick/place trial, not proof of task capability.
 
 Evidence: `smolvla-gpu-preflight.json`, `smolvla-gpu-bounded-preflight.json`, `smolvla-robot-test.json`. Frames remain locally under `/tmp/smolvla-trial-frames/` and laptop `/home/intel/junction-cell/evidence/smolvla-test-frames/`; not committed. Scripts: `cell/test_smolvla_bounded_export.py`, `cell/bound_smolvla_export.py`. The latter rebuilds from already-preserved originals; do not use it against a different model's normalization.
+
+## Requested 60-second repeat — 2026-11-14
+
+Repeated the constrained SmolVLA GPU policy for60.05seconds at30Hz with3s gradual start, both cameras, stale-feedback and demonstrated-range guards. Started from the previous trial's ending pose, not a reset HOME. No guard fault; control stopped and subsequent live session list was empty. No operator outcome yet; do not claim pick/place success. Evidence: `evidence/smolvla-robot-60s-test.json`; script `cell/test_smolvla_60s.py`.
+
+### Second 60-second repeat
+
+User requested another repeat. Completed60.04s from current pose, same GPU export and guards, no range/feedback fault. Control stopped and subsequent session query empty. Task success remains unconfirmed. Evidence `evidence/smolvla-robot-60s-repeat2.json`; remote script `/home/intel/junction-cell/test_smolvla_60s_repeat2.py`.

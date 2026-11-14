@@ -12,6 +12,7 @@ VERIFIED
 - NPU system driver installed; synthetic PatchCore inference passed. Real defect detection unverified.
 
 NOW
+- MuJoCo coordinate audit: old150 episodes use radians, old normalized wrapper stretched model ranges. Corrected encoder mapping/collection/export/training gates;43 tests pass. Physical signs/zeros still unmeasured; user says station unavailable. Recollection/training intentionally not launched. Read simulation/NORMALIZED-INTERFACE.md.
 - Switching to Verda per user: RTX Pro 6000 96GB spot ($1.418/hour plus storage), SSH/CUDA hardware verified; SmolVLA job 6e96ec9e COMPLETED 10 epochs; model 6540166d saved on laptop, OpenVINO CPU inference finite, Mac backup hash-verified. Compute released, recovery disk retained. Both failed A100 allocations deleted. See docs/VERDA-TRAINING.md.
 - Off-laptop backup COMPLETE: Mac station-backups/2026-11-14,239files,1,206,801,997bytes; all SHA256 hashes match. See evidence/backup-verification.json.
 - Modal CLI authenticated as intel in workspace abdullah12-hassan7; token verified. Credential stored only in ~/.modal.toml.
@@ -30,6 +31,9 @@ Aim60/30/30episodes; fallback40/20/20. Start/end at HOME. Aim8–12s without rus
 Flush/check counts every30episodes. Vision work proceeds independently on a separately owned camera.
 
 NEXT GATES
+- Simulation coordinates: measured-fit gate replaced by fixed-scale nominal mapping (sim-side, unverified; wrist roll and gripper width still need a10-minute read-only station check).146/150 sim episodes converted to normalized units; no export or training run yet. See simulation/NORMALIZED-INTERFACE.md.
+- Latest second60s SmolVLA repeat completed60.04s, stopped, no sessions; task outcome unconfirmed. Evidence smolvla-robot-60s-repeat2.json.
+- Requested60s SmolVLA repeat completed60.05s without guard faults; stopped, no sessions. Started from prior ending pose; task success unconfirmed. Evidence smolvla-robot-60s-test.json.
 - SmolVLA physical trial completed20s then stopped; operator reports missed/dropped brick. No active sessions. Raw output exceeded bounds; constrained export used. Collect more consistent successful grasps before claiming pick/place. See docs/VERDA-TRAINING.md.
 - Verda SmolVLA pilot completed. Test exported GPU inference and plan a supervised trial from HOME; recreate Verda compute only for the next training run.
 - At17:00 Helsinki launch SmolVLA and task-specific ACT using verified task splits.

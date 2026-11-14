@@ -1,0 +1,61 @@
+{
+  "driver": "LeRobot STS3215 saved calibration; 4096 ticks/revolution; normalized command uses truncation",
+  "live_calibration_matches_saved": true,
+  "joint_mapping_complete": false,
+  "rows": [
+    {
+      "joint": "shoulder_pan",
+      "calibrated_tick_span": 2321,
+      "encoder_shaft_travel_deg": 203.994140625,
+      "model_travel_deg": 219.99975051197245,
+      "old_range_mapping_scale_error_pct": 7.8461125588873415,
+      "direction_verified": false,
+      "zero_verified": false
+    },
+    {
+      "joint": "shoulder_lift",
+      "calibrated_tick_span": 2268,
+      "encoder_shaft_travel_deg": 199.3359375,
+      "model_travel_deg": 200.00000550104463,
+      "old_range_mapping_scale_error_pct": 0.3331401298597436,
+      "direction_verified": false,
+      "zero_verified": false
+    },
+    {
+      "joint": "elbow_flex",
+      "calibrated_tick_span": 2204,
+      "encoder_shaft_travel_deg": 193.7109375,
+      "model_travel_deg": 193.65973475421825,
+      "old_range_mapping_scale_error_pct": -0.0264325527729925,
+      "direction_verified": false,
+      "zero_verified": false
+    },
+    {
+      "joint": "wrist_flex",
+      "calibrated_tick_span": 2359,
+      "encoder_shaft_travel_deg": 207.333984375,
+      "model_travel_deg": 190.00002413359965,
+      "old_range_mapping_scale_error_pct": -8.360404732322523,
+      "direction_verified": false,
+      "zero_verified": false
+    },
+    {
+      "joint": "wrist_roll",
+      "calibrated_tick_span": 3825,
+      "encoder_shaft_travel_deg": 336.181640625,
+      "model_travel_deg": 319.9999996343467,
+      "old_range_mapping_scale_error_pct": -4.813362490756424,
+      "direction_verified": false,
+      "zero_verified": false
+    },
+    {
+      "joint": "gripper",
+      "calibrated_tick_span": 1531,
+      "encoder_shaft_travel_deg": 134.560546875,
+      "model_travel_deg": 110.00000130670117,
+      "old_range_mapping_scale_error_pct": -18.252412121299088,
+      "direction_verified": false,
+      "zero_verified": false
+    }
+  ]
+}
