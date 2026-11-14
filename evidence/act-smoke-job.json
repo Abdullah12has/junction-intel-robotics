@@ -1,0 +1,70 @@
+{
+  "request": {
+    "training_target": "local",
+    "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+    "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+    "policy": "act",
+    "model_name": "ACT inspection smoke - 7 episodes - 1 epoch",
+    "max_epochs": 1,
+    "batch_size": 8,
+    "num_workers": 2,
+    "device": {
+      "type": "xpu",
+      "index": 0
+    },
+    "precision": "32-true",
+    "compile_model": false,
+    "val_split": 0.0,
+    "export_backends": [
+      "openvino"
+    ]
+  },
+  "response": {
+    "id": "5f3a6be6-067e-473f-900a-311e2d609c8d",
+    "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+    "progress": 0,
+    "status": "pending",
+    "extra_info": null,
+    "message": "Training job submitted",
+    "start_time": null,
+    "end_time": null,
+    "created_at": null,
+    "issues": [],
+    "type": "training",
+    "payload": {
+      "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+      "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+      "policy": "act",
+      "model_name": "ACT inspection smoke - 7 episodes - 1 epoch",
+      "max_epochs": 1,
+      "max_steps": null,
+      "batch_size": 8,
+      "num_workers": 2,
+      "auto_scale_batch_size": false,
+      "base_model_id": null,
+      "val_split": 0.0,
+      "device": {
+        "type": "xpu",
+        "index": 0
+      },
+      "precision": "32-true",
+      "compile_model": false,
+      "image_key_reorder_map": {},
+      "num_cameras": 0,
+      "export_backends": [
+        "openvino"
+      ],
+      "augment_images": false,
+      "lora_enabled": false,
+      "lora_rank": 32,
+      "lora_alpha": null,
+      "lora_dropout": 0.05,
+      "lora_use_dora": false,
+      "snapflow_enabled": false,
+      "snapflow_distill_epochs": 3,
+      "remote_job_id": null,
+      "snapshot_id": null,
+      "training_target": "local"
+    }
+  }
+}

@@ -37,3 +37,7 @@ sudo apt-get install ./intel-driver-compiler-npu*.deb ./intel-level-zero-npu*.de
 ```
 
 The dry run proposed eight new packages and no removals/upgrades. Recheck the transaction before installing; then verify using plain environment Python. No system-wide installation has been claimed here.
+
+## System installation completed (2026-11-14)
+
+After successful sudo authentication, installed `intel-driver-compiler-npu` and `intel-level-zero-npu` v1.38.0 plus six distribution dependencies. Waited for an independently initiated apt upgrade to finish; did not interrupt it or reboot. Plain Anomalib environment Python with `LD_LIBRARY_PATH` explicitly removed now lists CPU/GPU/NPU and executes the existing PatchCore smoke export on NPU with finite outputs. The `python-npu` wrapper is no longer required. This supersedes the process-local-only limitation above. Credentials were not saved. Defect accuracy and sustained performance remain unverified.

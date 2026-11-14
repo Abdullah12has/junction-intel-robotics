@@ -1,15 +1,20 @@
-# Build status
+# Verified station status
 
-Updated 2026-11-14 12:45 Helsinki. Nothing below has moved the arm.
+Updated 14 November 2026, Helsinki. Historical statements are preserved in STATUS-HISTORICAL.md and superseded here.
 
-| Piece | State | Evidence |
-|---|---|---|
-| Anomalib 2.7.0 env on laptop | Installed, `~/junction-cell/anomalib-env`, torch XPU sees the iGPU | `versions.txt` |
-| Detector train → export → calibrate → held-out | Works end to end on **synthetic** images; static batch-1 FP16 OpenVINO model; heatmap localises the mark | PatchCore p50 5.7 ms iGPU, 46 ms CPU (synthetic model, 256×256) |
-| Inspection camera capture | Not run; `CAM` and `ROI` in `cell/inspection.py` still placeholders | — |
-| `cell/run_cell.py` | Protocol checked against backend source; `check`/`home`/`run` never run live | — |
-| `cell/split_dataset.py` | Written, untested (no dataset yet) | — |
-| Power sampler | Temperature, NPU busy %, iGPU busy % readable; **watts need one sudo chmod** | — |
-| NPU | **Not usable**: kernel driver and firmware present, userspace driver missing, OpenVINO lists CPU and GPU only | `versions.txt` |
-| Modal | Not authenticated on the laptop; local XPU training is the fallback | — |
-| Studio datasets / models / jobs | None | — |
+| Area | Current evidence |
+|---|---|
+| Dataset | 7 episodes, 4,366 frames, two cameras, one inspection task. No bowl-task demonstrations verified. |
+| ACT training | Completed one full GPU epoch, 545 steps. Model fa42ee76-bcfb-43ba-ba21-124e678ee785. |
+| OpenVINO | Export exists; CPU/GPU inference on recorded inputs returned finite100×6 actions. |
+| Robot trials | Actual model-driven arm motion tested. Corrected export completed30seconds. Pick-and-place success NOT established. |
+| Limits | First15-unit test guard was restrictive. Longer trial exposed negative gripper targets; canonical export now bounds outputs to valid normalized joint limits. |
+| NPU | System driver installed; synthetic PatchCore smoke inference verified on NPU. |
+| VLA | ACT is not a VLA. Local SmolVLA training untested; no Modal login file observed at default laptop location. Authentication elsewhere is not ruled out. |
+| Detector | Synthetic pipeline only. Real camera/ROI, defect data, split and accuracy unverified. |
+| Orchestrator | Standalone bounded policy tests ran; run_cell.py and split_dataset.py remain unvalidated end to end. |
+| Backup/Git | Local source/evidence edits exist; current dataset and model still need a verified off-laptop backup. Git push status must be checked against remote. |
+| Power | No verified watts measurement; previous powercap search inconclusive. |
+| Submission | Mentor answers, final rubric, video/deck and final evidence tables remain unverified. |
+
+See ../docs/GPU-TRAINING-RECOVERY.md and JSON evidence for exact job IDs and tests. A passed execution smoke test is not a passed task-success gate.

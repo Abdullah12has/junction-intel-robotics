@@ -156,3 +156,13 @@ All four feeds subsequently verified **Live** together with follower feedback: b
 ## NPU recovery (2026-11-14)
 
 Missing user-space Intel NPU driver/compiler repaired with process-local official v1.38.0 libraries. Use `/home/intel/junction-cell/anomalib-env/bin/python-npu`; ordinary Python still needs the library paths. OpenVINO enumerated NPU and successfully compiled/inferred the existing PatchCore smoke model with finite outputs, execution device NPU. No firmware, kernel or Studio changes; sudo authentication failed so no system packages were installed. See [NPU-SETUP.md](NPU-SETUP.md) for paths, reproduction and limitations.
+
+## System installation completed (2026-11-14)
+
+After successful sudo authentication, installed `intel-driver-compiler-npu` and `intel-level-zero-npu` v1.38.0 plus six distribution dependencies. Waited for an independently initiated apt upgrade to finish; did not interrupt it or reboot. Plain Anomalib environment Python with `LD_LIBRARY_PATH` explicitly removed now lists CPU/GPU/NPU and executes the existing PatchCore smoke export on NPU with finite outputs. The `python-npu` wrapper is no longer required. This supersedes the process-local-only limitation above. Credentials were not saved. Defect accuracy and sustained performance remain unverified.
+
+## Overhead recording-camera recovery (2026-11-14)
+
+Recording environment repeatedly failed with overhead serial 243622061421 `CaptureTimeoutError: no publisher responded within timeout`. USB devices were present, but no publisher workers survived. Stopped the failed runtime via supported endpoint; sent TERM to old backend 166596. After it remained stuck waiting for background tasks with serial/video devices released, killed that exact old process and started the existing backend unchanged. New log `/tmp/junction-backend-recording-recovery.log`; observed PID 241038 (re-query).
+
+Both RealSense cameras simultaneously delivered 286 frames each in roughly 10 seconds at 640x480/30 via librealsense. Overhead reports USB 2.1, arm USB 3.2. After restart, both Studio `/api/cameras/ws` streams delivered 30 valid JPEG frames each without timeout. Verification preview sockets were closed afterward. An attempted camera-only runtime test was rejected because runtime requires exactly one robot; no arms were loaded by that test. Full recording/encoding remains to be verified by the operator; no synthetic episodes were added.
