@@ -30,6 +30,7 @@ Aim60/30/30episodes; fallback40/20/20. Start/end at HOME. Aim8–12s without rus
 Flush/check counts every30episodes. Vision work proceeds independently on a separately owned camera.
 
 NEXT GATES
+- SmolVLA physical trial completed20s then stopped; operator reports missed/dropped brick. No active sessions. Raw output exceeded bounds; constrained export used. Collect more consistent successful grasps before claiming pick/place. See docs/VERDA-TRAINING.md.
 - Verda SmolVLA pilot completed. Test exported GPU inference and plan a supervised trial from HOME; recreate Verda compute only for the next training run.
 - At17:00 Helsinki launch SmolVLA and task-specific ACT using verified task splits.
 - Train detector only once real images/splits and camera ROI/exposure are fixed.

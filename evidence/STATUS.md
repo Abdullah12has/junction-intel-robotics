@@ -22,3 +22,7 @@ See ../docs/GPU-TRAINING-RECOVERY.md and JSON evidence for exact job IDs and tes
 ## Verda SmolVLA pilot completed — 2026-11-14
 
 User authorized the seven-episode inspection pilot. Trained 10 epochs/2320 steps on RTX Pro 6000 96GB, final validation loss 0.27096. Model `6540166d-c6c7-4087-ba07-ec5571c37d3b` has an OpenVINO export. Three offline observations passed finite 50x6 output checks on laptop CPU (~1.5s each). No robot trial performed. Checkpoint/export backed up to Mac; all eight files match SHA256. Compute released, disk retained. See `docs/VERDA-TRAINING.md`.
+
+### SmolVLA physical trial result
+
+20-second monitored GPU trial completed and stopped; no active sessions afterward. Operator reports missed/dropped brick: task success false. Raw predictions exceeded calibrated range, so trial used constrained export with original preserved. See VERDA-TRAINING.md and smolvla-robot-test.json.
