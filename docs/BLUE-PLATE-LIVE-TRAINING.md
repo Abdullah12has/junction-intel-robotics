@@ -1,5 +1,23 @@
 # Blue plate training — 15 November 2026
 
+## Idle GPU deleted; checkpoints retained — 15 November, 08:10 Helsinki
+
+At the user's request, deleted idle normal-image A100 instance `4b37dcdc-fec5-4f51-8070-17d1ecafe3d3` (former IP `86.38.238.100`). API deletion succeeded with explicit `volume_ids: []`; subsequent inventory confirms the instance is absent and its 400 GB OS volume `cfd3e072-b633-4446-8983-7432c5090071` is **detached**, with no instance attached. Compute billing of $1.699/hour has ended. Retained storage continues at $0.109589/hour ($80/month).
+
+All normal-image checkpoints remain on that disk at `/root/blue-plate/campaign/runs/`: ACT steps 10k–50k every 10k; SmolVLA steps 2k–16k every 2k. Logs, campaign and software remain on the same disk. Restore/attach this existing FIN-02 volume to compatible compute only when needed; do not assume the old IP remains usable. Do not delete the recovery volume.
+
+Local evidence: `../../station-backups/2026-11-15-idle-gpu/` contains the full remote SHA256 manifest, `idle-handoff.tgz` (logs, experiment specifications, campaign JSON and code), deletion request and verification. The extra local checkpoint transfer was cancelled to end compute billing sooner: **local checkpoint backup is incomplete** (19 files verified, 132 not copied, zero mismatches). Use the retained disk as the complete source, not the partial local `runs/` tree.
+
+The marker ACT host `86.38.182.164`, instance `e25219b3-dea2-4991-9cdd-ad2b2d37e2af`, remains running and was not modified. This supersedes earlier references below to both servers being allocated.
+
+## Single selected training — 15 November, 08:04 Helsinki
+
+User narrowed the selection to one. **Only `act-X-A0-R-seed0` continues**, on marker host `86.38.182.164`; its existing trainer was not restarted. Choice is provisional: strongest observed ACT validation and explicit target markers, without proven physical success.
+
+Stopped both normal-image trainers (`act-N-A0-R-seed0`, `smolvla-N-A0-R-seed0`) and their workers on `86.38.238.100`. Stopped the normal shard service and retired the old paused original supervisor without resuming its stale queue. Normal manifest now has no experiments/adoptions; its status records intentional stops. All existing checkpoints and logs remain. Both queues are empty. This supersedes the three-candidate section below.
+
+The normal host is now idle but still allocated and billing; no instance or storage was deleted. Marker host continues training. Do not restart either retired normal/original scheduler from historical instructions.
+
 ## Reduced to three candidates — 15 November, 07:46 Helsinki
 
 User requested keeping only the three experiments most likely to succeed. The active shard manifests now contain only:

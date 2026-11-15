@@ -1,0 +1,1 @@
+We prepared sixty four demonstrations and a thirty two experiment matrix across ACT, Smol VLA, target cues, augmentation and data sources. Real data training launched. Mixed simulation runs remain gated.

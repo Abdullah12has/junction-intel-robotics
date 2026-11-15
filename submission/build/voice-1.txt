@@ -1,0 +1,1 @@
+The goal is to pick blocks from clutter and place them correctly. Our learning campaign focuses on blue plate placement. A separate application adds quality inspection.

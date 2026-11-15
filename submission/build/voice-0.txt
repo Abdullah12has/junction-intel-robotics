@@ -1,0 +1,1 @@
+Prometheus is a robot learning and inspection workbench for the Intel Physical AI challenge. These visuals show our MuJoCo simulation.

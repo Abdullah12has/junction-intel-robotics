@@ -1,0 +1,1 @@
+This is a recorded successful expert rollout in MuJoCo. The arm grasps, transports and releases the block onto the blue plate. This is simulation, not a real arm or learned policy success claim.
