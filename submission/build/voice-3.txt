@@ -1,1 +1,0 @@
-We compare ordinary images with a causal X cue. A selected target is tracked only while confidence holds. Whether this improves learned behavior remains an experiment.

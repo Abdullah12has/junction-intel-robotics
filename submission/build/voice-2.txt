@@ -1,1 +1,0 @@
-An overhead camera shows the target and destination. A wrist camera provides local grasp geometry. Matching these views is essential before transferring simulation data.

@@ -21,7 +21,8 @@ for i,(slide,words) in enumerate(chapters):
   inputs=['-i',str(r/'simulation/outputs/sorting-150/attempt-0000/overhead.mp4')]
   vf="scale=960:720,pad=1280:720:160:0:color=0x101820,tpad=stop_mode=clone:stop_duration=10,drawtext=fontfile=/System/Library/Fonts/Supplemental/Arial.ttf:text='MUJOCO EXPERT DEMO - NOT REAL ROBOT FOOTAGE':fontcolor=white:fontsize=24:box=1:boxcolor=black@0.8:x=(w-tw)/2:y=25"
  else:inputs=['-loop','1','-i',str(build/f'slide-{slide}.png')];vf='scale=1280:720'
- subprocess.run(['ffmpeg','-y','-v','error',*inputs,'-i',str(audio),'-vf',vf,'-af','apad','-t',str(duration),'-r','30','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','128k',str(dest)],check=True)
+ filters=(['-loop','1','-i',str(build/'slide-6.png'),'-filter_complex','[0:v]scale=640:480,pad=1160:480:260:0:color=0x101820,tpad=stop_mode=clone:stop_duration=10[v];[2:v][v]overlay=60:160[out]','-map','[out]','-map','1:a'] if slide=='sim' else ['-vf',vf])
+ subprocess.run(['ffmpeg','-y','-v','error',*inputs,'-i',str(audio),*filters,'-af','apad','-t',str(duration),'-r','30','-c:v','libx264','-preset','fast','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','128k',str(dest)],check=True)
  segments.append(dest);print(i,round(duration,2),flush=True)
 manifest=build/'video-concat.txt';manifest.write_text(''.join("file '"+str(s)+"'\n" for s in segments))
 subprocess.run(['ffmpeg','-y','-v','error','-f','concat','-safe','0','-i',str(manifest),'-c','copy','-movflags','+faststart',str(out/'prometheus-pitch.mp4')],check=True)

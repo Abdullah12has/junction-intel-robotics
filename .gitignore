@@ -44,3 +44,8 @@ MUJOCO_LOG.TXT
 *.onnx
 *.pt
 *.pth
+/submission/build/
+/submission/output/junction-intel-robotics.pptx
+
+/submission/node_modules
+/submission/output/prometheus-final.*
