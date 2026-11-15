@@ -15,6 +15,8 @@ The scripts were run in the development workspace. They require the existing MuJ
 
 ## Updated physical demonstration
 
-`output/prometheus-demo-3x.mp4` is the supplied physical footage at 3× speed (58.83 seconds). `output/prometheus-demo-narrated.mp4` is the updated 117.90-second pitch with normal-speed narration, the full physical run and a successful simulated pickup/placement clip. The current PDF/PPTX lead with this new physical evidence. The user identifies the physical controller as SmolVLM-assisted vision-guided execution, distinct from SmolVLA action-policy training. The footage reports three blue-plate sorts and a 48-second median cycle; this selected demo does not establish defect-branch reliability.
+`output/prometheus-demo-3x.mp4` is the supplied physical footage at 3× speed (58.83 seconds). `output/prometheus-demo-narrated.mp4` is the updated 117.86-second pitch with Pocket TTS narration using the saved Abdullah voice, the full physical run and a successful simulated pickup/placement clip. The current PDF/PPTX lead with this new physical evidence. The user identifies the physical controller as SmolVLM-assisted vision-guided execution, distinct from SmolVLA action-policy training. The footage reports three blue-plate sorts and a 48-second median cycle; this selected demo does not establish defect-branch reliability.
 
-YouTube submission video (unlisted, viewable by anyone with the link): https://youtu.be/OFCFRsIQpCg
+YouTube submission video (unlisted, viewable by anyone with the link): https://youtu.be/SisLFH79D1o
+
+The current narration uses the locally saved Abdullah voice profile from Voice Studio. `video-pocket-manifest.json` records the narration and timing; `tools/replace_narration.py` assembles replacement WAV files without changing the visuals. Private voice profiles are not included in the repository.
