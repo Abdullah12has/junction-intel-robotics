@@ -4,6 +4,7 @@ Artifacts are dated snapshots, not live telemetry. The [submission overview](../
 
 | Evidence | What it supports |
 |---|---|
+| [Supplied physical demo](physical-demo/supplied-video.json) | Three reported blue-plate sorts with SmolVLM-assisted vision-guided control |
 | [Dataset curation](blue-plate-curation/) | Data preparation and split review |
 | [Campaign preparation](blue-plate-campaign/) | Experiment configuration and validation |
 | [Launch records](blue-plate-launch/) | Real-data GPU launch and preflight snapshots |

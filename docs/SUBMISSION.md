@@ -24,6 +24,10 @@ flowchart LR
 - MuJoCo scene, expert collection and LeRobot export with explicit transfer-quality gates.
 - Intel/OpenVINO deployment experiments, output-contract audits and offline-tested bounds/visual-feedback utilities.
 
+## Updated physical demonstration
+
+The user supplied a physical sorting video after the initial submission draft and identified the controller as **SmolVLM-assisted vision-guided execution**. The video reports three completed good-to-blue sorts and a 48-second median cycle. Inspection confidence is marked partial. This updates the physical-demo evidence; it does not establish defect-branch reliability or ACT/SmolVLA policy success. See [video provenance](../evidence/physical-demo/supplied-video.json) and the [updated submission package](../submission/README.md).
+
 ## Verified results and limits
 
 This is a repository snapshot prepared on **15 November 2026**, not a live training monitor.
