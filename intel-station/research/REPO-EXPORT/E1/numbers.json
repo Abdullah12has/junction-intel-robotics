@@ -1,0 +1,2044 @@
+{
+ "generated_utc": "2026-11-14T22:01:33Z",
+ "script": "work/REPO-EXPORT/E1/numbers.py",
+ "python": "3.12.16",
+ "sources": {
+  "logs/sort/any_1731/cycles.jsonl": {
+   "sha256": "57948d0308a01df37020927ad619c31103a0464d4cebb56673097a48c48249fc",
+   "bytes": 1477
+  },
+  "logs/sort/any_1740/cycles.jsonl": {
+   "sha256": "3609893f7064ca1bd69b33c872cdc6e9e078bb4bfb006853efbad088ac968d3a",
+   "bytes": 7982
+  },
+  "logs/sort/any_2055/cycles.jsonl": {
+   "sha256": "0bf7aaea0c0d56ca0dfa19ae413159fc10bf62e5b27a1740e8bd5bc8afc8dfaf",
+   "bytes": 834
+  },
+  "logs/sort/any_2127/cycles.jsonl": {
+   "sha256": "1bd47714ee1a2e7ec9f534188538361481306328f8e0a0f303396ffeec1023ef",
+   "bytes": 6141
+  },
+  "work/P4-OVBENCH/E1/bench.tsv": {
+   "sha256": "6447d4814ab270992fc19312d2c50d6b80b263917383997fb5dc824d48241ba6",
+   "bytes": 5195
+  },
+  "work/P4-OVBENCH/E1/metrics.json": {
+   "sha256": "c0acc397b69c63df4a1a65e209561f6baa4c312edc91fe8cc3db2c1ceea2137f",
+   "bytes": 6067
+  },
+  "work/P3-TAPE-EVAL/E2/metrics.json": {
+   "sha256": "26a0ab996cb581b7f6857bfe11be67960b53fb5154af082625fc05f63a89c8c1",
+   "bytes": 4378
+  },
+  "app/anomaly/det2_f2/models/tape_thresholds.json": {
+   "sha256": "477ac37fc2e2228502ec3d965b19cb430b3f26dfb818e36b706d14376cfd92c7",
+   "bytes": 309
+  },
+  "app/tools/tests/fixtures/hand_labels.csv": {
+   "sha256": "02041b45ae7caf27761027980b9e1b11353ab4bffb14b9576e98cdad4ef5bee1",
+   "bytes": 5191
+  },
+  "app/tools/handdet.py": {
+   "sha256": "06a0427dc748fcb338180e73418bc42457420ae1fb3a64b34a10d0bd1e48918a",
+   "bytes": 6891
+  },
+  "logs/telemetry/20261114.jsonl": {
+   "sha256": "b0ebf5257e38b777480f9134c06dc11142587a57e0f4b65581ec844075488116",
+   "bytes": 12080748
+  },
+  "logs/monitor/hand_watch.log": {
+   "sha256": "a7639aa1a29f16b4bdfca5ea7bdbfdfc2e29c3e88183029ec33a336646beab90",
+   "bytes": 697300
+  }
+ },
+ "cycles": {
+  "any_1731": {
+   "source": "logs/sort/any_1731/cycles.jsonl",
+   "rows": 4,
+   "unparsed_lines": 0,
+   "success": {
+    "False": 2,
+    "None": 2
+   },
+   "failure": {
+    "stop: move_rel [0, 0, 45.0] -> estop comp_iters=0": 1,
+    "stop: move -> estop comp_iters=0": 1,
+    " (recovered: placed on blue)": 1,
+    "None": 1
+   },
+   "mode": {
+    "None": 2,
+    "carry_over": 1,
+    "pick_anywhere": 1
+   },
+   "label": {
+    "None": 2,
+    "DEFECT": 1,
+    "GOOD": 1
+   },
+   "timings_cycle_s": {
+    "n": 0
+   },
+   "t_end_minus_t_start_s": {
+    "n": 3,
+    "mean": 110.0125,
+    "median": 83.0992,
+    "p90": 170.0197,
+    "min": 55.1885,
+    "max": 191.7498
+   },
+   "non_null_fields": {
+    "episode": 4,
+    "t_end": 4,
+    "t_start": 3,
+    "failure": 3,
+    "shape": 2,
+    "success": 2,
+    "grip_closed": 2,
+    "brick_xy_est": 2,
+    "task": 2,
+    "plate": 2,
+    "label": 2,
+    "decision_conf": 2,
+    "decision_reasons": 2,
+    "colour": 2,
+    "mode": 2
+   }
+  },
+  "any_1740": {
+   "source": "logs/sort/any_1740/cycles.jsonl",
+   "rows": 21,
+   "unparsed_lines": 0,
+   "success": {
+    "False": 8,
+    "None": 7,
+    "True": 6
+   },
+   "failure": {
+    "None": 12,
+    "ik fail moving [-7.2, 79.7] mm at scan height": 1,
+    "ik fail moving [-7.1, 79.7] mm at scan height": 1,
+    "ik fail moving toward brick (remaining [45.0, 17.5] mm)": 1,
+    "brick not visible at hover": 1,
+    "yellow brick not visible at hover": 1,
+    "stop: tmove -> estop comp_iters=4": 1,
+    "stop: move_rel [0, 0, -83.7] -> estop comp_iters=2": 1,
+    " (recovered: placed on blue)": 1,
+    "could not centre at hover": 1
+   },
+   "mode": {
+    "pick_anywhere": 18,
+    "carry_over": 3
+   },
+   "label": {
+    "None": 14,
+    "GOOD": 5,
+    "DEFECT": 2
+   },
+   "timings_cycle_s": {
+    "n": 4,
+    "mean": 80.625,
+    "median": 69.0,
+    "p90": 105.43,
+    "min": 64.1,
+    "max": 120.4
+   },
+   "t_end_minus_t_start_s": {
+    "n": 15,
+    "mean": 67.7187,
+    "median": 64.095,
+    "p90": 137.2105,
+    "min": 0.7474,
+    "max": 260.3028
+   },
+   "non_null_fields": {
+    "episode": 21,
+    "t_end": 21,
+    "mode": 21,
+    "t_start": 15,
+    "success": 14,
+    "brick_xy_est": 12,
+    "failure": 9,
+    "shape": 8,
+    "grip_closed": 8,
+    "task": 7,
+    "plate": 7,
+    "label": 7,
+    "decision_conf": 7,
+    "decision_reasons": 7,
+    "colour": 7,
+    "timings": 4
+   }
+  },
+  "any_2055": {
+   "source": "logs/sort/any_2055/cycles.jsonl",
+   "rows": 2,
+   "unparsed_lines": 0,
+   "success": {
+    "True": 1,
+    "None": 1
+   },
+   "failure": {
+    "None": 2
+   },
+   "mode": {
+    "pick_anywhere": 2
+   },
+   "label": {
+    "GOOD": 1,
+    "None": 1
+   },
+   "timings_cycle_s": {
+    "n": 1,
+    "mean": 103.6,
+    "median": 103.6,
+    "p90": 103.6,
+    "min": 103.6,
+    "max": 103.6
+   },
+   "t_end_minus_t_start_s": {
+    "n": 1,
+    "mean": 103.5945,
+    "median": 103.5945,
+    "p90": 103.5945,
+    "min": 103.5945,
+    "max": 103.5945
+   },
+   "non_null_fields": {
+    "episode": 2,
+    "t_end": 2,
+    "mode": 2,
+    "t_start": 1,
+    "task": 1,
+    "plate": 1,
+    "label": 1,
+    "decision_conf": 1,
+    "decision_reasons": 1,
+    "colour": 1,
+    "shape": 1,
+    "success": 1,
+    "grip_closed": 1,
+    "timings": 1,
+    "brick_xy_est": 1
+   }
+  },
+  "any_2127": {
+   "source": "logs/sort/any_2127/cycles.jsonl",
+   "rows": 16,
+   "unparsed_lines": 0,
+   "success": {
+    "False": 14,
+    "True": 1,
+    "None": 1
+   },
+   "failure": {
+    "stop: move_rel [0.0, 0.0, -70.0] -> estop comp_iters=0 resid=nan": 2,
+    "stop: move -> estop comp_iters=0 resid=nan": 2,
+    "None": 2,
+    "stop: move_rel [0.0, 0.0, -70.0] -> estop refused: estop present": 1,
+    "stop: move_rel [0, 0, -18.0] -> estop comp_iters=0 resid=nan": 1,
+    "stop: move_rel [np.float64(6.495977719925648), np.float64(-10.958327342894313), 0.0] -> estop comp_iters=8 resid=nan": 1,
+    "stop: move_rel [0.0, 0.0, -70.0] -> estop comp_iters=1 resid=nan": 1,
+    "stop: move_rel [np.float64(12.9), np.float64(29.3), 0.0] -> estop comp_iters=8 resid=nan": 1,
+    "brick lost after yaw": 1,
+    "yellow brick not visible at hover": 1,
+    "nothing held (gripper 0.65, size ratio 0.676056338028169)": 1,
+    "stop: tmove -> estop comp_iters=0 resid=nan": 1
+   },
+   "mode": {
+    "pick_anywhere": 15,
+    "carry_over": 1
+   },
+   "label": {
+    "None": 14,
+    "GOOD": 2
+   },
+   "timings_cycle_s": {
+    "n": 0
+   },
+   "t_end_minus_t_start_s": {
+    "n": 15,
+    "mean": 57.1766,
+    "median": 66.9721,
+    "p90": 95.8363,
+    "min": 5.5497,
+    "max": 188.4788
+   },
+   "non_null_fields": {
+    "episode": 16,
+    "t_end": 16,
+    "mode": 16,
+    "t_start": 15,
+    "success": 15,
+    "failure": 14,
+    "brick_xy_est": 14,
+    "shape": 7,
+    "grip_closed": 6,
+    "task": 2,
+    "plate": 2,
+    "label": 2,
+    "decision_conf": 2,
+    "decision_reasons": 2,
+    "colour": 2
+   }
+  }
+ },
+ "ovbench": {
+  "source": "work/P4-OVBENCH/E1/bench.tsv",
+  "metrics_source": "work/P4-OVBENCH/E1/metrics.json",
+  "rows": 30,
+  "status_counts": {
+   "ok": 22,
+   "": 8
+  },
+  "rows_with_error_text": 8,
+  "parity_counts": {
+   "ok": 9,
+   "deviates": 4,
+   "no parity": 4,
+   "placeholder?": 5,
+   "not run": 8
+  },
+  "table": [
+   {
+    "tag": "act_fp16",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "118.594",
+    "call_p50_ms": "118.594",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "act_fp16",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "3.925",
+    "call_p50_ms": "3.925",
+    "parity_max_abs_vs_cpu": "48.8281",
+    "parity_max_rel": "0.848853",
+    "error": "",
+    "parity": "deviates"
+   },
+   {
+    "tag": "act_fp16",
+    "device": "NPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "7.902",
+    "call_p50_ms": "7.902",
+    "parity_max_abs_vs_cpu": "48.8549",
+    "parity_max_rel": "0.849318",
+    "error": "",
+    "parity": "deviates"
+   },
+   {
+    "tag": "act_fp16_cpu_f32",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "188.32",
+    "call_p50_ms": "188.32",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "act_fp32",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "129.697",
+    "call_p50_ms": "129.697",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "act_fp32",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "17.09",
+    "call_p50_ms": "17.09",
+    "parity_max_abs_vs_cpu": "0.000114441",
+    "parity_max_rel": "1.45377e-06",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "act_ovrun",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "4.312",
+    "call_p50_ms": "4.312",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "no parity"
+   },
+   {
+    "tag": "anom_padim",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "34.86",
+    "call_p50_ms": "34.86",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "anom_padim",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "3.008",
+    "call_p50_ms": "3.008",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "1",
+    "error": "",
+    "parity": "placeholder?"
+   },
+   {
+    "tag": "anom_padim",
+    "device": "NPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "12.506",
+    "call_p50_ms": "12.506",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "1",
+    "error": "",
+    "parity": "placeholder?"
+   },
+   {
+    "tag": "anom_padim_b1",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "31.051",
+    "call_p50_ms": "31.051",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "",
+    "parity": "ok"
+   },
+   {
+    "tag": "anom_padim_b1",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "3.7",
+    "call_p50_ms": "3.7",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "1",
+    "error": "",
+    "parity": "placeholder?"
+   },
+   {
+    "tag": "anom_padim_b1",
+    "device": "NPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "16.883",
+    "call_p50_ms": "16.883",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "1",
+    "error": "",
+    "parity": "placeholder?"
+   },
+   {
+    "tag": "anom_padim_f32hint",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "1",
+    "per_image_p50_ms": "16.621",
+    "call_p50_ms": "16.621",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "no parity"
+   },
+   {
+    "tag": "anom_patchcore",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "183.561",
+    "call_p50_ms": "367.122",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "ok"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_patchcore",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "10.6335",
+    "call_p50_ms": "21.267",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "1",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "placeholder?"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_patchcore",
+    "device": "NPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "73.29",
+    "call_p50_ms": "146.58",
+    "parity_max_abs_vs_cpu": "0.00292122",
+    "parity_max_rel": "0.00292122",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "ok"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_patchcore_f32hint",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "39.8445",
+    "call_p50_ms": "79.689",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "no parity"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_pre_close",
+    "device": "CPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "128.811",
+    "call_p50_ms": "257.622",
+    "parity_max_abs_vs_cpu": "0",
+    "parity_max_rel": "0",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "ok"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_pre_close",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "5.0515",
+    "call_p50_ms": "10.103",
+    "parity_max_abs_vs_cpu": "1",
+    "parity_max_rel": "0.00220329",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "deviates"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_pre_close",
+    "device": "NPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "20.4235",
+    "call_p50_ms": "40.847",
+    "parity_max_abs_vs_cpu": "243.474",
+    "parity_max_rel": "0.536444",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "deviates"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   },
+   {
+    "tag": "anom_pre_close_f32hint",
+    "device": "GPU",
+    "status": "ok",
+    "native_batch": "2",
+    "per_image_p50_ms": "39.1865",
+    "call_p50_ms": "78.373",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:",
+    "parity": "no parity"
+   },
+   {
+    "tag": "While validating node 'opset1::Conc",
+    "device": "",
+    "status": "",
+    "native_batch": "",
+    "per_image_p50_ms": "",
+    "call_p50_ms": "",
+    "parity_max_abs_vs_cpu": "",
+    "parity_max_rel": "",
+    "error": "",
+    "parity": "not run"
+   }
+  ],
+  "best_parity_ok_without_error": {
+   "device": "GPU",
+   "tag": "act_fp32",
+   "per_image_p50_ms": "17.09"
+  },
+  "metrics_json_flat": [
+   [
+    "delta",
+    null
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp16.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp16.per_image_p50_ms",
+    3.925
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp16_cpu_f32.device",
+    "CPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp16_cpu_f32.per_image_p50_ms",
+    188.32
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp32.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_fp32.per_image_p50_ms",
+    17.09
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_ovrun.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.act_ovrun.per_image_p50_ms",
+    4.312
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim.per_image_p50_ms",
+    3.008
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim_b1.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim_b1.per_image_p50_ms",
+    3.7
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim_f32hint.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_padim_f32hint.per_image_p50_ms",
+    16.621
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_patchcore.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_patchcore.per_image_p50_ms",
+    10.6335
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_patchcore_f32hint.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_patchcore_f32hint.per_image_p50_ms",
+    39.8445
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_pre_close.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_pre_close.per_image_p50_ms",
+    5.0515
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_pre_close_f32hint.device",
+    "GPU"
+   ],
+   [
+    "metrics.best_device_by_per_image_p50.anom_pre_close_f32hint.per_image_p50_ms",
+    39.1865
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.call_p50_ms",
+    118.594
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.compile_cold_s",
+    0.582
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.first_infer_s",
+    0.094
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.images_per_s",
+    10.35
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.per_image_p50_ms",
+    118.594
+   ],
+   [
+    "metrics.per_tag.act_fp16.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.call_p50_ms",
+    3.925
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.compile_cold_s",
+    1.11
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.first_infer_s",
+    0.0086
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.images_per_s",
+    210.71
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.per_image_p50_ms",
+    3.925
+   ],
+   [
+    "metrics.per_tag.act_fp16.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.call_p50_ms",
+    7.902
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.compile_cold_s",
+    2.556
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.first_infer_s",
+    0.025
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.images_per_s",
+    112.86
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.per_image_p50_ms",
+    7.902
+   ],
+   [
+    "metrics.per_tag.act_fp16.NPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.call_p50_ms",
+    188.32
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.compile_cold_s",
+    1.001
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.first_infer_s",
+    0.3034
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.images_per_s",
+    5.32
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.per_image_p50_ms",
+    188.32
+   ],
+   [
+    "metrics.per_tag.act_fp16_cpu_f32.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.call_p50_ms",
+    129.697
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.compile_cold_s",
+    0.936
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.first_infer_s",
+    0.3093
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.images_per_s",
+    6.25
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.per_image_p50_ms",
+    129.697
+   ],
+   [
+    "metrics.per_tag.act_fp32.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.call_p50_ms",
+    17.09
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.compile_cold_s",
+    5.562
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.first_infer_s",
+    0.0247
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.images_per_s",
+    60.08
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.per_image_p50_ms",
+    17.09
+   ],
+   [
+    "metrics.per_tag.act_fp32.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.call_p50_ms",
+    4.312
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.compile_cold_s",
+    1.392
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.first_infer_s",
+    0.011
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.images_per_s",
+    228.03
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.per_image_p50_ms",
+    4.312
+   ],
+   [
+    "metrics.per_tag.act_ovrun.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.call_p50_ms",
+    34.86
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.compile_cold_s",
+    0.075
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.first_infer_s",
+    0.0278
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.images_per_s",
+    32.0
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.per_image_p50_ms",
+    34.86
+   ],
+   [
+    "metrics.per_tag.anom_padim.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.call_p50_ms",
+    3.008
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.compile_cold_s",
+    0.27
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.first_infer_s",
+    0.0049
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.images_per_s",
+    334.08
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.per_image_p50_ms",
+    3.008
+   ],
+   [
+    "metrics.per_tag.anom_padim.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.call_p50_ms",
+    12.506
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.compile_cold_s",
+    0.027
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.first_infer_s",
+    0.0339
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.images_per_s",
+    91.3
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.per_image_p50_ms",
+    12.506
+   ],
+   [
+    "metrics.per_tag.anom_padim.NPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.call_p50_ms",
+    31.051
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.compile_cold_s",
+    0.096
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.first_infer_s",
+    0.0577
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.images_per_s",
+    21.82
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.per_image_p50_ms",
+    31.051
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.call_p50_ms",
+    3.7
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.compile_cold_s",
+    0.397
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.first_infer_s",
+    0.0095
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.images_per_s",
+    291.97
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.per_image_p50_ms",
+    3.7
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.call_p50_ms",
+    16.883
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.compile_cold_s",
+    0.076
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.first_infer_s",
+    0.0754
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.images_per_s",
+    62.97
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.per_image_p50_ms",
+    16.883
+   ],
+   [
+    "metrics.per_tag.anom_padim_b1.NPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.call_p50_ms",
+    16.621
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.compile_cold_s",
+    2.505
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.first_infer_s",
+    0.0221
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.images_per_s",
+    50.76
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.native_batch",
+    1
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.per_image_p50_ms",
+    16.621
+   ],
+   [
+    "metrics.per_tag.anom_padim_f32hint.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.call_p50_ms",
+    367.122
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.compile_cold_s",
+    0.392
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.first_infer_s",
+    0.4322
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.images_per_s",
+    6.58
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.native_batch",
+    2
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.per_image_p50_ms",
+    183.561
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.CPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.call_p50_ms",
+    21.267
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.compile_cold_s",
+    0.981
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.first_infer_s",
+    0.0217
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.images_per_s",
+    95.6
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.native_batch",
+    2
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.per_image_p50_ms",
+    10.6335
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.call_p50_ms",
+    146.58
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.compile_cold_s",
+    0.044
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.first_infer_s",
+    0.2583
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.images_per_s",
+    12.84
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.native_batch",
+    2
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.per_image_p50_ms",
+    73.29
+   ],
+   [
+    "metrics.per_tag.anom_patchcore.NPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.call_p50_ms",
+    79.689
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.compile_cold_s",
+    2.981
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.first_infer_s",
+    0.0672
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.images_per_s",
+    25.0
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.native_batch",
+    2
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.per_image_p50_ms",
+    39.8445
+   ],
+   [
+    "metrics.per_tag.anom_patchcore_f32hint.GPU.status",
+    "ok"
+   ],
+   [
+    "metrics.per_tag.anom_pre_close.CPU.call_p50_ms",
+    257.622
+   ]
+  ]
+ },
+ "tape": {
+  "metrics_source": "work/P3-TAPE-EVAL/E2/metrics.json",
+  "thresholds_source": "app/anomaly/det2_f2/models/tape_thresholds.json",
+  "thresholds": [
+   [
+    "calibrated_on",
+    "Opus close labels, singles only (in-sample; LOO reported)"
+   ],
+   [
+    "defect",
+    0.0178
+   ],
+   [
+    "good",
+    0.0089
+   ],
+   [
+    "rule",
+    "close-view tape_frac: dark (V 50-130, S<90), textured (5x5 V std > 4) pixels inside the silhouette, over silhouette area"
+   ],
+   [
+    "s_max",
+    90
+   ],
+   [
+    "tex_sd",
+    4.0
+   ],
+   [
+    "v_band[0]",
+    50
+   ],
+   [
+    "v_band[1]",
+    130
+   ]
+  ],
+  "auroc_or_loo_keys": [],
+  "values_within_0.0005_of_0.966": [],
+  "raw_0966_line_numbers": [],
+  "metrics_flat_head": [
+   [
+    "app_head_at_copy",
+    "bbaf99a (working tree copied 20:48Z)"
+   ],
+   [
+    "delta_vs_base.p1.ours_close_correct",
+    2
+   ],
+   [
+    "delta_vs_base.p1.ours_close_decided",
+    2
+   ],
+   [
+    "delta_vs_base.p1.ours_close_uncertain",
+    -2
+   ],
+   [
+    "delta_vs_base.p1.routing_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p1.routing_truth_known_replicated",
+    0
+   ],
+   [
+    "delta_vs_base.p1.shape_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p1.shape_n",
+    0
+   ],
+   [
+    "delta_vs_base.p1.studio_close_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p1.studio_close_decided",
+    0
+   ],
+   [
+    "delta_vs_base.p1.studio_close_not_located",
+    0
+   ],
+   [
+    "delta_vs_base.p1.studio_close_uncertain",
+    0
+   ],
+   [
+    "delta_vs_base.p12.ours_close_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p12.ours_close_decided",
+    0
+   ],
+   [
+    "delta_vs_base.p12.ours_close_uncertain",
+    0
+   ],
+   [
+    "delta_vs_base.p12.routing_correct",
+    -2
+   ],
+   [
+    "delta_vs_base.p12.routing_truth_known_replicated",
+    -2
+   ],
+   [
+    "delta_vs_base.p12.shape_correct",
+    -2
+   ],
+   [
+    "delta_vs_base.p12.shape_n",
+    -2
+   ],
+   [
+    "delta_vs_base.p12.studio_close_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p12.studio_close_decided",
+    -4
+   ],
+   [
+    "delta_vs_base.p12.studio_close_not_located",
+    0
+   ],
+   [
+    "delta_vs_base.p12.studio_close_uncertain",
+    4
+   ],
+   [
+    "delta_vs_base.p2.ours_close_correct",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.ours_close_decided",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.ours_close_uncertain",
+    2
+   ],
+   [
+    "delta_vs_base.p2.routing_correct",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.routing_truth_known_replicated",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.shape_correct",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.shape_n",
+    -2
+   ],
+   [
+    "delta_vs_base.p2.studio_close_correct",
+    0
+   ],
+   [
+    "delta_vs_base.p2.studio_close_decided",
+    -4
+   ],
+   [
+    "delta_vs_base.p2.studio_close_not_located",
+    0
+   ],
+   [
+    "delta_vs_base.p2.studio_close_uncertain",
+    4
+   ],
+   [
+    "leave_one_episode_out",
+    "not required: no threshold or parameter was fitted; p1 radius 130 px chosen once, not tuned on this set"
+   ],
+   [
+    "patches.p1",
+    "patches/p1_sort_loop_jaw_anchored.patch (jaw-anchored fallback in sort_loop.close_verdict)"
+   ],
+   [
+    "patches.p12",
+    "p1 + p2 (app_p12)"
+   ],
+   [
+    "patches.p2",
+    "patches/p2_inspector_merged_tape.patch (merged blob tape not attributable in inspector.triage)"
+   ],
+   [
+    "previous.ours_close_correct",
+    7
+   ],
+   [
+    "previous.ours_close_decided",
+    7
+   ],
+   [
+    "previous.stage",
+    "tape-eval-v1"
+   ],
+   [
+    "scope",
+    "close-view tape (ours 23 views, Studio close 115 frames per brick), routing + shape (ours, 6 replicable episodes), wrist used for shape only; top view not used by the decision code"
+   ],
+   [
+    "stage",
+    "tape-eval-v1"
+   ],
+   [
+    "utc",
+    "2026-11-14T21:00Z"
+   ],
+   [
+    "variants.base.ours_close_accuracy_ci95[0]",
+    0.6457
+   ],
+   [
+    "variants.base.ours_close_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.base.ours_close_correct",
+    7
+   ],
+   [
+    "variants.base.ours_close_decided",
+    7
+   ],
+   [
+    "variants.base.ours_close_uncertain",
+    16
+   ],
+   [
+    "variants.base.routing_accuracy_ci95[0]",
+    0.6097
+   ],
+   [
+    "variants.base.routing_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.base.routing_correct",
+    6
+   ],
+   [
+    "variants.base.routing_not_replicable[0]",
+    "any_1731/ep_0001"
+   ],
+   [
+    "variants.base.routing_not_replicable[1]",
+    "any_1731/ep_0002"
+   ],
+   [
+    "variants.base.routing_not_replicable[2]",
+    "any_1740/ep_0004"
+   ],
+   [
+    "variants.base.routing_not_replicable[3]",
+    "any_1740/ep_0007"
+   ],
+   [
+    "variants.base.routing_not_replicable[4]",
+    "any_1740/ep_0013"
+   ],
+   [
+    "variants.base.routing_truth_known_replicated",
+    6
+   ],
+   [
+    "variants.base.shape_correct",
+    6
+   ],
+   [
+    "variants.base.shape_n",
+    6
+   ],
+   [
+    "variants.base.studio_close_correct",
+    10
+   ],
+   [
+    "variants.base.studio_close_decided",
+    14
+   ],
+   [
+    "variants.base.studio_close_not_located",
+    86
+   ],
+   [
+    "variants.base.studio_close_uncertain",
+    101
+   ],
+   [
+    "variants.p1.ours_close_accuracy_ci95[0]",
+    0.7008
+   ],
+   [
+    "variants.p1.ours_close_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p1.ours_close_correct",
+    9
+   ],
+   [
+    "variants.p1.ours_close_decided",
+    9
+   ],
+   [
+    "variants.p1.ours_close_uncertain",
+    14
+   ],
+   [
+    "variants.p1.routing_accuracy_ci95[0]",
+    0.6097
+   ],
+   [
+    "variants.p1.routing_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p1.routing_correct",
+    6
+   ],
+   [
+    "variants.p1.routing_not_replicable[0]",
+    "any_1731/ep_0001"
+   ],
+   [
+    "variants.p1.routing_not_replicable[1]",
+    "any_1731/ep_0002"
+   ],
+   [
+    "variants.p1.routing_not_replicable[2]",
+    "any_1740/ep_0004"
+   ],
+   [
+    "variants.p1.routing_not_replicable[3]",
+    "any_1740/ep_0007"
+   ],
+   [
+    "variants.p1.routing_not_replicable[4]",
+    "any_1740/ep_0013"
+   ],
+   [
+    "variants.p1.routing_truth_known_replicated",
+    6
+   ],
+   [
+    "variants.p1.shape_correct",
+    6
+   ],
+   [
+    "variants.p1.shape_n",
+    6
+   ],
+   [
+    "variants.p1.studio_close_correct",
+    10
+   ],
+   [
+    "variants.p1.studio_close_decided",
+    14
+   ],
+   [
+    "variants.p1.studio_close_not_located",
+    86
+   ],
+   [
+    "variants.p1.studio_close_uncertain",
+    101
+   ],
+   [
+    "variants.p12.ours_close_accuracy_ci95[0]",
+    0.6457
+   ],
+   [
+    "variants.p12.ours_close_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p12.ours_close_correct",
+    7
+   ],
+   [
+    "variants.p12.ours_close_decided",
+    7
+   ],
+   [
+    "variants.p12.ours_close_uncertain",
+    16
+   ],
+   [
+    "variants.p12.routing_accuracy_ci95[0]",
+    0.5101
+   ],
+   [
+    "variants.p12.routing_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p12.routing_correct",
+    4
+   ],
+   [
+    "variants.p12.routing_not_replicable[0]",
+    "any_1731/ep_0001"
+   ],
+   [
+    "variants.p12.routing_not_replicable[1]",
+    "any_1731/ep_0002"
+   ],
+   [
+    "variants.p12.routing_not_replicable[2]",
+    "any_1740/ep_0004"
+   ],
+   [
+    "variants.p12.routing_not_replicable[3]",
+    "any_1740/ep_0006"
+   ],
+   [
+    "variants.p12.routing_not_replicable[4]",
+    "any_1740/ep_0007"
+   ],
+   [
+    "variants.p12.routing_not_replicable[5]",
+    "any_1740/ep_0013"
+   ],
+   [
+    "variants.p12.routing_not_replicable[6]",
+    "any_1740/ep_0017"
+   ],
+   [
+    "variants.p12.routing_truth_known_replicated",
+    4
+   ],
+   [
+    "variants.p12.shape_correct",
+    4
+   ],
+   [
+    "variants.p12.shape_n",
+    4
+   ],
+   [
+    "variants.p12.studio_close_correct",
+    10
+   ],
+   [
+    "variants.p12.studio_close_decided",
+    10
+   ],
+   [
+    "variants.p12.studio_close_not_located",
+    86
+   ],
+   [
+    "variants.p12.studio_close_uncertain",
+    105
+   ],
+   [
+    "variants.p2.ours_close_accuracy_ci95[0]",
+    0.5655
+   ],
+   [
+    "variants.p2.ours_close_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p2.ours_close_correct",
+    5
+   ],
+   [
+    "variants.p2.ours_close_decided",
+    5
+   ],
+   [
+    "variants.p2.ours_close_uncertain",
+    18
+   ],
+   [
+    "variants.p2.routing_accuracy_ci95[0]",
+    0.5101
+   ],
+   [
+    "variants.p2.routing_accuracy_ci95[1]",
+    1.0
+   ],
+   [
+    "variants.p2.routing_correct",
+    4
+   ],
+   [
+    "variants.p2.routing_not_replicable[0]",
+    "any_1731/ep_0001"
+   ],
+   [
+    "variants.p2.routing_not_replicable[1]",
+    "any_1731/ep_0002"
+   ],
+   [
+    "variants.p2.routing_not_replicable[2]",
+    "any_1740/ep_0004"
+   ],
+   [
+    "variants.p2.routing_not_replicable[3]",
+    "any_1740/ep_0006"
+   ],
+   [
+    "variants.p2.routing_not_replicable[4]",
+    "any_1740/ep_0007"
+   ],
+   [
+    "variants.p2.routing_not_replicable[5]",
+    "any_1740/ep_0013"
+   ],
+   [
+    "variants.p2.routing_not_replicable[6]",
+    "any_1740/ep_0017"
+   ],
+   [
+    "variants.p2.routing_truth_known_replicated",
+    4
+   ],
+   [
+    "variants.p2.shape_correct",
+    4
+   ],
+   [
+    "variants.p2.shape_n",
+    4
+   ],
+   [
+    "variants.p2.studio_close_correct",
+    10
+   ],
+   [
+    "variants.p2.studio_close_decided",
+    10
+   ],
+   [
+    "variants.p2.studio_close_not_located",
+    86
+   ],
+   [
+    "variants.p2.studio_close_uncertain",
+    105
+   ]
+  ]
+ },
+ "hand": {
+  "labels_source": "app/tools/tests/fixtures/hand_labels.csv",
+  "handdet_source": "app/tools/handdet.py",
+  "rows": 41,
+  "label_counts": {
+   "hand_outside": 1,
+   "nohand": 23,
+   "hand": 17
+  },
+  "positive_labels": [
+   "hand"
+  ],
+  "confusion": {
+   "ALL": {
+    "n": 41,
+    "tp": 17,
+    "fp": 14,
+    "fn": 0,
+    "tn": 10,
+    "accuracy": 0.6585,
+    "precision": 0.5484,
+    "recall": 1.0
+   },
+   "close": {
+    "n": 9,
+    "tp": 2,
+    "fp": 0,
+    "fn": 0,
+    "tn": 7,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "top": {
+    "n": 17,
+    "tp": 15,
+    "fp": 0,
+    "fn": 0,
+    "tn": 2,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+   },
+   "wrist": {
+    "n": 15,
+    "tp": 0,
+    "fp": 14,
+    "fn": 0,
+    "tn": 1,
+    "accuracy": 0.0667,
+    "precision": 0.0,
+    "recall": null
+   }
+  },
+  "misses": [
+   {
+    "file": "estop_wrist_1794679388.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679389.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679390.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679391.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679392.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679393.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679394.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679395.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679396.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679397.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679398.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679399.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679401.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   },
+   {
+    "file": "estop_wrist_1794679402.jpg",
+    "view": "wrist",
+    "label": "nohand",
+    "holding": true,
+    "predicted": true
+   }
+  ],
+  "errors": []
+ },
+ "telemetry": {
+  "source": "logs/telemetry/20261114.jsonl",
+  "rows": 26160,
+  "unparsed_lines": 0,
+  "key_counts": {
+   "t": 26160,
+   "epoch": 26160,
+   "pkg_w": 26160,
+   "temp_c": 26160,
+   "cpu_util": 26160,
+   "gpu": 26160,
+   "npu": 26160,
+   "mem": 26160,
+   "bat": 26160,
+   "ac_online": 26160,
+   "src": 26160
+  },
+  "numeric_stats": {
+   "ac_online": {
+    "n": 26160,
+    "mean": 1.0,
+    "median": 1.0,
+    "p90": 1.0,
+    "min": 1.0,
+    "max": 1.0
+   },
+   "cpu_util": {
+    "n": 26159,
+    "mean": 0.4098,
+    "median": 0.33,
+    "p90": 0.9703,
+    "min": 0.0044,
+    "max": 0.9944
+   },
+   "epoch": {
+    "n": 26160,
+    "mean": 1794680614.2692,
+    "median": 1794680614.269,
+    "p90": 1794691077.869,
+    "min": 1794667534.769,
+    "max": 1794693693.769
+   }
+  },
+  "time_key_first_last": {
+   "t": [
+    "2026-11-14T14:45:34.768Z",
+    "2026-11-14T22:01:33.768Z"
+   ]
+  }
+ },
+ "hand_watch": {
+  "source": "logs/monitor/hand_watch.log",
+  "lines": 10794,
+  "first_word_top": {
+   "HAND": 10751,
+   "far": 43
+  },
+  "first_timestamp": null,
+  "last_timestamp": null
+ }
+}

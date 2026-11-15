@@ -1,0 +1,123 @@
+{
+ "tag": "anom_patchcore",
+ "kind": "anomaly",
+ "xml": "/home/intel/intel-junction-2026/work/P4-OVBENCH/E1/models_fp16/anom_patchcore.xml",
+ "device": "NPU",
+ "gpu_hint": null,
+ "ov_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "omp_num_threads": "4",
+ "utc_start": "2026-11-14T21:13:00Z",
+ "load_before": [
+  "13.06",
+  "14.12",
+  "13.07"
+ ],
+ "error": null,
+ "status": "ok",
+ "available_devices": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "device_name": "Intel(R) AI Boost",
+ "xml_element_types": {
+  "f16": 103,
+  "f32": 4
+ },
+ "reshape_to_batch1_error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Conc",
+ "inputs": [
+  {
+   "name": "input",
+   "shape": "[2,3,256,256]",
+   "type": "<Type: 'float32'>"
+  }
+ ],
+ "outputs": [
+  {
+   "name": "pred_score",
+   "shape": "[2]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_label",
+   "shape": "[2]",
+   "type": "<Type: 'char'>"
+  },
+  {
+   "name": "anomaly_map",
+   "shape": "[2,1,256,256]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_mask",
+   "shape": "[2,1,256,256]",
+   "type": "<Type: 'char'>"
+  }
+ ],
+ "config": {},
+ "compile_cold_s": 0.044,
+ "native_batch": 2,
+ "input_source": "recorded snapshots",
+ "n_samples": 8,
+ "first_infer_s": 0.2583,
+ "compile_plus_first_infer_s": 0.302,
+ "latency_ms": {
+  "n": 189,
+  "p50": 146.58,
+  "p90": 193.889,
+  "p99": 206.721,
+  "mean": 158.909,
+  "min": 142.973,
+  "max": 207.584
+ },
+ "per_image_p50_ms": 73.29,
+ "async": {
+  "nireq": 4,
+  "started": 69,
+  "done": 69,
+  "window_s": 10.75,
+  "fps": 6.42
+ },
+ "images_per_s": 12.84,
+ "busy": {
+  "window_s": 40.785,
+  "cpu_cores_avg": 0.01,
+  "npu_busy_pct": 99.69,
+  "gpu_gt0_busy_pct": 60.16
+ },
+ "scores": {
+  "pred_score": [
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ },
+ "output_names": [
+  "pred_score",
+  "pred_label",
+  "anomaly_map",
+  "pred_mask"
+ ],
+ "compile_cache_write_s": 10.978,
+ "compile_cache_read_s": 0.036,
+ "cache_mb": 105.6,
+ "load_after": [
+  "12.09",
+  "13.71",
+  "13.00"
+ ],
+ "utc_end": "2026-11-14T21:13:58Z"
+}

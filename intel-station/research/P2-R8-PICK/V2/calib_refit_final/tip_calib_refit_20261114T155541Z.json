@@ -1,0 +1,112 @@
+{
+  "source": "/home/intel/intel-junction-2026/work/P2-R8-PICK/V2/calib_dry_final/tip_calib_dry_run_20261114T155513Z.json",
+  "result": {
+    "status": "PASS",
+    "usable": 40,
+    "anchors": 0,
+    "homography_table_to_px": [
+      [
+        19.447503177034193,
+        -960.3212105916504,
+        313.3120205491383
+      ],
+      [
+        967.5235665502079,
+        -2.877207786089073,
+        32.65999127939793
+      ],
+      [
+        0.25224756827156264,
+        -0.12181490655345208,
+        1.0
+      ]
+    ],
+    "offsets_normalized_units": {
+      "shoulder_pan": 1.5447585252081253,
+      "shoulder_lift": -19.02791515065529,
+      "elbow_flex": 0.7339559537629897,
+      "wrist_flex": 8.205053705701161,
+      "wrist_roll": 36.26856986469173
+    },
+    "zero_shift_rad": {
+      "shoulder_pan": 0.027506270382805762,
+      "shoulder_lift": -0.33107792372545064,
+      "elbow_flex": 0.012410164966569616,
+      "wrist_flex": 0.14849277917393744,
+      "wrist_roll": 1.0642847444687378
+    },
+    "in_sample_px_rms": 0.6327956004869723,
+    "in_sample_px_max": 1.080783895371776,
+    "loo_rms_mm": 0.858917476205843,
+    "loo_median_mm": 0.7082647346829751,
+    "loo_max_mm": 1.5750370907877074,
+    "loo_gate_mm": 10.0,
+    "loo_per_sample_mm": [
+      0.2647197047014721,
+      0.5696139843819586,
+      0.15874691293086868,
+      0.9041987361472378,
+      0.9090818647741272,
+      0.29629070880224595,
+      1.0724416319856729,
+      0.7328921071951365,
+      0.5333363931191136,
+      0.6541570941868233,
+      0.7625076668376352,
+      0.4771197866158306,
+      0.398871292724926,
+      1.1617309269404847,
+      0.49096567516314177,
+      0.8953293206765927,
+      0.16859311969407106,
+      0.5619750992798753,
+      0.700764414922824,
+      0.6078858272822601,
+      1.0577360695372877,
+      0.7746468283657718,
+      0.514897706487976,
+      1.1903735274893485,
+      1.2933347869741918,
+      0.8549571555207871,
+      0.17001152905998343,
+      1.1780843078023646,
+      1.434504767461612,
+      0.47819580712839344,
+      0.7157650544431263,
+      0.9506176648126171,
+      0.3885232255056183,
+      1.326690261902305,
+      1.4353561327227125,
+      0.6104711648847687,
+      0.5370343822685026,
+      1.3780669669955143,
+      0.6760339295140653,
+      1.5750370907877074
+    ],
+    "tip_z_m_mean": 0.10174116218993619,
+    "tip_z_m_std": 0.015153732592782168,
+    "identifiability": {
+      "shoulder_pan": {
+        "outside_homography_span": 6.089586074611265e-08,
+        "identifiable": false
+      },
+      "shoulder_lift": {
+        "outside_homography_span": 0.2679787179076156,
+        "identifiable": true
+      },
+      "elbow_flex": {
+        "outside_homography_span": 0.07987292798658775,
+        "identifiable": true
+      },
+      "wrist_flex": {
+        "outside_homography_span": 0.08229274542875707,
+        "identifiable": true
+      },
+      "wrist_roll": {
+        "outside_homography_span": 0.0017357955209701885,
+        "identifiable": true
+      }
+    },
+    "scope": "XY pixel consistency at the single calibration height only. The gate does not validate the per-joint offsets: offsets that move the tip only in z are not observed by a top camera at one height (dry run: gate PASS with wrong offsets). Do not apply the offsets to grasp-height IK without a second height or an independent check."
+  }
+}

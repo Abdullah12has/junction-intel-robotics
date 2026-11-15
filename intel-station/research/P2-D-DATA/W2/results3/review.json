@@ -1,0 +1,74 @@
+{
+ "6d6bdce3-b382-478d-9697-fb9e573b97af": {
+  "0": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed-on-brick median 2.48 (gripper evidence; 320px thumbnails inconclusive)"
+  },
+  "1": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.29 (gripper evidence)"
+  },
+  "2": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.55 (gripper evidence)"
+  },
+  "3": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "none",
+   "release_clear": "yes",
+   "notes": "OD-9 put-down on the mat (gripper not over either plate at release); spot candidate; return home present except ep4"
+  },
+  "4": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "none",
+   "release_clear": "yes",
+   "notes": "OD-9 put-down on the mat (gripper not over either plate at release); spot candidate; return home present except ep4"
+  },
+  "5": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "none",
+   "release_clear": "yes",
+   "notes": "OD-9 put-down on the mat (gripper not over either plate at release); spot candidate; return home present except ep4"
+  },
+  "6": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "none",
+   "release_clear": "yes",
+   "notes": "OD-9 put-down on the mat (gripper not over either plate at release); spot candidate; return home present except ep4"
+  },
+  "7": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "blue",
+   "release_clear": "yes",
+   "notes": "top view at release (t=40.40 s): gripper above the blue plate; no return to rest inside episode"
+  },
+  "8": {
+   "brick_held_at_s1cut": "na",
+   "plate": "blue",
+   "release_clear": "yes",
+   "notes": "starts with brick held; rest frame shows brick on blue plate (release frame not viewed)"
+  },
+  "9": {
+   "brick_held_at_s1cut": "no",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "closed median 0.98 (jaw closed with no brick); no release"
+  },
+  "10": {
+   "brick_held_at_s1cut": "na",
+   "plate": "green",
+   "release_clear": "yes",
+   "notes": "starts with brick held; gripper over green plate at release; orange brick already on blue plate at start"
+  }
+ },
+ "_scene_notes": [
+  "Top camera 243622061421: blue plate upper-left (centre about 242,150 px), green plate upper-right (about 578,182 px); mat bricks clustered in the centre.",
+  "An orange brick already sits on the blue plate in ep10 at start; ep8 rest frame shows a brick on the blue plate."
+ ]
+}

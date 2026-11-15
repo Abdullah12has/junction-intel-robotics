@@ -1,0 +1,44 @@
+{
+ "checked_utc": "2026-11-14T19:45:13Z",
+ "root": "/home/intel/intel-junction-2026/twin/data",
+ "dirs": {
+  "calib": {
+   "exists": true,
+   "files": 0,
+   "bytes": 0,
+   "examples": []
+  },
+  "model": {
+   "exists": true,
+   "files": 0,
+   "bytes": 0,
+   "examples": []
+  },
+  "captures": {
+   "exists": true,
+   "files": 0,
+   "bytes": 0,
+   "examples": []
+  },
+  "episodes/raw": {
+   "exists": true,
+   "files": 0,
+   "bytes": 0,
+   "examples": []
+  },
+  "episodes/lerobot": {
+   "exists": true,
+   "files": 0,
+   "bytes": 0,
+   "examples": []
+  }
+ },
+ "code_py_files_under_app_twin": 35,
+ "status": "EMPTY at 2026-11-14T19:45:13Z: no files in any twin data dir",
+ "columns": {
+  "camera_views": "not available (captures empty)",
+  "plate_positions": "not available (calib and model empty)",
+  "joint_units": "not available (episodes empty)",
+  "episode_recordings": "not available (episodes/lerobot empty)"
+ }
+}

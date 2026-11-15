@@ -1,0 +1,97 @@
+{
+ "tag": "act_fp32",
+ "kind": "act",
+ "xml": "/home/intel/intel-junction-2026/work/P2-B-OPT/E1/models/389da0fd/act.xml",
+ "device": "CPU",
+ "gpu_hint": null,
+ "ov_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "omp_num_threads": "4",
+ "utc_start": "2026-11-14T21:42:20Z",
+ "load_before": [
+  "10.43",
+  "10.75",
+  "11.25"
+ ],
+ "error": null,
+ "status": "ok",
+ "available_devices": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "device_name": "Intel(R) Core(TM) Ultra X9 388H",
+ "xml_element_types": {
+  "f16": 0,
+  "f32": 216
+ },
+ "inputs": [
+  {
+   "name": "state",
+   "shape": "[1,6]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "images.realsense 243722064316",
+   "shape": "[1,3,384,384]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "images.realsense 243622061421",
+   "shape": "[1,3,384,384]",
+   "type": "<Type: 'float32'>"
+  }
+ ],
+ "outputs": [
+  {
+   "name": "action",
+   "shape": "[1,100,6]",
+   "type": "<Type: 'float32'>"
+  }
+ ],
+ "config": {
+  "INFERENCE_NUM_THREADS": 4
+ },
+ "compile_cold_s": 0.936,
+ "native_batch": 1,
+ "input_source": "recorded snapshots",
+ "n_samples": 8,
+ "first_infer_s": 0.3093,
+ "compile_plus_first_infer_s": 1.245,
+ "latency_ms": {
+  "n": 220,
+  "p50": 129.697,
+  "p90": 182.756,
+  "p99": 225.09,
+  "mean": 136.593,
+  "min": 98.879,
+  "max": 280.281
+ },
+ "per_image_p50_ms": 129.697,
+ "async": {
+  "nireq": 4,
+  "started": 67,
+  "done": 67,
+  "window_s": 10.714,
+  "fps": 6.25
+ },
+ "images_per_s": 6.25,
+ "busy": {
+  "window_s": 40.766,
+  "cpu_cores_avg": 3.24,
+  "npu_busy_pct": 0.0,
+  "gpu_gt0_busy_pct": 28.53
+ },
+ "scores": {},
+ "output_names": [
+  "action"
+ ],
+ "compile_cache_write_s": 0.365,
+ "compile_cache_read_s": 0.339,
+ "cache_mb": 178.2,
+ "load_after": [
+  "13.00",
+  "11.36",
+  "11.43"
+ ],
+ "utc_end": "2026-11-14T21:43:08Z"
+}

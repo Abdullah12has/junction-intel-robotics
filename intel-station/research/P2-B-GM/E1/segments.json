@@ -1,0 +1,150 @@
+{
+ "blue": {
+  "plate": "blue",
+  "episode": 11,
+  "release_frame": 600,
+  "release_t_s": 20.0,
+  "end_frame": 833,
+  "end_t_s": 27.767,
+  "end_rule": "strict home: shoulder_lift within 5 of -98 and 15 frames speed < 1.0 units/s",
+  "n_waypoints": 32,
+  "waypoint_frames": [
+   600,
+   608,
+   615,
+   623,
+   630,
+   638,
+   645,
+   653,
+   660,
+   668,
+   675,
+   683,
+   690,
+   698,
+   705,
+   713,
+   720,
+   728,
+   735,
+   743,
+   750,
+   758,
+   765,
+   773,
+   780,
+   788,
+   795,
+   803,
+   810,
+   818,
+   825,
+   833
+  ],
+  "recorded_peak_joint_speed_units_s": 111.615,
+  "speed_cap_units_s": 25.0,
+  "release_pose_arm": [
+   32.0121,
+   -19.0476,
+   47.9129,
+   49.3006,
+   -40.6536
+  ],
+  "home_pose_arm": [
+   -5.2133,
+   -99.03,
+   96.3702,
+   65.9178,
+   -44.8889
+  ],
+  "yaml": "R/app/motion/gm/blue_plate.yaml"
+ },
+ "green": {
+  "plate": "green",
+  "episode": 9,
+  "release_frame": 188,
+  "release_t_s": 6.267,
+  "end_frame": 339,
+  "end_t_s": 11.3,
+  "end_rule": "RELAXED: recording end, shoulder_lift -99.03 (within 5 of -98); no 15-frame stationary dwell exists",
+  "n_waypoints": 22,
+  "waypoint_frames": [
+   188,
+   196,
+   203,
+   211,
+   218,
+   226,
+   233,
+   241,
+   248,
+   256,
+   263,
+   271,
+   278,
+   286,
+   293,
+   301,
+   308,
+   316,
+   323,
+   331,
+   338,
+   339
+  ],
+  "recorded_peak_joint_speed_units_s": 100.726,
+  "speed_cap_units_s": 25.0,
+  "release_pose_arm": [
+   -57.2598,
+   18.5185,
+   7.804,
+   36.1594,
+   -52.6797
+  ],
+  "home_pose_arm": [
+   0.2154,
+   -99.03,
+   97.0054,
+   62.1874,
+   -47.9216
+  ],
+  "yaml": "R/app/motion/gm/green_plate.yaml"
+ },
+ "green_alternates": {
+  "10": {
+   "release_frames": [
+    141
+   ],
+   "release_t_s": [
+    4.7
+   ],
+   "strict_home": null,
+   "lift_at_end": -98.677
+  },
+  "14": {
+   "release_frames": [
+    357
+   ],
+   "release_t_s": [
+    11.9
+   ],
+   "strict_home": null,
+   "lift_at_end": -98.765
+  },
+  "15": {
+   "release_frames": [
+    490
+   ],
+   "release_t_s": [
+    16.333
+   ],
+   "strict_home": null,
+   "lift_at_end": -98.677
+  }
+ },
+ "ep8_note": "release at 5.0 s over GREEN but recording ends with lift -90.1 (not within 5 of -98): excluded",
+ "ep7_note": "release at 40.367 s over BLUE but lift -9 at end: no return home: excluded",
+ "ep12_note": "release at 22.7 s over BLUE, lift in tolerance from 26.27 s, no 15-frame stationary dwell: alternate",
+ "ep13_note": "no brick hold (gripper min 11.1): no release: excluded"
+}

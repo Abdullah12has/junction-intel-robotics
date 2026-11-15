@@ -1,0 +1,43 @@
+# loop v3 spot cell rules (D-082 mode c). Read by loop.run_spot in live mode only; dry runs use the defaults in run_spot.
+# null means not set: live refuses until it is set. [unclear] marks a value no verified source fixes yet.
+version: 3
+mode: spot
+
+paths:
+  root: /home/intel/intel-junction-2026
+  logs_root: /home/intel/intel-junction-2026/logs/loop          # B7: R/logs/loop/<run_id>, current symlink
+  telemetry_dir: /home/intel/intel-junction-2026/logs/telemetry   # written by the running sampler (P2-B-OPT), B14
+  presence_flag: /home/intel/intel-junction-2026/run/HASSAN_PRESENT
+  stop_file: /home/intel/intel-junction-2026/run/SPOT_STOP        # any file here ends the run before the next segment
+  motion_dir: /home/intel/intel-junction-2026/app/motion
+  motion_python: /home/intel/intel-junction-2026/envs/motion-env/bin/python   # B8
+  loop_python: /home/intel/intel-junction-2026/envs/data-env/bin/python       # B8 (PyYAML added by Opus)
+  poses: /home/intel/intel-junction-2026/app/motion/gm/spot_fast.yaml
+  studio_export: /home/intel/intel-junction-2026/app/motion/project_robots.json
+  det2_dir: /home/intel/intel-junction-2026/app/anomaly/det2_v1   # B9: DET2 takes BGR
+
+cameras:   # [unclear] by-path colour nodes. v2 rules used video8 (top) and video14 (close); confirm RealSense
+           # serials 243622061421 (top) and 243722064316 (close) with v4l2-ctl before live.
+  top: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:2.3:1.3-video-index0
+  close: /dev/v4l/by-path/pci-0000:00:0d.0-usb-0:4.4.4:1.3-video-index0
+
+roi:   # circles in 640x480 px, no scaling (B2, B3)
+  top: {cx: 425.0, cy: 230.0, r: 45.0}     # Opus decision (B2)
+  close: null                              # B15: not measured. No still yet shows a brick at the spot.
+  blue_plate: null                         # B16: plate ROIs in the top view not measured.
+  green_plate: null
+
+grasp:   # gripper.pos in normalized units (Opus, loop_v3 brief)
+  hold_min: 1.6
+  hold_max: 4.5
+  missed_below: 1.5
+  retries: 1
+
+timing:
+  stable_s: 1.0           # brick stays in the spot ROI this long before a cycle starts
+  wait_timeout_s: 300.0   # empty spot: run ends with empty_spot_timeout
+  wait_poll_s: 0.5        # top frame poll while waiting
+  live_period_s: 0.5      # live.jpg rewrite period
+  inspect_pairs: 3        # uncertain only: extra still pairs, majority vote
+  inspect_gap_s: 0.3
+  max_cycles: 10          # [unclear] bricks per run

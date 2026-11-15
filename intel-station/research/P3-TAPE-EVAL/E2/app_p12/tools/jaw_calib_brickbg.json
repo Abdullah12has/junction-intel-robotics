@@ -1,0 +1,21 @@
+{
+ "t": "17:22:06Z",
+ "image": "../../logs/depth/servo/grip_25.jpg",
+ "jaw_tips": [
+  [
+   289.9,
+   301
+  ],
+  [
+   562.2,
+   332
+  ]
+ ],
+ "mask_px": 41198,
+ "gap_centre_x": 426.1,
+ "target_px": [
+  429.1,
+  268.0
+ ],
+ "gap_px": 272.3
+}

@@ -1,0 +1,60 @@
+{
+ "stage": "twin-dyn-v1",
+ "utc": "2026-11-14T20:35:20Z",
+ "metrics": {
+  "loeo_rmse_norm": [
+   0.2716,
+   0.8435,
+   0.8373,
+   0.326,
+   0.1841,
+   0.2433
+  ],
+  "loeo_lag_frames": [
+   1.05,
+   1.35,
+   1.35,
+   1.35,
+   0.6,
+   0.3
+  ],
+  "insample_rmse_norm_full_fit": [
+   0.2705,
+   0.8188,
+   0.8264,
+   0.3232,
+   0.1792,
+   0.2421
+  ],
+  "reference_no_dynamics_loeo_rmse_norm": [
+   0.3221,
+   1.8624,
+   2.2405,
+   0.4442,
+   0.1816,
+   0.3639
+  ],
+  "reference_no_dynamics_loeo_lag_frames": [
+   0.0,
+   0.45,
+   0.6,
+   0.0,
+   0.0,
+   0.3
+  ],
+  "g2_rmse_pass": false,
+  "g2_lag_pass": false,
+  "g2_pass": false,
+  "episodes_scored": 17,
+  "rows_scored_per_joint": [
+   21693.0,
+   21693.0,
+   21693.0,
+   21693.0,
+   21693.0,
+   16448.0
+  ]
+ },
+ "previous": null,
+ "delta": null
+}

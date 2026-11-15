@@ -1,0 +1,39 @@
+{
+ "stage": "twin-robot-v1",
+ "utc": "2026-11-14T19:52:53Z",
+ "gate": "G1",
+ "candidate": "twin_ours",
+ "rows": 21693,
+ "pass_G1": true,
+ "metrics": {
+  "pos_mm_max": 1.3651675964112226e-08,
+  "pos_mm_median": 1.2949265913101822e-08,
+  "pos_mm_p99": 1.3576094083912583e-08,
+  "ori_deg_max": 3.5715373742382802e-09,
+  "ori_deg_median": 3.3054198861276595e-09,
+  "rows_over_threshold": 0,
+  "fixed_pos_mm_max": 1.3599358297529574e-08,
+  "fixed_ori_deg_max": 3.558481831564619e-09
+ },
+ "previous": {
+  "name": "official_urdf (converter output, no meshes)",
+  "pos_mm_max": 1.3651675964112226e-08,
+  "pos_mm_median": 1.2949265913101822e-08,
+  "pos_mm_p99": 1.3576094083912583e-08,
+  "ori_deg_max": 3.5715373742382802e-09,
+  "ori_deg_median": 3.3054198861276595e-09,
+  "rows_over_threshold": 0,
+  "fixed_pos_mm_max": 1.3599358297529574e-08,
+  "fixed_ori_deg_max": 3.558481831564619e-09
+ },
+ "delta": {
+  "pos_mm_max": 0.0,
+  "pos_mm_median": 0.0,
+  "pos_mm_p99": 0.0,
+  "ori_deg_max": 0.0,
+  "ori_deg_median": 0.0,
+  "rows_over_threshold": 0,
+  "fixed_pos_mm_max": 0.0,
+  "fixed_ori_deg_max": 0.0
+ }
+}

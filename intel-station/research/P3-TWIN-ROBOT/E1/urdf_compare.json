@@ -1,0 +1,288 @@
+{
+ "our_urdf": {
+  "path": "/home/intel/intel-junction-2026/repos/edge-developer-kit-reference-scripts/samples/ai/edge-ai-demo-studio/workers/services/robotics-ai/platforms/so101/urdf/so101.urdf",
+  "sha256": "3a65d2d35e68a8d2f0c2cc176d19b884506543c93ba72980145b80abe276022c",
+  "robot": "so101_new_calib",
+  "joints": [
+   "gripper_frame_joint",
+   "gripper",
+   "wrist_roll",
+   "wrist_flex",
+   "elbow_flex",
+   "shoulder_lift",
+   "shoulder_pan"
+  ]
+ },
+ "official_urdf": {
+  "path": "/home/intel/intel-junction-2026/repos/physicalai/packages/physicalai-mujoco-plugin/urdf/so101/so101_new_calib.urdf",
+  "sha256": "11444c3ac7a174f7efd3560c03d2de8aa01a48f28df8b1506eb096c0a81b7f4e",
+  "robot": "so101_new_calib",
+  "joints": [
+   "gripper_frame_joint",
+   "gripper",
+   "wrist_roll",
+   "wrist_flex",
+   "elbow_flex",
+   "shoulder_lift",
+   "shoulder_pan"
+  ]
+ },
+ "mjcf_built": {
+  "twin": {
+   "path": "/home/intel/intel-junction-2026/sim/twin/robot/so101_twin.xml",
+   "sha256": "b6bbd07d76d23f08bb979476bc68988fee744d733bc1912337503e2aa6489e47",
+   "nbody": 8,
+   "njnt": 6,
+   "nsite": 1,
+   "ngeom": 17,
+   "mujoco": "4.0.1"
+  },
+  "official_urdf": {
+   "path": "/home/intel/intel-junction-2026/work/P3-TWIN-ROBOT/E1/official_urdf_twin.xml",
+   "sha256": "e4c4700d02dc5ebc4677474917d9af7cccd869b182004b660c880c1639fb0bdb",
+   "nbody": 8,
+   "njnt": 6,
+   "nsite": 1,
+   "ngeom": 0,
+   "mujoco": "4.0.1"
+  }
+ },
+ "compare_official_minus_ours": {
+  "joints_only_in_a": [],
+  "joints_only_in_b": [],
+  "joints": {
+   "elbow_flex": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -1.69,
+     1.69
+    ],
+    "limit_b": [
+     -1.69,
+     1.69
+    ]
+   },
+   "gripper": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -0.174533,
+     1.74533
+    ],
+    "limit_b": [
+     -0.174533,
+     1.74533
+    ]
+   },
+   "gripper_frame_joint": {
+    "type_a": "fixed",
+    "type_b": "fixed",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "axis_angle_diff_deg": null,
+    "limit_a": [
+     null,
+     null
+    ],
+    "limit_b": [
+     null,
+     null
+    ]
+   },
+   "shoulder_lift": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 1.2074182697257333e-06,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -1.74533,
+     1.74533
+    ],
+    "limit_b": [
+     -1.74533,
+     1.74533
+    ]
+   },
+   "shoulder_pan": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -1.91986,
+     1.91986
+    ],
+    "limit_b": [
+     -1.91986,
+     1.91986
+    ]
+   },
+   "wrist_flex": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -1.65806,
+     1.65806
+    ],
+    "limit_b": [
+     -1.65806,
+     1.65806
+    ]
+   },
+   "wrist_roll": {
+    "type_a": "revolute",
+    "type_b": "revolute",
+    "same_parent_child": true,
+    "origin_xyz_diff_mm": 0.0,
+    "origin_rot_diff_deg": 0.0,
+    "axis_a": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_b": [
+     0.0,
+     0.0,
+     1.0
+    ],
+    "axis_angle_diff_deg": 0.0,
+    "limit_a": [
+     -2.74385,
+     2.84121
+    ],
+    "limit_b": [
+     -2.74385,
+     2.84121
+    ]
+   }
+  },
+  "links": {
+   "base_link": {
+    "mass_a": 0.147,
+    "mass_b": 0.147,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "gripper_frame_link": {
+    "mass_a": 1e-09,
+    "mass_b": 1e-09,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "gripper_link": {
+    "mass_a": 0.087,
+    "mass_b": 0.087,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "lower_arm_link": {
+    "mass_a": 0.104,
+    "mass_b": 0.104,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "moving_jaw_so101_v1_link": {
+    "mass_a": 0.012,
+    "mass_b": 0.012,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "shoulder_link": {
+    "mass_a": 0.100006,
+    "mass_b": 0.100006,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "upper_arm_link": {
+    "mass_a": 0.103,
+    "mass_b": 0.103,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   },
+   "wrist_link": {
+    "mass_a": 0.079,
+    "mass_b": 0.079,
+    "com_diff_mm": 0.0,
+    "inertia_max_abs_diff": 0.0
+   }
+  }
+ }
+}

@@ -1,0 +1,522 @@
+{
+ "units": {
+  "pixel": "top view 640x480 (realsense 243622061421)",
+  "xy": "m, robot base frame (URDF)"
+ },
+ "fk": {
+  "urdf": "/home/intel/intel-junction-2026/repos/physicalai/packages/physicalai-so101-plugin/urdf/so101-follower/so101_follower.urdf",
+  "tcp": "gripper_frame_link",
+  "normalisation": "rad = u*(range_max-range_min)/200*2*pi/4095 (physicalai _conversion.py)"
+ },
+ "accepted_eps": [
+  0,
+  1,
+  2,
+  3,
+  5,
+  6,
+  7,
+  14
+ ],
+ "labels_px": {
+  "0": [
+   402,
+   170
+  ],
+  "1": [
+   419,
+   161
+  ],
+  "2": [
+   389,
+   152
+  ],
+  "3": [
+   405,
+   136
+  ],
+  "5": [
+   402,
+   172
+  ],
+  "6": [
+   361,
+   221
+  ],
+  "7": [
+   388,
+   141
+  ],
+  "14": [
+   423,
+   209
+  ]
+ },
+ "excluded": {
+  "4": "two candidates (yellow 400,128 and pink 383,190) both vanish at lift; cannot assign",
+  "11": "white 2x2 and red 2x2 both partly hidden at lift; label not verifiable",
+  "12": "white 2x4 and orange 2x2 both vanish at lift; occlusion by arm, label not verifiable",
+  "15": "yellow and white candidates partly occluded by cables at lift; label not verifiable",
+  "9": "gripper closed on nothing (level 0.98)",
+  "8": "start holding brick, no grasp in episode",
+  "10": "start holding brick, no grasp in episode",
+  "13": "gripper closes only to about 11, grasp missed"
+ },
+ "homography_pixel_to_xy": [
+  [
+   7.51817096,
+   6.51142386,
+   1.8371642
+  ],
+  [
+   6.03607833,
+   2.2270291,
+   -0.23130628
+  ],
+  [
+   9.81335884,
+   4.67180853,
+   1.0
+  ]
+ ],
+ "affine_pixel_to_xy": [
+  [
+   -0.00039882,
+   0.00085529
+  ],
+  [
+   0.00106793,
+   0.00029548
+  ],
+  [
+   0.14678443,
+   -0.33757197
+  ]
+ ],
+ "loo_xy_err_mm_homography": {
+  "median": 22.97,
+  "max": 231.14,
+  "per_ep": {
+   "0": 7.98,
+   "1": 18.64,
+   "2": 4.64,
+   "3": 27.29,
+   "5": 1.4,
+   "6": 129.18,
+   "7": 231.14,
+   "14": 37.74
+  }
+ },
+ "loo_xy_err_mm_affine": {
+  "median": 9.71,
+  "max": 22.64,
+  "per_ep": {
+   "0": 12.27,
+   "1": 4.86,
+   "2": 1.3,
+   "3": 10.39,
+   "5": 9.04,
+   "6": 7.43,
+   "7": 20.27,
+   "14": 22.64
+  }
+ },
+ "in_sample_xy_err_mm_homography": [
+  6.23,
+  13.82,
+  3.53,
+  6.94,
+  1.02,
+  3.54,
+  5.45,
+  4.18
+ ],
+ "known_poses": [
+  {
+   "pose": "blue_ep7_release_facts",
+   "tcp_xy_mm": [
+    187.6,
+    -87.5
+   ],
+   "pixel_homography": [
+    357.3,
+    160.8
+   ],
+   "pixel_affine": [
+    247.3,
+    130.6
+   ],
+   "class": "blue"
+  },
+  {
+   "pose": "blue_wp0_gm_fast",
+   "tcp_xy_mm": [
+    187.1,
+    -86.1
+   ],
+   "pixel_homography": [
+    357.4,
+    160.7
+   ],
+   "pixel_affine": [
+    248.8,
+    130.7
+   ],
+   "class": "blue"
+  },
+  {
+   "pose": "green_ep8_release_facts",
+   "tcp_xy_mm": [
+    171.3,
+    208.7
+   ],
+   "pixel_homography": [
+    305.1,
+    142.3
+   ],
+   "pixel_affine": [
+    558.7,
+    231.6
+   ],
+   "class": "green"
+  },
+  {
+   "pose": "green_ep9_release_facts",
+   "tcp_xy_mm": [
+    182.4,
+    248.7
+   ],
+   "pixel_homography": [
+    319.9,
+    141.3
+   ],
+   "pixel_affine": [
+    596.9,
+    256.3
+   ],
+   "class": "green"
+  },
+  {
+   "pose": "green_ep10_release_facts",
+   "tcp_xy_mm": [
+    206.8,
+    234.4
+   ],
+   "pixel_homography": [
+    324.5,
+    130.6
+   ],
+   "pixel_affine": [
+    575.2,
+    271.0
+   ],
+   "class": "green"
+  },
+  {
+   "pose": "green_wp0_gm_fast",
+   "tcp_xy_mm": [
+    194.6,
+    218.3
+   ],
+   "pixel_homography": [
+    317.5,
+    132.5
+   ],
+   "pixel_affine": [
+    561.9,
+    254.6
+   ],
+   "class": "green"
+  },
+  {
+   "pose": "home_facts_13:24",
+   "tcp_xy_mm": [
+    178.6,
+    24.3
+   ],
+   "pixel_homography": [
+    377.1,
+    165.9
+   ],
+   "pixel_affine": [
+    365.6,
+    166.3
+   ],
+   "class": "home"
+  }
+ ],
+ "pairs": [
+  {
+   "ep": 0,
+   "label_px": [
+    402,
+    170
+   ],
+   "human_tcp_xy_mm": [
+    178.5,
+    58.5
+   ],
+   "planned_xy_mm_affine": [
+    166.4,
+    56.2
+   ],
+   "xy_err_mm_homography": 7.98,
+   "xy_err_mm_affine": 12.27,
+   "ik_pos_err_mm": 1.91,
+   "joint_err_deg_abs_max": 2.66,
+   "joint_err_deg_norm": 3.64,
+   "human_norm_joints": [
+    -19.52,
+    -2.56,
+    46.01,
+    49.05,
+    -62.3
+   ],
+   "ik_norm_joints": [
+    -20.27,
+    -4.5,
+    48.76,
+    50.17,
+    -62.69
+   ]
+  },
+  {
+   "ep": 1,
+   "label_px": [
+    419,
+    161
+   ],
+   "human_tcp_xy_mm": [
+    149.7,
+    65.5
+   ],
+   "planned_xy_mm_affine": [
+    152.4,
+    69.5
+   ],
+   "xy_err_mm_homography": 18.64,
+   "xy_err_mm_affine": 4.86,
+   "ik_pos_err_mm": 0.68,
+   "joint_err_deg_abs_max": 0.95,
+   "joint_err_deg_norm": 1.77,
+   "human_norm_joints": [
+    -27.19,
+    -4.5,
+    47.37,
+    54.22,
+    -32.34
+   ],
+   "ik_norm_joints": [
+    -28.1,
+    -3.87,
+    46.38,
+    53.87,
+    -32.89
+   ]
+  },
+  {
+   "ep": 2,
+   "label_px": [
+    389,
+    152
+   ],
+   "human_tcp_xy_mm": [
+    153.0,
+    39.7
+   ],
+   "planned_xy_mm_affine": [
+    154.2,
+    40.2
+   ],
+   "xy_err_mm_homography": 4.64,
+   "xy_err_mm_affine": 1.3,
+   "ik_pos_err_mm": 0.21,
+   "joint_err_deg_abs_max": 0.29,
+   "joint_err_deg_norm": 0.37,
+   "human_norm_joints": [
+    -15.21,
+    -3.26,
+    45.37,
+    60.15,
+    -48.65
+   ],
+   "ik_norm_joints": [
+    -15.27,
+    -3.09,
+    45.07,
+    60.07,
+    -48.7
+   ]
+  },
+  {
+   "ep": 3,
+   "label_px": [
+    405,
+    136
+   ],
+   "human_tcp_xy_mm": [
+    133.6,
+    55.5
+   ],
+   "planned_xy_mm_affine": [
+    129.1,
+    46.1
+   ],
+   "xy_err_mm_homography": 27.29,
+   "xy_err_mm_affine": 10.39,
+   "ik_pos_err_mm": 1.66,
+   "joint_err_deg_abs_max": 2.96,
+   "joint_err_deg_norm": 4.65,
+   "human_norm_joints": [
+    -26.15,
+    -13.23,
+    56.35,
+    55.15,
+    -38.46
+   ],
+   "ik_norm_joints": [
+    -23.25,
+    -14.37,
+    58.15,
+    55.81,
+    -36.77
+   ]
+  },
+  {
+   "ep": 5,
+   "label_px": [
+    402,
+    172
+   ],
+   "human_tcp_xy_mm": [
+    176.1,
+    62.2
+   ],
+   "planned_xy_mm_affine": [
+    169.2,
+    56.3
+   ],
+   "xy_err_mm_homography": 1.4,
+   "xy_err_mm_affine": 9.04,
+   "ik_pos_err_mm": 1.32,
+   "joint_err_deg_abs_max": 1.92,
+   "joint_err_deg_norm": 2.9,
+   "human_norm_joints": [
+    -21.07,
+    1.59,
+    41.11,
+    52.86,
+    -60.05
+   ],
+   "ik_norm_joints": [
+    -19.94,
+    0.32,
+    43.09,
+    53.54,
+    -59.36
+   ]
+  },
+  {
+   "ep": 6,
+   "label_px": [
+    361,
+    221
+   ],
+   "human_tcp_xy_mm": [
+    238.9,
+    37.3
+   ],
+   "planned_xy_mm_affine": [
+    238.4,
+    29.9
+   ],
+   "xy_err_mm_homography": 129.18,
+   "xy_err_mm_affine": 7.43,
+   "ik_pos_err_mm": 0.3,
+   "joint_err_deg_abs_max": 2.03,
+   "joint_err_deg_norm": 2.86,
+   "human_norm_joints": [
+    -8.23,
+    32.01,
+    -2.9,
+    69.31,
+    -50.9
+   ],
+   "ik_norm_joints": [
+    -6.24,
+    31.87,
+    -2.57,
+    69.41,
+    -49.72
+   ]
+  },
+  {
+   "ep": 7,
+   "label_px": [
+    388,
+    141
+   ],
+   "human_tcp_xy_mm": [
+    132.1,
+    27.6
+   ],
+   "planned_xy_mm_affine": [
+    148.0,
+    40.2
+   ],
+   "xy_err_mm_homography": 231.14,
+   "xy_err_mm_affine": 20.27,
+   "ik_pos_err_mm": 3.42,
+   "joint_err_deg_abs_max": 3.81,
+   "joint_err_deg_norm": 7.31,
+   "human_norm_joints": [
+    -13.74,
+    -20.55,
+    62.07,
+    55.74,
+    -18.95
+   ],
+   "ik_norm_joints": [
+    -17.3,
+    -17.64,
+    58.14,
+    53.68,
+    -21.08
+   ]
+  },
+  {
+   "ep": 14,
+   "label_px": [
+    423,
+    209
+   ],
+   "human_tcp_xy_mm": [
+    195.0,
+    83.2
+   ],
+   "planned_xy_mm_affine": [
+    215.7,
+    92.3
+   ],
+   "xy_err_mm_homography": 37.74,
+   "xy_err_mm_affine": 22.64,
+   "ik_pos_err_mm": 4.04,
+   "joint_err_deg_abs_max": 5.06,
+   "joint_err_deg_norm": 5.95,
+   "human_norm_joints": [
+    -25.2,
+    22.31,
+    11.62,
+    66.68,
+    -40.65
+   ],
+   "ik_norm_joints": [
+    -24.97,
+    24.89,
+    6.39,
+    65.0,
+    -40.62
+   ]
+  }
+ ]
+}

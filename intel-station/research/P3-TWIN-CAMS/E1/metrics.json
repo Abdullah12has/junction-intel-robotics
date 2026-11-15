@@ -1,0 +1,72 @@
+{
+ "stage": "twin-cams-v1",
+ "worker": "E1",
+ "utc": "2026-11-14T20:20Z",
+ "still_windows": {
+  "segments": 383,
+  "median_duration_s": 0.91,
+  "rule": "all six joints max-min < 0.5 units over >= 0.5 s"
+ },
+ "detections": {
+  "top": {
+   "windows_with_jaws": 383,
+   "two_jaw_windows": 319,
+   "observations": 702
+  },
+  "close": {
+   "windows_with_jaws": 161,
+   "two_jaw_windows": 72,
+   "observations": 233
+  }
+ },
+ "G3": {
+  "top": "FAIL",
+  "close": "FAIL",
+  "wrist": "FAIL (in-sample 4.05 px)"
+ },
+ "best_in_sample_median_px": {
+  "top": 36.918,
+  "close": 52.659,
+  "wrist": 4.05
+ },
+ "clock_offsets_s": {
+  "top_per_event_median": 0.0333,
+  "close_per_event_median": 0.0333,
+  "wrist": null
+ },
+ "plate_centres_px": {
+  "blue": [
+   240.4,
+   147.8
+  ],
+  "green": [
+   576.3,
+   176.5
+  ]
+ },
+ "brick_events": {
+  "events": 6,
+  "verified": 0
+ },
+ "kin_vs_scan_brick_mm": {
+  "successful_picks": 4,
+  "range_mm": [
+   33.9,
+   49.3
+  ],
+  "note": "kin TCP at lift vs episode.json brick_xy_est; which one is right is not established"
+ },
+ "overlays_viewed": 7,
+ "deliverables": {
+  "cameras": [
+   "sim/twin/cameras/top.json",
+   "sim/twin/cameras/close.json",
+   "sim/twin/cameras/wrist.json"
+  ],
+  "work": [
+   "g3_report.json",
+   "clock_offsets.json",
+   "metrics.json"
+  ]
+ }
+}

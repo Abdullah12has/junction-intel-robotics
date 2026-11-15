@@ -1,0 +1,332 @@
+{
+ "snapshot_utc": "2026-11-14T19:47:56Z",
+ "rows_by_kind_source": {
+  "episode | friend sim": {
+   "rows": 150,
+   "unique_rows": 150,
+   "bytes": 163465847,
+   "unique_bytes": 163465847
+  },
+  "episode | ours": {
+   "rows": 22,
+   "unique_rows": 22,
+   "bytes": 27581399,
+   "unique_bytes": 27581399
+  },
+  "episode | ours/twin-chat": {
+   "rows": 3,
+   "unique_rows": 3,
+   "bytes": 1280368003,
+   "unique_bytes": 1280368003
+  },
+  "video | team/friend dataset": {
+   "rows": 50,
+   "unique_rows": 30,
+   "bytes": 3576615287,
+   "unique_bytes": 2161590277
+  },
+  "video | friend sim": {
+   "rows": 7,
+   "unique_rows": 7,
+   "bytes": 1315165712,
+   "unique_bytes": 1315165712
+  },
+  "video | ours": {
+   "rows": 312,
+   "unique_rows": 312,
+   "bytes": 29459846828,
+   "unique_bytes": 29459846828
+  },
+  "video | ours/twin-chat": {
+   "rows": 12,
+   "unique_rows": 12,
+   "bytes": 71803599,
+   "unique_bytes": 71803599
+  },
+  "capture_session | ours": {
+   "rows": 38,
+   "unique_rows": 38,
+   "bytes": 29522628522,
+   "unique_bytes": 29522628522
+  },
+  "capture_session | ours/twin-chat": {
+   "rows": 3,
+   "unique_rows": 3,
+   "bytes": 1363178064,
+   "unique_bytes": 1363178064
+  },
+  "dataset | team/friend dataset": {
+   "rows": 24,
+   "unique_rows": 10,
+   "bytes": 5034015959,
+   "unique_bytes": 2202130027
+  },
+  "dataset | ours": {
+   "rows": 1,
+   "unique_rows": 1,
+   "bytes": 6342995,
+   "unique_bytes": 6342995
+  },
+  "dataset | friend sim": {
+   "rows": 5,
+   "unique_rows": 3,
+   "bytes": 3998287434,
+   "unique_bytes": 2660684160
+  },
+  "dataset | ours/twin-chat": {
+   "rows": 7,
+   "unique_rows": 4,
+   "bytes": 81982488,
+   "unique_bytes": 41072795
+  },
+  "image_set | team/friend dataset": {
+   "rows": 7,
+   "unique_rows": 7,
+   "bytes": 35609978,
+   "unique_bytes": 35609978
+  },
+  "image_set | ours": {
+   "rows": 13,
+   "unique_rows": 13,
+   "bytes": 24673959,
+   "unique_bytes": 24673959
+  },
+  "image_set | ours/twin-chat": {
+   "rows": 6,
+   "unique_rows": 6,
+   "bytes": 1880052,
+   "unique_bytes": 1880052
+  },
+  "report | team/friend dataset": {
+   "rows": 1,
+   "unique_rows": 1,
+   "bytes": 2944,
+   "unique_bytes": 2944
+  },
+  "report | friend sim": {
+   "rows": 1,
+   "unique_rows": 1,
+   "bytes": 5874,
+   "unique_bytes": 5874
+  },
+  "report | ours": {
+   "rows": 4,
+   "unique_rows": 4,
+   "bytes": 9954970,
+   "unique_bytes": 9954970
+  }
+ },
+ "video_unique": {
+  "friend sim": {
+   "files": 7,
+   "hours": 1.0087777766666666,
+   "frames": 108948,
+   "gb": 1.315165712
+  },
+  "team/friend dataset": {
+   "files": 30,
+   "hours": 0.920166663888889,
+   "frames": 99378,
+   "gb": 2.161590277
+  },
+  "ours": {
+   "files": 312,
+   "hours": 9.576896390549866,
+   "frames": 937639,
+   "gb": 29.459846827999975
+  },
+  "ours/twin-chat": {
+   "files": 12,
+   "hours": 0.07299074055555554,
+   "frames": 6036,
+   "gb": 0.071803599
+  }
+ },
+ "episodes_unique": {
+  "friend sim": 150,
+  "ours": 22,
+  "ours/twin-chat": 3
+ },
+ "lerobot_datasets_unique": {
+  "friend sim": {
+   "datasets": 1,
+   "episodes": 150,
+   "frames": 54474
+  },
+  "team/friend dataset": {
+   "datasets": 9,
+   "episodes": 41,
+   "frames": 34582
+  },
+  "ours/twin-chat": {
+   "datasets": 3,
+   "episodes": 3,
+   "frames": 2701
+  }
+ },
+ "sim_raw_attempt_frames": 54474,
+ "sim_mirror": {
+  "attempts": 150,
+  "mirror_ok": 150,
+  "mirror_diff": 0,
+  "mirror_missing": 0
+ },
+ "manifest": {
+  "primary": {
+   "entries": 762,
+   "ok": 762,
+   "bad": 0,
+   "missing": 0,
+   "bad_first": []
+  },
+  "live": {
+   "entries": 762,
+   "ok": 762,
+   "bad": 0,
+   "missing": 0,
+   "bad_first": []
+  }
+ },
+ "timeline_utc_hours": {
+  "13": {
+   "wrist_segments_started": 59
+  },
+  "14": {
+   "wrist_segments_started": 39,
+   "ovrun_sessions_started": 8
+  },
+  "15": {
+   "wrist_segments_started": 60
+  },
+  "16": {
+   "wrist_segments_started": 61,
+   "monitor_mkv_started": 2,
+   "depth_sessions_started": 15,
+   "estop_jpgs": 5
+  },
+  "17": {
+   "sort_episodes_started": 15,
+   "wrist_segments_started": 61,
+   "monitor_mkv_started": 2,
+   "estop_jpgs": 15
+  },
+  "18": {
+   "sort_episodes_started": 4,
+   "wrist_segments_started": 26,
+   "estop_jpgs": 21
+  }
+ },
+ "gaps_and_ends": {
+  "sort_run_spans": {
+   "any_1731": [
+    "17:31:54",
+    "17:40:40"
+   ],
+   "any_1740": [
+    "17:40:56",
+    "18:25:13"
+   ]
+  },
+  "wrist_sessions": [
+   [
+    "data/wrist/raw [session 1 13:01:30]",
+    "13:01:30",
+    "14:12:03",
+    "71 segments; 70.6 min of video",
+    ""
+   ],
+   [
+    "data/wrist/raw [session 2 14:33:11]",
+    "14:33:11",
+    "18:26:30",
+    "235 segments; 233.2 min of video",
+    "GAPS_BETWEEN_SEGMENTS(n2;max3.2s)"
+   ]
+  ],
+  "monitor_sessions": [
+   [
+    "logs/monitor [session 20261114T161218]",
+    "16:12:18",
+    "17:03:48",
+    "2 MKV files; recorder stamp 20261114T161218"
+   ],
+   [
+    "logs/monitor [session 20261114T170351]",
+    "17:03:51",
+    "18:26:30",
+    "2 MKV files; recorder stamp 20261114T170351"
+   ]
+  ],
+  "last_sensor_end_utc": "18:26:30"
+ },
+ "needs_labelling": {
+  "T1_episode_outcome_label": {
+   "sort_episodes_without_success_key": 7,
+   "lerobot_episodes_without_outcome": 194,
+   "twin_raw_episodes_without_outcome": 3
+  },
+  "T2_target_colour_plate_per_episode": {
+   "sort_episodes_without_colour_or_plate": 14,
+   "lerobot_episodes_colour_only_in_task_text": 194,
+   "twin_raw_episodes_without_colour_label": 3
+  },
+  "T3_frame_boxes_or_masks_per_video": {
+   "unique_video_files": 361,
+   "hours": 11.58
+  },
+  "T4_anomaly_defect_label_per_crop": {
+   "rows": 123,
+   "blank": 123
+  },
+  "T5_depth_height_ground_truth_per_session": {
+   "depth_capture_sessions": 15
+  }
+ },
+ "flag_counts": {
+  "MIRROR_OK": 150,
+  "JOINTS_END_EARLY": 4,
+  "NO_LABEL": 14,
+  "FAILED": 9,
+  "JOINTS_MISSING": 5,
+  "NO_T_START": 3,
+  "NO_EPISODE_JSON": 2,
+  "FPS_ASSUMED": 3,
+  "NO_LABEL_COLUMN": 3,
+  "PTS_REL": 296,
+  "NO_TIME": 71,
+  "COPY_OF": 20,
+  "FPS": 317,
+  "SHORT_SEGMENT": 4,
+  "PTS_ABS": 85,
+  "GAPS": 6,
+  "NONMONO": 5,
+  "RFR": 10,
+  "GAPS_BETWEEN_SEGMENTS": 1,
+  "LOG_ONLY": 4,
+  "NAME_TIME": 10,
+  "EMPTY_FILES": 1,
+  "LIVE_MTIME": 2,
+  "INCLUDES_HF_CACHE": 2,
+  "DERIVED_FROM_FRIEND_DATASETS": 8,
+  "LABELS_BLANK": 1,
+  "VIDEO_COPY_OF_STUDIO": 7,
+  "ZIP_MATCH_FOLDER": 10,
+  "MANIFEST_OK": 4,
+  "SHA_EQUAL_TO_PRIMARY": 2,
+  "MIRROR_OF_PRIMARY": 1,
+  "EMPTY_PLACEHOLDER_DIRS": 1,
+  "NO_TIMESTAMP": 1,
+  "LIVE_SNAPSHOT": 1
+ },
+ "video_pts": {
+  "PTS_ABS": 85,
+  "PTS_REL": 296,
+  "GAPS_units": 6,
+  "CORRUPT_units": 0,
+  "copies_flagged_videos": 20
+ },
+ "scope_files_logs_data_run": {
+  "files": 3304,
+  "bytes": 38605001725
+ }
+}

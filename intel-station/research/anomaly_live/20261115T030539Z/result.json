@@ -1,0 +1,208 @@
+{
+ "det2_ms": 50.5,
+ "hands": [],
+ "bricks": [
+  {
+   "id": 0,
+   "view": "top",
+   "colour": "white",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    357,
+    149,
+    43,
+    44
+   ]
+  },
+  {
+   "id": 1,
+   "view": "top",
+   "colour": "blue",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    316,
+    168,
+    43,
+    44
+   ]
+  },
+  {
+   "id": 2,
+   "view": "top",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece",
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    419,
+    168,
+    37,
+    40
+   ]
+  },
+  {
+   "id": 3,
+   "view": "top",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece",
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    440,
+    209,
+    39,
+    40
+   ]
+  },
+  {
+   "id": 4,
+   "view": "top",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    377,
+    207,
+    39,
+    41
+   ]
+  },
+  {
+   "id": 5,
+   "view": "top",
+   "colour": "yellow",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_two_hues",
+    "tape_not_measured_top_view",
+    "shape_unknown"
+   ],
+   "bbox": [
+    286,
+    219,
+    40,
+    42
+   ]
+  },
+  {
+   "id": 6,
+   "view": "close",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_elongated_close"
+   ],
+   "bbox": [
+    464,
+    40,
+    140,
+    128
+   ],
+   "anom3": "DEFECT",
+   "anom3_score": 578.8,
+   "anom3_ms": 110.94
+  },
+  {
+   "id": 7,
+   "view": "close",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_elongated_close"
+   ],
+   "bbox": [
+    363,
+    50,
+    56,
+    141
+   ],
+   "anom3": "DEFECT",
+   "anom3_score": 570.5,
+   "anom3_ms": 116.19
+  },
+  {
+   "id": 8,
+   "view": "close",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_elongated_close"
+   ],
+   "bbox": [
+    579,
+    183,
+    61,
+    137
+   ],
+   "anom3": "DEFECT",
+   "anom3_score": 564.8,
+   "anom3_ms": 110.12
+  },
+  {
+   "id": 9,
+   "view": "close",
+   "colour": "pink",
+   "det2": "CONFIDENT_GOOD",
+   "reasons": [
+    "tape_frac_low"
+   ],
+   "bbox": [
+    471,
+    192,
+    91,
+    76
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 486.3,
+   "anom3_ms": 116.03
+  },
+  {
+   "id": 10,
+   "view": "close",
+   "colour": "blue",
+   "det2": "CONFIDENT_DEFECT",
+   "reasons": [
+    "tape_frac_high"
+   ],
+   "bbox": [
+    391,
+    236,
+    93,
+    85
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 500.1,
+   "anom3_ms": 114.3
+  },
+  {
+   "id": 11,
+   "view": "close",
+   "colour": "yellow",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_frac_mid"
+   ],
+   "bbox": [
+    343,
+    331,
+    105,
+    106
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 519.3,
+   "anom3_ms": 110.51
+  }
+ ]
+}

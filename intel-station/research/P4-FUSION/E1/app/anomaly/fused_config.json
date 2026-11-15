@@ -1,0 +1,10 @@
+{
+  "enabled": false,
+  "model": "patchcore",
+  "rule": "LR",
+  "device": "CPU",
+  "size": 256,
+  "ir_dir": "/home/intel/intel-junction-2026/work/P4-FUSION/E1/models/patchcore/all_good",
+  "lr_params": "/home/intel/intel-junction-2026/work/P4-FUSION/E1/models/fusion_params.json",
+  "note": "Off. Fusion-v1 is NOT ADOPTED (CHANGES.md): no rule beats the tape verdict on every colour and overall. LR is the rule with the best overall F1 on the sensitivity set (tied with the tape verdict). fusion_params.json is the deployment fit on all 32 crops and is validated false: enable only after a new evaluation."
+}

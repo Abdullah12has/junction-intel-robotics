@@ -1,0 +1,550 @@
+{
+ "0": {
+  "episode": 0,
+  "frames": 673,
+  "length_meta": 673,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 16.26,
+  "g_min": 2.16,
+  "g_max": 16.26,
+  "status": "ok",
+  "grasp_frame": 243,
+  "grasp_time_s": 8.1,
+  "grasp_state": [
+   -19.5174,
+   -2.5573,
+   46.0073,
+   49.0462,
+   -62.3007,
+   3.4618
+  ],
+  "start_state": [
+   -17.4494,
+   -97.9718,
+   97.7314,
+   58.9657,
+   -53.8824,
+   16.2639
+  ],
+  "end_state": [
+   -3.3175,
+   14.8148,
+   26.4065,
+   -2.8402,
+   -64.1307,
+   2.1555
+  ],
+  "frame_start": "frames/ep00_start.png",
+  "frame_end": "frames/ep00_end.png",
+  "frame_grasp": "frames/ep00_grasp.png"
+ },
+ "1": {
+  "episode": 1,
+  "frames": 580,
+  "length_meta": 580,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 10.78,
+  "g_min": 2.16,
+  "g_max": 28.35,
+  "status": "ok",
+  "grasp_frame": 85,
+  "grasp_time_s": 2.833,
+  "grasp_state": [
+   -27.1866,
+   -4.4974,
+   47.3684,
+   54.2179,
+   -32.3399,
+   3.7231
+  ],
+  "start_state": [
+   -24.0844,
+   -86.6843,
+   95.372,
+   56.8461,
+   -38.8235,
+   10.7773
+  ],
+  "end_state": [
+   -11.5898,
+   -16.1376,
+   64.3376,
+   3.4337,
+   -62.8235,
+   2.1555
+  ],
+  "frame_start": "frames/ep01_start.png",
+  "frame_end": "frames/ep01_end.png",
+  "frame_grasp": "frames/ep01_grasp.png"
+ },
+ "2": {
+  "episode": 2,
+  "frames": 544,
+  "length_meta": 544,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 36.38,
+  "g_min": 2.29,
+  "g_max": 36.38,
+  "status": "ok",
+  "grasp_frame": 191,
+  "grasp_time_s": 6.367,
+  "grasp_state": [
+   -15.209,
+   -3.2628,
+   45.3721,
+   60.1526,
+   -48.6536,
+   3.919
+  ],
+  "start_state": [
+   -10.8143,
+   -98.5891,
+   94.8276,
+   66.9351,
+   -46.8235,
+   36.3815
+  ],
+  "end_state": [
+   -2.4558,
+   22.134,
+   11.8875,
+   24.3747,
+   -62.1438,
+   2.2861
+  ],
+  "frame_start": "frames/ep02_start.png",
+  "frame_end": "frames/ep02_end.png",
+  "frame_grasp": "frames/ep02_grasp.png"
+ },
+ "3": {
+  "episode": 3,
+  "frames": 704,
+  "length_meta": 704,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 21.16,
+  "g_min": 2.29,
+  "g_max": 21.16,
+  "status": "ok",
+  "grasp_frame": 250,
+  "grasp_time_s": 8.333,
+  "grasp_state": [
+   -26.1525,
+   -13.2275,
+   56.3521,
+   55.1505,
+   -38.4575,
+   3.5271
+  ],
+  "start_state": [
+   1.9388,
+   -99.03,
+   95.2813,
+   67.2743,
+   -45.8824,
+   21.1626
+  ],
+  "end_state": [
+   -0.991,
+   -98.6772,
+   97.0054,
+   62.9504,
+   -44.9935,
+   15.6107
+  ],
+  "frame_start": "frames/ep03_start.png",
+  "frame_end": "frames/ep03_end.png",
+  "frame_grasp": "frames/ep03_grasp.png"
+ },
+ "4": {
+  "episode": 4,
+  "frames": 706,
+  "length_meta": 706,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 15.61,
+  "g_min": 2.55,
+  "g_max": 31.29,
+  "status": "ok",
+  "grasp_frame": 278,
+  "grasp_time_s": 9.267,
+  "grasp_state": [
+   -15.3813,
+   7.4956,
+   32.4864,
+   54.3875,
+   -49.6993,
+   3.3965
+  ],
+  "start_state": [
+   -3.576,
+   -98.6772,
+   97.7314,
+   61.0852,
+   -47.3987,
+   15.6107
+  ],
+  "end_state": [
+   -5.4718,
+   -60.8466,
+   85.7532,
+   40.568,
+   -54.8235,
+   18.4193
+  ],
+  "frame_start": "frames/ep04_start.png",
+  "frame_end": "frames/ep04_end.png",
+  "frame_grasp": "frames/ep04_grasp.png"
+ },
+ "5": {
+  "episode": 5,
+  "frames": 647,
+  "length_meta": 647,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 20.38,
+  "g_min": 2.55,
+  "g_max": 30.83,
+  "status": "ok",
+  "grasp_frame": 236,
+  "grasp_time_s": 7.867,
+  "grasp_state": [
+   -21.0685,
+   1.5873,
+   41.1071,
+   52.8614,
+   -60.0523,
+   3.7884
+  ],
+  "start_state": [
+   -4.0931,
+   -98.5009,
+   99.274,
+   52.607,
+   -51.7908,
+   20.3788
+  ],
+  "end_state": [
+   -3.3175,
+   -98.5009,
+   95.735,
+   62.2721,
+   -49.3856,
+   22.5343
+  ],
+  "frame_start": "frames/ep05_start.png",
+  "frame_end": "frames/ep05_end.png",
+  "frame_grasp": "frames/ep05_grasp.png"
+ },
+ "6": {
+  "episode": 6,
+  "frames": 512,
+  "length_meta": 512,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 22.53,
+  "g_min": 2.55,
+  "g_max": 22.53,
+  "status": "ok",
+  "grasp_frame": 174,
+  "grasp_time_s": 5.8,
+  "grasp_state": [
+   -8.2292,
+   32.0106,
+   -2.9038,
+   69.309,
+   -50.902,
+   3.5924
+  ],
+  "start_state": [
+   -6.9367,
+   -98.3245,
+   95.735,
+   60.3222,
+   -47.817,
+   22.5343
+  ],
+  "end_state": [
+   -4.8686,
+   -98.6772,
+   95.9165,
+   62.2721,
+   -48.4967,
+   18.9419
+  ],
+  "frame_start": "frames/ep06_start.png",
+  "frame_end": "frames/ep06_end.png",
+  "frame_grasp": "frames/ep06_grasp.png"
+ },
+ "7": {
+  "episode": 7,
+  "frames": 1306,
+  "length_meta": 1306,
+  "tasks": [
+   "move the brick to the inspection spot"
+  ],
+  "g_first": 18.94,
+  "g_min": 2.16,
+  "g_max": 19.99,
+  "status": "ok",
+  "grasp_frame": 355,
+  "grasp_time_s": 11.833,
+  "grasp_state": [
+   -13.7441,
+   -20.5467,
+   62.069,
+   55.744,
+   -18.9542,
+   3.7884
+  ],
+  "start_state": [
+   -6.075,
+   -98.6772,
+   96.824,
+   60.407,
+   -48.8105,
+   18.9419
+  ],
+  "end_state": [
+   27.1004,
+   -9.0829,
+   21.2341,
+   72.446,
+   -36.7843,
+   18.1581
+  ],
+  "frame_start": "frames/ep07_start.png",
+  "frame_end": "frames/ep07_end.png",
+  "frame_grasp": "frames/ep07_grasp.png"
+ },
+ "8": {
+  "episode": 8,
+  "frames": 342,
+  "length_meta": 342,
+  "tasks": [
+   "move the brick to the left plate"
+  ],
+  "g_first": 2.16,
+  "g_min": 2.16,
+  "g_max": 14.63,
+  "status": "starts closed (not an open-gripper pick)",
+  "frame_start": "frames/ep08_start.png",
+  "frame_end": "frames/ep08_end.png"
+ },
+ "9": {
+  "episode": 9,
+  "frames": 340,
+  "length_meta": 340,
+  "tasks": [
+   "move the brick to the left plate"
+  ],
+  "g_first": 1.96,
+  "g_min": 0.98,
+  "g_max": 19.73,
+  "status": "starts closed (not an open-gripper pick)",
+  "frame_start": "frames/ep09_start.png",
+  "frame_end": "frames/ep09_end.png"
+ },
+ "10": {
+  "episode": 10,
+  "frames": 339,
+  "length_meta": 339,
+  "tasks": [
+   "move the brick to the left plate"
+  ],
+  "g_first": 2.16,
+  "g_min": 2.16,
+  "g_max": 17.11,
+  "status": "starts closed (not an open-gripper pick)",
+  "frame_start": "frames/ep10_start.png",
+  "frame_end": "frames/ep10_end.png"
+ },
+ "11": {
+  "episode": 11,
+  "frames": 856,
+  "length_meta": 856,
+  "tasks": [
+   "move the red brick to the blue plate"
+  ],
+  "g_first": 17.37,
+  "g_min": 2.16,
+  "g_max": 18.16,
+  "status": "ok",
+  "grasp_frame": 297,
+  "grasp_time_s": 9.9,
+  "grasp_state": [
+   -32.4429,
+   33.157,
+   -5.9891,
+   68.0373,
+   -48.2876,
+   3.5271
+  ],
+  "start_state": [
+   -7.2813,
+   -97.8836,
+   97.9129,
+   60.5765,
+   -50.1176,
+   17.3743
+  ],
+  "end_state": [
+   -5.2133,
+   -99.03,
+   96.3702,
+   65.9178,
+   -44.9935,
+   14.5656
+  ],
+  "frame_start": "frames/ep11_start.png",
+  "frame_end": "frames/ep11_end.png",
+  "frame_grasp": "frames/ep11_grasp.png"
+ },
+ "12": {
+  "episode": 12,
+  "frames": 832,
+  "length_meta": 832,
+  "tasks": [
+   "move the red brick to the blue plate"
+  ],
+  "g_first": 14.57,
+  "g_min": 2.29,
+  "g_max": 27.63,
+  "status": "ok",
+  "grasp_frame": 433,
+  "grasp_time_s": 14.433,
+  "grasp_state": [
+   -14.0026,
+   72.9277,
+   -79.3103,
+   97.9652,
+   -30.3007,
+   3.919
+  ],
+  "start_state": [
+   -4.8686,
+   -99.03,
+   97.5499,
+   62.6113,
+   -45.5686,
+   14.5656
+  ],
+  "end_state": [
+   -9.6079,
+   -98.1481,
+   87.7495,
+   69.2243,
+   -43.0065,
+   27.629
+  ],
+  "frame_start": "frames/ep12_start.png",
+  "frame_end": "frames/ep12_end.png",
+  "frame_grasp": "frames/ep12_grasp.png"
+ },
+ "13": {
+  "episode": 13,
+  "frames": 658,
+  "length_meta": 658,
+  "tasks": [
+   "move the red brick to the blue plate"
+  ],
+  "g_first": 28.22,
+  "g_min": 11.1,
+  "g_max": 28.22,
+  "status": "no sustained closure below 4 after an open start",
+  "frame_start": "frames/ep13_start.png",
+  "frame_end": "frames/ep13_end.png"
+ },
+ "14": {
+  "episode": 14,
+  "frames": 496,
+  "length_meta": 496,
+  "tasks": [
+   "move the red brick to the green plate"
+  ],
+  "g_first": 27.96,
+  "g_min": 2.16,
+  "g_max": 27.96,
+  "status": "ok",
+  "grasp_frame": 236,
+  "grasp_time_s": 7.867,
+  "grasp_state": [
+   -25.2047,
+   22.3104,
+   11.6152,
+   66.6808,
+   -40.6536,
+   3.7231
+  ],
+  "start_state": [
+   -7.0228,
+   -98.1481,
+   97.1869,
+   62.7808,
+   -52.1046,
+   27.9556
+  ],
+  "end_state": [
+   -4.1792,
+   -98.7654,
+   86.6606,
+   71.1742,
+   -45.3072,
+   15.872
+  ],
+  "frame_start": "frames/ep14_start.png",
+  "frame_end": "frames/ep14_end.png",
+  "frame_grasp": "frames/ep14_grasp.png"
+ },
+ "15": {
+  "episode": 15,
+  "frames": 623,
+  "length_meta": 623,
+  "tasks": [
+   "move the red brick to the green plate"
+  ],
+  "g_first": 23.19,
+  "g_min": 2.16,
+  "g_max": 25.54,
+  "status": "ok",
+  "grasp_frame": 363,
+  "grasp_time_s": 12.1,
+  "grasp_state": [
+   -34.4248,
+   72.3986,
+   -78.8566,
+   97.7109,
+   -56.8627,
+   3.5924
+  ],
+  "start_state": [
+   -7.626,
+   -98.3245,
+   98.7296,
+   58.7113,
+   -45.5163,
+   23.1875
+  ],
+  "end_state": [
+   -6.075,
+   -98.6772,
+   96.824,
+   65.2395,
+   -48.0261,
+   6.3357
+  ],
+  "frame_start": "frames/ep15_start.png",
+  "frame_end": "frames/ep15_end.png",
+  "frame_grasp": "frames/ep15_grasp.png"
+ }
+}

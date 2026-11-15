@@ -1,0 +1,183 @@
+{
+ "task": "P3-TWIN-CAMS",
+ "worker": "E1",
+ "stage": "twin-cams-v1",
+ "utc": "2026-11-14T20:20Z",
+ "gate": {
+  "median_px_max": 3.0,
+  "p90_px_max": 6.0,
+  "protocol": "leave-one-episode-out (not reached)"
+ },
+ "result": {
+  "top": "FAIL",
+  "close": "FAIL",
+  "wrist": "FAIL (in-sample only)"
+ },
+ "tests": [
+  {
+   "name": "s9_fit v2, first fold (LOEO)",
+   "camera": "top",
+   "train_median_px": 42,
+   "test_median_px": 32,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9_fit v2, first fold (LOEO)",
+   "camera": "close",
+   "train_median_px": 63,
+   "test_median_px": 33,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9b A: tip offsets +/-30 mm",
+   "camera": "top",
+   "n": 702,
+   "median_px": 40.897,
+   "p90_px": 100.592,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9b B: + 5 joint offsets",
+   "camera": "top",
+   "n": 702,
+   "median_px": 40.872,
+   "p90_px": 102.737,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9b A",
+   "camera": "close",
+   "n": 233,
+   "median_px": 60.46,
+   "p90_px": 149.553,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9b B: + 5 joint offsets",
+   "camera": "close",
+   "n": 233,
+   "median_px": 63.851,
+   "p90_px": 149.202,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9c A: + tip-frame rotation, offsets +/-0.10 m",
+   "camera": "top",
+   "n": 702,
+   "median_px": 39.136,
+   "p90_px": 98.77,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9c A",
+   "camera": "close",
+   "n": 233,
+   "median_px": 60.775,
+   "p90_px": 150.797,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9d A: + joint scale multipliers 0.4 to 1.6",
+   "camera": "top",
+   "n": 702,
+   "median_px": 36.918,
+   "p90_px": 102.555,
+   "verdict": "fail"
+  },
+  {
+   "name": "s9d A",
+   "camera": "close",
+   "n": 233,
+   "median_px": 52.659,
+   "p90_px": 155.987,
+   "verdict": "fail"
+  },
+  {
+   "name": "diag_kin: kin.CAL.rad_from_norm, zero DQ, global PnP-RANSAC on all blob candidates",
+   "camera": "top",
+   "candidates": 702,
+   "best_inliers": 39,
+   "best_f_px": 500,
+   "best_inlier_median_px": 3.84,
+   "verdict": "fail (camera 127 mm above mat)"
+  },
+  {
+   "name": "diag_kin: kin convention, wrist joint offsets DQ",
+   "camera": "top",
+   "candidates": 702,
+   "best_inliers": 40,
+   "best_f_px": 400,
+   "best_inlier_median_px": 3.53,
+   "verdict": "fail (69 mm above mat)"
+  },
+  {
+   "name": "diag_kin: kin convention, zero DQ",
+   "camera": "close",
+   "candidates": 233,
+   "best_inliers": 17,
+   "best_f_px": 400,
+   "best_inlier_median_px": 2.27,
+   "verdict": "fail"
+  },
+  {
+   "name": "diag_kin: kin convention, wrist DQ",
+   "camera": "close",
+   "candidates": 233,
+   "best_inliers": 17,
+   "best_f_px": 400,
+   "best_inlier_median_px": 2.17,
+   "verdict": "fail"
+  },
+  {
+   "name": "diag_global: mid and homing zero x 32 sign patterns (manual joint formula, not kin)",
+   "camera": "top",
+   "candidates": 702,
+   "best_inliers": 65,
+   "best_f_px": 500,
+   "verdict": "fail (camera centre (-6.8, -4.9, 5.2) m; 365 of 384 combinations below 50 inliers)"
+  },
+  {
+   "name": "wrist README, in-sample",
+   "camera": "wrist",
+   "n": 126,
+   "median_px": 4.05,
+   "verdict": "fail"
+  }
+ ],
+ "invalid_evidence": [
+  "diag_pnp, diag_pnp2, diag_sign, diag_zero, diag_episode, diag_dist: second blob paired with the fixed-jaw tip (pairing bug); not used as evidence"
+ ],
+ "crosscheck_depth": {
+  "top": "not matched (fits near 0.07 to 0.15 m height, reference 0.589 m)",
+  "close": "not matched (fits 0.26 to 0.53 m, reference 0.147 m)"
+ },
+ "plate_cross_check": {
+  "status": "not run as a G3 test",
+  "plate_centres_px_first_pre_top": {
+   "blue": [
+    240.4,
+    147.8
+   ],
+   "green": [
+    576.3,
+    176.5
+   ]
+  },
+  "note": "image centres from ellipse fits; no camera model to project PLATES_XY into"
+ },
+ "brick_vanish_events": {
+  "events": 6,
+  "candidates_verified": 0,
+  "note": "candidates on cables and gripper parts; not usable as correspondences without verification"
+ },
+ "overlays_viewed": [
+  "overlays/still_top_029.jpg",
+  "overlays/still_close_185.jpg",
+  "overlays/sheet_top_two_0.jpg (20:13Z)",
+  "overlays/sheet_top_two_1.jpg",
+  "overlays/sheet_close_two_0.jpg",
+  "overlays/sheet_close_one_0.jpg",
+  "overlays/s11_events_overlay.jpg (20:18Z)"
+ ],
+ "overlays_not_possible": "projected model overlays: no model passed G3"
+}

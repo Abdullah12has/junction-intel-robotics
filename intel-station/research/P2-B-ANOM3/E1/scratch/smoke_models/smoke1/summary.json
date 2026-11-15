@@ -1,0 +1,23 @@
+{
+ "version": "smoke1",
+ "source": "folder",
+ "excluded": {},
+ "views": [
+  {
+   "view": "pre_close",
+   "train_good": 6,
+   "heldout_good": 12,
+   "heldout_defect": 7,
+   "n_train": 6,
+   "auroc": 0.869047619047619,
+   "balanced_accuracy": 0.9285714285714286,
+   "threshold": 534.10302734375,
+   "fit_s": 0.7,
+   "export_s": 3.3,
+   "device": "GPU",
+   "disagreements": 1,
+   "coreset_ratio": 0.1,
+   "wall_s": 8.7
+  }
+ ]
+}

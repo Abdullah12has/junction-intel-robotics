@@ -1,0 +1,558 @@
+--- a/tools/handdet.py
++++ b/tools/handdet.py
+@@ -19,6 +19,9 @@
+ """
+ from __future__ import annotations
+ 
++import os
++import time
++
+ import cv2
+ import numpy as np
+ 
+@@ -98,3 +101,25 @@
+ def is_hand(img: np.ndarray, view: str, holding: bool = False) -> tuple[bool, dict]:
+     f = features(img, view, holding)
+     return is_hand_features(f, view), f
++
++
++HEARTBEAT = "/home/intel/intel-junction-2026/run/hand_watch_alive"  # hand_watch.py writes it on every pass
++HEARTBEAT_MAX_AGE = 3.0  # s: a missing, unreadable, future or older heartbeat means the watchdog is not running
++
++
++def write_heartbeat(path: str | None = None) -> None:
++    """Write the epoch time to the heartbeat file: temp file, then rename, so a reader never sees a partial file."""
++    path = path or HEARTBEAT
++    with open(path + ".tmp", "w") as f:
++        f.write(f"{time.time()!r}\n")  # full precision: a stamp rounded up would read as 'in the future' at once
++    os.replace(path + ".tmp", path)
++
++
++def heartbeat_fresh(path: str | None = None) -> bool:
++    """True when the heartbeat was written at most HEARTBEAT_MAX_AGE seconds ago."""
++    try:
++        with open(path or HEARTBEAT) as f:
++            t = float(f.read())
++    except (OSError, ValueError):
++        return False
++    return 0.0 <= time.time() - t <= HEARTBEAT_MAX_AGE
+--- a/tools/hand_watch.py
++++ b/tools/hand_watch.py
+@@ -9,6 +9,8 @@
+ watchdog and the loop can never disagree about whether the workspace is clear (cause of the 18:03Z tight loop).
+ The wrist view is used only while the gripper is open and the jaws are > 90 mm above the mat: a white or cream
+ brick in or under the gripper looks skin-toned to the wrist camera.
++Every pass writes the heartbeat run/hand_watch_alive (handdet.write_heartbeat); the sort loop treats a missing or
++stale heartbeat (over 3 s) as not clear.
+ 
+ Run:  nohup envs/data-env/bin/python -u -B app/tools/hand_watch.py >> logs/monitor/hand_watch.out 2>&1 &
+       echo $! > run/hand_watch.pid      (stop: kill $(cat run/hand_watch.pid))
+@@ -61,6 +63,7 @@
+     log = open(f"{R}/logs/monitor/hand_watch.log", "a")
+     last, hits = {}, {}
+     while True:
++        handdet.write_heartbeat()
+         active = os.path.exists(f"{R}/run/motion_active")
+         st = _state()
+         hold = holding(st)
+--- a/tools/sort_loop.py
++++ b/tools/sort_loop.py
+@@ -22,10 +22,14 @@
+ sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
+ sys.path.insert(0, "/home/intel/intel-junction-2026/app/anomaly/det2_f2")
+ import grasp_auto as ga  # noqa: E402
++import handdet  # noqa: E402  (shared with hand_watch.py: the heartbeat and the hand rule, so they never disagree)
+ import inspector as DET  # noqa: E402
+ 
+ R = ga.R
+ HOVER = list(ga.HOVER)
++RUNTIME_DIR = f"{R}/run"  # live frames, stop/pause/estop flags, motion state, hand_watch_alive
++HAND_LOG = f"{R}/logs/monitor/hand_watch.log"
++WATCHDOG_DOWN = False  # True while the heartbeat is stale: keeps 'hand watchdog not running' to one line per period
+ CLOSE_SPOT_PX = (380, 262)          # brick centre at the spot in the close colour image
+ ROLL_PER_90 = 90.0 / ga.YAW_PER_ROLL
+ SPOT_FAST = f"{R}/app/motion/gm/spot_fast.yaml"
+@@ -51,10 +55,26 @@
+     return int(st[1:, 4].max()) if n > 1 else 0
+ 
+ 
++def watchdog_up():
++    """False while hand_watch.py's heartbeat is missing or older than 3 s: without a live watchdog nothing is clear.
++    Logs 'hand watchdog not running' once per stale period."""
++    global WATCHDOG_DOWN
++    if handdet.heartbeat_fresh():
++        WATCHDOG_DOWN = False
++        return True
++    if not WATCHDOG_DOWN:
++        WATCHDOG_DOWN = True
++        log("hand watchdog not running")
++    return False
++
++
+ def hands_seen(sec):
+-    """True if hand_watch logged any hand in the last `sec` seconds or a hand is visible now (top/close)."""
++    """True if hand_watch logged any hand in the last `sec` seconds or a hand is visible now (top/close).
++    Also True while the watchdog heartbeat is missing or stale: the loop does not move without a live watchdog."""
++    if not watchdog_up():
++        return True
+     try:
+-        lines = open(f"{R}/logs/monitor/hand_watch.log").read().splitlines()[-30:]
++        lines = open(HAND_LOG).read().splitlines()[-30:]
+     except OSError:
+         lines = []
+     now = time.gmtime()
+@@ -67,13 +87,12 @@
+             continue
+         if 0 <= nows - t <= sec:  # 18:43Z: wrist lines count too (the watchdog logs the wrist only when it may stop on it)
+             return True
+-    import handdet  # shared with hand_watch.py, so the clear check and the watchdog never disagree (18:03Z loop)
+     try:
+-        hold = json.load(open(f"{R}/run/mserver/state.json"))["target"][5] < 20
++        hold = json.load(open(f"{RUNTIME_DIR}/mserver/state.json"))["target"][5] < 20
+     except Exception:  # noqa: BLE001
+         hold = False
+     for view in ("top", "close"):
+-        img = cv2.imread(f"{R}/run/live_{view}.jpg")
++        img = cv2.imread(f"{RUNTIME_DIR}/live_{view}.jpg")
+         if img is not None and handdet.is_hand(img, view, hold)[0]:
+             return True
+     return False
+@@ -82,11 +101,11 @@
+ def wait_clear(reason):
+     log(f"waiting for a clear workspace ({reason})")
+     while True:
+-        if os.path.exists(f"{R}/run/sort_stop"):
++        if os.path.exists(f"{RUNTIME_DIR}/sort_stop"):
+             raise SystemExit("stop requested")
+         if not hands_seen(5):
+-            if os.path.exists(f"{R}/run/estop"):
+-                os.remove(f"{R}/run/estop")
++            if os.path.exists(f"{RUNTIME_DIR}/estop"):
++                os.remove(f"{RUNTIME_DIR}/estop")
+                 log("estop cleared automatically: no hands for 3 s")
+             return
+         time.sleep(0.5)
+@@ -426,6 +445,7 @@
+     for f in ("sort_stop",):
+         if os.path.exists(f"{R}/run/{f}"):
+             os.remove(f"{R}/run/{f}")
++    wait_clear("start-up")  # no move before a live hand watchdog and a clear workspace
+     go_park(False)
+     k = a.start
+     while k < a.start + a.n:
+--- a/tools/sort_any.py
++++ b/tools/sort_any.py
+@@ -602,7 +602,9 @@
+ 
+ 
+ def recover():
+-    """After an estop: wait until the workspace is clear, finish a held brick or open, then go to the scan pose."""
++    """After an estop: wait until the workspace is clear, finish a held brick or open, then go to the scan pose.
++    Returns False after 40 failed attempts: writes RUN/needs_operator and logs why. The caller must stop the loop."""
++    last_error = "no attempt"
+     for attempt in range(40):
+         try:
+             ga.cmd({"op": "rec_stop"})
+@@ -616,12 +618,25 @@
+             go_scan(False)
+             return True
+         except ga.Stop as e:  # noqa: PERF203
++            last_error = str(e)
+             pause = min(2.0 ** min(attempt, 5), 30.0)  # 18:03Z: 40 retries burned in 1 s; now ~15 min before giving up
+             log(f"recovery interrupted ({e}); retry {attempt + 1} in {pause:.0f} s")
+             time.sleep(pause)
++    reason = f"recovery gave up after 40 attempts (last error: {last_error})"
++    write_needs_operator(reason)
++    log(f"needs operator: {reason}")
+     return False
+ 
+ 
++def write_needs_operator(reason):
++    """Operator marker in the run folder: utc, episode and last failure. The operator deletes it after the fix."""
++    with open(f"{RUN}/needs_operator", "w") as f:
++        f.write(f"utc: {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())}\n")
++        f.write(f"episode: {EP.get('episode', 'start-up')}\n")
++        f.write(f"last failure: {EP.get('failure') or 'none recorded'}\n")
++        f.write(f"reason: {reason}\n")
++
++
+ def run_one(k):
+     try:
+         cycle(k)
+@@ -680,8 +695,7 @@
+     jc = subprocess.run(["true"], capture_output=True, text=True) if ga.state()["target"][5] < 20 else subprocess.run([f"{R}/envs/data-env/bin/python", "-B", "jaw_check.py", "--no-move"], cwd=f"{R}/app/tools",
+                         capture_output=True, text=True)
+     log(f"jaw check: {jc.stdout.strip()[-200:]}")
+-    if os.path.exists(f"{R}/run/estop"):
+-        sl.wait_clear("estop at start")
++    sl.wait_clear("start-up")  # no motion before a live hand watchdog and a clear workspace
+     st0 = ga.state()
+     if st0["target"][5] < 5 and 0.8 <= st0["present"][5] <= 8:
+         k0 = a.start - 1
+@@ -689,17 +703,21 @@
+         os.makedirs(f"{RUN}/ep_{k0:04d}/crops", exist_ok=True)
+         ga.OUT = f"{RUN}/ep_{k0:04d}"
+         log(f"holding a brick at start (gripper {st0['present'][5]}): inspect, decide, place")
++        carried = True
+         try:
+             finish_held()
+             EP["success"] = True
+         except ga.Stop as e:
+             log(f"carry-over interrupted ({e})")
+-            recover()
++            carried = recover()
+         save_ep(k0)
++        if not carried:
++            return  # recover() wrote needs_operator and logged why: the cycle loop does not start
+     try:
+         go_scan(False)
+     except ga.Stop:
+-        recover()
++        if not recover():
++            return  # start-up recover() gave up: the cycle loop does not start
+     k = a.start
+     while k is not None and k < a.start + a.n:
+         k = run_one(k)
+--- a/tools/tests/conftest.py
++++ b/tools/tests/conftest.py
+@@ -8,6 +8,7 @@
+ device check are in E1 laptop-log L38.
+ """
+ import csv
++import importlib.util
+ import json
+ import os
+ import sys
+@@ -17,18 +18,40 @@
+ 
+ HERE = os.path.dirname(os.path.abspath(__file__))
+ FIX = os.path.join(HERE, "fixtures")
+-APP_TOOLS = "/home/intel/intel-junction-2026/app/tools"
+-DET2 = "/home/intel/intel-junction-2026/app/anomaly/det2_f2"
++# The tree under test: the tools folder that holds this tests folder (a copy under work/ tests the copy, not R/app).
++APP_TOOLS = os.path.dirname(HERE)
++DET2 = os.path.join(os.path.dirname(APP_TOOLS), "anomaly", "det2_f2")
+ for _p in (APP_TOOLS, DET2):
+     if _p not in sys.path:
+         sys.path.insert(0, _p)
+ 
++
++def _load(name, path):
++    """Load one module from the tree under test and register it under its plain name. The app modules insert R/app
++    into sys.path at import time, so an ordinary import would pick up R/app's copy of a file."""
++    if name in sys.modules:
++        return sys.modules[name]
++    spec = importlib.util.spec_from_file_location(name, path)
++    mod = importlib.util.module_from_spec(spec)
++    sys.modules[name] = mod
++    spec.loader.exec_module(mod)
++    return mod
++
++
++for _name in ("rs_height", "kin", "handdet", "hand_watch", "grasp_auto", "pick_any", "sort_loop", "sort_any"):
++    _load(_name, os.path.join(APP_TOOLS, _name + ".py"))
++_load("inspector", os.path.join(DET2, "inspector.py"))
++
+ import pick_any as pa  # noqa: E402
+ import sort_any as sa  # noqa: E402
+ import sort_loop as sl  # noqa: E402
+ import kin  # noqa: E402
+ import handdet as hd  # noqa: E402
+ 
++for _m in (pa, sa, sl, kin, hd, sys.modules["hand_watch"]):
++    if os.path.dirname(_m.__file__) != APP_TOOLS:
++        raise RuntimeError(f"{_m.__name__} was loaded from {_m.__file__}, not from {APP_TOOLS}")
++
+ RUN_DIR = tempfile.mkdtemp(prefix="p2b_tests_run_")  # sort_any.log writes RUN/loop.log; keep it out of the repo
+ sa.RUN = RUN_DIR
+ sl.RUN = RUN_DIR
+--- a/tools/tests/run_tests.py
++++ b/tools/tests/run_tests.py
+@@ -17,7 +17,7 @@
+ 
+ import conftest as C  # noqa: E402  (also sets up sys.path for the code under test)
+ 
+-MODULES = ["test_perception", "test_kin"]
++MODULES = ["test_perception", "test_kin", "test_loopfix"]
+ 
+ 
+ def main():
+--- a/tools/tests/test_loopfix.py
++++ b/tools/tests/test_loopfix.py
+@@ -0,0 +1,276 @@
++"""P2-C-LOOPFIX tests: the heartbeat gate on the loop's clear check, the watchdog's heartbeat, and the give-up path.
++
++Offline: every path the code touches is pointed at a temp folder, time.sleep is patched where the code waits, and the
++motion layer (grasp_auto.cmd and state) is mocked. Nothing here reaches the robot, a camera, a serial port or Studio.
++"""
++import contextlib
++import io
++import os
++import shutil
++import tempfile
++import time
++from unittest import mock
++
++import cv2
++import numpy as np
++
++import conftest as C
++import hand_watch as hw
++
++sa, sl, hd = C.sa, C.sl, C.hd
++CLEAR = np.full((480, 640, 3), 128, np.uint8)  # flat grey: no skin tone, no blob
++
++
++class _Halt(Exception):
++    """Ends an endless wait or loop under test; raised from a patched time.sleep."""
++
++
++@contextlib.contextmanager
++def _tree():
++    root = tempfile.mkdtemp(prefix="loopfix_")
++    try:
++        yield root
++    finally:
++        shutil.rmtree(root, ignore_errors=True)
++
++
++def _png(path, img):
++    ok, buf = cv2.imencode(".png", img)  # lossless; cv2.imread detects the format from the content, not the name
++    assert ok
++    with open(path, "wb") as f:
++        f.write(buf.tobytes())
++
++
++def _frames(run_dir, hand):
++    """Live top and close frames: flat grey, or a skin-toned block in the top view (inside the detector's ROI)."""
++    top = CLEAR.copy()
++    if hand:
++        top[100:160, 300:360] = (100, 140, 200)  # BGR of HSV (12, 127, 200): inside the skin rule
++    _png(os.path.join(run_dir, "live_top.jpg"), top)
++    _png(os.path.join(run_dir, "live_close.jpg"), CLEAR)
++
++
++def _heartbeat(folder, t):
++    with open(os.path.join(folder, "hand_watch_alive"), "w") as f:
++        f.write(f"{t!r}\n")
++
++
++def _detector_hand(run_dir):
++    """The detector's verdict on the live frames, with the gripper open (holding=False), as the clear check uses it."""
++    for view in ("top", "close"):
++        img = cv2.imread(os.path.join(run_dir, f"live_{view}.jpg"))
++        if img is not None and hd.is_hand(img, view, False)[0]:
++            return True
++    return False
++
++
++@contextlib.contextmanager
++def _loop_paths(root, heartbeat_age):
++    """Point the loop's clear check at root/run (live frames, flags, heartbeat) and root/logs/monitor (hand log); the
++    loop log goes to root. heartbeat_age: None leaves no heartbeat, else the heartbeat's age in seconds."""
++    run_dir = os.path.join(root, "run")
++    hand_log = os.path.join(root, "logs", "monitor", "hand_watch.log")
++    os.makedirs(run_dir, exist_ok=True)
++    os.makedirs(os.path.dirname(hand_log), exist_ok=True)
++    open(hand_log, "w").close()
++    if os.path.exists(os.path.join(run_dir, "hand_watch_alive")):
++        os.remove(os.path.join(run_dir, "hand_watch_alive"))
++    if heartbeat_age is not None:
++        _heartbeat(run_dir, time.time() - heartbeat_age)
++    with contextlib.ExitStack() as st:
++        st.enter_context(mock.patch.object(sl, "RUNTIME_DIR", run_dir))
++        st.enter_context(mock.patch.object(sl, "HAND_LOG", hand_log))
++        st.enter_context(mock.patch.object(sl, "RUN", root))
++        st.enter_context(mock.patch.object(sl, "WATCHDOG_DOWN", False))
++        st.enter_context(mock.patch.object(hd, "HEARTBEAT", os.path.join(run_dir, "hand_watch_alive")))
++        yield run_dir
++
++
++def test_loopfix_heartbeat_file_is_atomic_and_fresh_only_within_3s():
++    with _tree() as root:
++        path = os.path.join(root, "hand_watch_alive")
++        hd.write_heartbeat(path)
++        assert not os.path.exists(path + ".tmp"), "temp file left behind by the atomic write"
++        assert hd.heartbeat_fresh(path) is True, "a heartbeat written just now is not fresh"
++        with open(path) as f:
++            assert abs(float(f.read()) - time.time()) < 1.0, "heartbeat is not the current epoch time"
++        for label, t in (("3.5 s old", time.time() - 3.5), ("60 s in the future", time.time() + 60)):
++            _heartbeat(root, t)
++            assert hd.heartbeat_fresh(path) is False, f"{label} heartbeat counted as fresh"
++        with open(path, "w") as f:
++            f.write("not a number\n")
++        assert hd.heartbeat_fresh(path) is False, "unreadable heartbeat counted as fresh"
++        assert hd.heartbeat_fresh(os.path.join(root, "missing")) is False, "missing heartbeat counted as fresh"
++
++
++def test_loopfix_fresh_heartbeat_clear_check_follows_the_hand_detector():
++    with _tree() as root, _loop_paths(root, heartbeat_age=0.1) as run_dir, \
++            contextlib.redirect_stdout(io.StringIO()):
++        for hand in (False, True):
++            _frames(run_dir, hand)
++            verdict = _detector_hand(run_dir)
++            assert verdict is hand, f"fixture frames not as labelled: hand={hand}, detector={verdict}"
++            got = sl.hands_seen(2)
++            assert got is verdict, f"clear check said {got} but the detector says {verdict} (hand={hand})"
++
++
++def test_loopfix_stale_or_missing_heartbeat_is_not_clear():
++    with _tree() as root, contextlib.redirect_stdout(io.StringIO()):
++        for age, label in ((10.0, "stale (10 s old)"), (None, "missing")):
++            with _loop_paths(root, heartbeat_age=age) as run_dir:
++                _frames(run_dir, hand=False)  # the detector sees a clear workspace in both cases
++                assert _detector_hand(run_dir) is False, "fixture frames are not clear to the detector"
++                assert sl.hands_seen(2) is True, f"{label} heartbeat: the workspace was read as clear"
++
++
++def test_loopfix_hand_watchdog_down_is_logged_once_per_stale_period():
++    with _tree() as root, _loop_paths(root, heartbeat_age=None) as run_dir, \
++            contextlib.redirect_stdout(io.StringIO()):
++        _frames(run_dir, hand=False)
++        for i in range(5):
++            assert sl.hands_seen(2) is True, f"call {i + 1} with no heartbeat read the workspace as clear"
++        _heartbeat(run_dir, time.time())
++        assert sl.hands_seen(2) is False, "a fresh heartbeat and a clear view were not read as clear"
++        _heartbeat(run_dir, time.time() - 10.0)
++        assert sl.hands_seen(2) is True, "a stale heartbeat was read as clear"
++        with open(os.path.join(root, "loop.log")) as f:
++            n = sum("hand watchdog not running" in line for line in f)
++    assert n == 2, f"'hand watchdog not running' logged {n} times; expected once per stale period (2 periods)"
++
++
++def test_loopfix_stale_heartbeat_keeps_the_estop_and_wait_clear_waits():
++    with _tree() as root, _loop_paths(root, heartbeat_age=10.0) as run_dir, \
++            contextlib.redirect_stdout(io.StringIO()):
++        _frames(run_dir, hand=False)
++        estop = os.path.join(run_dir, "estop")
++        with open(estop, "w") as f:
++            f.write("test\n")
++        halted = False
++        with mock.patch("time.sleep", side_effect=_Halt):
++            try:
++                sl.wait_clear("test")
++            except _Halt:
++                halted = True
++        assert halted, "wait_clear returned while the heartbeat was stale"
++        assert os.path.exists(estop), "estop was cleared while the watchdog was down"
++        _heartbeat(run_dir, time.time())
++        sl.wait_clear("test")
++        assert not os.path.exists(estop), "fresh heartbeat and a clear view: the estop should clear"
++
++
++def test_loopfix_wait_for_bricks_does_not_return_until_the_heartbeat_is_fresh():
++    cand = {"centre": [300.0, 200.0], "xy": [10.0, 20.0], "d_mm": [5.0, 6.0], "colour": "red", "border": False}
++    with _tree() as root, _loop_paths(root, heartbeat_age=10.0) as run_dir, \
++            mock.patch.object(sa, "R", root), \
++            mock.patch.object(sa, "scan_cal", return_value={"q_scan": [0.0] * 5}), \
++            mock.patch.object(sa, "candidates", return_value=[cand]) as cands, \
++            mock.patch.object(sa.pa, "frame", return_value=CLEAR), \
++            contextlib.redirect_stdout(io.StringIO()):
++        _frames(run_dir, hand=False)
++        halted = False
++        with mock.patch("time.sleep", side_effect=_Halt):
++            try:
++                sa.wait_for_bricks()
++            except _Halt:
++                halted = True
++        assert halted, "wait_for_bricks returned with a stale heartbeat: the arm would move"
++        assert cands.call_count == 0, "wait_for_bricks scanned for bricks while the heartbeat was stale"
++        _heartbeat(run_dir, time.time())
++        with mock.patch("time.sleep", side_effect=lambda _s: None):
++            got, _cands, _waited = sa.wait_for_bricks()
++        assert got is cand, "fresh heartbeat and a stable brick: wait_for_bricks should return that brick"
++
++
++def test_loopfix_hand_watch_writes_the_heartbeat_on_every_pass():
++    with _tree() as root:
++        os.makedirs(os.path.join(root, "run"))
++        os.makedirs(os.path.join(root, "logs", "monitor"))
++        hb = os.path.join(root, "run", "hand_watch_alive")
++        passes = []
++
++        def stop_after_three(_seconds):
++            passes.append(1)
++            if len(passes) >= 3:
++                raise _Halt()
++
++        with contextlib.redirect_stdout(io.StringIO()), \
++                mock.patch.object(hw, "R", root), \
++                mock.patch.object(hw, "STATE", os.path.join(root, "run", "mserver", "state.json")), \
++                mock.patch.object(hd, "HEARTBEAT", hb), \
++                mock.patch.object(hd, "write_heartbeat", wraps=hd.write_heartbeat) as writes, \
++                mock.patch("time.sleep", side_effect=stop_after_three):
++            try:
++                hw.main()
++            except _Halt:
++                pass
++        assert len(passes) == 3, f"expected 3 passes, ran {len(passes)}"
++        assert writes.call_count >= 3, f"{writes.call_count} heartbeat writes in 3 passes"
++        assert hd.heartbeat_fresh(hb) is True, "the heartbeat written by hand_watch.main() is not fresh"
++
++
++def test_loopfix_recover_gives_up_after_40_attempts_and_writes_needs_operator():
++    with _tree() as root, \
++            mock.patch.object(sa, "RUN", root), \
++            mock.patch.object(sa, "EP", {"episode": 7, "failure": "stop: servo lost brick"}), \
++            mock.patch.object(sa.ga, "cmd", side_effect=sa.ga.Stop("motion server timeout")) as cmd, \
++            mock.patch.object(sa.ga, "state", side_effect=sa.ga.Stop("motion server timeout")), \
++            mock.patch.object(sa.sl, "wait_clear", side_effect=sa.ga.Stop("motion server timeout")), \
++            mock.patch("time.sleep"), \
++            contextlib.redirect_stdout(io.StringIO()):
++        ok = sa.recover()
++        assert ok is False, "recover() returned True although every attempt was interrupted"
++        assert cmd.call_count == 40, f"{cmd.call_count} attempts, expected 40"
++        marker = os.path.join(root, "needs_operator")
++        assert os.path.exists(marker), "recover() gave up but wrote no needs_operator marker"
++        with open(marker) as f:
++            text = f.read()
++        wanted = ("utc: 20", "episode: 7", "last failure: stop: servo lost brick", "recovery gave up after 40 attempts")
++        for want in wanted:
++            assert want in text, f"needs_operator lacks {want!r}:\n{text}"
++        with open(os.path.join(root, "loop.log")) as f:
++            assert "needs operator: recovery gave up after 40 attempts" in f.read(), "the give-up was not logged as needs operator"
++
++
++def _argv(run):
++    return ["sort_any.py", "--run", run, "--n", "3"]
++
++
++def test_loopfix_main_does_not_start_the_cycle_loop_when_startup_recover_gives_up():
++    holding_nothing = {"target": [0.0] * 5 + [10.0], "present": [0.0] * 5 + [25.0]}
++    with _tree() as root, _loop_paths(root, heartbeat_age=0.1) as run_dir, \
++            mock.patch.object(sa, "R", root), \
++            mock.patch.object(sa, "RUN", root), \
++            mock.patch.object(sa, "EP", {}), \
++            mock.patch.object(sa.ga, "state", return_value=holding_nothing), \
++            mock.patch.object(sa, "go_scan", side_effect=sa.ga.Stop("ik fail descending to hover")), \
++            mock.patch.object(sa, "recover", return_value=False) as recover, \
++            mock.patch.object(sa, "run_one", return_value=None) as run_one, \
++            mock.patch("sys.argv", _argv("t_startup")), \
++            contextlib.redirect_stdout(io.StringIO()):
++        _frames(run_dir, hand=False)
++        sa.main()
++    assert recover.call_count == 1, f"recover() called {recover.call_count} times"
++    run_one.assert_not_called()
++
++
++def test_loopfix_main_does_not_start_the_cycle_loop_when_carryover_recover_gives_up():
++    holding_brick = {"target": [0.0] * 6, "present": [0.0] * 5 + [3.0]}
++    with _tree() as root, _loop_paths(root, heartbeat_age=0.1) as run_dir, \
++            mock.patch.object(sa, "R", root), \
++            mock.patch.object(sa, "RUN", root), \
++            mock.patch.object(sa, "EP", {}), \
++            mock.patch.object(sa.ga, "OUT", root, create=True), \
++            mock.patch.object(sa.ga, "state", return_value=holding_brick), \
++            mock.patch.object(sa, "finish_held", side_effect=sa.ga.Stop("grip slipped")), \
++            mock.patch.object(sa, "recover", return_value=False) as recover, \
++            mock.patch.object(sa, "run_one", return_value=None) as run_one, \
++            mock.patch("sys.argv", _argv("t_carry")), \
++            contextlib.redirect_stdout(io.StringIO()):
++        _frames(run_dir, hand=False)
++        for name in ("top_0001.mkv", "close_0001.mkv"):  # save_ep() links the newest top and close recordings
++            open(os.path.join(root, "logs", "monitor", name), "w").close()
++        sa.main()
++        assert recover.call_count == 1, f"recover() called {recover.call_count} times"
++        run_one.assert_not_called()
++        episode = os.path.join(root, "logs", "sort", "t_carry", "ep_0000", "episode.json")
++        assert os.path.exists(episode), "the carry-over episode was not saved before main() stopped"

@@ -1,0 +1,36 @@
+{
+ "camera": "top",
+ "stage": "twin-cams-v1",
+ "utc": "2026-11-14T20:20Z",
+ "status": "NOT_FITTED",
+ "G3": {
+  "gate": {
+   "median_px_max": 3.0,
+   "p90_px_max": 6.0,
+   "protocol": "leave-one-episode-out (not reached)"
+  },
+  "result": "FAIL",
+  "loeo_run": false,
+  "reason": "no candidate reaches the in-sample median gate; best in-sample median 36.9 px"
+ },
+ "fitted_parameters": null,
+ "best_rejected_candidate": {
+  "method": "s9d: tip offsets, tip-frame rotation, joint scale multipliers",
+  "in_sample_median_px": 36.918,
+  "p90_px": 102.555,
+  "n_obs": 702,
+  "rejected_because": "scales 0.40, 0.41, 0.68, 0.79 on four joints are implausible; median far above gate"
+ },
+ "depth_crosscheck": {
+  "reference": "P3-TWIN-SCENE (depth)",
+  "camera_to_mat_mm": 589.46,
+  "tilt_deg": 20.32,
+  "result": "not matched: best diagnostic candidates place the camera 127 to 147 mm above the mat (kin convention, zero) and 69 to 121 mm (wrist joint offsets)"
+ },
+ "sources": {
+  "detections": "out/detect_top.json (383 still windows, 319 two-jaw)",
+  "joints": "logs/sort/any_*/ep_*/joints.csv",
+  "fixed_tip_geometry": "out/jaw_geometry.json (vendor mesh bytes read from R/twin before its deletion at 19:48Z; md5s recorded in that file)"
+ },
+ "origin_note": "No file copied from R/twin; the side-by-side comparison with the other session was dropped (D-102)."
+}

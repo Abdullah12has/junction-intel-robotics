@@ -1,0 +1,546 @@
+{
+ "0": {
+  "n_frames": 673,
+  "length_s": 22.433,
+  "start_pose_arm": [
+   -17.449,
+   -97.972,
+   97.731,
+   58.966,
+   -53.882
+  ],
+  "end_pose_arm": [
+   -3.318,
+   14.815,
+   26.407,
+   -2.84,
+   -64.131
+  ],
+  "end_lift_gap": 112.815,
+  "gripper_min": 2.155,
+  "gripper_max": 16.264,
+  "releases": []
+ },
+ "1": {
+  "n_frames": 580,
+  "length_s": 19.333,
+  "start_pose_arm": [
+   -24.084,
+   -86.684,
+   95.372,
+   56.846,
+   -38.824
+  ],
+  "end_pose_arm": [
+   -11.59,
+   -16.138,
+   64.338,
+   3.434,
+   -62.824
+  ],
+  "end_lift_gap": 81.862,
+  "gripper_min": 2.155,
+  "gripper_max": 28.347,
+  "releases": []
+ },
+ "2": {
+  "n_frames": 544,
+  "length_s": 18.133,
+  "start_pose_arm": [
+   -10.814,
+   -98.589,
+   94.828,
+   66.935,
+   -46.824
+  ],
+  "end_pose_arm": [
+   -2.456,
+   22.134,
+   11.887,
+   24.375,
+   -62.144
+  ],
+  "end_lift_gap": 120.134,
+  "gripper_min": 2.286,
+  "gripper_max": 36.381,
+  "releases": []
+ },
+ "3": {
+  "n_frames": 704,
+  "length_s": 23.467,
+  "start_pose_arm": [
+   1.939,
+   -99.03,
+   95.281,
+   67.274,
+   -45.882
+  ],
+  "end_pose_arm": [
+   -0.991,
+   -98.677,
+   97.005,
+   62.95,
+   -44.993
+  ],
+  "end_lift_gap": -0.677,
+  "gripper_min": 2.286,
+  "gripper_max": 21.163,
+  "releases": [
+   {
+    "release_frame": 609,
+    "release_t_s": 20.3,
+    "release_pose_arm": [
+     -5.386,
+     -60.141,
+     60.526,
+     67.274,
+     -45.673
+    ],
+    "release_gripper": 6.793,
+    "side": "UNCLEAR (pan -30..0)",
+    "return_home": null
+   }
+  ]
+ },
+ "4": {
+  "n_frames": 706,
+  "length_s": 23.533,
+  "start_pose_arm": [
+   -3.576,
+   -98.677,
+   97.731,
+   61.085,
+   -47.399
+  ],
+  "end_pose_arm": [
+   -5.472,
+   -60.847,
+   85.753,
+   40.568,
+   -54.824
+  ],
+  "end_lift_gap": 37.153,
+  "gripper_min": 2.547,
+  "gripper_max": 31.287,
+  "releases": [
+   {
+    "release_frame": 633,
+    "release_t_s": 21.1,
+    "release_pose_arm": [
+     -13.141,
+     -60.582,
+     79.129,
+     43.196,
+     -51.477
+    ],
+    "release_gripper": 6.793,
+    "side": "UNCLEAR (pan -30..0)",
+    "return_home": null
+   }
+  ]
+ },
+ "5": {
+  "n_frames": 647,
+  "length_s": 21.567,
+  "start_pose_arm": [
+   -4.093,
+   -98.501,
+   99.274,
+   52.607,
+   -51.791
+  ],
+  "end_pose_arm": [
+   -3.318,
+   -98.501,
+   95.735,
+   62.272,
+   -49.386
+  ],
+  "end_lift_gap": -0.501,
+  "gripper_min": 2.547,
+  "gripper_max": 30.83,
+  "releases": [
+   {
+    "release_frame": 548,
+    "release_t_s": 18.267,
+    "release_pose_arm": [
+     -12.624,
+     20.988,
+     -19.328,
+     69.733,
+     -40.654
+    ],
+    "release_gripper": 7.838,
+    "side": "UNCLEAR (pan -30..0)",
+    "return_home": null
+   }
+  ]
+ },
+ "6": {
+  "n_frames": 512,
+  "length_s": 17.067,
+  "start_pose_arm": [
+   -6.937,
+   -98.325,
+   95.735,
+   60.322,
+   -47.817
+  ],
+  "end_pose_arm": [
+   -4.869,
+   -98.677,
+   95.917,
+   62.272,
+   -48.497
+  ],
+  "end_lift_gap": -0.677,
+  "gripper_min": 2.547,
+  "gripper_max": 22.534,
+  "releases": [
+   {
+    "release_frame": 424,
+    "release_t_s": 14.133,
+    "release_pose_arm": [
+     -13.141,
+     12.61,
+     1.27,
+     56.253,
+     -49.804
+    ],
+    "release_gripper": 6.858,
+    "side": "UNCLEAR (pan -30..0)",
+    "return_home": null
+   }
+  ]
+ },
+ "7": {
+  "n_frames": 1306,
+  "length_s": 43.533,
+  "start_pose_arm": [
+   -6.075,
+   -98.677,
+   96.824,
+   60.407,
+   -48.81
+  ],
+  "end_pose_arm": [
+   27.1,
+   -9.083,
+   21.234,
+   72.446,
+   -36.784
+  ],
+  "end_lift_gap": 88.917,
+  "gripper_min": 2.155,
+  "gripper_max": 19.987,
+  "releases": [
+   {
+    "release_frame": 1211,
+    "release_t_s": 40.367,
+    "release_pose_arm": [
+     32.098,
+     5.467,
+     25.59,
+     61.848,
+     -36.784
+    ],
+    "release_gripper": 6.989,
+    "side": "BLUE-side (pan>0)",
+    "return_home": null
+   }
+  ]
+ },
+ "8": {
+  "n_frames": 342,
+  "length_s": 11.4,
+  "start_pose_arm": [
+   -5.472,
+   17.637,
+   -8.348,
+   57.524,
+   -53.882
+  ],
+  "end_pose_arm": [
+   -9.263,
+   -90.123,
+   88.748,
+   61.933,
+   -47.085
+  ],
+  "end_lift_gap": 7.877,
+  "gripper_min": 2.155,
+  "gripper_max": 14.631,
+  "releases": [
+   {
+    "release_frame": 150,
+    "release_t_s": 5.0,
+    "release_pose_arm": [
+     -54.675,
+     24.515,
+     1.906,
+     54.218,
+     -55.033
+    ],
+    "release_gripper": 6.793,
+    "side": "GREEN-side (pan<-30)",
+    "return_home": null
+   }
+  ]
+ },
+ "9": {
+  "n_frames": 340,
+  "length_s": 11.333,
+  "start_pose_arm": [
+   -5.989,
+   22.399,
+   -20.871,
+   52.946,
+   -52.366
+  ],
+  "end_pose_arm": [
+   0.215,
+   -99.03,
+   97.005,
+   62.187,
+   -47.922
+  ],
+  "end_lift_gap": -1.03,
+  "gripper_min": 0.98,
+  "gripper_max": 19.726,
+  "releases": [
+   {
+    "release_frame": 188,
+    "release_t_s": 6.267,
+    "release_pose_arm": [
+     -57.26,
+     18.519,
+     7.804,
+     36.159,
+     -52.68
+    ],
+    "release_gripper": 6.14,
+    "side": "GREEN-side (pan<-30)",
+    "return_home": null
+   }
+  ]
+ },
+ "10": {
+  "n_frames": 339,
+  "length_s": 11.3,
+  "start_pose_arm": [
+   -5.558,
+   20.635,
+   -39.746,
+   98.135,
+   -51.791
+  ],
+  "end_pose_arm": [
+   -3.145,
+   -98.677,
+   92.468,
+   65.748,
+   -46.51
+  ],
+  "end_lift_gap": -0.677,
+  "gripper_min": 2.155,
+  "gripper_max": 17.113,
+  "releases": [
+   {
+    "release_frame": 141,
+    "release_t_s": 4.7,
+    "release_pose_arm": [
+     -51.831,
+     47.707,
+     -49.819,
+     80.076,
+     -52.366
+    ],
+    "release_gripper": 7.25,
+    "side": "GREEN-side (pan<-30)",
+    "return_home": null
+   }
+  ]
+ },
+ "11": {
+  "n_frames": 856,
+  "length_s": 28.533,
+  "start_pose_arm": [
+   -7.281,
+   -97.884,
+   97.913,
+   60.577,
+   -50.118
+  ],
+  "end_pose_arm": [
+   -5.213,
+   -99.03,
+   96.37,
+   65.918,
+   -44.993
+  ],
+  "end_lift_gap": -1.03,
+  "gripper_min": 2.155,
+  "gripper_max": 18.158,
+  "releases": [
+   {
+    "release_frame": 600,
+    "release_t_s": 20.0,
+    "release_pose_arm": [
+     32.012,
+     -19.048,
+     47.913,
+     49.301,
+     -40.654
+    ],
+    "release_gripper": 6.14,
+    "side": "BLUE-side (pan>0)",
+    "return_home": {
+     "home_frame": 833,
+     "home_t_s": 27.767,
+     "duration_s": 7.767,
+     "peak_joint_speed_units_s": 111.615,
+     "home_pose": [
+      -5.213,
+      -99.03,
+      96.37,
+      65.918,
+      -44.889
+     ]
+    }
+   }
+  ]
+ },
+ "12": {
+  "n_frames": 832,
+  "length_s": 27.733,
+  "start_pose_arm": [
+   -4.869,
+   -99.03,
+   97.55,
+   62.611,
+   -45.569
+  ],
+  "end_pose_arm": [
+   -9.608,
+   -98.148,
+   87.75,
+   69.224,
+   -43.007
+  ],
+  "end_lift_gap": -0.148,
+  "gripper_min": 2.286,
+  "gripper_max": 27.629,
+  "releases": [
+   {
+    "release_frame": 681,
+    "release_t_s": 22.7,
+    "release_pose_arm": [
+     35.545,
+     -4.586,
+     40.018,
+     49.979,
+     -38.928
+    ],
+    "release_gripper": 6.336,
+    "side": "BLUE-side (pan>0)",
+    "return_home": null
+   }
+  ]
+ },
+ "13": {
+  "n_frames": 658,
+  "length_s": 21.933,
+  "start_pose_arm": [
+   -2.111,
+   -98.148,
+   96.461,
+   65.07,
+   -47.346
+  ],
+  "end_pose_arm": [
+   -0.388,
+   -98.148,
+   95.735,
+   68.716,
+   -45.307
+  ],
+  "end_lift_gap": -0.148,
+  "gripper_min": 11.104,
+  "gripper_max": 28.217,
+  "releases": []
+ },
+ "14": {
+  "n_frames": 496,
+  "length_s": 16.533,
+  "start_pose_arm": [
+   -7.023,
+   -98.148,
+   97.187,
+   62.781,
+   -52.105
+  ],
+  "end_pose_arm": [
+   -4.179,
+   -98.765,
+   86.661,
+   71.174,
+   -45.307
+  ],
+  "end_lift_gap": -0.765,
+  "gripper_min": 2.155,
+  "gripper_max": 27.956,
+  "releases": [
+   {
+    "release_frame": 357,
+    "release_t_s": 11.9,
+    "release_pose_arm": [
+     -51.831,
+     53.439,
+     -51.906,
+     84.909,
+     -45.464
+    ],
+    "release_gripper": 6.205,
+    "side": "GREEN-side (pan<-30)",
+    "return_home": null
+   }
+  ]
+ },
+ "15": {
+  "n_frames": 623,
+  "length_s": 20.767,
+  "start_pose_arm": [
+   -7.626,
+   -98.325,
+   98.73,
+   58.711,
+   -45.516
+  ],
+  "end_pose_arm": [
+   -6.075,
+   -98.677,
+   96.824,
+   65.24,
+   -48.026
+  ],
+  "end_lift_gap": -0.677,
+  "gripper_min": 2.155,
+  "gripper_max": 25.539,
+  "releases": [
+   {
+    "release_frame": 490,
+    "release_t_s": 16.333,
+    "release_pose_arm": [
+     -53.296,
+     33.245,
+     -32.305,
+     71.852,
+     -52.314
+    ],
+    "release_gripper": 6.793,
+    "side": "GREEN-side (pan<-30)",
+    "return_home": null
+   }
+  ]
+ }
+}

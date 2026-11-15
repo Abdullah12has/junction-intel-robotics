@@ -1,0 +1,169 @@
+{
+ "folds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16
+ ],
+ "n_folds_ok": 17,
+ "test_run": false,
+ "G2_pass": false,
+ "per_joint": {
+  "shoulder_pan": {
+   "loeo_rmse_norm": 0.22846641904507276,
+   "e1_rmse_norm_same_folds": 0.27162700994247574,
+   "delta_vs_e1": -0.043160590897402984,
+   "pass_rmse": true,
+   "lag_best_s": -0.020000000000000018,
+   "lag_frames": -0.6000000000000005,
+   "pass_lag": true
+  },
+  "shoulder_lift": {
+   "loeo_rmse_norm": 0.6762895323752917,
+   "e1_rmse_norm_same_folds": 0.843481133091698,
+   "delta_vs_e1": -0.16719160071640637,
+   "pass_rmse": false,
+   "lag_best_s": -0.020000000000000018,
+   "lag_frames": -0.6000000000000005,
+   "pass_lag": true
+  },
+  "elbow_flex": {
+   "loeo_rmse_norm": 0.616063849436909,
+   "e1_rmse_norm_same_folds": 0.8373431560749678,
+   "delta_vs_e1": -0.22127930663805884,
+   "pass_rmse": false,
+   "lag_best_s": -0.020000000000000018,
+   "lag_frames": -0.6000000000000005,
+   "pass_lag": true
+  },
+  "wrist_flex": {
+   "loeo_rmse_norm": 0.278797786595244,
+   "e1_rmse_norm_same_folds": 0.32603638150873987,
+   "delta_vs_e1": -0.04723859491349586,
+   "pass_rmse": true,
+   "lag_best_s": -0.030000000000000013,
+   "lag_frames": -0.9000000000000004,
+   "pass_lag": true
+  },
+  "wrist_roll": {
+   "loeo_rmse_norm": 0.18241389626201743,
+   "e1_rmse_norm_same_folds": 0.1841366297670589,
+   "delta_vs_e1": -0.001722733505041485,
+   "pass_rmse": true,
+   "lag_best_s": -0.020000000000000018,
+   "lag_frames": -0.6000000000000005,
+   "pass_lag": true
+  },
+  "gripper": {
+   "loeo_rmse_norm": 0.28956930396311026,
+   "e1_rmse_norm_same_folds": 0.24329645274857684,
+   "delta_vs_e1": 0.04627285121453342,
+   "pass_rmse": true,
+   "lag_best_s": -0.01500000000000002,
+   "lag_frames": -0.4500000000000006,
+   "pass_lag": true
+  }
+ },
+ "s_full": 0.5000000000000001,
+ "p_full_6x6": [
+  [
+   2.834638134188819,
+   0.02202918130422535,
+   0.021744212510946756,
+   1.0000000000000023e-06,
+   3.0,
+   0.0742984610667637
+  ],
+  [
+   7.639356718470696,
+   0.2904016805301337,
+   0.2245111120806027,
+   0.019999999999999993,
+   3.0,
+   0.015587872191146521
+  ],
+  [
+   4.678396299159311,
+   0.1692199886727837,
+   0.16787572338631676,
+   0.019999999999999993,
+   3.0,
+   0.011574789280565436
+  ],
+  [
+   3.4340755953282005,
+   0.036734967730255426,
+   0.032593710753133574,
+   0.01207239474298902,
+   3.0,
+   0.059684668073177655
+  ],
+  [
+   0.5000009990524188,
+   0.005299007916226355,
+   0.004123754764790718,
+   0.0014005631562717766,
+   3.0,
+   0.07199940365989568
+  ],
+  [
+   0.5000000000000001,
+   0.010059238586787112,
+   0.007628666251350787,
+   0.0036292495790925692,
+   3.0,
+   0.06628079017631555
+  ]
+ ],
+ "sanity": {
+  "kv_above_stall_over_noload_limit": [],
+  "explicit_step_risk_kp_dt2_over_arm_gt1": [
+   "shoulder_pan"
+  ],
+  "params_at_bounds": [
+   "shoulder_pan.armature",
+   "shoulder_lift.armature",
+   "elbow_flex.armature",
+   "wrist_roll.kp",
+   "gripper.kp"
+  ],
+  "gravity_bias_above_forcerange": []
+ },
+ "fold_init": {
+  "0": "E1_fold",
+  "1": "E1_fold",
+  "2": "E1_fold",
+  "3": "E1_fold",
+  "4": "E1_fold",
+  "5": "E1_fold",
+  "6": "E1_fold",
+  "7": "E1_fold",
+  "8": "E1_fold",
+  "9": "E1_fold",
+  "10": "E1_fold",
+  "11": "E1_fold",
+  "12": "E1_fold",
+  "13": "E1_fold",
+  "14": "E1_fold",
+  "15": "E1_fold",
+  "16": "E1_fold"
+ },
+ "shift_convention": "sim delayed by shift (s): compare q_sim(t - shift) with logged pos(t)",
+ "not_fitted": [
+  "deadband",
+  "per-link COM scale (only global mass/inertia scale s)"
+ ]
+}

@@ -1,0 +1,807 @@
+{
+ "6d6bdce3_e03_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 3,
+  "frame": 675,
+  "home_dist": 3.31,
+  "id": "6d6bdce3_e03_end",
+  "kind": "end",
+  "run": [
+   648,
+   703
+  ],
+  "state": [
+   -3.49,
+   -98.677,
+   97.005,
+   62.95,
+   -44.993,
+   15.611
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e03_end_243622061421.png",
+    "skin_frac": 0.1374,
+    "video_t": 40.633
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e03_end_243722064316.png",
+    "skin_frac": 0.0443,
+    "video_t": 40.633
+   }
+  }
+ },
+ "6d6bdce3_e03_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 3,
+  "frame": 30,
+  "home_dist": 7.94,
+  "id": "6d6bdce3_e03_start",
+  "kind": "start",
+  "run": [
+   0,
+   134
+  ],
+  "state": [
+   1.939,
+   -99.03,
+   95.281,
+   67.274,
+   -45.882,
+   21.163
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e03_start_243622061421.png",
+    "skin_frac": 0.1345,
+    "video_t": 19.133
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e03_start_243722064316.png",
+    "skin_frac": 0.0394,
+    "video_t": 19.133
+   }
+  }
+ },
+ "6d6bdce3_e04_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 4,
+  "frame": 21,
+  "home_dist": 2.42,
+  "id": "6d6bdce3_e04_start",
+  "kind": "start",
+  "run": [
+   0,
+   43
+  ],
+  "state": [
+   -3.576,
+   -98.677,
+   97.731,
+   61.085,
+   -47.399,
+   15.611
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e04_start_243622061421.png",
+    "skin_frac": 0.1335,
+    "video_t": 42.3
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e04_start_243722064316.png",
+    "skin_frac": 0.0426,
+    "video_t": 42.3
+   }
+  }
+ },
+ "6d6bdce3_e05_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 5,
+  "frame": 633,
+  "home_dist": 5.44,
+  "id": "6d6bdce3_e05_end",
+  "kind": "end",
+  "run": [
+   621,
+   646
+  ],
+  "state": [
+   -0.56,
+   -98.501,
+   94.737,
+   62.781,
+   -49.386,
+   22.534
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e05_end_243622061421.png",
+    "skin_frac": 0.1342,
+    "video_t": 86.233
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e05_end_243722064316.png",
+    "skin_frac": 0.0321,
+    "video_t": 86.233
+   }
+  }
+ },
+ "6d6bdce3_e05_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 5,
+  "frame": 30,
+  "home_dist": 7.89,
+  "id": "6d6bdce3_e05_start",
+  "kind": "start",
+  "run": [
+   0,
+   65
+  ],
+  "state": [
+   -4.093,
+   -98.501,
+   99.274,
+   52.607,
+   -51.791,
+   20.379
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e05_start_243622061421.png",
+    "skin_frac": 0.1352,
+    "video_t": 66.133
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e05_start_243722064316.png",
+    "skin_frac": 0.0371,
+    "video_t": 66.133
+   }
+  }
+ },
+ "6d6bdce3_e06_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 6,
+  "frame": 496,
+  "home_dist": 1.77,
+  "id": "6d6bdce3_e06_end",
+  "kind": "end",
+  "run": [
+   482,
+   511
+  ],
+  "state": [
+   -5.041,
+   -98.942,
+   95.826,
+   62.272,
+   -48.497,
+   18.877
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e06_end_243622061421.png",
+    "skin_frac": 0.1344,
+    "video_t": 103.233
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e06_end_243722064316.png",
+    "skin_frac": 0.0302,
+    "video_t": 103.233
+   }
+  }
+ },
+ "6d6bdce3_e06_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 6,
+  "frame": 12,
+  "home_dist": 2.23,
+  "id": "6d6bdce3_e06_start",
+  "kind": "start",
+  "run": [
+   0,
+   24
+  ],
+  "state": [
+   -8.143,
+   -98.413,
+   94.374,
+   60.322,
+   -47.817,
+   22.534
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e06_start_243622061421.png",
+    "skin_frac": 0.1387,
+    "video_t": 87.1
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e06_start_243722064316.png",
+    "skin_frac": 0.0278,
+    "video_t": 87.1
+   }
+  }
+ },
+ "6d6bdce3_e07_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 7,
+  "frame": 30,
+  "home_dist": 0.51,
+  "id": "6d6bdce3_e07_start",
+  "kind": "start",
+  "run": [
+   0,
+   104
+  ],
+  "state": [
+   -6.075,
+   -98.677,
+   96.824,
+   60.407,
+   -48.81,
+   18.942
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e07_start_243622061421.png",
+    "skin_frac": 0.135,
+    "video_t": 1.0
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e07_start_243722064316.png",
+    "skin_frac": 0.0562,
+    "video_t": 1.0
+   }
+  }
+ },
+ "6d6bdce3_e09_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 9,
+  "frame": 326,
+  "home_dist": 6.3,
+  "id": "6d6bdce3_e09_end",
+  "kind": "end",
+  "run": [
+   313,
+   339
+  ],
+  "state": [
+   0.302,
+   -99.03,
+   95.735,
+   62.781,
+   -47.922,
+   0.98
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e09_end_243622061421.png",
+    "skin_frac": 0.1586,
+    "video_t": 65.8
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e09_end_243722064316.png",
+    "skin_frac": 0.0119,
+    "video_t": 65.8
+   }
+  }
+ },
+ "6d6bdce3_e10_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 10,
+  "frame": 322,
+  "home_dist": 6.67,
+  "id": "6d6bdce3_e10_end",
+  "kind": "end",
+  "run": [
+   306,
+   338
+  ],
+  "state": [
+   -3.145,
+   -98.765,
+   89.927,
+   65.748,
+   -46.51,
+   17.113
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e10_end_243622061421.png",
+    "skin_frac": 0.1315,
+    "video_t": 77.0
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e10_end_243722064316.png",
+    "skin_frac": 0.0102,
+    "video_t": 77.0
+   }
+  }
+ },
+ "6d6bdce3_e11_end": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 11,
+  "frame": 833,
+  "home_dist": 5.42,
+  "id": "6d6bdce3_e11_end",
+  "kind": "end",
+  "run": [
+   811,
+   855
+  ],
+  "state": [
+   -5.213,
+   -99.03,
+   96.37,
+   65.918,
+   -44.889,
+   14.566
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e11_end_243622061421.png",
+    "skin_frac": 0.1224,
+    "video_t": 27.767
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e11_end_243722064316.png",
+    "skin_frac": 0.0128,
+    "video_t": 27.767
+   }
+  }
+ },
+ "6d6bdce3_e11_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 11,
+  "frame": 30,
+  "home_dist": 1.82,
+  "id": "6d6bdce3_e11_start",
+  "kind": "start",
+  "run": [
+   0,
+   97
+  ],
+  "state": [
+   -7.281,
+   -97.884,
+   97.913,
+   60.577,
+   -50.118,
+   17.374
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e11_start_243622061421.png",
+    "skin_frac": 0.1286,
+    "video_t": 1.0
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e11_start_243722064316.png",
+    "skin_frac": 0.0292,
+    "video_t": 1.0
+   }
+  }
+ },
+ "6d6bdce3_e12_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 12,
+  "frame": 19,
+  "home_dist": 2.73,
+  "id": "6d6bdce3_e12_start",
+  "kind": "start",
+  "run": [
+   0,
+   38
+  ],
+  "state": [
+   -5.127,
+   -99.03,
+   97.55,
+   62.272,
+   -45.569,
+   14.566
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e12_start_243622061421.png",
+    "skin_frac": 0.1324,
+    "video_t": 29.167
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e12_start_243722064316.png",
+    "skin_frac": 0.0503,
+    "video_t": 29.167
+   }
+  }
+ },
+ "6d6bdce3_e13_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 13,
+  "frame": 30,
+  "home_dist": 4.57,
+  "id": "6d6bdce3_e13_start",
+  "kind": "start",
+  "run": [
+   0,
+   111
+  ],
+  "state": [
+   -2.111,
+   -98.148,
+   96.461,
+   65.07,
+   -47.346,
+   28.217
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e13_start_243622061421.png",
+    "skin_frac": 0.1135,
+    "video_t": 57.267
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e13_start_243722064316.png",
+    "skin_frac": 0.0259,
+    "video_t": 57.267
+   }
+  }
+ },
+ "6d6bdce3_e14_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 14,
+  "frame": 16,
+  "home_dist": 3.8,
+  "id": "6d6bdce3_e14_start",
+  "kind": "start",
+  "run": [
+   0,
+   32
+  ],
+  "state": [
+   -7.023,
+   -98.148,
+   97.187,
+   62.781,
+   -52.105,
+   27.956
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e14_start_243622061421.png",
+    "skin_frac": 0.133,
+    "video_t": 78.733
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e14_start_243722064316.png",
+    "skin_frac": 0.0222,
+    "video_t": 78.733
+   }
+  }
+ },
+ "6d6bdce3_e15_start": {
+  "dataset": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "ds8": "6d6bdce3",
+  "episode": 15,
+  "frame": 37,
+  "home_dist": 7.89,
+  "id": "6d6bdce3_e15_start",
+  "kind": "start",
+  "run": [
+   28,
+   46
+  ],
+  "state": [
+   -7.023,
+   -98.325,
+   99.183,
+   52.607,
+   -51.163,
+   23.253
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e15_start_243622061421.png",
+    "skin_frac": 0.1286,
+    "video_t": 95.967
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/6d6bdce3_e15_start_243722064316.png",
+    "skin_frac": 0.0391,
+    "video_t": 95.967
+   }
+  }
+ },
+ "a4ba6ede_e00_end": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 0,
+  "frame": 675,
+  "home_dist": 3.31,
+  "id": "a4ba6ede_e00_end",
+  "kind": "end",
+  "run": [
+   648,
+   703
+  ],
+  "state": [
+   -3.49,
+   -98.677,
+   97.005,
+   62.95,
+   -44.993,
+   15.611
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e00_end_243622061421.png",
+    "skin_frac": 0.1382,
+    "video_t": 22.5
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e00_end_243722064316.png",
+    "skin_frac": 0.0444,
+    "video_t": 22.5
+   }
+  }
+ },
+ "a4ba6ede_e00_start": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 0,
+  "frame": 30,
+  "home_dist": 7.94,
+  "id": "a4ba6ede_e00_start",
+  "kind": "start",
+  "run": [
+   0,
+   134
+  ],
+  "state": [
+   1.939,
+   -99.03,
+   95.281,
+   67.274,
+   -45.882,
+   21.163
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e00_start_243622061421.png",
+    "skin_frac": 0.1355,
+    "video_t": 1.0
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e00_start_243722064316.png",
+    "skin_frac": 0.0389,
+    "video_t": 1.0
+   }
+  }
+ },
+ "a4ba6ede_e01_start": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 1,
+  "frame": 21,
+  "home_dist": 2.42,
+  "id": "a4ba6ede_e01_start",
+  "kind": "start",
+  "run": [
+   0,
+   43
+  ],
+  "state": [
+   -3.576,
+   -98.677,
+   97.731,
+   61.085,
+   -47.399,
+   15.611
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e01_start_243622061421.png",
+    "skin_frac": 0.1342,
+    "video_t": 24.167
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e01_start_243722064316.png",
+    "skin_frac": 0.0415,
+    "video_t": 24.167
+   }
+  }
+ },
+ "a4ba6ede_e02_end": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 2,
+  "frame": 633,
+  "home_dist": 5.44,
+  "id": "a4ba6ede_e02_end",
+  "kind": "end",
+  "run": [
+   621,
+   646
+  ],
+  "state": [
+   -0.56,
+   -98.501,
+   94.737,
+   62.781,
+   -49.386,
+   22.534
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e02_end_243622061421.png",
+    "skin_frac": 0.135,
+    "video_t": 68.1
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e02_end_243722064316.png",
+    "skin_frac": 0.0321,
+    "video_t": 68.1
+   }
+  }
+ },
+ "a4ba6ede_e02_start": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 2,
+  "frame": 30,
+  "home_dist": 7.89,
+  "id": "a4ba6ede_e02_start",
+  "kind": "start",
+  "run": [
+   0,
+   65
+  ],
+  "state": [
+   -4.093,
+   -98.501,
+   99.274,
+   52.607,
+   -51.791,
+   20.379
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e02_start_243622061421.png",
+    "skin_frac": 0.1362,
+    "video_t": 48.0
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e02_start_243722064316.png",
+    "skin_frac": 0.0351,
+    "video_t": 48.0
+   }
+  }
+ },
+ "a4ba6ede_e03_end": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 3,
+  "frame": 496,
+  "home_dist": 1.77,
+  "id": "a4ba6ede_e03_end",
+  "kind": "end",
+  "run": [
+   482,
+   511
+  ],
+  "state": [
+   -5.041,
+   -98.942,
+   95.826,
+   62.272,
+   -48.497,
+   18.877
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e03_end_243622061421.png",
+    "skin_frac": 0.1353,
+    "video_t": 85.1
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e03_end_243722064316.png",
+    "skin_frac": 0.0296,
+    "video_t": 85.1
+   }
+  }
+ },
+ "a4ba6ede_e03_start": {
+  "dataset": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "ds8": "a4ba6ede",
+  "episode": 3,
+  "frame": 12,
+  "home_dist": 2.23,
+  "id": "a4ba6ede_e03_start",
+  "kind": "start",
+  "run": [
+   0,
+   24
+  ],
+  "state": [
+   -8.143,
+   -98.413,
+   94.374,
+   60.322,
+   -47.817,
+   22.534
+  ],
+  "views": {
+   "realsense 243622061421": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e03_start_243622061421.png",
+    "skin_frac": 0.1394,
+    "video_t": 68.967
+   },
+   "realsense 243722064316": {
+    "hands_flag": true,
+    "png": "/home/intel/intel-junction-2026/work/P2-B-DET2/E2/samples/a4ba6ede_e03_start_243722064316.png",
+    "skin_frac": 0.0277,
+    "video_t": 68.967
+   }
+  }
+ }
+}

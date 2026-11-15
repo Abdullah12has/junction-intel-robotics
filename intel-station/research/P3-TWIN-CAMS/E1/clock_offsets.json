@@ -1,0 +1,37 @@
+{
+ "stage": "twin-cams-v1",
+ "utc": "2026-11-14T20:20Z",
+ "method": "cross-correlation of joint activity (log1p of max joint speed) with motion energy from out/motion_<cam>.npz; lags -0.5..+0.5 s; offset = video - joint (video_time = joint_time + offset). NOT the onset method in the spec: deviation.",
+ "grid_s": 0.0333,
+ "top": {
+  "per_episode_median_s": 0.0333,
+  "per_episode_n": 14,
+  "per_episode_spread": "MAD 0.0 (below one frame)",
+  "per_event_corr_ge_0p6": {
+   "n": 31,
+   "of": 50,
+   "median_s": 0.0333,
+   "iqr_s": 0.0333,
+   "p10_s": 0.0,
+   "p90_s": 0.0333
+  }
+ },
+ "close": {
+  "per_episode_median_s": 0.0167,
+  "per_episode_n": 8,
+  "per_episode_spread": "MAD 0.0247 s",
+  "per_event_corr_ge_0p6": {
+   "n": 10,
+   "of": 50,
+   "median_s": 0.0333,
+   "mad_s": 0.0494,
+   "p10_s": -0.0033,
+   "p90_s": 0.1533
+  },
+  "note": "episode lags 0 to 12 frames; low confidence"
+ },
+ "wrist": null,
+ "wrist_note": "not computed",
+ "quantisation": "one frame at 30 fps (33 ms); spreads below this are not resolved",
+ "stage1_note": "out/clock_offsets_stage1.json has the sign inverted relative to the stated convention and is not used"
+}

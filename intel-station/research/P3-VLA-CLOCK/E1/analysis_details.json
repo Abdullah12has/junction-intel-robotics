@@ -1,0 +1,536 @@
+{
+ "episodes": {
+  "any_1731/ep_0001": {
+   "joint_samples": 1092,
+   "t0": 1794677514.2205,
+   "t1": 1794677552.3261,
+   "joint_hz": 28.65314041343881,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794677514.2445917,
+   "t_end": 1794677569.4331238,
+   "cams": {
+    "wrist": {
+     "lag_ms": 25.584073630425838,
+     "segments": [
+      "w_20261114T173151Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 31.05582567340369,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 39.60255573865564,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1731/ep_0002": {
+   "joint_samples": 1811,
+   "t0": 1794677570.9707,
+   "t1": 1794677636.4864,
+   "joint_hz": 28.011139531311567,
+   "success": false,
+   "plate": "green",
+   "task": "move the orange brick to the green plate",
+   "t_start": 1794677570.9925897,
+   "t_end": 1794677654.0918381,
+   "cams": {
+    "wrist": {
+     "lag_ms": 14.850007388248484,
+     "segments": [
+      "w_20261114T173151Z.mkv",
+      "w_20261114T173251Z.mkv",
+      "w_20261114T173351Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 32.90853378263274,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 31.152716776703713,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0001": {
+   "joint_samples": 3288,
+   "t0": 1794678056.5155,
+   "t1": 1794678176.9495,
+   "joint_hz": 27.93279034610441,
+   "success": true,
+   "plate": "blue",
+   "task": "move the yellow brick to the blue plate",
+   "t_start": 1794678056.5458326,
+   "t_end": 1794678176.9420414,
+   "cams": {
+    "wrist": {
+     "lag_ms": 2.788144153775574,
+     "segments": [
+      "w_20261114T174051Z.mkv",
+      "w_20261114T174151Z.mkv",
+      "w_20261114T174251Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 24.613114482141476,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 32.96440101518761,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0004": {
+   "joint_samples": 1284,
+   "t0": 1794678327.7221,
+   "t1": 1794678371.9444,
+   "joint_hz": 28.653336157014913,
+   "success": null,
+   "plate": null,
+   "task": null,
+   "t_start": null,
+   "t_end": null,
+   "cams": {
+    "wrist": {
+     "lag_ms": 15.771188814600896,
+     "segments": [
+      "w_20261114T174451Z.mkv",
+      "w_20261114T174551Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 26.050138294279254,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -500.0,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0006": {
+   "joint_samples": 1840,
+   "t0": 1794678461.4788,
+   "t1": 1794678525.6208,
+   "joint_hz": 28.65314041343881,
+   "success": true,
+   "plate": "green",
+   "task": "move the yellow brick to the green plate",
+   "t_start": 1794678461.5173957,
+   "t_end": 1794678525.6124158,
+   "cams": {
+    "wrist": {
+     "lag_ms": 6.300012064867399,
+     "segments": [
+      "w_20261114T174651Z.mkv",
+      "w_20261114T174751Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 21.529905209489808,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -500.0,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0007": {
+   "joint_samples": 1613,
+   "t0": 1794678527.2373,
+   "t1": 1794678583.2148,
+   "joint_hz": 28.653336157014913,
+   "success": null,
+   "plate": null,
+   "task": null,
+   "t_start": null,
+   "t_end": null,
+   "cams": {
+    "wrist": {
+     "lag_ms": 7.590705790731329,
+     "segments": [
+      "w_20261114T174751Z.mkv",
+      "w_20261114T174851Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 19.41942024949441,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 18.19910303700637,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0009": {
+   "joint_samples": 439,
+   "t0": 1794678763.2265,
+   "t1": 1794678778.5743,
+   "joint_hz": 28.65314041343881,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794678763.263884,
+   "t_end": 1794678778.6219423,
+   "cams": {
+    "wrist": {
+     "lag_ms": 7.498849362761084,
+     "segments": [
+      "w_20261114T175151Z.mkv",
+      "w_20261114T175251Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 30.361367342788427,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -3.112024883543461,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0010": {
+   "joint_samples": 508,
+   "t0": 1794678779.9842,
+   "t1": 1794678797.7844,
+   "joint_hz": 28.65314041343881,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794678780.0294127,
+   "t_end": 1794678797.8257341,
+   "cams": {
+    "wrist": {
+     "lag_ms": -3.1561861480189215,
+     "segments": [
+      "w_20261114T175251Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 36.818495144010264,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -8.959559916457254,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0011": {
+   "joint_samples": 1059,
+   "t0": 1794678938.7906,
+   "t1": 1794678976.8947,
+   "joint_hz": 28.089929478893897,
+   "success": null,
+   "plate": null,
+   "task": null,
+   "t_start": null,
+   "t_end": 1794678847.343047,
+   "cams": {
+    "wrist": {
+     "lag_ms": 5.1020641790082015,
+     "segments": [
+      "w_20261114T175451Z.mkv",
+      "w_20261114T175551Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 7.39753598588908,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 3.640327986131796,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0012": {
+   "joint_samples": 359,
+   "t0": 1794679167.2817,
+   "t1": 1794679180.2268,
+   "joint_hz": 28.089929478893897,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794679167.3005247,
+   "t_end": 1794679180.2658217,
+   "cams": {
+    "wrist": {
+     "lag_ms": -15.736502144262216,
+     "segments": [
+      "w_20261114T175851Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 29.856779193420845,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 45.21124420722805,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0013": {
+   "joint_samples": 1604,
+   "t0": 1794679181.795,
+   "t1": 1794679239.5575,
+   "joint_hz": 28.089741357371516,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794679181.8469,
+   "t_end": 1794679252.9748309,
+   "cams": {
+    "wrist": {
+     "lag_ms": -0.7407572763526524,
+     "segments": [
+      "w_20261114T175851Z.mkv",
+      "w_20261114T175951Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 14.093363502701006,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -48.39377868609052,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0014": {
+   "joint_samples": 1392,
+   "t0": 1794679254.4966,
+   "t1": 1794679304.5249,
+   "joint_hz": 28.089929478893897,
+   "success": null,
+   "plate": "blue",
+   "task": "move the white brick to the blue plate",
+   "t_start": 1794679817.704549,
+   "t_end": 1794680078.0073135,
+   "cams": {
+    "wrist": {
+     "lag_ms": 10.804500737729793,
+     "segments": [
+      "w_20261114T180051Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 30.512805862709605,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 36.42960530670395,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0015": {
+   "joint_samples": 1867,
+   "t0": 1794680080.2537,
+   "t1": 1794680147.7721,
+   "joint_hz": 28.011139531311567,
+   "success": true,
+   "plate": "blue",
+   "task": "move the red brick to the blue plate",
+   "t_start": 1794680080.2620609,
+   "t_end": 1794680147.766227,
+   "cams": {
+    "wrist": {
+     "lag_ms": 11.567975475683987,
+     "segments": [
+      "w_20261114T181351Z.mkv",
+      "w_20261114T181451Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 21.401748218611154,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 11.84664950592948,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0016": {
+   "joint_samples": 1459,
+   "t0": 1794680149.2376,
+   "t1": 1794680202.3207,
+   "joint_hz": 27.932976371240578,
+   "success": false,
+   "plate": null,
+   "task": null,
+   "t_start": 1794680149.2485607,
+   "t_end": 1794680202.3597307,
+   "cams": {
+    "wrist": {
+     "lag_ms": 12.276151115067783,
+     "segments": [
+      "w_20261114T181451Z.mkv",
+      "w_20261114T181551Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 45.37358501921937,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": -381.47696792207495,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  },
+  "any_1740/ep_0017": {
+   "joint_samples": 2032,
+   "t0": 1794680397.4842,
+   "t1": 1794680468.0538,
+   "joint_hz": 28.653336157014913,
+   "success": true,
+   "plate": "green",
+   "task": "move the yellow brick to the green plate",
+   "t_start": 1794680397.5311747,
+   "t_end": 1794680468.0524068,
+   "cams": {
+    "wrist": {
+     "lag_ms": -2.4808678179198362,
+     "segments": [
+      "w_20261114T181951Z.mkv",
+      "w_20261114T182051Z.mkv"
+     ],
+     "relative": false
+    },
+    "top": {
+     "lag_ms": 20.698076151207346,
+     "segments": [
+      "top_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    },
+    "close": {
+     "lag_ms": 22.04263809984398,
+     "segments": [
+      "close_20261114T170351Z.mkv"
+     ],
+     "relative": false
+    }
+   }
+  }
+ },
+ "skipped": [
+  "any_1731/ep_0003: joints.csv missing or unreadable",
+  "any_1731/ep_0004: joints.csv missing or unreadable",
+  "any_1740/ep_0002: joints.csv missing or unreadable",
+  "any_1740/ep_0003: joints.csv missing or unreadable",
+  "any_1740/ep_0005: joints.csv missing or unreadable",
+  "any_1740/ep_0008: joints.csv missing or unreadable",
+  "any_1740/ep_0018: joints.csv missing or unreadable"
+ ]
+}

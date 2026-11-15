@@ -1,0 +1,380 @@
+{
+ "gate": "G1",
+ "stage": "twin-robot-v1",
+ "utc": "2026-11-14T19:52:53Z",
+ "threshold_mm": 0.5,
+ "kin_reference": {
+  "path": "/home/intel/intel-junction-2026/work/P3-TWIN-ROBOT/E1/kin_reference.npz",
+  "sha256": "a4f4bbf6c8c6bc21c9220e20bef5ce20680b9330a5649b9ab760e208ca95a721",
+  "rows": 21693,
+  "episodes": 17,
+  "joints_used": "pos0..pos4 normalized; gripper excluded"
+ },
+ "fixed_sample": {
+  "path": "/home/intel/intel-junction-2026/sim/twin/tests/data/g1_fixed_sample.json",
+  "sha256": "a633de1545808a9cd5f784c8e58c759696df870358686578ce1986e68bc03ed8",
+  "n": 200
+ },
+ "candidates": {
+  "twin_ours": {
+   "pos_mm": {
+    "n": 21693,
+    "max": 1.3651675964112226e-08,
+    "median": 1.2949265913101822e-08,
+    "p95": 1.3333981159852894e-08,
+    "p99": 1.3576094083912583e-08,
+    "mean": 1.287724361909327e-08
+   },
+   "ori_deg": {
+    "n": 21693,
+    "max": 3.5715373742382802e-09,
+    "median": 3.3054198861276595e-09,
+    "p95": 3.389107223209138e-09,
+    "p99": 3.5188070543015245e-09,
+    "mean": 3.3111067775507086e-09
+   },
+   "rows_over_threshold": 0,
+   "pass_G1": true,
+   "per_episode": [
+    {
+     "episode": "any_1731/ep_0001",
+     "rows": 1092,
+     "pos_mm_max": 1.3348071129491107e-08,
+     "pos_mm_median": 1.3061246195154681e-08,
+     "ori_deg_max": 3.3323096981039882e-09,
+     "ori_deg_median": 3.3064009240788984e-09
+    },
+    {
+     "episode": "any_1731/ep_0002",
+     "rows": 1811,
+     "pos_mm_max": 1.3391280079817277e-08,
+     "pos_mm_median": 1.2963178656119527e-08,
+     "ori_deg_max": 3.3228489952835932e-09,
+     "ori_deg_median": 3.3044545449480013e-09
+    },
+    {
+     "episode": "any_1740/ep_0001",
+     "rows": 3288,
+     "pos_mm_max": 1.335623654633184e-08,
+     "pos_mm_median": 1.2857678331490376e-08,
+     "ori_deg_max": 3.5715373742382802e-09,
+     "ori_deg_median": 3.3107307079987145e-09
+    },
+    {
+     "episode": "any_1740/ep_0002",
+     "rows": 23,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.329227101267224e-08,
+     "ori_deg_max": 3.3087789353725722e-09,
+     "ori_deg_median": 3.3087789353725722e-09
+    },
+    {
+     "episode": "any_1740/ep_0003",
+     "rows": 23,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.329227101267224e-08,
+     "ori_deg_max": 3.3087789353725722e-09,
+     "ori_deg_median": 3.3087789353725722e-09
+    },
+    {
+     "episode": "any_1740/ep_0004",
+     "rows": 1284,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.243195720465082e-08,
+     "ori_deg_max": 3.3137104984871097e-09,
+     "ori_deg_median": 3.3054198861276595e-09
+    },
+    {
+     "episode": "any_1740/ep_0006",
+     "rows": 1840,
+     "pos_mm_max": 1.3650643341900465e-08,
+     "pos_mm_median": 1.32200892184335e-08,
+     "ori_deg_max": 3.4456639887369077e-09,
+     "ori_deg_median": 3.3058721146216194e-09
+    },
+    {
+     "episode": "any_1740/ep_0007",
+     "rows": 1613,
+     "pos_mm_max": 1.3281003123199244e-08,
+     "pos_mm_median": 1.2349158497535857e-08,
+     "ori_deg_max": 3.318794619523692e-09,
+     "ori_deg_median": 3.3029655434009153e-09
+    },
+    {
+     "episode": "any_1740/ep_0009",
+     "rows": 439,
+     "pos_mm_max": 1.3373680345370506e-08,
+     "pos_mm_median": 1.3280893954101651e-08,
+     "ori_deg_max": 3.308256794093192e-09,
+     "ori_deg_median": 3.293631028156026e-09
+    },
+    {
+     "episode": "any_1740/ep_0010",
+     "rows": 508,
+     "pos_mm_max": 1.3353763172315895e-08,
+     "pos_mm_median": 1.316252124448923e-08,
+     "ori_deg_max": 3.311251816793377e-09,
+     "ori_deg_median": 3.3043895015219398e-09
+    },
+    {
+     "episode": "any_1740/ep_0011",
+     "rows": 1059,
+     "pos_mm_max": 1.3300328710457302e-08,
+     "pos_mm_median": 1.3206474732501862e-08,
+     "ori_deg_max": 3.3147201531767925e-09,
+     "ori_deg_median": 3.3043588516812297e-09
+    },
+    {
+     "episode": "any_1740/ep_0012",
+     "rows": 359,
+     "pos_mm_max": 1.327592394213814e-08,
+     "pos_mm_median": 1.3086294052898346e-08,
+     "ori_deg_max": 3.3088295503682644e-09,
+     "ori_deg_median": 3.3039586421045555e-09
+    },
+    {
+     "episode": "any_1740/ep_0013",
+     "rows": 1604,
+     "pos_mm_max": 1.3402339674387936e-08,
+     "pos_mm_median": 1.3253753843152955e-08,
+     "ori_deg_max": 3.325386963954467e-09,
+     "ori_deg_median": 3.304918015558849e-09
+    },
+    {
+     "episode": "any_1740/ep_0014",
+     "rows": 1392,
+     "pos_mm_max": 1.3388407438663588e-08,
+     "pos_mm_median": 1.2861425710033509e-08,
+     "ori_deg_max": 3.320802182445816e-09,
+     "ori_deg_median": 3.3053565225649527e-09
+    },
+    {
+     "episode": "any_1740/ep_0015",
+     "rows": 1867,
+     "pos_mm_max": 1.3310196214603335e-08,
+     "pos_mm_median": 1.2732513522592802e-08,
+     "ori_deg_max": 3.3593508583955493e-09,
+     "ori_deg_median": 3.3078111729417864e-09
+    },
+    {
+     "episode": "any_1740/ep_0016",
+     "rows": 1459,
+     "pos_mm_max": 1.3309110933232908e-08,
+     "pos_mm_median": 1.2374172901332402e-08,
+     "ori_deg_max": 3.3187368527349746e-09,
+     "ori_deg_median": 3.3034720311296464e-09
+    },
+    {
+     "episode": "any_1740/ep_0017",
+     "rows": 2032,
+     "pos_mm_max": 1.3651675964112226e-08,
+     "pos_mm_median": 1.239144446566841e-08,
+     "ori_deg_max": 3.4462798706884755e-09,
+     "ori_deg_median": 3.305343249347861e-09
+    }
+   ],
+   "fixed_sample": {
+    "n": 200,
+    "pos_mm_max": 1.3599358297529574e-08,
+    "ori_deg_max": 3.558481831564619e-09,
+    "pass_G1": true
+   },
+   "model": {
+    "path": "/home/intel/intel-junction-2026/sim/twin/robot/so101_twin.xml",
+    "sha256": "b6bbd07d76d23f08bb979476bc68988fee744d733bc1912337503e2aa6489e47",
+    "nbody": 8,
+    "njnt": 6,
+    "nsite": 1,
+    "ngeom": 17
+   }
+  },
+  "official_urdf": {
+   "pos_mm": {
+    "n": 21693,
+    "max": 1.3651675964112226e-08,
+    "median": 1.2949265913101822e-08,
+    "p95": 1.3333981159852894e-08,
+    "p99": 1.3576094083912583e-08,
+    "mean": 1.287724361909327e-08
+   },
+   "ori_deg": {
+    "n": 21693,
+    "max": 3.5715373742382802e-09,
+    "median": 3.3054198861276595e-09,
+    "p95": 3.389107223209138e-09,
+    "p99": 3.5188070543015245e-09,
+    "mean": 3.3111067775507086e-09
+   },
+   "rows_over_threshold": 0,
+   "pass_G1": true,
+   "per_episode": [
+    {
+     "episode": "any_1731/ep_0001",
+     "rows": 1092,
+     "pos_mm_max": 1.3348071129491107e-08,
+     "pos_mm_median": 1.3061246195154681e-08,
+     "ori_deg_max": 3.3323096981039882e-09,
+     "ori_deg_median": 3.3064009240788984e-09
+    },
+    {
+     "episode": "any_1731/ep_0002",
+     "rows": 1811,
+     "pos_mm_max": 1.3391280079817277e-08,
+     "pos_mm_median": 1.2963178656119527e-08,
+     "ori_deg_max": 3.3228489952835932e-09,
+     "ori_deg_median": 3.3044545449480013e-09
+    },
+    {
+     "episode": "any_1740/ep_0001",
+     "rows": 3288,
+     "pos_mm_max": 1.335623654633184e-08,
+     "pos_mm_median": 1.2857678331490376e-08,
+     "ori_deg_max": 3.5715373742382802e-09,
+     "ori_deg_median": 3.3107307079987145e-09
+    },
+    {
+     "episode": "any_1740/ep_0002",
+     "rows": 23,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.329227101267224e-08,
+     "ori_deg_max": 3.3087789353725722e-09,
+     "ori_deg_median": 3.3087789353725722e-09
+    },
+    {
+     "episode": "any_1740/ep_0003",
+     "rows": 23,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.329227101267224e-08,
+     "ori_deg_max": 3.3087789353725722e-09,
+     "ori_deg_median": 3.3087789353725722e-09
+    },
+    {
+     "episode": "any_1740/ep_0004",
+     "rows": 1284,
+     "pos_mm_max": 1.329227101267224e-08,
+     "pos_mm_median": 1.243195720465082e-08,
+     "ori_deg_max": 3.3137104984871097e-09,
+     "ori_deg_median": 3.3054198861276595e-09
+    },
+    {
+     "episode": "any_1740/ep_0006",
+     "rows": 1840,
+     "pos_mm_max": 1.3650643341900465e-08,
+     "pos_mm_median": 1.32200892184335e-08,
+     "ori_deg_max": 3.4456639887369077e-09,
+     "ori_deg_median": 3.3058721146216194e-09
+    },
+    {
+     "episode": "any_1740/ep_0007",
+     "rows": 1613,
+     "pos_mm_max": 1.3281003123199244e-08,
+     "pos_mm_median": 1.2349158497535857e-08,
+     "ori_deg_max": 3.318794619523692e-09,
+     "ori_deg_median": 3.3029655434009153e-09
+    },
+    {
+     "episode": "any_1740/ep_0009",
+     "rows": 439,
+     "pos_mm_max": 1.3373680345370506e-08,
+     "pos_mm_median": 1.3280893954101651e-08,
+     "ori_deg_max": 3.308256794093192e-09,
+     "ori_deg_median": 3.293631028156026e-09
+    },
+    {
+     "episode": "any_1740/ep_0010",
+     "rows": 508,
+     "pos_mm_max": 1.3353763172315895e-08,
+     "pos_mm_median": 1.316252124448923e-08,
+     "ori_deg_max": 3.311251816793377e-09,
+     "ori_deg_median": 3.3043895015219398e-09
+    },
+    {
+     "episode": "any_1740/ep_0011",
+     "rows": 1059,
+     "pos_mm_max": 1.3300328710457302e-08,
+     "pos_mm_median": 1.3206474732501862e-08,
+     "ori_deg_max": 3.3147201531767925e-09,
+     "ori_deg_median": 3.3043588516812297e-09
+    },
+    {
+     "episode": "any_1740/ep_0012",
+     "rows": 359,
+     "pos_mm_max": 1.327592394213814e-08,
+     "pos_mm_median": 1.3086294052898346e-08,
+     "ori_deg_max": 3.3088295503682644e-09,
+     "ori_deg_median": 3.3039586421045555e-09
+    },
+    {
+     "episode": "any_1740/ep_0013",
+     "rows": 1604,
+     "pos_mm_max": 1.3402339674387936e-08,
+     "pos_mm_median": 1.3253753843152955e-08,
+     "ori_deg_max": 3.325386963954467e-09,
+     "ori_deg_median": 3.304918015558849e-09
+    },
+    {
+     "episode": "any_1740/ep_0014",
+     "rows": 1392,
+     "pos_mm_max": 1.3388407438663588e-08,
+     "pos_mm_median": 1.2861425710033509e-08,
+     "ori_deg_max": 3.320802182445816e-09,
+     "ori_deg_median": 3.3053565225649527e-09
+    },
+    {
+     "episode": "any_1740/ep_0015",
+     "rows": 1867,
+     "pos_mm_max": 1.3310196214603335e-08,
+     "pos_mm_median": 1.2732513522592802e-08,
+     "ori_deg_max": 3.3593508583955493e-09,
+     "ori_deg_median": 3.3078111729417864e-09
+    },
+    {
+     "episode": "any_1740/ep_0016",
+     "rows": 1459,
+     "pos_mm_max": 1.3309110933232908e-08,
+     "pos_mm_median": 1.2374172901332402e-08,
+     "ori_deg_max": 3.3187368527349746e-09,
+     "ori_deg_median": 3.3034720311296464e-09
+    },
+    {
+     "episode": "any_1740/ep_0017",
+     "rows": 2032,
+     "pos_mm_max": 1.3651675964112226e-08,
+     "pos_mm_median": 1.239144446566841e-08,
+     "ori_deg_max": 3.4462798706884755e-09,
+     "ori_deg_median": 3.305343249347861e-09
+    }
+   ],
+   "fixed_sample": {
+    "n": 200,
+    "pos_mm_max": 1.3599358297529574e-08,
+    "ori_deg_max": 3.558481831564619e-09,
+    "pass_G1": true
+   },
+   "model": {
+    "path": "/home/intel/intel-junction-2026/work/P3-TWIN-ROBOT/E1/official_urdf_twin.xml",
+    "sha256": "e4c4700d02dc5ebc4677474917d9af7cccd869b182004b660c880c1639fb0bdb",
+    "nbody": 8,
+    "njnt": 6,
+    "nsite": 1,
+    "ngeom": 0
+   }
+  }
+ },
+ "decision": {
+  "candidate": "twin_ours",
+  "gate": "G1",
+  "threshold_mm": 0.5,
+  "pass_G1": true,
+  "pos_mm_max": 1.3651675964112226e-08,
+  "ori_deg_max": 3.5715373742382802e-09,
+  "fixed_sample_pos_mm_max": 1.3599358297529574e-08,
+  "baseline": "official_urdf",
+  "twin_ours_vs_official_urdf_tcp": {
+   "pos_mm_max": 0.0,
+   "ori_deg_max": 0.0
+  },
+  "note": "R/twin was deleted at 19:48Z (D-102); no comparison with it is made."
+ },
+ "runtime_s": 0.5
+}

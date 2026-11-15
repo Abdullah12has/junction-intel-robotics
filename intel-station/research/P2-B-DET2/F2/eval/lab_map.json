@@ -1,0 +1,236 @@
+{
+ "close/e03_end/k0": {
+  "sample": "6d6bdce3_e03_end",
+  "centre_px": [
+   144.3,
+   106.4
+  ],
+  "colour": "yellow",
+  "area": 3273
+ },
+ "close/e03_end/k1": {
+  "sample": "6d6bdce3_e03_end",
+  "centre_px": [
+   229.6,
+   150.3
+  ],
+  "colour": "red",
+  "area": 7310
+ },
+ "close/e03_end/k2": {
+  "sample": "6d6bdce3_e03_end",
+  "centre_px": [
+   526.8,
+   244.5
+  ],
+  "colour": "blue",
+  "area": 9940
+ },
+ "close/e03_start/k0": {
+  "sample": "6d6bdce3_e03_start",
+  "centre_px": [
+   243.2,
+   122.4
+  ],
+  "colour": "red",
+  "area": 11427
+ },
+ "close/e03_start/k1": {
+  "sample": "6d6bdce3_e03_start",
+  "centre_px": [
+   526.8,
+   244.7
+  ],
+  "colour": "blue",
+  "area": 9916
+ },
+ "close/e04_start/k0": {
+  "sample": "6d6bdce3_e04_start",
+  "centre_px": [
+   526.8,
+   244.5
+  ],
+  "colour": "blue",
+  "area": 9945
+ },
+ "close/e05_end/k0": {
+  "sample": "6d6bdce3_e05_end",
+  "centre_px": [
+   246.1,
+   213.6
+  ],
+  "colour": "red",
+  "area": 8446
+ },
+ "close/e05_start/k0": {
+  "sample": "6d6bdce3_e05_start",
+  "centre_px": [
+   258.6,
+   175.9
+  ],
+  "colour": "red",
+  "area": 13372
+ },
+ "close/e06_end/k0": {
+  "sample": "6d6bdce3_e06_end",
+  "centre_px": [
+   294.7,
+   183.4
+  ],
+  "colour": "red",
+  "area": 7246
+ },
+ "close/e10_end/k1": {
+  "sample": "6d6bdce3_e10_end",
+  "centre_px": [
+   497.5,
+   233.4
+  ],
+  "colour": "orange",
+  "area": 9484
+ },
+ "close/e11_end/k0": {
+  "sample": "6d6bdce3_e11_end",
+  "centre_px": [
+   390.8,
+   83.1
+  ],
+  "colour": "cream",
+  "area": 4321
+ },
+ "close/e11_end/k1": {
+  "sample": "6d6bdce3_e11_end",
+  "centre_px": [
+   330.6,
+   134.1
+  ],
+  "colour": "orange",
+  "area": 12419
+ },
+ "close/e11_end/k2": {
+  "sample": "6d6bdce3_e11_end",
+  "centre_px": [
+   238.1,
+   174.8
+  ],
+  "colour": "orange",
+  "area": 7576
+ },
+ "close/e11_end/k3": {
+  "sample": "6d6bdce3_e11_end",
+  "centre_px": [
+   549.2,
+   167.2
+  ],
+  "colour": "blue",
+  "area": 4792
+ },
+ "close/e11_end/k4": {
+  "sample": "6d6bdce3_e11_end",
+  "centre_px": [
+   458.8,
+   189.5
+  ],
+  "colour": "yellow",
+  "area": 2732
+ },
+ "close/e11_start/k0": {
+  "sample": "6d6bdce3_e11_start",
+  "centre_px": [
+   389.3,
+   82.3
+  ],
+  "colour": "white",
+  "area": 4420
+ },
+ "close/e11_start/k1": {
+  "sample": "6d6bdce3_e11_start",
+  "centre_px": [
+   512.8,
+   167.0
+  ],
+  "colour": "red",
+  "area": 10958
+ },
+ "close/e12_start/k0": {
+  "sample": "6d6bdce3_e12_start",
+  "centre_px": [
+   391.0,
+   81.6
+  ],
+  "colour": "white",
+  "area": 4160
+ },
+ "close/e12_start/k1": {
+  "sample": "6d6bdce3_e12_start",
+  "centre_px": [
+   523.0,
+   181.1
+  ],
+  "colour": "blue",
+  "area": 7340
+ },
+ "close/e12_start/k2": {
+  "sample": "6d6bdce3_e12_start",
+  "centre_px": [
+   458.6,
+   192.1
+  ],
+  "colour": "yellow",
+  "area": 1818
+ },
+ "close/e12_start/k3": {
+  "sample": "6d6bdce3_e12_start",
+  "centre_px": [
+   407.6,
+   303.8
+  ],
+  "colour": "red",
+  "area": 10166
+ },
+ "close/e13_start/k0": {
+  "sample": "6d6bdce3_e13_start",
+  "centre_px": [
+   376.5,
+   142.6
+  ],
+  "colour": "red",
+  "area": 6021
+ },
+ "close/e13_start/k1": {
+  "sample": "6d6bdce3_e13_start",
+  "centre_px": [
+   243.1,
+   178.8
+  ],
+  "colour": "orange",
+  "area": 7812
+ },
+ "close/e13_start/k2": {
+  "sample": "6d6bdce3_e13_start",
+  "centre_px": [
+   448.3,
+   382.9
+  ],
+  "colour": "orange",
+  "area": 13941
+ },
+ "close/e14_start/k0": {
+  "sample": "6d6bdce3_e14_start",
+  "centre_px": [
+   377.6,
+   152.2
+  ],
+  "colour": "red",
+  "area": 6294
+ },
+ "close/e14_start/k1": {
+  "sample": "6d6bdce3_e14_start",
+  "centre_px": [
+   237.9,
+   173.2
+  ],
+  "colour": "orange",
+  "area": 7529
+ }
+}

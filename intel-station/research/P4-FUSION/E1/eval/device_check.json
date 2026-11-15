@@ -1,0 +1,95 @@
+[
+ {
+  "model": "patchcore",
+  "device": "CPU",
+  "latency_ms_per_crop": 102.05,
+  "status": "ok",
+  "max_abs_diff_vs_cpu": 0.0,
+  "max_rel_diff_vs_cpu": 0.0,
+  "device_used": "CPU",
+  "n_crops": 32,
+  "first_scores": [
+   467.498,
+   536.7357,
+   440.3901
+  ]
+ },
+ {
+  "model": "patchcore",
+  "device": "GPU",
+  "latency_ms_per_crop": 25.73,
+  "status": "ok",
+  "max_abs_diff_vs_cpu": 0.00048828125,
+  "max_rel_diff_vs_cpu": 1.3699661130319653e-06,
+  "device_used": "GPU",
+  "n_crops": 32,
+  "first_scores": [
+   467.4982,
+   536.7352,
+   440.3899
+  ]
+ },
+ {
+  "model": "patchcore",
+  "device": "NPU",
+  "latency_ms_per_crop": 44.73,
+  "status": "ok",
+  "max_abs_diff_vs_cpu": 344.59228515625,
+  "max_rel_diff_vs_cpu": 0.5908471746750958,
+  "device_used": "NPU",
+  "n_crops": 32,
+  "first_scores": [
+   237.625,
+   236.875,
+   238.25
+  ]
+ },
+ {
+  "model": "padim",
+  "device": "CPU",
+  "latency_ms_per_crop": 35.3,
+  "status": "ok",
+  "max_abs_diff_vs_cpu": 0.0,
+  "max_rel_diff_vs_cpu": 0.0,
+  "device_used": "CPU",
+  "n_crops": 32,
+  "first_scores": [
+   356.7373,
+   369.8461,
+   307.7669
+  ]
+ },
+ {
+  "model": "padim",
+  "device": "GPU",
+  "latency_ms_per_crop": 124.8,
+  "status": "ok",
+  "max_abs_diff_vs_cpu": 0.00018310546875,
+  "max_rel_diff_vs_cpu": 5.132782078241221e-07,
+  "device_used": "GPU",
+  "n_crops": 32,
+  "first_scores": [
+   356.7371,
+   369.8461,
+   307.7669
+  ]
+ },
+ {
+  "model": "padim",
+  "device": "NPU",
+  "status": "aborted",
+  "error": "process aborted in the NPU compile (LLVM ERROR: Failed to infer result type(s), IE.Interpolate); no scores"
+ },
+ {
+  "model": "patchcore",
+  "device": "meta",
+  "threshold_all_good": 583.21728515625,
+  "n_train_crops": 30
+ },
+ {
+  "model": "padim",
+  "device": "meta",
+  "threshold_all_good": 468.472900390625,
+  "n_train_crops": 30
+ }
+]

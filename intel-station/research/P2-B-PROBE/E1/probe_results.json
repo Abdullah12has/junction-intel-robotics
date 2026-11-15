@@ -1,0 +1,166 @@
+{
+  "started_utc": "14:13:26Z",
+  "timings_s": {
+    "connect": 0.51,
+    "load_environment": 2.365,
+    "frames_ready": 0.042,
+    "load_model": 0.91,
+    "unload_environment": 0.155,
+    "follower_port_free_after_unload": 0.0,
+    "reload_environment": 0.359
+  },
+  "events": [
+    "14:13:27Z connected; state.environment=None state.model=None",
+    "14:13:29Z environment loaded; statuses={'environment': 'running', 'environment/follower': 'running', 'environment/realsense 243722064316': 'running', 'environment/realsense 243622061421': 'running'}; failures={}",
+    "14:13:29Z frames saved for ['realsense 243722064316', 'realsense 243622061421']",
+    "14:13:29Z joint reference: {\"elbow_flex.pos\": 99.36479187011719, \"gripper.pos\": 25.669496536254883, \"shoulder_lift.pos\": -98.05996704101562, \"shoulder_pan.pos\": -6.591986179351807, \"wrist_flex.pos\": 54.302669525146484, \"wrist_roll.pos\": -53.09803771972656}",
+    "14:13:29Z follower state before model load recorded (6 joints)",
+    "14:13:30Z model loaded in 0.91 s: {'model_id': 'fa42ee76-bcfb-43ba-ba21-124e678ee785', 'name': 'ACT inspection smoke - GPU repaired - 1 epoch', 'backend': 'openvino', 'device': 'auto'}",
+    "14:13:30Z environment unloaded; state.model={'model_id': 'fa42ee76-bcfb-43ba-ba21-124e678ee785', 'name': 'ACT inspection smoke - GPU repaired - 1 epoch', 'backend': 'openvino', 'device': 'auto'} state.environment=None",
+    "14:13:30Z follower port free=True after 0.0 s",
+    "14:13:31Z reloaded; model kept without reload=True",
+    "14:13:33Z cleanup done; follower port free=True"
+  ],
+  "frames": [
+    {
+      "key": "realsense 243722064316",
+      "file": "frame_realsense_243722064316.jpg",
+      "bytes": 39156,
+      "backend_timestamp": 64305.522318685
+    },
+    {
+      "key": "realsense 243622061421",
+      "file": "frame_realsense_243622061421.jpg",
+      "bytes": 56158,
+      "backend_timestamp": 64305.510663512
+    }
+  ],
+  "holders": {
+    "baseline_after_load": [
+      [
+        1340721,
+        "/dev/ttyACM0"
+      ],
+      [
+        1340724,
+        "/dev/video8"
+      ],
+      [
+        1340725,
+        "/dev/video14"
+      ]
+    ],
+    "baseline_after_reload": [
+      [
+        1340724,
+        "/dev/video8"
+      ],
+      [
+        1340725,
+        "/dev/video14"
+      ],
+      [
+        1340933,
+        "/dev/ttyACM0"
+      ]
+    ],
+    "after_cleanup": [
+      [
+        1340724,
+        "/dev/video8"
+      ],
+      [
+        1340725,
+        "/dev/video14"
+      ]
+    ]
+  },
+  "statuses_after_load": {
+    "environment": {
+      "type": "status",
+      "component": "environment",
+      "state": "stopped",
+      "error": null
+    },
+    "model": {
+      "type": "status",
+      "component": "model",
+      "state": "stopped",
+      "error": null
+    }
+  },
+  "follower_state_before": {
+    "shoulder_pan.pos": -6.591986179351807,
+    "shoulder_lift.pos": -98.05996704101562,
+    "elbow_flex.pos": 99.36479187011719,
+    "wrist_flex.pos": 54.302669525146484,
+    "wrist_roll.pos": -53.09803771972656,
+    "gripper.pos": 25.669496536254883
+  },
+  "model_after_load": {
+    "model_id": "fa42ee76-bcfb-43ba-ba21-124e678ee785",
+    "name": "ACT inspection smoke - GPU repaired - 1 epoch",
+    "backend": "openvino",
+    "device": "auto"
+  },
+  "follower_state_after_load_model": {
+    "shoulder_pan.pos": -6.591986179351807,
+    "shoulder_lift.pos": -98.05996704101562,
+    "elbow_flex.pos": 99.36479187011719,
+    "wrist_flex.pos": 54.302669525146484,
+    "wrist_roll.pos": -53.09803771972656,
+    "gripper.pos": 25.669496536254883
+  },
+  "model_after_unload": {
+    "model_id": "fa42ee76-bcfb-43ba-ba21-124e678ee785",
+    "name": "ACT inspection smoke - GPU repaired - 1 epoch",
+    "backend": "openvino",
+    "device": "auto"
+  },
+  "port_free_after_unload": true,
+  "model_after_reload": {
+    "model_id": "fa42ee76-bcfb-43ba-ba21-124e678ee785",
+    "name": "ACT inspection smoke - GPU repaired - 1 epoch",
+    "backend": "openvino",
+    "device": "auto"
+  },
+  "model_kept_without_reload": true,
+  "follower_state_after_reload": {
+    "shoulder_pan.pos": -6.591986179351807,
+    "shoulder_lift.pos": -98.05996704101562,
+    "elbow_flex.pos": 99.36479187011719,
+    "wrist_flex.pos": 54.302669525146484,
+    "wrist_roll.pos": -53.09803771972656,
+    "gripper.pos": 25.669496536254883
+  },
+  "max_joint_delta": 0.0,
+  "port_free_after_cleanup": true,
+  "status": "PASS",
+  "note": "completed",
+  "finished_utc": "14:13:33Z",
+  "statuses_final": {
+    "environment": {
+      "type": "status",
+      "component": "environment",
+      "state": "stopped",
+      "error": null
+    },
+    "model": {
+      "type": "status",
+      "component": "model",
+      "state": "stopped",
+      "error": null
+    }
+  },
+  "errors": [],
+  "unhandled": [],
+  "failures": {},
+  "follower_state_final": {
+    "shoulder_pan.pos": -6.591986179351807,
+    "shoulder_lift.pos": -98.05996704101562,
+    "elbow_flex.pos": 99.36479187011719,
+    "wrist_flex.pos": 54.302669525146484,
+    "wrist_roll.pos": -53.09803771972656,
+    "gripper.pos": 25.669496536254883
+  }
+}

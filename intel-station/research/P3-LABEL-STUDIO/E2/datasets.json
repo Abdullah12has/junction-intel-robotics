@@ -1,0 +1,2046 @@
+{
+ "stage": "studio-labels-v2",
+ "utc": "2026-11-14T20:56Z",
+ "datasets": [
+  {
+   "group": "studio",
+   "uuid": "18468a09-4e62-4aa6-9c68-a785d5f0c3b9",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 3
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 3
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -55.14,
+     36.06
+    ],
+    [
+     -99.42,
+     72.34
+    ],
+    [
+     -99.36,
+     99.91
+    ],
+    [
+     25.57,
+     100.0
+    ],
+    [
+     -88.87,
+     14.94
+    ],
+    [
+     0.0,
+     32.38
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -54.67,
+     35.89
+    ],
+    [
+     -99.03,
+     73.02
+    ],
+    [
+     -96.46,
+     99.27
+    ],
+    [
+     26.49,
+     99.07
+    ],
+    [
+     -88.65,
+     14.61
+    ],
+    [
+     2.16,
+     31.29
+    ]
+   ],
+   "episodes_info_json": 9,
+   "episodes_meta_rows": 9,
+   "episodes_with_data": 9,
+   "data_rows": 5554,
+   "frames_info_json": 5554,
+   "tasks": [
+    "move the yellow brick to the spot on the mat",
+    "move the red brick to the spot on the mat",
+    "move the orange brick to the blue plate",
+    "move the red brick to the blue plate",
+    "move the red brick to the green plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "episode_frames": [
+    526,
+    642,
+    532,
+    454,
+    1210,
+    573,
+    711,
+    386,
+    520
+   ],
+   "duration_s_total": 185.13,
+   "duration_s_min": 12.87,
+   "duration_s_max": 40.33,
+   "originals_in_dataset": [],
+   "entries": [
+    "18468a09:0",
+    "18468a09:1",
+    "18468a09:2",
+    "18468a09:3",
+    "18468a09:4",
+    "18468a09:5",
+    "18468a09:6",
+    "18468a09:7",
+    "18468a09:8"
+   ],
+   "trust_counts": {
+    "training": 6,
+    "evaluation": 2,
+    "calibration": 1,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 9"
+   ],
+   "note": "Contains copies of episodes that also appear in 6d6bdce3 / e2eae6c8 / 800d7dc2 / d2fd0a80 / ba9eafba / 51100357 (see dup_of)."
+  },
+  {
+   "group": "studio",
+   "uuid": "51100357-35c1-4e37-a558-21a96d477651",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -53.51,
+     -3.47
+    ],
+    [
+     -99.34,
+     72.34
+    ],
+    [
+     -82.09,
+     99.91
+    ],
+    [
+     51.32,
+     99.49
+    ],
+    [
+     -57.32,
+     -35.26
+    ],
+    [
+     0.0,
+     25.95
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -53.3,
+     -3.92
+    ],
+    [
+     -99.03,
+     72.66
+    ],
+    [
+     -78.95,
+     99.27
+    ],
+    [
+     52.27,
+     97.88
+    ],
+    [
+     -56.97,
+     -35.79
+    ],
+    [
+     2.16,
+     25.54
+    ]
+   ],
+   "episodes_info_json": 1,
+   "episodes_meta_rows": 1,
+   "episodes_with_data": 1,
+   "data_rows": 623,
+   "frames_info_json": 623,
+   "tasks": [
+    "move the red brick to the green plate"
+   ],
+   "episode_indices": [
+    0
+   ],
+   "episode_frames": [
+    623
+   ],
+   "duration_s_total": 20.77,
+   "duration_s_min": 20.77,
+   "duration_s_max": 20.77,
+   "originals_in_dataset": [],
+   "entries": [
+    "51100357:0"
+   ],
+   "trust_counts": {
+    "training": 0,
+    "evaluation": 1,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 1"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "studio",
+   "uuid": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 4
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 4
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -58.76,
+     36.06
+    ],
+    [
+     -100.0,
+     72.34
+    ],
+    [
+     -99.36,
+     99.91
+    ],
+    [
+     -38.91,
+     100.0
+    ],
+    [
+     -88.87,
+     44.51
+    ],
+    [
+     0.0,
+     36.41
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -58.38,
+     35.89
+    ],
+    [
+     -99.29,
+     73.02
+    ],
+    [
+     -96.46,
+     99.27
+    ],
+    [
+     -37.86,
+     99.07
+    ],
+    [
+     -88.65,
+     44.16
+    ],
+    [
+     0.98,
+     36.38
+    ]
+   ],
+   "episodes_info_json": 16,
+   "episodes_meta_rows": 16,
+   "episodes_with_data": 16,
+   "data_rows": 10158,
+   "frames_info_json": 10158,
+   "tasks": [
+    "move the brick to the inspection spot",
+    "move the brick to the left plate",
+    "move the red brick to the blue plate",
+    "move the red brick to the green plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "episode_frames": [
+    673,
+    580,
+    544,
+    704,
+    706,
+    647,
+    512,
+    1306,
+    342,
+    340,
+    339,
+    856,
+    832,
+    658,
+    496,
+    623
+   ],
+   "duration_s_total": 338.6,
+   "duration_s_min": 11.3,
+   "duration_s_max": 43.53,
+   "originals_in_dataset": [
+    "6d6bdce3:0",
+    "6d6bdce3:1",
+    "6d6bdce3:2",
+    "6d6bdce3:3",
+    "6d6bdce3:4",
+    "6d6bdce3:5",
+    "6d6bdce3:6",
+    "6d6bdce3:7",
+    "6d6bdce3:8",
+    "6d6bdce3:9",
+    "6d6bdce3:10",
+    "6d6bdce3:11",
+    "6d6bdce3:12",
+    "6d6bdce3:13",
+    "6d6bdce3:14",
+    "6d6bdce3:15"
+   ],
+   "entries": [
+    "6d6bdce3:0",
+    "6d6bdce3:1",
+    "6d6bdce3:2",
+    "6d6bdce3:3",
+    "6d6bdce3:4",
+    "6d6bdce3:5",
+    "6d6bdce3:6",
+    "6d6bdce3:7",
+    "6d6bdce3:8",
+    "6d6bdce3:9",
+    "6d6bdce3:10",
+    "6d6bdce3:11",
+    "6d6bdce3:12",
+    "6d6bdce3:13",
+    "6d6bdce3:14",
+    "6d6bdce3:15"
+   ],
+   "trust_counts": {
+    "training": 7,
+    "evaluation": 6,
+    "calibration": 3,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 16"
+   ],
+   "note": "Studio name 'Smoke test - inspection skill - 5 episodes' (stale). 16 episodes now; V1 (13:35Z) saw 11."
+  },
+  {
+   "group": "studio",
+   "uuid": "7e99a9e4-b170-4129-bbc2-7283309b5176",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -14.05,
+     -13.59
+    ],
+    [
+     -99.01,
+     -98.93
+    ],
+    [
+     87.39,
+     100.0
+    ],
+    [
+     58.11,
+     75.62
+    ],
+    [
+     -62.07,
+     -61.77
+    ],
+    [
+     16.73,
+     16.73
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -14.17,
+     -14.09
+    ],
+    [
+     -98.94,
+     -98.5
+    ],
+    [
+     90.93,
+     99.46
+    ],
+    [
+     57.95,
+     74.23
+    ],
+    [
+     -62.04,
+     -61.99
+    ],
+    [
+     17.05,
+     17.05
+    ]
+   ],
+   "episodes_info_json": 1,
+   "episodes_meta_rows": 1,
+   "episodes_with_data": 1,
+   "data_rows": 8405,
+   "frames_info_json": 8405,
+   "tasks": [
+    "raw batch - relabel per pick"
+   ],
+   "episode_indices": [
+    0
+   ],
+   "episode_frames": [
+    8405
+   ],
+   "duration_s_total": 280.17,
+   "duration_s_min": 280.17,
+   "duration_s_max": 280.17,
+   "originals_in_dataset": [
+    "7e99a9e4:0"
+   ],
+   "entries": [
+    "7e99a9e4:0"
+   ],
+   "trust_counts": {
+    "training": 0,
+    "evaluation": 0,
+    "calibration": 0,
+    "nothing": 1
+   },
+   "census_issues": [
+    "episodes with flags=1 of 1"
+   ],
+   "note": "Raw batch: 1 entry, 280 s, placeholder text, 4 joints frozen. Growth check in out/build_checks.json."
+  },
+  {
+   "group": "studio",
+   "uuid": "800d7dc2-17b0-49d1-b062-f39cf3acdbcc",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -53.51,
+     36.06
+    ],
+    [
+     -99.5,
+     72.34
+    ],
+    [
+     -99.36,
+     99.91
+    ],
+    [
+     43.93,
+     100.0
+    ],
+    [
+     -57.32,
+     -28.19
+    ],
+    [
+     0.0,
+     28.12
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -53.3,
+     35.89
+    ],
+    [
+     -99.29,
+     73.02
+    ],
+    [
+     -96.37,
+     99.27
+    ],
+    [
+     44.72,
+     98.13
+    ],
+    [
+     -56.97,
+     -28.52
+    ],
+    [
+     2.16,
+     27.63
+    ]
+   ],
+   "episodes_info_json": 3,
+   "episodes_meta_rows": 3,
+   "episodes_with_data": 3,
+   "data_rows": 2248,
+   "frames_info_json": 2248,
+   "tasks": [
+    "move the red brick to the blue plate",
+    "move the red brick to the green plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2
+   ],
+   "episode_frames": [
+    793,
+    832,
+    623
+   ],
+   "duration_s_total": 74.93,
+   "duration_s_min": 20.77,
+   "duration_s_max": 27.73,
+   "originals_in_dataset": [],
+   "entries": [
+    "800d7dc2:0",
+    "800d7dc2:1",
+    "800d7dc2:2"
+   ],
+   "trust_counts": {
+    "training": 2,
+    "evaluation": 1,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 3"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "studio",
+   "uuid": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -31.12,
+     7.49
+    ],
+    [
+     -100.0,
+     62.18
+    ],
+    [
+     -99.18,
+     99.73
+    ],
+    [
+     25.57,
+     99.92
+    ],
+    [
+     -88.87,
+     14.94
+    ],
+    [
+     0.0,
+     32.38
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -30.72,
+     7.11
+    ],
+    [
+     -99.03,
+     62.87
+    ],
+    [
+     -96.46,
+     99.27
+    ],
+    [
+     26.49,
+     99.07
+    ],
+    [
+     -88.65,
+     14.61
+    ],
+    [
+     2.29,
+     31.29
+    ]
+   ],
+   "episodes_info_json": 4,
+   "episodes_meta_rows": 4,
+   "episodes_with_data": 4,
+   "data_rows": 2569,
+   "frames_info_json": 2569,
+   "tasks": [
+    "move the brick to the inspection spot"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "episode_frames": [
+    704,
+    706,
+    647,
+    512
+   ],
+   "duration_s_total": 85.63,
+   "duration_s_min": 17.07,
+   "duration_s_max": 23.53,
+   "originals_in_dataset": [],
+   "entries": [
+    "a4ba6ede:0",
+    "a4ba6ede:1",
+    "a4ba6ede:2",
+    "a4ba6ede:3"
+   ],
+   "trust_counts": {
+    "training": 4,
+    "evaluation": 0,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 4"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "studio",
+   "uuid": "ba9eafba-a9c3-47a0-b941-34c20a2bbf55",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -55.14,
+     -3.47
+    ],
+    [
+     -98.6,
+     72.34
+    ],
+    [
+     -82.09,
+     99.91
+    ],
+    [
+     48.94,
+     99.49
+    ],
+    [
+     -57.32,
+     -33.68
+    ],
+    [
+     0.0,
+     27.5
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -54.67,
+     -3.92
+    ],
+    [
+     -98.32,
+     72.66
+    ],
+    [
+     -78.95,
+     99.27
+    ],
+    [
+     49.64,
+     97.88
+    ],
+    [
+     -56.97,
+     -34.07
+    ],
+    [
+     2.16,
+     27.96
+    ]
+   ],
+   "episodes_info_json": 2,
+   "episodes_meta_rows": 2,
+   "episodes_with_data": 2,
+   "data_rows": 906,
+   "frames_info_json": 906,
+   "tasks": [
+    "move the red brick to the green plate"
+   ],
+   "episode_indices": [
+    0,
+    1
+   ],
+   "episode_frames": [
+    386,
+    520
+   ],
+   "duration_s_total": 30.2,
+   "duration_s_min": 12.87,
+   "duration_s_max": 17.33,
+   "originals_in_dataset": [],
+   "entries": [
+    "ba9eafba:0",
+    "ba9eafba:1"
+   ],
+   "trust_counts": {
+    "training": 0,
+    "evaluation": 2,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 2"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "studio",
+   "uuid": "d2fd0a80-5364-4f38-bc81-d82d348c5a06",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 1
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -33.05,
+     36.06
+    ],
+    [
+     -99.5,
+     72.01
+    ],
+    [
+     -99.36,
+     97.62
+    ],
+    [
+     43.93,
+     100.0
+    ],
+    [
+     -53.31,
+     -28.19
+    ],
+    [
+     0.0,
+     28.12
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -32.7,
+     35.89
+    ],
+    [
+     -99.29,
+     73.02
+    ],
+    [
+     -96.37,
+     97.91
+    ],
+    [
+     44.72,
+     98.13
+    ],
+    [
+     -53.1,
+     -28.52
+    ],
+    [
+     2.16,
+     27.63
+    ]
+   ],
+   "episodes_info_json": 2,
+   "episodes_meta_rows": 2,
+   "episodes_with_data": 2,
+   "data_rows": 1625,
+   "frames_info_json": 1625,
+   "tasks": [
+    "move the red brick to the blue plate"
+   ],
+   "episode_indices": [
+    0,
+    1
+   ],
+   "episode_frames": [
+    793,
+    832
+   ],
+   "duration_s_total": 54.17,
+   "duration_s_min": 26.43,
+   "duration_s_max": 27.73,
+   "originals_in_dataset": [],
+   "entries": [
+    "d2fd0a80:0",
+    "d2fd0a80:1"
+   ],
+   "trust_counts": {
+    "training": 2,
+    "evaluation": 0,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 2"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "studio",
+   "uuid": "e2eae6c8-fe98-4cfb-82eb-e5e59c7cc8af",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 2
+    },
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top",
+     "codec": "av1",
+     "width": 640,
+     "height": 480,
+     "fps_stream": "30/1",
+     "mp4_files": 2
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json (names end in .pos); observed action ranges shown below",
+   "joint_minmax_action": [
+    [
+     -33.05,
+     36.06
+    ],
+    [
+     -99.09,
+     72.01
+    ],
+    [
+     -99.36,
+     98.81
+    ],
+    [
+     43.93,
+     100.0
+    ],
+    [
+     -69.39,
+     -17.26
+    ],
+    [
+     0.0,
+     27.19
+    ]
+   ],
+   "joint_minmax_state": [
+    [
+     -32.7,
+     35.89
+    ],
+    [
+     -99.03,
+     73.02
+    ],
+    [
+     -96.37,
+     98.91
+    ],
+    [
+     44.72,
+     98.81
+    ],
+    [
+     -69.15,
+     -17.59
+    ],
+    [
+     2.16,
+     26.71
+    ]
+   ],
+   "episodes_info_json": 3,
+   "episodes_meta_rows": 3,
+   "episodes_with_data": 3,
+   "data_rows": 2494,
+   "frames_info_json": 2494,
+   "tasks": [
+    "move the orange brick to the blue plate",
+    "move the red brick to the blue plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2
+   ],
+   "episode_frames": [
+    1210,
+    573,
+    711
+   ],
+   "duration_s_total": 83.13,
+   "duration_s_min": 19.1,
+   "duration_s_max": 40.33,
+   "originals_in_dataset": [],
+   "entries": [
+    "e2eae6c8:0",
+    "e2eae6c8:1",
+    "e2eae6c8:2"
+   ],
+   "trust_counts": {
+    "training": 2,
+    "evaluation": 0,
+    "calibration": 1,
+    "nothing": 0
+   },
+   "census_issues": [
+    "episodes with flags=0 of 3"
+   ],
+   "note": "Only copies or windows of 6d6bdce3 episodes: adds no new physical episode (see dup_of and originals_in_dataset)."
+  },
+  {
+   "group": "curated",
+   "name": "MT-ALL-v2",
+   "path": "data/curated/MT-ALL-v2",
+   "fps": 30,
+   "info_total_episodes": 9,
+   "episodes_meta_rows": 9,
+   "episodes_with_data": 9,
+   "data_rows": 5554,
+   "tasks": [
+    "move the orange brick to the blue plate",
+    "move the red brick to the blue plate",
+    "move the red brick to the green plate",
+    "move the red brick to the spot on the mat",
+    "move the yellow brick to the spot on the mat"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 9,
+   "unmatched": [],
+   "physical_episodes": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "P6",
+    "P7",
+    "P8",
+    "P9"
+   ],
+   "episodes_with_issues": 3,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the yellow brick to the spot on the mat",
+     "entry": "18468a09:0",
+     "physical": "P7",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:0",
+      "6d6bdce3:3",
+      "a4ba6ede:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 1,
+     "task": "move the red brick to the spot on the mat",
+     "entry": "18468a09:1",
+     "physical": "P2",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:1",
+      "6d6bdce3:4",
+      "a4ba6ede:1"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 2,
+     "task": "move the yellow brick to the spot on the mat",
+     "entry": "18468a09:2",
+     "physical": "P9",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:2",
+      "6d6bdce3:5",
+      "a4ba6ede:2"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 3,
+     "task": "move the red brick to the spot on the mat",
+     "entry": "18468a09:3",
+     "physical": "P5",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:3",
+      "6d6bdce3:6",
+      "a4ba6ede:3"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 4,
+     "task": "move the orange brick to the blue plate",
+     "entry": "18468a09:4",
+     "physical": "P1",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:4",
+      "6d6bdce3:7",
+      "e2eae6c8:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 5,
+     "task": "move the red brick to the blue plate",
+     "entry": "18468a09:5",
+     "physical": "P4",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:5",
+      "6d6bdce3:11",
+      "800d7dc2:0",
+      "d2fd0a80:0",
+      "e2eae6c8:1"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 6,
+     "task": "move the red brick to the blue plate",
+     "entry": "18468a09:6",
+     "physical": "P3",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:6",
+      "6d6bdce3:12",
+      "800d7dc2:1",
+      "d2fd0a80:1",
+      "e2eae6c8:2"
+     ],
+     "issues": [
+      "not a placement (truncated)"
+     ]
+    },
+    {
+     "episode_index": 7,
+     "task": "move the red brick to the green plate",
+     "entry": "18468a09:7",
+     "physical": "P6",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:7",
+      "6d6bdce3:14",
+      "ba9eafba:0"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    },
+    {
+     "episode_index": 8,
+     "task": "move the red brick to the green plate",
+     "entry": "18468a09:8",
+     "physical": "P8",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:8",
+      "51100357:0",
+      "6d6bdce3:15",
+      "800d7dc2:2",
+      "ba9eafba:1"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "PP-BLUE",
+   "path": "data/curated/PP-BLUE",
+   "fps": 30,
+   "info_total_episodes": 2,
+   "episodes_meta_rows": 2,
+   "episodes_with_data": 2,
+   "data_rows": 1625,
+   "tasks": [
+    "move the red brick to the blue plate"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 2,
+   "unmatched": [],
+   "physical_episodes": [
+    "P3",
+    "P4"
+   ],
+   "episodes_with_issues": 0,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the red brick to the blue plate",
+     "entry": "6d6bdce3:11",
+     "physical": "P4",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:11",
+      "800d7dc2:0",
+      "d2fd0a80:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 1,
+     "task": "move the red brick to the blue plate",
+     "entry": "6d6bdce3:12",
+     "physical": "P3",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:12",
+      "800d7dc2:1",
+      "d2fd0a80:1"
+     ],
+     "issues": []
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "PP-BLUE-v2",
+   "path": "data/curated/PP-BLUE-v2",
+   "fps": 30,
+   "info_total_episodes": 3,
+   "episodes_meta_rows": 3,
+   "episodes_with_data": 3,
+   "data_rows": 2494,
+   "tasks": [
+    "move the orange brick to the blue plate",
+    "move the red brick to the blue plate"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 3,
+   "unmatched": [],
+   "physical_episodes": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "episodes_with_issues": 1,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the orange brick to the blue plate",
+     "entry": "18468a09:4",
+     "physical": "P1",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:4",
+      "6d6bdce3:7",
+      "e2eae6c8:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 1,
+     "task": "move the red brick to the blue plate",
+     "entry": "18468a09:5",
+     "physical": "P4",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:5",
+      "6d6bdce3:11",
+      "800d7dc2:0",
+      "d2fd0a80:0",
+      "e2eae6c8:1"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 2,
+     "task": "move the red brick to the blue plate",
+     "entry": "18468a09:6",
+     "physical": "P3",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:6",
+      "6d6bdce3:12",
+      "800d7dc2:1",
+      "d2fd0a80:1",
+      "e2eae6c8:2"
+     ],
+     "issues": [
+      "not a placement (truncated)"
+     ]
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "PP-BOTH",
+   "path": "data/curated/PP-BOTH",
+   "fps": 30,
+   "info_total_episodes": 3,
+   "episodes_meta_rows": 3,
+   "episodes_with_data": 3,
+   "data_rows": 2248,
+   "tasks": [
+    "move the red brick to the blue plate",
+    "move the red brick to the green plate"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 3,
+   "unmatched": [],
+   "physical_episodes": [
+    "P3",
+    "P4",
+    "P8"
+   ],
+   "episodes_with_issues": 1,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the red brick to the blue plate",
+     "entry": "6d6bdce3:11",
+     "physical": "P4",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:11",
+      "800d7dc2:0",
+      "d2fd0a80:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 1,
+     "task": "move the red brick to the blue plate",
+     "entry": "6d6bdce3:12",
+     "physical": "P3",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:12",
+      "800d7dc2:1",
+      "d2fd0a80:1"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 2,
+     "task": "move the red brick to the green plate",
+     "entry": "51100357:0",
+     "physical": "P8",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "51100357:0",
+      "6d6bdce3:15",
+      "800d7dc2:2"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "PP-GREEN",
+   "path": "data/curated/PP-GREEN",
+   "fps": 30,
+   "info_total_episodes": 1,
+   "episodes_meta_rows": 1,
+   "episodes_with_data": 1,
+   "data_rows": 623,
+   "tasks": [
+    "move the red brick to the green plate"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 1,
+   "unmatched": [],
+   "physical_episodes": [
+    "P8"
+   ],
+   "episodes_with_issues": 1,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the red brick to the green plate",
+     "entry": "51100357:0",
+     "physical": "P8",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "51100357:0",
+      "6d6bdce3:15",
+      "800d7dc2:2"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "PP-GREEN-v2",
+   "path": "data/curated/PP-GREEN-v2",
+   "fps": 30,
+   "info_total_episodes": 2,
+   "episodes_meta_rows": 2,
+   "episodes_with_data": 2,
+   "data_rows": 906,
+   "tasks": [
+    "move the red brick to the green plate"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 2,
+   "unmatched": [],
+   "physical_episodes": [
+    "P6",
+    "P8"
+   ],
+   "episodes_with_issues": 2,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the red brick to the green plate",
+     "entry": "18468a09:7",
+     "physical": "P6",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:7",
+      "6d6bdce3:14",
+      "ba9eafba:0"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    },
+    {
+     "episode_index": 1,
+     "task": "move the red brick to the green plate",
+     "entry": "18468a09:8",
+     "physical": "P8",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "18468a09:8",
+      "51100357:0",
+      "6d6bdce3:15",
+      "800d7dc2:2",
+      "ba9eafba:1"
+     ],
+     "issues": [
+      "OD-10 decision wrong (clean 2x2 on GREEN)"
+     ]
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "curated",
+   "name": "S1_v0",
+   "path": "data/curated/S1_v0",
+   "fps": 30,
+   "info_total_episodes": 4,
+   "episodes_meta_rows": 4,
+   "episodes_with_data": 4,
+   "data_rows": 2569,
+   "tasks": [
+    "move the brick to the inspection spot"
+   ],
+   "video_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316"
+   ],
+   "action_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "matched_to_studio_entries": 4,
+   "unmatched": [],
+   "physical_episodes": [
+    "P2",
+    "P5",
+    "P7",
+    "P9"
+   ],
+   "episodes_with_issues": 0,
+   "episode_detail": [
+    {
+     "episode_index": 0,
+     "task": "move the brick to the inspection spot",
+     "entry": "6d6bdce3:3",
+     "physical": "P7",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:3",
+      "a4ba6ede:0"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 1,
+     "task": "move the brick to the inspection spot",
+     "entry": "6d6bdce3:4",
+     "physical": "P2",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:4",
+      "a4ba6ede:1"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 2,
+     "task": "move the brick to the inspection spot",
+     "entry": "6d6bdce3:5",
+     "physical": "P9",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:5",
+      "a4ba6ede:2"
+     ],
+     "issues": []
+    },
+    {
+     "episode_index": 3,
+     "task": "move the brick to the inspection spot",
+     "entry": "6d6bdce3:6",
+     "physical": "P5",
+     "matched_mae": 0.0,
+     "covers_full_curated": true,
+     "tied": [
+      "6d6bdce3:6",
+      "a4ba6ede:3"
+     ],
+     "issues": []
+    }
+   ],
+   "issues_info": []
+  },
+  {
+   "group": "v1_hint",
+   "path": "data/studio-datasets-report/V1",
+   "used_as": "hint only",
+   "stated_episodes_6d6bdce3": 11,
+   "stated_generated_utc": "2026-11-14T13:35:40Z",
+   "release_labels_ep3_to_ep10": {
+    "3": "SPOT",
+    "4": "SPOT",
+    "5": "SPOT",
+    "6": "SPOT",
+    "7": "BLUE",
+    "8": "GREEN",
+    "9": "GREEN",
+    "10": "GREEN"
+   },
+   "agreement_with_visual_labels": "eps 3-10 agree on release plate (SPOT,SPOT,SPOT,SPOT,BLUE,GREEN,GREEN,GREEN)"
+  },
+  {
+   "group": "studio",
+   "uuid": "8a8bb05e-6f2c-44f5-bf4b-745c2028f7cf",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top"
+    },
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close"
+    },
+    "observation.images.usb2_0_cam1 external camera": {
+     "serial": "camera",
+     "role": "ext"
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json",
+   "joint_minmax_action": [
+    [
+     -54.29,
+     51.35
+    ],
+    [
+     -100.0,
+     69.86
+    ],
+    [
+     -99.54,
+     100.0
+    ],
+    [
+     23.45,
+     99.92
+    ],
+    [
+     -89.61,
+     -20.97
+    ],
+    [
+     0.0,
+     58.02
+    ]
+   ],
+   "episodes_info_json": 6,
+   "episodes_meta_rows": 6,
+   "data_rows": 16943,
+   "tasks": [
+    "pick up all the blocks and put them on the blue plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "episode_frames": [
+    2934,
+    3844,
+    2209,
+    2879,
+    2584,
+    2493
+   ],
+   "duration_s_total": 564.77,
+   "duration_s_min": 73.63,
+   "duration_s_max": 128.13,
+   "originals_in_dataset": [
+    "8a8bb05e:0",
+    "8a8bb05e:1",
+    "8a8bb05e:2",
+    "8a8bb05e:3",
+    "8a8bb05e:4",
+    "8a8bb05e:5"
+   ],
+   "entries": [
+    "8a8bb05e:0",
+    "8a8bb05e:1",
+    "8a8bb05e:2",
+    "8a8bb05e:3",
+    "8a8bb05e:4",
+    "8a8bb05e:5"
+   ],
+   "trust_counts": {
+    "training": 0,
+    "evaluation": 6,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "frame_index contiguous and meta lengths equal rows for all episodes (census_e2.json)"
+   ],
+   "note": "New in the mirror at 2026-11-14T20:44Z: 6 physical multi-brick episodes (pick up all blocks to blue plate), 3 cameras incl. external usb2_0_cam1."
+  },
+  {
+   "group": "studio",
+   "uuid": "e60f4087-d620-4f1d-885f-1620cefd54bd",
+   "fps": 30,
+   "robot_type": "SO101_Follower",
+   "codebase_version": "v3.0",
+   "cameras": {
+    "observation.images.realsense 243622061421": {
+     "serial": "243622061421",
+     "role": "top"
+    },
+    "observation.images.realsense 243722064316": {
+     "serial": "243722064316",
+     "role": "close"
+    },
+    "observation.images.usb2_0_cam1 external camera": {
+     "serial": "camera",
+     "role": "ext"
+    }
+   },
+   "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+   ],
+   "joint_units": "not stated in info.json",
+   "joint_minmax_action": [
+    [
+     -52.82,
+     51.35
+    ],
+    [
+     -100.0,
+     69.86
+    ],
+    [
+     -82.82,
+     100.0
+    ],
+    [
+     23.7,
+     99.83
+    ],
+    [
+     -89.61,
+     -26.21
+    ],
+    [
+     0.0,
+     58.02
+    ]
+   ],
+   "episodes_info_json": 5,
+   "episodes_meta_rows": 5,
+   "data_rows": 14651,
+   "tasks": [
+    "pick up all the blocks and put them on the blue plate"
+   ],
+   "episode_indices": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "episode_frames": [
+    2888,
+    3818,
+    2879,
+    2584,
+    2482
+   ],
+   "duration_s_total": 488.37,
+   "duration_s_min": 82.73,
+   "duration_s_max": 127.27,
+   "originals_in_dataset": [],
+   "entries": [
+    "e60f4087:0",
+    "e60f4087:1",
+    "e60f4087:2",
+    "e60f4087:3",
+    "e60f4087:4"
+   ],
+   "trust_counts": {
+    "training": 0,
+    "evaluation": 5,
+    "calibration": 0,
+    "nothing": 0
+   },
+   "census_issues": [
+    "frame_index contiguous and meta lengths equal rows for all episodes (census_e2.json)"
+   ],
+   "note": "New in the mirror at 2026-11-14T20:44Z: 5 copies or windows of 8a8bb05e:0,1,3,4,5; adds no physical episode."
+  }
+ ],
+ "snapshot_utc": "2026-11-14T20:44Z",
+ "note": "E2: mirror census at 20:44Z: 11 Studio folders, 52 episode rows. E1 datasets kept; 8a8bb05e and e60f4087 added."
+}

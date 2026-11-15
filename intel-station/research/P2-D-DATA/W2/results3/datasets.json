@@ -1,0 +1,177 @@
+{
+ "6d6bdce3-b382-478d-9697-fb9e573b97af": {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "studio": {
+   "project": "Junction 2026",
+   "studio_name": "Smoke test - inspection skill - 5 episodes",
+   "default_task": "move the brick to the inspection spot",
+   "environment_id": "72206569-df16-4a8b-a98f-247bac4de63f",
+   "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb"
+  },
+  "studio_name": "Smoke test - inspection skill - 5 episodes",
+  "info_total_episodes": 11,
+  "info_total_frames": 6693,
+  "fps": 30.0,
+  "robot_type": "SO101_Follower",
+  "codebase_version": "v3.0",
+  "cameras": [
+   "observation.images.realsense 243722064316",
+   "observation.images.realsense 243622061421"
+  ],
+  "joint_names_stored": [
+   "shoulder_pan.pos",
+   "shoulder_lift.pos",
+   "elbow_flex.pos",
+   "wrist_flex.pos",
+   "wrist_roll.pos",
+   "gripper.pos"
+  ],
+  "task_strings": [
+   "move the brick to the inspection spot",
+   "move the brick to the left plate"
+  ],
+  "thr_stat_deg_s": 4.05,
+  "noise_p99_deg_s": 2.026,
+  "files": {
+   "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253,
+    "expected_from_meta": 1253,
+    "match_within_2": true
+   },
+   "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253,
+    "expected_from_meta": 1253,
+    "match_within_2": true
+   },
+   "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113,
+    "expected_from_meta": 3113,
+    "match_within_2": true
+   },
+   "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113,
+    "expected_from_meta": 3113,
+    "match_within_2": true
+   },
+   "videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327,
+    "expected_from_meta": 2327,
+    "match_within_2": true
+   },
+   "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4": {
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327,
+    "expected_from_meta": 2327,
+    "match_within_2": true
+   }
+  },
+  "self_check": [
+   {
+    "check": "info.total_episodes == episodes meta rows",
+    "ok": true,
+    "detail": "11 vs 11"
+   },
+   {
+    "check": "info.total_frames == data rows",
+    "ok": true,
+    "detail": "6693 vs 6693"
+   },
+   {
+    "check": "info.total_frames == sum(meta length)",
+    "ok": true,
+    "detail": "6693"
+   },
+   {
+    "check": "episode data rows == meta length (all)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "frame_index contiguous 0..L-1 (all)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "timestamp on frame grid, max err <= 1e-3 s",
+    "ok": true,
+    "detail": "2e-06"
+   },
+   {
+    "check": "dataset index ranges match lengths (all)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "robot_type == SO101_Follower",
+    "ok": true,
+    "detail": "SO101_Follower"
+   },
+   {
+    "check": "fps == 30",
+    "ok": true,
+    "detail": "30"
+   },
+   {
+    "check": "stored joint names == contract joint names",
+    "ok": true,
+    "detail": "['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']"
+   },
+   {
+    "check": "camera serials == NEEDS pair",
+    "ok": true,
+    "detail": "['243622061421', '243722064316']"
+   },
+   {
+    "check": "all video files present and probed",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "video frame counts match meta (+-2, all files)",
+    "ok": true,
+    "detail": "{'videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4': 1253, 'videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4': 1253, 'videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4': 3113, 'videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4': 3113, 'videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4': 2327, 'videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4': 2327}"
+   },
+   {
+    "check": "first and last frame decode (all episodes, both cams)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "closed-on-brick median within 1.5..3.5 (all grasps)",
+    "ok": false,
+    "detail": "min 0.98 max 2.678"
+   },
+   {
+    "check": "open peak before grasp within 10..36 (all grasps)",
+    "ok": false,
+    "detail": "min 16.264 max 36.381"
+   },
+   {
+    "check": "every grasp is a decrease (open peak - closed > 8)",
+    "ok": true,
+    "detail": ""
+   },
+   {
+    "check": "Studio name episode count agrees with disk",
+    "ok": false,
+    "detail": "Studio name says 5 episodes, disk has 11"
+   }
+  ],
+  "caveats": [
+   "Studio name 'Smoke test - inspection skill - 5 episodes' says 5 episodes; disk has 11 (name stale)",
+   "task text is ['move the brick to the inspection spot', 'move the brick to the left plate'] for every episode; skill split is by gripper and motion events only"
+  ],
+  "frames_checked": true
+ }
+}

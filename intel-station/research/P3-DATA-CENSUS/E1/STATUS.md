@@ -1,0 +1,2 @@
+DONE 2026-11-14T20:35:43Z census-v1 complete on the 19:53Z snapshot. catalogue.csv and catalogue.json match the laptop hashes; census.md, spot_checks.md and metrics.json are written both sides; 1298 frames checked.
+Caveats: two Studio dataset folders (25 files, 1.97 GB) appeared after the inventory and are not catalogued; scope bytes differ by 760912 unattributed; E174 and E175 image counts not verified in the manifest.

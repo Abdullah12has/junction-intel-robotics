@@ -1,0 +1,181 @@
+{
+ "episodes": [
+  {
+   "episode": 0,
+   "release_frame": 586,
+   "gripper_rise": 0.0,
+   "pan_norm": -9.69,
+   "lift_norm": 15.17,
+   "elbow_norm": 22.5,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 1,
+   "release_frame": 220,
+   "gripper_rise": 0.0,
+   "pan_norm": -5.39,
+   "lift_norm": 26.19,
+   "elbow_norm": -1.63,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 2,
+   "release_frame": 295,
+   "gripper_rise": 0.0,
+   "pan_norm": -6.33,
+   "lift_norm": 24.6,
+   "elbow_norm": -3.18,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 3,
+   "release_frame": 606,
+   "gripper_rise": 6.79,
+   "pan_norm": -5.39,
+   "lift_norm": -58.82,
+   "elbow_norm": 57.44,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 4,
+   "release_frame": 633,
+   "gripper_rise": 8.88,
+   "pan_norm": -13.14,
+   "lift_norm": -60.58,
+   "elbow_norm": 79.13,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 5,
+   "release_frame": 549,
+   "gripper_rise": 12.15,
+   "pan_norm": -12.62,
+   "lift_norm": 20.99,
+   "elbow_norm": -19.33,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 6,
+   "release_frame": 424,
+   "gripper_rise": 8.95,
+   "pan_norm": -13.14,
+   "lift_norm": 12.61,
+   "elbow_norm": 1.27,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 7,
+   "release_frame": 1211,
+   "gripper_rise": 9.47,
+   "pan_norm": 32.1,
+   "lift_norm": 5.47,
+   "elbow_norm": 25.59,
+   "side_by_pan_sign": "blue",
+   "gate_REAL_SETS_label": "blue"
+  },
+  {
+   "episode": 8,
+   "release_frame": 148,
+   "gripper_rise": 5.94,
+   "pan_norm": -54.67,
+   "lift_norm": 24.51,
+   "elbow_norm": 1.91,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "green"
+  },
+  {
+   "episode": 9,
+   "release_frame": 230,
+   "gripper_rise": 0.0,
+   "pan_norm": -43.82,
+   "lift_norm": -8.73,
+   "elbow_norm": 6.53,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 10,
+   "release_frame": 139,
+   "gripper_rise": 8.1,
+   "pan_norm": -51.74,
+   "lift_norm": 47.71,
+   "elbow_norm": -49.82,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "green"
+  },
+  {
+   "episode": 11,
+   "release_frame": 599,
+   "gripper_rise": 8.56,
+   "pan_norm": 32.18,
+   "lift_norm": -19.05,
+   "elbow_norm": 47.91,
+   "side_by_pan_sign": "blue",
+   "gate_REAL_SETS_label": "blue"
+  },
+  {
+   "episode": 12,
+   "release_frame": 724,
+   "gripper_rise": 7.12,
+   "pan_norm": 33.56,
+   "lift_norm": -4.59,
+   "elbow_norm": 34.21,
+   "side_by_pan_sign": "blue",
+   "gate_REAL_SETS_label": "blue"
+  },
+  {
+   "episode": 13,
+   "release_frame": 533,
+   "gripper_rise": 7.38,
+   "pan_norm": 33.22,
+   "lift_norm": 5.56,
+   "elbow_norm": 19.15,
+   "side_by_pan_sign": "blue",
+   "gate_REAL_SETS_label": "not in gate sets"
+  },
+  {
+   "episode": 14,
+   "release_frame": 356,
+   "gripper_rise": 8.16,
+   "pan_norm": -51.83,
+   "lift_norm": 53.44,
+   "elbow_norm": -51.91,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "green"
+  },
+  {
+   "episode": 15,
+   "release_frame": 491,
+   "gripper_rise": 10.45,
+   "pan_norm": -53.3,
+   "lift_norm": 33.25,
+   "elbow_norm": -32.3,
+   "side_by_pan_sign": "green",
+   "gate_REAL_SETS_label": "green"
+  }
+ ],
+ "pan_median_blue_side": 32.7,
+ "pan_median_green_side": -13.14,
+ "gate_sets_disagree_with_pan_side_for_episodes": [],
+ "gate_sets": {
+  "blue": [
+   7,
+   11,
+   12
+  ],
+  "green": [
+   8,
+   10,
+   14,
+   15
+  ]
+ },
+ "note": "side is read from the sign of the release pan (physical location), not from labels; D-067 excluded eps 0-2, 8-10, 13 from v2 sets"
+}

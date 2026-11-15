@@ -1,0 +1,72 @@
+{
+ "Z1_tick2047.5": {
+  "N0_units": {
+   "shoulder_pan": -0.34,
+   "shoulder_lift": 8.07,
+   "elbow_flex": 4.31,
+   "wrist_flex": 4.75,
+   "wrist_roll": 3.19
+  },
+  "chord_blue_green8_xy_m": 0.356,
+  "chord_blue_green10_xy_m": 0.3743,
+  "radius_m_blue_green8_green10": [
+   0.2528,
+   0.3087,
+   0.3437
+  ],
+  "tip_z_m_blue_green8_green10": [
+   0.0439,
+   0.0483,
+   0.0806
+  ],
+  "home_rad": [
+   -0.1,
+   -1.851,
+   1.539,
+   1.005,
+   -1.526
+  ],
+  "home_inside_mjcf_range": {
+   "shoulder_pan": true,
+   "shoulder_lift": false,
+   "elbow_flex": true,
+   "wrist_flex": true,
+   "wrist_roll": true
+  }
+ },
+ "Z2_mid_range": {
+  "N0_units": {
+   "shoulder_pan": 0.0,
+   "shoulder_lift": 0.0,
+   "elbow_flex": 0.0,
+   "wrist_flex": 0.0,
+   "wrist_roll": 0.0
+  },
+  "chord_blue_green8_xy_m": 0.3016,
+  "chord_blue_green10_xy_m": 0.3296,
+  "radius_m_blue_green8_green10": [
+   0.213,
+   0.27,
+   0.3136
+  ],
+  "tip_z_m_blue_green8_green10": [
+   0.0086,
+   -0.0004,
+   0.026
+  ],
+  "home_rad": [
+   -0.107,
+   -1.71,
+   1.612,
+   1.091,
+   -1.432
+  ],
+  "home_inside_mjcf_range": {
+   "shoulder_pan": true,
+   "shoulder_lift": true,
+   "elbow_flex": true,
+   "wrist_flex": true,
+   "wrist_roll": true
+  }
+ }
+}

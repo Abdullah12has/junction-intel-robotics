@@ -1,0 +1,51 @@
+--- /home/intel/intel-junction-2026/app/tools/sort_loop.py	2026-11-14 22:44:19.679845279 +0200
++++ app_p1/tools/sort_loop.py	2026-11-14 22:49:02.626060740 +0200
+@@ -165,6 +165,39 @@
+     return best
+ 
+ 
++def _jaw_anchored_verdict(img, thr):
++    """P1 fallback: when no brick is near the spot, locate the brick between the jaw tips (same tip rule as
++    sort_any.close_pre_verdict) and run the same DET2 triage on it."""
++    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
++    H, S, V = hsv[..., 0], hsv[..., 1], hsv[..., 2]
++    red = (((H <= 8) | (H >= 170)) & (S >= 100) & (V >= 50)).astype(np.uint8)
++    n, lab, st, _ = cv2.connectedComponentsWithStats(red)
++    tips = []
++    for i in range(1, n):
++        if st[i, 1] <= 3 and st[i, 4] > 800:
++            ys, xs = np.nonzero(lab == i)
++            yb = ys.max()
++            tips.append((float(xs[ys >= yb - 6].mean()), float(yb)))
++    if not tips:
++        return {"verdict": "UNCERTAIN", "reasons": ["no_brick_near_spot", "no_jaw_tips"]}
++    tips.sort(key=lambda t: -t[1])
++    mx = float(np.mean([t[0] for t in tips[:2]]))
++    my = float(max(t[1] for t in tips[:2])) + 40.0
++    best = None
++    for rec in DET.segment_close(mask_jaws(img))["bricks"]:
++        cx, cy = rec["centre_px"]
++        d = float(np.hypot(cx - mx, cy - my))
++        if best is None or d < best[0]:
++            best = (d, rec)
++    if best is None or best[0] > 130:
++        return {"verdict": "UNCERTAIN", "reasons": ["no_brick_near_spot", "no_brick_at_jaws"]}
++    rec = best[1]
++    verdict, reasons = DET.triage(rec, thr)
++    x, y, w, h = rec["bbox"]
++    return {"verdict": verdict, "reasons": list(reasons) + ["jaw_anchored"], "colour": rec.get("colour"),
++            "tape_score": rec.get("tape_score"), "bbox": [int(x), int(y), int(w), int(h)], "dist": round(best[0], 1)}
++
++
+ def close_verdict(img, at_hover=False):
+     """Tape verdict of the brick nearest the spot in a close-camera frame (DET2 close rule, jaws masked:
+     colour mask of top-touching red parts; at the hover also the static jaw mask, so red/brown bricks survive)."""
+@@ -178,7 +211,7 @@
+         return {"verdict": "UNCERTAIN", "reasons": [f"det2_error {e!r}"]}
+     thr = DET.load_thresholds()
+     if best is None or best[0] > 170:
+-        return {"verdict": "UNCERTAIN", "reasons": ["no_brick_near_spot"]}
++        return _jaw_anchored_verdict(img, thr)  # P1
+     rec = best[1]
+     verdict, reasons = DET.triage(rec, thr)
+     x, y, w, h = rec["bbox"]

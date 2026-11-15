@@ -1,0 +1,64 @@
+{
+ "capture": 14,
+ "utc": "2026-11-15T03:34:43Z",
+ "label_source": "hassan",
+ "defect_colours": [
+  "blue",
+  "yellow"
+ ],
+ "bricks": [
+  {
+   "id": 3,
+   "colour": "yellow",
+   "label": "DEFECT",
+   "bbox": [
+    438,
+    58,
+    89,
+    81
+   ],
+   "det2": "CONFIDENT_DEFECT",
+   "reasons": [
+    "tape_frac_high",
+    "merged_blob_white_plus_colour"
+   ],
+   "reject": [
+    "merged"
+   ]
+  },
+  {
+   "id": 4,
+   "colour": "orange",
+   "label": "GOOD",
+   "bbox": [
+    289,
+    69,
+    102,
+    95
+   ],
+   "det2": "CONFIDENT_GOOD",
+   "reasons": [
+    "tape_frac_low"
+   ],
+   "reject": [],
+   "crop": "crops/04_orange_GOOD.png"
+  },
+  {
+   "id": 5,
+   "colour": "white",
+   "label": "GOOD",
+   "bbox": [
+    182,
+    89,
+    83,
+    86
+   ],
+   "det2": "CONFIDENT_GOOD",
+   "reasons": [
+    "tape_frac_low"
+   ],
+   "reject": [],
+   "crop": "crops/05_white_GOOD.png"
+  }
+ ]
+}

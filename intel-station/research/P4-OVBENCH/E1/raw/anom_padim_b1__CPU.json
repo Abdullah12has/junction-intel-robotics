@@ -1,0 +1,102 @@
+{
+ "tag": "anom_padim_b1",
+ "kind": "anomaly",
+ "xml": "/home/intel/intel-junction-2026/work/P4-OVBENCH/E1/models_fp16/anom_padim_b1.xml",
+ "device": "CPU",
+ "gpu_hint": null,
+ "ov_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "omp_num_threads": "4",
+ "utc_start": "2026-11-14T20:58:35Z",
+ "load_before": [
+  "11.92",
+  "10.30",
+  "10.19"
+ ],
+ "error": null,
+ "status": "ok",
+ "available_devices": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "device_name": "Intel(R) Core(TM) Ultra X9 388H",
+ "xml_element_types": {
+  "f16": 42,
+  "f32": 8
+ },
+ "inputs": [
+  {
+   "name": "input",
+   "shape": "[1,3,256,256]",
+   "type": "<Type: 'float32'>"
+  }
+ ],
+ "outputs": [
+  {
+   "name": "pred_score",
+   "shape": "[1,1]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_label",
+   "shape": "[1,1]",
+   "type": "<Type: 'char'>"
+  },
+  {
+   "name": "anomaly_map",
+   "shape": "[1,1,256,256]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_mask",
+   "shape": "[1,1,256,256]",
+   "type": "<Type: 'char'>"
+  }
+ ],
+ "config": {
+  "INFERENCE_NUM_THREADS": 4
+ },
+ "compile_cold_s": 0.096,
+ "input_source": "recorded snapshots",
+ "n_samples": 8,
+ "first_infer_s": 0.0577,
+ "compile_plus_first_infer_s": 0.154,
+ "latency_ms": {
+  "n": 400,
+  "p50": 31.051,
+  "p90": 45.234,
+  "p99": 57.546,
+  "mean": 31.451,
+  "min": 15.502,
+  "max": 90.852
+ },
+ "async": {
+  "nireq": 4,
+  "started": 223,
+  "done": 223,
+  "window_s": 10.219,
+  "fps": 21.82
+ },
+ "busy": {
+  "window_s": 22.801,
+  "cpu_cores_avg": 2.26,
+  "npu_busy_pct": 0.0,
+  "gpu_gt0_busy_pct": 24.39
+ },
+ "scores": {},
+ "output_names": [
+  "clamp_1",
+  "pred_label",
+  "anomaly_map",
+  "pred_mask"
+ ],
+ "compile_cache_write_s": 0.175,
+ "compile_cache_read_s": 0.074,
+ "cache_mb": 89.2,
+ "load_after": [
+  "13.90",
+  "10.88",
+  "10.38"
+ ],
+ "utc_end": "2026-11-14T20:58:59Z"
+}

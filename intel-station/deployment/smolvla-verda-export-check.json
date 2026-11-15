@@ -1,0 +1,21 @@
+{
+  "export": "/home/intel/.local/share/physicalai/models/6540166d-c6c7-4087-ba07-ec5571c37d3b/exports/openvino",
+  "dataset": "/home/intel/.local/share/physicalai/datasets/6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "devices": {
+    "CPU": {
+      "compiled_seconds": 6.816550898998685,
+      "inference_seconds": [
+        1.5850751809994108,
+        1.5405681850024848,
+        1.4823902820062358
+      ],
+      "observations": 3,
+      "output_shape": [
+        50,
+        6
+      ],
+      "all_finite": true
+    }
+  },
+  "scope": "Offline inference only; no robot commands or task-success evaluation"
+}

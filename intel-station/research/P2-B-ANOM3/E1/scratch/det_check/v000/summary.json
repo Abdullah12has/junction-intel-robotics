@@ -1,0 +1,39 @@
+{
+ "version": "v000",
+ "source": "folder",
+ "excluded": {},
+ "views": [
+  {
+   "view": "pre_close",
+   "train_good": 6,
+   "heldout_good": 12,
+   "heldout_defect": 7,
+   "n_train": 6,
+   "auroc": 0.869047619047619,
+   "balanced_accuracy": 0.9285714285714286,
+   "threshold": 534.0295257568359,
+   "fit_s": 0.7,
+   "export_s": 3.5,
+   "device": "GPU",
+   "disagreements": 1,
+   "coreset_ratio": 0.1,
+   "wall_s": 9.2
+  },
+  {
+   "view": "wrist_hover",
+   "train_good": 0,
+   "heldout_good": 0,
+   "heldout_defect": 0,
+   "skipped": "only 0 GOOD train crops (min 4)",
+   "wall_s": 0.0
+  },
+  {
+   "view": "held_close",
+   "train_good": 0,
+   "heldout_good": 0,
+   "heldout_defect": 0,
+   "skipped": "only 0 GOOD train crops (min 4)",
+   "wall_s": 0.0
+  }
+ ]
+}

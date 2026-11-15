@@ -1,0 +1,166 @@
+{
+ "episodes": [
+  {
+   "episode": "any_1731/ep_0001",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1731/ep_0001/joints.csv",
+   "sha256": "1976c6a12b64e9678d8cb3b28c6ebecb0161020094d4914f7129a57ab850d110",
+   "rows_used": 1092,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1731/ep_0002",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1731/ep_0002/joints.csv",
+   "sha256": "6bea9e45c7213f165bfff86913bf04df35553ddbfeb3f9fdc1b3f7d21b3aa53a",
+   "rows_used": 1811,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0001",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0001/joints.csv",
+   "sha256": "a0e39b70d0fd028911d97764d6deaf48506aa28c22d447056c1822f3ed630b36",
+   "rows_used": 3288,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0002",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0002/joints.csv",
+   "sha256": "5424a299aa3885e82b95695d4140f844d5d95348cb326f5fe5df5d325b4163c3",
+   "rows_used": 23,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0003",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0003/joints.csv",
+   "sha256": "016592df8cbfd4c7d7c1e7b9caacc06a2027312566fe0073d8669b6385341687",
+   "rows_used": 23,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0004",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0004/joints.csv",
+   "sha256": "91f915b42cafa4d470a0058d14e5ebba5dd05da0988906502b05a3a801b1b3f7",
+   "rows_used": 1284,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0006",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0006/joints.csv",
+   "sha256": "0eefb0edcfebfe11bdf711f25773f1b8ddc69a308f8b6d6b6c89f3886f81d366",
+   "rows_used": 1840,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0007",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0007/joints.csv",
+   "sha256": "11d475726f12ae10a728114dba934bbb0023c0b4b301d942d9a2a212386fc0df",
+   "rows_used": 1613,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0009",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0009/joints.csv",
+   "sha256": "b9b9cc997b1730e521b098ba85576ea026ec1157e539b5104410488f67a813b1",
+   "rows_used": 439,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0010",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0010/joints.csv",
+   "sha256": "3c4f090608e4381f34dc89e56a8e40b671d61241ace509080626d3acf4f7ed37",
+   "rows_used": 508,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0011",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0011/joints.csv",
+   "sha256": "b5c33941b25cb9938477985684c1d11aedcda9eff64123a0ceca971128ac6c96",
+   "rows_used": 1059,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0012",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0012/joints.csv",
+   "sha256": "505752932a05961fadad858280312e99384d353adcd61bcde11d109d549ab7ae",
+   "rows_used": 359,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0013",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0013/joints.csv",
+   "sha256": "0b186cfa80dc5eeb9bfa52990b78c822e6800cf379794177248fb1cfc7a72b04",
+   "rows_used": 1604,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0014",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0014/joints.csv",
+   "sha256": "00ecc7473eb78be98002f7dfd4445e62f488c4b215c5735ebdc82363ecb87ff0",
+   "rows_used": 1392,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0015",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0015/joints.csv",
+   "sha256": "206d7653c6fb68236b876fc1cfd37c03cf13cd3f9d276c7be5d94174245818b9",
+   "rows_used": 1867,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0016",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0016/joints.csv",
+   "sha256": "51b88e861106f9adf657293d88ce57906b6641cae94af12c9093d0928dc47054",
+   "rows_used": 1459,
+   "rows_skipped_bad": 0
+  },
+  {
+   "episode": "any_1740/ep_0017",
+   "file": "/home/intel/intel-junction-2026/logs/sort/any_1740/ep_0017/joints.csv",
+   "sha256": "473a5ebf34ba3cd2ee7aa3628c11bc6031ef912efba5e01103d0935c63362bf5",
+   "rows_used": 2032,
+   "rows_skipped_bad": 0
+  }
+ ],
+ "n_rows": 21693,
+ "kin_source": "/home/intel/intel-junction-2026/repos/edge-developer-kit-reference-scripts/samples/ai/edge-ai-demo-studio/workers/services/robotics-ai/platforms/so101/urdf/so101.urdf",
+ "kin_tcp": "gripper_frame_link (Chain default tip)",
+ "calibration_json": "/home/intel/intel-junction-2026/app/motion/project_robots.json",
+ "calibration": {
+  "shoulder_pan": {
+   "range_min": 891.0,
+   "range_max": 3212.0,
+   "homing_offset": -1727
+  },
+  "shoulder_lift": {
+   "range_min": 822.0,
+   "range_max": 3090.0,
+   "homing_offset": 1829
+  },
+  "elbow_flex": {
+   "range_min": 898.0,
+   "range_max": 3102.0,
+   "homing_offset": 1127
+  },
+  "wrist_flex": {
+   "range_min": 812.0,
+   "range_max": 3171.0,
+   "homing_offset": 1916
+  },
+  "wrist_roll": {
+   "range_min": 74.0,
+   "range_max": 3899.0,
+   "homing_offset": -1404
+  },
+  "gripper": {
+   "range_min": 2046.0,
+   "range_max": 3577.0,
+   "homing_offset": 304
+  }
+ },
+ "k_rad_per_unit": [
+  0.017806194258808083,
+  0.017399590081420394,
+  0.016908596357782427,
+  0.018097721782218124,
+  0.029344546764300268
+ ]
+}

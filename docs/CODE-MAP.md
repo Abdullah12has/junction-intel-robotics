@@ -10,6 +10,7 @@ The repository keeps runtime paths stable so existing training snapshots and sta
 | `training/orchestration/` | `shard_queue.py` | Host-specific queue management | [Training overview](../training/README.md) |
 | `simulation/` | `view.py`, `collect.py`, `export_lerobot.py`, `rollout_policy.py` | Scene, expert, camera fitting and normalized coordinates | [README](../simulation/README.md) |
 | `backend-patches/` | `manual-jog.patch` | Upstream backend changes and their tests | [README](../backend-patches/README.md) |
+| `intel-station/` | Captured Intel application and deployment entry points | Separate source snapshots with hash manifest | [README](../intel-station/README.md) |
 | `scripts/` | `check.py` | Explicit hardware-free verification | [Root setup](../README.md) |
 
 ## Source versus artifacts

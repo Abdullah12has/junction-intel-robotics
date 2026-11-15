@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brick inspection loop - live</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body data-stage="NO_RUN">
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-name">Brick inspection loop</div>
+      <div class="run-id" id="run-id">no run</div>
+    </div>
+    <div class="stage-block">
+      <div class="kicker">Current stage <span class="stage-time" id="stage-time"></span></div>
+      <div class="stage" id="stage">NO RUN</div>
+      <div class="stage-sub" id="stage-sub">start the loop on the laptop; this page follows the current run</div>
+      <div class="detail" id="detail"></div>
+    </div>
+    <div class="status">
+      <span class="badge" id="mode-badge">mode -</span>
+      <span class="badge" id="link-badge">connecting</span>
+      <button type="button" class="badge badge-btn" id="btn-video" aria-pressed="false">video mode</button>
+    </div>
+  </header>
+
+  <div class="alert" id="alert" role="alert" hidden></div>
+
+  <main class="grid">
+    <section class="panel camera" aria-labelledby="cam-title">
+      <h2 class="panel-title" id="cam-title">Live preview <span class="meta" id="live-source">wrist camera (live.jpg)</span></h2>
+      <div class="media">
+        <img id="live" alt="live camera preview" hidden>
+        <div class="media-empty" id="live-empty">no camera frame yet</div>
+      </div>
+      <div class="live-tag debug">source: live.jpg, rewritten about 5 times a second</div>
+    </section>
+
+    <section class="panel verdict-panel" aria-labelledby="insp-title">
+      <h2 class="panel-title" id="insp-title">Latest inspection <span class="meta" id="insp-meta"></span></h2>
+      <div class="verdict is-idle" id="verdict" aria-live="polite">
+        <span id="verdict-plate">WAITING</span><span class="verdict-safe" id="verdict-safe"></span>
+      </div>
+      <div class="verdict-sub" id="verdict-sub">no brick inspected yet</div>
+      <div class="cams" id="cams"></div>
+      <figure class="frame-card" id="frame-card" hidden>
+        <img id="frame-img" alt="pre-grasp frame of the inspected brick">
+        <figcaption>pre-grasp frame<br><span class="debug">frame of the inspection event</span></figcaption>
+      </figure>
+      <div class="reasons" id="reasons"></div>
+      <div class="device" id="device">-</div>
+      <div class="geometry debug" id="geometry"></div>
+    </section>
+
+    <aside class="panel side" aria-labelledby="counts-title">
+      <h2 class="panel-title" id="counts-title">Running counts and stats</h2>
+      <dl class="counts four">
+        <div class="count"><dt>cycles</dt><dd id="c-cycles">0</dd></div>
+        <div class="count"><dt>verify ok</dt><dd id="s-success">-</dd></div>
+        <div class="count"><dt>errors</dt><dd id="s-errors">0</dd></div>
+        <div class="count"><dt>mean cycle</dt><dd id="c-mean">-</dd></div>
+        <div class="count is-blue"><dt>good, blue</dt><dd id="c-good">0</dd></div>
+        <div class="count is-green"><dt>defective, green</dt><dd id="c-defective">0</dd></div>
+        <div class="count is-green"><dt>uncertain, safe</dt><dd id="c-uncertain">0</dd></div>
+        <div class="count"><dt>direct I-52 / inspected</dt><dd id="s-route">-</dd></div>
+      </dl>
+      <h2 class="panel-title">Operator</h2>
+      <div class="buttons">
+        <button type="button" class="btn btn-start" id="btn-start">Start</button>
+        <button type="button" class="btn btn-next" id="btn-next">Next brick</button>
+        <button type="button" class="btn btn-stop" id="btn-stop">STOP</button>
+      </div>
+      <div class="cmd-state" id="cmd-state" role="status">no command sent</div>
+    </aside>
+
+    <section class="panel scan-panel" aria-labelledby="scan-title">
+      <h2 class="panel-title" id="scan-title">Scan <span class="meta" id="scan-meta">no scan yet</span></h2>
+      <div class="bricks" id="bricks"></div>
+    </section>
+
+    <section class="panel policy-panel" aria-labelledby="policy-title">
+      <h2 class="panel-title" id="policy-title">Decision and policy <span class="meta" id="policy-meta"></span></h2>
+      <div class="decision">
+        <span class="decision-plate" id="decision-plate">WAITING</span>
+        <span class="decision-rule" id="decision-rule">no decision in this cycle yet</span>
+      </div>
+      <div class="policy-body">
+        <ol class="timeline" id="timeline"></ol>
+        <div class="verify-row">
+          <div class="verify" id="verify">verify: not reached yet</div>
+          <figure class="verify-frame" id="verify-frame" hidden>
+            <img id="verify-img" alt="top view at verify">
+            <figcaption>verify, top view</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel intel-panel" aria-labelledby="intel-title">
+      <h2 class="panel-title" id="intel-title">Intel <span class="meta" id="intel-meta"></span></h2>
+      <dl class="intel-live" id="intel-live"></dl>
+      <div class="intel-lat" id="intel-lat"></div>
+      <div class="bench-wrap"><table class="bench" id="bench"></table></div>
+      <div class="intel-src debug" id="intel-src"></div>
+    </section>
+  </main>
+
+  <footer class="history" aria-labelledby="hist-title">
+    <h2 class="panel-title" id="hist-title">Last 8 inspections, newest on the right</h2>
+    <div class="strip" id="strip"></div>
+  </footer>
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>

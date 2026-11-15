@@ -1,0 +1,22 @@
+{
+ "stage": "align-v1",
+ "utc": "2026-11-14T20:17:23Z",
+ "metrics": {
+  "requirements_total": 73,
+  "met": 17,
+  "partial": 49,
+  "missing": 3,
+  "unknown": 3,
+  "not_applicable": 1,
+  "sum_check": 73,
+  "entries_all": 77,
+  "background_or_open": 4,
+  "quotes_over_15_words": 0,
+  "quote_text_ok": 48,
+  "quote_text_mismatch": 0,
+  "quote_image_transcribed": 24,
+  "quote_not_checked_here": 5
+ },
+ "previous": null,
+ "delta": null
+}

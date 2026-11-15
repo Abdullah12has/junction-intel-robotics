@@ -1,0 +1,279 @@
+{
+  "tolerance_abs": 0.01,
+  "versions": {
+    "anomalib": "2.7.0",
+    "torch": "2.15.0+xpu",
+    "openvino": "2026.4.1-22982-e213a147257-releases/2026/4"
+  },
+  "files": [
+    "good_000.png",
+    "good_001.png",
+    "defect_000.png",
+    "defect_001.png",
+    "defect_002.png"
+  ],
+  "gt": [
+    0,
+    0,
+    1,
+    1,
+    1
+  ],
+  "cases": {
+    "padim_static_b1": {
+      "ir": "/home/intel/intel-junction-2026/models/anomaly/padim/weights/openvino_b1/model.xml",
+      "batch": 1,
+      "score_output_on_cpu": "clamp_1",
+      "max_abs_diff_cpu_vs_torch": 0.0016759932041168213,
+      "all_within_tol_cpu": true,
+      "labels_agree_cpu": true,
+      "rows": [
+        {
+          "file": "good_000.png",
+          "gt": 0,
+          "torch_score": 0.5173643827438354,
+          "ir_cpu_score": 0.5181384086608887,
+          "abs_diff_cpu": 0.0007740259170532227,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.00047665461897850037,
+          "gpu_run_score": 0.49609375,
+          "abs_diff_gpu_vs_torch": 0.02127063274383545,
+          "npu_run_score": 0.5166015625,
+          "abs_diff_npu_vs_torch": 0.0007628202438354492
+        },
+        {
+          "file": "good_001.png",
+          "gt": 0,
+          "torch_score": 0.2828458249568939,
+          "ir_cpu_score": 0.2826942205429077,
+          "abs_diff_cpu": 0.00015160441398620605,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.0005834435578435659,
+          "gpu_run_score": 0.261474609375,
+          "abs_diff_gpu_vs_torch": 0.02137121558189392,
+          "npu_run_score": 0.280517578125,
+          "abs_diff_npu_vs_torch": 0.002328246831893921
+        },
+        {
+          "file": "defect_000.png",
+          "gt": 1,
+          "torch_score": 0.07960072159767151,
+          "ir_cpu_score": 0.07792472839355469,
+          "abs_diff_cpu": 0.0016759932041168213,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.0008440911769866943,
+          "gpu_run_score": 0.064208984375,
+          "abs_diff_gpu_vs_torch": 0.015391737222671509,
+          "npu_run_score": 0.0751953125,
+          "abs_diff_npu_vs_torch": 0.004405409097671509
+        },
+        {
+          "file": "defect_001.png",
+          "gt": 1,
+          "torch_score": 0.6293668150901794,
+          "ir_cpu_score": 0.6294641494750977,
+          "abs_diff_cpu": 9.733438491821289e-05,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.000959981232881546,
+          "gpu_run_score": 0.6044921875,
+          "abs_diff_gpu_vs_torch": 0.024874627590179443,
+          "npu_run_score": 0.62939453125,
+          "abs_diff_npu_vs_torch": 2.771615982055664e-05
+        },
+        {
+          "file": "defect_002.png",
+          "gt": 1,
+          "torch_score": 0.33916205167770386,
+          "ir_cpu_score": 0.3393923044204712,
+          "abs_diff_cpu": 0.00023025274276733398,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.0009472817182540894,
+          "gpu_run_score": 0.315673828125,
+          "abs_diff_gpu_vs_torch": 0.023488223552703857,
+          "npu_run_score": 0.339111328125,
+          "abs_diff_npu_vs_torch": 5.072355270385742e-05
+        }
+      ],
+      "GPU": {
+        "status": "ok",
+        "max_abs_diff_vs_torch": 0.024874627590179443
+      },
+      "NPU": {
+        "status": "ok",
+        "max_abs_diff_vs_torch": 0.004405409097671509
+      }
+    },
+    "padim_dyn_b1": {
+      "ir": "/home/intel/intel-junction-2026/models/anomaly/padim/weights/openvino/model.xml",
+      "batch": 1,
+      "score_output_on_cpu": "pred_score",
+      "max_abs_diff_cpu_vs_torch": 0.0016759932041168213,
+      "all_within_tol_cpu": true,
+      "labels_agree_cpu": true,
+      "rows": [
+        {
+          "file": "good_000.png",
+          "gt": 0,
+          "torch_score": 0.5173643827438354,
+          "ir_cpu_score": 0.5181384086608887,
+          "abs_diff_cpu": 0.0007740259170532227,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.00047665834426879883,
+          "gpu_run_score": 0.49609375,
+          "abs_diff_gpu_vs_torch": 0.02127063274383545
+        },
+        {
+          "file": "good_001.png",
+          "gt": 0,
+          "torch_score": 0.2828458249568939,
+          "ir_cpu_score": 0.2826942205429077,
+          "abs_diff_cpu": 0.00015160441398620605,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.0005834400653839111,
+          "gpu_run_score": 0.261474609375,
+          "abs_diff_gpu_vs_torch": 0.02137121558189392
+        },
+        {
+          "file": "defect_000.png",
+          "gt": 1,
+          "torch_score": 0.07960072159767151,
+          "ir_cpu_score": 0.07792472839355469,
+          "abs_diff_cpu": 0.0016759932041168213,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.000844120979309082,
+          "gpu_run_score": 0.064208984375,
+          "abs_diff_gpu_vs_torch": 0.015391737222671509
+        },
+        {
+          "file": "defect_001.png",
+          "gt": 1,
+          "torch_score": 0.6293668150901794,
+          "ir_cpu_score": 0.6294641494750977,
+          "abs_diff_cpu": 9.733438491821289e-05,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.0009599924087524414,
+          "gpu_run_score": 0.6044921875,
+          "abs_diff_gpu_vs_torch": 0.024874627590179443
+        },
+        {
+          "file": "defect_002.png",
+          "gt": 1,
+          "torch_score": 0.33916205167770386,
+          "ir_cpu_score": 0.3393923044204712,
+          "abs_diff_cpu": 0.00023025274276733398,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.0009472966194152832,
+          "gpu_run_score": 0.315673828125,
+          "abs_diff_gpu_vs_torch": 0.023488223552703857
+        }
+      ],
+      "GPU": {
+        "status": "ok",
+        "max_abs_diff_vs_torch": 0.024874627590179443
+      },
+      "NPU": {
+        "status": "missing",
+        "error": ""
+      },
+      "max_abs_diff_dyn_vs_static_cpu": 0.0
+    },
+    "patchcore_b2": {
+      "ir": "/home/intel/intel-junction-2026/models/anomaly/patchcore/weights/openvino/model.xml",
+      "batch": 2,
+      "score_output_on_cpu": "pred_score",
+      "max_abs_diff_cpu_vs_torch": 0.001716911792755127,
+      "all_within_tol_cpu": true,
+      "labels_agree_cpu": true,
+      "rows": [
+        {
+          "file": "good_000.png",
+          "gt": 0,
+          "torch_score": 0.0,
+          "ir_cpu_score": 0.0,
+          "abs_diff_cpu": 0.0,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.001263187499716878,
+          "gpu_run_score": 0.0,
+          "abs_diff_gpu_vs_torch": 0.0,
+          "npu_run_score": 0.0,
+          "abs_diff_npu_vs_torch": 0.0
+        },
+        {
+          "file": "good_001.png",
+          "gt": 0,
+          "torch_score": 0.0,
+          "ir_cpu_score": 0.0,
+          "abs_diff_cpu": 0.0,
+          "torch_label": false,
+          "ir_cpu_label": false,
+          "amap_max_abs_diff_cpu": 0.002699080854654312,
+          "gpu_run_score": 0.0,
+          "abs_diff_gpu_vs_torch": 0.0,
+          "npu_run_score": 0.0,
+          "abs_diff_npu_vs_torch": 0.0
+        },
+        {
+          "file": "defect_000.png",
+          "gt": 1,
+          "torch_score": 0.7587622404098511,
+          "ir_cpu_score": 0.7593191862106323,
+          "abs_diff_cpu": 0.00055694580078125,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.002209767699241638,
+          "gpu_run_score": 0.75732421875,
+          "abs_diff_gpu_vs_torch": 0.0014380216598510742,
+          "npu_run_score": 0.75830078125,
+          "abs_diff_npu_vs_torch": 0.0004614591598510742
+        },
+        {
+          "file": "defect_001.png",
+          "gt": 1,
+          "torch_score": 0.5197082161903381,
+          "ir_cpu_score": 0.521075963973999,
+          "abs_diff_cpu": 0.0013677477836608887,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.0015670070424675941,
+          "gpu_run_score": 0.5205078125,
+          "abs_diff_gpu_vs_torch": 0.0007995963096618652,
+          "npu_run_score": 0.5205078125,
+          "abs_diff_npu_vs_torch": 0.0007995963096618652
+        },
+        {
+          "file": "defect_002.png",
+          "gt": 1,
+          "torch_score": 0.5943709015846252,
+          "ir_cpu_score": 0.5926539897918701,
+          "abs_diff_cpu": 0.001716911792755127,
+          "torch_label": true,
+          "ir_cpu_label": true,
+          "amap_max_abs_diff_cpu": 0.0017760677728801966,
+          "gpu_run_score": 0.59423828125,
+          "abs_diff_gpu_vs_torch": 0.00013262033462524414,
+          "npu_run_score": 0.5927734375,
+          "abs_diff_npu_vs_torch": 0.0015974640846252441
+        }
+      ],
+      "GPU": {
+        "status": "ok",
+        "max_abs_diff_vs_torch": 0.0014380216598510742
+      },
+      "NPU": {
+        "status": "ok",
+        "max_abs_diff_vs_torch": 0.0015974640846252441
+      }
+    }
+  }
+}

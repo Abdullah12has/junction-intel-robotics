@@ -1,0 +1,46 @@
+{
+ "n_good": 12,
+ "n_defect": 7,
+ "threshold": 534.10302734375,
+ "auroc": 0.869047619047619,
+ "tnr": 1.0,
+ "tpr": 0.8571428571428571,
+ "balanced_accuracy": 0.9285714285714286,
+ "accuracy": 0.9473684210526315,
+ "view": "pre_close",
+ "version": "smoke1",
+ "threshold_rule": "max balanced accuracy on held-out GOOD+DEFECT; ties go to the higher threshold",
+ "fit_on_heldout": true,
+ "n_train": 6,
+ "n_train_unreadable": 0,
+ "train_sources": {
+  "folder:bricks_close": 6
+ },
+ "heldout_sources": {
+  "folder:bricks_close": 19
+ },
+ "backbone": "wide_resnet50_2",
+ "layers": [
+  "layer2",
+  "layer3"
+ ],
+ "image_size": 256,
+ "coreset_ratio": 0.1,
+ "fit_s": 0.7,
+ "export_s": 3.3,
+ "fit_budget_s": 180.0,
+ "fit_within_budget": true,
+ "scoring_device": "GPU",
+ "ir_precision": "FP16",
+ "anomalib": "2.7.0",
+ "files": [
+  "model.xml",
+  "model.bin",
+  "metadata.json",
+  "threshold.json",
+  "metrics.json",
+  "train_list.txt",
+  "eval_list.tsv",
+  "disagreements.tsv"
+ ]
+}

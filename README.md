@@ -14,6 +14,7 @@ The current task is **pick up a block and place it on the blue plate**. Our cont
 | Robot deployment | [cell/](cell/README.md) | Intel/OpenVINO utilities, policy output checks, bounded control and inspection |
 | Training campaign | [training/](training/README.md) | Corrected labels, grouped splits, target markers, augmentation and ACT/SmolVLA jobs |
 | Simulation | [simulation/](simulation/README.md) | SO-101 MuJoCo scene, expert collection, conversion and policy evaluation |
+| Intel station source | [intel-station/](intel-station/README.md) | Captured quality-sorting app, deployment workers, diagnostics and research |
 | Backend integration | [backend-patches/](backend-patches/README.md) | Reproducible manual-jog changes against pinned upstream Studio |
 
 The campaign defines **2 policies × 2 target-cue variants × 4 augmentation recipes × 2 data sources = 32 experiments**. Real-data jobs have been launched; synthetic-mixed jobs remain gated on camera/contact validation. Physical motion has been demonstrated, but reliable autonomous pick-and-place success has **not** been established. See the dated evidence rather than treating training loss as task success.

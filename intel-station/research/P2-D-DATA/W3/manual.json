@@ -1,0 +1,13 @@
+{"6d6bdce3-b382-478d-9697-fb9e573b97af": {
+"0": {"brick_at_grasp": "yes", "note": "blue brick visible in gripper at end; grasp frame small, moderate confidence"},
+"1": {"brick_at_grasp": "unclear", "note": "yellow brick near jaws at cut; not confirmed"},
+"2": {"brick_at_grasp": "yes", "note": "red brick between jaws at grasp; tan brick in jaws at cut; red brick in jaws at end"},
+"3": {"brick_at_grasp": "yes", "release_plate": "NONE", "how_decided": "cam 061421 (top view) release frame: gripper over brick cluster on mat, neither plate", "note": "yellow brick in jaws at grasp; release over cluster"},
+"4": {"brick_at_grasp": "yes", "release_plate": "NONE", "how_decided": "cam 061421 release frame: gripper over brick cluster, not over blue or green plate", "note": "red brick between jaws at grasp; tan brick held at cut"},
+"5": {"brick_at_grasp": "yes", "release_plate": "NONE", "how_decided": "cam 061421 release frame: gripper over orange cluster, not a plate", "note": "tan brick between jaws at grasp"},
+"6": {"brick_at_grasp": "unclear", "release_plate": "NONE", "how_decided": "cam 061421 release frame: gripper over bricks, not a plate", "note": "jaws open around red brick at grasp; not confirmed"},
+"7": {"brick_at_grasp": "unclear", "release_plate": "BLUE", "how_decided": "cam 061421 release frame at 40.2 s: gripper centred over light-blue plate; no return to rest before episode end", "note": "43 s full pick-and-place; grasp frame not confirmed"},
+"8": {"brick_at_start": "unclear", "release_plate": "GREEN", "how_decided": "cam 064316 end frame: cream brick now on green plate; cam 061421 release: gripper at green plate edge (low confidence)", "note": "closed-start carry-release; 11 s"},
+"9": {"brick_at_grasp": "no", "verdict": "BAD", "note": "gripper closes to 0.98 with nothing in jaws (fully closed) at grasp, cut and end; odd episode"},
+"10": {"brick_at_start": "unclear", "release_plate": "GREEN", "how_decided": "low confidence: gripper at green plate edge at release; plate already holds white and red bricks", "note": "closed-start carry-release; 11 s"}
+}}

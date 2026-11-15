@@ -1,0 +1,37 @@
+[
+ {
+  "sample": 1,
+  "episode": "any_1740/ep_0001",
+  "row": 2331,
+  "t_s": 77.7,
+  "png": "/home/intel/intel-junction-2026/work/DATA-LEROBOT/E1/visual/sample_01.png"
+ },
+ {
+  "sample": 2,
+  "episode": "any_1740/ep_0001",
+  "row": 1044,
+  "t_s": 34.8,
+  "png": "/home/intel/intel-junction-2026/work/DATA-LEROBOT/E1/visual/sample_02.png"
+ },
+ {
+  "sample": 3,
+  "episode": "any_1740/ep_0001",
+  "row": 2029,
+  "t_s": 67.633,
+  "png": "/home/intel/intel-junction-2026/work/DATA-LEROBOT/E1/visual/sample_03.png"
+ },
+ {
+  "sample": 4,
+  "episode": "any_1740/ep_0015",
+  "row": 967,
+  "t_s": 32.233,
+  "png": "/home/intel/intel-junction-2026/work/DATA-LEROBOT/E1/visual/sample_04.png"
+ },
+ {
+  "sample": 5,
+  "episode": "any_1740/ep_0017",
+  "row": 1554,
+  "t_s": 51.8,
+  "png": "/home/intel/intel-junction-2026/work/DATA-LEROBOT/E1/visual/sample_05.png"
+ }
+]

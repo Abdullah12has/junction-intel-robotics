@@ -1,0 +1,1062 @@
+{
+ "stage": "friend-sim-v2",
+ "utc": "2026-11-14T19:57:27Z",
+ "scope": "R/data/sim/live (= 2026-11-14 copy, verified) vs real cell (studio dataset 6d6bdce3 + R/logs/sort joints.csv)",
+ "dims": {
+  "real_top": "640,480",
+  "real_close": "640,480",
+  "sim_overhead": "640,480",
+  "sim_wrist": "640,480"
+ },
+ "version_identity": {
+  "live_equals_2026_11_14": true,
+  "attempts": {
+   "new": 150,
+   "old": 150,
+   "common": 150,
+   "only_new": [],
+   "only_old": []
+  },
+  "file_hash": {
+   "metadata.json": {
+    "identical": 150,
+    "changed": 0,
+    "changed_attempts": []
+   },
+   "trajectory.npz": {
+    "identical": 150,
+    "changed": 0,
+    "changed_attempts": []
+   },
+   "trace.json": {
+    "identical": 150,
+    "changed": 0,
+    "changed_attempts": []
+   },
+   "overhead.mp4": {
+    "identical": 150,
+    "changed": 0,
+    "changed_attempts": []
+   },
+   "wrist.mp4": {
+    "identical": 150,
+    "changed": 0,
+    "changed_attempts": []
+   }
+  },
+  "tar_sha_equal": true,
+  "outside_raw_only_in_2026_11_14": 14,
+  "metadata_fields_changed": {}
+ },
+ "gate_rerun": {
+  "version": "2026-11-14-95fa40dbf3",
+  "results": {
+   "provenance_ok": true,
+   "units_ok": false,
+   "units_note": "pan residual deg {'blue': 16.51, 'green': 1.71} (tol 3.0)",
+   "gripper_ok": false,
+   "rest_ok": false,
+   "wrist_ok": false,
+   "brightness_ok": false,
+   "top_camera_ok": true,
+   "close_camera_ok": false,
+   "release_ok": true,
+   "episodes_ok": true,
+   "geometry_plates_ok": false,
+   "fk_cross_check_ok": true,
+   "od10_clean": false,
+   "tape_class_in_sim": false
+  },
+  "decisions": {
+   "a_smolvla_cotraining": "NO-GO",
+   "b_act_pretrain_augment": "NO-GO",
+   "c_geometry_fk_crosscheck": "GO",
+   "d_detector_synthetic": "NO-GO",
+   "e_none": "GO"
+  },
+  "identical_to_existing_gate_json": true,
+  "geometry": {
+   "sim_tcp_to_plate_cm_median": {
+    "blue": 0.39,
+    "green": 0.39
+   },
+   "plate_centre_base_m": {
+    "blue": [
+     0.1688,
+     -0.1438,
+     0.004
+    ],
+    "green": [
+     0.1988,
+     0.1962,
+     0.004
+    ]
+   },
+   "real_tcp_mean_base_m": {
+    "blue": [
+     0.1857,
+     -0.1099,
+     0.0119
+    ],
+    "green": [
+     0.2095,
+     0.2134,
+     0.0143
+    ]
+   },
+   "real_tcp_sd_m": {
+    "blue": [
+     0.0044,
+     0.0057,
+     0.008
+    ],
+    "green": [
+     0.0157,
+     0.0138,
+     0.0214
+    ]
+   },
+   "real_to_sim_plate_cm": {
+    "blue": 3.79,
+    "green": 2.03
+   }
+  },
+  "release_pan_residual_deg": {
+   "blue": 16.51,
+   "green": 1.71
+  },
+  "gripper": {
+   "sim_open": 0.7001,
+   "sim_closed_on_brick": 0.1327,
+   "scale_used": 42.57,
+   "span_ratio_sim_over_real": 1.104,
+   "closed_offset_units": 3.49
+  },
+  "units": {
+   "sim_min_norm": [
+    -51.59,
+    -42.79,
+    -56.91,
+    33.15,
+    -93.51
+   ],
+   "sim_max_norm": [
+    49.22,
+    54.59,
+    62.38,
+    91.63,
+    86.88
+   ],
+   "real_min_norm": [
+    -58.38,
+    -99.29,
+    -96.46,
+    -37.86,
+    -88.65
+   ],
+   "real_max_norm": [
+    35.89,
+    73.02,
+    99.27,
+    99.07,
+    44.16
+   ],
+   "rest_like_frac_sim": 0.0,
+   "near_real_rest_frac_sim": 0.0,
+   "wrist_pinned_frac_sim": 0.2138
+  }
+ },
+ "plates": {
+  "top": {
+   "sim_detected_median": {
+    "blue": {
+     "n": 1804,
+     "cx": 240.2,
+     "cy": 151.92,
+     "cx_sd": 5.43,
+     "cy_sd": 4.66,
+     "area_med": 20518.0,
+     "w_med": 173.0,
+     "h_med": 152.0
+    },
+    "green": {
+     "n": 1797,
+     "cx": 572.36,
+     "cy": 177.49,
+     "cx_sd": 7.41,
+     "cy_sd": 5.79,
+     "area_med": 19069.0,
+     "w_med": 146.0,
+     "h_med": 157.0
+    }
+   },
+   "real_detected_median": {
+    "blue": {
+     "n": 340,
+     "cx": 246.02,
+     "cy": 150.72,
+     "cx_sd": 40.23,
+     "cy_sd": 5.21,
+     "area_med": 21643.0,
+     "w_med": 176.5,
+     "h_med": 159.0
+    },
+    "green": {
+     "n": 340,
+     "cx": 578.44,
+     "cy": 181.07,
+     "cx_sd": 32.37,
+     "cy_sd": 4.32,
+     "area_med": 18875.5,
+     "w_med": 136.0,
+     "h_med": 168.0
+    }
+   },
+   "sim_model_predicted_px": {
+    "blue": [
+     242.96,
+     157.94
+    ],
+    "green": [
+     574.46,
+     183.92
+    ]
+   },
+   "sim_detected_minus_predicted_px": {
+    "blue": [
+     -2.76,
+     -6.02
+    ],
+    "green": [
+     -2.1,
+     -6.43
+    ]
+   },
+   "real_minus_sim_px": {
+    "blue": [
+     5.82,
+     -1.2
+    ],
+    "green": [
+     6.08,
+     3.58
+    ]
+   },
+   "real_minus_sim_mm_via_sim_model": {
+    "blue": [
+     6.0,
+     1.4
+    ],
+    "green": [
+     5.7,
+     -4.1
+    ]
+   },
+   "sim_detected_minus_bowl_centre_mm_via_sim_model": {
+    "blue": [
+     -3.2,
+     7.1
+    ],
+    "green": [
+     -1.1,
+     7.3
+    ]
+   },
+   "plate_spacing_px": {
+    "sim": 333.1,
+    "real": 333.8,
+    "real_over_sim": 1.002
+   },
+   "area_ratio_real_over_sim": {
+    "blue": 1.055,
+    "green": 0.99
+   }
+  },
+  "close": {
+   "sim_detected_median": {
+    "blue": {
+     "n": 1804,
+     "cx": 58.31,
+     "cy": 157.93,
+     "cx_sd": 25.34,
+     "cy_sd": 15.77,
+     "area_med": 19656.0,
+     "w_med": 142.0,
+     "h_med": 187.0
+    },
+    "green": {
+     "n": 1804,
+     "cx": 555.04,
+     "cy": 137.47,
+     "cx_sd": 7.37,
+     "cy_sd": 6.03,
+     "area_med": 27793.0,
+     "w_med": 197.0,
+     "h_med": 178.0
+    }
+   },
+   "real_detected_median": {
+    "blue": {
+     "n": 339,
+     "cx": 46.39,
+     "cy": 147.01,
+     "cx_sd": 82.02,
+     "cy_sd": 13.36,
+     "area_med": 18598.0,
+     "w_med": 116.0,
+     "h_med": 237.0
+    },
+    "green": {
+     "n": 318,
+     "cx": 557.9,
+     "cy": 61.33,
+     "cx_sd": 67.68,
+     "cy_sd": 15.94,
+     "area_med": 18421.0,
+     "w_med": 186.0,
+     "h_med": 143.0
+    }
+   },
+   "sim_model_predicted_px": {
+    "blue": [
+     -12.54,
+     183.6
+    ],
+    "green": [
+     589.77,
+     154.27
+    ]
+   },
+   "sim_detected_minus_predicted_px": {
+    "blue": [
+     70.85,
+     -25.67
+    ],
+    "green": [
+     -34.73,
+     -16.8
+    ]
+   },
+   "real_minus_sim_px": {
+    "blue": [
+     -11.92,
+     -10.92
+    ],
+    "green": [
+     2.86,
+     -76.14
+    ]
+   },
+   "real_minus_sim_mm_via_sim_model": {
+    "blue": [
+     -8.3,
+     13.0
+    ],
+    "green": [
+     45.8,
+     94.2
+    ]
+   },
+   "sim_detected_minus_bowl_centre_mm_via_sim_model": {
+    "blue": [
+     35.3,
+     19.2
+    ],
+    "green": [
+     -12.1,
+     20.4
+    ]
+   },
+   "plate_spacing_px": {
+    "sim": 497.2,
+    "real": 518.6,
+    "real_over_sim": 1.0432
+   },
+   "area_ratio_real_over_sim": {
+    "blue": 0.946,
+    "green": 0.663
+   }
+  }
+ },
+ "brightness": {
+  "top": {
+   "sim": {
+    "frames": 1804,
+    "R": 46.3783,
+    "G": 55.6753,
+    "B": 47.2865,
+    "luma": 51.9392,
+    "luma_p50": 25.1516,
+    "luma_p98": 187.4327,
+    "dark_frac": 0.6447,
+    "S": 80.3357,
+    "V": 70.6419,
+    "luma_frame_sd": 1.856
+   },
+   "real": {
+    "frames": 340,
+    "R": 83.673,
+    "G": 92.3988,
+    "B": 86.0462,
+    "luma": 89.0656,
+    "luma_p50": 52.9537,
+    "luma_p98": 223.3003,
+    "dark_frac": 0.4333,
+    "S": 84.3971,
+    "V": 107.8807,
+    "luma_frame_sd": 2.31
+   },
+   "luma_ratio_sim_over_real": 0.5832,
+   "sim_darker_pct_vs_real": 41.68,
+   "dark_frac_sim_minus_real": 0.2114
+  },
+  "close": {
+   "sim": {
+    "frames": 1804,
+    "R": 34.124,
+    "G": 41.1248,
+    "B": 31.8492,
+    "luma": 37.9742,
+    "luma_p50": 8.4957,
+    "luma_p98": 159.8311,
+    "dark_frac": 0.6802,
+    "S": 98.1091,
+    "V": 61.2008,
+    "luma_frame_sd": 4.164
+   },
+   "real": {
+    "frames": 340,
+    "R": 77.4852,
+    "G": 76.6763,
+    "B": 81.212,
+    "luma": 77.4352,
+    "luma_p50": 47.0696,
+    "luma_p98": 243.7994,
+    "dark_frac": 0.2936,
+    "S": 93.7536,
+    "V": 100.6865,
+    "luma_frame_sd": 5.378
+   },
+   "luma_ratio_sim_over_real": 0.4904,
+   "sim_darker_pct_vs_real": 50.96,
+   "dark_frac_sim_minus_real": 0.3866
+  }
+ },
+ "real_per_file": [
+  {
+   "view": "real_top",
+   "file": "file-000.mp4",
+   "frames": 42,
+   "luma_mean": 90.54
+  },
+  {
+   "view": "real_top",
+   "file": "file-001.mp4",
+   "frames": 104,
+   "luma_mean": 90.05
+  },
+  {
+   "view": "real_top",
+   "file": "file-002.mp4",
+   "frames": 78,
+   "luma_mean": 88.98
+  },
+  {
+   "view": "real_top",
+   "file": "file-003.mp4",
+   "frames": 116,
+   "luma_mean": 87.71
+  },
+  {
+   "view": "real_close",
+   "file": "file-000.mp4",
+   "frames": 42,
+   "luma_mean": 78.81
+  },
+  {
+   "view": "real_close",
+   "file": "file-001.mp4",
+   "frames": 104,
+   "luma_mean": 80.52
+  },
+  {
+   "view": "real_close",
+   "file": "file-002.mp4",
+   "frames": 78,
+   "luma_mean": 75.29
+  },
+  {
+   "view": "real_close",
+   "file": "file-003.mp4",
+   "frames": 116,
+   "luma_mean": 75.62
+  }
+ ],
+ "joints": {
+  "K_units_per_rad": [
+   56.16,
+   57.473,
+   59.142,
+   55.256,
+   34.078,
+   42.57
+  ],
+  "K_note": "normalized = rad x K, zero at range midpoint, sign +1 (same as sim_gate.py); gripper encoder-linear (assumption)",
+  "sim_range_norm": {
+   "min": [
+    -51.59,
+    -42.79,
+    -56.91,
+    33.15,
+    -93.51,
+    4.04
+   ],
+   "max": [
+    49.22,
+    54.59,
+    62.38,
+    91.63,
+    86.88,
+    29.83
+   ],
+   "median": [
+    0.0,
+    23.17,
+    -27.29,
+    83.03,
+    -0.88,
+    6.98
+   ]
+  },
+  "real_joints_csv_range_norm": {
+   "min": [
+    -63.29,
+    -98.93,
+    -76.5,
+    29.72,
+    -81.23,
+    0.52
+   ],
+   "max": [
+    31.67,
+    61.9,
+    96.91,
+    97.37,
+    85.41,
+    25.08
+   ],
+   "median": [
+    -18.4,
+    11.27,
+    11.98,
+    62.19,
+    -62.14,
+    24.62
+   ]
+  },
+  "sim_first_frame_norm_median": [
+   0.0,
+   -28.74,
+   47.31,
+   33.15,
+   0.0,
+   21.28
+  ],
+  "real_first_row_norm_median": [
+   -12.71,
+   12.79,
+   -23.68,
+   89.74,
+   -62.2,
+   24.62
+  ],
+  "wrist_flex_mjcf_limit_norm": 91.62,
+  "wrist_flex_sim_frac_within_0p5_of_limit": 0.2442,
+  "wrist_flex_real_frac_ge_98": 0.0,
+  "gripper_sim_open_max": 29.83,
+  "gripper_real_open_max": 25.08,
+  "gripper_sim_min": 4.04,
+  "gripper_real_min": 0.52
+ },
+ "motion": {
+  "sim": {
+   "speed_p50": [
+    0.01,
+    5.01,
+    3.19,
+    2.48,
+    0.21,
+    0.03
+   ],
+   "speed_p95": [
+    31.17,
+    35.16,
+    57.09,
+    39.38,
+    24.6,
+    40.75
+   ],
+   "speed_max": [
+    51.27,
+    50.67,
+    67.37,
+    45.12,
+    38.34,
+    54.17
+   ],
+   "episode_max_speed_median": [
+    33.53,
+    40.19,
+    65.55,
+    44.6,
+    26.94,
+    49.33
+   ],
+   "accel_rms": [
+    53.1,
+    121.1,
+    76.7,
+    88.5,
+    67.0,
+    90.2
+   ],
+   "jerk_rms": [
+    2762.0,
+    7017.0,
+    4136.0,
+    5054.0,
+    3920.0,
+    3550.0
+   ],
+   "still_frac_below_0p5_units_per_s": [
+    0.6468,
+    0.2957,
+    0.3129,
+    0.4495,
+    0.5901,
+    0.6978
+   ],
+   "frames": 54474
+  },
+  "real_joints_csv": {
+   "speed_p50": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "speed_p95": [
+    9.56,
+    14.9,
+    18.12,
+    10.3,
+    5.4,
+    0.0
+   ],
+   "speed_max": [
+    34.48,
+    36.15,
+    62.82,
+    27.42,
+    31.06,
+    28.16
+   ],
+   "episode_max_speed_median": [
+    17.66,
+    27.55,
+    39.28,
+    18.4,
+    21.89,
+    18.9
+   ],
+   "accel_rms": [
+    30.3,
+    56.3,
+    75.0,
+    43.1,
+    22.4,
+    10.2
+   ],
+   "jerk_rms": [
+    1255.0,
+    2322.0,
+    3053.0,
+    2007.0,
+    1057.0,
+    420.0
+   ],
+   "still_frac_below_0p5_units_per_s": [
+    0.8195,
+    0.6951,
+    0.6955,
+    0.687,
+    0.8383,
+    0.9628
+   ],
+   "frames": 23156
+  },
+  "real_episode_meta": [
+   {
+    "file": "/logs/sort/any_1731/ep_0001/joints.csv",
+    "used": true,
+    "n": 1092,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0583
+   },
+   {
+    "file": "/logs/sort/any_1731/ep_0002/joints.csv",
+    "used": true,
+    "n": 1811,
+    "dt_med_s": 0.0357,
+    "dt_max_s": 0.0716
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0001/joints.csv",
+    "used": true,
+    "n": 3288,
+    "dt_med_s": 0.0358,
+    "dt_max_s": 0.0997
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0002/joints.csv",
+    "used": false,
+    "n": 23
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0003/joints.csv",
+    "used": false,
+    "n": 23
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0004/joints.csv",
+    "used": true,
+    "n": 1284,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0566
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0006/joints.csv",
+    "used": true,
+    "n": 1840,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0556
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0007/joints.csv",
+    "used": true,
+    "n": 1613,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0599
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0009/joints.csv",
+    "used": true,
+    "n": 439,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0474
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0010/joints.csv",
+    "used": true,
+    "n": 508,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0557
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0011/joints.csv",
+    "used": true,
+    "n": 1059,
+    "dt_med_s": 0.0356,
+    "dt_max_s": 0.057
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0012/joints.csv",
+    "used": true,
+    "n": 359,
+    "dt_med_s": 0.0356,
+    "dt_max_s": 0.0616
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0013/joints.csv",
+    "used": true,
+    "n": 1604,
+    "dt_med_s": 0.0356,
+    "dt_max_s": 0.0624
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0014/joints.csv",
+    "used": true,
+    "n": 1392,
+    "dt_med_s": 0.0356,
+    "dt_max_s": 0.0603
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0015/joints.csv",
+    "used": true,
+    "n": 1867,
+    "dt_med_s": 0.0357,
+    "dt_max_s": 0.0614
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0016/joints.csv",
+    "used": true,
+    "n": 1459,
+    "dt_med_s": 0.0358,
+    "dt_max_s": 0.0648
+   },
+   {
+    "file": "/logs/sort/any_1740/ep_0017/joints.csv",
+    "used": true,
+    "n": 2032,
+    "dt_med_s": 0.0349,
+    "dt_max_s": 0.0576
+   }
+  ],
+  "n_sim_episodes": 150,
+  "n_real_episodes_used": 15,
+  "sim_episode_frames": {
+   "trajectory_files": 150,
+   "metadata_files": 150,
+   "frames_min": 360,
+   "frames_max": 405,
+   "frames_median": 362.0,
+   "frames_mean": 363.16,
+   "frames_total": 54474,
+   "duration_s_min": 12.0,
+   "duration_s_median": 12.067,
+   "duration_s_mean": 12.105,
+   "duration_s_max": 13.5,
+   "count_by_frames": {
+    "360": 7,
+    "361": 51,
+    "362": 27,
+    "363": 33,
+    "364": 14,
+    "365": 9,
+    "366": 5,
+    "367": 1,
+    "403": 1,
+    "404": 1,
+    "405": 1
+   },
+   "npz_meta_mismatches": []
+  },
+  "sim_episode_frames_source": "logs/L17-episode-frames.txt from tools/episode_frames_check.py (read-only; trajectory.npz length vs metadata frames)"
+ },
+ "routing": {
+  "pairs_sim": {
+   "2x4->blue": 33,
+   "2x2->blue": 42,
+   "2x2->green": 40,
+   "2x4->green": 35
+  },
+  "od10_contradictions_sim": 73,
+  "episodes": 150,
+  "tape_word_in_sim_source": false
+ },
+ "camera_models": {
+  "sim_overhead": {
+   "pos": [
+    -0.025,
+    -0.46,
+    0.61
+   ],
+   "target": [
+    -0.025,
+    -0.22,
+    0.0
+   ],
+   "fovy": 40.0
+  },
+  "sim_close_fixed_wrist_cam": {
+   "pos": [
+    0.025,
+    -0.45,
+    0.22
+   ],
+   "target": [
+    0.065,
+    -0.22,
+    0.015
+   ],
+   "fovy": 40.0
+  }
+ },
+ "bowl_centres_world_m": {
+  "blue": [
+   -0.105,
+   -0.13
+  ],
+  "green": [
+   0.235,
+   -0.16
+  ]
+ },
+ "bowl_floor_m": 0.004,
+ "twin": {
+  "status": "NOT COMPARED. R/twin was deleted at 2026-11-14T19:48Z (D-102). The coordinator (19:49Z) asked for the friend sim against the real recordings only; the team twin will be R/sim/twin, compared by Opus once it passes its gates.",
+  "last_read_only_check": {
+   "result": "EMPTY at 2026-11-14T19:45:13Z: no files in any twin data dir",
+   "files": null,
+   "py_files": null
+  }
+ },
+ "comparison_table": {
+  "columns": [
+   "measure",
+   "friend_sim",
+   "real"
+  ],
+  "rows": [
+   [
+    "top view, blue plate centroid (px, x y)",
+    "240.2, 151.9 (n=1804)",
+    "246.0, 150.7 (n=340)",
+    "real minus sim 5.82, -1.20 px (5.94 px)"
+   ],
+   [
+    "top view, green plate centroid (px, x y)",
+    "572.4, 177.5 (n=1797)",
+    "578.4, 181.1 (n=340)",
+    "real minus sim 6.08, 3.58 px (7.06 px)"
+   ],
+   [
+    "top view, plate offset through sim camera model (mm)",
+    "n/a",
+    "n/a",
+    "magnitude blue 6.16 mm, green 7.02 mm"
+   ],
+   [
+    "top view, plate spacing",
+    "333.1 px; truth 341.3 mm; image 343.4 mm",
+    "333.8 px; image 343.5 mm; gate FK 324.2 mm (between mean real release points)",
+    "real/sim ratio 1.0020 in px"
+   ],
+   [
+    "close view, green plate centroid (median px)",
+    "555.0, 137.5 (n=1804)",
+    "557.9, 61.3 (n=318)",
+    "real minus sim 76.19 px (magnitude); gate median 81.3 px"
+   ],
+   [
+    "close view, blue plate centroid (median px)",
+    "58.3, 157.9 (x sd 25.3 px)",
+    "46.4, 147.0 (x sd 82.0 px)",
+    "not used for the offset (real x sd 82 px)"
+   ],
+   [
+    "top view, mean luma",
+    "51.94 (1804 frames)",
+    "89.07 (340 frames)",
+    "sim 41.68% darker"
+   ],
+   [
+    "close view, mean luma",
+    "37.97 (1804 frames)",
+    "77.44 (340 frames)",
+    "sim 50.96% darker"
+   ],
+   [
+    "mean saturation S, top / close",
+    "80.34 / 98.11",
+    "84.40 / 93.75",
+    "sim minus real: top -4.06, close 4.36"
+   ],
+   [
+    "release pan, blue plate (units, median)",
+    "48.37",
+    "32.18",
+    "residual 16.5 deg (gate tolerance 3 deg)"
+   ],
+   [
+    "release pan, green plate (units, median)",
+    "-50.89",
+    "-52.56",
+    "residual 1.7 deg"
+   ],
+   [
+    "lift range (units)",
+    "-42.79 to 54.59",
+    "-98.93 to 61.90",
+    "sim minimum -42.8 vs real rest -98.5 (gate)"
+   ],
+   [
+    "elbow range (units)",
+    "-56.91 to 62.38",
+    "-76.50 to 96.91",
+    "sim maximum 62.4 vs real rest 96.8 (gate)"
+   ],
+   [
+    "wrist_flex range (units)",
+    "33.15 to 91.63 (MJCF limit 91.62)",
+    "29.72 to 97.37",
+    "24.42% of sim frames within 0.5 units of limit (gate method 21.38%); real frames at or above 98: 0.0%"
+   ],
+   [
+    "wrist roll median (units)",
+    "-0.88",
+    "-62.14",
+    "not separable from these data (grasp strategy or convention)"
+   ],
+   [
+    "gripper open max / min (units)",
+    "29.83 / 4.04",
+    "25.08 / 0.52",
+    "span ratio 1.104 (gate tolerance 10%)"
+   ],
+   [
+    "start pose, first-row median (units)",
+    "[0.00, -28.74, 47.31, 33.15, 0.00, 21.28]",
+    "[-12.71, 12.79, -23.68, 89.74, -62.20, 24.62]",
+    "different start convention; not a zero-convention test"
+   ],
+   [
+    "p95 speed, five arm joints (units/s)",
+    "[31.17, 35.16, 57.09, 39.38, 24.60]",
+    "[9.56, 14.90, 18.12, 10.30, 5.40]",
+    "sim/real [3.26, 2.36, 3.15, 3.82, 4.56]"
+   ],
+   [
+    "p95 speed, gripper (units/s)",
+    "40.75",
+    "0.00",
+    "no ratio (real p95 is 0)"
+   ],
+   [
+    "still fraction below 0.5 units/s, six joints (pan..gripper)",
+    "[0.65, 0.30, 0.31, 0.45, 0.59, 0.70]",
+    "[0.82, 0.70, 0.70, 0.69, 0.84, 0.96]",
+    "sim moves more of the time"
+   ],
+   [
+    "jerk RMS, five arm joints",
+    "[2762, 7017, 4136, 5054, 3920]",
+    "[1255, 2322, 3053, 2007, 1057]",
+    "sim/real [2.2, 3.0, 1.4, 2.5, 3.7]; real may be inflated by encoder quantisation (inconclusive)"
+   ],
+   [
+    "episode duration (s)",
+    "median 12.07; mean 12.11; range 12.0-13.5 (360-405 frames, n=150)",
+    "Studio mean 21.16 (16 episodes); joints.csv mean 51.1 (15 files)",
+    "different recordings; not directly comparable"
+   ],
+   [
+    "brick routing vs OD-10",
+    "73 of 150 contradict (2x2 to green 40; 2x4 to blue 33)",
+    "not measured",
+    "sim has no tape, so every 2x2 counts as good"
+   ],
+   [
+    "gate decisions (a SmolVLA co-training; b ACT pretrain)",
+    "a NO-GO; b NO-GO",
+    "n/a",
+    "failed for a and b: units_ok, gripper_ok, rest_ok, wrist_ok, brightness_ok, close_camera_ok, geometry_plates_ok"
+   ]
+  ],
+  "note": "Friend sim against the real recordings only (twin column removed per D-102). Sample sizes are in each cell. Real image statistics use all four chunk-000 files per camera (10158 frames) after the L19 re-run. Close-view centroids depend on plate clipping at the frame edge and are approximate."
+ },
+ "patched_utc": "2026-11-14T20:01:12Z",
+ "patch_note": "D-102 v2: twin not compared; three_column replaced by comparison_table; motion.sim_episode_frames added (L17); sim episode duration corrected."
+}

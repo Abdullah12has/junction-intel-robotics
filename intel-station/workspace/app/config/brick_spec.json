@@ -1,0 +1,32 @@
+{
+ "source": "DUPLO system dimensions: 2x2 brick footprint 31.8 mm (2 x 15.9 mm pitch), brick height 19.2 mm",
+ "footprint_mm": 31.8,
+ "height_mm": 19.2,
+ "studs": [
+  2,
+  2
+ ],
+ "stud_diameter_mm": 9.6,
+ "stud_height_mm": 3.4,
+ "studs_note": "DUPLO is LEGO scaled by 2 in every dimension: LEGO stud 4.8 mm across and about 1.7 mm high, pitch 8 mm (DUPLO 16 mm; the footprint is 0.2 mm under the grid)",
+ "spot_search": {
+  "note": "candidate inspection spots: polar grid around the pan axis inside the hover reach (160-240 mm measured with kin.ik)",
+  "radius_mm": [
+   170,
+   190,
+   210,
+   230
+  ],
+  "angle_deg": [
+   -50,
+   -35,
+   -20,
+   -5,
+   10,
+   25,
+   40
+  ]
+ },
+ "fit_min_iou": 0.7,
+ "fit_min_iou_note": "a footprint explains the silhouette when their IoU reaches this; 0.7 allows the re-fitted wrist camera's few-pixel error at the hover"
+}

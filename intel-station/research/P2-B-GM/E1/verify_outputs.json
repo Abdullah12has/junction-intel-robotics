@@ -1,0 +1,24 @@
+{
+ "blue": {
+  "episode": 11,
+  "n_waypoints": 32,
+  "max_abs_diff_vs_dataset_units": 4.920654296824978e-05,
+  "fwd_order_ok": true,
+  "rev_order_ok": true,
+  "dwell_only_last_step_ok": true,
+  "speed_cap_ok": true,
+  "first_is_release_last_is_end": true,
+  "body_within_100": true
+ },
+ "green": {
+  "episode": 9,
+  "n_waypoints": 22,
+  "max_abs_diff_vs_dataset_units": 4.932861327944238e-05,
+  "fwd_order_ok": true,
+  "rev_order_ok": true,
+  "dwell_only_last_step_ok": true,
+  "speed_cap_ok": true,
+  "first_is_release_last_is_end": true,
+  "body_within_100": true
+ }
+}

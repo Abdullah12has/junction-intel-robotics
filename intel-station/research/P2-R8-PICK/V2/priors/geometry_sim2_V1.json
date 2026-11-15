@@ -1,0 +1,47 @@
+{
+  "for": "P2-R8-PICK",
+  "made_by": "V1 verifier, 2026-11-14 (addendum I-55)",
+  "source": "real release poses of dataset 6d6bdce3: blue episodes 7, 11, 12; green episodes 8, 10, 14, 15 (episodes 0-6 are put-downs, 9 has no release, 13 failed grasp). Joint angles = normalized / K, zero at the recorded range midpoint, sign +1 (repo convention; calibration from app/motion/project_robots.json). Forward kinematics: pinned MJCF so101.xml (sha256 982c02c0027ec0c62d3459d0a6eb00dfb7dc13a451992e72ce99addc71f209805), TCP = site gripperframe.",
+  "frame": "robot base frame = MJCF so101 'base' body; metres; x, y horizontal, z up. Origin = robot base.",
+  "plates_in_robot_base_frame_m": {
+    "blue": {
+      "centre_xy_m": [0.1857, -0.1099],
+      "release_tcp_z_mean_m": 0.0119,
+      "episodes": [7, 11, 12],
+      "n": 3,
+      "per_episode_xyz_m": [[0.1850, -0.1072, 0.0034], [0.1818, -0.1060, 0.0193], [0.1905, -0.1164, 0.0131]],
+      "sd_xyz_m": [0.0044, 0.0057, 0.0080],
+      "se_xyz_m": [0.0026, 0.0033, 0.0046]
+    },
+    "green": {
+      "centre_xy_m": [0.2095, 0.2134],
+      "release_tcp_z_mean_m": 0.0143,
+      "episodes": [8, 10, 14, 15],
+      "n": 4,
+      "per_episode_xyz_m": [[0.1867, 0.1959, -0.0056], [0.2226, 0.2219, 0.0209], [0.2123, 0.2092, 0.0004], [0.2163, 0.2267, 0.0416]],
+      "sd_xyz_m": [0.0157, 0.0138, 0.0214],
+      "se_xyz_m": [0.0079, 0.0069, 0.0107]
+    }
+  },
+  "plate_height": "not determined: release TCP height varies between episodes (blue 0.3 to 1.9 cm, green -0.6 to 4.2 cm), so the plate top is not measured. Use the table-level value only after a physical check.",
+  "base_position_top_view": "not measured in pixels. Opus 13:52Z (FACTS-LIVE) states the robot base is at the top centre of the top view.",
+  "top_view_pixels_640x480": {
+    "green_plate_real_top_camera": [578.6, 181.1],
+    "green_plate_sim_overhead": [572.4, 177.5],
+    "green_offset_px": 7.2,
+    "method": "green-mask centroid, median over 30 frames of dataset 6d6bdce3 top camera 243622061421 (file-000, first 30 s). Approximate: mask is about 18k px, larger than the plate outline.",
+    "blue_plate": "not measured (bricks of similar hue confound a blue mask)"
+  },
+  "sim_stated_plates_same_frame_m": {"blue": [0.1688, -0.1438], "green": [0.1988, 0.1962]},
+  "real_minus_sim_horizontal_cm": {"blue": 3.79, "green": 2.03},
+  "uncertainty_horizontal_m": {
+    "statistical_se": "0.003 blue, 0.008 green",
+    "elbow_5deg_calibration_note": 0.022,
+    "tcp_definition_urdf_vs_mjcf": 0.02,
+    "zero_convention_alternative_raw2048": "0.056 blue, 0.063 green. Rejected: under raw-2048 the calibrated lift range would reach -107.8 deg, beyond the 100 deg joint limit (midpoint gives +-99.7 deg).",
+    "budget_1sigma_m": 0.032
+  },
+  "confidence": "low to medium: 3 blue and 4 green releases; zero convention settled by the joint-limit test only; elbow +-5 deg open.",
+  "not_for": "plate-level training data. The sim blue plate is 3.8 cm from the real blue release and 16.5 deg off in joint-space pan, so sim plate positions must not be used as real plate positions.",
+  "evidence": "/home/intel/intel-junction-2026/work/P2-D-SIM2/V1/out/geometry_handoff.json; out/verify_plates.json; data/sim/gate/2026-11-14-95fa40dbf3.json"
+}

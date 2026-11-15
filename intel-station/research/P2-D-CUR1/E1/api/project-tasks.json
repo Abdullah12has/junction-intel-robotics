@@ -1,0 +1,11 @@
+{
+ "Smoke test - inspection skill - 5 episodes": [
+  "move the brick to the inspection spot",
+  "move the brick to the left plate",
+  "move the red brick to the blue plate",
+  "move the red brick to the green plate"
+ ],
+ "S1 curated v0 (Opus)": [
+  "move the brick to the inspection spot"
+ ]
+}

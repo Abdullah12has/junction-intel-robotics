@@ -1,0 +1,211 @@
+{
+ "stage": "friend-sim-v2",
+ "utc": "2026-11-14T20:01:12Z",
+ "metrics": {
+  "versions": {
+   "live_equals_2026_11_14": true,
+   "episodes": 150,
+   "manifest_entries_verified": 762,
+   "manifest_entries": 762
+  },
+  "gate_rerun": {
+   "identical_to_existing": true,
+   "decisions": {
+    "a_smolvla_cotraining": "NO-GO",
+    "b_act_pretrain_augment": "NO-GO",
+    "c_geometry_fk_crosscheck": "GO",
+    "d_detector_synthetic": "NO-GO",
+    "e_none": "GO"
+   }
+  },
+  "top_plate_offset_px_real_minus_sim": {
+   "blue": [
+    5.82,
+    -1.2
+   ],
+   "green": [
+    6.08,
+    3.58
+   ],
+   "magnitude": {
+    "blue": 5.94,
+    "green": 7.06
+   }
+  },
+  "top_plate_offset_mm_image_via_sim_model": {
+   "blue": [
+    6.0,
+    1.4
+   ],
+   "green": [
+    5.7,
+    -4.1
+   ],
+   "magnitude": {
+    "blue": 6.16,
+    "green": 7.02
+   }
+  },
+  "top_plate_spacing_mm": {
+   "sim_world_truth_from_bowl_centres": 341.3,
+   "sim_image_via_model": 343.4,
+   "real_image_via_sim_model": 343.5
+  },
+  "fk_plate_spacing_mm_gate": {
+   "sim": 341.3,
+   "real": 324.2
+  },
+  "fk_plate_offset_cm_gate": {
+   "blue": 3.79,
+   "green": 2.03
+  },
+  "close_plate_offset_px_real_minus_sim_median": {
+   "blue": [
+    -11.92,
+    -10.92
+   ],
+   "green": [
+    2.86,
+    -76.14
+   ],
+   "green_magnitude": 76.19,
+   "gate_green_median": 81.3
+  },
+  "top_camera_green_offset_px_gate": 7.2,
+  "brightness": {
+   "top_luma": [
+    51.9392,
+    89.0656
+   ],
+   "top_sim_darker_pct": 41.68,
+   "close_luma": [
+    37.9742,
+    77.4352
+   ],
+   "close_sim_darker_pct": 50.96
+  },
+  "joint_units": {
+   "K_units_per_rad": [
+    56.16,
+    57.473,
+    59.142,
+    55.256,
+    34.078,
+    42.57
+   ],
+   "sim_first_frame_norm": [
+    0.0,
+    -28.74,
+    47.31,
+    33.15,
+    0.0,
+    21.28
+   ],
+   "real_first_row_norm": [
+    -12.71,
+    12.79,
+    -23.68,
+    89.74,
+    -62.2,
+    24.62
+   ],
+   "gate_release_pan_residual_deg": {
+    "blue": 16.51,
+    "green": 1.71
+   },
+   "gripper_span_ratio_gate": 1.104,
+   "gripper_open_max": [
+    29.83,
+    25.08
+   ]
+  },
+  "wrist": {
+   "mjcf_limit_norm": 91.62,
+   "sim_frac_within_0p5_of_limit": 0.2442,
+   "sim_frac_gate_method": 0.2138,
+   "real_max_norm_joints_csv": 97.37
+  },
+  "rest_like_frac_sim": 0.0,
+  "motion_speed_p95_units_s": {
+   "sim": [
+    31.17,
+    35.16,
+    57.09,
+    39.38,
+    24.6,
+    40.75
+   ],
+   "real_joints_csv": [
+    9.56,
+    14.9,
+    18.12,
+    10.3,
+    5.4,
+    0.0
+   ]
+  },
+  "motion_still_frac": {
+   "sim": [
+    0.6468,
+    0.2957,
+    0.3129,
+    0.4495,
+    0.5901,
+    0.6978
+   ],
+   "real_joints_csv": [
+    0.8195,
+    0.6951,
+    0.6955,
+    0.687,
+    0.8383,
+    0.9628
+   ]
+  },
+  "episode_duration_s": {
+   "sim": 12.07,
+   "sim_mean": 12.11,
+   "sim_min": 12.0,
+   "sim_max": 13.5,
+   "sim_note": "median over 150 attempts from trajectory.npz lengths (L17); replaces 12.03 = 361/30, hard-coded in make_metrics.py line 76",
+   "real_joints_csv_loop_mean": 51.1,
+   "real_studio_mean": 21.16
+  },
+  "od10_contradictions": 73
+ },
+ "previous": {
+  "source": "kb ledger DECISIONS.md D-069 (14:52Z)",
+  "close_camera_offset_px_range": [
+   32,
+   72
+  ],
+  "sim_darker_pct": 32,
+  "top_camera_offset_px_within": 8
+ },
+ "delta": {
+  "close_camera_offset_px": {
+   "new_gate_median": 81.3,
+   "previous_range": [
+    32,
+    72
+   ],
+   "change_vs_previous_max_px": 9.3,
+   "label": "declined (above D-069 range); method differs"
+  },
+  "sim_darker_pct": {
+   "new_top": 41.68,
+   "previous": 32,
+   "change_pp": 9.68,
+   "label": "declined; D-069 method not recorded, not reproduced"
+  },
+  "top_camera_offset_px": {
+   "new_gate_green": 7.2,
+   "new_mean_blue_green_image": 6.5,
+   "previous_within": 8,
+   "label": "within D-069 bound; method differs"
+  },
+  "note": "live data identical to the 2026-11-14 copy (verified), so these deltas reflect re-measurement only, not a change by the friend"
+ },
+ "patched_utc": "2026-11-14T20:01:12Z",
+ "patch_note": "D-102 v2: twin not compared; sim episode duration corrected (L17)."
+}

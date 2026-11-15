@@ -1,0 +1,113 @@
+{
+  "delta": null,
+  "metrics": {
+    "crops": {
+      "total": 41,
+      "usable_no": 28,
+      "usable_yes": 13
+    },
+    "episodes": {
+      "confidence": {
+        "high": 5,
+        "low": 7,
+        "med": 10
+      },
+      "failure_category": {
+        "detector_mislabel": 1,
+        "hand_or_person_estop": 5,
+        "mis_aim": 1,
+        "none": 7,
+        "operator_stop": 2,
+        "other": 6
+      },
+      "label_source": {
+        "log": 2,
+        "visual": 20
+      },
+      "outcome": {
+        "approach_fail": 6,
+        "carry_over": 3,
+        "estop": 2,
+        "grasp_fail": 1,
+        "stopped": 3,
+        "success": 7
+      },
+      "total": 22,
+      "with_images": 20,
+      "without_images": [
+        "any_1731/ep_0004",
+        "any_1740/ep_0018"
+      ]
+    },
+    "estop": {
+      "confidence": {
+        "high": 31,
+        "med": 10
+      },
+      "csv_agree": 32,
+      "csv_disagree": 9,
+      "csv_rows": 41,
+      "files": 41,
+      "holding": {
+        "0": 22,
+        "1": 19
+      },
+      "label": {
+        "hand": 11,
+        "hand_partial": 7,
+        "nohand": 23
+      },
+      "not_in_csv": 0,
+      "usable_for_training": 19,
+      "verified_full_resolution": 41
+    },
+    "images": {
+      "by_source_dir": {
+        "depth": 146,
+        "grasp_auto": 3,
+        "monitor": 41,
+        "sort": 252
+      },
+      "confidence": {
+        "high": 151,
+        "low": 27,
+        "med": 264
+      },
+      "kind": {
+        "closed": 33,
+        "composite": 31,
+        "crop": 41,
+        "depth": 31,
+        "estop": 41,
+        "grasp_open": 33,
+        "lifted": 27,
+        "other": 94,
+        "pre": 51,
+        "released": 21,
+        "stage1": 33,
+        "station": 6
+      },
+      "total": 442,
+      "usable_no": 410,
+      "usable_yes": 32
+    },
+    "od10_decisions": {
+      "accuracy": 0.875,
+      "accuracy_high_confidence_only": {
+        "correct": 2,
+        "n": 3
+      },
+      "correct": 7,
+      "decision_correct": {
+        "no": 1,
+        "unknown": 14,
+        "yes": 7
+      },
+      "decisions_made": 8,
+      "no_decision_episodes": 14
+    }
+  },
+  "previous": null,
+  "stage": "labels-v1",
+  "utc": "2026-11-14T20:07Z"
+}
