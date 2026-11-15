@@ -1,8 +1,22 @@
-# Intel challenge documentation
+# Documentation
 
-## Start here
+## Submission
 
-- **[Execution plan](EXECUTION-PLAN.md): the step-by-step plan to follow now.** Supersedes the build order in the two documents below.
+- [Submission overview](SUBMISSION.md): implementation, results and limitations.
+- [Code map](CODE-MAP.md): component entry points and verification boundaries.
+- [Evidence index](../evidence/README.md): dated measurements and experiment records.
+- [Training pipeline](../training/README.md): data preparation and experiment structure.
+
+## Model and data research
+
+- [Blue-plate processing plan](BLUE-PLATE-VLA-PROCESSING-PLAN.md)
+- [Parallel experiment design](BLUE-PLATE-PARALLEL-EXPERIMENTS.md)
+- [MuJoCo synthetic-data research](MUJOCO-SYNTHETIC-DATA-RESEARCH.md)
+- [Action-limit audit](POLICY-ACTION-LIMIT-AUDIT.md)
+
+## Historical planning
+
+- **[Execution plan](EXECUTION-PLAN.md): original implementation plan.** Supersedes the build order in the two documents below.
 
 - [Researched speed and reliability plan](Intel-speed-and-reliability-research.md): November 14 model decisions, Gemma assessment, optimizations, experiments and execution gates.
 
@@ -21,6 +35,8 @@
 Markdown versions preserve extracted text page by page. Consult the PDFs for diagrams, images and visual layout; the extractions are not manually reconstructed slide designs.
 
 ## Station operation
+
+- [Verda CLI access and GPU availability](VERDA-CLI-HANDOFF.md)
 
 - [Station handoff](ROBOT-STATION-HANDOFF.md)
 - [Station runbook](ROBOT-STATION-RUNBOOK.md)

@@ -1,0 +1,177 @@
+diff --git a/application/backend/src/runtime_session/session.py b/application/backend/src/runtime_session/session.py
+index 630254dc..821341a6 100644
+--- a/application/backend/src/runtime_session/session.py
++++ b/application/backend/src/runtime_session/session.py
+@@ -38,6 +38,7 @@ from loguru import logger
+ from exceptions import BaseException as AppBaseException
+ from exceptions import IncompatiblePartsError, RuntimeSessionCommandError
+ from runtime_session.bus import EVENTS, Bus, BusRequestError, command_key, publish_status, status_key
++from runtime_session.jog import jog_target
+ from runtime_session.controls import build_control
+ from runtime_session.controls.base import CHANGED as CONTROL_CHANGED
+ from runtime_session.dataset import COMPONENT as DATASET
+@@ -52,6 +53,7 @@ from schemas.runtime_session import (
+     CommandDone,
+     DiscardEpisodeCommand,
+     ErrorMessage,
++    JogJointCommand,
+     LoadDatasetCommand,
+     LoadEnvironmentCommand,
+     LoadModelCommand,
+@@ -153,6 +155,7 @@ class RuntimeSession:
+         """Records the store, so it is unloaded before the store is replaced."""
+         self._model: Slot[ProcessModel] = Slot("model")
+         """Reads the store's frames, so it is unloaded before the store is replaced; a model control borrows it."""
++        self._last_jog = 0.0
+         self._store: Store | None = None
+         """Joints and frames, for the environment's devices and the dataset. Outlives a reloaded
+         environment while the spec stays the same, so the dataset recording from it stays loaded."""
+@@ -212,6 +215,7 @@ class RuntimeSession:
+             "unload_environment": (UnloadEnvironmentCommand, lambda _command: self.unload_environment()),
+             "reload_environment": (ReloadEnvironmentCommand, lambda _command: self.reload_environment()),
+             "set_control": (SetControlCommand, lambda command: self.set_control(command.control)),
++            "jog_joint": (JogJointCommand, self.jog_joint),
+             "load_dataset": (
+                 LoadDatasetCommand,
+                 lambda command: self._load_dataset_by_id(command.dataset_id, command.fps),
+@@ -444,6 +448,23 @@ class RuntimeSession:
+         finally:
+             self._registry.release_robots(self)
+ 
++    async def jog_joint(self, command: JogJointCommand) -> None:
++        """Jog only an idle, calibrated SO-101 session with current feedback."""
++        async with self._lock:
++            loaded = self._environment.require("Connect the follower first.")
++            if self._control.value is not None or self._dataset.value is not None:
++                raise ValueError("Stop following/model control and unload recording before jogging.")
++            recipe = loaded.environment.description.follower.driver
++            args = recipe.get("init_args", {})
++            if loaded.robot_type != "SO101_Follower" or args.get("unit") != "normalized":
++                raise ValueError("Manual jogging requires an SO101 follower in normalized units.")
++            store = loaded.environment.store
++            now = time.monotonic()
++            target = jog_target(store.read(STATE), store.read(ACTION), command,
++                                now=now, last_jog=self._last_jog, calibration=args.get("calibration"))
++            store.write(ACTION, target, timestamp=now + 0.25)
++            self._last_jog = now
++
+     async def set_control(self, config: ControlConfig | None) -> None:
+         """Stop the running control, hold the follower where it is, then start ``config``.
+ 
+diff --git a/application/backend/src/schemas/runtime_session.py b/application/backend/src/schemas/runtime_session.py
+index 03e940e0..6fa11b1f 100644
+--- a/application/backend/src/schemas/runtime_session.py
++++ b/application/backend/src/schemas/runtime_session.py
+@@ -147,6 +147,16 @@ class DiscardEpisodeCommand(BaseModel):
+     request_id: str
+ 
+ 
++class JogJointCommand(BaseModel):
++    """One small, finite move; no persistent velocity survives a lost connection."""
++
++    command: Literal["jog_joint"] = "jog_joint"
++    request_id: str
++    joint: str
++    delta: float = Field(ge=-0.5, le=0.5, allow_inf_nan=False)
++    observed_at: float = Field(gt=0, allow_inf_nan=False)
++
++
+ class SetControlCommand(BaseModel):
+     """Switch what drives the follower. ``null`` holds it where it is."""
+ 
+@@ -160,6 +170,7 @@ RuntimeSessionCommand = Annotated[
+     | UnloadEnvironmentCommand
+     | ReloadEnvironmentCommand
+     | SetControlCommand
++    | JogJointCommand
+     | LoadDatasetCommand
+     | UnloadDatasetCommand
+     | LoadModelCommand
+diff --git a/application/backend/src/runtime_session/jog.py b/application/backend/src/runtime_session/jog.py
+new file mode 100644
+index 00000000..e6dc9921
+--- /dev/null
++++ b/application/backend/src/runtime_session/jog.py
+@@ -0,0 +1,41 @@
++"""Bounded SO-101 jogging in the existing session's calibrated normalized space."""
++import math
++
++import numpy as np
++
++from runtime_session.store import Sample
++from schemas.runtime_session import JogJointCommand
++
++
++def jog_target(state: Sample | None, action: Sample | None, command: JogJointCommand,
++               *, now: float, last_jog: float, calibration: object) -> np.ndarray:
++    if state is None or action is None or not 0 <= now - state.timestamp <= 0.5:
++        raise ValueError("Fresh follower feedback is required.")
++    if not -0.3 <= now - command.observed_at <= 1.0:
++        raise ValueError("Dashboard feedback is stale; release and try again.")
++    if now - last_jog < 0.35:
++        raise ValueError("Jog rate exceeded; release and try again.")
++    if command.joint not in state.names or state.names != action.names:
++        raise ValueError("Unknown joint or mismatched feedback.")
++    if not isinstance(calibration, dict):
++        raise ValueError("Saved calibration is required.")
++    if not np.isfinite(state.value).all() or not np.isfinite(action.value).all():
++        raise ValueError("Invalid joint feedback.")
++    for i, name in enumerate(state.names):
++        joint = name.removesuffix(".pos")
++        cal = calibration.get(joint)
++        if not isinstance(cal, dict) or not 0 <= cal.get("range_min", -1) < cal.get("range_max", -1) <= 4095:
++            raise ValueError("Invalid joint calibration.")
++        low = 0 if joint == "gripper" else -100
++        if not low <= state.value[i] <= 100 or not low <= action.value[i] <= 100:
++            raise ValueError("Joint is outside its calibrated range.")
++    if np.max(np.abs(action.value - state.value)) > 2:
++        raise ValueError("Follower has not reached its target; release and try again.")
++    index = state.names.index(command.joint)
++    target = action.value.copy()
++    low = 0 if command.joint == "gripper.pos" else -100
++    value = float(state.value[index]) + command.delta
++    if not math.isfinite(value) or not low <= value <= 100:
++        raise ValueError("Calibrated joint limit reached.")
++    target[index] = value
++    return target
+diff --git a/application/backend/tests/runtime_session/test_jog.py b/application/backend/tests/runtime_session/test_jog.py
+new file mode 100644
+index 00000000..9a41cc8e
+--- /dev/null
++++ b/application/backend/tests/runtime_session/test_jog.py
+@@ -0,0 +1,35 @@
++import numpy as np
++import pytest
++from pydantic import ValidationError
++
++from runtime_session.jog import jog_target
++from runtime_session.store import Sample
++from schemas.runtime_session import JogJointCommand
++
++
++def call(*, state_at=10, observed_at=10, last_jog=0, joint='wrist_roll.pos', delta=0.5, position=0):
++    names = ('wrist_roll.pos', 'gripper.pos')
++    state = Sample(np.array([position, 50.0]), names, state_at)
++    action = Sample(np.array([position, 50.0]), names, 10)
++    command = JogJointCommand(request_id='test', joint=joint, delta=delta, observed_at=observed_at)
++    cal = {name.removesuffix('.pos'): {'range_min': 100, 'range_max': 3900} for name in names}
++    return jog_target(state, action, command, now=10, last_jog=last_jog, calibration=cal)
++
++
++def test_moves_only_requested_joint():
++    assert call().tolist() == [0.5, 50.0]
++
++
++@pytest.mark.parametrize('kwargs', [
++    {'state_at': 9}, {'observed_at': 8}, {'observed_at': 11}, {'last_jog': 9.9},
++    {'joint': 'missing'}, {'position': 100}, {'position': -101}, {'position': float('nan')},
++])
++def test_rejects_unsafe_or_stale_commands(kwargs):
++    with pytest.raises(ValueError):
++        call(**kwargs)
++
++
++@pytest.mark.parametrize('delta', [1, -1, float('nan'), float('inf')])
++def test_rejects_large_or_invalid_steps(delta):
++    with pytest.raises(ValidationError):
++        call(delta=delta)

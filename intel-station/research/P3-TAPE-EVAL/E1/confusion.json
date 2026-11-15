@@ -1,0 +1,250 @@
+{
+ "overall": {
+  "matrix": {
+   "yes": {
+    "yes": 2,
+    "no": 0,
+    "uncertain": 4
+   },
+   "no": {
+    "yes": 0,
+    "no": 5,
+    "uncertain": 12
+   }
+  },
+  "n": 23,
+  "decided": 7,
+  "correct": 7,
+  "accuracy_decided": 1.0,
+  "accuracy_ci95": [
+   0.6457,
+   1.0
+  ],
+  "uncertain": 16
+ },
+ "by_colour": {
+  "cream/yellow": {
+   "matrix": {
+    "yes": {
+     "yes": 2,
+     "no": 0,
+     "uncertain": 4
+    },
+    "no": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 0
+    }
+   },
+   "n": 6,
+   "decided": 2,
+   "correct": 2,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.3424,
+    1.0
+   ],
+   "uncertain": 4
+  },
+  "orange": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 0
+    },
+    "no": {
+     "yes": 0,
+     "no": 1,
+     "uncertain": 5
+    }
+   },
+   "n": 6,
+   "decided": 1,
+   "correct": 1,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.2065,
+    1.0
+   ],
+   "uncertain": 5
+  },
+  "red": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 0
+    },
+    "no": {
+     "yes": 0,
+     "no": 2,
+     "uncertain": 5
+    }
+   },
+   "n": 7,
+   "decided": 2,
+   "correct": 2,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.3424,
+    1.0
+   ],
+   "uncertain": 5
+  },
+  "white": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 0
+    },
+    "no": {
+     "yes": 0,
+     "no": 2,
+     "uncertain": 2
+    }
+   },
+   "n": 4,
+   "decided": 2,
+   "correct": 2,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.3424,
+    1.0
+   ],
+   "uncertain": 2
+  }
+ },
+ "by_kind": {
+  "closed": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 2
+    },
+    "no": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 7
+    }
+   },
+   "n": 9,
+   "decided": 0,
+   "correct": 0,
+   "accuracy_decided": null,
+   "accuracy_ci95": [
+    null,
+    null
+   ],
+   "uncertain": 9
+  },
+  "lifted": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 2
+    },
+    "no": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 5
+    }
+   },
+   "n": 7,
+   "decided": 0,
+   "correct": 0,
+   "accuracy_decided": null,
+   "accuracy_ci95": [
+    null,
+    null
+   ],
+   "uncertain": 7
+  },
+  "pre": {
+   "matrix": {
+    "yes": {
+     "yes": 2,
+     "no": 0,
+     "uncertain": 0
+    },
+    "no": {
+     "yes": 0,
+     "no": 3,
+     "uncertain": 0
+    }
+   },
+   "n": 5,
+   "decided": 5,
+   "correct": 5,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.5655,
+    1.0
+   ],
+   "uncertain": 0
+  },
+  "station": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 0
+    },
+    "no": {
+     "yes": 0,
+     "no": 2,
+     "uncertain": 0
+    }
+   },
+   "n": 2,
+   "decided": 2,
+   "correct": 2,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.3424,
+    1.0
+   ],
+   "uncertain": 0
+  }
+ },
+ "by_truth_note": {
+  "visual": {
+   "matrix": {
+    "yes": {
+     "yes": 2,
+     "no": 0,
+     "uncertain": 4
+    },
+    "no": {
+     "yes": 0,
+     "no": 5,
+     "uncertain": 12
+    }
+   },
+   "n": 23,
+   "decided": 7,
+   "correct": 7,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.6457,
+    1.0
+   ],
+   "uncertain": 16
+  }
+ },
+ "errors": [],
+ "sort_any_import": "ok",
+ "pre_excluded_no_loop_input_saved": [
+  "any_1731/ep_0001",
+  "any_1731/ep_0002",
+  "any_1740/ep_0002",
+  "any_1740/ep_0003",
+  "any_1740/ep_0007",
+  "any_1740/ep_0011",
+  "any_1740/ep_0012",
+  "any_1740/ep_0016"
+ ]
+}

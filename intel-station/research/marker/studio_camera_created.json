@@ -1,0 +1,1 @@
+{"id":"5eef8b60-efdf-49a7-95a3-e1971363a1a2","driver":"ipcam","created_at":null,"updated_at":null,"name":"Top marked","fingerprint":{"url":"http://127.0.0.1:8090/top.mjpg"},"hardware_name":"Marker MJPEG of top RealSense","payload":{"url":"http://127.0.0.1:8090/top.mjpg","width":640,"height":480,"fps":30}}

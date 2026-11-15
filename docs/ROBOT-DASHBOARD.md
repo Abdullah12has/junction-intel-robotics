@@ -50,3 +50,13 @@ Validation completed: TypeScript check, targeted ESLint, production build, 11 te
 ## Repository packaging (2026-11-14)
 
 Source, tests, generated API snapshots, lockfile and licence are copied into `dashboard/`. Dependencies and build artifacts are excluded. The original `studio-ui` working directory remains untouched so the existing running process is not disrupted; use the repository copy for future changes.
+
+## Manual joystick (2026-11-14)
+
+The dashboard defaults to **Manual control · follower only** and selects every registered camera. Connect, then explicitly enable the joystick after checking the workspace. Three directional pads cover base/shoulder, elbow/wrist bend, and wrist rotation/gripper. Hold a direction with mouse/touch or focus it and hold Enter/Space; release to stop issuing steps. Escape, window blur, hiding the page, stale feedback, and command errors disarm/stop manual input. Stop movement holds position, not power-off.
+
+The backend accepts `jog_joint` only in the existing idle SO101 follower session, in calibrated normalized units. Each command changes one joint by at most 0.5 units over 0.25 seconds, with at least 0.35 seconds between accepted commands. It rejects stale observations, non-finite values, invalid calibration, out-of-range positions/targets, a follower lag exceeding two units, and active teleop/model/dataset sessions. The client waits for each acknowledgement before scheduling another step and never queues commands while disconnected. This is joint jogging, not Cartesian inverse kinematics or collision avoidance.
+
+Backend changes are applied in the Intel laptop repository and mirrored in `vendor/physical-ai-studio`; a portable patch including new files is saved at `backend-patches/manual-jog.patch`. Apply that patch from a matching upstream checkout before using this frontend. Generated API definitions include the new command. The running local UI remains `studio-ui`, synchronized with `dashboard/`.
+
+Both RealSense cameras now use 424x240 at 6 FPS for remote preview; UVC cameras retain 640x480/30. Dashboard display is sampled at 2 FPS. These preview settings are not a training capture recommendation.

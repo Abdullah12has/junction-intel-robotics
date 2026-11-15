@@ -1,0 +1,125 @@
+{
+ "tag": "anom_pre_close",
+ "kind": "anomaly",
+ "xml": "/home/intel/intel-junction-2026/work/P4-OVBENCH/E1/models_fp16/anom_pre_close.xml",
+ "device": "CPU",
+ "gpu_hint": null,
+ "ov_version": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "omp_num_threads": "4",
+ "utc_start": "2026-11-14T21:07:25Z",
+ "load_before": [
+  "13.65",
+  "14.12",
+  "12.43"
+ ],
+ "error": null,
+ "status": "ok",
+ "available_devices": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "device_name": "Intel(R) Core(TM) Ultra X9 388H",
+ "xml_element_types": {
+  "f16": 102,
+  "f32": 2
+ },
+ "reshape_to_batch1_error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Conc",
+ "inputs": [
+  {
+   "name": "input",
+   "shape": "[2,3,256,256]",
+   "type": "<Type: 'float32'>"
+  }
+ ],
+ "outputs": [
+  {
+   "name": "pred_score",
+   "shape": "[2]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_label",
+   "shape": "[2]",
+   "type": "<Type: 'char'>"
+  },
+  {
+   "name": "anomaly_map",
+   "shape": "[2,1,256,256]",
+   "type": "<Type: 'float32'>"
+  },
+  {
+   "name": "pred_mask",
+   "shape": "[2,1,256,256]",
+   "type": "<Type: 'char'>"
+  }
+ ],
+ "config": {
+  "INFERENCE_NUM_THREADS": 4
+ },
+ "compile_cold_s": 0.208,
+ "native_batch": 2,
+ "input_source": "recorded snapshots",
+ "n_samples": 8,
+ "first_infer_s": 0.2638,
+ "compile_plus_first_infer_s": 0.472,
+ "latency_ms": {
+  "n": 110,
+  "p50": 257.622,
+  "p90": 370.023,
+  "p99": 492.762,
+  "mean": 273.855,
+  "min": 176.452,
+  "max": 556.94
+ },
+ "per_image_p50_ms": 128.811,
+ "async": {
+  "nireq": 4,
+  "started": 45,
+  "done": 45,
+  "window_s": 11.211,
+  "fps": 4.01
+ },
+ "images_per_s": 8.02,
+ "busy": {
+  "window_s": 41.337,
+  "cpu_cores_avg": 3.18,
+  "npu_busy_pct": 0.0,
+  "gpu_gt0_busy_pct": 43.04
+ },
+ "scores": {
+  "pred_score": [
+   431.22845458984375,
+   395.80999755859375,
+   396.0856018066406,
+   383.949951171875,
+   371.4752197265625,
+   405.76727294921875,
+   357.73193359375,
+   444.5647277832031,
+   383.9938049316406,
+   390.4284362792969,
+   387.38446044921875,
+   388.0657958984375,
+   369.2656555175781,
+   453.867431640625,
+   411.552001953125,
+   398.03338623046875
+  ]
+ },
+ "output_names": [
+  "pred_score",
+  "pred_label",
+  "anomaly_map",
+  "pred_mask"
+ ],
+ "compile_cache_write_s": 0.225,
+ "compile_cache_read_s": 0.086,
+ "cache_mb": 65.1,
+ "load_after": [
+  "21.73",
+  "16.12",
+  "13.19"
+ ],
+ "utc_end": "2026-11-14T21:08:13Z"
+}

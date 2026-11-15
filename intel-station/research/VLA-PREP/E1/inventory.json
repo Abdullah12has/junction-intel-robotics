@@ -1,0 +1,1059 @@
+{
+ "utc": "2026-11-14T21:41:08Z",
+ "script_sha256": "46f2437fc854b29a6073a497c0d96393891e9682ab584bcf1c8470871bcbcbfc",
+ "nproc": 16,
+ "ffmpeg": "/usr/bin/ffmpeg",
+ "ffprobe": "/usr/bin/ffprobe",
+ "studio_backend_before_stop": "cwd=<home-docs>/physical-ai-studio/application/backend cmd=<home-docs>/physical-ai-studio/application/backend/.venv/bin/python .venv/bin/physicalai-studio serve \n",
+ "processes": [
+  {
+   "pid": 2502,
+   "ppid": 2078,
+   "etimes_s": 92037,
+   "args": "/usr/libexec/gnome-session-ctl --monitor"
+  },
+  {
+   "pid": 3105,
+   "ppid": 2078,
+   "etimes_s": 92036,
+   "args": "/usr/libexec/gvfs-udisks2-volume-monitor"
+  },
+  {
+   "pid": 3117,
+   "ppid": 2078,
+   "etimes_s": 92036,
+   "args": "/usr/libexec/gvfs-gphoto2-volume-monitor"
+  },
+  {
+   "pid": 3132,
+   "ppid": 2078,
+   "etimes_s": 92036,
+   "args": "/usr/libexec/gvfs-mtp-volume-monitor"
+  },
+  {
+   "pid": 3143,
+   "ppid": 2078,
+   "etimes_s": 92036,
+   "args": "/usr/libexec/gvfs-afc-volume-monitor"
+  },
+  {
+   "pid": 3152,
+   "ppid": 2078,
+   "etimes_s": 92036,
+   "args": "/usr/libexec/gvfs-goa-volume-monitor"
+  },
+  {
+   "pid": 7584,
+   "ppid": 7579,
+   "etimes_s": 90587,
+   "args": "python3 /usr/bin/wsdd --no-host --discovery --listen /run/user/1000/gvfsd/wsdd"
+  },
+  {
+   "pid": 15054,
+   "ppid": 2078,
+   "etimes_s": 89976,
+   "args": "/home/intel/.config/discord/app-1.0.169/chrome_crashpad_handler --monitor-self-annotation=ptype=crashpad-handler --no-rate-limit --database=/home/intel/.config/discord/Crashpad --url=https://f.a.k/e --annotation=_product"
+  },
+  {
+   "pid": 15152,
+   "ppid": 15036,
+   "etimes_s": 89976,
+   "args": "/home/intel/.config/discord/app-1.0.169/Discord --type=gpu-process --ozone-platform=wayland --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=15054 --enable-crash-reporter=a2882c7e-fb65-4e7d-9a05-252d3739"
+  },
+  {
+   "pid": 15155,
+   "ppid": 14814,
+   "etimes_s": 89976,
+   "args": "/home/intel/.config/discord/app-1.0.169/Discord --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=15"
+  },
+  {
+   "pid": 15327,
+   "ppid": 14814,
+   "etimes_s": 89975,
+   "args": "/home/intel/.config/discord/app-1.0.169/Discord --type=renderer --crashpad-handler-pid=15054 --enable-crash-reporter=a2882c7e-fb65-4e7d-9a05-252d373933f5,no_channel --user-data-dir=/home/intel/.config/discord --standard-"
+  },
+  {
+   "pid": 15442,
+   "ppid": 14814,
+   "etimes_s": 89971,
+   "args": "/home/intel/.config/discord/app-1.0.169/Discord --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=15054 "
+  },
+  {
+   "pid": 231698,
+   "ppid": 231697,
+   "etimes_s": 39197,
+   "args": "node /home/intel/.npm/_npx/4b4c857f6efdfb61/node_modules/.bin/desktop-commander remote"
+  },
+  {
+   "pid": 307195,
+   "ppid": 2078,
+   "etimes_s": 32409,
+   "args": "/opt/google/chrome/chrome_crashpad_handler --monitor-self --monitor-self-annotation=ptype=crashpad-handler --user-stream-region=4,65568 --database=/home/intel/.config/google-chrome/Crash Reports --metrics-dir=/home/intel"
+  },
+  {
+   "pid": 307197,
+   "ppid": 2078,
+   "etimes_s": 32409,
+   "args": "/opt/google/chrome/chrome_crashpad_handler --no-periodic-tasks --monitor-self-annotation=ptype=crashpad-handler --database=/home/intel/.config/google-chrome/Crash Reports --url=https://clients2.google.com/cr/report --ann"
+  },
+  {
+   "pid": 307243,
+   "ppid": 307206,
+   "etimes_s": 32409,
+   "args": "/opt/google/chrome/chrome --type=gpu-process --gpu-recent-crash-count=0 --ozone-platform=wayland --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=307195 --enable-crash-reporter=39ae7ba7-d8a0-4e0c-9977-bc"
+  },
+  {
+   "pid": 307245,
+   "ppid": 307187,
+   "etimes_s": 32409,
+   "args": "/opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=307195 --enable-crash-re"
+  },
+  {
+   "pid": 307263,
+   "ppid": 307209,
+   "etimes_s": 32409,
+   "args": "/opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=utility --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=307195 --enable-crash"
+  },
+  {
+   "pid": 361877,
+   "ppid": 3462206,
+   "etimes_s": 0,
+   "args": "/bin/bash -l -c mkdir -p /home/intel/intel-junction-2026/work/VLA-PREP/E1/code && cat > /home/intel/intel-junction-2026/work/VLA-PREP/E1/code/inventory.py <<'ZZPY' #!/usr/bin/env python3 # VLA-PREP E1 read-only inventory"
+  },
+  {
+   "pid": 361943,
+   "ppid": 361877,
+   "etimes_s": 0,
+   "args": "python3 -I work/VLA-PREP/E1/code/inventory.py"
+  },
+  {
+   "pid": 443624,
+   "ppid": 2078,
+   "etimes_s": 29100,
+   "args": "/bin/bash -l -c cd /home/intel/intel-junction-2026/work/P2-D-DATA/V1/app && nohup /home/intel/intel-junction-2026/envs/data-env/bin/python -I -c \"import sys; sys.path.insert(0, '/home/intel/intel-junction-2026/work/P2-D-"
+  },
+  {
+   "pid": 443626,
+   "ppid": 443624,
+   "etimes_s": 29100,
+   "args": "/home/intel/intel-junction-2026/envs/data-env/bin/python -I -c import sys; sys.path.insert(0, '/home/intel/intel-junction-2026/work/P2-D-DATA/V1/app'); sys.argv=['data.inventory','--watch','--every','120','--out','/home/"
+  },
+  {
+   "pid": 505696,
+   "ppid": 2078,
+   "etimes_s": 28097,
+   "args": "/bin/bash -l -c R=/home/intel/intel-junction-2026; chmod +x $R/app/tools/arm_free_watch.sh && nohup $R/app/tools/arm_free_watch.sh >> $R/logs/arm_free_watch.log 2>&1 & echo $! > /home/intel/intel-junction-2026/run/arm_fr"
+  },
+  {
+   "pid": 505699,
+   "ppid": 505696,
+   "etimes_s": 28097,
+   "args": "bash /home/intel/intel-junction-2026/app/tools/arm_free_watch.sh"
+  },
+  {
+   "pid": 1629977,
+   "ppid": 1,
+   "etimes_s": 7510,
+   "args": "node <home-docs>/physical-ai-studio/application/ui/node_modules/.bin/rsbuild dev --host 127.0.0.1"
+  },
+  {
+   "pid": 2294683,
+   "ppid": 2078,
+   "etimes_s": 24933,
+   "args": "python3 -I -u /home/intel/intel-junction-2026/app/telemetry/telemetry.py run"
+  },
+  {
+   "pid": 2372142,
+   "ppid": 2078,
+   "etimes_s": 24747,
+   "args": "/bin/bash -l -c sleep 2; while pgrep -f \"tools/extract_sheets.py\" >/dev/null; do sleep 2; done; cat /home/intel/intel-junction-2026/work/P2-R8-PICK/V3/out/extract_sheets.log; ls /home/intel/intel-junction-2026/work/P2-R8"
+  },
+  {
+   "pid": 2400410,
+   "ppid": 2078,
+   "etimes_s": 5314,
+   "args": "/bin/bash -l -c R=/home/intel/intel-junction-2026; cd $R && kill 314635 488035 && sleep 1 && setsid nohup bash $R/app/tools/sync_datasets_v2.sh >> $R/logs/sync_datasets.log 2>&1 < /dev/null & sleep 0.5; R=/home/intel/int"
+  },
+  {
+   "pid": 2400673,
+   "ppid": 2078,
+   "etimes_s": 5314,
+   "args": "bash /home/intel/intel-junction-2026/app/tools/sync_sim_v2.sh"
+  },
+  {
+   "pid": 2400945,
+   "ppid": 2400410,
+   "etimes_s": 5313,
+   "args": "bash /home/intel/intel-junction-2026/app/tools/sync_datasets_v2.sh"
+  },
+  {
+   "pid": 2711736,
+   "ppid": 2078,
+   "etimes_s": 4507,
+   "args": "/bin/bash app/simgate/watch_sim_v2.sh"
+  },
+  {
+   "pid": 3222971,
+   "ppid": 2078,
+   "etimes_s": 3360,
+   "args": "/usr/lib/claude-desktop/chrome_crashpad_handler --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=/home/intel/.config/Claude/Crashpad --url=https://f.a.k/e --annotation=_productName=Claude --ann"
+  },
+  {
+   "pid": 3223323,
+   "ppid": 3222770,
+   "etimes_s": 3359,
+   "args": "/usr/lib/claude-desktop/claude-desktop --type=gpu-process --gpu-recent-crash-count=0 --ozone-platform=wayland --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=3222971 --enable-crash-reporter=0e7cf9e0-197"
+  },
+  {
+   "pid": 3223332,
+   "ppid": 3222724,
+   "etimes_s": 3359,
+   "args": "/usr/lib/claude-desktop/claude-desktop --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=3222971 --e"
+  },
+  {
+   "pid": 3223668,
+   "ppid": 3222789,
+   "etimes_s": 3359,
+   "args": "/usr/lib/claude-desktop/claude-desktop --type=renderer --crashpad-handler-pid=3222971 --enable-crash-reporter=0e7cf9e0-1975-4910-af1e-c4cebcef91c0,no_channel --user-data-dir=/home/intel/.config/Claude --standard-schemes="
+  },
+  {
+   "pid": 3228664,
+   "ppid": 3228663,
+   "etimes_s": 3355,
+   "args": "node /home/intel/.npm/_npx/4b4c857f6efdfb61/node_modules/.bin/desktop-commander"
+  },
+  {
+   "pid": 3229766,
+   "ppid": 3229764,
+   "etimes_s": 3354,
+   "args": "node /home/intel/.npm/_npx/6583fba12287d067/node_modules/.bin/mcp-pdf-server --stdio"
+  },
+  {
+   "pid": 3230657,
+   "ppid": 3230656,
+   "etimes_s": 3353,
+   "args": "node /home/intel/.npm/_npx/4b4c857f6efdfb61/node_modules/.bin/desktop-commander"
+  },
+  {
+   "pid": 3247184,
+   "ppid": 3222724,
+   "etimes_s": 3330,
+   "args": "/usr/lib/claude-desktop/claude-desktop --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=3222971 --enabl"
+  },
+  {
+   "pid": 3462206,
+   "ppid": 231698,
+   "etimes_s": 2980,
+   "args": "/usr/bin/node /home/intel/.npm/_npx/4b4c857f6efdfb61/node_modules/@wonderwhy-er/desktop-commander/dist/index.js"
+  },
+  {
+   "pid": 3521843,
+   "ppid": 2078,
+   "etimes_s": 2840,
+   "args": "bash app/tools/monitor_cams.sh"
+  },
+  {
+   "pid": 3521845,
+   "ppid": 2078,
+   "etimes_s": 2840,
+   "args": "bash app/tools/wrist_rec.sh"
+  },
+  {
+   "pid": 3521848,
+   "ppid": 3521843,
+   "etimes_s": 2840,
+   "args": "bash app/tools/monitor_cams.sh"
+  },
+  {
+   "pid": 3521849,
+   "ppid": 3521843,
+   "etimes_s": 2840,
+   "args": "bash app/tools/monitor_cams.sh"
+  },
+  {
+   "pid": 3521854,
+   "ppid": 3521845,
+   "etimes_s": 2840,
+   "args": "ffmpeg -hide_banner -loglevel warning -f v4l2 -ts abs -input_format mjpeg -video_size 640x480 -framerate 30 -i /dev/video16 -map 0 -c copy -copyts -f segment -segment_time 60 -strftime 1 /home/intel/intel-junction-2026/d"
+  },
+  {
+   "pid": 3521855,
+   "ppid": 3521849,
+   "etimes_s": 2840,
+   "args": "ffmpeg -hide_banner -loglevel error -f v4l2 -ts abs -video_size 640x480 -framerate 30 -i /dev/video14 -map 0 -copyts -c:v libx264 -preset veryfast -crf 23 -g 30 /home/intel/intel-junction-2026/logs/monitor/close_20261114"
+  },
+  {
+   "pid": 3521856,
+   "ppid": 3521848,
+   "etimes_s": 2840,
+   "args": "ffmpeg -hide_banner -loglevel error -f v4l2 -ts abs -video_size 640x480 -framerate 30 -i /dev/video8 -map 0 -copyts -c:v libx264 -preset veryfast -crf 23 -g 30 /home/intel/intel-junction-2026/logs/monitor/top_20261114T20"
+  },
+  {
+   "pid": 3522883,
+   "ppid": 2078,
+   "etimes_s": 2836,
+   "args": "envs/data-env/bin/python -u -B app/tools/hand_watch.py"
+  },
+  {
+   "pid": 3522921,
+   "ppid": 2078,
+   "etimes_s": 2836,
+   "args": "envs/motion-env/bin/python -u -B app/tools/motion_server.py"
+  },
+  {
+   "pid": 3635680,
+   "ppid": 2078,
+   "etimes_s": 2558,
+   "args": "/bin/bash -l -c cd /home/intel/intel-junction-2026/work/P3-TWIN-DYN/E3/tools && /home/intel/intel-junction-2026/envs/sim-env/bin/python -m py_compile grey_fit.py && echo COMPILED && nohup nice -n 19 env OMP_NUM_THREADS=4"
+  },
+  {
+   "pid": 3635710,
+   "ppid": 3635680,
+   "etimes_s": 2558,
+   "args": "/home/intel/intel-junction-2026/envs/sim-env/bin/python grey_fit.py"
+  },
+  {
+   "pid": 3636040,
+   "ppid": 3635710,
+   "etimes_s": 2557,
+   "args": "/home/intel/intel-junction-2026/envs/sim-env/bin/python grey_fit.py"
+  },
+  {
+   "pid": 3636043,
+   "ppid": 3635710,
+   "etimes_s": 2557,
+   "args": "/home/intel/intel-junction-2026/envs/sim-env/bin/python grey_fit.py"
+  },
+  {
+   "pid": 3636045,
+   "ppid": 3635710,
+   "etimes_s": 2557,
+   "args": "/home/intel/intel-junction-2026/envs/sim-env/bin/python grey_fit.py"
+  },
+  {
+   "pid": 3636047,
+   "ppid": 3635710,
+   "etimes_s": 2557,
+   "args": "/home/intel/intel-junction-2026/envs/sim-env/bin/python grey_fit.py"
+  },
+  {
+   "pid": 3825363,
+   "ppid": 307187,
+   "etimes_s": 2001,
+   "args": "/opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --lang=en-US --service-sandbox-type=none --render-node-override=/dev/dri/renderD128 --crashpad-handler-pid=307195 --enable-crash-report"
+  }
+ ],
+ "ports": [
+  "State  Recv-Q Send-Q                          Local Address:Port  Peer Address:PortProcess                                  ",
+  "LISTEN 0      4096                            127.0.0.53%lo:53         0.0.0.0:*                                            ",
+  "LISTEN 0      511                                 127.0.0.1:6463       0.0.0.0:*    users:((\"Discord\",pid=15327,fd=106))    ",
+  "LISTEN 0      4096                               127.0.0.54:53         0.0.0.0:*                                            ",
+  "LISTEN 0      4096                                127.0.0.1:631        0.0.0.0:*                                            ",
+  "LISTEN 0      511                                 127.0.0.1:3000       0.0.0.0:*    users:((\"MainThread\",pid=1629977,fd=21))",
+  "LISTEN 0      4096                 100.112.85.77%tailscale0:42366      0.0.0.0:*                                            ",
+  "LISTEN 0      4096                                  0.0.0.0:22         0.0.0.0:*                                            ",
+  "LISTEN 0      4096   [fd7a:115c:a1e0::172c:554e]%tailscale0:41744         [::]:*                                            ",
+  "LISTEN 0      4096                                    [::1]:631           [::]:*                                            ",
+  "LISTEN 0      4096                                     [::]:22            [::]:*                                            "
+ ],
+ "devices": {
+  "by_id": {
+   "usb-1a86_USB_Single_Serial_5B3D040939-if00": "/dev/ttyACM0",
+   "usb-1a86_USB_Single_Serial_5B90148378-if00": "/dev/ttyACM1"
+  },
+  "video": {
+   "video0": "/dev/video0",
+   "video1": "/dev/video1",
+   "video10": "/dev/video10",
+   "video11": "/dev/video11",
+   "video12": "/dev/video12",
+   "video13": "/dev/video13",
+   "video14": "/dev/video14",
+   "video15": "/dev/video15",
+   "video16": "/dev/video16",
+   "video17": "/dev/video17",
+   "video2": "/dev/video2",
+   "video3": "/dev/video3",
+   "video4": "/dev/video4",
+   "video5": "/dev/video5",
+   "video6": "/dev/video6",
+   "video7": "/dev/video7",
+   "video8": "/dev/video8",
+   "video9": "/dev/video9"
+  },
+  "ttyACM": [
+   "/dev/ttyACM0",
+   "/dev/ttyACM1"
+  ],
+  "accel0": true,
+  "dri": [
+   "by-path",
+   "card1",
+   "renderD128"
+  ]
+ },
+ "device_holders": [
+  {
+   "pid": 3521854,
+   "comm": "ffmpeg",
+   "device": "/dev/video16"
+  },
+  {
+   "pid": 3521855,
+   "comm": "ffmpeg",
+   "device": "/dev/video14"
+  },
+  {
+   "pid": 3521856,
+   "comm": "ffmpeg",
+   "device": "/dev/video8"
+  },
+  {
+   "pid": 3522921,
+   "comm": "python",
+   "device": "/dev/ttyACM0"
+  }
+ ],
+ "run_dir": {
+  "flags_and_pid_files": {
+   "HASSAN_PRESENT": "Set by Opus 2026-11-14T13:41:13Z: Hassan authorised robot and camera use by Opus",
+   "arm_free_watch.pid": "505696",
+   "hand_watch.pid": "3522883",
+   "inventory_watch.pid": "443626",
+   "monitor_cams.pid": "3521843",
+   "sim_gate.pid": "2711736",
+   "sort_any.pid": "324573",
+   "sync_datasets.pid": "2400945",
+   "sync_sim.pid": "2400673",
+   "wrist_recorder.pid": "3521845"
+  },
+  "other_names": [
+   "arm_state",
+   "bak_hand_watch_1806.py",
+   "bak_hand_watch_1843.py",
+   "bak_jaw_check_2126.py",
+   "bak_pick_any_1758.py",
+   "bak_pick_any_1803.py",
+   "bak_pick_any_1818.py",
+   "bak_sort_any_1758.py",
+   "bak_sort_any_1803.py",
+   "bak_sort_any_1818.py",
+   "bak_sort_any_1823.py",
+   "bak_sort_any_1843.py",
+   "bak_sort_any_1854.py",
+   "bak_sort_any_1855.py",
+   "bak_sort_any_1858.py",
+   "bak_sort_any_2123.py",
+   "bak_sort_any_2126b.py",
+   "bak_sort_any_2133c.py",
+   "bak_sort_any_2136d.py",
+   "bak_sort_loop_1843.py",
+   "bak_sort_loop_1858.py",
+   "close_pairs.jsonl",
+   "depth_last",
+   "hand_watch_alive",
+   "live_close.jpg",
+   "live_top.jpg",
+   "live_wrist.jpg",
+   "mserver",
+   "sort_run_name"
+  ]
+ },
+ "docs": {
+  "PICK-ANYWHERE.md": [
+   "1: # Pick-anywhere sorting loop (`app/tools/sort_any.py`)",
+   "7: ## Run, stop, pause",
+   "9: **After the robot was lent out:** `app/tools/resume.sh` brings the stack up in a safe order and refuses if",
+   "10: anything else holds the follower port or the cameras. Order: checks, recorders, fresh live frames, hand watchdog,",
+   "11: motion server (torque on at the present pose, no motion). `app/tools/resume.sh --go <run name>` also starts the",
+   "13: then kill `hand_watch` / `monitor_cams` / `wrist_recorder` by their pid files.",
+   "15: Manual start of the loop alone:",
+   "19: nohup ../../envs/data-env/bin/python -u -B sort_any.py --run <name> --n 150 --start <k> >> ../../logs/sort_any_<name>.out 2>&1 &",
+   "20: touch run/sort_stop     # stop before the next brick (removed automatically)",
+   "24: Needed processes (each has a pid file in `run/`; restart only by pid): motion server (`run/mserver/pid`),",
+   "25: hand watchdog (`run/hand_watch.pid`), monitor cameras (`run/monitor_cams.pid`), wrist recorder",
+   "26: (`run/wrist_recorder.pid`). Start-up runs a check-only jaw check and carries over a brick still in the gripper.",
+   "89:   - Cut episodes by the `t_start` / `t_end` in `episode.json`.",
+   "105: - **Hand detector**: `app/tools/handdet.py`, one module shared by the watchdog (`hand_watch.py`) and the loop's",
+   "114:   - Persistence before a stop: top 1 frame, close 2, wrist 2.",
+   "117:     recording; restored to y \u2265 0 with no extra false stop in 2480 recorded frames.",
+   "118:   - Labelled check on the 41 e-stop images (16:19\u201318:13Z; labels in `app/tools/tests/fixtures/hand_labels.csv`,",
+   "120:     top/close false stop remains. A hand on the laptop off the mat is labelled `hand_outside` and not counted.",
+   "121:     The old rules missed a real close-view hand (2993 px) and stopped on mat speckles.",
+   "122:   - On 4025 recorded close frames: positives 34 \u2192 8. The 28 removed were all cream-brick false stops, reviewed",
+   "124: - The motion server holds the arm on an e-stop and keeps squeezing a held brick.",
+   "125: - The loop resumes by itself 3\u20135 s after hands leave. A failed recovery now backs off 1, 2, 4 \u2026 30 s, about",
+   "127: - The follower is used only through `/dev/serial/by-id/usb-1a86_USB_Single_Serial_5B3D040939-if00`. Torque off",
+   "147:   - Arm at `home_closed`, torque off.",
+   "148:   - Stopped: loop, motion server, hand watchdog, recorders. No holder on `/dev/ttyACM0` or any `/dev/video*`.",
+   "149: - **Hand detector:** `handdet.py`, see Safety. `hand_watch.py` is rewritten on it, with a `main()` and a docstring",
+   "151: - **Recovery back-off** in `sort_any.recover()`.",
+   "157: - **Dead code removed** from `sort_any.py`: `inspect_pose`, `held_verdict`, `multiview`, `CLOSE_HELD_PX`,",
+   "172:   - Evidence report on every episode.",
+   "180:   `sort_any.grasp_reachable` replays the approach and descent IK without moving (reach ends at about 296 mm from",
+   "192:   segmentation measured on labelled frames. The replay test reports PD-1 without failing on it."
+  ],
+  "motion_src": [
+   "app/motion/run_sequence.py:9: The follower port is always the by-id link in so101_motion.FOLLOWER_PORT_BY_ID. The export's",
+   "app/motion/run_sequence.py:16: Limits: every speed is at most 50 units/s (HARD_MAX_SPEED); a larger --max-speed or YAML speed",
+   "app/motion/run_sequence.py:43:     DEFAULT_MAX_SPEED,",
+   "app/motion/run_sequence.py:69:     parser.add_argument(\"--port\", help=\"follower serial port; only the by-id path is accepted (the export's connection_string is ignored)\")",
+   "app/motion/run_sequence.py:71:     parser.add_argument(\"--max-speed\", type=float, default=DEFAULT_MAX_SPEED, help=\"normalized units per second, at most 50\")",
+   "app/motion/run_sequence.py:83:         f\"{'peak_rate':>10} {'peak_accel':>11} {'dwell_s':>7}\"",
+   "app/motion/run_sequence.py:89:             f\"{row['duration_s']!s:>10} {row['peak_rate_units_s']!s:>10} {row['peak_accel_units_s2']!s:>11} \"",
+   "app/motion/run_sequence.py:112:     max_speed = check_speed(args.max_speed, \"--max-speed\")",
+   "app/motion/run_sequence.py:116:         rows = describe_plan(steps, poses, start=start, max_speed=max_speed, rate_hz=args.rate_hz)",
+   "app/motion/run_sequence.py:135:             player = MotionPlayer(driver, max_speed=max_speed, rate_hz=args.rate_hz, tolerance=args.tolerance)",
+   "app/motion/so101_motion.py:8: Limits: no move exceeds HARD_MAX_SPEED (50 units/s) or DEFAULT_MAX_ACCEL (50 units/s^2).",
+   "app/motion/so101_motion.py:47: DEFAULT_MAX_SPEED = 25.0  # normalized units per second, all joints synchronized; tune on hardware",
+   "app/motion/so101_motion.py:48: HARD_MAX_SPEED = 50.0  # ceiling for every speed (CLI, YAML, dry run and player); no override flag",
+   "app/motion/so101_motion.py:49: DEFAULT_MAX_ACCEL = 50.0  # normalized units per second squared, peak of the smoothstep; tune on hardware",
+   "app/motion/so101_motion.py:54: # Binding port rule (coordinator, 13:42Z): the follower is this by-id link. The Studio export's",
+   "app/motion/so101_motion.py:56: FOLLOWER_PORT_BY_ID = \"/dev/serial/by-id/usb-1a86_USB_Single_Serial_5B3D040939-if00\"",
+   "app/motion/so101_motion.py:118:     \"\"\"Return value as a speed in units/s, or raise MotionError unless 0 < value <= HARD_MAX_SPEED.",
+   "app/motion/so101_motion.py:121:         MotionError: If value is not a number, is not finite, is not positive or is above HARD_MAX_SPEED.",
+   "app/motion/so101_motion.py:128:     if not (math.isfinite(speed) and 0.0 < speed <= HARD_MAX_SPEED):",
+   "app/motion/so101_motion.py:129:         msg = f\"{label} must be above 0 and at most {HARD_MAX_SPEED:g} units/s, got {value!r}\"",
+   "app/motion/so101_motion.py:161:     max_speed: float,",
+   "app/motion/so101_motion.py:163:     max_accel: float = DEFAULT_MAX_ACCEL,",
+   "app/motion/so101_motion.py:165:     \"\"\"Return setpoints that move every joint from start to target within the speed and acceleration limits.",
+   "app/motion/so101_motion.py:169:     acceleration is 6 * delta / T^2. T = max(1.5 * delta / max_speed, sqrt(6 * delta / max_accel))",
+   "app/motion/so101_motion.py:177:         MotionError: If max_speed, max_accel or dt is not finite and positive, or the shapes differ.",
+   "app/motion/so101_motion.py:179:     if not (_finite_positive(max_speed) and _finite_positive(max_accel) and _finite_positive(dt)):",
+   "app/motion/so101_motion.py:180:         msg = \"max_speed, max_accel and dt must be finite and positive\"",
+   "app/motion/so101_motion.py:190:     duration = max(1.5 * delta / max_speed, math.sqrt(6.0 * delta / max_accel))",
+   "app/motion/so101_motion.py:202:     The path is resolved first (a /dev/serial/by-id link becomes its /dev/ttyACM node), so the",
+   "app/motion/so101_motion.py:324:     \"\"\"Connect with torque OFF so the arm can be moved by hand (teaching) or read only."
+  ]
+ },
+ "so101_source": [
+  "no so101 connect/disconnect/torque lines found"
+ ],
+ "task_usage_policy_source": {
+  "act": [
+   "MISSING repos/physicalai/src/physicalai/policies/act"
+  ],
+  "smolvla": [
+   "MISSING repos/physicalai/src/physicalai/policies/smolvla"
+  ]
+ },
+ "envs": {
+  "envs/anomalib-env/bin/python3": "3.12.16\nopenvino True\nphysicalai False",
+  "envs/data-env/bin/python3": "3.12.16\nopenvino False\nphysicalai False",
+  "envs/lerobot-env/bin/python3": "3.13.18\nopenvino False\nphysicalai False",
+  "envs/motion-env/bin/python3": "3.12.16\nopenvino False\nphysicalai True",
+  "envs/ovrun-env/bin/python3": "3.12.16\nopenvino True\nphysicalai False",
+  "envs/sim-env/bin/python3": "3.12.16\nopenvino False\nphysicalai False"
+ },
+ "git": {
+  "repos/physicalai": "8381d43",
+  "app": "572e8ff"
+ },
+ "exports": [
+  {
+   "dir": "work/P2-B-OVRUN/E1/models/389da0fd/openvino",
+   "files": {
+    "act.bin": {
+     "bytes": 136917544,
+     "sha256": "930270a190024d1f237bcb78c82f4ec92db75a86fb41164a38de1857d481267f"
+    },
+    "act.xml": {
+     "bytes": 1232987,
+     "sha256": "202001776369bd0408cdd7e7bfb5398a8b25c4e26812e8071f54b5ffcb0bfa53"
+    },
+    "manifest.json": {
+     "bytes": 1793,
+     "sha256": "c17a42a77b4bca2f8ceea2dcbb2790e730596b4c256b1615d8bc65f14b7a98fd"
+    }
+   },
+   "manifest_top_keys": [
+    "policy",
+    "model",
+    "format",
+    "version"
+   ],
+   "manifest_model": "{\"runner\": {\"class_path\": \"physicalai.inference.runners.single_pass.SinglePass\"}, \"artifacts\": {\"openvino\": \"act.xml\"}, \"preprocessors\": [{\"type\": \"to_float_tensor\"}, {\"type\": \"resize\", \"image_resolution\": [384, 384], \"mode\": \"letterbox\"}], \"input_features\": [{\"class_path\": \"physicalai.inference.data.features.InferenceFeature\", \"init_args\": {\"ftype\": \"STATE\", \"shape\": [6], \"name\": \"state\", \"dtype\": \"float32\"}}, {\"class_path\": \"physicalai.inference.data.features.InferenceFeature\", \"init_args\": {\"ftype\": \"VISUAL\", \"shape\": [3, 480, 640], \"name\": \"images.realsense 243722064316\", \"dtype\": \"float32\"}}, {\"class_path\": \"physicalai.inference.data.features.InferenceFeature\", \"init_args\": {\"ftype\": \"VISUAL\", \"shape\": [3, 480, 640], \"name\": \"images.realsense 243622061421\", \"dtype\": \"float32\"}}], \"output_features\": [{\"class_path\": \"physicalai.inference.data.features.InferenceFeature\", \"init_args\": {\"ftype\": \"ACTION\", \"shape\": [100, 6], \"name\": \"action\", \"dtype\": \"float32\"}}]}"
+  }
+ ],
+ "datasets_mirror": {
+  "mirror_entries": 11,
+  "mirror_names_head": [
+   "18468a09-4e62-4aa6-9c68-a785d5f0c3b9",
+   "51100357-35c1-4e37-a558-21a96d477651",
+   "6d6bdce3-b382-478d-9697-fb9e573b97af",
+   "7e99a9e4-b170-4129-bbc2-7283309b5176",
+   "800d7dc2-17b0-49d1-b062-f39cf3acdbcc",
+   "8a8bb05e-6f2c-44f5-bf4b-745c2028f7cf",
+   "a4ba6ede-092c-450f-8c76-559f66991dbd",
+   "ba9eafba-a9c3-47a0-b941-34c20a2bbf55",
+   "d2fd0a80-5364-4f38-bc81-d82d348c5a06",
+   "e2eae6c8-fe98-4cfb-82eb-e5e59c7cc8af",
+   "e60f4087-d620-4f1d-885f-1620cefd54bd"
+  ],
+  "a4ba6ede-092c-450f-8c76-559f66991dbd": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 4,
+   "total_frames": 2569,
+   "total_tasks": 1,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "d2fd0a80-5364-4f38-bc81-d82d348c5a06": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 2,
+   "total_frames": 1625,
+   "total_tasks": 1,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "ba9eafba-a9c3-47a0-b941-34c20a2bbf55": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 2,
+   "total_frames": 906,
+   "total_tasks": 1,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "e2eae6c8-fe98-4cfb-82eb-e5e59c7cc8af": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 3,
+   "total_frames": 2494,
+   "total_tasks": 2,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "18468a09-4e62-4aa6-9c68-a785d5f0c3b9": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 9,
+   "total_frames": 5554,
+   "total_tasks": 5,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "6d6bdce3-b382-478d-9697-fb9e573b97af": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 16,
+   "total_frames": 10158,
+   "total_tasks": 4,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "51100357-35c1-4e37-a558-21a96d477651": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 1,
+   "total_frames": 623,
+   "total_tasks": 1,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  },
+  "800d7dc2-17b0-49d1-b062-f39cf3acdbcc": {
+   "present": true,
+   "meta_files": [
+    "episodes",
+    "info.json",
+    "stats.json",
+    "tasks.parquet"
+   ],
+   "codebase_version": "v3.0",
+   "fps": 30,
+   "total_episodes": 3,
+   "total_frames": 2248,
+   "total_tasks": 2,
+   "robot_type": "SO101_Follower",
+   "feature_keys": [
+    "action",
+    "episode_index",
+    "frame_index",
+    "index",
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.state",
+    "task_index",
+    "timestamp"
+   ],
+   "tasks_parquet": "ERR ModuleNotFoundError(\"No module named 'pyarrow'\")"
+  }
+ },
+ "sort_episodes": {
+  "count": 5,
+  "last_names": [
+   "any_1731",
+   "any_1740",
+   "any_20261114_2139",
+   "any_2055",
+   "any_2127"
+  ],
+  "any_1740": {
+   "n_files": 20,
+   "files_head": [
+    "cycles.jsonl",
+    "ep_0001",
+    "ep_0002",
+    "ep_0003",
+    "ep_0004",
+    "ep_0005",
+    "ep_0006",
+    "ep_0007",
+    "ep_0008",
+    "ep_0009",
+    "ep_0010",
+    "ep_0011",
+    "ep_0012",
+    "ep_0013",
+    "ep_0014",
+    "ep_0015",
+    "ep_0016",
+    "ep_0017",
+    "ep_0018",
+    "loop.log"
+   ]
+  },
+  "any_2055": {
+   "n_files": 4,
+   "files_head": [
+    "cycles.jsonl",
+    "ep_0001",
+    "ep_0002",
+    "loop.log"
+   ]
+  }
+ },
+ "monitor_mkv": [
+  {
+   "file": "close_20261114T161218Z.mkv",
+   "bytes": 298695868,
+   "mtime_utc": "2026-11-14T17:03:49Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "15/1"
+     }
+    ],
+    "format": {
+     "start_time": "0.000000",
+     "duration": "3090.800000"
+    }
+   }
+  },
+  {
+   "file": "close_20261114T170351Z.mkv",
+   "bytes": 1950523056,
+   "mtime_utc": "2026-11-14T18:26:30Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794675831.767000",
+     "duration": "1794680790.933000"
+    }
+   }
+  },
+  {
+   "file": "close_20261114T204909Z.mkv",
+   "bytes": 30050655,
+   "mtime_utc": "2026-11-14T20:53:40Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794689350.533000",
+     "duration": "1794689620.100000"
+    }
+   }
+  },
+  {
+   "file": "close_20261114T205347Z.mkv",
+   "bytes": 389021696,
+   "mtime_utc": "2026-11-14T21:41:07Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794689628.333000"
+    }
+   }
+  },
+  {
+   "file": "top_20261114T161218Z.mkv",
+   "bytes": 143965451,
+   "mtime_utc": "2026-11-14T17:03:49Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "15/1"
+     }
+    ],
+    "format": {
+     "start_time": "0.000000",
+     "duration": "3090.800000"
+    }
+   }
+  },
+  {
+   "file": "top_20261114T170351Z.mkv",
+   "bytes": 710596083,
+   "mtime_utc": "2026-11-14T18:26:30Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794675831.767000",
+     "duration": "1794680790.900000"
+    }
+   }
+  },
+  {
+   "file": "top_20261114T204909Z.mkv",
+   "bytes": 34345639,
+   "mtime_utc": "2026-11-14T20:53:40Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794689350.433000",
+     "duration": "1794689620.033000"
+    }
+   }
+  },
+  {
+   "file": "top_20261114T205347Z.mkv",
+   "bytes": 571473920,
+   "mtime_utc": "2026-11-14T21:41:08Z",
+   "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "width": 640,
+      "height": 480,
+      "r_frame_rate": "30/1"
+     }
+    ],
+    "format": {
+     "start_time": "1794689628.267000"
+    }
+   }
+  }
+ ],
+ "camera_mapping_grep": [
+  "app/tools/arm_free_watch.sh:12:       if [ -n \"$F\" ] && { [ \"$l\" = \"$F\" ] || [ \"$l\" = /dev/video8 ] || [ \"$l\" = /dev/video14 ]; }; then holders=\"$holders $(basename \"$p\")\"; break; fi",
+  "app/tools/monitor_cams.sh:23: record top /dev/video8 &",
+  "app/tools/monitor_cams.sh:25: record close /dev/video14 &",
+  "app/tools/resume.sh:22: # 2. cameras free? (the recorders need /dev/video8, /dev/video14 and /dev/video16)",
+  "app/tools/resume.sh:23: for v in /dev/video8 /dev/video14 /dev/video16; do",
+  "app/tools/rs_grab.py:5: librealsense and does not detach any driver, so the monitor's colour streams (video8 top, video14 close)",
+  "app/tools/start_all.sh:60: for v in /dev/video8 /dev/video14 /dev/video16; do",
+  "app/tools/wrist_rec.sh:12:     -i /dev/video16 -map 0 -c copy -copyts -f segment -segment_time 60 -strftime 1 \\",
+  "app/loop/probe_handover.py:44: WATCHED = frozenset({\"/dev/ttyACM0\", \"/dev/ttyACM1\", \"/dev/video8\", \"/dev/video14\"})",
+  "app/ovrun/prep_episodes.py:16: CAMS = [\"realsense 243722064316\", \"realsense 243622061421\"]",
+  "app/ovrun/runner.py:34: SERIALS = [\"243722064316\", \"243622061421\"]  # close low view, top view (Studio dataset keys)",
+  "app/ovrun/runner.py:172:     cams = [k for k in [\"realsense 243722064316\", \"realsense 243622061421\"]]",
+  "app/anomaly/held_harvest.py:32: CAMS = [\"realsense 243722064316\", \"realsense 243622061421\"]",
+  "app/anomaly/held_harvest.py:33: SERIAL = {CAMS[0]: \"243722064316\", CAMS[1]: \"243622061421\"}",
+  "app/anomaly/spot_samples.py:34: CAMS = [\"realsense 243722064316\", \"realsense 243622061421\"]",
+  "app/anomaly/spot_samples.py:35: CAM_ROLE = {\"realsense 243722064316\": \"close\", \"realsense 243622061421\": \"top\"}",
+  "app/anomaly/spot_samples.py:39: MIN_AREA_CAM = {\"realsense 243722064316\": 600, \"realsense 243622061421\": 400}",
+  "app/anomaly/det2_f2/calib_tape.py:3: Re-segments the close frames (samples/6d6bdce3_<ep>_<start|end>_243722064316.png) with the current inspector,",
+  "app/anomaly/det2_f2/calib_tape.py:25: SERIAL = \"243722064316\"  # close view",
+  "app/anomaly/det2_f2/common.py:11: TOP = \"realsense 243622061421\"  # top view (dataset key)",
+  "app/anomaly/det2_f2/common.py:12: CLOSE = \"realsense 243722064316\"  # close low view (dataset key)",
+  "app/anomaly/det2_f2/inspector.py:559:         view = \"close\" if camera_key and \"243722064316\" in camera_key else \"top\"",
+  "app/anomaly/det2_f2/zoom_disputed.py:3: Crops come from the close frames samples/<sample>_243722064316.png; boxes come from seg/bricks.json.",
+  "app/anomaly/det2_f2/zoom_disputed.py:19:     (\"e03_end k0: Opus GOOD, E2 X\", \"6d6bdce3_e03_end_243722064316_0\"),"
+ ],
+ "loop_log": {
+  "file": "sort_any_any_20261114_2139.out",
+  "mtime_utc": "2026-11-14T21:40:08Z",
+  "tail": [
+   "21:40:03Z servo it2: red brick [372.9, 269.2] err [3.3, -1.7] short 112.0",
+   "21:40:05Z yaw -34.8 deg -> roll -36.09",
+   "21:40:06Z servo it0: red brick [359.0, 306.5] err [17.2, -39.0] short 77.0",
+   "21:40:08Z servo it1: red brick [380.7, 267.9] err [-4.5, -0.4] short 89.0"
+  ]
+ },
+ "elapsed_s": 0.93
+}

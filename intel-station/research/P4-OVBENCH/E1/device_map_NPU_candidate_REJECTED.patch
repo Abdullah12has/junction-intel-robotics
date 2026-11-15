@@ -1,0 +1,20 @@
+--- a/app/anomaly/anom3/infer.py
++++ b/app/anomaly/anom3/infer.py
+@@ -18,7 +18,7 @@
+ HERE = os.path.dirname(os.path.abspath(__file__))
+ MODELS_ROOT = os.path.join(HERE, "models")
+ SIZE = 256
+-DEVICES = ("CPU",)  # CPU only: no GPU jobs on this laptop (coordinator update, 18:32Z)
++DEVICES = ("NPU", "CPU")  # E1 candidate: NPU first, CPU fallback (validate before merge)
+ MEAN = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+ STD = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+ 
+@@ -43,7 +43,7 @@
+     """One compiled IR (first device in `devices` that compiles). threshold is None until threshold.json exists."""
+ 
+     def __init__(self, core, view_dir, devices=DEVICES):
+-        bad = [d for d in devices if d != "CPU"]
++        bad = [d for d in devices if d not in ("CPU", "NPU")]
+         if bad:
+             raise ValueError("anom3 runs on CPU only; refused devices %s" % bad)
+         self.threshold = read_threshold(view_dir)

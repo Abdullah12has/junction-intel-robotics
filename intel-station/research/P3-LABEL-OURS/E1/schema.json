@@ -1,0 +1,55 @@
+{
+  "task": "P3-LABEL-OURS",
+  "schema_version": "labels-v1",
+  "written_utc": "2026-11-14T19:25Z",
+  "label_rule": "Labels are decided from the images themselves (full resolution when unsure). episode.json and loop logs are compared afterwards; every disagreement goes to disagreements.tsv with both values and the evidence.",
+  "plate_rule_OD10": {
+    "GOOD": "2x2 brick without tape -> blue plate",
+    "DEFECT": "brick with tape, or not 2x2 -> green plate"
+  },
+  "episode_record_fields": {
+    "episode_id": "session/episode folder name, e.g. any_1731/ep_0017",
+    "source_path": "absolute laptop path of the episode folder or log",
+    "session": "any_1731 | any_1740 | grasp_auto | depth | estop | other",
+    "bricks_involved": [
+      {
+        "colour_name": "string as seen",
+        "hue_class": "red | orange | yellow | green | blue | white | cream | brown | black | other",
+        "shape": "2x2 | 2x4 | other",
+        "tape": "yes | no",
+        "tape_location": "string, or none",
+        "orientation": "upright | upside_down | leaning | on_side",
+        "size_class": "small (2x2 or smaller footprint) | large (2x4 or bigger) | unknown"
+      }
+    ],
+    "target_brick_index": "index into bricks_involved of the brick picked, or null",
+    "outcome": "success | approach_fail | grasp_fail | estop | stopped | carry_over",
+    "failure_category": "none | mis_aim | jaw_contact_or_slip | wrong_brick | detector_mislabel | hand_or_person_estop | operator_stop | carry_over_from_previous | other (say what in notes)",
+    "decision_made": "blue | green | none (plate the loop chose)",
+    "correct_plate_od10": "blue | green | unknown",
+    "decision_correct": "yes | no | unknown",
+    "label_source": "visual | log",
+    "confidence": "high | med | low",
+    "notes": "evidence: file and frame or time"
+  },
+  "image_record_fields": {
+    "image_path": "absolute laptop path",
+    "episode_id": "session/episode folder name, or none",
+    "kind": "pre | stage1 | grasp_open | closed | lifted | released | station | crop | estop | depth | composite | other (sort-episode top/close/wrist views are kind pre/stage1/grasp_open/closed/lifted/released/station with the camera named in shows; servo and probe frames are other)",
+    "shows": "one-line description of what is in the image",
+    "brick": "colour name of the brick the image is about, or none | unclear",
+    "usable_for_training": "yes | no",
+    "reason": "why yes or no, e.g. wrong brick in crop, jaws or cable in view",
+    "label_source": "visual | log",
+    "confidence": "high | med | low",
+    "notes": "string"
+  },
+  "disagreements_tsv_columns": ["item", "field", "log_value", "visual_value", "evidence", "resolution"],
+  "metrics_json": {
+    "stage": "labels-v1",
+    "utc": "string",
+    "metrics": "loop decision accuracy by OD-10, counts, label confidence distribution",
+    "previous": "null for the first stage",
+    "delta": "null for the first stage"
+  }
+}

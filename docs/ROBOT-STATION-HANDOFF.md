@@ -1,5 +1,11 @@
 # Robot station handoff
 
+For Verda cloud CLI access on the Mac and the 15 November GPU availability snapshot, see [VERDA-CLI-HANDOFF.md](VERDA-CLI-HANDOFF.md). Credentials remain outside the repository.
+
+Latest frozen-policy improvement work: [FROZEN-POLICY-IMPROVEMENT-PLAN.md](FROZEN-POLICY-IMPROVEMENT-PLAN.md). Includes shorter execution, wrist diagnostics, calibration gates and paired simulation evidence.
+
+For laptop access, current IPs, SSH, tunnels and the 15 November service check, start with [INTEL-LAPTOP-ACCESS-HANDOFF.md](INTEL-LAPTOP-ACCESS-HANDOFF.md). It supersedes older connectivity/status observations below.
+
 Updated: 2026-11-14, Europe/Helsinki. This is a snapshot; query live state before controlling hardware.
 
 ## Task and current progress
@@ -134,3 +140,51 @@ Intel laptop Tailscale address: `100.112.85.77`. MacBook peer: `100.80.212.69`. 
 ### Dashboard tunnel switched to Tailscale (2026-11-14)
 
 Installed and started Mac LaunchAgent `~/Library/LaunchAgents/com.junction.studio-tunnel.plist`, forwarding `127.0.0.1:3000` to laptop `127.0.0.1:3000` via SSH at `100.112.85.77`. Uses saved host identity, dedicated key, 15-second keepalives, three missed replies before exit, and launchd retry with 10-second throttle. Starts at Mac login. Verified tunnel health and dashboard `/api/health` return the same healthy backend instance; dashboard page returned HTTP 200. Dashboard stays at localhost:3001. Network-switch recovery is configured but not physically tested. No robot/session commands issued. See dashboard/runbook for updated connection commands.
+
+### Hardware check awaiting leader USB (2026-11-14)
+
+User requested arm/camera connection and a small movement test, and confirmed someone is at the station with clear workspace and power-disconnect readiness. Live discovery currently sees only follower serial `5B3D040939` at `/dev/ttyACM0`; leader `5B90148378` is absent. No motion or arm connection was initiated. Both RealSense serials passed three color frames at 424x240/6 FPS; HP webcam passed three frames at 640x480/30 FPS. External USB camera `/dev/video16` was owned by a Studio publisher worker and was not opened separately. Dashboard frontend had stopped and was restarted from the existing `studio-ui` directory on port 3001; dashboard opened with disconnected controls. Await leader USB reconnection, then recheck live ownership/session state before continuing. Stored tty paths are stale; resolve by serial before connection.
+
+### Follower-only movement test (2026-11-14)
+
+While leader USB remained absent, user explicitly requested moving the follower; station readiness had already been confirmed. Verified no active Studio runtime sessions and no serial owner before direct access. All six motors responded, live calibration matched saved values exactly, and positions were inside calibrated limits. Temperatures 32–35 C, supply approximately 12.2 V. All motors already had torque enabled; this was preserved.
+
+Performed a small wrist_roll-only position ramp in 2-count increments every 150 ms, requesting +23 counts (about 2 degrees), then restoring its original goal. Measured wrist position 1675 -> 1694 -> 1682; outward travel 19 counts (1.67 degrees), final within 7 counts (0.62 degrees) of starting position. Restored original wrist goal 1678. The other five joints had zero measured change. No calibration, limits, speed, or torque settings changed. Serial connection closed without disabling torque. This confirms one wrist motor's physical encoder response, not full-arm or teleoperation validation. Leader connection and full camera/dashboard session test remain pending.
+
+### Joystick dashboard and four-camera verification (2026-11-14)
+
+Added bounded joint-jog controls to the Mac dashboard, default follower-only connection and all four cameras selected. Backend modified at `src/schemas/runtime_session.py`, `src/runtime_session/session.py`, plus `src/runtime_session/jog.py`; changes mirrored in local vendor checkout and `backend-patches/manual-jog.patch`. Frontend source synchronized between `studio-ui` (running) and `junction-intel-robotics/dashboard` (repository copy); OpenAPI regenerated. No motor calibration or limits modified.
+
+Validated 13 backend jog boundary tests, 15 existing runtime-session tests, 7 UI control tests, TypeScript, targeted ESLint and production build. A brief wrist jog through the actual dashboard changed measured wrist roll from about -15.9 to -15.5 normalized units; release/Stop disarmed it. Other joint motion was not exercised through the new UI. Manual input is disabled initially and disarms on stale feedback, focus loss, page hide, Escape or error; each backend jog is finite and bounded.
+
+All four feeds subsequently verified **Live** together with follower feedback: both RealSense D415s, HP webcam, USB2.0_CAM1. Overhead RealSense changed from 640x480/30 to 424x240/6 preview settings, matching the arm camera. Initial camera startup failed because old backend processes retained stale capture transport registrations; terminated hung old backends after graceful shutdown and started a clean backend. Current log is `/tmp/junction-backend-joystick-clean.log`; observed PID 166596 (re-query before action). Latest observed session `10c4a32fdf0a4f1f83583b6837d23701`, follower holding, joystick disabled, all four camera feeds live. Browser control tab observed 1118739400; rediscover if stale. Preserve this tab/session while using the dashboard. Do not create a competing arm session. Long-duration stability and off-site network loss remain unverified.
+
+## NPU recovery (2026-11-14)
+
+Missing user-space Intel NPU driver/compiler repaired with process-local official v1.38.0 libraries. Use `/home/intel/junction-cell/anomalib-env/bin/python-npu`; ordinary Python still needs the library paths. OpenVINO enumerated NPU and successfully compiled/inferred the existing PatchCore smoke model with finite outputs, execution device NPU. No firmware, kernel or Studio changes; sudo authentication failed so no system packages were installed. See [NPU-SETUP.md](NPU-SETUP.md) for paths, reproduction and limitations.
+
+## System installation completed (2026-11-14)
+
+After successful sudo authentication, installed `intel-driver-compiler-npu` and `intel-level-zero-npu` v1.38.0 plus six distribution dependencies. Waited for an independently initiated apt upgrade to finish; did not interrupt it or reboot. Plain Anomalib environment Python with `LD_LIBRARY_PATH` explicitly removed now lists CPU/GPU/NPU and executes the existing PatchCore smoke export on NPU with finite outputs. The `python-npu` wrapper is no longer required. This supersedes the process-local-only limitation above. Credentials were not saved. Defect accuracy and sustained performance remain unverified.
+
+## Overhead recording-camera recovery (2026-11-14)
+
+Recording environment repeatedly failed with overhead serial 243622061421 `CaptureTimeoutError: no publisher responded within timeout`. USB devices were present, but no publisher workers survived. Stopped the failed runtime via supported endpoint; sent TERM to old backend 166596. After it remained stuck waiting for background tasks with serial/video devices released, killed that exact old process and started the existing backend unchanged. New log `/tmp/junction-backend-recording-recovery.log`; observed PID 241038 (re-query).
+
+Both RealSense cameras simultaneously delivered 286 frames each in roughly 10 seconds at 640x480/30 via librealsense. Overhead reports USB 2.1, arm USB 3.2. After restart, both Studio `/api/cameras/ws` streams delivered 30 valid JPEG frames each without timeout. Verification preview sockets were closed afterward. An attempted camera-only runtime test was rejected because runtime requires exactly one robot; no arms were loaded by that test. Full recording/encoding remains to be verified by the operator; no synthetic episodes were added.
+
+## Three-camera blue-plate demonstrations (2026-11-14 evening)
+
+See [BLUE-PLATE-DATA-CURATION.md](BLUE-PLATE-DATA-CURATION.md) for the latest recording and curation state. Six human episodes (16,943 frames) were finalized with both RealSense feeds plus USB2.0_CAM1; the original 987.7 MB dataset has a checksum-verified Mac backup. The separate cleaned copy has five episodes and 14,651 frames, imported as `e60f4087-d620-4f1d-885f-1620cefd54bd` (ALL-BLOCKS-BLUE - curated three cameras). Keep originals intact. Both RealSense cameras now report USB 3.2, superseding the USB 2.1 observation above. Studio was restarted through CLI; current logs are `/tmp/junction-backend-cli-restart.log` and `/tmp/junction-ui-cli-restart.log`. Recheck live processes/session ownership before acting.
+
+## Recording dashboard recovery — 15 Nov 02:55 Helsinki
+
+Restarted Studio backend/UI cleanly after stopping failed environment preview. Backend PID 2225270, UI 2225271 at that check; new logs `/tmp/junction-backend-recording-restart.log` and `/tmp/junction-ui-recording-restart.log`. Mac dashboard port 3001 had stopped; restarted from `studio-ui` with existing Node 24 and verified full rendered dashboard plus HTTP 200. Tunnel and backend health passed.
+
+The three-camera failure was `No camera found matching` USB2.0_CAM1. USB discovery and `/dev/v4l/by-id` confirmed the Sonix wrist camera absent, even after operator reconnect. Old video16 now belongs to a RealSense node; do not remap by index alone. Both RealSense SDK serials are detected. Operator asked to try a different/direct USB port. Wrist recording remains blocked until it enumerates and its fingerprint is refreshed if needed. No camera calibration changed; no new recording started by this recovery.
+
+Recovery verification: both RealSense cameras simultaneously started at 640x480/30 and each delivered five RGB frames; verification pipelines then closed. Wrist still absent after another-port attempt; kernel reports `usb 3-2.4-port3: connect-debounce failed` at 02:56:24. Port 3001 dashboard renders fully and is left disconnected, with only the two RealSense checkboxes selected. Saved recording environments were not changed. The optional `Top marked` MJPEG service on port 8090 was also not listening; it was not started because it exclusively owns the overhead device and would compete with raw RealSense recording. No recording was started.
+
+### Wrist feed disconnect — 15 Nov 03:03 Helsinki
+
+Kernel confirms Sonix USB2.0_CAM1 returned on USB 3-2.4.2 at 02:57:45, then disconnected at 03:02:35. Studio logged no frames at 03:02:36 and shut its UVC publisher down after five consecutive read failures. At 03:03, both lsusb and /dev/v4l/by-id show the wrist camera absent; both RealSense devices remain present. This is a USB-device disappearance, not merely a browser preview error. Possible cable/hub/power/camera fault remains unisolated. Saved wrist fingerprint still contains the previous bus/index; re-discover by serial after stable enumeration rather than assigning a guessed video number. No session, calibration or recording configuration changed during this diagnostic check.

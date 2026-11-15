@@ -1,0 +1,30 @@
+{
+  "stage": "twin-scene-v1",
+  "task": "P3-TWIN-SCENE",
+  "worker": "E1",
+  "utc": "2026-11-14T20:01Z",
+  "status": "PARTIAL",
+  "metrics": {
+    "mat_top_distance_mm": 589.46,
+    "mat_top_tilt_deg": 20.32,
+    "mat_close_distance_mm": 147.34,
+    "mat_close_tilt_deg": 50.78,
+    "brick_footprint_long_best_mm": 31.59,
+    "brick_top_height_median_mm": 18.63,
+    "brick_top_height_mean_mm": 18.8,
+    "plate_separation_PLATES_XY_mm": 304.49,
+    "plate_separation_depth_ridge_v1_mm": 341.31,
+    "plate_separation_depth_outline_v4_mm": 431.73,
+    "plate_outer_radius_used_mm": 91.2,
+    "colour_entries_total": 17,
+    "colour_entries_measured": 14,
+    "colour_entries_not_seen": 3,
+    "mjcf_bodies_incl_world": 7,
+    "mjcf_geoms": 105,
+    "mjcf_joints": 4,
+    "mjcf_brick_max_drift_2s_mm": 0.108
+  },
+  "previous": null,
+  "delta": null,
+  "delta_note": "No earlier twin-scene-v1 run to compare with. R/twin was deleted at 19:48Z (coordinator D-102); nothing was copied from it, so there is no baseline."
+}

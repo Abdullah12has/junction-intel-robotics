@@ -1,0 +1,52 @@
+[
+ {
+  "name": "Junction Modal NVIDIA trainer",
+  "connection": {
+   "connection_mode": "modal",
+   "app_name": "physicalai-974fa8e742ef4432b1345e855a13e8da",
+   "function_name": "train",
+   "volume_name": "physicalai-training-974fa8e742ef4432b1345e855a13e8da",
+   "environment_name": "main"
+  },
+  "id": "57e65864-ac75-4af2-b4d9-0af5246c6023",
+  "created_at": "2026-11-14T12:07:44Z",
+  "updated_at": "2026-11-14T12:07:44Z",
+  "connection_mode": "modal",
+  "url": null
+ },
+ {
+  "name": "Junction Verda RTX Pro 6000",
+  "connection": {
+   "connection_mode": "ssh",
+   "ssh_host_alias": null,
+   "ssh_connection": {
+    "hostname": "95.133.254.44",
+    "port": 22,
+    "user": "root",
+    "identity_file": "/home/intel/.ssh/junction_verda_ed25519"
+   },
+   "ssh_remote_port": 8001,
+   "ssh_local_port": 34131
+  },
+  "id": "b963d065-34f1-4740-8448-4bf9fdca2abd",
+  "created_at": "2026-11-14T12:40:12Z",
+  "updated_at": "2026-11-14T12:40:12Z",
+  "connection_mode": "ssh",
+  "url": "http://127.0.0.1:34131/"
+ },
+ {
+  "name": "Modal",
+  "connection": {
+   "connection_mode": "modal",
+   "app_name": "physicalai-80e59aad795545018a6d8779cf820698",
+   "function_name": "train",
+   "volume_name": "physicalai-training-80e59aad795545018a6d8779cf820698",
+   "environment_name": "main"
+  },
+  "id": "ca5568b5-4542-4fe2-9932-c09a4c1bdbaa",
+  "created_at": "2026-11-14T12:54:01Z",
+  "updated_at": "2026-11-14T12:54:01Z",
+  "connection_mode": "modal",
+  "url": null
+ }
+]

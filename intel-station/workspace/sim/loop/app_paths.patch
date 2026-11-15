@@ -1,0 +1,276 @@
+--- a/tools/grasp_auto.py
++++ b/tools/grasp_auto.py
+@@ -18,13 +18,15 @@
+ import cv2
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ import rs_height as rh  # noqa: E402
+ 
+ R = "/home/intel/intel-junction-2026"
+ T = f"{R}/app/tools"
+ PY = f"{R}/envs/data-env/bin/python"
+-SD = f"{R}/run/mserver"
++RUN_ROOT = os.environ.get("JUNCTION_RUN_ROOT") or f"{R}/run"
++LOG_ROOT = os.path.join(RUN_ROOT, "logs") if os.environ.get("JUNCTION_RUN_ROOT") else f"{R}/logs"
++SD = f"{RUN_ROOT}/mserver"
+ HOVER = [-12.62, 30.0, -19.33, 69.73, -45.65, 25.0]
+ TARGET_PX = (392.0, 268.0)   # wrist-cam brick centre at the hover when the jaws are centred (16:46Z run)
+ try:  # re-measured target (jaw_calib.py): gap centre + 3 px, y 268
+@@ -82,7 +84,7 @@
+ 
+ 
+ def fresh(view, after):
+-    p = f"{R}/run/live_{view}.jpg"
++    p = f"{RUN_ROOT}/live_{view}.jpg"
+     for _ in range(60):
+         try:
+             if os.path.getmtime(p) > after:
+@@ -227,7 +229,7 @@
+     ap.add_argument("--from-home", action="store_true")
+     ap.add_argument("--dry", action="store_true")
+     a = ap.parse_args()
+-    OUT = f"{R}/logs/grasp_auto/{time.strftime('%H%M%S', time.gmtime())}"
++    OUT = f"{LOG_ROOT}/grasp_auto/{time.strftime('%H%M%S', time.gmtime())}"
+     os.makedirs(OUT, exist_ok=True)
+     SUM.update({"plate": a.plate, "dry": a.dry, "start": time.strftime("%H:%M:%SZ", time.gmtime())})
+     if not os.path.exists(f"{SD}/pid"):
+--- a/tools/jaw_check.py
++++ b/tools/jaw_check.py
+@@ -6,6 +6,7 @@
+ tolerance, else exits 3 (jaw moved: loose fixed jaw or bent).
+ usage: jaw_check.py [--tol 18] [--no-move]"""
+ import argparse
++import os
+ import json
+ import sys
+ import time
+@@ -13,10 +14,10 @@
+ import cv2
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ import grasp_auto as ga  # noqa: E402
+ 
+-T = "/home/intel/intel-junction-2026/app/tools"
++T = os.path.dirname(os.path.abspath(__file__))
+ REF = [[235.7, 320], [544.6, 329]]
+ 
+ 
+@@ -79,7 +80,8 @@
+     vis = frames[0].copy()
+     vis[mask > 0] = (0, 255, 0)
+     cv2.circle(vis, (int(gx + 3), 268), 8, (255, 0, 255), 2)
+-    cv2.imwrite("/home/intel/intel-junction-2026/logs/depth/servo/jaw_check.jpg", vis)
++    os.makedirs(os.path.join(ga.LOG_ROOT, "depth", "servo"), exist_ok=True)
++    cv2.imwrite(os.path.join(ga.LOG_ROOT, "depth", "servo", "jaw_check.jpg"), vis)
+     if a.no_move:  # check only: never rewrite the mask/target from a single frame
+         out["check_only"] = True
+         out["ok"] = d[0] <= a.tol
+--- a/tools/kin.py
++++ b/tools/kin.py
+@@ -12,7 +12,7 @@
+ 
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app")
++sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ from pick_v2.kinematics import Chain, FollowerCalibration, solve_top_down  # noqa: E402
+ 
+ R = "/home/intel/intel-junction-2026"
+--- a/tools/pick_any.py
++++ b/tools/pick_any.py
+@@ -15,7 +15,7 @@
+ import cv2
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ import grasp_auto as ga  # noqa: E402
+ import kin  # noqa: E402
+ 
+--- a/tools/sort_any.py
++++ b/tools/sort_any.py
+@@ -20,8 +20,8 @@
+ import cv2
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/anomaly/det2_f2")
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
++sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "anomaly", "det2_f2"))
+ import grasp_auto as ga  # noqa: E402
+ import kin  # noqa: E402
+ import pick_any as pa  # noqa: E402
+@@ -61,7 +61,7 @@
+     tmove(c["q_scan"] + [g], CFG["transit"], comp=True)
+ 
+ 
+-SCAN_PAIRS = f"{R}/app/tools/scan_pairs.jsonl"  # (scan px, servo-verified hover xy) from every centred approach
++SCAN_PAIRS = f"{ga.RUN_ROOT}/scan_pairs.jsonl"  # (scan px, servo-verified hover xy) from every centred approach
+ SCAN_C = np.eye(2)
+ 
+ 
+@@ -208,9 +208,9 @@
+     last = None
+     while True:
+         for f in ("sort_stop",):
+-            if os.path.exists(f"{R}/run/{f}"):
++            if os.path.exists(f"{ga.RUN_ROOT}/{f}"):
+                 raise SystemExit("stop requested")
+-        if os.path.exists(f"{R}/run/sort_pause") or sl.hands_seen(2):
++        if os.path.exists(f"{ga.RUN_ROOT}/sort_pause") or sl.hands_seen(2):
+             last = None
+             time.sleep(0.4)
+             continue
+@@ -453,7 +453,7 @@
+     if k % every:
+         return
+     try:
+-        r = subprocess.run([f"{R}/envs/data-env/bin/python", "-B", "jaw_check.py", "--no-move"], cwd=f"{R}/app/tools",
++        r = subprocess.run([f"{R}/envs/data-env/bin/python", "-B", "jaw_check.py", "--no-move"], cwd=os.path.dirname(os.path.abspath(__file__)),
+                            capture_output=True, text=True, timeout=40)
+         line = [ln for ln in r.stdout.strip().splitlines() if ln.strip().startswith("{")]
+         d = json.loads(line[-1]) if line else json.loads(r.stdout[r.stdout.index("{"):])
+@@ -463,7 +463,7 @@
+     EP["jaw_check"] = d
+     if not d.get("ok"):
+         log(f"JAW CHECK FAILED: fixed jaw moved {d.get('shift_px')} px -> pausing (tighten the fixed jaw, then delete run/sort_pause)")
+-        open(f"{R}/run/sort_pause", "w").write(f"{time.strftime('%H:%M:%SZ', time.gmtime())} jaw check failed {d.get('shift_px')}\n")
++        open(f"{ga.RUN_ROOT}/sort_pause", "w").write(f"{time.strftime('%H:%M:%SZ', time.gmtime())} jaw check failed {d.get('shift_px')}\n")
+         return
+     tx = (d.get("target_px") or [None])[0]
+     if tx is not None and 5 < abs(tx - ga.TARGET_PX[0]) < 25:
+@@ -564,9 +564,9 @@
+     if not EP:
+         return
+     EP["t_end"] = EP.get("t_end") or time.time()
+-    names = sorted(os.listdir(f"{R}/logs/monitor"))
+-    EP["cams"] = {"top": "logs/monitor/" + [x for x in names if x.startswith("top_") and x.endswith(".mkv")][-1],
+-                  "close": "logs/monitor/" + [x for x in names if x.startswith("close_") and x.endswith(".mkv")][-1],
++    names = sorted(os.listdir(f"{ga.LOG_ROOT}/monitor")) if os.path.isdir(f"{ga.LOG_ROOT}/monitor") else []
++    EP["cams"] = {"top": next(("logs/monitor/" + x for x in names if x.startswith("top_") and x.endswith(".mkv")), None),
++                  "close": next(("logs/monitor/" + x for x in names if x.startswith("close_") and x.endswith(".mkv")), None),
+                   "wrist_dir": "data/wrist/raw"}
+     os.makedirs(f"{RUN}/ep_{k:04d}", exist_ok=True)
+     json.dump(EP, open(f"{RUN}/ep_{k:04d}/episode.json", "w"), indent=1, default=str)
+@@ -665,7 +665,7 @@
+                     help="fast = untested speed-ups (transit 45, hover 25, desc 14, final 6, servo 18); try it on a few "
+                          "cycles and compare cycles.jsonl timings before using it for collection")
+     a = ap.parse_args()
+-    RUN = f"{R}/logs/sort/{a.run}"
++    RUN = f"{ga.LOG_ROOT}/sort/{a.run}"
+     sl.RUN = RUN
+     os.makedirs(RUN, exist_ok=True)
+     if a.profile == "fast":
+@@ -674,13 +674,13 @@
+     for key in ("transit", "hover", "servo", "desc"):
+         CFG[key] = min(45.0, CFG[key] * a.speed)
+     CFG["profile"] = a.profile
+-    if os.path.exists(f"{R}/run/sort_stop"):
+-        os.remove(f"{R}/run/sort_stop")
++    if os.path.exists(f"{ga.RUN_ROOT}/sort_stop"):
++        os.remove(f"{ga.RUN_ROOT}/sort_stop")
+     log(f"start {a.run} n={a.n} cfg={CFG} target={ga.TARGET_PX}")
+-    jc = subprocess.run(["true"], capture_output=True, text=True) if ga.state()["target"][5] < 20 else subprocess.run([f"{R}/envs/data-env/bin/python", "-B", "jaw_check.py", "--no-move"], cwd=f"{R}/app/tools",
++    jc = subprocess.run(["true"], capture_output=True, text=True) if ga.state()["target"][5] < 20 else subprocess.run([f"{R}/envs/data-env/bin/python", "-B", "jaw_check.py", "--no-move"], cwd=os.path.dirname(os.path.abspath(__file__)),
+                         capture_output=True, text=True)
+     log(f"jaw check: {jc.stdout.strip()[-200:]}")
+-    if os.path.exists(f"{R}/run/estop"):
++    if os.path.exists(f"{ga.RUN_ROOT}/estop"):
+         sl.wait_clear("estop at start")
+     st0 = ga.state()
+     if st0["target"][5] < 5 and 0.8 <= st0["present"][5] <= 8:
+--- a/tools/sort_loop.py
++++ b/tools/sort_loop.py
+@@ -19,8 +19,8 @@
+ import cv2
+ import numpy as np
+ 
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/tools")
+-sys.path.insert(0, "/home/intel/intel-junction-2026/app/anomaly/det2_f2")
++sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
++sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "anomaly", "det2_f2"))
+ import grasp_auto as ga  # noqa: E402
+ import inspector as DET  # noqa: E402
+ 
+@@ -54,7 +54,7 @@
+ def hands_seen(sec):
+     """True if hand_watch logged any hand in the last `sec` seconds or a hand is visible now (top/close)."""
+     try:
+-        lines = open(f"{R}/logs/monitor/hand_watch.log").read().splitlines()[-30:]
++        lines = open(f"{ga.LOG_ROOT}/monitor/hand_watch.log").read().splitlines()[-30:]
+     except OSError:
+         lines = []
+     now = time.gmtime()
+@@ -69,11 +69,11 @@
+             return True
+     import handdet  # shared with hand_watch.py, so the clear check and the watchdog never disagree (18:03Z loop)
+     try:
+-        hold = json.load(open(f"{R}/run/mserver/state.json"))["target"][5] < 20
++        hold = json.load(open(f"{ga.RUN_ROOT}/mserver/state.json"))["target"][5] < 20
+     except Exception:  # noqa: BLE001
+         hold = False
+     for view in ("top", "close"):
+-        img = cv2.imread(f"{R}/run/live_{view}.jpg")
++        img = cv2.imread(f"{ga.RUN_ROOT}/live_{view}.jpg")
+         if img is not None and handdet.is_hand(img, view, hold)[0]:
+             return True
+     return False
+@@ -82,11 +82,11 @@
+ def wait_clear(reason):
+     log(f"waiting for a clear workspace ({reason})")
+     while True:
+-        if os.path.exists(f"{R}/run/sort_stop"):
++        if os.path.exists(f"{ga.RUN_ROOT}/sort_stop"):
+             raise SystemExit("stop requested")
+         if not hands_seen(5):
+-            if os.path.exists(f"{R}/run/estop"):
+-                os.remove(f"{R}/run/estop")
++            if os.path.exists(f"{ga.RUN_ROOT}/estop"):
++                os.remove(f"{ga.RUN_ROOT}/estop")
+                 log("estop cleared automatically: no hands for 3 s")
+             return
+         time.sleep(0.5)
+@@ -96,9 +96,9 @@
+     stable, last = 0, None
+     t0 = time.time()
+     while True:
+-        if os.path.exists(f"{R}/run/sort_stop"):
++        if os.path.exists(f"{ga.RUN_ROOT}/sort_stop"):
+             raise SystemExit("stop requested")
+-        if os.path.exists(f"{R}/run/sort_pause"):
++        if os.path.exists(f"{ga.RUN_ROOT}/sort_pause"):
+             time.sleep(0.5)
+             continue
+         img = ga.fresh("wrist", time.time())
+@@ -417,15 +417,15 @@
+     ap.add_argument("--speed", type=float, default=1.0)
+     ap.add_argument("--no-multiview", action="store_true")
+     a = ap.parse_args()
+-    RUN = f"{R}/logs/sort/{a.run}"
++    RUN = f"{ga.LOG_ROOT}/sort/{a.run}"
+     os.makedirs(RUN, exist_ok=True)
+     for key in ("transit", "approach", "fine", "desc"):
+         CFG[key] = min(45.0, CFG[key] * a.speed)
+     CFG["multiview"] = not a.no_multiview
+     log(f"start run {a.run} n={a.n} cfg={CFG}")
+     for f in ("sort_stop",):
+-        if os.path.exists(f"{R}/run/{f}"):
+-            os.remove(f"{R}/run/{f}")
++        if os.path.exists(f"{ga.RUN_ROOT}/{f}"):
++            os.remove(f"{ga.RUN_ROOT}/{f}")
+     go_park(False)
+     k = a.start
+     while k < a.start + a.n:
+@@ -466,7 +466,7 @@
+         finally:
+             if EP:
+                 EP["t_end"] = EP.get("t_end") or time.time()
+-                cams = {"top": sorted(os.listdir(f"{R}/logs/monitor")), "wrist_dir": "data/wrist/raw"}
++                cams = {"top": sorted(os.listdir(f"{ga.LOG_ROOT}/monitor")), "wrist_dir": "data/wrist/raw"}
+                 EP["cams"] = {"top": "logs/monitor/" + [x for x in cams["top"] if x.startswith("top_")][-1],
+                               "close": "logs/monitor/" + [x for x in cams["top"] if x.startswith("close_")][-1],
+                               "wrist_dir": cams["wrist_dir"]}

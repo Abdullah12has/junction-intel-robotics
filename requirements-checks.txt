@@ -1,0 +1,7 @@
+# Offline logic tests only; not a replacement for the recorded training environment.
+numpy>=2,<3
+opencv-python-headless>=4.10,<5
+torch>=2.6,<3
+av>=15,<18
+pyarrow>=19,<24
+Pillow>=11,<13

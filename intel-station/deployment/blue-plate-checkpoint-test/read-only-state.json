@@ -1,0 +1,62 @@
+{
+  "ticks": {
+    "shoulder_pan": 1939,
+    "shoulder_lift": 864,
+    "elbow_flex": 3095,
+    "wrist_flex": 2707,
+    "wrist_roll": 1076,
+    "gripper": 2399
+  },
+  "torque": {
+    "shoulder_pan": 1,
+    "shoulder_lift": 1,
+    "elbow_flex": 1,
+    "wrist_flex": 1,
+    "wrist_roll": 1,
+    "gripper": 1
+  },
+  "calibration": {
+    "shoulder_pan": {
+      "id": 1,
+      "drive_mode": 0,
+      "homing_offset": -1727,
+      "range_min": 891,
+      "range_max": 3212
+    },
+    "shoulder_lift": {
+      "id": 2,
+      "drive_mode": 0,
+      "homing_offset": 1829,
+      "range_min": 822,
+      "range_max": 3090
+    },
+    "elbow_flex": {
+      "id": 3,
+      "drive_mode": 0,
+      "homing_offset": 1127,
+      "range_min": 898,
+      "range_max": 3102
+    },
+    "wrist_flex": {
+      "id": 4,
+      "drive_mode": 0,
+      "homing_offset": 1916,
+      "range_min": 812,
+      "range_max": 3171
+    },
+    "wrist_roll": {
+      "id": 5,
+      "drive_mode": 0,
+      "homing_offset": -1404,
+      "range_min": 74,
+      "range_max": 3899
+    },
+    "gripper": {
+      "id": 6,
+      "drive_mode": 0,
+      "homing_offset": 304,
+      "range_min": 2046,
+      "range_max": 3577
+    }
+  }
+}

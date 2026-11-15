@@ -1,0 +1,12 @@
+{
+  "id": "7c0a2762-b3ba-4259-a968-c1023b2114d9",
+  "hostname": "junction-smolvla-fin03",
+  "ip": "95.133.254.44",
+  "status": "running",
+  "instance_type": "1RTXPRO6000.30V",
+  "price_per_hour": 1.418,
+  "os_volume_id": "2d4e8a6a-85e8-4fa2-a050-b24de1b9eb4e",
+  "volume_ids": [
+    "2d4e8a6a-85e8-4fa2-a050-b24de1b9eb4e"
+  ]
+}

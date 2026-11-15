@@ -1,0 +1,13 @@
+{
+  "captured_on": "2026-11-15",
+  "python_syntax_files": 1456,
+  "syntax_errors": [],
+  "counts": {
+    "excluded": 2999,
+    "imported": 2254,
+    "already present": 464
+  },
+  "hash_verification": "passed for all imported and already-present mappings",
+  "hardware_executed": false,
+  "runtime_integration_tested": false
+}

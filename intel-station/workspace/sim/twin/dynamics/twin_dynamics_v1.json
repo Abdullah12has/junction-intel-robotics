@@ -1,0 +1,101 @@
+{
+ "name": "so101_twin_dynamics",
+ "stage": "twin-dyn-v1",
+ "utc": "2026-11-14T19:50:19Z",
+ "model": "MuJoCo hinge joints (no joint limits) with one <position> actuator per joint; gravity and link inertias from so101.urdf (no-geometry copy)",
+ "control_law": "force = clip(kp*(ctrl-q) - kv*qdot, -forcerange, forcerange); ctrl = k*goal(t - delay)",
+ "timestep_s": 0.004,
+ "integrator": "implicitfast",
+ "units": {
+  "kp": "N.m/rad",
+  "kv": "N.m.s/rad",
+  "frictionloss": "N.m",
+  "armature": "kg.m^2",
+  "forcerange": "N.m (symmetric, fixed at 10 = URDF effort limit, not identified)",
+  "delay": "s",
+  "k_rad_per_norm_unit": "rad per normalized unit (width/200 or /100 * 2pi/4095)"
+ },
+ "k_rad_per_norm_unit": {
+  "shoulder_pan": 0.017806194258808083,
+  "shoulder_lift": 0.017399590081420394,
+  "elbow_flex": 0.016908596357782427,
+  "wrist_flex": 0.018097721782218124,
+  "wrist_roll": 0.029344546764300268,
+  "gripper": 0.0234909809653039
+ },
+ "parameters": {
+  "shoulder_pan": {
+   "kp": 5.978280985978251,
+   "kv": 0.01993864710577554,
+   "frictionloss": 0.04147926602974345,
+   "armature": 0.0024498708502974035,
+   "forcerange": 10.0,
+   "delay": 0.10489003678021748
+  },
+  "shoulder_lift": {
+   "kp": 15.739188677213171,
+   "kv": 0.35436317413925184,
+   "frictionloss": 0.4159402979738728,
+   "armature": 0.019999999999999993,
+   "forcerange": 10.0,
+   "delay": 0.07173826950408313
+  },
+  "elbow_flex": {
+   "kp": 9.616420000144497,
+   "kv": 0.1553012846089557,
+   "frictionloss": 0.31912092223519684,
+   "armature": 0.019999999999999993,
+   "forcerange": 10.0,
+   "delay": 0.07728735474847431
+  },
+  "wrist_flex": {
+   "kp": 6.78562217456317,
+   "kv": 0.02189506708103533,
+   "frictionloss": 0.050943248912447364,
+   "armature": 0.018668658779682042,
+   "forcerange": 10.0,
+   "delay": 0.10739092890025899
+  },
+  "wrist_roll": {
+   "kp": 0.9338663112511424,
+   "kv": 0.0010000000000000117,
+   "frictionloss": 0.0006151229734782935,
+   "armature": 1.0083690071729927e-05,
+   "forcerange": 10.0,
+   "delay": 0.11474578698858422
+  },
+  "gripper": {
+   "kp": 0.5000000000000001,
+   "kv": 0.0015427891185664654,
+   "frictionloss": 0.0025817139905058087,
+   "armature": 0.0008116505509103807,
+   "forcerange": 10.0,
+   "delay": 0.1118429390725642
+  }
+ },
+ "fit": {
+  "data": "logs/sort/any_17*/ep_*/joints.csv (17 files)",
+  "episodes": 17,
+  "nfev": 20,
+  "njev": 20,
+  "cost": 17436.496104738155,
+  "status": 0,
+  "start": "fixed INIT (tools/twin_lib.py)",
+  "gripper_brick_contact_rows_masked": true
+ },
+ "insample_rmse_norm": {
+  "shoulder_pan": 0.2705482257555534,
+  "shoulder_lift": 0.8188473557093378,
+  "elbow_flex": 0.8263548136557316,
+  "wrist_flex": 0.32316250662717527,
+  "wrist_roll": 0.17922915069729947,
+  "gripper": 0.24210347094710274
+ },
+ "files": {
+  "model_xml": "so101_dyn_v1.xml",
+  "fit_scripts": [
+   "twin_lib.py",
+   "fit_dynamics.py"
+  ]
+ }
+}

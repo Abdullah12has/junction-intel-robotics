@@ -1,0 +1,13 @@
+{
+ "view": "pre_close",
+ "version": "v000",
+ "threshold": 534.0295257568359,
+ "rule": "max balanced accuracy on held-out GOOD+DEFECT; ties go to the higher threshold",
+ "score": "IR pred_score (FP16), DEFECT when score > threshold",
+ "fit_on_heldout": true,
+ "n_good": 12,
+ "n_defect": 7,
+ "balanced_accuracy": 0.9285714285714286,
+ "auroc": 0.869047619047619,
+ "device": "GPU"
+}

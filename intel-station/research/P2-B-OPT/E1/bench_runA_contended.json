@@ -1,0 +1,641 @@
+{
+ "status": "done",
+ "started_utc": "2026-11-14T14:47:17.833Z",
+ "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+ "available_devices": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "full_device_name": {
+  "CPU": "Intel(R) Core(TM) Ultra X9 388H",
+  "GPU": "Intel(R) Graphics [0xb080] (iGPU)",
+  "NPU": "Intel(R) AI Boost"
+ },
+ "warmup": 20,
+ "timed": 200,
+ "batch": 1,
+ "cool_down_s": 15,
+ "power": {
+  "pkg_w": "not measured: RAPL energy_uj is root-only on this laptop",
+  "battery": "AC online; BAT0 power_now is not system power while on AC",
+  "energy_per_inference_j": null
+ },
+ "baseline_idle_30s": {
+  "t0": 1794667607.833,
+  "t1": 1794667637.833,
+  "span_s": 30.0,
+  "samples": 30,
+  "pkg_w_mean": null,
+  "energy_j_pkg": null,
+  "pkg_temp_c_mean": 86.1667,
+  "pkg_temp_c_max": 96.0,
+  "core_max_c_mean": 85.0667,
+  "cpu_util_mean": 0.3515,
+  "gpu_freq_mhz_mean": 705.0,
+  "gpu_freq_ratio_mean": 0.282,
+  "npu_busy_mean": 0.0,
+  "npu_freq_mhz_mean": 63.3333,
+  "bat_power_w_mean": 1.0203,
+  "energy_j_bat": 30.61,
+  "ac_online_values": [
+   1
+  ]
+ },
+ "runs": [
+  {
+   "model": "act_389da0fd_fp32",
+   "label": "ACT 389da0fd as exported (IR weights FP32)",
+   "device": "CPU",
+   "device_full_name": "Intel(R) Core(TM) Ultra X9 388H",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 0.505,
+   "inference_precision_hint": "<Type: 'float32'>",
+   "bench_process_cpu_cores": 3.737,
+   "loadavg_1min_before_timed": 10.87,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 99.1742,
+    "p90": 110.344,
+    "p95": 114.9026,
+    "mean": 99.7521,
+    "std": 9.6794,
+    "min": 81.4369,
+    "max": 152.6211
+   },
+   "throughput_ips": 10.025,
+   "window_utc": [
+    "2026-11-14T14:47:20.156Z",
+    "2026-11-14T14:47:40.107Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667640.156,
+    "t1": 1794667660.107,
+    "span_s": 19.951,
+    "samples": 20,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 87.0,
+    "pkg_temp_c_max": 96.0,
+    "core_max_c_mean": 86.65,
+    "cpu_util_mean": 0.5003,
+    "gpu_freq_mhz_mean": 1127.5,
+    "gpu_freq_ratio_mean": 0.451,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 1.0895,
+    "energy_j_bat": 21.74,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667635.156,
+    "t1": 1794667640.156,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 85.2,
+    "pkg_temp_c_max": 92.0,
+    "core_max_c_mean": 82.8,
+    "cpu_util_mean": 0.2894,
+    "gpu_freq_mhz_mean": 840.0,
+    "gpu_freq_ratio_mean": 0.336,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 190.0,
+    "bat_power_w_mean": 0.302,
+    "energy_j_bat": 1.51,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "act_389da0fd_fp32",
+   "label": "ACT 389da0fd as exported (IR weights FP32)",
+   "device": "GPU",
+   "device_full_name": "Intel(R) Graphics [0xb080] (iGPU)",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 2.823,
+   "inference_precision_hint": "<Type: 'float16'>",
+   "bench_process_cpu_cores": 0.98,
+   "loadavg_1min_before_timed": 11.89,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 3.5293,
+    "p90": 4.4954,
+    "p95": 4.654,
+    "mean": 3.7226,
+    "std": 0.5062,
+    "min": 3.1231,
+    "max": 5.3257
+   },
+   "throughput_ips": 268.632,
+   "window_utc": [
+    "2026-11-14T14:47:58.076Z",
+    "2026-11-14T14:47:58.821Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667678.077,
+    "t1": 1794667678.822,
+    "span_s": 0.745,
+    "samples": 1,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 80.0,
+    "pkg_temp_c_max": 80.0,
+    "core_max_c_mean": 94.0,
+    "cpu_util_mean": 0.9549,
+    "gpu_freq_mhz_mean": 1850.0,
+    "gpu_freq_ratio_mean": 0.74,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 4.845,
+    "energy_j_bat": 3.61,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667673.076,
+    "t1": 1794667678.076,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 89.4,
+    "pkg_temp_c_max": 95.0,
+    "core_max_c_mean": 85.2,
+    "cpu_util_mean": 0.6779,
+    "gpu_freq_mhz_mean": 360.0,
+    "gpu_freq_ratio_mean": 0.144,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 2.0612,
+    "energy_j_bat": 10.31,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "act_389da0fd_fp32",
+   "label": "ACT 389da0fd as exported (IR weights FP32)",
+   "device": "NPU",
+   "device_full_name": "Intel(R) AI Boost",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 2.661,
+   "inference_precision_hint": "<Type: 'float16'>",
+   "bench_process_cpu_cores": 0.068,
+   "loadavg_1min_before_timed": 15.11,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 6.8761,
+    "p90": 9.367,
+    "p95": 9.9928,
+    "mean": 7.3263,
+    "std": 1.1149,
+    "min": 6.4144,
+    "max": 10.9776
+   },
+   "throughput_ips": 136.495,
+   "window_utc": [
+    "2026-11-14T14:48:16.717Z",
+    "2026-11-14T14:48:18.183Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667696.718,
+    "t1": 1794667698.183,
+    "span_s": 1.466,
+    "samples": 2,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 79.5,
+    "pkg_temp_c_max": 80.0,
+    "core_max_c_mean": 80.0,
+    "cpu_util_mean": 0.9522,
+    "gpu_freq_mhz_mean": 900.0,
+    "gpu_freq_ratio_mean": 0.36,
+    "npu_busy_mean": 0.532,
+    "npu_freq_mhz_mean": 887.5,
+    "bat_power_w_mean": 0.0,
+    "energy_j_bat": 0.0,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667691.717,
+    "t1": 1794667696.717,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 85.6,
+    "pkg_temp_c_max": 87.0,
+    "core_max_c_mean": 81.2,
+    "cpu_util_mean": 0.9499,
+    "gpu_freq_mhz_mean": 360.0,
+    "gpu_freq_ratio_mean": 0.144,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 0.0,
+    "energy_j_bat": 0.0,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "act_389da0fd_fp16",
+   "label": "ACT 389da0fd compressed to FP16 by save_model(compress_to_fp16=True)",
+   "device": "CPU",
+   "device_full_name": "Intel(R) Core(TM) Ultra X9 388H",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 0.806,
+   "inference_precision_hint": "<Type: 'float32'>",
+   "bench_process_cpu_cores": 3.902,
+   "loadavg_1min_before_timed": 19.27,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 106.526,
+    "p90": 111.497,
+    "p95": 113.3769,
+    "mean": 107.1199,
+    "std": 4.5942,
+    "min": 95.7051,
+    "max": 140.1224
+   },
+   "throughput_ips": 9.335,
+   "window_utc": [
+    "2026-11-14T14:48:36.258Z",
+    "2026-11-14T14:48:57.683Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667716.259,
+    "t1": 1794667737.683,
+    "span_s": 21.424,
+    "samples": 21,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 82.5238,
+    "pkg_temp_c_max": 85.0,
+    "core_max_c_mean": 81.9524,
+    "cpu_util_mean": 0.8576,
+    "gpu_freq_mhz_mean": 471.4286,
+    "gpu_freq_ratio_mean": 0.1886,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 0.0017,
+    "energy_j_bat": 0.04,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667711.258,
+    "t1": 1794667716.258,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 82.6,
+    "pkg_temp_c_max": 84.0,
+    "core_max_c_mean": 82.8,
+    "cpu_util_mean": 0.8815,
+    "gpu_freq_mhz_mean": 360.0,
+    "gpu_freq_ratio_mean": 0.144,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 0.0052,
+    "energy_j_bat": 0.03,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "act_389da0fd_fp16",
+   "label": "ACT 389da0fd compressed to FP16 by save_model(compress_to_fp16=True)",
+   "device": "GPU",
+   "device_full_name": "Intel(R) Graphics [0xb080] (iGPU)",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 2.13,
+   "inference_precision_hint": "<Type: 'float16'>",
+   "bench_process_cpu_cores": 0.943,
+   "loadavg_1min_before_timed": 24.06,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 3.6506,
+    "p90": 4.4857,
+    "p95": 4.6593,
+    "mean": 3.8148,
+    "std": 0.591,
+    "min": 3.0778,
+    "max": 7.5265
+   },
+   "throughput_ips": 262.138,
+   "window_utc": [
+    "2026-11-14T14:49:14.963Z",
+    "2026-11-14T14:49:15.726Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667754.963,
+    "t1": 1794667755.727,
+    "span_s": 0.763,
+    "samples": 0,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": null,
+    "pkg_temp_c_max": null,
+    "core_max_c_mean": null,
+    "cpu_util_mean": null,
+    "gpu_freq_mhz_mean": null,
+    "gpu_freq_ratio_mean": null,
+    "npu_busy_mean": null,
+    "npu_freq_mhz_mean": null,
+    "bat_power_w_mean": null,
+    "energy_j_bat": null,
+    "ac_online_values": []
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667749.963,
+    "t1": 1794667754.963,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 86.0,
+    "pkg_temp_c_max": 90.0,
+    "core_max_c_mean": 82.8,
+    "cpu_util_mean": 0.9047,
+    "gpu_freq_mhz_mean": 350.0,
+    "gpu_freq_ratio_mean": 0.14,
+    "npu_busy_mean": 0.0,
+    "npu_freq_mhz_mean": 0.0,
+    "bat_power_w_mean": 1.125,
+    "energy_j_bat": 5.62,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "act_389da0fd_fp16",
+   "label": "ACT 389da0fd compressed to FP16 by save_model(compress_to_fp16=True)",
+   "device": "NPU",
+   "device_full_name": "Intel(R) AI Boost",
+   "stage": "done",
+   "input_shapes": {
+    "state": [
+     1,
+     6
+    ],
+    "images.realsense 243722064316": [
+     1,
+     3,
+     384,
+     384
+    ],
+    "images.realsense 243622061421": [
+     1,
+     3,
+     384,
+     384
+    ]
+   },
+   "output_shapes": {
+    "action": [
+     1,
+     100,
+     6
+    ]
+   },
+   "compile_s": 1.829,
+   "inference_precision_hint": "<Type: 'float16'>",
+   "bench_process_cpu_cores": 0.093,
+   "loadavg_1min_before_timed": 20.45,
+   "status": "ok",
+   "latency_ms": {
+    "p50": 5.8266,
+    "p90": 6.6288,
+    "p95": 7.092,
+    "mean": 5.8896,
+    "std": 0.5413,
+    "min": 5.1108,
+    "max": 8.0348
+   },
+   "throughput_ips": 169.79,
+   "window_utc": [
+    "2026-11-14T14:49:32.806Z",
+    "2026-11-14T14:49:33.985Z"
+   ],
+   "telemetry_during_timed": {
+    "t0": 1794667772.807,
+    "t1": 1794667773.985,
+    "span_s": 1.178,
+    "samples": 1,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 79.0,
+    "pkg_temp_c_max": 79.0,
+    "core_max_c_mean": 76.0,
+    "cpu_util_mean": 0.2411,
+    "gpu_freq_mhz_mean": 0.0,
+    "gpu_freq_ratio_mean": 0.0,
+    "npu_busy_mean": 0.9411,
+    "npu_freq_mhz_mean": 1425.0,
+    "bat_power_w_mean": 0.551,
+    "energy_j_bat": 0.65,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "telemetry_5s_before_timed": {
+    "t0": 1794667767.806,
+    "t1": 1794667772.806,
+    "span_s": 5.0,
+    "samples": 5,
+    "pkg_w_mean": null,
+    "energy_j_pkg": null,
+    "pkg_temp_c_mean": 86.4,
+    "pkg_temp_c_max": 96.0,
+    "core_max_c_mean": 85.0,
+    "cpu_util_mean": 0.5138,
+    "gpu_freq_mhz_mean": 990.0,
+    "gpu_freq_ratio_mean": 0.396,
+    "npu_busy_mean": 0.0966,
+    "npu_freq_mhz_mean": 360.0,
+    "bat_power_w_mean": 0.407,
+    "energy_j_bat": 2.03,
+    "ac_online_values": [
+     1
+    ]
+   },
+   "energy_per_inference_j": null
+  },
+  {
+   "model": "patchcore_detector",
+   "label": "PatchCore detector IR (weights FP16), reshaped to batch 1",
+   "device": "CPU",
+   "device_full_name": "Intel(R) Core(TM) Ultra X9 388H",
+   "stage": "read",
+   "status": "failed",
+   "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n",
+   "traceback_tail": "tion-2026/app/telemetry/bench_ov.py\", line 71, in run_one\n    model.reshape({model.inputs[0].get_any_name(): [1, 3, 256, 256]})\nRuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n\n"
+  },
+  {
+   "model": "patchcore_detector",
+   "label": "PatchCore detector IR (weights FP16), reshaped to batch 1",
+   "device": "GPU",
+   "device_full_name": "Intel(R) Graphics [0xb080] (iGPU)",
+   "stage": "read",
+   "status": "failed",
+   "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n",
+   "traceback_tail": "tion-2026/app/telemetry/bench_ov.py\", line 71, in run_one\n    model.reshape({model.inputs[0].get_any_name(): [1, 3, 256, 256]})\nRuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n\n"
+  },
+  {
+   "model": "patchcore_detector",
+   "label": "PatchCore detector IR (weights FP16), reshaped to batch 1",
+   "device": "NPU",
+   "device_full_name": "Intel(R) AI Boost",
+   "stage": "read",
+   "status": "failed",
+   "error": "RuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n",
+   "traceback_tail": "tion-2026/app/telemetry/bench_ov.py\", line 71, in run_one\n    model.reshape({model.inputs[0].get_any_name(): [1, 3, 256, 256]})\nRuntimeError: Check 'TRShape::merge_into(output_shape, in_copy)' failed at src/core/shape_inference/include/concat_shape_inference.hpp:43:\nWhile validating node 'opset1::Concat node_cat (opset1::AvgPool node_avg_pool2d[0]:f32[1,512,32,32], opset11::Interpolate node_upsample_bilinear2d[0]:f32[2,1024,32,32]) -> (f32[2,1536,32,32])' with friendly_name 'node_cat':\nShape inference input shapes {[1,512,32,32],[2,1024,32,32]}\nArgument shapes are inconsistent; they must have the same rank, and must have equal dimension everywhere except on the concatenation axis (axis 1).\n\n"
+  }
+ ],
+ "sampler_overhead_pct_during_bench": 0.127,
+ "finished_utc": "2026-11-14T14:50:34.091Z"
+}

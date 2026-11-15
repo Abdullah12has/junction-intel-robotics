@@ -1,0 +1,176 @@
+{
+ "stage": "tape-eval-v1",
+ "utc": "2026-11-14T21:00Z",
+ "app_head_at_copy": "bbaf99a (working tree copied 20:48Z)",
+ "scope": "close-view tape (ours 23 views, Studio close 115 frames per brick), routing + shape (ours, 6 replicable episodes), wrist used for shape only; top view not used by the decision code",
+ "variants": {
+  "base": {
+   "ours_close_decided": 7,
+   "ours_close_correct": 7,
+   "ours_close_uncertain": 16,
+   "ours_close_accuracy_ci95": [
+    0.6457,
+    1.0
+   ],
+   "studio_close_decided": 14,
+   "studio_close_correct": 10,
+   "studio_close_uncertain": 101,
+   "studio_close_not_located": 86,
+   "routing_truth_known_replicated": 6,
+   "routing_correct": 6,
+   "routing_accuracy_ci95": [
+    0.6097,
+    1.0
+   ],
+   "routing_not_replicable": [
+    "any_1731/ep_0001",
+    "any_1731/ep_0002",
+    "any_1740/ep_0004",
+    "any_1740/ep_0007",
+    "any_1740/ep_0013"
+   ],
+   "shape_n": 6,
+   "shape_correct": 6
+  },
+  "p1": {
+   "ours_close_decided": 9,
+   "ours_close_correct": 9,
+   "ours_close_uncertain": 14,
+   "ours_close_accuracy_ci95": [
+    0.7008,
+    1.0
+   ],
+   "studio_close_decided": 14,
+   "studio_close_correct": 10,
+   "studio_close_uncertain": 101,
+   "studio_close_not_located": 86,
+   "routing_truth_known_replicated": 6,
+   "routing_correct": 6,
+   "routing_accuracy_ci95": [
+    0.6097,
+    1.0
+   ],
+   "routing_not_replicable": [
+    "any_1731/ep_0001",
+    "any_1731/ep_0002",
+    "any_1740/ep_0004",
+    "any_1740/ep_0007",
+    "any_1740/ep_0013"
+   ],
+   "shape_n": 6,
+   "shape_correct": 6
+  },
+  "p2": {
+   "ours_close_decided": 5,
+   "ours_close_correct": 5,
+   "ours_close_uncertain": 18,
+   "ours_close_accuracy_ci95": [
+    0.5655,
+    1.0
+   ],
+   "studio_close_decided": 10,
+   "studio_close_correct": 10,
+   "studio_close_uncertain": 105,
+   "studio_close_not_located": 86,
+   "routing_truth_known_replicated": 4,
+   "routing_correct": 4,
+   "routing_accuracy_ci95": [
+    0.5101,
+    1.0
+   ],
+   "routing_not_replicable": [
+    "any_1731/ep_0001",
+    "any_1731/ep_0002",
+    "any_1740/ep_0004",
+    "any_1740/ep_0006",
+    "any_1740/ep_0007",
+    "any_1740/ep_0013",
+    "any_1740/ep_0017"
+   ],
+   "shape_n": 4,
+   "shape_correct": 4
+  },
+  "p12": {
+   "ours_close_decided": 7,
+   "ours_close_correct": 7,
+   "ours_close_uncertain": 16,
+   "ours_close_accuracy_ci95": [
+    0.6457,
+    1.0
+   ],
+   "studio_close_decided": 10,
+   "studio_close_correct": 10,
+   "studio_close_uncertain": 105,
+   "studio_close_not_located": 86,
+   "routing_truth_known_replicated": 4,
+   "routing_correct": 4,
+   "routing_accuracy_ci95": [
+    0.5101,
+    1.0
+   ],
+   "routing_not_replicable": [
+    "any_1731/ep_0001",
+    "any_1731/ep_0002",
+    "any_1740/ep_0004",
+    "any_1740/ep_0006",
+    "any_1740/ep_0007",
+    "any_1740/ep_0013",
+    "any_1740/ep_0017"
+   ],
+   "shape_n": 4,
+   "shape_correct": 4
+  }
+ },
+ "previous": {
+  "stage": "tape-eval-v1",
+  "ours_close_decided": 7,
+  "ours_close_correct": 7
+ },
+ "delta_vs_base": {
+  "p1": {
+   "ours_close_decided": 2,
+   "ours_close_correct": 2,
+   "ours_close_uncertain": -2,
+   "studio_close_decided": 0,
+   "studio_close_correct": 0,
+   "studio_close_uncertain": 0,
+   "studio_close_not_located": 0,
+   "routing_truth_known_replicated": 0,
+   "routing_correct": 0,
+   "shape_n": 0,
+   "shape_correct": 0
+  },
+  "p2": {
+   "ours_close_decided": -2,
+   "ours_close_correct": -2,
+   "ours_close_uncertain": 2,
+   "studio_close_decided": -4,
+   "studio_close_correct": 0,
+   "studio_close_uncertain": 4,
+   "studio_close_not_located": 0,
+   "routing_truth_known_replicated": -2,
+   "routing_correct": -2,
+   "shape_n": -2,
+   "shape_correct": -2
+  },
+  "p12": {
+   "ours_close_decided": 0,
+   "ours_close_correct": 0,
+   "ours_close_uncertain": 0,
+   "studio_close_decided": -4,
+   "studio_close_correct": 0,
+   "studio_close_uncertain": 4,
+   "studio_close_not_located": 0,
+   "routing_truth_known_replicated": -2,
+   "routing_correct": -2,
+   "shape_n": -2,
+   "shape_correct": -2
+  }
+ },
+ "patches": {
+  "p1": "patches/p1_sort_loop_jaw_anchored.patch (jaw-anchored fallback in sort_loop.close_verdict)",
+  "p2": "patches/p2_inspector_merged_tape.patch (merged blob tape not attributable in inspector.triage)",
+  "p12": "p1 + p2 (app_p12)"
+ },
+ "leave_one_episode_out": "not required: no threshold or parameter was fitted; p1 radius 130 px chosen once, not tuned on this set"
+}

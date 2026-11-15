@@ -1,0 +1,40 @@
+{
+  "export": "/home/intel/.local/share/physicalai/models/fa42ee76-bcfb-43ba-ba21-124e678ee785/exports/openvino",
+  "dataset": "/home/intel/.local/share/physicalai/datasets/6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "devices": {
+    "CPU": {
+      "compiled_seconds": 0.5325842410020414,
+      "inference_seconds": [
+        0.08536933599680196,
+        0.08089294999808772,
+        0.08127087500179186
+      ],
+      "observations": 3,
+      "output_shape": [
+        100,
+        6
+      ],
+      "all_finite": true
+    },
+    "GPU": {
+      "compiled_seconds": 3.651255188997311,
+      "inference_seconds": [
+        0.010328353004297242,
+        0.008823891999782063,
+        0.008513148000929505
+      ],
+      "observations": 3,
+      "output_shape": [
+        100,
+        6
+      ],
+      "all_finite": true
+    }
+  },
+  "cpu_gpu_max_absolute_differences": [
+    0.06551361083984375,
+    0.128326416015625,
+    0.0860137939453125
+  ],
+  "scope": "Offline inference only; no robot commands or task-success evaluation"
+}

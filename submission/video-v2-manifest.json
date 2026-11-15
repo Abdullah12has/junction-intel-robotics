@@ -1,0 +1,39 @@
+{
+  "real_source": "THIRD_PARTY_NOTICES.mp4",
+  "real_playback_speed": 3,
+  "real_controller": "SmolVLM-assisted vision-guided, per user clarification",
+  "simulation_controller": "MuJoCo expert",
+  "voice": "macOS Samantha synthetic narration at 185 words per minute",
+  "segments": [
+    {
+      "segment": 1,
+      "narration": "Prometheus brings visual intelligence into physical action. Our SO one oh one robot inspects real parts and sorts them, with Smol V L M assisted vision.",
+      "duration_s": 8.995011
+    },
+    {
+      "segment": "real",
+      "narration": "Here is the working physical demonstration, played at three times speed. Smol V L M assists the vision guided controller. The overhead camera shows the workspace, while wrist and close cameras show the inspection views. The system observes each brick, uses visual information to guide the task, then moves and releases it onto the blue plate. The supplied demo records three completed good to blue sorts, with a reported median cycle time of forty eight seconds. This is a selected three part demonstration, rather than a broad reliability benchmark. Inspection confidence is marked partial in the recording. What matters is that the system connects perception to physical action on the real station. We keep this Smol V L M assisted execution separate from our Smol V L A action policy training experiments.",
+      "duration_s": 58.833333
+    },
+    {
+      "segment": "sim",
+      "narration": "We also built this MuJoCo environment. Watch the expert controller pick up the block, transport it, and release it onto the blue plate. This is successful simulated manipulation.",
+      "duration_s": 13.466667
+    },
+    {
+      "segment": 6,
+      "narration": "Our learning pipeline is implemented: sixty four demonstrations, grouped evaluation splits, and thirty two configurations comparing ACT, Smol V L A, target cues and augmentation.",
+      "duration_s": 11.883855
+    },
+    {
+      "segment": 8,
+      "narration": "Physical AI Studio connects the station workflows. Our Intel deployment tools include OpenVINO inference checks, inspection code, bounded outputs and explicit stop paths.",
+      "duration_s": 10.623537
+    },
+    {
+      "segment": 9,
+      "narration": "Our ambition is adaptable inspection for smaller factories. We have a working physical demo, a simulation environment, and a reproducible learning pipeline. The next validation expands to defects, clutter and learned policy transfer.",
+      "duration_s": 14.020136
+    }
+  ]
+}

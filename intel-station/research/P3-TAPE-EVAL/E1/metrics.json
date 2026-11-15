@@ -1,0 +1,84 @@
+{
+ "stage": "tape-eval-v1",
+ "utc": "2026-11-14T20:38Z",
+ "scope": "close-view tape verdict only, P3-LABEL-OURS labelled close frames (23 views); shape and OD-10 routing NOT evaluated; Studio frames NOT evaluated",
+ "metrics": {
+  "views_total": 23,
+  "decided": 7,
+  "correct": 7,
+  "accuracy_decided": 1.0,
+  "accuracy_decided_ci95": [
+   0.6457,
+   1.0
+  ],
+  "uncertain": 16,
+  "matrix_overall": {
+   "yes": {
+    "yes": 2,
+    "no": 0,
+    "uncertain": 4
+   },
+   "no": {
+    "yes": 0,
+    "no": 5,
+    "uncertain": 12
+   }
+  },
+  "by_colour": {
+   "cream/yellow": {
+    "n": 6,
+    "decided": 2,
+    "correct": 2,
+    "uncertain": 4
+   },
+   "orange": {
+    "n": 6,
+    "decided": 1,
+    "correct": 1,
+    "uncertain": 5
+   },
+   "red": {
+    "n": 7,
+    "decided": 2,
+    "correct": 2,
+    "uncertain": 5
+   },
+   "white": {
+    "n": 4,
+    "decided": 2,
+    "correct": 2,
+    "uncertain": 2
+   }
+  },
+  "by_kind": {
+   "closed": {
+    "n": 9,
+    "decided": 0,
+    "correct": 0,
+    "uncertain": 9
+   },
+   "lifted": {
+    "n": 7,
+    "decided": 0,
+    "correct": 0,
+    "uncertain": 7
+   },
+   "pre": {
+    "n": 5,
+    "decided": 5,
+    "correct": 5,
+    "uncertain": 0
+   },
+   "station": {
+    "n": 2,
+    "decided": 2,
+    "correct": 2,
+    "uncertain": 0
+   }
+  },
+  "errors_decided": 0,
+  "pre_views_excluded_no_loop_input_saved": 8
+ },
+ "previous": null,
+ "delta": null
+}

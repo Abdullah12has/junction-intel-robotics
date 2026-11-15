@@ -1,0 +1,1086 @@
+{
+ "folder": "/home/intel/intel-junction-2026/work/P2-B-WRIST/F1/frames",
+ "n": 40,
+ "frames": [
+  {
+   "file": "s1_01.png",
+   "frame_mean_rgb": [
+    115.2,
+    101.5,
+    114.6
+   ],
+   "mat_rgb_median": [
+    55.0,
+    45.0,
+    76.0
+   ],
+   "mat_gains_to_neutral": [
+    1.067,
+    1.304,
+    0.772
+   ],
+   "jaw_pixels_roi": 26891,
+   "skin_like_pixels_roi": 13236,
+   "jaw_rgb_median": [
+    218.0,
+    85.0,
+    86.0
+   ],
+   "jaw_hue_centred_median": 0.0,
+   "jaw_sat_median": 158.0
+  },
+  {
+   "file": "s1_02.png",
+   "frame_mean_rgb": [
+    118.6,
+    104.7,
+    116.6
+   ],
+   "mat_rgb_median": [
+    57.0,
+    48.0,
+    77.0
+   ],
+   "mat_gains_to_neutral": [
+    1.064,
+    1.264,
+    0.788
+   ],
+   "jaw_pixels_roi": 26808,
+   "skin_like_pixels_roi": 13773,
+   "jaw_rgb_median": [
+    218.0,
+    87.0,
+    87.0
+   ],
+   "jaw_hue_centred_median": 0.0,
+   "jaw_sat_median": 158.0
+  },
+  {
+   "file": "s1_03.png",
+   "frame_mean_rgb": [
+    119.0,
+    105.0,
+    116.6
+   ],
+   "mat_rgb_median": [
+    57.0,
+    48.0,
+    77.0
+   ],
+   "mat_gains_to_neutral": [
+    1.064,
+    1.264,
+    0.788
+   ],
+   "jaw_pixels_roi": 26778,
+   "skin_like_pixels_roi": 13640,
+   "jaw_rgb_median": [
+    219.0,
+    87.0,
+    87.0
+   ],
+   "jaw_hue_centred_median": 0.0,
+   "jaw_sat_median": 158.0
+  },
+  {
+   "file": "s1_04.png",
+   "frame_mean_rgb": [
+    118.9,
+    104.9,
+    116.8
+   ],
+   "mat_rgb_median": [
+    57.0,
+    48.0,
+    78.0
+   ],
+   "mat_gains_to_neutral": [
+    1.07,
+    1.271,
+    0.782
+   ],
+   "jaw_pixels_roi": 26665,
+   "skin_like_pixels_roi": 13557,
+   "jaw_rgb_median": [
+    219.0,
+    87.0,
+    87.0
+   ],
+   "jaw_hue_centred_median": 0.0,
+   "jaw_sat_median": 158.0
+  },
+  {
+   "file": "s1_05.png",
+   "frame_mean_rgb": [
+    114.3,
+    100.4,
+    106.0
+   ],
+   "mat_rgb_median": [
+    52.0,
+    43.0,
+    70.0
+   ],
+   "mat_gains_to_neutral": [
+    1.058,
+    1.279,
+    0.786
+   ],
+   "jaw_pixels_roi": 25745,
+   "skin_like_pixels_roi": 8369,
+   "jaw_rgb_median": [
+    224.0,
+    88.0,
+    90.0
+   ],
+   "jaw_hue_centred_median": 0.0,
+   "jaw_sat_median": 156.0
+  },
+  {
+   "file": "s1_06.png",
+   "frame_mean_rgb": [
+    68.7,
+    52.3,
+    62.1
+   ],
+   "mat_rgb_median": [
+    18.0,
+    18.0,
+    30.0
+   ],
+   "mat_gains_to_neutral": [
+    1.222,
+    1.222,
+    0.733
+   ],
+   "jaw_pixels_roi": 33895,
+   "skin_like_pixels_roi": 12228,
+   "jaw_rgb_median": [
+    182.0,
+    61.0,
+    67.0
+   ],
+   "jaw_hue_centred_median": -2.0,
+   "jaw_sat_median": 175.0
+  },
+  {
+   "file": "s1_07.png",
+   "frame_mean_rgb": [
+    67.4,
+    50.5,
+    89.1
+   ],
+   "mat_rgb_median": [
+    9.0,
+    13.0,
+    60.0
+   ],
+   "mat_gains_to_neutral": [
+    3.037,
+    2.103,
+    0.456
+   ],
+   "jaw_pixels_roi": 9595,
+   "skin_like_pixels_roi": 2267,
+   "jaw_rgb_median": [
+    195.0,
+    79.0,
+    104.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 146.0
+  },
+  {
+   "file": "s1_08.png",
+   "frame_mean_rgb": [
+    57.8,
+    52.7,
+    68.3
+   ],
+   "mat_rgb_median": [
+    8.0,
+    13.0,
+    25.0
+   ],
+   "mat_gains_to_neutral": [
+    1.917,
+    1.179,
+    0.613
+   ],
+   "jaw_pixels_roi": 26422,
+   "skin_like_pixels_roi": 492,
+   "jaw_rgb_median": [
+    216.0,
+    75.0,
+    96.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 166.0
+  },
+  {
+   "file": "s1_09.png",
+   "frame_mean_rgb": [
+    69.6,
+    57.4,
+    74.3
+   ],
+   "mat_rgb_median": [
+    9.0,
+    13.0,
+    27.0
+   ],
+   "mat_gains_to_neutral": [
+    1.815,
+    1.256,
+    0.605
+   ],
+   "jaw_pixels_roi": 33818,
+   "skin_like_pixels_roi": 3389,
+   "jaw_rgb_median": [
+    203.0,
+    67.0,
+    89.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 171.0
+  },
+  {
+   "file": "s1_10.png",
+   "frame_mean_rgb": [
+    59.9,
+    50.8,
+    76.9
+   ],
+   "mat_rgb_median": [
+    10.0,
+    13.0,
+    38.0
+   ],
+   "mat_gains_to_neutral": [
+    2.033,
+    1.564,
+    0.535
+   ],
+   "jaw_pixels_roi": 24112,
+   "skin_like_pixels_roi": 4,
+   "jaw_rgb_median": [
+    210.0,
+    69.0,
+    99.0
+   ],
+   "jaw_hue_centred_median": -6.0,
+   "jaw_sat_median": 170.0
+  },
+  {
+   "file": "s1_11.png",
+   "frame_mean_rgb": [
+    41.2,
+    33.6,
+    53.2
+   ],
+   "mat_rgb_median": [
+    7.0,
+    10.0,
+    24.0
+   ],
+   "mat_gains_to_neutral": [
+    1.952,
+    1.367,
+    0.569
+   ],
+   "jaw_pixels_roi": 24546,
+   "skin_like_pixels_roi": 2817,
+   "jaw_rgb_median": [
+    192.5,
+    60.0,
+    84.0
+   ],
+   "jaw_hue_centred_median": -6.0,
+   "jaw_sat_median": 176.0
+  },
+  {
+   "file": "s1_12.png",
+   "frame_mean_rgb": [
+    35.2,
+    28.3,
+    47.8
+   ],
+   "mat_rgb_median": [
+    6.0,
+    7.0,
+    21.0
+   ],
+   "mat_gains_to_neutral": [
+    1.889,
+    1.619,
+    0.54
+   ],
+   "jaw_pixels_roi": 24111,
+   "skin_like_pixels_roi": 2582,
+   "jaw_rgb_median": [
+    175.0,
+    50.0,
+    75.0
+   ],
+   "jaw_hue_centred_median": -6.0,
+   "jaw_sat_median": 183.0
+  },
+  {
+   "file": "s1_13.png",
+   "frame_mean_rgb": [
+    32.6,
+    26.0,
+    42.1
+   ],
+   "mat_rgb_median": [
+    5.0,
+    7.0,
+    17.0
+   ],
+   "mat_gains_to_neutral": [
+    1.933,
+    1.381,
+    0.569
+   ],
+   "jaw_pixels_roi": 24327,
+   "skin_like_pixels_roi": 2574,
+   "jaw_rgb_median": [
+    167.0,
+    45.0,
+    68.0
+   ],
+   "jaw_hue_centred_median": -6.0,
+   "jaw_sat_median": 187.0
+  },
+  {
+   "file": "s1_14.png",
+   "frame_mean_rgb": [
+    30.1,
+    23.1,
+    26.2
+   ],
+   "mat_rgb_median": [
+    1.0,
+    2.0,
+    1.0
+   ],
+   "mat_gains_to_neutral": [
+    1.333,
+    0.667,
+    1.333
+   ],
+   "jaw_pixels_roi": 24822,
+   "skin_like_pixels_roi": 2974,
+   "jaw_rgb_median": [
+    166.0,
+    43.0,
+    57.0
+   ],
+   "jaw_hue_centred_median": -4.0,
+   "jaw_sat_median": 190.0
+  },
+  {
+   "file": "s1_15.png",
+   "frame_mean_rgb": [
+    30.6,
+    23.4,
+    28.3
+   ],
+   "mat_rgb_median": [
+    2.0,
+    3.0,
+    3.0
+   ],
+   "mat_gains_to_neutral": [
+    1.333,
+    0.889,
+    0.889
+   ],
+   "jaw_pixels_roi": 24721,
+   "skin_like_pixels_roi": 2849,
+   "jaw_rgb_median": [
+    167.0,
+    44.0,
+    61.0
+   ],
+   "jaw_hue_centred_median": -4.0,
+   "jaw_sat_median": 190.0
+  },
+  {
+   "file": "s1_16.png",
+   "frame_mean_rgb": [
+    31.2,
+    23.8,
+    29.5
+   ],
+   "mat_rgb_median": [
+    2.0,
+    3.0,
+    3.0
+   ],
+   "mat_gains_to_neutral": [
+    1.333,
+    0.889,
+    0.889
+   ],
+   "jaw_pixels_roi": 24749,
+   "skin_like_pixels_roi": 2673,
+   "jaw_rgb_median": [
+    172.0,
+    46.0,
+    65.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 188.0
+  },
+  {
+   "file": "s1_17.png",
+   "frame_mean_rgb": [
+    31.1,
+    23.8,
+    29.6
+   ],
+   "mat_rgb_median": [
+    1.0,
+    3.0,
+    3.0
+   ],
+   "mat_gains_to_neutral": [
+    2.333,
+    0.778,
+    0.778
+   ],
+   "jaw_pixels_roi": 24784,
+   "skin_like_pixels_roi": 2700,
+   "jaw_rgb_median": [
+    171.0,
+    46.0,
+    64.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 188.0
+  },
+  {
+   "file": "s1_18.png",
+   "frame_mean_rgb": [
+    30.6,
+    23.5,
+    29.1
+   ],
+   "mat_rgb_median": [
+    1.0,
+    3.0,
+    3.0
+   ],
+   "mat_gains_to_neutral": [
+    2.333,
+    0.778,
+    0.778
+   ],
+   "jaw_pixels_roi": 24662,
+   "skin_like_pixels_roi": 2784,
+   "jaw_rgb_median": [
+    167.0,
+    43.0,
+    61.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 190.0
+  },
+  {
+   "file": "s1_19.png",
+   "frame_mean_rgb": [
+    30.3,
+    23.2,
+    28.8
+   ],
+   "mat_rgb_median": [
+    2.0,
+    3.0,
+    3.0
+   ],
+   "mat_gains_to_neutral": [
+    1.333,
+    0.889,
+    0.889
+   ],
+   "jaw_pixels_roi": 24629,
+   "skin_like_pixels_roi": 2702,
+   "jaw_rgb_median": [
+    166.0,
+    43.0,
+    60.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 191.0
+  },
+  {
+   "file": "s1_20.png",
+   "frame_mean_rgb": [
+    31.6,
+    24.1,
+    30.9
+   ],
+   "mat_rgb_median": [
+    2.0,
+    4.0,
+    5.0
+   ],
+   "mat_gains_to_neutral": [
+    1.833,
+    0.917,
+    0.733
+   ],
+   "jaw_pixels_roi": 24645,
+   "skin_like_pixels_roi": 2762,
+   "jaw_rgb_median": [
+    173.0,
+    47.0,
+    67.0
+   ],
+   "jaw_hue_centred_median": -5.0,
+   "jaw_sat_median": 188.0
+  },
+  {
+   "file": "s2_01.png",
+   "frame_mean_rgb": [
+    54.6,
+    28.7,
+    18.9
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15408,
+   "skin_like_pixels_roi": 466,
+   "jaw_rgb_median": [
+    222.0,
+    40.0,
+    18.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 235.0
+  },
+  {
+   "file": "s2_02.png",
+   "frame_mean_rgb": [
+    54.2,
+    28.4,
+    18.8
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15407,
+   "skin_like_pixels_roi": 435,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_03.png",
+   "frame_mean_rgb": [
+    47.6,
+    25.0,
+    17.0
+   ],
+   "mat_rgb_median": [
+    18.0,
+    5.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.426,
+    1.533,
+    7666666.5
+   ],
+   "jaw_pixels_roi": 15353,
+   "skin_like_pixels_roi": 249,
+   "jaw_rgb_median": [
+    210.0,
+    35.0,
+    13.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 239.0
+  },
+  {
+   "file": "s2_04.png",
+   "frame_mean_rgb": [
+    49.5,
+    25.8,
+    17.2
+   ],
+   "mat_rgb_median": [
+    18.0,
+    5.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.426,
+    1.533,
+    7666666.5
+   ],
+   "jaw_pixels_roi": 15365,
+   "skin_like_pixels_roi": 248,
+   "jaw_rgb_median": [
+    214.0,
+    36.0,
+    14.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 239.0
+  },
+  {
+   "file": "s2_05.png",
+   "frame_mean_rgb": [
+    49.5,
+    25.8,
+    17.1
+   ],
+   "mat_rgb_median": [
+    18.0,
+    5.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.426,
+    1.533,
+    7666666.5
+   ],
+   "jaw_pixels_roi": 15386,
+   "skin_like_pixels_roi": 289,
+   "jaw_rgb_median": [
+    214.0,
+    36.0,
+    14.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 239.0
+  },
+  {
+   "file": "s2_06.png",
+   "frame_mean_rgb": [
+    54.1,
+    28.4,
+    18.8
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15394,
+   "skin_like_pixels_roi": 462,
+   "jaw_rgb_median": [
+    221.0,
+    40.0,
+    18.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 235.0
+  },
+  {
+   "file": "s2_07.png",
+   "frame_mean_rgb": [
+    54.0,
+    28.4,
+    18.7
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15385,
+   "skin_like_pixels_roi": 447,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    18.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 235.0
+  },
+  {
+   "file": "s2_08.png",
+   "frame_mean_rgb": [
+    54.1,
+    28.4,
+    18.8
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15407,
+   "skin_like_pixels_roi": 448,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 235.0
+  },
+  {
+   "file": "s2_09.png",
+   "frame_mean_rgb": [
+    53.9,
+    28.3,
+    18.7
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15385,
+   "skin_like_pixels_roi": 422,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_10.png",
+   "frame_mean_rgb": [
+    53.7,
+    28.2,
+    18.6
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15384,
+   "skin_like_pixels_roi": 471,
+   "jaw_rgb_median": [
+    221.0,
+    40.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_11.png",
+   "frame_mean_rgb": [
+    52.6,
+    27.6,
+    18.3
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15385,
+   "skin_like_pixels_roi": 445,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_12.png",
+   "frame_mean_rgb": [
+    57.4,
+    27.7,
+    17.8
+   ],
+   "mat_rgb_median": [
+    23.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.42,
+    1.611,
+    9666667.0
+   ],
+   "jaw_pixels_roi": 15435,
+   "skin_like_pixels_roi": 400,
+   "jaw_rgb_median": [
+    226.0,
+    38.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 237.0
+  },
+  {
+   "file": "s2_13.png",
+   "frame_mean_rgb": [
+    52.1,
+    27.3,
+    17.9
+   ],
+   "mat_rgb_median": [
+    19.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.439,
+    1.389,
+    8333333.0
+   ],
+   "jaw_pixels_roi": 15373,
+   "skin_like_pixels_roi": 443,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 237.0
+  },
+  {
+   "file": "s2_14.png",
+   "frame_mean_rgb": [
+    52.4,
+    27.6,
+    18.3
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15377,
+   "skin_like_pixels_roi": 444,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_15.png",
+   "frame_mean_rgb": [
+    52.4,
+    27.6,
+    18.2
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15387,
+   "skin_like_pixels_roi": 492,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 237.0
+  },
+  {
+   "file": "s2_16.png",
+   "frame_mean_rgb": [
+    52.7,
+    27.7,
+    18.3
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15383,
+   "skin_like_pixels_roi": 475,
+   "jaw_rgb_median": [
+    219.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_17.png",
+   "frame_mean_rgb": [
+    53.9,
+    28.3,
+    18.6
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15393,
+   "skin_like_pixels_roi": 468,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_18.png",
+   "frame_mean_rgb": [
+    53.8,
+    28.3,
+    18.5
+   ],
+   "mat_rgb_median": [
+    20.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.45,
+    1.286,
+    9000000.0
+   ],
+   "jaw_pixels_roi": 15401,
+   "skin_like_pixels_roi": 458,
+   "jaw_rgb_median": [
+    221.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 237.0
+  },
+  {
+   "file": "s2_19.png",
+   "frame_mean_rgb": [
+    54.5,
+    28.4,
+    18.6
+   ],
+   "mat_rgb_median": [
+    21.0,
+    7.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.444,
+    1.333,
+    9333333.0
+   ],
+   "jaw_pixels_roi": 15725,
+   "skin_like_pixels_roi": 453,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    17.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  },
+  {
+   "file": "s2_20.png",
+   "frame_mean_rgb": [
+    54.3,
+    28.3,
+    18.6
+   ],
+   "mat_rgb_median": [
+    20.0,
+    6.0,
+    0.0
+   ],
+   "mat_gains_to_neutral": [
+    0.433,
+    1.444,
+    8666667.0
+   ],
+   "jaw_pixels_roi": 15730,
+   "skin_like_pixels_roi": 467,
+   "jaw_rgb_median": [
+    220.0,
+    39.0,
+    16.0
+   ],
+   "jaw_hue_centred_median": 3.0,
+   "jaw_sat_median": 236.0
+  }
+ ]
+}

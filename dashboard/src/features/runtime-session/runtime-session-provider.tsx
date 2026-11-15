@@ -21,6 +21,7 @@ import {
     SchemaEnvironmentDraft,
     SchemaEnvironmentWithRelations,
     SchemaErrorMessage,
+    SchemaJogJointCommand,
     SchemaLoadDatasetCommand,
     SchemaLoadEnvironmentCommand,
     SchemaLoadModelCommand,
@@ -49,6 +50,7 @@ type Command =
     | Omit<SchemaUnloadEnvironmentCommand, 'request_id'>
     | Omit<SchemaReloadEnvironmentCommand, 'request_id'>
     | Omit<SchemaSetControlCommand, 'request_id'>
+    | Omit<SchemaJogJointCommand, 'request_id'>
     | Omit<SchemaLoadDatasetCommand, 'request_id'>
     | Omit<SchemaUnloadDatasetCommand, 'request_id'>
     | Omit<SchemaLoadModelCommand, 'request_id'>
@@ -209,7 +211,7 @@ export const RuntimeSessionProvider = ({
         [frames]
     );
 
-    const { sendJsonMessage } = useWebSocket(sessionSocketUrl(project_id), {
+    const { sendJsonMessage, readyState } = useWebSocket(sessionSocketUrl(project_id), {
         queryParams: { hz },
         // A new socket is a new session; the load effect below loads it again.
         shouldReconnect: () => !sessionClosed.current,
@@ -268,11 +270,20 @@ export const RuntimeSessionProvider = ({
     const send = useCallback(
         (command: Command) =>
             new Promise<SchemaAckMessage>((resolve) => {
+                if (readyState !== 1) {
+                    resolve({
+                        type: 'ack',
+                        request_id: '',
+                        ok: false,
+                        error: { message: 'Connection closed', error_code: 'connection_closed' },
+                    });
+                    return;
+                }
                 const request_id = uuidv4();
                 pending.set(request_id, resolve);
-                sendJsonMessage({ ...command, request_id });
+                sendJsonMessage({ ...command, request_id }, false);
             }),
-        [pending, sendJsonMessage]
+        [pending, sendJsonMessage, readyState]
     );
 
     // Reload whenever the environment changes, and on every new socket (a new session).

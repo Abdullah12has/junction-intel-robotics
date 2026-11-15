@@ -30,3 +30,27 @@ dist/
 coverage/
 *.log
 .DS_Store
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+MUJOCO_LOG.TXT
+# Keep training artifacts and private recordings outside source control.
+/checkpoints/
+/datasets/
+/runs/
+/campaign/
+*.safetensors
+*.onnx
+*.pt
+*.pth
+/submission/build/
+/submission/output/junction-intel-robotics.pptx
+
+/submission/node_modules
+/submission/output/prometheus-final.*
+
+# Preserve the original user video locally; publish the edited demo.
+/THIRD_PARTY_NOTICES.mp4
+/submission/output/prometheus-v2.*
+/submission/output/prometheus-v3.*

@@ -1,0 +1,112 @@
+{
+ "stage": "servo-arx-v2",
+ "utc": "2026-11-14T20:40:20Z",
+ "rate_hz_nominal": 30.0,
+ "model": "y[k]=a1*y[k-1]+a2*y[k-2]+b0*u[k-d]+b1*u[k-d-1]+c*g_j(q[k-1])+e, normalized units, frames",
+ "gravity": "MuJoCo mj_rne at zero velocity on work/P3-TWIN-DYN/E1/urdf/so101_nogeom.urdf, q = normalized * k",
+ "k_rad_per_norm_unit": {
+  "shoulder_pan": 0.017806194258808083,
+  "shoulder_lift": 0.017399590081420394,
+  "elbow_flex": 0.016908596357782427,
+  "wrist_flex": 0.018097721782218124,
+  "wrist_roll": 0.029344546764300268,
+  "gripper": 0.0234909809653039
+ },
+ "per_joint_fit_on_all_17": {
+  "shoulder_pan": {
+   "d": 2,
+   "a1": 1.3793925182238864,
+   "a2": -0.39310160969398744,
+   "b0": 0.5770052656301043,
+   "b1": -0.5632760068789264,
+   "c": 95.5794605540006,
+   "e": 0.00017522845934791424,
+   "train_one_step_rmse": 0.03800966910583504
+  },
+  "shoulder_lift": {
+   "d": 2,
+   "a1": 1.55040445040632,
+   "a2": -0.5558326025905189,
+   "b0": 0.40311677421148645,
+   "b1": -0.39786208556526304,
+   "c": -0.04661354609179951,
+   "e": -0.012415400483503144,
+   "train_one_step_rmse": 0.07001346401066483
+  },
+  "elbow_flex": {
+   "d": 2,
+   "a1": 1.612122581932689,
+   "a2": -0.6186608639971973,
+   "b0": 0.3353978947374884,
+   "b1": -0.32888250472819014,
+   "c": -0.011694782401263152,
+   "e": 0.007066862838460543,
+   "train_one_step_rmse": 0.09601537496349871
+  },
+  "wrist_flex": {
+   "d": 2,
+   "a1": 1.1089876163865504,
+   "a2": -0.12268392117162717,
+   "b0": 0.8357066200817452,
+   "b1": -0.8220083791905815,
+   "c": -0.024116659144203734,
+   "e": 0.002390291546661572,
+   "train_one_step_rmse": 0.04884726902930546
+  },
+  "wrist_roll": {
+   "d": 3,
+   "a1": 0.861040790596255,
+   "a2": 0.1268103204063931,
+   "b0": 1.1075817109084871,
+   "b1": -1.0954006191504648,
+   "c": -0.39282861203003344,
+   "e": 0.001483006678811376,
+   "train_one_step_rmse": 0.025503257625207144
+  },
+  "gripper": {
+   "d": 3,
+   "a1": 1.2045521122638827,
+   "a2": -0.20478098989870322,
+   "b0": 0.7566180855435083,
+   "b1": -0.7573879745844023,
+   "c": -0.9539254360771343,
+   "e": 0.026489878371627917,
+   "train_one_step_rmse": 0.011008782919381491
+  }
+ },
+ "run_function_source": "def run_servo_arx(cfg, goal, grav, y0):\n    \"\"\"Open-loop servo model. cfg: per-joint dicts with a1, a2, b0, b1, c, e, d (frames).\n    goal: (n, 6) normalized goal per frame. grav(q_norm) -> (6,) gravity torque, N m.\n    y0: (2, 6) first two normalized present frames. Returns (n, 6) predicted normalized present.\"\"\"\n    import numpy as np\n    n = goal.shape[0]\n    y = np.zeros((n, 6))\n    y[:2] = y0[:2]\n    for k in range(2, n):\n        g = grav(y[k - 1])\n        for j, p in enumerate(cfg):\n            d = p[\"d\"]\n            u0 = goal[max(k - d, 0), j]\n            u1 = goal[max(k - d - 1, 0), j]\n            y[k, j] = p[\"a1\"] * y[k - 1, j] + p[\"a2\"] * y[k - 2, j] + p[\"b0\"] * u0 + p[\"b1\"] * u1 + p[\"c\"] * g[j] + p[\"e\"]\n    return y\n",
+ "loeo_summary": {
+  "rmse_norm": [
+   0.30059550193319406,
+   1.1940022079061967,
+   1.3825446667933963,
+   0.33999871935576836,
+   0.17707514331349633,
+   6.921760806757016
+  ],
+  "lag_frames": [
+   0.09999999999998899,
+   0.750000000000008,
+   0.45000000000000906,
+   0.44999999999998774,
+   0.3000000000000096,
+   2.9999999999999787
+  ],
+  "g2_rmse_pass": [
+   true,
+   false,
+   false,
+   true,
+   true,
+   false
+  ],
+  "g2_lag_pass": [
+   true,
+   true,
+   true,
+   true,
+   true,
+   false
+  ]
+ }
+}

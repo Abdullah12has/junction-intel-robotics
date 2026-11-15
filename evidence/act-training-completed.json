@@ -1,0 +1,63 @@
+{
+  "job": {
+    "id": "ffb3171d-2149-408c-aacc-5e156cf88728",
+    "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+    "progress": 100,
+    "status": "completed",
+    "extra_info": {},
+    "message": "Training finished",
+    "start_time": "2026-11-14T11:35:42.745712Z",
+    "end_time": "2026-11-14T11:39:26.740335Z",
+    "created_at": "2026-11-14T11:35:40Z",
+    "issues": [],
+    "type": "training",
+    "payload": {
+      "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+      "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+      "policy": "act",
+      "model_name": "ACT inspection smoke - GPU repaired - 1 epoch",
+      "max_epochs": 1,
+      "max_steps": null,
+      "batch_size": 8,
+      "num_workers": 2,
+      "auto_scale_batch_size": false,
+      "base_model_id": null,
+      "val_split": 0.0,
+      "device": {
+        "type": "xpu",
+        "index": 0
+      },
+      "precision": "32-true",
+      "compile_model": false,
+      "image_key_reorder_map": {},
+      "num_cameras": 0,
+      "export_backends": [
+        "openvino"
+      ],
+      "augment_images": false,
+      "lora_enabled": false,
+      "lora_rank": 32,
+      "lora_alpha": null,
+      "lora_dropout": 0.05,
+      "lora_use_dora": false,
+      "snapflow_enabled": false,
+      "snapflow_distill_epochs": 3,
+      "remote_job_id": null,
+      "snapshot_id": "723b0bc8-238d-4045-b516-c8aa4987e2ae",
+      "training_target": "local"
+    }
+  },
+  "model_id": "fa42ee76-bcfb-43ba-ba21-124e678ee785",
+  "checkpoint_global_step": 545,
+  "checkpoint_epoch": 1,
+  "parameters_all_finite": true,
+  "torch": "2.15.0+xpu",
+  "artifacts": {
+    "model.ckpt": 619673919,
+    "version_0/hparams.yaml": 608,
+    "version_0/metrics.csv": 511,
+    "exports/openvino/act.bin": 136917544,
+    "exports/openvino/manifest.json": 1793,
+    "exports/openvino/act.xml": 1232993
+  }
+}

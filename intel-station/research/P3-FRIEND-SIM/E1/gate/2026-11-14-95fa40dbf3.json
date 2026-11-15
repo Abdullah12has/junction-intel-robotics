@@ -1,0 +1,353 @@
+{
+ "utc": "2026-11-14T19:32:21Z",
+ "root": "/home/intel/intel-junction-2026/data/sim/live/2026-11-14",
+ "errors": [],
+ "checks": {
+  "units": {
+   "sim_min_norm": [
+    -51.59,
+    -42.79,
+    -56.91,
+    33.15,
+    -93.51
+   ],
+   "sim_max_norm": [
+    49.22,
+    54.59,
+    62.38,
+    91.63,
+    86.88
+   ],
+   "real_min_norm": [
+    -58.38,
+    -99.29,
+    -96.46,
+    -37.86,
+    -88.65
+   ],
+   "real_max_norm": [
+    35.89,
+    73.02,
+    99.27,
+    99.07,
+    44.16
+   ],
+   "rest_like_frac_sim": 0.0,
+   "near_real_rest_frac_sim": 0.0,
+   "wrist_pinned_frac_sim": 0.2138
+  },
+  "gripper": {
+   "sim_open": 0.7001,
+   "sim_closed_on_brick": 0.1327,
+   "scale_used": 42.57,
+   "span_ratio_sim_over_real": 1.104,
+   "closed_offset_units": 3.49
+  },
+  "geometry": {
+   "sim_tcp_to_plate_cm_median": {
+    "blue": 0.39,
+    "green": 0.39
+   },
+   "plate_centre_base_m": {
+    "blue": [
+     0.1688,
+     -0.1438,
+     0.004
+    ],
+    "green": [
+     0.1988,
+     0.1962,
+     0.004
+    ]
+   },
+   "real_tcp_mean_base_m": {
+    "blue": [
+     0.1857,
+     -0.1099,
+     0.0119
+    ],
+    "green": [
+     0.2095,
+     0.2134,
+     0.0143
+    ]
+   },
+   "real_tcp_sd_m": {
+    "blue": [
+     0.0044,
+     0.0057,
+     0.008
+    ],
+    "green": [
+     0.0157,
+     0.0138,
+     0.0214
+    ]
+   },
+   "real_to_sim_plate_cm": {
+    "blue": 3.79,
+    "green": 2.03
+   }
+  },
+  "release": {
+   "pan_residual_deg": {
+    "blue": 16.51,
+    "green": 1.71
+   },
+   "real_pan_sd_units": {
+    "blue": 0.82,
+    "green": 1.39
+   },
+   "sim_pan_norm_median": {
+    "blue": 48.37,
+    "green": -50.89
+   }
+  },
+  "cameras": {
+   "sim_overhead": {
+    "frames": 63,
+    "mean_luma": 51.84,
+    "p2": 5.0,
+    "p98": 189.5,
+    "green": {
+     "frames_with_plate": 30,
+     "x_px": 572.4,
+     "y_px": 177.5,
+     "mask_px_median": 19055.0
+    }
+   },
+   "sim_close": {
+    "frames": 63,
+    "mean_luma": 38.34,
+    "p2": 4.0,
+    "p98": 163.0,
+    "green": {
+     "frames_with_plate": 30,
+     "x_px": 555.1,
+     "y_px": 137.5,
+     "mask_px_median": 27783.0
+    }
+   },
+   "real_top": {
+    "frames": 30,
+    "mean_luma": 90.24,
+    "p2": 18.1,
+    "p98": 223.9,
+    "green": {
+     "frames_with_plate": 30,
+     "x_px": 578.6,
+     "y_px": 181.1,
+     "mask_px_median": 18420.5
+    }
+   },
+   "real_close": {
+    "frames": 30,
+    "mean_luma": 78.86,
+    "p2": 22.8,
+    "p98": 252.0,
+    "green": {
+     "frames_with_plate": 30,
+     "x_px": 564.0,
+     "y_px": 56.7,
+     "mask_px_median": 14584.0
+    }
+   }
+  },
+  "top_green_offset_px": 7.2,
+  "close_green_offset_px": 81.3
+ },
+ "version": "2026-11-14-95fa40dbf3",
+ "provenance": {
+  "manifest": "/home/intel/intel-junction-2026/data/sim/live/2026-11-14/SHA256.json",
+  "entries": 762,
+  "ok": 762,
+  "mismatch": 0,
+  "missing": 0,
+  "mismatch_examples": [],
+  "verified": true,
+  "note": "the manifest comes from the same source as the data: a match proves only consistency"
+ },
+ "source": {
+  "self_hash_ok": {
+   "expert.py": true,
+   "sorting_env.py": true,
+   "station_scene.py": true,
+   "so101_env.py": true,
+   "collect.py": true,
+   "setup_assets.py": true,
+   "uv.lock": true
+  },
+  "changed_vs_2026-11-14": [],
+  "tape_or_defect_word_in_source": false,
+  "plate_centres_world": {
+   "blue": [
+    -0.105,
+    -0.13
+   ],
+   "green": [
+    0.235,
+    -0.16
+   ]
+  },
+  "station_base_T_world": [
+   [
+    -0.0,
+    1.0,
+    0.0,
+    0.038835
+   ],
+   [
+    -1.0,
+    -0.0,
+    -0.0,
+    0.038835
+   ],
+   [
+    -0.0,
+    0.0,
+    1.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  ],
+  "block_types": [
+   "2x2",
+   "2x4"
+  ]
+ },
+ "reference": {
+  "mjcf_base_pos_quat": [
+   [
+    0.0,
+    0.0,
+    0.0
+   ],
+   [
+    1.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  ],
+  "wrist_flex_limit_rad": 1.658063,
+  "elbow_limit_rad": 1.69,
+  "gripper_range_rad": [
+   -0.174533,
+   1.7453292
+  ],
+  "K_mid_per_rad": [
+   56.16,
+   57.473,
+   59.142,
+   55.256,
+   34.078
+  ]
+ },
+ "real": {
+  "rest_ref_norm": [
+   -5.13,
+   -98.5,
+   96.82,
+   61.0,
+   -47.92
+  ],
+  "release_pan_norm_median": {
+   "blue": 32.18,
+   "green": -52.56
+  },
+  "release_pan_sd": {
+   "blue": 0.82,
+   "green": 1.39
+  },
+  "gripper_open_units": 24.04,
+  "gripper_closed_units": 2.16
+ },
+ "units_field": "absolute_joint_radians",
+ "inventory": {
+  "episodes": 150,
+  "accepted": 150,
+  "success": 150,
+  "grasp_verified": 150,
+  "task_text_matches": 150,
+  "brick_type_counts": {
+   "2x2": 82,
+   "2x4": 68
+  },
+  "destination_counts": {
+   "blue": 75,
+   "green": 75
+  },
+  "od10_contradictions": 73,
+  "final_xy_err_m_max": 0.0147,
+  "release_detected": 150,
+  "release_plate_match": 1.0
+ },
+ "results": {
+  "provenance_ok": true,
+  "units_ok": false,
+  "units_note": "pan residual deg {'blue': 16.51, 'green': 1.71} (tol 3.0)",
+  "gripper_ok": false,
+  "rest_ok": false,
+  "wrist_ok": false,
+  "brightness_ok": false,
+  "top_camera_ok": true,
+  "close_camera_ok": false,
+  "release_ok": true,
+  "episodes_ok": true,
+  "geometry_plates_ok": false,
+  "fk_cross_check_ok": true,
+  "od10_clean": false,
+  "tape_class_in_sim": false
+ },
+ "decisions": {
+  "a_smolvla_cotraining": {
+   "decision": "NO-GO",
+   "failed": [
+    "units_ok",
+    "gripper_ok",
+    "rest_ok",
+    "wrist_ok",
+    "brightness_ok",
+    "close_camera_ok",
+    "geometry_plates_ok"
+   ]
+  },
+  "b_act_pretrain_augment": {
+   "decision": "NO-GO",
+   "failed": [
+    "units_ok",
+    "gripper_ok",
+    "rest_ok",
+    "wrist_ok",
+    "brightness_ok",
+    "close_camera_ok",
+    "geometry_plates_ok"
+   ]
+  },
+  "c_geometry_fk_crosscheck": {
+   "decision": "GO",
+   "failed": []
+  },
+  "d_detector_synthetic": {
+   "decision": "NO-GO",
+   "failed": [
+    "brightness_ok",
+    "close_camera_ok",
+    "no tape/defect class in sim"
+   ]
+  },
+  "e_none": {
+   "decision": "GO",
+   "failed": [],
+   "note": "default: keep sim out of training"
+  }
+ },
+ "converter": {
+  "ran": false
+ }
+}

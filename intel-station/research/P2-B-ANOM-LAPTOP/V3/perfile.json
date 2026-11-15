@@ -1,0 +1,526 @@
+{
+  "padim-static-b1": {
+    "n_files": 20,
+    "max_d_gpu": 0.030252,
+    "max_d_npu": 0.147461,
+    "top3_npu": [
+      {
+        "file": "defect_006.png",
+        "gt": 1,
+        "cpu": 1.0,
+        "gpu": 1.0,
+        "npu": 0.852539,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.0,
+        "d_npu": 0.147461
+      },
+      {
+        "file": "defect_000.png",
+        "gt": 1,
+        "cpu": 0.077925,
+        "gpu": 0.064209,
+        "npu": 0.075195,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.013716,
+        "d_npu": 0.002729
+      },
+      {
+        "file": "good_001.png",
+        "gt": 0,
+        "cpu": 0.282694,
+        "gpu": 0.261475,
+        "npu": 0.280518,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.02122,
+        "d_npu": 0.002177
+      }
+    ],
+    "rows": [
+      {
+        "file": "defect_000.png",
+        "gt": 1,
+        "cpu": 0.077925,
+        "gpu": 0.064209,
+        "npu": 0.075195,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.013716,
+        "d_npu": 0.002729
+      },
+      {
+        "file": "defect_001.png",
+        "gt": 1,
+        "cpu": 0.629464,
+        "gpu": 0.604492,
+        "npu": 0.629395,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.024972,
+        "d_npu": 7e-05
+      },
+      {
+        "file": "defect_002.png",
+        "gt": 1,
+        "cpu": 0.339392,
+        "gpu": 0.315674,
+        "npu": 0.339111,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.023718,
+        "d_npu": 0.000281
+      },
+      {
+        "file": "defect_003.png",
+        "gt": 1,
+        "cpu": 0.500231,
+        "gpu": 0.478516,
+        "npu": 0.499023,
+        "cpu_label": "defective",
+        "npu_label": "good",
+        "d_gpu": 0.021715,
+        "d_npu": 0.001207
+      },
+      {
+        "file": "defect_004.png",
+        "gt": 1,
+        "cpu": 1.0,
+        "gpu": 1.0,
+        "npu": 1.0,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.0,
+        "d_npu": 0.0
+      },
+      {
+        "file": "defect_005.png",
+        "gt": 1,
+        "cpu": 0.566538,
+        "gpu": 0.554688,
+        "npu": 0.564941,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.01185,
+        "d_npu": 0.001596
+      },
+      {
+        "file": "defect_006.png",
+        "gt": 1,
+        "cpu": 1.0,
+        "gpu": 1.0,
+        "npu": 0.852539,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.0,
+        "d_npu": 0.147461
+      },
+      {
+        "file": "defect_007.png",
+        "gt": 1,
+        "cpu": 0.87034,
+        "gpu": 0.848145,
+        "npu": 0.868652,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.022196,
+        "d_npu": 0.001688
+      },
+      {
+        "file": "defect_008.png",
+        "gt": 1,
+        "cpu": 0.646085,
+        "gpu": 0.62207,
+        "npu": 0.644531,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.024014,
+        "d_npu": 0.001554
+      },
+      {
+        "file": "defect_009.png",
+        "gt": 1,
+        "cpu": 0.669515,
+        "gpu": 0.641602,
+        "npu": 0.667969,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.027914,
+        "d_npu": 0.001546
+      },
+      {
+        "file": "good_000.png",
+        "gt": 0,
+        "cpu": 0.518138,
+        "gpu": 0.496094,
+        "npu": 0.516602,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.022045,
+        "d_npu": 0.001537
+      },
+      {
+        "file": "good_001.png",
+        "gt": 0,
+        "cpu": 0.282694,
+        "gpu": 0.261475,
+        "npu": 0.280518,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.02122,
+        "d_npu": 0.002177
+      },
+      {
+        "file": "good_002.png",
+        "gt": 0,
+        "cpu": 0.356829,
+        "gpu": 0.333252,
+        "npu": 0.356934,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.023577,
+        "d_npu": 0.000104
+      },
+      {
+        "file": "good_003.png",
+        "gt": 0,
+        "cpu": 0.248677,
+        "gpu": 0.233643,
+        "npu": 0.248291,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.015034,
+        "d_npu": 0.000386
+      },
+      {
+        "file": "good_004.png",
+        "gt": 0,
+        "cpu": 0.207263,
+        "gpu": 0.19397,
+        "npu": 0.207153,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.013294,
+        "d_npu": 0.00011
+      },
+      {
+        "file": "good_005.png",
+        "gt": 0,
+        "cpu": 0.336282,
+        "gpu": 0.317139,
+        "npu": 0.336182,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.019144,
+        "d_npu": 0.000101
+      },
+      {
+        "file": "good_006.png",
+        "gt": 0,
+        "cpu": 0.161207,
+        "gpu": 0.1427,
+        "npu": 0.161743,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.018506,
+        "d_npu": 0.000537
+      },
+      {
+        "file": "good_007.png",
+        "gt": 0,
+        "cpu": 0.339951,
+        "gpu": 0.311279,
+        "npu": 0.339111,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.028672,
+        "d_npu": 0.000839
+      },
+      {
+        "file": "good_008.png",
+        "gt": 0,
+        "cpu": 0.341532,
+        "gpu": 0.311279,
+        "npu": 0.340576,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.030252,
+        "d_npu": 0.000956
+      },
+      {
+        "file": "good_009.png",
+        "gt": 0,
+        "cpu": 0.305567,
+        "gpu": 0.281982,
+        "npu": 0.303955,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.023585,
+        "d_npu": 0.001612
+      }
+    ]
+  },
+  "patchcore-b2": {
+    "n_files": 20,
+    "max_d_gpu": 0.007847,
+    "max_d_npu": 0.003979,
+    "top3_npu": [
+      {
+        "file": "good_009.png",
+        "gt": 0,
+        "cpu": 0.023708,
+        "gpu": 0.02327,
+        "npu": 0.01973,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.000439,
+        "d_npu": 0.003979
+      },
+      {
+        "file": "good_005.png",
+        "gt": 0,
+        "cpu": 0.265501,
+        "gpu": 0.266357,
+        "npu": 0.261963,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.000856,
+        "d_npu": 0.003538
+      },
+      {
+        "file": "defect_008.png",
+        "gt": 1,
+        "cpu": 0.708597,
+        "gpu": 0.711914,
+        "npu": 0.711914,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.003317,
+        "d_npu": 0.003317
+      }
+    ],
+    "rows": [
+      {
+        "file": "defect_000.png",
+        "gt": 1,
+        "cpu": 0.759319,
+        "gpu": 0.757324,
+        "npu": 0.758301,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.001995,
+        "d_npu": 0.001018
+      },
+      {
+        "file": "defect_001.png",
+        "gt": 1,
+        "cpu": 0.521076,
+        "gpu": 0.520508,
+        "npu": 0.520508,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.000568,
+        "d_npu": 0.000568
+      },
+      {
+        "file": "defect_002.png",
+        "gt": 1,
+        "cpu": 0.592654,
+        "gpu": 0.594238,
+        "npu": 0.592773,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.001584,
+        "d_npu": 0.000119
+      },
+      {
+        "file": "defect_003.png",
+        "gt": 1,
+        "cpu": 0.500202,
+        "gpu": 0.500488,
+        "npu": 0.501465,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.000286,
+        "d_npu": 0.001263
+      },
+      {
+        "file": "defect_004.png",
+        "gt": 1,
+        "cpu": 0.958861,
+        "gpu": 0.957031,
+        "npu": 0.958496,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.001829,
+        "d_npu": 0.000364
+      },
+      {
+        "file": "defect_005.png",
+        "gt": 1,
+        "cpu": 0.866371,
+        "gpu": 0.864746,
+        "npu": 0.864746,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.001625,
+        "d_npu": 0.001625
+      },
+      {
+        "file": "defect_006.png",
+        "gt": 1,
+        "cpu": 0.72341,
+        "gpu": 0.72168,
+        "npu": 0.723633,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.00173,
+        "d_npu": 0.000223
+      },
+      {
+        "file": "defect_007.png",
+        "gt": 1,
+        "cpu": 0.834486,
+        "gpu": 0.834961,
+        "npu": 0.836914,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.000475,
+        "d_npu": 0.002428
+      },
+      {
+        "file": "defect_008.png",
+        "gt": 1,
+        "cpu": 0.708597,
+        "gpu": 0.711914,
+        "npu": 0.711914,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.003317,
+        "d_npu": 0.003317
+      },
+      {
+        "file": "defect_009.png",
+        "gt": 1,
+        "cpu": 0.891636,
+        "gpu": 0.883789,
+        "npu": 0.888672,
+        "cpu_label": "defective",
+        "npu_label": "defective",
+        "d_gpu": 0.007847,
+        "d_npu": 0.002964
+      },
+      {
+        "file": "good_000.png",
+        "gt": 0,
+        "cpu": 0.0,
+        "gpu": 0.0,
+        "npu": 0.0,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.0,
+        "d_npu": 0.0
+      },
+      {
+        "file": "good_001.png",
+        "gt": 0,
+        "cpu": 0.0,
+        "gpu": 0.0,
+        "npu": 0.0,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.0,
+        "d_npu": 0.0
+      },
+      {
+        "file": "good_002.png",
+        "gt": 0,
+        "cpu": 0.348915,
+        "gpu": 0.350342,
+        "npu": 0.348633,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.001427,
+        "d_npu": 0.000282
+      },
+      {
+        "file": "good_003.png",
+        "gt": 0,
+        "cpu": 0.236021,
+        "gpu": 0.237305,
+        "npu": 0.239258,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.001284,
+        "d_npu": 0.003237
+      },
+      {
+        "file": "good_004.png",
+        "gt": 0,
+        "cpu": 0.078402,
+        "gpu": 0.077026,
+        "npu": 0.077087,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.001376,
+        "d_npu": 0.001314
+      },
+      {
+        "file": "good_005.png",
+        "gt": 0,
+        "cpu": 0.265501,
+        "gpu": 0.266357,
+        "npu": 0.261963,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.000856,
+        "d_npu": 0.003538
+      },
+      {
+        "file": "good_006.png",
+        "gt": 0,
+        "cpu": 0.107942,
+        "gpu": 0.110718,
+        "npu": 0.109924,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.002776,
+        "d_npu": 0.001982
+      },
+      {
+        "file": "good_007.png",
+        "gt": 0,
+        "cpu": 0.249472,
+        "gpu": 0.248291,
+        "npu": 0.248291,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.001181,
+        "d_npu": 0.001181
+      },
+      {
+        "file": "good_008.png",
+        "gt": 0,
+        "cpu": 0.307691,
+        "gpu": 0.307373,
+        "npu": 0.306641,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.000318,
+        "d_npu": 0.00105
+      },
+      {
+        "file": "good_009.png",
+        "gt": 0,
+        "cpu": 0.023708,
+        "gpu": 0.02327,
+        "npu": 0.01973,
+        "cpu_label": "good",
+        "npu_label": "good",
+        "d_gpu": 0.000439,
+        "d_npu": 0.003979
+      }
+    ]
+  }
+}

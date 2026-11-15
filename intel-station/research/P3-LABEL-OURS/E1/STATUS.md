@@ -1,0 +1,3 @@
+DONE 2026-11-14T20:13Z labels-v1 E1: all deliverables written to the sandbox and laptop E1 folders; 12 of 12 generated or copied files are checksum-identical across both sides, and labels_images.jsonl regenerated on the laptop is identical.
+Deviations: label_report.txt instead of .md (agent rule); scope_index.tsv has 4 fields with a '#' header; estop_verified.tsv has 7 fields; contact sheets are on the laptop only (20 real, plus 2 PLACEHOLDER sheets for the stub episodes with no images).
+Open: hand_labels.csv (a test fixture) was changed by another reviewer after my earlier read; 9 disagreements remain (7 label, 2 holding); E1 changed no fixture file. See disagreements.tsv and laptop-log.md.

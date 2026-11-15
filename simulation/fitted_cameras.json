@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-14",
+  "method": "fit_cameras_depth.py: sim depth rendered at the recorded arm pose is matched to real D415 depth. The table fixes height and tilt; the whole-arm outline (everything standing above the real table plane near the arm) fixes position along the table. Field of view 43.3 deg from the cameras' own intrinsics.",
+  "frame": "MuJoCo world frame of sorting_env; apply as camera pos/quat (not yet applied to station_scene.py)",
+  "overhead": {
+    "pos": [
+      0.0633,
+      -0.4578,
+      0.5968
+    ],
+    "quat_wxyz": [
+      0.98575,
+      0.15617,
+      0.02105,
+      0.05892
+    ],
+    "fovy_deg": 43.3,
+    "median_abs_depth_error_mm": 3.7,
+    "arm_outline_mismatch_px_at_320_wide": 1.5,
+    "note": "Six depth captures 2026-11-14 20:32-20:38 (rest plus five poses 13 cm above the table). Bowl centres land within about 20 px (of 640). Real camera 243622061421."
+  },
+  "wrist": {
+    "pos": [
+      0.0266,
+      -0.4132,
+      0.158
+    ],
+    "quat_wxyz": [
+      0.91338,
+      0.38953,
+      -0.06518,
+      -0.09879
+    ],
+    "fovy_deg": 43.3,
+    "median_abs_depth_error_mm": 8.0,
+    "note": "Sim name \"wrist\" is the FIXED close camera 243722064316. One depth capture (arm at rest); at the raised poses the arm is outside its depth range, so its position along the table is less certain than the overhead. Refit if the stand is bumped."
+  },
+  "known_inconsistency": "Bowl centres from three sources (teleop releases, the laptop agent's releases, current overhead image) agree within about 2 cm; the scene uses their mean."
+}

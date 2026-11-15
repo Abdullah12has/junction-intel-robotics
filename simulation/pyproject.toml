@@ -1,0 +1,16 @@
+[project]
+name = "junction-so101-simulation"
+version = "0.1.0"
+description = "Isolated SO-101 MuJoCo task and real-data preparation"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "av>=15,<18",
+  "mujoco==4.0.1",
+  "numpy>=2.0,<3",
+  "pillow>=11,<13",
+  "pyarrow>=19,<24",
+  "scipy>=1.14,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]

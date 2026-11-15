@@ -1,0 +1,12 @@
+{
+  "dimension_source": "https://www.bartneck.de/wp-content/uploads/2019/04/lego-2x4-brick-dimensions-measurements-3001.pdf",
+  "dimension_basis": "Nominal full-height LEGO System geometry; 2x2 length derived from 8 mm stud pitch and 0.2 mm overall clearance. Not measurements of station pieces.",
+  "stud_pitch_m": 0.008,
+  "stud_radius_m": 0.0024,
+  "stud_height_m": 0.0018,
+  "variants": {
+    "2x2": {"body_size_m": [0.0158, 0.0158, 0.0096], "stud_grid": [2, 2], "approximate_mass_kg": 0.0012},
+    "2x4": {"body_size_m": [0.0318, 0.0158, 0.0096], "stud_grid": [4, 2], "approximate_mass_kg": 0.0024}
+  },
+  "limitations": "Masses are provisional simulation estimates, not measured or established by the dimension drawing. Solid-body collision approximation with studs; underside cavity, tubes and LEGO clutch engagement are not modeled."
+}

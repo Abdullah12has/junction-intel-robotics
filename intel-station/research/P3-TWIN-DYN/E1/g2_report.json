@@ -1,0 +1,621 @@
+{
+ "stage": "twin-dyn-v1",
+ "utc": "2026-11-14T20:35:20Z",
+ "gate": "G2",
+ "verdict": "G2 NOT MET for the arm (RMSE above 0.5 on: shoulder_lift, elbow_flex); lag gate fails on: shoulder_pan, shoulder_lift, elbow_flex, wrist_flex; gripper: free-motion rows only, brick contact not modelled (PARTIAL)",
+ "gate_definition": "per-joint leave-one-episode-out RMSE (normalized units, pooled over held-out rows) <= 0.5 and held-out lag error <= 1 frame (33.3 ms); lag = best shift of the simulated present against the logged present, pooled over held-out rows",
+ "per_joint": {
+  "shoulder_pan": {
+   "loeo_rmse_norm": 0.2716,
+   "loeo_rmse_pass_0p5": true,
+   "loeo_lag_frames": 1.05,
+   "loeo_lag_pass_1frame": false,
+   "insample_rmse_norm_full_fit": 0.2705,
+   "reference_no_dynamics_loeo_rmse_norm": 0.3221,
+   "reference_no_dynamics_loeo_lag_frames": 0.0,
+   "loeo_rows_scored": 21693
+  },
+  "shoulder_lift": {
+   "loeo_rmse_norm": 0.8435,
+   "loeo_rmse_pass_0p5": false,
+   "loeo_lag_frames": 1.35,
+   "loeo_lag_pass_1frame": false,
+   "insample_rmse_norm_full_fit": 0.8188,
+   "reference_no_dynamics_loeo_rmse_norm": 1.8624,
+   "reference_no_dynamics_loeo_lag_frames": 0.45,
+   "loeo_rows_scored": 21693
+  },
+  "elbow_flex": {
+   "loeo_rmse_norm": 0.8373,
+   "loeo_rmse_pass_0p5": false,
+   "loeo_lag_frames": 1.35,
+   "loeo_lag_pass_1frame": false,
+   "insample_rmse_norm_full_fit": 0.8264,
+   "reference_no_dynamics_loeo_rmse_norm": 2.2405,
+   "reference_no_dynamics_loeo_lag_frames": 0.6,
+   "loeo_rows_scored": 21693
+  },
+  "wrist_flex": {
+   "loeo_rmse_norm": 0.326,
+   "loeo_rmse_pass_0p5": true,
+   "loeo_lag_frames": 1.35,
+   "loeo_lag_pass_1frame": false,
+   "insample_rmse_norm_full_fit": 0.3232,
+   "reference_no_dynamics_loeo_rmse_norm": 0.4442,
+   "reference_no_dynamics_loeo_lag_frames": 0.0,
+   "loeo_rows_scored": 21693
+  },
+  "wrist_roll": {
+   "loeo_rmse_norm": 0.1841,
+   "loeo_rmse_pass_0p5": true,
+   "loeo_lag_frames": 0.6,
+   "loeo_lag_pass_1frame": true,
+   "insample_rmse_norm_full_fit": 0.1792,
+   "reference_no_dynamics_loeo_rmse_norm": 0.1816,
+   "reference_no_dynamics_loeo_lag_frames": 0.0,
+   "loeo_rows_scored": 21693
+  },
+  "gripper": {
+   "loeo_rmse_norm": 0.2433,
+   "loeo_rmse_pass_0p5": true,
+   "loeo_lag_frames": 0.3,
+   "loeo_lag_pass_1frame": true,
+   "insample_rmse_norm_full_fit": 0.2421,
+   "reference_no_dynamics_loeo_rmse_norm": 0.3639,
+   "reference_no_dynamics_loeo_lag_frames": 0.3,
+   "loeo_rows_scored": 16448
+  }
+ },
+ "gripper_readings": {
+  "contact_rows_masked": 5245,
+  "total_rows": 21693,
+  "contact_rows_fraction": 0.2418,
+  "closed_readings_0p5_to_0p7_with_goal_le_1_by_episode": {
+   "any_1740/ep_0006": 171,
+   "any_1740/ep_0013": 161
+  },
+  "holding_readings_1p4_to_2p5_with_goal_le_1_rows": 4798
+ },
+ "per_episode_loeo": [
+  {
+   "fold": 0,
+   "episode": "any_1731/ep_0001",
+   "rows": 1092,
+   "rmse_norm": [
+    0.1733,
+    0.7926,
+    0.6668,
+    0.2832,
+    0.1481,
+    0.2401
+   ],
+   "lag_s_best_per_joint": [
+    -0.035,
+    0.04,
+    -0.045,
+    -0.045,
+    0.13,
+    0.01
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 1,
+   "episode": "any_1731/ep_0002",
+   "rows": 1811,
+   "rmse_norm": [
+    0.2293,
+    0.834,
+    0.9124,
+    0.2657,
+    0.1989,
+    0.2502
+   ],
+   "lag_s_best_per_joint": [
+    -0.045,
+    -0.005,
+    -0.045,
+    -0.05,
+    0.005,
+    0.01
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 2,
+   "episode": "any_1740/ep_0001",
+   "rows": 3288,
+   "rmse_norm": [
+    0.2766,
+    1.0035,
+    0.8135,
+    0.3152,
+    0.1724,
+    0.2035
+   ],
+   "lag_s_best_per_joint": [
+    -0.04,
+    -0.085,
+    -0.055,
+    -0.045,
+    0.005,
+    -0.025
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 3,
+   "episode": "any_1740/ep_0002",
+   "rows": 23,
+   "rmse_norm": [
+    0.0252,
+    0.2015,
+    0.2081,
+    0.041,
+    0.2567,
+    0.0603
+   ],
+   "lag_s_best_per_joint": [
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.125,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 4,
+   "episode": "any_1740/ep_0003",
+   "rows": 23,
+   "rmse_norm": [
+    0.0251,
+    0.1993,
+    0.2055,
+    0.0402,
+    0.2567,
+    0.099
+   ],
+   "lag_s_best_per_joint": [
+    0.15,
+    0.15,
+    0.15,
+    0.15,
+    0.125,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 5,
+   "episode": "any_1740/ep_0004",
+   "rows": 1284,
+   "rmse_norm": [
+    0.1524,
+    0.5697,
+    0.627,
+    0.2896,
+    0.2221,
+    0.2536
+   ],
+   "lag_s_best_per_joint": [
+    -0.05,
+    -0.085,
+    -0.05,
+    -0.04,
+    -0.005,
+    -0.01
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 6,
+   "episode": "any_1740/ep_0006",
+   "rows": 1840,
+   "rmse_norm": [
+    0.2836,
+    1.0659,
+    1.2975,
+    0.4227,
+    0.213,
+    0.2535
+   ],
+   "lag_s_best_per_joint": [
+    -0.035,
+    -0.015,
+    -0.04,
+    -0.045,
+    -0.025,
+    -0.015
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 7,
+   "episode": "any_1740/ep_0007",
+   "rows": 1613,
+   "rmse_norm": [
+    0.2368,
+    0.9246,
+    0.8079,
+    0.308,
+    0.1895,
+    0.2006
+   ],
+   "lag_s_best_per_joint": [
+    -0.045,
+    -0.065,
+    -0.04,
+    -0.045,
+    -0.025,
+    0.03
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 8,
+   "episode": "any_1740/ep_0009",
+   "rows": 439,
+   "rmse_norm": [
+    0.1101,
+    0.4343,
+    0.7648,
+    0.3617,
+    0.1721,
+    0.2198
+   ],
+   "lag_s_best_per_joint": [
+    0.15,
+    0.005,
+    -0.045,
+    -0.055,
+    0.145,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 9,
+   "episode": "any_1740/ep_0010",
+   "rows": 508,
+   "rmse_norm": [
+    0.3817,
+    0.5455,
+    0.584,
+    0.3282,
+    0.1641,
+    0.2261
+   ],
+   "lag_s_best_per_joint": [
+    -0.025,
+    0.0,
+    -0.045,
+    -0.05,
+    0.15,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 10,
+   "episode": "any_1740/ep_0011",
+   "rows": 1059,
+   "rmse_norm": [
+    0.2847,
+    0.8036,
+    0.5614,
+    0.2635,
+    0.1792,
+    0.2372
+   ],
+   "lag_s_best_per_joint": [
+    -0.035,
+    0.04,
+    -0.05,
+    -0.04,
+    -0.025,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 11,
+   "episode": "any_1740/ep_0012",
+   "rows": 359,
+   "rmse_norm": [
+    0.3596,
+    0.4977,
+    0.5507,
+    0.3659,
+    0.1462,
+    0.2173
+   ],
+   "lag_s_best_per_joint": [
+    -0.03,
+    0.015,
+    -0.055,
+    -0.035,
+    -0.15,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 12,
+   "episode": "any_1740/ep_0013",
+   "rows": 1604,
+   "rmse_norm": [
+    0.2972,
+    1.2398,
+    0.8626,
+    0.2992,
+    0.1805,
+    0.2618
+   ],
+   "lag_s_best_per_joint": [
+    -0.03,
+    0.02,
+    -0.04,
+    -0.045,
+    -0.02,
+    -0.02
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 13,
+   "episode": "any_1740/ep_0014",
+   "rows": 1392,
+   "rmse_norm": [
+    0.2936,
+    0.5792,
+    0.71,
+    0.2981,
+    0.172,
+    0.2539
+   ],
+   "lag_s_best_per_joint": [
+    -0.025,
+    -0.03,
+    -0.045,
+    -0.045,
+    0.0,
+    0.01
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 14,
+   "episode": "any_1740/ep_0015",
+   "rows": 1867,
+   "rmse_norm": [
+    0.3674,
+    0.7291,
+    0.9137,
+    0.348,
+    0.1582,
+    0.2655
+   ],
+   "lag_s_best_per_joint": [
+    -0.035,
+    -0.055,
+    -0.035,
+    -0.045,
+    0.0,
+    -0.02
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 15,
+   "episode": "any_1740/ep_0016",
+   "rows": 1459,
+   "rmse_norm": [
+    0.2001,
+    0.5082,
+    0.7129,
+    0.2938,
+    0.2022,
+    0.2414
+   ],
+   "lag_s_best_per_joint": [
+    -0.045,
+    -0.07,
+    -0.04,
+    -0.04,
+    -0.02,
+    0.15
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  },
+  {
+   "fold": 16,
+   "episode": "any_1740/ep_0017",
+   "rows": 2032,
+   "rmse_norm": [
+    0.2886,
+    0.6945,
+    0.8046,
+    0.3976,
+    0.1806,
+    0.2891
+   ],
+   "lag_s_best_per_joint": [
+    -0.035,
+    -0.04,
+    -0.045,
+    -0.045,
+    -0.02,
+    -0.01
+   ],
+   "nfev": 20,
+   "njev": 20,
+   "status": 0
+  }
+ ],
+ "episodes_scored": 17,
+ "folds_present": 17,
+ "full_fit": {
+  "nfev": 20,
+  "njev": 20,
+  "status": 0,
+  "status_meaning": "0 = max_nfev reached (not converged)",
+  "cost": 17436.496104738155,
+  "bound_hits": [
+   "shoulder_lift.armature at upper bound",
+   "elbow_flex.armature at upper bound",
+   "wrist_roll.kv at lower bound",
+   "gripper.kp at lower bound"
+  ],
+  "parameters": {
+   "shoulder_pan": {
+    "kp": 5.978280985978251,
+    "kv": 0.01993864710577554,
+    "frictionloss": 0.04147926602974345,
+    "armature": 0.0024498708502974035,
+    "forcerange": 10.0,
+    "delay": 0.10489003678021748
+   },
+   "shoulder_lift": {
+    "kp": 15.739188677213171,
+    "kv": 0.35436317413925184,
+    "frictionloss": 0.4159402979738728,
+    "armature": 0.019999999999999993,
+    "forcerange": 10.0,
+    "delay": 0.07173826950408313
+   },
+   "elbow_flex": {
+    "kp": 9.616420000144497,
+    "kv": 0.1553012846089557,
+    "frictionloss": 0.31912092223519684,
+    "armature": 0.019999999999999993,
+    "forcerange": 10.0,
+    "delay": 0.07728735474847431
+   },
+   "wrist_flex": {
+    "kp": 6.78562217456317,
+    "kv": 0.02189506708103533,
+    "frictionloss": 0.050943248912447364,
+    "armature": 0.018668658779682042,
+    "forcerange": 10.0,
+    "delay": 0.10739092890025899
+   },
+   "wrist_roll": {
+    "kp": 0.9338663112511424,
+    "kv": 0.0010000000000000117,
+    "frictionloss": 0.0006151229734782935,
+    "armature": 1.0083690071729927e-05,
+    "forcerange": 10.0,
+    "delay": 0.11474578698858422
+   },
+   "gripper": {
+    "kp": 0.5000000000000001,
+    "kv": 0.0015427891185664654,
+    "frictionloss": 0.0025817139905058087,
+    "armature": 0.0008116505509103807,
+    "forcerange": 10.0,
+    "delay": 0.1118429390725642
+   }
+  }
+ },
+ "reference_no_dynamics": {
+  "description": "present = logged goal delayed by a per-joint lag fitted on the 16 training episodes; no sag, friction or speed model",
+  "loeo_rmse_norm": [
+   0.3221277091556303,
+   1.8624172364098155,
+   2.2404671197688066,
+   0.4442323984395477,
+   0.18162388475572386,
+   0.3639063187856723
+  ],
+  "loeo_lag_frames": [
+   4.163336342344337e-15,
+   0.44999999999999624,
+   0.6000000000000048,
+   4.163336342344337e-15,
+   4.163336342344337e-15,
+   0.30000000000000443
+  ],
+  "g2_pass": false
+ },
+ "data": {
+  "files_used": 17,
+  "rows": 21693,
+  "missing_joints_csv": [
+   "any_1731/ep_0003",
+   "any_1731/ep_0004",
+   "any_1740/ep_0005",
+   "any_1740/ep_0008",
+   "any_1740/ep_0018"
+  ],
+  "idle_episodes_no_motion": [
+   "any_1740/ep_0002",
+   "any_1740/ep_0003"
+  ],
+  "sample_period_median_s": 0.035
+ },
+ "method": {
+  "simulator": "MuJoCo 4.0.1 (laptop sim-env), URDF so101.urdf without geometry (inertials kept), no joint limits, <position> actuator per joint, implicitfast, DT 0.004 s",
+  "command_input": "logged goal (the setpoint the motion server actually sent: plan_ramp smoothstep at 30 Hz plus compensation offset), zero-order hold, delayed by fitted delay",
+  "rad_per_unit": "width/200 (body) or /100 (gripper) * 2pi/4095 from project_robots.json",
+  "forcerange": "fixed 10 N.m (URDF effort limit), not identified",
+  "fit": "scipy least_squares trf, log-parameters, 2-point jacobian, max_nfev 20 per fit",
+  "start": "fixed INIT per fold (no held-out information in the start point)",
+  "gripper": "rows with pos5 < 3 and goal5 < 3 (brick holding plateau and its closing edge) masked",
+  "lag_grid": "shifts in 5 ms steps (0.15 frame at 30 Hz), pooled over held-out rows"
+ },
+ "not_done": [
+  "gripper brick contact (31.7 mm brick compliance) not modelled: the logs show holding at 1.5 to 2.4 units with goal near 0, the sim closes to goal",
+  "closed readings 0.5 to 0.7 with goal <= 1 are in the logs (any_1740/ep_0006, any_1740/ep_0013); these rows are masked from the gripper RMSE, so the closed-stop behaviour is not fitted",
+  "fits not converged (max_nfev 20); more iterations would be needed for a converged claim",
+  "R/sim/twin/robot/so101_twin.xml exists (P3-TWIN-ROBOT) but was not used: these fits use the URDF-derived no-geometry model, so the two models were not compared",
+  "no comparison with R/twin (deleted by Hassan 19:48Z, D-102); nothing copied from it"
+ ],
+ "files": {
+  "params_json": "R/sim/twin/dynamics/twin_dynamics_v1.json",
+  "model_xml": "R/sim/twin/dynamics/so101_dyn_v1.xml",
+  "fit_scripts": [
+   "R/sim/twin/dynamics/twin_lib.py",
+   "R/sim/twin/dynamics/fit_dynamics.py"
+  ],
+  "tools": "work/P3-TWIN-DYN/E1/tools/",
+  "plots": [
+   "g2_per_joint_rmse.png",
+   "g2_heldout_overlay.png",
+   "g2_gripper_readings.png"
+  ]
+ }
+}

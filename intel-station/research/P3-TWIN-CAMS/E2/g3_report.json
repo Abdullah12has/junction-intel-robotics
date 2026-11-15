@@ -1,0 +1,12 @@
+{
+  "stage": "twin-cams-v1",
+  "worker": "E2",
+  "gate": "G3: LOEO pooled median <= 3 px and p90 <= 6 px",
+  "cameras": {
+    "top_s22_zero": {"method": "held-brick TCP correspondences, global PnP-RANSAC + Huber, LOEO", "loeo_pooled": {"n": 773, "median_px": 5.452, "p90_px": 12.982}, "G3_pass": false, "full_fit_plausible": false, "note": "fx=fy at 400 bound, k1 at -0.3 bound, camera 4.2 m away, below the mat"},
+    "top_s23_bootstrap_icp": {"method": "plate-centre bootstrap + held-brick ICP, LOEO", "loeo_pooled": {"n": 2071, "median_px": 16.153, "p90_px": 28.382}, "G3_pass": false, "full_fit": {"C_base_mm": [533.4, 17.7, 491.5], "height_above_mat_mm": 529.8, "tilt_deg": 32.04, "f": 695.16, "cx": 360.0, "cy": 200.0, "k1": -0.3}, "note": "cx and k1 at bounds; bootstrap best hit fraction 0.037"},
+    "close": {"G3_pass": null, "status": "NOT RUN in E2"},
+    "wrist": {"G3_pass": null, "status": "NOT RUN in E2"}
+  },
+  "camera_files_changed": false
+}

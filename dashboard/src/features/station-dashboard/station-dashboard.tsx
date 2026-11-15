@@ -8,6 +8,7 @@ import { useProjectId } from '../projects/use-project';
 import { RuntimeSessionProvider, useRuntimeSession } from '../runtime-session/runtime-session-provider';
 import { DashboardCamera } from './dashboard-camera';
 import { JointTable } from './joint-table';
+import { JoystickControls } from './joystick-controls';
 import { useTelemetry } from './use-telemetry';
 
 import classes from './station-dashboard.module.css';
@@ -21,8 +22,11 @@ const DashboardControls = () => {
     const { state, error, statuses, send, isLoading } = useRuntimeSession();
     const { observation, age, fresh } = useTelemetry();
     const [environmentId, setEnvironmentId] = useState(environments[0]?.id ?? '');
-    const [cameraIds, setCameraIds] = useState<string[]>([]);
+    const [cameraIds, setCameraIds] = useState<string[]>(() =>
+        cameras.flatMap((camera) => (camera.id ? [camera.id] : []))
+    );
     const [pending, setPending] = useState(false);
+    const [manual, setManual] = useState(true);
     const [message, setMessage] = useState<string | null>(null);
     const environment = environments.find((item) => item.id === environmentId);
     const connected = state?.environment != null && error?.session_alive !== false;
@@ -51,7 +55,9 @@ const DashboardControls = () => {
             environment: {
                 id: environment.id,
                 name: environment.name,
-                robots: environment.robots ?? [],
+                robots: (environment.robots ?? []).map((robot) =>
+                    manual ? { ...robot, tele_operator: { type: 'none' as const } } : robot
+                ),
                 cameras: cameraIds.map((camera_id) => ({ camera_id })),
             },
         });
@@ -102,6 +108,9 @@ const DashboardControls = () => {
                     >
                         {(item) => <Item key={item.id}>{item.name}</Item>}
                     </Picker>
+                    <Checkbox isSelected={manual} isDisabled={connected || busy} onChange={setManual}>
+                        Manual control · follower only
+                    </Checkbox>
                     <div className={classes.devices}>
                         {environment?.robots?.map((robot) => (
                             <div key={robot.robot_id}>
@@ -112,7 +121,7 @@ const DashboardControls = () => {
                                 <p>
                                     <span>Leader input</span>
                                     <strong>
-                                        {robot.tele_operator.type === 'robot'
+                                        {!manual && robot.tele_operator.type === 'robot'
                                             ? nameOf(robot.tele_operator.robot_id)
                                             : 'Not configured'}
                                     </strong>
@@ -166,7 +175,8 @@ const DashboardControls = () => {
                     </div>
                     <h2>Camera selection</h2>
                     <p className={classes.hint}>
-                        Choose feeds before connecting. Selection applies only to this session.
+                        All cameras are selected by default. Choose feeds before connecting; selection applies to this
+                        session.
                     </p>
                     <div className={classes.choices}>
                         {cameras.map((camera) => {
@@ -192,6 +202,25 @@ const DashboardControls = () => {
                     <a href={paths.project.environments.index({ project_id })}>Open full Studio configuration</a>
                 </aside>
                 <div className={classes.content}>
+                    <JoystickControls
+                        connected={connected}
+                        ready={connected && fresh && !busy && !state?.control && failed.length === 0}
+                        observation={observation}
+                        send={send}
+                    />
+                    <section aria-label='Camera feeds' className={classes.feeds}>
+                        {connected &&
+                            state?.environment?.cameras.map((camera) => (
+                                <DashboardCamera key={camera.camera_id} camera={camera} />
+                            ))}
+                        {(!connected || state?.environment?.cameras.length === 0) && (
+                            <div className={classes.empty}>
+                                <h2>Camera feeds</h2>
+                                <p>Select cameras and connect to see live views here.</p>
+                                <p>Preview is limited to 2 updates/sec to keep the remote connection responsive.</p>
+                            </div>
+                        )}
+                    </section>
                     <section className={classes.panel}>
                         <div className={classes.sectionHeading}>
                             <h2>Joint inputs & feedback</h2>
@@ -212,19 +241,6 @@ const DashboardControls = () => {
                             observation={connected ? observation : undefined}
                             following={following}
                         />
-                    </section>
-                    <section aria-label='Camera feeds' className={classes.feeds}>
-                        {connected &&
-                            state?.environment?.cameras.map((camera) => (
-                                <DashboardCamera key={camera.camera_id} camera={camera} />
-                            ))}
-                        {(!connected || state?.environment?.cameras.length === 0) && (
-                            <div className={classes.empty}>
-                                <h2>Camera feeds</h2>
-                                <p>Select cameras and connect to see live views here.</p>
-                                <p>Preview is limited to 2 updates/sec to keep the remote connection responsive.</p>
-                            </div>
-                        )}
                     </section>
                     <section className={classes.panel}>
                         <h2>Device status</h2>

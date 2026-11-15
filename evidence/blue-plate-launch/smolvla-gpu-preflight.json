@@ -1,0 +1,10 @@
+{
+  "model": "smolvla",
+  "batch_size": 32,
+  "steps": 100,
+  "elapsed_s": 135.96731098300003,
+  "peak_allocated_bytes": 8443764224,
+  "peak_reserved_bytes": 8661237760,
+  "device": "NVIDIA A100-SXM4-40GB",
+  "checkpoint_saved": true
+}

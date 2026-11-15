@@ -1,0 +1,32 @@
+# Plan S poses (LOOP-CONTRACT section 7), carried into loop_v2 from the candidate with one fix: G6.
+# Joint values are in the motion layer's normalized unit (body joints [-100, 100], gripper [0, 100]); joint_order is fixed
+# by the candidate motion layer. The values below are PLACEHOLDERS, not taught poses: home is the measured reference home
+# pose (rules.yaml reference.home_pose, ledger OD-8a) and every other value is a guess. Opus teaches and verifies them live
+# at slow speed (I-43/I-44); then set placeholder to false. --live refuses this file while placeholder is true.
+# G6 (live hazard): the home gripper is the measured open value (about 25; FACTS-LIVE 14:13Z read 25.7), never 0. A home move
+# with gripper 0 closes the gripper on the way home.
+placeholder: true
+unit: normalized
+joint_order: [shoulder_pan, shoulder_lift, elbow_flex, wrist_flex, wrist_roll, gripper]
+poses:
+  home:        [0.0, -98.5, 96.0, 62.0, 0.0, 25.0]        # measured reference home pose; gripper = measured open value (G6)
+  spot_hover:  [0.0, -40.0, 60.0, 40.0, 0.0, 30.0]       # [unclear] above the inspection spot
+  spot_grasp:  [0.0, -10.0, 40.0, 60.0, 0.0, 30.0]       # [unclear] descended onto the brick at the spot
+  blue_drop:   [30.0, -40.0, 60.0, 40.0, 0.0, 30.0]      # [unclear] blue plate (GOOD)
+  green_drop:  [-30.0, -40.0, 60.0, 40.0, 0.0, 30.0]     # [unclear] green plate (DEFECTIVE, UNCERTAIN)
+  inspection:  [0.0, -40.0, 60.0, 40.0, 0.0, 30.0]       # [unclear] scripted mode only: fixed pose in front of the close RealSense, brick held
+lift: [0.0, 15.0, -10.0, 0.0, 0.0, 0.0]                  # [unclear] offset added to spot_grasp after the grasp
+gripper:
+  open: 30.0      # [unclear] normalized open; measured Studio open 10-36 (may differ in this unit)
+  closed: 2.5     # [unclear] normalized closed on a brick; measured 2.2-2.8 in Studio units
+speed:            # normalized units per second, slow; each must be 0.1 to 25
+  approach: 10.0
+  grasp: 5.0
+  drop: 10.0
+align:
+  target_px: [320, 384]    # [unclear] wrist pixel where the brick should sit between the jaw tips (640x480 frame)
+  tolerance_px: 8          # [unclear]
+  gain_pan: 0.02           # [unclear] joint units per wrist pixel of horizontal offset
+  gain_reach: 0.02         # [unclear] joint units per wrist pixel of vertical offset
+  max_correction: 3.0      # [unclear] clamp per correction, joint units
+  max_iterations: 2        # LOOP-CONTRACT section 7: at most 2 alignment corrections

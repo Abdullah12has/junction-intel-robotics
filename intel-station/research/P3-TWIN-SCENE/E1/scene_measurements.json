@@ -1,0 +1,85 @@
+{
+  "stage": "twin-scene-v1",
+  "task": "P3-TWIN-SCENE",
+  "worker": "E1",
+  "utc": "2026-11-14T19:59Z",
+  "status": "PARTIAL",
+  "frames": {
+    "base": "kin.py base frame, mm. MAT_Z = -38.3 mm is the TCP z when the TCP touches the mat (app/tools/kin.py:24).",
+    "mat": "x image-right, y toward base (measure_scene.py convention). Depth-derived positions use this frame.",
+    "depth_cameras": "top 848x480 (fx 665.55 at HFOV 65 deg nominal); close 424x240 (fx 332.77). Colour 640x480. Colour-to-depth FOV alignment NOT verified."
+  },
+  "mat": {
+    "surface_z_base_mm": -38.3,
+    "surface_z_status": "MEASURED (repo constant; app/tools/kin.py:24; calibration note kin.py:5)",
+    "top_distance_mm": 589.46,
+    "top_tilt_deg": 20.32,
+    "top_plane_rms_mm": 1.414,
+    "top_valid_frac": 0.8313,
+    "close_distance_mm": 147.34,
+    "close_tilt_deg": 50.78,
+    "close_plane_rms_mm": 0.85,
+    "close_valid_frac": 0.6059,
+    "plane_status": "MEASURED (RANSAC plane fit, 2.5 mm threshold). Camera-to-mat values, not base-to-mat.",
+    "extent_mm": 1200.0,
+    "extent_status": "ASSUMED placeholder. NOT MEASURED.",
+    "base_tilt_status": "NOT MEASURED (no camera-to-base extrinsics)."
+  },
+  "plates": {
+    "PLATES_XY_base_mm": {"blue": [187.1, -86.1], "green": [194.6, 218.3]},
+    "PLATES_XY_source": "app/tools/sort_any.py:33 (repo constant); keep-out check at sort_any.py:155",
+    "PLATES_XY_status": "CONFIG. NOT depth-verified.",
+    "separation_mm": {"PLATES_XY_base": 304.49, "depth_ridge_v1": 341.31, "depth_outline_v4": 431.73},
+    "separation_status": "UNRESOLVED. The depth methods disagree with each other and with PLATES_XY.",
+    "centres_mat_mm": {
+      "blue": {"ridge_v1": [-119.55, 317.41], "outline_v4": [-202.94, 226.06], "outline_v4_status": "REJECTED (hole fit, R 41.63 mm)"},
+      "green": {"ridge_v1": [219.43, 277.6], "outline_v4": [224.92, 283.74]}
+    },
+    "outer_radius_mm": {"used": 91.2, "samples": {"blue_ridge_v1": 89.75, "green_ridge_v1": 95.13, "green_outline_v4": 88.67}, "status": "LOW. One radius used for both plates."},
+    "wall_width_mm": {"used": 19.5, "samples": {"green_outline_v4": 19.5, "blue_ridge_v1": 18.0}, "status": "LOW"},
+    "inner_radius_mm": {"used": 71.7, "status": "DERIVED: outer minus wall"},
+    "rim_top_above_mat_mm": {"used": 8.7, "samples": {"green_outline_v4": 8.72, "green_ridge_v1": 13.55, "blue_ridge_v1": 14.42}, "status": "UNRESOLVED. 8.7 used from the one clean outline fit (green, RMS 1.38 mm)."},
+    "floor_top_above_mat_mm": {"used": 2.0, "samples": {"green_outline_v4_p50": 2.02, "green_outline_v4_p10_p90": [0.83, 3.19]}, "status": "LOW"},
+    "segments": 48,
+    "diameter_outer_mm": {"blue_ridge_v1": 179.5, "green_ridge_v1": 190.26, "green_outline_v4": 177.34}
+  },
+  "bricks": {
+    "footprint_long_mm": [31.42, 31.59, 30.12],
+    "footprint_short_mm": [30.41, 28.35, 25.92],
+    "footprint_used_mm": 31.7,
+    "footprint_status": "MEASURED, noisy. Long side 30.1-31.6 mm; short side 25.9-30.4 mm (blobs read low). Used value 31.7 mm is the task spec.",
+    "top_height_p50_mm": [19.29, 18.49, 18.63],
+    "top_height_mean_mm": 18.8,
+    "height_used_mm": 19.2,
+    "height_status": "MEASURED 18.5-19.3 mm (3 blobs). Used value 19.2 mm is from docs/SPOT-GRASP-DEPTH.md:14 ('true 19.2 mm'). Only 19.29 lies inside the SPOT measured range 19.0-19.5.",
+    "stud_height_mm": null,
+    "stud_height_status": "NOT MEASURED",
+    "footprint_2x4_status": "NOT MEASURED (no 2x4 in the frames)",
+    "density_g_cm3": 1.04,
+    "density_status": "ASSUMED. ABS base resin (plasticsintl ABS data sheet, ASTM D 792). Brick material NOT verified.",
+    "mass_upper_bound_g": 20.07,
+    "mass_status": "ASSUMED upper bound: solid 31.7 x 31.7 x 19.2 mm at 1.04 g/cm3. NOT weighed. Real bricks are likely hollow.",
+    "sliding_friction": 0.35,
+    "friction_status": "ASSUMED. plasticsintl ABS dynamic COF 0.35 (counterpart not stated). scidar 184.pdf gives dry ABS vs steel about 0.3-0.35. Mat material NOT identified.",
+    "depth_centres_mat_mm": {"top_A": [45.1, 132.8], "top_B": [107.5, 194.6], "close": [85.7, 186.8]},
+    "depth_centres_status": "MEASURED. The colour of each depth blob is NOT matched to a colour.",
+    "layout_status": "NOMINAL. Four bricks placed as in ep_0001 pre_top.jpg (visual). Base-frame positions NOT measured."
+  },
+  "lighting": {
+    "note": "Image-derived only. Not photometric; no colour-temperature measurement. Gray-world gains near 1.0 mean near-neutral white balance in these frames.",
+    "top": {"mat_V_p50": 37, "white_V_p50": 202, "gray_gain_R_over_G": 1.004, "gray_gain_B_over_G": 0.979, "luma_mean": 85.8},
+    "close": {"mat_V_p50": 47, "white_V_p50": 254, "white_clipped": true, "gray_gain_R_over_G": 1.013, "gray_gain_B_over_G": 0.995, "luma_mean": 76.3},
+    "servo_163312_p0_base": {"top_luma_mean": 86.4, "close_luma_mean": 80.4, "wrist_luma_mean": 21.5},
+    "servo_165016_a6_lift": {"top_luma_mean": 94.1, "close_luma_mean": 93.2, "wrist_luma_mean": 22.0}
+  },
+  "sources": [
+    "logs/depth/g1_162903/top_depth.npy, close_depth.npy, top_meta.json (read-only)",
+    "logs/depth/g1_162903/top_color.jpg, close_color.jpg (read-only)",
+    "logs/depth/servo/163312_p0_base/*.jpg and logs/depth/servo/165016_a6_lift/*.jpg (read-only, colour and lighting only)",
+    "logs/sort/any_1740/ep_0001/pre_top.jpg (read-only)",
+    "app/tools/kin.py:5, :24, :71 (read-only)",
+    "app/tools/sort_any.py:33, :155 (read-only)",
+    "docs/SPOT-GRASP-DEPTH.md:9, :10, :14 (read-only)",
+    "work/P3-TWIN-SCENE/E1/scene_measurements_raw_v4.json and plates_ridge_v1.json"
+  ]
+}

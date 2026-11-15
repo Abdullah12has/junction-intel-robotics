@@ -1,0 +1,331 @@
+{
+ "stage": "e1-lerobot-v1",
+ "utc": "2026-11-14T22:02:52Z",
+ "status": "PARTIAL",
+ "dataset": "/home/intel/intel-junction-2026/data/ours-lerobot/v1",
+ "script": "build_lerobot.py e1-2 2026-11-14",
+ "episodes_included": 3,
+ "frames_total": 7750,
+ "episodes_excluded": 38,
+ "encoded_this_run": 3,
+ "reused_this_run": 0,
+ "checks": [
+  {
+   "check": "rows_match_total",
+   "status": "PASS",
+   "detail": "parquet rows 7750, expected 7750"
+  },
+  {
+   "check": "episodes_match",
+   "status": "PASS",
+   "detail": "meta rows 3, included 3"
+  },
+  {
+   "check": "info_totals",
+   "status": "PASS",
+   "detail": "info.json total_episodes/frames/tasks"
+  },
+  {
+   "check": "index_contiguous",
+   "status": "PASS",
+   "detail": "global index 0..7749"
+  },
+  {
+   "check": "values_finite",
+   "status": "PASS",
+   "detail": "state and action finite"
+  },
+  {
+   "check": "length_matches_rows",
+   "status": "PASS",
+   "detail": "meta length equals the rows of each episode and its joint grid"
+  },
+  {
+   "check": "frame_index_0_to_n",
+   "status": "PASS",
+   "detail": "frame_index runs 0..n-1 in each episode"
+  },
+  {
+   "check": "duration_matches_joint_window",
+   "status": "PASS",
+   "detail": "(n-1)/30 within one frame of the joint window"
+  },
+  {
+   "check": "timestamp_is_frame_over_fps",
+   "status": "PASS",
+   "detail": "max |timestamp - frame_index/30| = 3.56e-06 s"
+  },
+  {
+   "check": "dataset_index_ranges",
+   "status": "PASS",
+   "detail": "dataset_from/to_index match the row layout"
+  },
+  {
+   "check": "meta_task_matches_rows",
+   "status": "PASS",
+   "detail": "meta tasks equal the task text of each episode"
+  },
+  {
+   "check": "joint_range_state_body",
+   "status": "PASS",
+   "detail": "pos0..4 within -100..100: min [-51.49, -98.9, -48.73, 33.7, -73.07] max [31.67, 54.14, 96.91, 97.29, -30.88]"
+  },
+  {
+   "check": "joint_range_action_body",
+   "status": "PASS",
+   "detail": "goal0..4 within -100..100: min [-51.83, -99.03, -51.91, 33.16, -73.17] max [31.93, 53.44, 96.6, 98.05, -30.74]"
+  },
+  {
+   "check": "joint_range_gripper",
+   "status": "PASS",
+   "detail": "pos5 and goal5 within 0..100: state 1.50..24.82, action 0.00..25.00"
+  },
+  {
+   "check": "tasks_match_plates_and_colours",
+   "status": "PASS",
+   "detail": "task text parsed and equal to colour and plate for each episode"
+  },
+  {
+   "check": "od10_label_matches_plate",
+   "status": "PASS",
+   "detail": "GOOD with a blue plate, DEFECT with a green plate"
+  },
+  {
+   "check": "labels_present",
+   "status": "PASS",
+   "detail": "colour, plate and OD-10 label set for each episode"
+  },
+  {
+   "check": "video_frames_match_rows",
+   "status": "PASS",
+   "detail": "any_1740/ep_0001 top frames 3612 rows 3612; any_1740/ep_0001 close frames 3612 rows 3612; any_1740/ep_0001 wrist frames 3612 rows 3612; any_1740/ep_0015 top frames 2024 rows 2024; any_1740/ep_0015 close frames 2024 rows 2024; any_1740/ep_0015 wrist frames 2024 rows 2024; any_1740/ep_0017 top frames 2114 rows 2114; any_1740/ep_0017 close frames 2114 rows 2114; any_1740/ep_0017 wrist frames 2114 rows 2114"
+  },
+  {
+   "check": "camera_dt_top",
+   "status": "PASS",
+   "detail": "grid row to nearest camera frame: max 0.0334 s, mean 0.0065 s, rows over 1 frame 5, over 2 frames 0"
+  },
+  {
+   "check": "camera_dt_close",
+   "status": "PASS",
+   "detail": "grid row to nearest camera frame: max 0.0278 s, mean 0.0102 s, rows over 1 frame 0, over 2 frames 0"
+  },
+  {
+   "check": "camera_dt_wrist",
+   "status": "PASS",
+   "detail": "grid row to nearest camera frame: max 0.0180 s, mean 0.0082 s, rows over 1 frame 0, over 2 frames 0"
+  },
+  {
+   "check": "info_fps_30",
+   "status": "PASS",
+   "detail": "info.json fps 30"
+  },
+  {
+   "check": "video_keys_in_info",
+   "status": "PASS",
+   "detail": "three camera keys in info.json"
+  },
+  {
+   "check": "ours_label_columns",
+   "status": "PASS",
+   "detail": "per-episode label columns present"
+  },
+  {
+   "check": "excluded_have_reasons",
+   "status": "PASS",
+   "detail": "every excluded candidate has a reason"
+  },
+  {
+   "check": "visual_entries_have_folders",
+   "status": "PASS",
+   "detail": "every VISUAL entry matches an episode folder"
+  },
+  {
+   "check": "lerobot_loader",
+   "status": "PASS",
+   "detail": "LeRobotDataset frames 7750 episodes 3 images {'observation.images.realsense 243622061421': [3, 480, 640], 'observation.images.realsense 243722064316': [3, 480, 640], 'observation.images.wrist': [3, 480, 640]}"
+  }
+ ],
+ "details": {
+  "joint_ranges": {
+   "state_min": [
+    -51.49,
+    -98.902,
+    -48.73,
+    33.7,
+    -73.07,
+    1.5
+   ],
+   "state_max": [
+    31.67,
+    54.14,
+    96.91,
+    97.29,
+    -30.88,
+    24.82
+   ],
+   "action_min": [
+    -51.83,
+    -99.03,
+    -51.91,
+    33.16,
+    -73.17,
+    0.0
+   ],
+   "action_max": [
+    31.93,
+    53.44,
+    96.6,
+    98.05,
+    -30.74,
+    25.0
+   ]
+  },
+  "camera_dt": {
+   "top": {
+    "max_s": 0.0334,
+    "mean_s": 0.006491,
+    "rows_over_1_frame": 5,
+    "rows_over_2_frames": 0
+   },
+   "close": {
+    "max_s": 0.027833,
+    "mean_s": 0.010191,
+    "rows_over_1_frame": 0,
+    "rows_over_2_frames": 0
+   },
+   "wrist": {
+    "max_s": 0.018,
+    "mean_s": 0.008192,
+    "rows_over_1_frame": 0,
+    "rows_over_2_frames": 0
+   }
+  },
+  "lerobot_loader": {
+   "ok": true,
+   "frames": 7750,
+   "episodes": 3,
+   "image_keys": [
+    "observation.images.realsense 243622061421",
+    "observation.images.realsense 243722064316",
+    "observation.images.wrist"
+   ],
+   "image_shapes": {
+    "observation.images.realsense 243622061421": [
+     3,
+     480,
+     640
+    ],
+    "observation.images.realsense 243722064316": [
+     3,
+     480,
+     640
+    ],
+    "observation.images.wrist": [
+     3,
+     480,
+     640
+    ]
+   },
+   "task_example": "move the orange brick to the blue plate"
+  }
+ },
+ "per_episode": [
+  {
+   "key": "any_1740/ep_0001",
+   "ep_no": 0,
+   "index": 0,
+   "task": "move the orange brick to the blue plate",
+   "tier": "V",
+   "colour": "orange",
+   "plate": "blue",
+   "od10": "GOOD",
+   "frames": 3612,
+   "file_index": 0,
+   "needs_review": false,
+   "decision_correct": "yes",
+   "decision_confidence": "high",
+   "note": "orange 2x2 without tape (pre_close, stage1_wrist, closed_wrist); released_wrist: in the blue plate; loop colour yellow is wrong (scan hue 14); loop colour yellow, visual orange",
+   "cam_dt_max_s": {
+    "top": 0.023733,
+    "close": 0.0221,
+    "wrist": 0.017734
+   }
+  },
+  {
+   "key": "any_1740/ep_0015",
+   "ep_no": 1,
+   "index": 1,
+   "task": "move the red brick to the blue plate",
+   "tier": "V",
+   "colour": "red",
+   "plate": "blue",
+   "od10": "GOOD",
+   "frames": 2024,
+   "file_index": 1,
+   "needs_review": true,
+   "decision_correct": "yes",
+   "decision_confidence": "med",
+   "note": "released_close: red 2x2 in the blue plate; tape and orientation not resolvable at 640x480",
+   "cam_dt_max_s": {
+    "top": 0.0334,
+    "close": 0.021767,
+    "wrist": 0.017934
+   }
+  },
+  {
+   "key": "any_1740/ep_0017",
+   "ep_no": 2,
+   "index": 2,
+   "task": "move the yellow brick to the green plate",
+   "tier": "V",
+   "colour": "yellow",
+   "plate": "green",
+   "od10": "DEFECT",
+   "frames": 2114,
+   "file_index": 2,
+   "needs_review": true,
+   "decision_correct": "yes",
+   "decision_confidence": "med",
+   "note": "released_top, released_close: cream/yellow 2x2 on the green plate; dark tape not confirmable at 640x480, so the green decision holds only if the tape is present",
+   "cam_dt_max_s": {
+    "top": 0.027667,
+    "close": 0.027833,
+    "wrist": 0.018
+   }
+  }
+ ],
+ "excluded_by_category": {
+  "visual check": 18,
+  "visual placed, data check failed": 1,
+  "not finished": 3,
+  "loop success not visually verified": 1,
+  "loop not a success": 14,
+  "joint or label data": 1
+ },
+ "visual_placed_but_excluded": [
+  "any_1731/ep_0003"
+ ],
+ "loop_success_not_verified": [
+  "any_2055/ep_0001",
+  "any_2127/ep_0008"
+ ],
+ "visual_entries_without_folder": [],
+ "camera_files_used": [
+  "close_20261114T170351Z.mkv",
+  "top_20261114T170351Z.mkv",
+  "w_20261114T174051Z.mkv",
+  "w_20261114T174151Z.mkv",
+  "w_20261114T174251Z.mkv",
+  "w_20261114T181351Z.mkv",
+  "w_20261114T181451Z.mkv",
+  "w_20261114T181951Z.mkv",
+  "w_20261114T182051Z.mkv"
+ ],
+ "lags_s": {
+  "top": 0.0215,
+  "wrist": 0.0075,
+  "close": 0.0
+ },
+ "seconds": 158.0
+}

@@ -1,0 +1,36 @@
+{
+ "camera": "close",
+ "stage": "twin-cams-v1",
+ "utc": "2026-11-14T20:20Z",
+ "status": "NOT_FITTED",
+ "G3": {
+  "gate": {
+   "median_px_max": 3.0,
+   "p90_px_max": 6.0,
+   "protocol": "leave-one-episode-out (not reached)"
+  },
+  "result": "FAIL",
+  "loeo_run": false,
+  "reason": "no candidate reaches the in-sample median gate; best in-sample median 52.7 px"
+ },
+ "fitted_parameters": null,
+ "best_rejected_candidate": {
+  "method": "s9d: tip offsets, tip-frame rotation, joint scale multipliers",
+  "in_sample_median_px": 52.659,
+  "p90_px": 155.987,
+  "n_obs": 233,
+  "rejected_because": "two joint scales at the bounds (1.6 and 0.4); median far above gate"
+ },
+ "depth_crosscheck": {
+  "reference": "P3-TWIN-SCENE (depth)",
+  "camera_to_mat_mm": 147.34,
+  "tilt_deg": 50.78,
+  "result": "not matched: the best diagnostic candidates (12 to 17 of 233 observations) place the camera 260 to 530 mm above the mat"
+ },
+ "sources": {
+  "detections": "out/detect_close.json (161 windows with jaws, 72 two-jaw)",
+  "joints": "logs/sort/any_*/ep_*/joints.csv",
+  "fixed_tip_geometry": "out/jaw_geometry.json (see top.json)"
+ },
+ "origin_note": "No file copied from R/twin."
+}

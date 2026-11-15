@@ -1,0 +1,26 @@
+{
+  "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "policy": "smolvla",
+  "model_name": "SmolVLA inspection pilot - Verda - 10 epochs",
+  "max_epochs": 10,
+  "batch_size": 16,
+  "num_workers": 4,
+  "val_split": 0.15,
+  "device": {
+    "type": "cuda",
+    "index": 0
+  },
+  "precision": "bf16-mixed",
+  "compile_model": false,
+  "image_key_reorder_map": {
+    "realsense 243622061421": 0,
+    "realsense 243722064316": 1
+  },
+  "num_cameras": 2,
+  "export_backends": [
+    "openvino"
+  ],
+  "training_target": "remote",
+  "remote_trainer_id": "b963d065-34f1-4740-8448-4bf9fdca2abd"
+}

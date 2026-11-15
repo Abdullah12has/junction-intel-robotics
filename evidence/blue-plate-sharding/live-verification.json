@@ -1,0 +1,72 @@
+{
+  "86.38.238.100": {
+    "updated_at": 1794715672.0885382,
+    "shard": "normal-images",
+    "running": [
+      {
+        "id": "act-N-A0-R-seed0",
+        "pid": 259860,
+        "progress": [
+          "10206",
+          "100000"
+        ],
+        "traceback": false,
+        "process_exists": true
+      },
+      {
+        "id": "smolvla-N-A0-R-seed0",
+        "pid": 259861,
+        "progress": [
+          "3194",
+          "20000"
+        ],
+        "traceback": false,
+        "process_exists": true
+      }
+    ],
+    "queued": [
+      "act-N-A1-R-seed0",
+      "smolvla-N-A1-R-seed0",
+      "act-N-A2-R-seed0",
+      "smolvla-N-A2-R-seed0",
+      "act-N-A3-R-seed0",
+      "smolvla-N-A3-R-seed0"
+    ],
+    "finished": []
+  },
+  "86.38.182.164": {
+    "updated_at": 1794715673.5826447,
+    "shard": "x-markers",
+    "running": [
+      {
+        "id": "act-X-A0-R-seed0",
+        "pid": 146828,
+        "progress": [
+          "202",
+          "100000"
+        ],
+        "traceback": false,
+        "process_exists": true
+      },
+      {
+        "id": "smolvla-X-A0-R-seed0",
+        "pid": 146829,
+        "progress": [
+          "46",
+          "20000"
+        ],
+        "traceback": false,
+        "process_exists": true
+      }
+    ],
+    "queued": [
+      "act-X-A1-R-seed0",
+      "smolvla-X-A1-R-seed0",
+      "act-X-A2-R-seed0",
+      "smolvla-X-A2-R-seed0",
+      "act-X-A3-R-seed0",
+      "smolvla-X-A3-R-seed0"
+    ],
+    "finished": []
+  }
+}

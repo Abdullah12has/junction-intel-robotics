@@ -1,0 +1,15 @@
+{
+  "stored_threshold_gpu_fp16": 534.8227233886719,
+  "stored_balanced_accuracy": 0.9285714285714286,
+  "n_good": 12,
+  "n_defect": 7,
+  "in_sample": true,
+  "rule": "pick_threshold (anomaly/anom3/common.py:128-140): max balanced accuracy, ties to higher threshold",
+  "cpu_scorer": "anomaly/anom3/infer.py score_files devices=('CPU',)",
+  "error": null,
+  "threshold_cpu_recalc": 534.8232574462891,
+  "balanced_accuracy_cpu_recalc": 0.9285714285714286,
+  "tnr_cpu_recalc": 1.0,
+  "tpr_cpu_recalc": 0.8571428571428571,
+  "max_abs_gpu_fp16_vs_cpu": 0.0005794746093670256
+}

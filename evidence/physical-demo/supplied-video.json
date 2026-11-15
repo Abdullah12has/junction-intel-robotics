@@ -1,0 +1,16 @@
+{
+  "source": "THIRD_PARTY_NOTICES.mp4 (original retained outside Git)",
+  "sha256": "a4507ae2a86b329b6d6b8a03197a8b726fb48ab349badbfd5e662095e2f2987a",
+  "source_seconds": 176.233333,
+  "controller": "SmolVLM-assisted vision-guided, identified by user",
+  "reported_blue_sorts": 3,
+  "reported_green_sorts": 0,
+  "reported_cycle_seconds": [
+    70.5,
+    48.0,
+    47.8
+  ],
+  "reported_median_cycle_seconds": 48.0,
+  "confidence_in_overlay": "partial",
+  "scope": "Selected physical demo, not a randomized reliability benchmark. Does not establish SmolVLA/ACT policy task success."
+}

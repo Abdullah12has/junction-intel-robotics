@@ -1,0 +1,182 @@
+{
+ "root": "/home/intel/intel-junction-2026/work/P2-D-VLA1/E1/out/REAL-any_1740-full",
+ "result": "PASS",
+ "failed": [],
+ "warnings": [],
+ "checks": [
+  {
+   "check": "row count equals info total_frames",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "9671 vs 9671"
+  },
+  {
+   "check": "episode count equals info total_episodes",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "4 vs 4"
+  },
+  {
+   "check": "episode length equals dataset_to - dataset_from",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "episodes tile the global index without gaps",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "rows per episode equal episodes.length",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "index column equals 0..N-1",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "frame_index per episode is 0..n-1",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "timestamp equals frame_index / fps",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "max err 3.56e-06 s"
+  },
+  {
+   "check": "no NaN or inf in action, state, timestamp",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "nan action 0, nan state 0"
+  },
+  {
+   "check": "joint values inside -180..180 deg and gripper 0..100",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "action min [-51.83, -99.03, -51.91, 33.16, -77.2, 0.0] max [31.93, 53.44, 96.6, 98.05, -30.74, 25.0] | state min [-51.57, -98.9, -48.73, 33.7, -77.1, 0.52] max [31.67, 54.14, 96.91, 97.37, -30.88, 24.82]"
+  },
+  {
+   "check": "tasks.parquet text matches every episode",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "tasks [\"move the yellow brick to the blue plate\", \"move the yellow brick to the green plate\", \"move the red brick to the blue plate\"]"
+  },
+  {
+   "check": "video file exists: observation.images.realsense 243722064316",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4"
+  },
+  {
+   "check": "codec, pix_fmt, fps, size match team settings: observation.images.realsense 243722064316",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "codec av1 pix yuv420p fps 30/1 size 640x480"
+  },
+  {
+   "check": "video packets equal total_frames: observation.images.realsense 243722064316",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "9671 vs 9671"
+  },
+  {
+   "check": "episode video offsets match dataset index: observation.images.realsense 243722064316",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "video file exists: observation.images.realsense 243622061421",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4"
+  },
+  {
+   "check": "codec, pix_fmt, fps, size match team settings: observation.images.realsense 243622061421",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "codec av1 pix yuv420p fps 30/1 size 640x480"
+  },
+  {
+   "check": "video packets equal total_frames: observation.images.realsense 243622061421",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "9671 vs 9671"
+  },
+  {
+   "check": "episode video offsets match dataset index: observation.images.realsense 243622061421",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "video file exists: observation.images.wrist",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "videos/observation.images.wrist/chunk-000/file-000.mp4"
+  },
+  {
+   "check": "codec, pix_fmt, fps, size match team settings: observation.images.wrist",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "codec av1 pix yuv420p fps 30/1 size 640x480"
+  },
+  {
+   "check": "video packets equal total_frames: observation.images.wrist",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "9671 vs 9671"
+  },
+  {
+   "check": "episode video offsets match dataset index: observation.images.wrist",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "nearest camera frame within 2 frames of each joint sample",
+   "level": "WARN",
+   "pass": true,
+   "detail": "{\"close\": 0.02783346176147461, \"top\": 0.02783346176147461, \"wrist\": 0.017933368682861328}"
+  },
+  {
+   "check": "lerobot loads the dataset",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "num_frames 9671 num_episodes 4 fps 30"
+  },
+  {
+   "check": "lerobot counts equal info",
+   "level": "FAIL",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "decoded frames are not blank: observation.images.realsense 243722064316",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "pixel std per frame [51.4, 50.5, 66.2]"
+  },
+  {
+   "check": "decoded frames are not blank: observation.images.realsense 243622061421",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "pixel std per frame [70.4, 68.7, 69.3]"
+  },
+  {
+   "check": "decoded frames are not blank: observation.images.wrist",
+   "level": "FAIL",
+   "pass": true,
+   "detail": "pixel std per frame [79.2, 58.6, 70.4]"
+  }
+ ]
+}

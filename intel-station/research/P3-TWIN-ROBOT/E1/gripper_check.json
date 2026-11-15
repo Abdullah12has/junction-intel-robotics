@@ -1,0 +1,280 @@
+{
+ "utc": "2026-11-14T19:53:29Z",
+ "files_read": 17,
+ "episode_dirs": 22,
+ "episode_dirs_without_joints_csv": [
+  "any_1731/ep_0003",
+  "any_1731/ep_0004",
+  "any_1740/ep_0005",
+  "any_1740/ep_0008",
+  "any_1740/ep_0018"
+ ],
+ "rows": 21693,
+ "pos5": {
+  "min": 0.52,
+  "p1": 0.65,
+  "median": 24.62,
+  "p99": 25.08,
+  "max": 25.08
+ },
+ "goal5": {
+  "min": 0.0,
+  "median": 25.0,
+  "max": 25.0,
+  "distinct_values": 121
+ },
+ "bins_pos5": {
+  "pos5_lt_1": 342,
+  "pos5_1_to_1.57": 1104,
+  "pos5_1.57_to_2.42": 3741,
+  "pos5_2.42_to_24": 640,
+  "pos5_24_to_26": 15866,
+  "pos5_gt_26": 0
+ },
+ "closed_command_rows": 5233,
+ "empty_close_pos5": {
+  "n": 336,
+  "median": 0.52,
+  "min": 0.52,
+  "max": 0.98
+ },
+ "held_pos5_when_commanded_closed": {
+  "n": 3716,
+  "median": 1.57,
+  "min": 1.57,
+  "max": 2.42
+ },
+ "open_pos5": {
+  "n": 15833,
+  "median": 24.62,
+  "min": 24.56,
+  "max": 25.08
+ },
+ "open_goal5_rows": 15819,
+ "laws": {
+  "urdf_zero": {
+   "offset_rad": 0.0,
+   "n0": 0.0,
+   "n_at_urdf_upper_limit": 74.29787638829755,
+   "n_at_urdf_lower_limit": -7.4297876388297555,
+   "logged_pos5_beyond_urdf_limits": 0,
+   "logged_goal5_beyond_urdf_limits": 0,
+   "empty_close_rad": 0.012215310101958029,
+   "empty_close_above_closed_stop_deg": 10.699890000042512
+  },
+  "closed_at_0": {
+   "offset_rad": -0.174533,
+   "n0": 0.0,
+   "n_at_urdf_upper_limit": 81.72766402712732,
+   "n_at_urdf_lower_limit": 0.0,
+   "logged_pos5_beyond_urdf_limits": 0,
+   "logged_goal5_beyond_urdf_limits": 0,
+   "empty_close_rad": -0.16231768989804196,
+   "empty_close_above_closed_stop_deg": 0.6998857142857146
+  },
+  "closed_at_empty_reading": {
+   "offset_rad": -0.174533,
+   "n0": 0.52,
+   "n_at_urdf_upper_limit": 82.24766402712731,
+   "n_at_urdf_lower_limit": 0.52,
+   "logged_pos5_beyond_urdf_limits": 0,
+   "logged_goal5_beyond_urdf_limits": 5206,
+   "empty_close_rad": -0.174533,
+   "empty_close_above_closed_stop_deg": 0.0
+  }
+ },
+ "checks": [
+  {
+   "check": "empty close reading near 0.59 (commanded closed, pos5 in [0, 1])",
+   "observed": {
+    "n": 336,
+    "median": 0.52,
+    "min": 0.52,
+    "max": 0.98
+   },
+   "pass": false
+  },
+  {
+   "check": "held readings in 1.57 to 2.42 (commanded closed)",
+   "observed": {
+    "n": 3716,
+    "median": 1.57,
+    "min": 1.57,
+    "max": 2.42
+   },
+   "pass": true,
+   "flag": "[unclear]: inferred from the logged values only; not checked against the images"
+  },
+  {
+   "check": "open readings near 25 (pos5)",
+   "observed": {
+    "n": 15833,
+    "median": 24.62,
+    "min": 24.56,
+    "max": 25.08
+   },
+   "pass": true,
+   "goal5_rows_near_25": 15819
+  }
+ ],
+ "per_episode": [
+  {
+   "episode": "any_1731/ep_0001",
+   "rows": 1092,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.83,
+   "pos5_median": 25.08,
+   "pos5_max": 25.08
+  },
+  {
+   "episode": "any_1731/ep_0002",
+   "rows": 1811,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.57,
+   "pos5_median": 1.96,
+   "pos5_max": 24.76
+  },
+  {
+   "episode": "any_1740/ep_0001",
+   "rows": 3288,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.5,
+   "pos5_median": 24.62,
+   "pos5_max": 24.76
+  },
+  {
+   "episode": "any_1740/ep_0002",
+   "rows": 23,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0003",
+   "rows": 23,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0004",
+   "rows": 1284,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.57,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0006",
+   "rows": 1840,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 0.52,
+   "pos5_median": 24.62,
+   "pos5_max": 24.76
+  },
+  {
+   "episode": "any_1740/ep_0007",
+   "rows": 1613,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.5,
+   "pos5_median": 24.76,
+   "pos5_max": 24.95
+  },
+  {
+   "episode": "any_1740/ep_0009",
+   "rows": 439,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0010",
+   "rows": 508,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0011",
+   "rows": 1059,
+   "goal5_min": 24.62,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0012",
+   "rows": 359,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0013",
+   "rows": 1604,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 0.65,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0014",
+   "rows": 1392,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.57,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0015",
+   "rows": 1867,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.57,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0016",
+   "rows": 1459,
+   "goal5_min": 25.0,
+   "goal5_max": 25.0,
+   "pos5_min": 24.62,
+   "pos5_median": 24.62,
+   "pos5_max": 24.62
+  },
+  {
+   "episode": "any_1740/ep_0017",
+   "rows": 2032,
+   "goal5_min": 0.0,
+   "goal5_max": 25.0,
+   "pos5_min": 1.57,
+   "pos5_median": 24.62,
+   "pos5_max": 24.82
+  }
+ ],
+ "notes": [
+  "The gripper is not in G1: kin.fk takes the five body joints only.",
+  "Closed-stop test: a law is plausible if the empty-close reading sits near the URDF closed stop (-0.174533 rad). closed_at_empty_reading is on the stop by construction, so it is not evidence.",
+  "No jaw-gap measurement was made (no hardware or Studio access). The law choice stays open for Opus."
+ ]
+}

@@ -1,0 +1,225 @@
+{
+ "convention": "A_no_sign_no_offset (URDF angle = scale * normalized value, scale from project_robots.json)",
+ "rows": [
+  {
+   "ep": 0,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.1785,
+    0.0585,
+    -0.0153
+   ]
+  },
+  {
+   "ep": 1,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.1497,
+    0.0655,
+    -0.0115
+   ]
+  },
+  {
+   "ep": 2,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.153,
+    0.0397,
+    -0.0083
+   ]
+  },
+  {
+   "ep": 3,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.1336,
+    0.0555,
+    -0.0097
+   ],
+   "release_frame": 610,
+   "release_xyz_m": [
+    0.1755,
+    0.0207,
+    0.0542
+   ]
+  },
+  {
+   "ep": 4,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.196,
+    0.0522,
+    -0.0146
+   ],
+   "release_frame": 634,
+   "release_xyz_m": [
+    0.1862,
+    0.0445,
+    0.0239
+   ]
+  },
+  {
+   "ep": 5,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.1761,
+    0.0622,
+    -0.0154
+   ],
+   "release_frame": 548,
+   "release_xyz_m": [
+    0.302,
+    0.0676,
+    0.0576
+   ]
+  },
+  {
+   "ep": 6,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.2389,
+    0.0373,
+    -0.0199
+   ],
+   "release_frame": 425,
+   "release_xyz_m": [
+    0.2925,
+    0.0684,
+    0.0415
+   ]
+  },
+  {
+   "ep": 7,
+   "task": "move the brick to the inspection spot",
+   "grasp_xyz_m": [
+    0.1321,
+    0.0276,
+    -0.0072
+   ],
+   "release_frame": 1212,
+   "release_xyz_m": [
+    0.1876,
+    -0.0875,
+    0.0041
+   ]
+  },
+  {
+   "ep": 11,
+   "task": "move the red brick to the blue plate",
+   "grasp_xyz_m": [
+    0.2147,
+    0.1238,
+    -0.0191
+   ],
+   "release_frame": 601,
+   "release_xyz_m": [
+    0.1871,
+    -0.0861,
+    0.018
+   ]
+  },
+  {
+   "ep": 12,
+   "task": "move the red brick to the blue plate",
+   "grasp_xyz_m": [
+    0.2844,
+    0.0688,
+    -0.019
+   ],
+   "release_frame": 682,
+   "release_xyz_m": [
+    0.1815,
+    -0.0959,
+    0.0005
+   ]
+  },
+  {
+   "ep": 14,
+   "task": "move the red brick to the green plate",
+   "grasp_xyz_m": [
+    0.195,
+    0.0832,
+    -0.0147
+   ],
+   "release_frame": 358,
+   "release_xyz_m": [
+    0.1944,
+    0.2181,
+    0.0005
+   ]
+  },
+  {
+   "ep": 15,
+   "task": "move the red brick to the green plate",
+   "grasp_xyz_m": [
+    0.2483,
+    0.1567,
+    -0.0186
+   ],
+   "release_frame": 491,
+   "release_xyz_m": [
+    0.2002,
+    0.2385,
+    0.0416
+   ]
+  }
+ ],
+ "summary": {
+  "blue": {
+   "eps": [
+    7,
+    11,
+    12
+   ],
+   "mean_xy_m": [
+    0.1854,
+    -0.0898
+   ],
+   "spread_xy_std_m": [
+    0.0028,
+    0.0043
+   ],
+   "release_z_mean_m": 0.0075,
+   "w3_plate_xy_m": [
+    0.1876,
+    -0.0875
+   ],
+   "diff_to_w3_mm": 3.2
+  },
+  "green": {
+   "eps": [
+    14,
+    15
+   ],
+   "mean_xy_m": [
+    0.1973,
+    0.2283
+   ],
+   "spread_xy_std_m": [
+    0.0029,
+    0.0102
+   ],
+   "release_z_mean_m": 0.021,
+   "w3_plate_xy_m": [
+    0.1868,
+    0.2306
+   ],
+   "diff_to_w3_mm": 10.7
+  },
+  "grasp_z_m": {
+   "mean": -0.0144,
+   "std_mm": 4.21,
+   "n": 12
+  },
+  "grasp_xy_range_m": {
+   "x": [
+    0.132,
+    0.284
+   ],
+   "y": [
+    0.028,
+    0.157
+   ]
+  }
+ }
+}

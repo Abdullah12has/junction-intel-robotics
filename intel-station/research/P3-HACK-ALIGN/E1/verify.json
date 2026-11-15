@@ -1,0 +1,622 @@
+{
+ "stage": "align-v1",
+ "utc": "2026-11-14T20:17:23Z",
+ "rows": [
+  {
+   "id": "BR-01",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-02",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-03",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-04",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-05",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-06",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-07",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-08",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 10,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-09",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 9,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-10",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-11",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-12",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 5,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-13",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-14",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-15",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-16",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 10,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-17",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 12,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-18",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-19",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-20",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 10,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-21",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-22",
+   "kind": "requirement",
+   "status": "missing",
+   "words": 10,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-23",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "BR-24",
+   "kind": "format",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-25",
+   "kind": "format",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-26",
+   "kind": "format",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-27",
+   "kind": "format",
+   "status": "missing",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-28",
+   "kind": "requirement",
+   "status": "met",
+   "words": 9,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-29",
+   "kind": "requirement",
+   "status": "met",
+   "words": 2,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-30",
+   "kind": "requirement",
+   "status": "met",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-31",
+   "kind": "requirement",
+   "status": "met",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-32",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 14,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-33",
+   "kind": "requirement",
+   "status": "met",
+   "words": 4,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BR-34",
+   "kind": "requirement",
+   "status": "met",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "JC-01",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "JC-02",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "JC-03",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "JC-04",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "JC-05",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 12,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "JC-06",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "RB-01",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 10,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "RB-02",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "RB-03",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 10,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "RB-04",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 12,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "RB-05",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 5,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-01",
+   "kind": "recommended",
+   "status": "met",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-02",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-03",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-04",
+   "kind": "requirement",
+   "status": "met",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-05",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 6,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-06",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 9,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-07",
+   "kind": "criterion",
+   "status": "partial",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-08",
+   "kind": "requirement",
+   "status": "met",
+   "words": 5,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-09",
+   "kind": "requirement",
+   "status": "met",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-10",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 9,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-11",
+   "kind": "recommended",
+   "status": "met",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-12",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-13",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-14",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-15",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 5,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-16",
+   "kind": "requirement",
+   "status": "met",
+   "words": 2,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-17",
+   "kind": "requirement",
+   "status": "met",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-18",
+   "kind": "requirement",
+   "status": "met",
+   "words": 12,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-19",
+   "kind": "requirement",
+   "status": "met",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-20",
+   "kind": "requirement",
+   "status": "met",
+   "words": 7,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-21",
+   "kind": "requirement",
+   "status": "partial",
+   "words": 12,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "GD-22",
+   "kind": "recommended",
+   "status": "missing",
+   "words": 13,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "MD-01",
+   "kind": "recommended",
+   "status": "not_applicable",
+   "words": 9,
+   "word_ok": true,
+   "check": "not-here"
+  },
+  {
+   "id": "MD-02",
+   "kind": "format",
+   "status": "unknown",
+   "words": 14,
+   "word_ok": true,
+   "check": "not-here"
+  },
+  {
+   "id": "MD-03",
+   "kind": "format",
+   "status": "unknown",
+   "words": 9,
+   "word_ok": true,
+   "check": "not-here"
+  },
+  {
+   "id": "MD-04",
+   "kind": "criterion",
+   "status": "unknown",
+   "words": 13,
+   "word_ok": true,
+   "check": "not-here"
+  },
+  {
+   "id": "MD-05",
+   "kind": "background",
+   "status": "met",
+   "words": 5,
+   "word_ok": true,
+   "check": "not-here"
+  },
+  {
+   "id": "BG-02",
+   "kind": "recommended",
+   "status": "partial",
+   "words": 4,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "BG-03",
+   "kind": "recommended",
+   "status": "met",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "OQ-01",
+   "kind": "conflict",
+   "status": "open",
+   "words": 13,
+   "word_ok": true,
+   "check": "image"
+  },
+  {
+   "id": "OQ-02",
+   "kind": "open_question",
+   "status": "open",
+   "words": 11,
+   "word_ok": true,
+   "check": "ok"
+  },
+  {
+   "id": "OQ-03",
+   "kind": "open_question",
+   "status": "open",
+   "words": 8,
+   "word_ok": true,
+   "check": "ok"
+  }
+ ]
+}

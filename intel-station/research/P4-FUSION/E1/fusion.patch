@@ -1,0 +1,1586 @@
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/anomaly/fused_config.json app/anomaly/fused_config.json
+--- a/app/anomaly/fused_config.json	1970-01-01 02:00:00.000000000 +0200
++++ b/app/anomaly/fused_config.json	2026-11-14 23:36:56.520895730 +0200
+@@ -0,0 +1,10 @@
++{
++  "enabled": false,
++  "model": "patchcore",
++  "rule": "LR",
++  "device": "CPU",
++  "size": 256,
++  "ir_dir": "/home/intel/intel-junction-2026/work/P4-FUSION/E1/models/patchcore/all_good",
++  "lr_params": "/home/intel/intel-junction-2026/work/P4-FUSION/E1/models/fusion_params.json",
++  "note": "Off. Fusion-v1 is NOT ADOPTED (CHANGES.md): no rule beats the tape verdict on every colour and overall. LR is the rule with the best overall F1 on the sensitivity set (tied with the tape verdict). fusion_params.json is the deployment fit on all 32 crops and is validated false: enable only after a new evaluation."
++}
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/anomaly/fused.py app/anomaly/fused.py
+--- a/app/anomaly/fused.py	1970-01-01 02:00:00.000000000 +0200
++++ b/app/anomaly/fused.py	2026-11-14 23:36:56.520824589 +0200
+@@ -0,0 +1,139 @@
++"""Anomaly evidence for the close-view tape rule (P4-FUSION E1, stage fusion-v1).
++
++Off unless app/anomaly/fused_config.json sets "enabled": true. score() runs the Anomalib model exported to OpenVINO IR
++(device from the config) on the close-view crop of the brick under the jaws, with the crop and preprocessing of the LOEO
++evaluation, and returns the evidence that sort_loop.decide() and episode.json record. fused_verdict() applies the
++configured rule (AND, OR or LR) to the close tape verdict and that evidence. Metrics and the adoption check: CHANGES.md.
++"""
++import json
++import importlib.util
++import os
++import time
++
++import numpy as np
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++CONFIG = os.path.join(HERE, "fused_config.json")
++_cache = {}
++_scorers = {}
++
++
++def config():
++    """The configuration file, read once."""
++    if "cfg" not in _cache:
++        with open(CONFIG, encoding="utf-8") as fh:
++            _cache["cfg"] = json.load(fh)
++    return _cache["cfg"]
++
++
++def crop_of(img, bbox, pad=12):
++    """The crop that sort_loop.save_crop writes for the same bbox and pad, as an array."""
++    if img is None or bbox is None:
++        return None
++    x, y, w, h = bbox
++    H, W = img.shape[:2]
++    return img[max(0, y - pad):min(H, y + h + pad), max(0, x - pad):min(W, x + w + pad)]
++
++
++class _Scorer:
++    """OpenVINO IR scorer, as in the LOEO evaluation: anom3 preprocessing, the anomaly map maximum (or pred_score),
++    and padding of a single crop to the static batch of the export."""
++
++    def __init__(self, cfg):
++        import openvino as ov
++        spec = importlib.util.spec_from_file_location("p4_fusion_anom3_infer", os.path.join(HERE, "anom3", "infer.py"))
++        infer = importlib.util.module_from_spec(spec)
++        spec.loader.exec_module(infer)
++        self.infer = infer
++        self.size = int(cfg["size"])
++        self.device = cfg["device"]
++        self.ir_dir = cfg["ir_dir"]
++        with open(os.path.join(self.ir_dir, "threshold.json"), encoding="utf-8") as fh:
++            self.threshold = float(json.load(fh)["threshold"])
++        props = {"INFERENCE_PRECISION_HINT": "f32"} if self.device == "GPU" else {}
++        self.compiled = ov.Core().compile_model(os.path.join(self.ir_dir, "model.xml"), self.device, props)
++        self.req = self.compiled.create_infer_request()
++        shape = self.compiled.input(0).partial_shape
++        self.batch = shape[0].get_length() if shape[0].is_static else 1
++        self.port, self.is_map = None, False
++        for want, is_map in (("pred_score", False), ("anomaly_map", True)):
++            for p in self.compiled.outputs:
++                try:
++                    names = p.get_names()
++                except RuntimeError:
++                    names = set()
++                if any(want in n for n in names):
++                    self.port, self.is_map = p, is_map
++                    break
++            if self.port is not None:
++                break
++        if self.port is None:
++            raise RuntimeError("IR has no pred_score or anomaly_map output: " + self.ir_dir)
++
++    def score(self, bgr):
++        xs = [self.infer.preprocess(bgr, self.size)]
++        xs += [xs[-1]] * (self.batch - 1)
++        x = np.stack(xs).astype(np.float32)
++        res = np.asarray(self.req.infer({0: x})[self.port], dtype=np.float32).reshape(self.batch, -1)
++        vals = res.max(axis=1) if self.is_map else res[:, 0]
++        return float(vals[0])
++
++
++def _lr_params(cfg):
++    with open(cfg["lr_params"], encoding="utf-8") as fh:
++        return json.load(fh)["models"][cfg["model"]]
++
++
++def _lr_probability(p, tape_score, anomaly_score):
++    x = np.array([tape_score, anomaly_score], float)
++    z = (x - np.asarray(p["mu"])) / np.asarray(p["sd"])
++    return 1.0 / (1.0 + np.exp(-(z @ np.asarray(p["w"]) + p["b"])))
++
++
++def score(crop, log=None):
++    """Anomaly evidence for one close-view crop (BGR array), or None when the flag is off, there is no crop, or the
++    evidence cannot be computed (logged; the tape verdict then stands)."""
++    cfg = config()
++    if not cfg.get("enabled") or crop is None:
++        return None
++    try:
++        key = (cfg["ir_dir"], cfg["device"])
++        if key not in _scorers:
++            _scorers[key] = _Scorer(cfg)
++        sc = _scorers[key]
++        t0 = time.perf_counter()
++        s = sc.score(crop)
++        ms = (time.perf_counter() - t0) * 1000.0
++        lr = _lr_params(cfg) if cfg["rule"] == "LR" else None
++    except Exception as exc:  # optional evidence must not stop the loop: the tape verdict stands, as before
++        if log:
++            log("anomaly unavailable, tape verdict stands: %s: %s" % (type(exc).__name__, exc))
++        return None
++    if log:
++        log("anomaly %s score %.3f threshold %.3f device %s latency %.1f ms"
++            % (cfg["model"], s, sc.threshold, sc.device, ms))
++    return {"model": cfg["model"], "device": sc.device, "score": s, "threshold": sc.threshold,
++            "latency_ms": round(ms, 2), "rule": cfg["rule"], "lr": lr}
++
++
++def fused_verdict(pre, anomaly):
++    """CONFIDENT_DEFECT or CONFIDENT_GOOD: the configured rule on the close tape verdict and the anomaly evidence."""
++    tape = pre.get("tape_verdict", pre.get("verdict")) == "CONFIDENT_DEFECT"
++    over = anomaly["score"] > anomaly["threshold"]
++    rule = anomaly["rule"]
++    if rule == "AND":
++        defect = tape and over
++    elif rule == "OR":
++        defect = tape or over
++    elif rule == "LR":
++        defect = _lr_probability(anomaly["lr"], float(pre.get("tape_score") or 0.0), anomaly["score"]) >= 0.5
++    else:
++        raise ValueError("unknown fusion rule %r" % (rule,))
++    return "CONFIDENT_DEFECT" if defect else "CONFIDENT_GOOD"
++
++
++def effective_verdict(pre, anomaly):
++    """The close verdict the loop acts on: the fused verdict when there is anomaly evidence, else the tape verdict."""
++    if anomaly is None:
++        return pre.get("verdict")
++    return fused_verdict(pre, anomaly)
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/sort_any.py app/tools/sort_any.py
+--- a/app/tools/sort_any.py	2026-11-14 23:34:42.120451570 +0200
++++ b/app/tools/sort_any.py	2026-11-14 23:36:56.521493006 +0200
+@@ -404,6 +404,15 @@
+     return _hue_check(out, want_hue)
+ 
+ 
++def _anomaly_for(pre, cimg):
++    """P4-FUSION: anomaly evidence on the crop that pre_close.png was saved from: the episode's first close frame for a
++    diff_first_frame verdict (its bbox is in that frame), the close frame otherwise. None while the flag is off."""
++    if not pre or not pre.get("bbox"):
++        return None
++    src = (EPIMG.get("pre") or {}).get("close") if pre.get("method") == "diff_first_frame" else cimg
++    return sl.fused.score(sl.fused.crop_of(src, pre.get("bbox")), log=log)
++
++
+ def grasp(q, bh, retry=False, tag=""):
+     """Descend on the centred brick, close, lift, check the hold. tag="re_" for the re-pick at the station: its
+     snapshots and fields get that prefix, so the first pick's record stays intact."""
+@@ -428,6 +437,7 @@
+         cv2.imwrite(f"{ga.OUT}/crops/{tag}hover_close.jpg", cimg)
+     if not tag:
+         EP["pre_close"] = pre_close_verdict(cimg, want_hue=bh.get("hue"))
++        EP["anomaly"] = _anomaly_for(EP["pre_close"], cimg)  # P4-FUSION: None while the flag is off
+     q1 = pa.move_rel(q, g, [0, 0, -(use - 26.0)], speed=CFG["desc"])
+     if q1 is None:
+         return False, "ik fail stage 1"
+@@ -680,7 +690,7 @@
+     t1 = time.time()
+     pre = EP.get("pre_close") or {}
+     views = []
+-    if shape[0] == "2x2" and pre.get("verdict") not in ("CONFIDENT_DEFECT", "CONFIDENT_GOOD"):
++    if shape[0] == "2x2" and sl.fused.effective_verdict(pre, EP.get("anomaly")) not in ("CONFIDENT_DEFECT", "CONFIDENT_GOOD"):
+         sv, ok2 = station_inspect(k)
+         views = [sv]
+         ffv = EP.get("first_frame_view")
+@@ -698,7 +708,7 @@
+     pre = EP.get("pre_close") or {"verdict": "UNCERTAIN"}
+     colour = pre.get("colour") or next((v.get("colour") for v in clean if v.get("colour")), None) or "unknown"
+     EP["views_used"] = len(clean)
+-    plate, label, conf, reasons = sl.decide(pre, shape, clean)
++    plate, label, conf, reasons = sl.decide(pre, shape, clean, anomaly=EP.get("anomaly"))
+     EP.update({"views": views, "colour": colour, "plate": plate, "label": label, "decision_conf": conf,
+                "decision_reasons": reasons, "label_source": "det2", "needs_review": conf not in ("confident", "held_only"),
+                "task": f"move the {colour} brick to the {plate} plate"})
+@@ -750,7 +760,7 @@
+             return None
+         pre = EP.get("pre_close") or {"verdict": "UNCERTAIN"}
+         clean = clean_views(views)
+-        plate, label, conf, reasons = sl.decide(pre, (EP.get("shape", "2x2"), EP.get("shape_why", "")), clean)
++        plate, label, conf, reasons = sl.decide(pre, (EP.get("shape", "2x2"), EP.get("shape_why", "")), clean, anomaly=EP.get("anomaly"))
+         colour = pre.get("colour") or next((v.get("colour") for v in clean if v.get("colour")), None) or "unknown"
+         EP.update({"views": views, "plate": plate, "label": label, "decision_conf": conf, "colour": colour,
+                    "decision_reasons": reasons, "label_source": "det2", "needs_review": conf not in ("confident", "held_only"), "task": f"move the {colour} brick to the {plate} plate"})
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/sort_loop.py app/tools/sort_loop.py
+--- a/app/tools/sort_loop.py	2026-11-14 23:34:42.120365004 +0200
++++ b/app/tools/sort_loop.py	2026-11-14 23:36:56.520322477 +0200
+@@ -38,6 +38,14 @@
+ EP = {}
+ 
+ 
++import importlib.util as _ilu  # noqa: E402  (P4-FUSION: fused.py is loaded by its path, so no name enters sys.path)
++_FUSED = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "anomaly", "fused.py")
++_spec = _ilu.spec_from_file_location("fused", _FUSED)
++fused = _ilu.module_from_spec(_spec)  # anomaly evidence for the close verdict; off unless fused_config.json enables it
++sys.modules["fused"] = fused
++_spec.loader.exec_module(fused)
++
++
+ def log(msg):
+     line = time.strftime("%H:%M:%SZ ", time.gmtime()) + msg
+     print(line, flush=True)
+@@ -380,18 +388,26 @@
+     return views, up
+ 
+ 
+-def decide(pre, shape, views):
++def decide(pre, shape, views, anomaly=None):
++    # P4-FUSION: with anomaly evidence the fused rule sets the close verdict from the tape verdict and the anomaly
++    # score; without it the tape verdict stands, as before. pre is not modified.
++    if anomaly is None:
++        close, close_why = pre.get("verdict"), "tape_pre:" + ",".join(pre.get("reasons", []))
++    else:
++        close = fused.fused_verdict(pre, anomaly)
++        over = "anomaly_over" if anomaly["score"] > anomaly["threshold"] else "anomaly_under"
++        close_why = "fused_%s:%s,%s" % (anomaly["rule"], pre.get("verdict"), over)
+     reasons = []
+     if shape[0] != "2x2":
+         reasons.append("not_2x2:" + shape[1])
+-    if pre.get("verdict") == "CONFIDENT_DEFECT":
+-        reasons.append("tape_pre:" + ",".join(pre.get("reasons", [])))
++    if close == "CONFIDENT_DEFECT":
++        reasons.append(close_why)
+     for v in views:
+         if v.get("verdict") == "CONFIDENT_DEFECT":
+             reasons.append(f"tape_held_r{v.get('roll_off_deg')}")
+     if reasons:
+         return "green", "DEFECT", "confident", reasons
+-    goods = [pre.get("verdict") == "CONFIDENT_GOOD"] + [v.get("verdict") == "CONFIDENT_GOOD" for v in views]
++    goods = [close == "CONFIDENT_GOOD"] + [v.get("verdict") == "CONFIDENT_GOOD" for v in views]
+     if any(goods):
+         return "blue", "GOOD", "confident" if goods[0] else "held_only", ["no_defect_evidence"]
+     scores = [x.get("tape_score") for x in [pre] + views if x.get("tape_score") is not None]
+@@ -430,6 +446,8 @@
+     imgs = ga.snap("pre")
+     pre = close_verdict(imgs["close"], at_hover=True)
+     save_crop(imgs["close"], pre.get("bbox"), f"{ep_dir}/crops/pre_close.png")
++    anomaly = fused.score(fused.crop_of(imgs["close"], pre.get("bbox")), log=log)  # P4-FUSION, None while off
++    EP["anomaly"] = anomaly
+     shape = shape_from_wrist(wb0)
+     colour = pre.get("colour") or "unknown"
+     EP.update({"pre": pre, "shape": shape[0], "shape_why": shape[1], "colour": colour, "wrist_pre": wb0})
+@@ -446,11 +464,11 @@
+         go_park(False)
+         return
+     t1 = time.time()
+-    fast = pre.get("verdict") == "CONFIDENT_DEFECT" or shape[0] != "2x2"  # I-52: a sure defect skips inspection
++    fast = fused.effective_verdict(pre, anomaly) == "CONFIDENT_DEFECT" or shape[0] != "2x2"  # I-52: a sure defect skips inspection
+     EP["fast_path"] = fast
+     views, up = multiview(EP["lift_pose"]) if (CFG["multiview"] and not fast) else ([], EP["lift_pose"])
+     T["multiview_s"] = round(time.time() - t1, 1)
+-    plate, label, conf, reasons = decide(pre, shape, views)
++    plate, label, conf, reasons = decide(pre, shape, views, anomaly=anomaly)
+     EP.update({"views": views, "plate": plate, "label": label, "decision_conf": conf, "decision_reasons": reasons,
+                "label_source": "det2", "task": f"move the {colour} brick to the {plate} plate"})
+     log(f"ep {k}: decision {label} -> {plate} ({conf}; {reasons})")
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/fixtures/fusion_v1/fusion_folds.json app/tools/tests/fixtures/fusion_v1/fusion_folds.json
+--- a/app/tools/tests/fixtures/fusion_v1/fusion_folds.json	1970-01-01 02:00:00.000000000 +0200
++++ b/app/tools/tests/fixtures/fusion_v1/fusion_folds.json	2026-11-14 23:36:56.521145475 +0200
+@@ -0,0 +1,1099 @@
++{
++ "stage": "fusion-v1",
++ "sets": {
++  "primary": {
++   "patchcore": {
++    "any_1731/ep_0001": {
++     "mu": [
++      0.008113333333333334,
++      446.422162
++     ],
++     "sd": [
++      0.030563243992559233,
++      49.202441545903866
++     ],
++     "w": [
++      1.7214783060046885,
++      0.5753538416850809
++     ],
++     "b": -4.741678631502987
++    },
++    "any_1731/ep_0002": {
++     "mu": [
++      0.008393103448275862,
++      444.21320137931036
++     ],
++     "sd": [
++      0.03104793869634619,
++      47.22068465813206
++     ],
++     "w": [
++      1.7258080199946648,
++      0.6034596230339914
++     ],
++     "b": -4.74584127084334
++    },
++    "any_1740/ep_0001": {
++     "mu": [
++      0.008113333333333334,
++      442.54456000000005
++     ],
++     "sd": [
++      0.030563243992559233,
++      42.29029401402485
++     ],
++     "w": [
++      1.6595957214557833,
++      0.6681178613333726
++     ],
++     "b": -4.776213557937549
++    },
++    "any_1740/ep_0004": {
++     "mu": [
++      0.008113333333333334,
++      448.9730123333333
++     ],
++     "sd": [
++      0.030563243992559233,
++      48.255243131007376
++     ],
++     "w": [
++      1.7225093372623006,
++      0.5842703866735648
++     ],
++     "b": -4.740077579112764
++    },
++    "any_1740/ep_0006": null,
++    "any_1740/ep_0014": {
++     "mu": [
++      0.008393103448275862,
++      451.3550572413793
++     ],
++     "sd": [
++      0.03104793869634619,
++      47.337338958473985
++     ],
++     "w": [
++      1.7438385527899165,
++      0.6040026182457376
++     ],
++     "b": -4.731214823919218
++    },
++    "studio/P1": {
++     "mu": [
++      0.009408,
++      443.96717320000005
++     ],
++     "sd": [
++      0.033297531479001004,
++      50.76128976533216
++     ],
++     "w": [
++      1.8217663682124154,
++      0.652180197233232
++     ],
++     "b": -4.693387852195881
++    },
++    "studio/P10": {
++     "mu": [
++      0.008692857142857143,
++      446.0675321428572
++     ],
++     "sd": [
++      0.03155624249912377,
++      50.772852075949906
++     ],
++     "w": [
++      1.76792287768866,
++      0.5908717632274358
++     ],
++     "b": -4.722448365473457
++    },
++    "studio/P11": {
++     "mu": [
++      0.008113333333333334,
++      448.5057273333334
++     ],
++     "sd": [
++      0.030563243992559237,
++      48.740753734278606
++     ],
++     "w": [
++      1.7234572509970678,
++      0.5812187244536579
++     ],
++     "b": -4.7393432667462685
++    },
++    "studio/P12": {
++     "mu": [
++      0.008113333333333334,
++      447.7769826666668
++     ],
++     "sd": [
++      0.030563243992559237,
++      49.21466991613187
++     ],
++     "w": [
++      1.7239545339412596,
++      0.5775478957822006
++     ],
++     "b": -4.739159004141895
++    },
++    "studio/P16": {
++     "mu": [
++      0.008113333333333334,
++      448.20371633333343
++     ],
++     "sd": [
++      0.030563243992559237,
++      48.97851646256869
++     ],
++     "w": [
++      1.7238096746240372,
++      0.579521358906939
++     ],
++     "b": -4.739130579418509
++    },
++    "studio/P2": {
++     "mu": [
++      0.008113333333333334,
++      447.54244300000005
++     ],
++     "sd": [
++      0.030563243992559237,
++      49.29523967650728
++     ],
++     "w": [
++      1.723854173628463,
++      0.5766971950571284
++     ],
++     "b": -4.739332963349966
++    },
++    "studio/P3": {
++     "mu": [
++      0.008393103448275862,
++      450.1051596551725
++     ],
++     "sd": [
++      0.03104793869634619,
++      47.302530453930636
++     ],
++     "w": [
++      1.74162499268716,
++      0.6006696018281147
++     ],
++     "b": -4.734171927088625
++    },
++    "studio/P4": {
++     "mu": [
++      0.005316666666666667,
++      446.56240166666674
++     ],
++     "sd": [
++      0.027148310748900076,
++      49.25733583733101
++     ],
++     "w": [
++      1.6779550154802614,
++      0.26756824348647124
++     ],
++     "b": -4.309945887425652
++    },
++    "studio/P5": {
++     "mu": [
++      0.008393103448275862,
++      447.5525717241381
++     ],
++     "sd": [
++      0.03104793869634619,
++      50.166186283752936
++     ],
++     "w": [
++      1.7473288287224955,
++      0.5839474558349446
++     ],
++     "b": -4.729300008416457
++    },
++    "studio/P6": {
++     "mu": [
++      0.008113333333333334,
++      447.91605133333337
++     ],
++     "sd": [
++      0.030563243992559237,
++      49.150451878609815
++     ],
++     "w": [
++      1.723953274361751,
++      0.5781328915555557
++     ],
++     "b": -4.739108441454185
++    },
++    "studio/P7": {
++     "mu": [
++      0.008113333333333334,
++      446.8089000000001
++     ],
++     "sd": [
++      0.030563243992559237,
++      49.323726710616
++     ],
++     "w": [
++      1.7226719940672057,
++      0.5752606907923881
++     ],
++     "b": -4.740584834109651
++    },
++    "studio/P9": {
++     "mu": [
++      0.008692857142857143,
++      448.4765214285716
++     ],
++     "sd": [
++      0.03155624249912377,
++      48.10025878701157
++     ],
++     "w": [
++      1.7620941059373758,
++      0.607690446568957
++     ],
++     "b": -4.727047555195099
++    }
++   },
++   "padim": {
++    "any_1731/ep_0001": {
++     "mu": [
++      0.008113333333333334,
++      429.4355440000001
++     ],
++     "sd": [
++      0.030563243992559233,
++      44.39818293531549
++     ],
++     "w": [
++      1.817436927954928,
++      -0.5522082625070137
++     ],
++     "b": -4.654247445732695
++    },
++    "any_1731/ep_0002": {
++     "mu": [
++      0.008393103448275862,
++      433.17566448275863
++     ],
++     "sd": [
++      0.03104793869634619,
++      40.97620044045666
++     ],
++     "w": [
++      1.8229729294980614,
++      -0.6014472233641055
++     ],
++     "b": -4.651799170140463
++    },
++    "any_1740/ep_0001": {
++     "mu": [
++      0.008113333333333334,
++      429.1742980000001
++     ],
++     "sd": [
++      0.030563243992559233,
++      44.58898982406412
++     ],
++     "w": [
++      1.8183048581828403,
++      -0.5508589033896609
++     ],
++     "b": -4.653564055852499
++    },
++    "any_1740/ep_0004": {
++     "mu": [
++      0.008113333333333334,
++      430.5840333333334
++     ],
++     "sd": [
++      0.030563243992559233,
++      42.9693255335366
++     ],
++     "w": [
++      1.812151993934968,
++      -0.56531465303854
++     ],
++     "b": -4.6570514331266235
++    },
++    "any_1740/ep_0006": null,
++    "any_1740/ep_0014": {
++     "mu": [
++      0.008393103448275862,
++      428.9201010344828
++     ],
++     "sd": [
++      0.03104793869634619,
++      45.57293404462871
++     ],
++     "w": [
++      1.8432545598976455,
++      -0.555704454960311
++     ],
++     "b": -4.640560359283052
++    },
++    "studio/P1": {
++     "mu": [
++      0.009408,
++      420.01181640000004
++     ],
++     "sd": [
++      0.033297531479001004,
++      44.807696939567755
++     ],
++     "w": [
++      1.9678038846990382,
++      -0.6069382794821071
++     ],
++     "b": -4.557216934902242
++    },
++    "studio/P10": {
++     "mu": [
++      0.008692857142857143,
++      422.04762928571427
++     ],
++     "sd": [
++      0.03155624249912377,
++      41.79541102797083
++     ],
++     "w": [
++      1.8801811762888105,
++      -0.5877587591827691
++     ],
++     "b": -4.608586199841655
++    },
++    "studio/P11": {
++     "mu": [
++      0.008113333333333334,
++      427.0279166666668
++     ],
++     "sd": [
++      0.030563243992559237,
++      44.356298049487634
++     ],
++     "w": [
++      1.8227952370881662,
++      -0.5530052327177816
++     ],
++     "b": -4.648203745302913
++    },
++    "studio/P12": {
++     "mu": [
++      0.008113333333333334,
++      428.86698
++     ],
++     "sd": [
++      0.030563243992559237,
++      44.751928943181696
++     ],
++     "w": [
++      1.8192122776512136,
++      -0.5498304884612408
++     ],
++     "b": -4.652759016192939
++    },
++    "studio/P16": {
++     "mu": [
++      0.008113333333333334,
++      429.6532216666667
++     ],
++     "sd": [
++      0.030563243992559237,
++      44.20202679255025
++     ],
++     "w": [
++      1.8166363183061591,
++      -0.5537110707980385
++     ],
++     "b": -4.654812264153635
++    },
++    "studio/P2": {
++     "mu": [
++      0.008113333333333334,
++      427.271752
++     ],
++     "sd": [
++      0.030563243992559237,
++      44.54451195435847
++     ],
++     "w": [
++      1.8224622985787087,
++      -0.5518527216583364
++     ],
++     "b": -4.648761777583186
++    },
++    "studio/P3": {
++     "mu": [
++      0.008393103448275862,
++      430.20148965517245
++     ],
++     "sd": [
++      0.03104793869634619,
++      43.13802831386427
++     ],
++     "w": [
++      1.8358758565015718,
++      -0.5780717689928324
++     ],
++     "b": -4.643542941629014
++    },
++    "studio/P4": {
++     "mu": [
++      0.005316666666666667,
++      427.48870333333343
++     ],
++     "sd": [
++      0.027148310748900076,
++      44.67663902146499
++     ],
++     "w": [
++      1.7270922139237648,
++      -0.11596854475210085
++     ],
++     "b": -4.274632224403968
++    },
++    "studio/P5": {
++     "mu": [
++      0.008393103448275862,
++      427.88440172413794
++     ],
++     "sd": [
++      0.03104793869634619,
++      44.71142198606135
++     ],
++     "w": [
++      1.844458748264074,
++      -0.5615932642491787
++     ],
++     "b": -4.638097966810286
++    },
++    "studio/P6": {
++     "mu": [
++      0.008113333333333334,
++      430.97241333333335
++     ],
++     "sd": [
++      0.030563243992559237,
++      42.2568832241425
++     ],
++     "w": [
++      1.8095457196828835,
++      -0.5737961842491995
++     ],
++     "b": -4.657770288417674
++    },
++    "studio/P7": {
++     "mu": [
++      0.008113333333333334,
++      428.06507666666676
++     ],
++     "sd": [
++      0.030563243992559237,
++      44.86809337796297
++     ],
++     "w": [
++      1.8211086109880033,
++      -0.5495041610117445
++     ],
++     "b": -4.650693136421235
++    },
++    "studio/P9": {
++     "mu": [
++      0.008692857142857143,
++      427.1054728571429
++     ],
++     "sd": [
++      0.03155624249912377,
++      45.51979796714717
++     ],
++     "w": [
++      1.8714848395861778,
++      -0.5680021446970354
++     ],
++     "b": -4.622775370106854
++    }
++   }
++  },
++  "sensitivity_incl_v1_unverified": {
++   "patchcore": {
++    "any_1731/ep_0001": {
++     "mu": [
++      0.011990322580645158,
++      445.0677322580646
++     ],
++     "sd": [
++      0.03680911062667861,
++      48.967558040340336
++     ],
++     "w": [
++      2.277107469613711,
++      -0.30285066901434193
++     ],
++     "b": -4.056552415469973
++    },
++    "any_1731/ep_0002": {
++     "mu": [
++      0.012389999999999997,
++      442.8872560000001
++     ],
++     "sd": [
++      0.037351336094388995,
++      46.9728903473535
++     ],
++     "w": [
++      2.306176634391356,
++      -0.30137720484765074
++     ],
++     "b": -4.029047551899415
++    },
++    "any_1740/ep_0001": {
++     "mu": [
++      0.011990322580645158,
++      441.31521419354846
++     ],
++     "sd": [
++      0.03680911062667861,
++      42.14398122866606
++     ],
++     "w": [
++      2.285101002408236,
++      -0.2907276881852177
++     ],
++     "b": -4.052957121846103
++    },
++    "any_1740/ep_0004": {
++     "mu": [
++      0.011990322580645158,
++      447.53629709677426
++     ],
++     "sd": [
++      0.03680911062667861,
++      48.11837380040514
++     ],
++     "w": [
++      2.273935186795766,
++      -0.3068475295006277
++     ],
++     "b": -4.060654174742976
++    },
++    "any_1740/ep_0006": {
++     "mu": [
++      0.007109677419354839,
++      443.4133783870968
++     ],
++     "sd": [
++      0.026639994640882576,
++      47.27376080678023
++     ],
++     "w": [
++      1.7581106091385197,
++      -0.8300928376884387
++     ],
++     "b": -4.695765322733763
++    },
++    "any_1740/ep_0014": {
++     "mu": [
++      0.012389999999999997,
++      449.79105000000004
++     ],
++     "sd": [
++      0.037351336094388995,
++      47.2976424207917
++     ],
++     "w": [
++      2.2960931992889217,
++      -0.3136382023053977
++     ],
++     "b": -4.039980644800938
++    },
++    "any_1740/ep_0017": {
++     "mu": [
++      0.007851612903225806,
++      447.1138996774194
++     ],
++     "sd": [
++      0.030100401500687168,
++      48.55041063769625
++     ],
++     "w": [
++      1.7010016985416094,
++      0.5685447903171724
++     ],
++     "b": -4.74917409168627
++    },
++    "studio/P1": {
++     "mu": [
++      0.013980769230769229,
++      442.4466988461539
++     ],
++     "sd": [
++      0.03986022813307832,
++      50.35275981113273
++     ],
++     "w": [
++      2.4165066375432764,
++      -0.3085896063365462
++     ],
++     "b": -3.9150058812918997
++    },
++    "studio/P10": {
++     "mu": [
++      0.012817241379310342,
++      444.63192206896554
++     ],
++     "sd": [
++      0.037917725624057735,
++      50.46481292559314
++     ],
++     "w": [
++      2.328864571490263,
++      -0.30813782739184037
++     ],
++     "b": -4.004348129429168
++    },
++    "studio/P11": {
++     "mu": [
++      0.011990322580645158,
++      447.08408580645164
++     ],
++     "sd": [
++      0.03680911062667861,
++      48.57631918234036
++     ],
++     "w": [
++      2.274452119949028,
++      -0.3059380742456742
++     ],
++     "b": -4.059783842061613
++    },
++    "studio/P12": {
++     "mu": [
++      0.011990322580645158,
++      446.37884903225813
++     ],
++     "sd": [
++      0.03680911062667861,
++      49.01627618823083
++     ],
++     "w": [
++      2.275307985705547,
++      -0.3047365252384463
++     ],
++     "b": -4.05853401444618
++    },
++    "studio/P16": {
++     "mu": [
++      0.011990322580645158,
++      446.79181709677425
++     ],
++     "sd": [
++      0.03680911062667861,
++      48.798720745631115
++     ],
++     "w": [
++      2.2747988849676606,
++      -0.30541317020089787
++     ],
++     "b": -4.059249875120678
++    },
++    "studio/P2": {
++     "mu": [
++      0.011990322580645158,
++      446.15187516129043
++     ],
++     "sd": [
++      0.03680911062667861,
++      49.088117290559865
++     ],
++     "w": [
++      2.2755982896534865,
++      -0.30438990528472093
++     ],
++     "b": -4.058159699354002
++    },
++    "studio/P3": {
++     "mu": [
++      0.012389999999999997,
++      448.58281566666676
++     ],
++     "sd": [
++      0.037351336094388995,
++      47.224500842225744
++     ],
++     "w": [
++      2.2979013862817697,
++      -0.31268761230426495
++     ],
++     "b": -4.03792710592703
++    },
++    "studio/P4": {
++     "mu": [
++      0.009283870967741933,
++      445.20344806451624
++     ],
++     "sd": [
++      0.03442988390175429,
++      49.024692943433
++     ],
++     "w": [
++      2.2124244216967135,
++      -0.10497640268289846
++     ],
++     "b": -3.7157978355527304
++    },
++    "studio/P5": {
++     "mu": [
++      0.012389999999999997,
++      446.11531400000007
++     ],
++     "sd": [
++      0.037351336094388995,
++      49.926582310956924
++     ],
++     "w": [
++      2.3007039521078907,
++      -0.307233842010105
++     ],
++     "b": -4.0330655998226606
++    },
++    "studio/P6": {
++     "mu": [
++      0.011990322580645158,
++      446.5134316129033
++     ],
++     "sd": [
++      0.03680911062667861,
++      48.95772888034494
++     ],
++     "w": [
++      2.2751394664065927,
++      -0.30494981271550003
++     ],
++     "b": -4.058762349590486
++    },
++    "studio/P7": {
++     "mu": [
++      0.011990322580645158,
++      445.4419948387097
++     ],
++     "sd": [
++      0.03680911062667861,
++      49.09587070815739
++     ],
++     "w": [
++      2.2765613549664123,
++      -0.30337425860930456
++     ],
++     "b": -4.057074366594505
++    },
++    "studio/P9": {
++     "mu": [
++      0.012817241379310342,
++      446.95784275862076
++     ],
++     "sd": [
++      0.037917725624057735,
++      47.941977003650486
++     ],
++     "w": [
++      2.326384297348793,
++      -0.31281287485158593
++     ],
++     "b": -4.008894143092691
++    }
++   },
++   "padim": {
++    "any_1731/ep_0001": {
++     "mu": [
++      0.011990322580645158,
++      426.0319687096775
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.48832843461318
++     ],
++     "w": [
++      2.0420811379549355,
++      -0.9165640888124666
++     ],
++     "b": -4.24663602969667
++    },
++    "any_1731/ep_0002": {
++     "mu": [
++      0.012389999999999997,
++      429.5339660000001
++     ],
++     "sd": [
++      0.037351336094388995,
++      44.80711740117624
++     ],
++     "w": [
++      2.0259375405450544,
++      -0.9507473303985308
++     ],
++     "b": -4.2372528997636545
++    },
++    "any_1740/ep_0001": {
++     "mu": [
++      0.011990322580645158,
++      425.7791500000001
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.64298623267209
++     ],
++     "w": [
++      2.043808422982831,
++      -0.9164358300756947
++     ],
++     "b": -4.245256950409373
++    },
++    "any_1740/ep_0004": {
++     "mu": [
++      0.011990322580645158,
++      427.1434100000001
++     ],
++     "sd": [
++      0.03680911062667861,
++      46.281092356782786
++     ],
++     "w": [
++      2.030174402533513,
++      -0.9221215373521501
++     ],
++     "b": -4.251100292282902
++    },
++    "any_1740/ep_0006": {
++     "mu": [
++      0.007109677419354839,
++      425.71362709677425
++     ],
++     "sd": [
++      0.026639994640882576,
++      47.675987341978164
++     ],
++     "w": [
++      1.5131930238859637,
++      -1.084253285842782
++     ],
++     "b": -4.789093614882408
++    },
++    "any_1740/ep_0014": {
++     "mu": [
++      0.012389999999999997,
++      425.42025466666666
++     ],
++     "sd": [
++      0.037351336094388995,
++      48.609478364633816
++     ],
++     "w": [
++      2.0695936578226934,
++      -0.9272618171859577
++     ],
++     "b": -4.220949951653827
++    },
++    "any_1740/ep_0017": {
++     "mu": [
++      0.007851612903225806,
++      428.25663419354845
++     ],
++     "sd": [
++      0.030100401500687168,
++      44.15095066646488
++     ],
++     "w": [
++      1.797645885111788,
++      -0.5432759532902497
++     ],
++     "b": -4.662756180426358
++    },
++    "studio/P1": {
++     "mu": [
++      0.013980769230769229,
++      416.3161584615385
++     ],
++     "sd": [
++      0.03986022813307832,
++      47.665045072042496
++     ],
++     "w": [
++      2.197374049079805,
++      -0.9630854818581287
++     ],
++     "b": -4.067949696440975
++    },
++    "studio/P10": {
++     "mu": [
++      0.012817241379310342,
++      418.66408034482754
++     ],
++     "sd": [
++      0.037917725624057735,
++      44.80150948569185
++     ],
++     "w": [
++      2.1072269124245846,
++      -0.924853440453451
++     ],
++     "b": -4.163140751045123
++    },
++    "studio/P11": {
++     "mu": [
++      0.011990322580645158,
++      423.70200677419365
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.284927200096334
++     ],
++     "w": [
++      2.050720426549158,
++      -0.9160810364117029
++     ],
++     "b": -4.234261265918521
++    },
++    "studio/P12": {
++     "mu": [
++      0.011990322580645158,
++      425.48174548387095
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.76950037976116
++     ],
++     "w": [
++      2.045519701658098,
++      -0.9164800629765615
++     ],
++     "b": -4.243576462191433
++    },
++    "studio/P16": {
++     "mu": [
++      0.011990322580645158,
++      426.24262451612907
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.32608092114223
++     ],
++     "w": [
++      2.0404199241173893,
++      -0.9168580691118726
++     ],
++     "b": -4.247725192350622
++    },
++    "studio/P2": {
++     "mu": [
++      0.011990322580645158,
++      423.937976451613
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.47239659965473
++     ],
++     "w": [
++      2.0504110704500933,
++      -0.9164832476604189
++     ],
++     "b": -4.235294756506238
++    },
++    "studio/P3": {
++     "mu": [
++      0.012389999999999997,
++      426.65893033333333
++     ],
++     "sd": [
++      0.037351336094388995,
++      46.50593410706668
++     ],
++     "w": [
++      2.051952416898897,
++      -0.9364145867734508
++     ],
++     "b": -4.225182420067413
++    },
++    "studio/P4": {
++     "mu": [
++      0.009283870967741933,
++      424.14792935483877
++     ],
++     "sd": [
++      0.03442988390175429,
++      47.60712167143708
++     ],
++     "w": [
++      2.0611791187963115,
++      -0.4981092973082218
++     ],
++     "b": -3.8496537299786246
++    },
++    "studio/P5": {
++     "mu": [
++      0.012389999999999997,
++      424.4190786666667
++     ],
++     "sd": [
++      0.037351336094388995,
++      47.75688083453683
++     ],
++     "w": [
++      2.070321772433047,
++      -0.9263843146521484
++     ],
++     "b": -4.216151918792519
++    },
++    "studio/P6": {
++     "mu": [
++      0.011990322580645158,
++      427.5192616129032
++     ],
++     "sd": [
++      0.03680911062667861,
++      45.67023602744139
++     ],
++     "w": [
++      2.0236424251033647,
++      -0.9281657635697229
++     ],
++     "b": -4.251340954827549
++    },
++    "studio/P7": {
++     "mu": [
++      0.011990322580645158,
++      424.70571000000007
++     ],
++     "sd": [
++      0.03680911062667861,
++      47.82014165819814
++     ],
++     "w": [
++      2.0486850433733337,
++      -0.9168335588194156
++     ],
++     "b": -4.239188584483793
++    },
++    "studio/P9": {
++     "mu": [
++      0.012817241379310342,
++      423.5475155172414
++     ],
++     "sd": [
++      0.037917725624057735,
++      48.52891539984013
++     ],
++     "w": [
++      2.098385520808933,
++      -0.9371660167735576
++     ],
++     "b": -4.187688723990222
++    }
++   }
++  }
++ }
++}
+\ No newline at end of file
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/fixtures/fusion_v1/replay_fixture.tsv app/tools/tests/fixtures/fusion_v1/replay_fixture.tsv
+--- a/app/tools/tests/fixtures/fusion_v1/replay_fixture.tsv	1970-01-01 02:00:00.000000000 +0200
++++ b/app/tools/tests/fixtures/fusion_v1/replay_fixture.tsv	2026-11-14 23:36:56.521081299 +0200
+@@ -0,0 +1,33 @@
++rec_id	group	family	truth	tri_verdict	tape_score	patchcore_score	patchcore_thr	padim_score	padim_thr	patchcore_LR	patchcore_AND	patchcore_OR	padim_LR	padim_AND	padim_OR
++O_any_1731_ep_0001_closed_closed_close	any_1731/ep_0001	orange	0	UNCERTAIN	0.0	467.86603	583.51917	392.88934	465.93188	0	0	0	0	0	0
++O_any_1731_ep_0002_closed_closed_close	any_1731/ep_0002	orange	0	UNCERTAIN	0.0	537.26404	583.88702	377.66220	465.81824	0	0	0	0	0	0
++O_any_1731_ep_0002_lifted_lifted_close	any_1731/ep_0002	orange	0	CONFIDENT_GOOD	0.0	441.08401	583.88702	336.19919	465.81824	0	0	0	0	0	0
++O_any_1740_ep_0001_closed_closed_close	any_1740/ep_0001	orange	0	UNCERTAIN	0.0	584.19409	537.84021	400.72672	466.04352	0	0	1	0	0	0
++O_any_1740_ep_0004_pre_pre_close_full	any_1740/ep_0004	red	0	CONFIDENT_GOOD	0.0	391.34052	584.19391	358.43466	469.66846	0	0	0	0	0	0
++O_any_1740_ep_0006_pre_pre_close_full	any_1740/ep_0006	yellow	1	CONFIDENT_DEFECT	0.1513	519.15100	584.19745	402.75793	468.47290	1	0	1	1	0	1
++O_any_1740_ep_0014_pre_pre_close_full	any_1740/ep_0014	white	0	CONFIDENT_GOOD	0.0	386.66193	584.98834	418.02075	470.79849	0	0	0	0	0	0
++O_any_1740_ep_0014_station_station_close	any_1740/ep_0014	white	0	CONFIDENT_GOOD	0.0	384.57230	584.98834	419.25198	470.79849	0	0	0	0	0	0
++O_any_1740_ep_0017_pre_pre_close_full	any_1740/ep_0017	yellow	1	CONFIDENT_DEFECT	0.1283	404.43484	584.44940	323.92471	468.47290	1	0	1	1	0	1
++S_6d6bdce3-0_U11_064316_grasp_f0238	studio/P10	blue	0	UNCERTAIN	0.0	459.04999	584.19763	494.67145	470.56851	0	0	0	0	0	1
++S_6d6bdce3-0_U11_064316_pregrasp_f0193	studio/P10	blue	0	CONFIDENT_GOOD	0.0	472.63028	584.19763	470.68912	470.56851	0	0	0	0	0	1
++S_6d6bdce3-0_U11_064316_start_f0000	studio/P10	blue	0	UNCERTAIN	0.0	438.95972	584.19763	493.26147	470.56851	0	0	0	0	0	1
++S_6d6bdce3-11_U22_064316_start_f0000	studio/P4	red	0	CONFIDENT_DEFECT	0.0839	463.65884	583.36316	451.29456	462.90961	1	0	1	1	0	1
++S_6d6bdce3-12_U23_064316_carry_f0571	studio/P3	red	0	UNCERTAIN	0.0	449.35367	584.96222	448.85422	466.89557	0	0	0	0	0	0
++S_6d6bdce3-12_U23_064316_start_f0000	studio/P3	red	0	CONFIDENT_GOOD	0.0	358.12759	584.96222	351.25824	466.89557	0	0	0	0	0	0
++S_6d6bdce3-13_U24_064316_start_f0000	studio/P16	red	0	CONFIDENT_GOOD	0.0	414.41940	584.19415	386.35901	472.65439	0	0	0	0	0	0
++S_6d6bdce3-14_U25_064316_start_f0000	studio/P6	red	0	CONFIDENT_GOOD	0.0	423.04935	583.19617	346.78326	469.55136	0	0	0	0	0	0
++S_6d6bdce3-1_U12_064316_start_f0000	studio/P11	red	0	UNCERTAIN	0.0	405.35907	583.37714	465.11816	471.89404	0	0	0	0	0	0
++S_6d6bdce3-2_U13_064316_start_f0000	studio/P12	red	0	CONFIDENT_GOOD	0.0	427.22141	584.19391	409.94626	471.89404	0	0	0	0	0	0
++S_6d6bdce3-3_U14_064316_pregrasp_f0200	studio/P7	yellow	0	CONFIDENT_GOOD	0.0	456.26389	583.29077	434.00336	471.67957	0	0	0	0	0	0
++S_6d6bdce3-4_U15_064316_start_f0000	studio/P2	red	0	UNCERTAIN	0.0	434.25760	584.19391	457.80310	474.57779	0	0	0	0	0	0
++S_6d6bdce3-5_U16_064316_carry_f0389	studio/P9	yellow	0	CONFIDENT_GOOD	0.0	367.10339	584.07129	474.77225	470.71506	0	0	0	0	0	1
++S_6d6bdce3-5_U16_064316_end_f0646	studio/P9	yellow	0	UNCERTAIN	0.0	446.13403	584.07129	428.47147	470.71506	0	0	0	0	0	0
++S_6d6bdce3-5_U16_064316_pregrasp_f0184	studio/P9	yellow	0	UNCERTAIN	0.0	489.95087	584.07129	413.75870	470.71506	0	0	0	0	0	0
++S_6d6bdce3-6_U17_064316_end_f0511	studio/P5	red	0	UNCERTAIN	0.0	441.79568	583.11810	468.23718	467.20865	0	0	0	0	0	1
++S_6d6bdce3-6_U17_064316_start_f0000	studio/P5	red	0	CONFIDENT_GOOD	0.0	439.71063	583.11810	399.07083	467.20865	0	0	0	0	0	0
++S_6d6bdce3-7_U18_064316_carry_f0781	studio/P1	orange	0	UNCERTAIN	0.0082	533.29224	585.35858	452.65497	404.47217	0	0	0	0	0	1
++S_6d6bdce3-7_U18_064316_end_f1305	studio/P1	orange	0	UNCERTAIN	0.0	426.01559	585.35858	464.37241	404.47217	0	0	0	0	0	1
++S_6d6bdce3-7_U18_064316_grasp_f0350	studio/P1	orange	0	UNCERTAIN	0.0	455.44949	585.35858	447.23938	404.47217	0	0	0	0	0	1
++S_6d6bdce3-7_U18_064316_pregrasp_f0305	studio/P1	orange	0	UNCERTAIN	0.0	461.01965	585.35858	478.21173	404.47217	0	0	0	0	0	1
++S_6d6bdce3-7_U18_064316_release_f1212	studio/P1	orange	0	UNCERTAIN	0.0	431.97025	585.35858	446.08090	404.47217	0	0	0	0	0	1
++S_6d6bdce3-7_U18_064316_start_f0000	studio/P1	orange	0	UNCERTAIN	0.0	453.60434	585.35858	487.10086	404.47217	0	0	0	0	0	1
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/fixtures/MANIFEST.tsv app/tools/tests/fixtures/MANIFEST.tsv
+--- a/app/tools/tests/fixtures/MANIFEST.tsv	2026-11-14 23:34:42.119882323 +0200
++++ b/app/tools/tests/fixtures/MANIFEST.tsv	2026-11-14 23:36:56.520703871 +0200
+@@ -83,3 +83,5 @@
+ split/split_181626.png	video data/wrist/raw/w_20261114T181551Z.mkv at +34.228 s	2026-11-14 18:16:26Z (ep 16 window 18:16:10Z-18:16:30Z)	one white blob from blobs(min_area=1500), short 60-140 px (test rule)	frame extracted at the offset (raw/L20_extract_v2.txt); table row in raw/L19_extract_summary.tsv; test_split_brick_single_white_blob_1816Z	81514510bd2480bebf09ed874ef0ea16b0eb35336a11b2dc470412952f9a5392
+ split/split_181628.png	video data/wrist/raw/w_20261114T181551Z.mkv at +36.228 s	2026-11-14 18:16:28Z (ep 16 window 18:16:10Z-18:16:30Z)	one white blob from blobs(min_area=1500), short 60-140 px (test rule)	frame extracted at the offset (raw/L20_extract_v2.txt); table row in raw/L19_extract_summary.tsv; test_split_brick_single_white_blob_1816Z	47b6588cbe69f2e253184434555627ee7064aa54b703056377b3132bc163f8e7
+ split/split_181630.png	video data/wrist/raw/w_20261114T181551Z.mkv at +38.228 s	2026-11-14 18:16:30Z (ep 16 window 18:16:10Z-18:16:30Z)	one white blob from blobs(min_area=1500), short 60-140 px (test rule)	frame extracted at the offset (raw/L20_extract_v2.txt); table row in raw/L19_extract_summary.tsv; test_split_brick_single_white_blob_1816Z	d2eb4110e21fff56b0783bb8dd6d02f6b9cf5285e46cbcaa450db6827fcdc0a4
++fusion_v1/replay_fixture.tsv	eval/replay_fixture.tsv	2026-11-14T21:21Z (evaluate.py, stage fusion-v1)	32 close crops of the sensitivity set: recorded tape verdict, fold scores, and the LOEO decisions of patchcore and padim under AND, OR and LR	written by evaluate.py; read back by test_fusion_replay	3494ab0d7d743102e347c6642acf965a006a67af19cd76dd71e5363164438b9c
++fusion_v1/fusion_folds.json	eval/fusion_folds.json	2026-11-14T21:21Z (evaluate.py, stage fusion-v1)	LR fit per model and held-out episode: 18 folds (primary) and 19 folds (sensitivity)	written by evaluate.py; read back by test_fusion_replay	ba04e4f72fd11bf8b96965feebd89ac856ccd0c1c7e1ccb19e40a8a21cac1dd9
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/README.md app/tools/tests/README.md
+--- a/app/tools/tests/README.md	2026-11-14 23:34:42.120199876 +0200
++++ b/app/tools/tests/README.md	2026-11-14 23:36:56.520539229 +0200
+@@ -12,6 +12,7 @@
+ 
+ - test_perception.py: 8 tests for pick_any, sort_any and handdet.
+ - test_kin.py: 2 tests for kin.
++- test_fusion_replay.py: P4-FUSION LOEO decisions replayed through sort_loop.decide() (fixtures/fusion_v1).
+ - conftest.py: loaders and the fixture tables HOVER, SERVO, SPLIT and CLOSE, each row naming its episode, frame or log line.
+ - run_tests.py: the runner.
+ - fixtures/: 84 data files (5 hover, 7 close, 17 servo, 11 split, 41 hand, scan_now.jpg, scan_calib.json, hand_labels.csv) and MANIFEST.tsv, one row per data file with source path, source time, expected values, how verified and sha256.
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/run_tests.py app/tools/tests/run_tests.py
+--- a/app/tools/tests/run_tests.py	2026-11-14 23:34:42.120151868 +0200
++++ b/app/tools/tests/run_tests.py	2026-11-14 23:36:56.521586226 +0200
+@@ -17,7 +17,7 @@
+ 
+ import conftest as C  # noqa: E402  (also sets up sys.path for the code under test)
+ 
+-MODULES = ["test_perception", "test_kin", "test_loopfix", "test_safety", "test_closeloc"]
++MODULES = ["test_perception", "test_kin", "test_loopfix", "test_safety", "test_closeloc", "test_fusion_replay"]
+ 
+ 
+ def main():
+diff -ruN -x __pycache__ -x .pytest_cache -x .git app_base_96ee440d/tools/tests/test_fusion_replay.py app/tools/tests/test_fusion_replay.py
+--- a/app/tools/tests/test_fusion_replay.py	1970-01-01 02:00:00.000000000 +0200
++++ b/app/tools/tests/test_fusion_replay.py	2026-11-14 23:36:56.520966121 +0200
+@@ -0,0 +1,126 @@
++"""P4-FUSION replay: the fused close decisions of the LOEO evaluation, replayed through the patched sort_loop.decide().
++
++Fixtures in fixtures/fusion_v1 (written by the P4-FUSION E1 evaluation, stage fusion-v1): replay_fixture.tsv holds the 32
++labelled close crops of the sensitivity set with the recorded tape verdict and tape score, each model's fold score and
++threshold, and the binary LOEO decision of every fused rule; fusion_folds.json holds the logistic regression fitted
++without the held-out episode, per model and held-out group. A replayed decision must equal the recorded one. No model
++runs and no device is opened: the anomaly evidence comes from the fixture.
++"""
++import csv
++import json
++import os
++
++import conftest as C
++
++sl = C.sl
++FUSED = os.path.join(C.FIX, "fusion_v1")
++SET = "sensitivity_incl_v1_unverified"
++RULES = ("AND", "OR", "LR")
++N_CROPS = 32
++
++
++def _rows():
++    path = os.path.join(FUSED, "replay_fixture.tsv")
++    if not os.path.exists(path):
++        raise AssertionError("fixtures/fusion_v1/replay_fixture.tsv is missing")
++    with open(path, encoding="utf-8", newline="") as f:
++        rows = list(csv.DictReader(f, delimiter="\t"))
++    if len(rows) != N_CROPS:
++        raise AssertionError("replay fixture has %d crops, expected %d" % (len(rows), N_CROPS))
++    return rows
++
++
++def _folds():
++    path = os.path.join(FUSED, "fusion_folds.json")
++    if not os.path.exists(path):
++        raise AssertionError("fixtures/fusion_v1/fusion_folds.json is missing")
++    with open(path, encoding="utf-8") as f:
++        return json.load(f)["sets"][SET]
++
++
++def _replay(model, rule):
++    col = "%s_%s" % (model, rule)
++    folds = _folds()[model]
++    checked = defects = 0
++    for row in _rows():
++        if row[col] == "":
++            continue
++        lr = None
++        if rule == "LR":
++            lr = folds.get(row["group"])
++            if lr is None:
++                raise AssertionError("no LR fold for %s" % row["group"])
++        anomaly = {"model": model, "device": "replay", "score": float(row[model + "_score"]),
++                   "threshold": float(row[model + "_thr"]), "rule": rule, "lr": lr}
++        pre = {"verdict": row["tri_verdict"], "tape_score": float(row["tape_score"]), "reasons": ["replay"]}
++        label = sl.decide(pre, ("2x2", "replay"), [], anomaly=anomaly)[1]
++        want = "DEFECT" if row[col] == "1" else "GOOD"
++        if label != want:
++            raise AssertionError("%s %s %s: decide() gives %s, LOEO gives %s"
++                                 % (model, rule, row["rec_id"], label, want))
++        checked += 1
++        defects += want == "DEFECT"
++    if checked == 0:
++        raise AssertionError("no decisions to replay for %s %s" % (model, rule))
++    return checked, defects
++
++
++def _replay_all(model):
++    parts = []
++    for rule in RULES:
++        n, d = _replay(model, rule)
++        parts.append("%s %d crops, %d DEFECT" % (rule, n, d))
++    return "%s replayed: %s" % (model, "; ".join(parts))
++
++
++def test_fusion_flag_off_and_no_evidence_unchanged():
++    import fused
++    assert fused.config()["enabled"] is False, "fused_config.json must ship with enabled false"
++    assert fused.score(C.load_img("close/ep0006_pre_close_full.jpg")) is None, "score() must return None while off"
++    defect = {"verdict": "CONFIDENT_DEFECT", "reasons": ["tape_frac_high"]}
++    good = {"verdict": "CONFIDENT_GOOD", "reasons": []}
++    assert sl.decide(defect, ("2x2", "replay"), [])[1] == "DEFECT"
++    assert sl.decide(good, ("2x2", "replay"), [])[1] == "GOOD"
++    assert sl.decide(defect, ("2x2", "replay"), [], anomaly=None)[1] == "DEFECT"
++    return "flag off; decide() without evidence unchanged"
++
++
++def test_fused_evidence_failure_falls_back_to_tape():
++    import fused
++    saved = dict(fused._cache)
++    logs = []
++    try:
++        fused._cache["cfg"] = dict(fused.config(), enabled=True, ir_dir=os.path.join(C.FIX, "no_such_ir"))
++        got = fused.score(C.load_img("close/ep0006_pre_close_full.jpg"), log=logs.append)
++    finally:
++        fused._cache.clear()
++        fused._cache.update(saved)
++    assert got is None, "unavailable evidence must give None, so the tape verdict stands"
++    assert logs and "tape verdict stands" in logs[0], logs
++    return "unavailable IR: score() gives None and logs; the tape verdict stands"
++
++
++def test_fused_rule_sets_close_verdict():
++    def lab(pre, anomaly):
++        return sl.decide(pre, ("2x2", "replay"), [], anomaly=anomaly)
++
++    over = {"model": "patchcore", "device": "replay", "score": 600.0, "threshold": 584.0, "rule": "OR", "lr": None}
++    under = dict(over, score=400.0, rule="AND")
++    tape_unc = {"verdict": "UNCERTAIN", "tape_score": 0.0, "reasons": []}
++    tape_def = {"verdict": "CONFIDENT_DEFECT", "tape_score": 0.1, "reasons": ["tape_frac_high"]}
++    before = dict(tape_def)
++    got = lab(tape_unc, over)
++    assert got[1] == "DEFECT" and "fused_OR" in " ".join(got[3]), got
++    got = lab(tape_def, under)
++    assert got[1] == "GOOD", "AND must clear a tape DEFECT that the anomaly does not confirm: %r" % (got,)
++    assert lab(tape_def, None)[1] == "DEFECT"
++    assert tape_def == before, "decide() must not change its input"
++    return "OR adds an anomaly DEFECT (fused_OR); AND clears an unconfirmed tape DEFECT; input unchanged"
++
++
++def test_replay_patchcore_fused_rules():
++    return _replay_all("patchcore")
++
++
++def test_replay_padim_fused_rules():
++    return _replay_all("padim")

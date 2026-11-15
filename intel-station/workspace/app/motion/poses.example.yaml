@@ -1,0 +1,29 @@
+# Example poses file for app/motion. The pose values below are PLACEHOLDERS, not taught
+# poses. Replace them with taught values before any hardware run:
+#   python3 -I app/motion/teach_poses.py --studio-export project_robots.json --out poses.yaml
+# Units: normalized. Body joints take [-100, 100]; gripper takes [0, 100].
+# Which gripper value is open and which is closed is not known from the repo: teach it.
+# [unclear: gripper open/closed direction, confidence low]
+# placeholder: true makes run_sequence.py refuse --confirm-motion; remove it once every pose is taught.
+placeholder: true
+unit: normalized
+joint_order: [shoulder_pan, shoulder_lift, elbow_flex, wrist_flex, wrist_roll, gripper]
+poses:
+  rest: [0.0, -60.0, 60.0, 0.0, 0.0, 0.0]
+  pick_spot: [-30.0, 10.0, -20.0, 30.0, 0.0, 80.0]
+  inspection_spot: [20.0, 0.0, 10.0, -10.0, 0.0, 40.0]
+  blue_plate: [-60.0, 20.0, -30.0, 40.0, 0.0, 40.0]
+  green_plate: [60.0, 20.0, -30.0, 40.0, 0.0, 40.0]
+sequences:
+  pick_to_inspection:
+    - {pose: rest, speed: 15}
+    - {pose: pick_spot, speed: 15, dwell_s: 1.0}
+    - {pose: inspection_spot, speed: 15, dwell_s: 1.0}
+  inspection_to_blue:
+    - {pose: inspection_spot, speed: 15}
+    - {pose: blue_plate, speed: 15, dwell_s: 1.0}
+    - {pose: rest, speed: 15}
+  inspection_to_green:
+    - {pose: inspection_spot, speed: 15}
+    - {pose: green_plate, speed: 15, dwell_s: 1.0}
+    - {pose: rest, speed: 15}

@@ -1,0 +1,804 @@
+[
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 0,
+  "length": 673,
+  "verdict": "OK",
+  "labels": [
+   "S1"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 242,
+     "time_s": 8.067
+    }
+   ],
+   "grasp_closed_frame": 242,
+   "lift_begin_frame": 280,
+   "s1_cut_frame": 310,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 310,
+    "start_s": 0.0,
+    "end_s": 10.333
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 16.264,
+   "closed_on_brick_median": 2.482,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -19.6,
+     -2.56,
+     46.01,
+     49.05,
+     -62.3,
+     4.83
+    ],
+    "s1cut": [
+     -16.33,
+     -25.93,
+     43.47,
+     44.89,
+     -56.97,
+     2.29
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed-on-brick median 2.48 (gripper evidence; 320px thumbnails inconclusive)"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 1,
+  "length": 580,
+  "verdict": "OK",
+  "labels": [
+   "S1"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 84,
+     "time_s": 2.8
+    }
+   ],
+   "grasp_closed_frame": 84,
+   "lift_begin_frame": 100,
+   "s1_cut_frame": 130,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 130,
+    "start_s": 0.0,
+    "end_s": 4.333
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 28.347,
+   "closed_on_brick_median": 2.286,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -27.19,
+     -4.5,
+     47.37,
+     54.22,
+     -32.34,
+     4.7
+    ],
+    "s1cut": [
+     -17.45,
+     -16.14,
+     44.83,
+     25.31,
+     -46.41,
+     2.29
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.29 (gripper evidence)"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 2,
+  "length": 544,
+  "verdict": "OK",
+  "labels": [
+   "S1"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 191,
+     "time_s": 6.367
+    }
+   ],
+   "grasp_closed_frame": 191,
+   "lift_begin_frame": 201,
+   "s1_cut_frame": 231,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 231,
+    "start_s": 0.0,
+    "end_s": 7.7
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 36.381,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -15.21,
+     -3.26,
+     45.37,
+     60.15,
+     -48.65,
+     3.92
+    ],
+    "s1cut": [
+     -6.76,
+     3.17,
+     18.06,
+     40.82,
+     -52.52,
+     2.35
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.55 (gripper evidence)"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 3,
+  "length": 704,
+  "verdict": "OK",
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 249,
+     "time_s": 8.3
+    },
+    {
+     "kind": "open",
+     "frame": 610,
+     "time_s": 20.333
+    }
+   ],
+   "grasp_closed_frame": 249,
+   "lift_begin_frame": 262,
+   "s1_cut_frame": 292,
+   "release_frame": 610,
+   "rest_frame": 644,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 292,
+    "start_s": 0.0,
+    "end_s": 9.733
+   },
+   "s23_part": {
+    "start_frame": 292,
+    "end_frame": 644,
+    "start_s": 9.733,
+    "end_s": 21.467
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 21.163,
+   "closed_on_brick_median": 2.678,
+   "pan_at_release": -5.39,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -26.15,
+     -13.23,
+     56.35,
+     55.15,
+     -38.46,
+     4.9
+    ],
+    "s1cut": [
+     -18.48,
+     -36.42,
+     36.3,
+     67.27,
+     -38.35,
+     2.55
+    ],
+    "release": [
+     -5.39,
+     -60.67,
+     61.89,
+     66.51,
+     -45.57,
+     8.49
+    ],
+    "rest": [
+     -2.02,
+     -85.36,
+     90.74,
+     60.75,
+     -44.0,
+     15.15
+    ]
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -5.4 deg; top view at release frame does not show the gripper clearly over either plate"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 4,
+  "length": 706,
+  "verdict": "WARN",
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 277,
+     "time_s": 9.233
+    },
+    {
+     "kind": "open",
+     "frame": 634,
+     "time_s": 21.133
+    }
+   ],
+   "grasp_closed_frame": 277,
+   "lift_begin_frame": 289,
+   "s1_cut_frame": 319,
+   "release_frame": 634,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 319,
+    "start_s": 0.0,
+    "end_s": 10.633
+   },
+   "s23_part": {
+    "start_frame": 319,
+    "end_frame": 705,
+    "start_s": 10.633,
+    "end_s": 23.5
+   },
+   "type": "grasp, lift, release (no return to rest)",
+   "open_peak_before_grasp": 31.287,
+   "closed_on_brick_median": 2.678,
+   "pan_at_release": -13.66,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -15.38,
+     7.5,
+     32.49,
+     54.39,
+     -49.49,
+     4.51
+    ],
+    "s1cut": [
+     -10.04,
+     -12.43,
+     14.34,
+     66.26,
+     -47.92,
+     2.55
+    ],
+    "release": [
+     -13.66,
+     -60.58,
+     79.22,
+     43.2,
+     -51.27,
+     8.75
+    ],
+    "rest": null
+   },
+   "notes": [
+    "no return to rest after release (part ends at episode end)"
+   ]
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -13.7 deg; between plates in top view; no return to rest"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 5,
+  "length": 647,
+  "verdict": "OK",
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 235,
+     "time_s": 7.833
+    },
+    {
+     "kind": "open",
+     "frame": 549,
+     "time_s": 18.3
+    }
+   ],
+   "grasp_closed_frame": 235,
+   "lift_begin_frame": 255,
+   "s1_cut_frame": 285,
+   "release_frame": 549,
+   "rest_frame": 618,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 285,
+    "start_s": 0.0,
+    "end_s": 9.5
+   },
+   "s23_part": {
+    "start_frame": 285,
+    "end_frame": 618,
+    "start_s": 9.5,
+    "end_s": 20.6
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 30.83,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": -12.62,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -21.07,
+     1.59,
+     41.11,
+     52.86,
+     -60.05,
+     4.7
+    ],
+    "s1cut": [
+     -15.3,
+     -23.9,
+     40.83,
+     52.95,
+     -55.03,
+     2.55
+    ],
+    "release": [
+     -12.62,
+     20.99,
+     -19.33,
+     69.73,
+     -40.44,
+     9.67
+    ],
+    "rest": [
+     -4.87,
+     -98.77,
+     85.84,
+     65.66,
+     -48.18,
+     22.53
+    ]
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -12.6 deg; between plates in top view"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 6,
+  "length": 512,
+  "verdict": "OK",
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 173,
+     "time_s": 5.767
+    },
+    {
+     "kind": "open",
+     "frame": 425,
+     "time_s": 14.167
+    }
+   ],
+   "grasp_closed_frame": 173,
+   "lift_begin_frame": 196,
+   "s1_cut_frame": 226,
+   "release_frame": 425,
+   "rest_frame": 479,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 226,
+    "start_s": 0.0,
+    "end_s": 7.533
+   },
+   "s23_part": {
+    "start_frame": 226,
+    "end_frame": 479,
+    "start_s": 7.533,
+    "end_s": 15.967
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 22.534,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": -13.14,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -8.4,
+     32.01,
+     -2.9,
+     69.31,
+     -50.8,
+     4.05
+    ],
+    "s1cut": [
+     -9.69,
+     -9.35,
+     7.8,
+     57.52,
+     -51.16,
+     2.55
+    ],
+    "release": [
+     -13.14,
+     12.61,
+     1.27,
+     56.25,
+     -49.59,
+     8.43
+    ],
+    "rest": [
+     -5.3,
+     -98.85,
+     85.84,
+     65.41,
+     -47.82,
+     18.88
+    ]
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -13.1 deg; between plates in top view"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 7,
+  "length": 1306,
+  "verdict": "WARN",
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 355,
+     "time_s": 11.833
+    },
+    {
+     "kind": "open",
+     "frame": 1212,
+     "time_s": 40.4
+    }
+   ],
+   "grasp_closed_frame": 355,
+   "lift_begin_frame": 383,
+   "s1_cut_frame": 413,
+   "release_frame": 1212,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 413,
+    "start_s": 0.0,
+    "end_s": 13.767
+   },
+   "s23_part": {
+    "start_frame": 413,
+    "end_frame": 1305,
+    "start_s": 13.767,
+    "end_s": 43.5
+   },
+   "type": "grasp, lift, release (no return to rest)",
+   "open_peak_before_grasp": 19.987,
+   "closed_on_brick_median": 2.482,
+   "pan_at_release": 32.1,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -13.74,
+     -20.55,
+     62.07,
+     55.74,
+     -18.95,
+     3.79
+    ],
+    "s1cut": [
+     -13.74,
+     -27.87,
+     43.28,
+     76.26,
+     -25.12,
+     2.42
+    ],
+    "release": [
+     32.1,
+     5.47,
+     25.59,
+     61.85,
+     -36.78,
+     8.62
+    ],
+    "rest": null
+   },
+   "notes": [
+    "no return to rest after release (part ends at episode end)"
+   ]
+  },
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "blue",
+   "release_clear": "yes",
+   "notes": "top view at release (t=40.40 s): gripper above the blue plate; no return to rest inside episode"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 8,
+  "length": 342,
+  "verdict": "WARN",
+  "labels": [
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 152,
+     "time_s": 5.067
+    }
+   ],
+   "grasp_closed_frame": null,
+   "lift_begin_frame": null,
+   "s1_cut_frame": null,
+   "release_frame": 152,
+   "rest_frame": 315,
+   "s1_part": null,
+   "s23_part": {
+    "start_frame": 0,
+    "end_frame": 315,
+    "start_s": 0.0,
+    "end_s": 10.5
+   },
+   "type": "starts with brick held (no grasp in episode): release and return",
+   "open_peak_before_grasp": null,
+   "closed_on_brick_median": null,
+   "pan_at_release": -54.67,
+   "pan_cluster": "low",
+   "poses": {
+    "grasp": null,
+    "s1cut": null,
+    "release": [
+     -54.67,
+     24.51,
+     1.91,
+     54.22,
+     -55.03,
+     8.95
+    ],
+    "rest": [
+     -9.18,
+     -88.45,
+     85.12,
+     61.76,
+     -45.57,
+     14.63
+    ]
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "na",
+   "plate": "green",
+   "release_clear": "yes",
+   "notes": "starts with brick held; top view at rest frame shows the brick on the green plate"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 9,
+  "length": 340,
+  "verdict": "WARN",
+  "labels": [
+   "S1"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 190,
+     "time_s": 6.333
+    },
+    {
+     "kind": "close",
+     "frame": 224,
+     "time_s": 7.467
+    }
+   ],
+   "grasp_closed_frame": 224,
+   "lift_begin_frame": 230,
+   "s1_cut_frame": 260,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 260,
+    "start_s": 0.0,
+    "end_s": 8.667
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 19.726,
+   "closed_on_brick_median": 0.98,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -47.78,
+     -4.85,
+     6.53,
+     62.53,
+     -45.62,
+     3.53
+    ],
+    "s1cut": [
+     -1.25,
+     -29.63,
+     6.53,
+     69.48,
+     -48.81,
+     0.98
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "no",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "closed median 0.98 (jaw closed with no brick); no release"
+  }
+ },
+ {
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "episode": 10,
+  "length": 339,
+  "verdict": "WARN",
+  "labels": [
+   "S2/S3"
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 142,
+     "time_s": 4.733
+    }
+   ],
+   "grasp_closed_frame": null,
+   "lift_begin_frame": null,
+   "s1_cut_frame": null,
+   "release_frame": 142,
+   "rest_frame": 301,
+   "s1_part": null,
+   "s23_part": {
+    "start_frame": 0,
+    "end_frame": 301,
+    "start_s": 0.0,
+    "end_s": 10.033
+   },
+   "type": "starts with brick held (no grasp in episode): release and return",
+   "open_peak_before_grasp": null,
+   "closed_on_brick_median": null,
+   "pan_at_release": -51.83,
+   "pan_cluster": "low",
+   "poses": {
+    "grasp": null,
+    "s1cut": null,
+    "release": [
+     -51.83,
+     47.71,
+     -49.82,
+     80.08,
+     -52.31,
+     8.75
+    ],
+    "rest": [
+     -3.23,
+     -85.71,
+     87.21,
+     60.75,
+     -46.56,
+     17.11
+    ]
+   },
+   "notes": []
+  },
+  "review": {
+   "brick_held_at_s1cut": "na",
+   "plate": "green",
+   "release_clear": "yes",
+   "notes": "starts with brick held; top view at rest frame shows the white brick on the green plate"
+  }
+ }
+]

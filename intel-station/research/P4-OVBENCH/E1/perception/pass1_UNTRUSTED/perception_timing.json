@@ -1,0 +1,270 @@
+{
+ "utc": "2026-11-14T21:06:56Z",
+ "steps": {
+  "pa.blobs wrist (min_area SERVO_MIN_AREA)": {
+   "n": 36,
+   "p50": 26.2618,
+   "p90": 40.2808,
+   "mean": 29.3778,
+   "min": 18.9518,
+   "max": 47.8911,
+   "note": "pick_any.blobs"
+  },
+  "pa.find wrist (blobs precomputed)": {
+   "n": 36,
+   "p50": 0.0039,
+   "p90": 0.0052,
+   "mean": 0.004,
+   "min": 0.002,
+   "max": 0.0069,
+   "note": "pick_any.find, no colour set"
+  },
+  "servo compute per iteration (blobs+find+solve+ik_rel)": {
+   "n": 36,
+   "p50": 32.5422,
+   "p90": 43.4927,
+   "mean": 33.8811,
+   "min": 23.6484,
+   "max": 52.2887,
+   "note": "mirrors pick_any.servo body; no move_rel"
+  },
+  "kin.ik_rel one approach step (-SCAN_UP)": {
+   "n": 3,
+   "p50": 7.2497,
+   "p90": 7.5374,
+   "mean": 7.3482,
+   "min": 7.1856,
+   "max": 7.6093,
+   "note": "one IK solve"
+  },
+  "kin.fk at scan pose": {
+   "n": 3,
+   "p50": 0.048,
+   "p90": 0.049,
+   "mean": 0.0483,
+   "min": 0.0477,
+   "max": 0.0493,
+   "note": "forward kinematics"
+  },
+  "candidates wrist, cold REACH_CACHE": {
+   "n": 36,
+   "p50": 101.6327,
+   "p90": 174.2335,
+   "mean": 105.6029,
+   "min": 12.4971,
+   "max": 195.3488,
+   "note": "blobs + grasp_reachable per blob"
+  },
+  "candidates wrist, warm REACH_CACHE": {
+   "n": 36,
+   "p50": 26.3176,
+   "p90": 37.2525,
+   "mean": 27.5097,
+   "min": 12.9149,
+   "max": 40.671,
+   "note": "blobs + cached grasp_reachable"
+  },
+  "close_pre_verdict (want_hue None)": {
+   "n": 36,
+   "p50": 1.5465,
+   "p90": 46.6852,
+   "mean": 15.0342,
+   "min": 1.4295,
+   "max": 49.5513,
+   "note": "DET2 close tape rule on recorded close view"
+  },
+  "close_pre_verdict (want_hue 20)": {
+   "n": 36,
+   "p50": 1.6796,
+   "p90": 44.9605,
+   "mean": 15.577,
+   "min": 1.4134,
+   "max": 51.809,
+   "note": "adds the hue check"
+  },
+  "handdet.is_hand top": {
+   "n": 36,
+   "p50": 2.7867,
+   "p90": 2.912,
+   "mean": 2.7539,
+   "min": 1.8494,
+   "max": 3.605,
+   "note": "view top"
+  },
+  "handdet.is_hand close": {
+   "n": 36,
+   "p50": 6.9832,
+   "p90": 10.8722,
+   "mean": 8.0379,
+   "min": 5.3102,
+   "max": 12.1866,
+   "note": "view close"
+  },
+  "handdet.is_hand wrist": {
+   "n": 36,
+   "p50": 4.7338,
+   "p90": 5.037,
+   "mean": 4.4922,
+   "min": 3.3208,
+   "max": 5.3549,
+   "note": "view wrist"
+  },
+  "grasp_reachable cold": {
+   "n": 48,
+   "p50": 26.8124,
+   "p90": 30.3427,
+   "mean": 27.7791,
+   "min": 22.7869,
+   "max": 35.7873,
+   "note": "12 offsets from recorded frames, cache cleared per call"
+  },
+  "grasp_reachable cached": {
+   "n": 48,
+   "p50": 0.0051,
+   "p90": 0.0059,
+   "mean": 0.0053,
+   "min": 0.0046,
+   "max": 0.0123,
+   "note": "cache hit on the same offsets"
+  }
+ },
+ "setup": {
+  "q_scan": [
+   -12.71,
+   12.58,
+   -23.83,
+   89.72,
+   -62.2
+  ],
+  "fit_scan_corr": "PermissionError: [Errno 13] Permission denied: '/loop.log'"
+ },
+ "cycles_real": {
+  "wait_s": {
+   "n": 4,
+   "p50": 1.05,
+   "p90": 1.24,
+   "mean": 1.075,
+   "min": 0.9,
+   "max": 1.3,
+   "unit": "s"
+  },
+  "pick_s": {
+   "n": 4,
+   "p50": 46.05,
+   "p90": 51.85,
+   "mean": 46.775,
+   "min": 41.5,
+   "max": 53.5,
+   "unit": "s"
+  },
+  "inspect_s": {
+   "n": 4,
+   "p50": 0.0,
+   "p90": 0.0,
+   "mean": 0.0,
+   "min": 0.0,
+   "max": 0.0,
+   "unit": "s"
+  },
+  "place_s": {
+   "n": 4,
+   "p50": 20.5,
+   "p90": 42.48,
+   "mean": 28.35,
+   "min": 20.5,
+   "max": 51.9,
+   "unit": "s"
+  },
+  "return_s": {
+   "n": 4,
+   "p50": 2.5,
+   "p90": 11.37,
+   "mean": 5.5,
+   "min": 2.0,
+   "max": 15.0,
+   "unit": "s"
+  },
+  "cycle_s": {
+   "n": 4,
+   "p50": 69.0,
+   "p90": 105.43,
+   "mean": 80.625,
+   "min": 64.1,
+   "max": 120.4,
+   "unit": "s"
+  },
+  "n_cycles_with_timings": 4,
+  "success_rate": 1.0
+ },
+ "loadavg_before": [
+  "12.85",
+  "13.93",
+  "12.31"
+ ],
+ "frames": {
+  "wrist": [
+   "logs/sort/any_1740/ep_0001/closed_wrist.jpg",
+   "logs/sort/any_1740/ep_0001/grasp_open_wrist.jpg",
+   "logs/sort/any_1740/ep_0001/lifted_wrist.jpg",
+   "logs/sort/any_1740/ep_0001/pre_wrist.jpg",
+   "logs/sort/any_1740/ep_0001/released_wrist.jpg",
+   "logs/sort/any_1740/ep_0001/stage1_wrist.jpg",
+   "logs/sort/any_1740/ep_0002/pre_wrist.jpg",
+   "logs/sort/any_1740/ep_0003/pre_wrist.jpg",
+   "logs/sort/any_1740/ep_0004/closed_wrist.jpg",
+   "logs/sort/any_1740/ep_0004/grasp_open_wrist.jpg",
+   "logs/sort/any_1740/ep_0004/pre_wrist.jpg",
+   "logs/sort/any_1740/ep_0004/stage1_wrist.jpg"
+  ],
+  "top": [
+   "logs/sort/any_1740/ep_0001/closed_top.jpg",
+   "logs/sort/any_1740/ep_0001/grasp_open_top.jpg",
+   "logs/sort/any_1740/ep_0001/lifted_top.jpg",
+   "logs/sort/any_1740/ep_0001/pre_top.jpg",
+   "logs/sort/any_1740/ep_0001/released_top.jpg",
+   "logs/sort/any_1740/ep_0001/stage1_top.jpg",
+   "logs/sort/any_1740/ep_0002/pre_top.jpg",
+   "logs/sort/any_1740/ep_0003/pre_top.jpg",
+   "logs/sort/any_1740/ep_0004/closed_top.jpg",
+   "logs/sort/any_1740/ep_0004/grasp_open_top.jpg",
+   "logs/sort/any_1740/ep_0004/pre_top.jpg",
+   "logs/sort/any_1740/ep_0004/stage1_top.jpg"
+  ],
+  "close": [
+   "logs/sort/any_1740/ep_0001/closed_close.jpg",
+   "logs/sort/any_1740/ep_0001/grasp_open_close.jpg",
+   "logs/sort/any_1740/ep_0001/lifted_close.jpg",
+   "logs/sort/any_1740/ep_0001/pre_close.jpg",
+   "logs/sort/any_1740/ep_0001/released_close.jpg",
+   "logs/sort/any_1740/ep_0001/stage1_close.jpg",
+   "logs/sort/any_1740/ep_0002/pre_close.jpg",
+   "logs/sort/any_1740/ep_0003/pre_close.jpg",
+   "logs/sort/any_1740/ep_0004/closed_close.jpg",
+   "logs/sort/any_1740/ep_0004/grasp_open_close.jpg",
+   "logs/sort/any_1740/ep_0004/pre_close.jpg",
+   "logs/sort/any_1740/ep_0004/stage1_close.jpg"
+  ]
+ },
+ "frame_shapes": {
+  "wrist": [
+   480,
+   640,
+   3
+  ],
+  "top": [
+   480,
+   640,
+   3
+  ],
+  "close": [
+   480,
+   640,
+   3
+  ]
+ },
+ "loadavg_after": [
+  "14.85",
+  "14.36",
+  "12.49"
+ ]
+}

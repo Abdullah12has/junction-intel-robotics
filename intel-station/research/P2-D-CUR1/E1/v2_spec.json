@@ -1,0 +1,22 @@
+{"datasets": {
+ "PP-BLUE-v2": [
+  {"episode": 7, "text": "move the orange brick to the blue plate", "caption": "KEEP v2 (D-067). One grasp, hold 2.16 = brick. Orange 2x2 released on BLUE (pan +32.1) at f1211, trimmed at release + 1.0 s. Orange by Opus (18:13) and in the frames. Long carry (grasp f355 to release f1211)."},
+  {"episode": 11, "text": "move the red brick to the blue plate", "caption": "KEEP v2 (D-067). One grasp, hold 2.16 = brick. Red 2x2 released on BLUE (pan +32.0) at f600, trimmed at release + 1.0 s. Red verified by Opus at 14:50Z and in the frames."},
+  {"episode": 12, "text": "move the red brick to the blue plate", "caption": "KEEP v2 (D-067). One grasp, hold 2.29 = brick. Red 2x2 released on BLUE (pan +35.6) at f681, trimmed at release + 1.0 s. Red verified by Opus at 14:50Z; the red brick is visible beside the orange gripper."}
+ ],
+ "PP-GREEN-v2": [
+  {"episode": 14, "text": "move the red brick to the green plate", "caption": "KEEP v2 (D-067). One grasp, hold 2.16 = brick. Red 2x2 (hue 7 deg) released on GREEN (pan -51.8) at f357, trimmed at release + 1.0 s. Ends over the green plate at release + 1.0 s (the v1 end distance from rest no longer applies under v2)."},
+  {"episode": 15, "text": "move the red brick to the green plate", "caption": "KEEP v2 (D-067). One grasp, hold 2.22 = brick. Red 2x2 released on GREEN (pan -53.3) at f490, trimmed at release + 1.0 s. Red verified by Opus at 14:50Z and in the frames."}
+ ],
+ "MT-ALL-v2": [
+  {"episode": 3, "text": "move the yellow brick to the spot on the mat", "caption": "KEEP v2 (D-067). Put-down on the mat, not on a plate: one grasp, hold 2.55 = brick. Yellow 2x2 (hue 55-60) released at f609 near the robot base (pan -5.4), trimmed at release + 1.0 s."},
+  {"episode": 4, "text": "move the red brick to the spot on the mat", "caption": "KEEP v2 (D-067). Put-down on the mat: one grasp, hold 2.55 = brick. Red 2x2 (hue 0-8 deg) released at f633 (pan -13.1), trimmed at release + 1.0 s. A static yellow 2x2 nearby is not moved. Opus labelled it pink; the hue is in the red range."},
+  {"episode": 5, "text": "move the yellow brick to the spot on the mat", "caption": "KEEP v2 (D-067). Put-down on the mat: one grasp, hold 2.55 = brick. Yellow 2x2 (hue 60) released at f548 (pan -12.6), trimmed at release + 1.0 s."},
+  {"episode": 6, "text": "move the red brick to the spot on the mat", "caption": "KEEP v2 (D-067). Put-down on the mat: one grasp, hold 2.55 = brick. Red 2x2 (hue 1 deg) released at f424 (pan -13.1), trimmed at release + 1.0 s. Opus labelled it pink; the hue is in the red range."},
+  {"episode": 7, "text": "move the orange brick to the blue plate", "caption": "KEEP v2 (D-067). Orange 2x2 released on BLUE (pan +32.1) at f1211, trimmed at release + 1.0 s."},
+  {"episode": 11, "text": "move the red brick to the blue plate", "caption": "KEEP v2 (D-067). Red 2x2 released on BLUE (pan +32.0) at f600, trimmed at release + 1.0 s."},
+  {"episode": 12, "text": "move the red brick to the blue plate", "caption": "KEEP v2 (D-067). Red 2x2 released on BLUE (pan +35.6) at f681, trimmed at release + 1.0 s."},
+  {"episode": 14, "text": "move the red brick to the green plate", "caption": "KEEP v2 (D-067). Red 2x2 released on GREEN (pan -51.8) at f357, trimmed at release + 1.0 s."},
+  {"episode": 15, "text": "move the red brick to the green plate", "caption": "KEEP v2 (D-067). Red 2x2 released on GREEN (pan -53.3) at f490, trimmed at release + 1.0 s."}
+ ]
+}}

@@ -1,0 +1,38 @@
+[
+ {
+  "id": "act",
+  "name": "ACT",
+  "description": "Action Chunking with Transformers, lightweight and fast to train (BSD 3-Clause license)",
+  "min_vram": 2147483648
+ },
+ {
+  "id": "molmoact2",
+  "name": "MolmoAct2",
+  "description": "Vision-Language-Action model with flow-matching action generation (Apache 2.0 license)",
+  "min_vram": 85899345920
+ },
+ {
+  "id": "pi05",
+  "name": "Pi0.5",
+  "description": "Flow-matching VLA with discrete state encoding and longer context (Gemma license)",
+  "min_vram": 42949672960
+ },
+ {
+  "id": "rldx1",
+  "name": "RLDX-1",
+  "description": "General-purpose robot foundation model for dexterous manipulation (RLWRLD Model License v1.0)",
+  "min_vram": 42949672960
+ },
+ {
+  "id": "smolvla",
+  "name": "SmolVLA",
+  "description": "Small Vision-Language-Action model based on SmolVLM2-500M (Apache 2.0 license)",
+  "min_vram": 3221225472
+ },
+ {
+  "id": "xr0",
+  "name": "XR0",
+  "description": "Vision-Language-Action model with a Qwen3-VL backbone and flow-matching action expert (Apache 2.0 license)",
+  "min_vram": 64424509440
+ }
+]

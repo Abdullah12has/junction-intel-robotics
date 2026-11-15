@@ -1,0 +1,46 @@
+CURRENT HANDOFF — 14 November 2026, Helsinki
+
+STOP USING THE SMOKE MODEL FOR FURTHER TASK DEVELOPMENT.
+It verified GPU training -> OpenVINO -> physical arm control, not pick/place success.
+
+VERIFIED
+- Dataset6d6bdce3:7episodes,4,366frames,two cameras,inspection task only.
+- ACT job ffb3171d completed545steps on Intel GPU; model fa42ee76 has verified OpenVINO export.
+- Torch2.15+xpu fixes incorrect GPU arithmetic seen with2.11. Do not uv sync back to upstream pins.
+- CPU/GPU export inference finite. Physical trials completed30seconds after output bounds repair; pickup/transfer not established.
+- Deployed act.xml/bin bounded to existing normalized joint limits; originals in exports/openvino/original/.
+- NPU system driver installed; synthetic PatchCore inference passed. Real defect detection unverified.
+
+NOW
+- MuJoCo coordinate audit: old150 episodes use radians, old normalized wrapper stretched model ranges. Corrected encoder mapping/collection/export/training gates;43 tests pass. Physical signs/zeros still unmeasured; user says station unavailable. Recollection/training intentionally not launched. Read simulation/NORMALIZED-INTERFACE.md.
+- Switching to Verda per user: RTX Pro 6000 96GB spot ($1.418/hour plus storage), SSH/CUDA hardware verified; SmolVLA job 6e96ec9e COMPLETED 10 epochs; model 6540166d saved on laptop, OpenVINO CPU inference finite, Mac backup hash-verified. Compute released, recovery disk retained. Both failed A100 allocations deleted. See docs/VERDA-TRAINING.md.
+- Off-laptop backup COMPLETE: Mac station-backups/2026-11-14,239files,1,206,801,997bytes; all SHA256 hashes match. See evidence/backup-verification.json.
+- Modal CLI authenticated as intel in workspace abdullah12-hassan7; token verified. Credential stored only in ~/.modal.toml.
+- Studio Modal target57e65864-ac75-4af2-b4d9-0af5246c6023: image built; deployment blocked by Modal requiring payment method for A10G. No training submitted. See docs/MODAL-SETUP.md.
+- Classification confirmed by user: rectangles defective, squares good. See docs/MENTOR-ANSWERS.md. Judging sequence/final rubric unanswered.
+- Git commits stay local per latest user instruction; do not push.
+- Tape bowls, mark and pick zone. Establish and photograph HOME physically; no guessed joint pose.
+- User now authorizes first SmolVLA pilot on the seven inspection episodes. Preserve them; use a NEW real dataset after rig/HOME are fixed.
+
+DATA COLLECTION
+Exact task strings:
+  move the brick to the inspection spot
+  put the brick in the green bowl
+  put the brick in the red bowl
+Aim60/30/30episodes; fallback40/20/20. Start/end at HOME. Aim8–12s without rushing unsafe motion.
+Flush/check counts every30episodes. Vision work proceeds independently on a separately owned camera.
+
+NEXT GATES
+- Latest second60s SmolVLA repeat completed60.04s, stopped, no sessions; task outcome unconfirmed. Evidence smolvla-robot-60s-repeat2.json.
+- Requested60s SmolVLA repeat completed60.05s without guard faults; stopped, no sessions. Started from prior ending pose; task success unconfirmed. Evidence smolvla-robot-60s-test.json.
+- SmolVLA physical trial completed20s then stopped; operator reports missed/dropped brick. No active sessions. Raw output exceeded bounds; constrained export used. Collect more consistent successful grasps before claiming pick/place. See docs/VERDA-TRAINING.md.
+- Verda SmolVLA pilot completed. Test exported GPU inference and plan a supervised trial from HOME; recreate Verda compute only for the next training run.
+- At17:00 Helsinki launch SmolVLA and task-specific ACT using verified task splits.
+- Train detector only once real images/splits and camera ROI/exposure are fixed.
+- Test policies from HOME, then orchestrator and submission evidence.
+
+DETAILS
+  evidence/STATUS.md — current state (old statements archived separately)
+  docs/GPU-TRAINING-RECOVERY.md — exact jobs, fixes and robot trial limitations
+  docs/AUDIT-RECONCILIATION.md — audit corrections and remaining gaps
+  docs/PROGRESS-HISTORY-2026-11-14.txt — historical, not current instructions

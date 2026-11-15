@@ -1,0 +1,126 @@
+{
+ "root": "/home/intel/intel-junction-2026/work/P2-D-VLA1/E1/out/SYNTH-A-team",
+ "result": "PASS",
+ "checks": [
+  {
+   "check": "row count equals info total_frames",
+   "pass": true,
+   "detail": "1797 vs 1797"
+  },
+  {
+   "check": "episode count equals info total_episodes",
+   "pass": true,
+   "detail": "3 vs 3"
+  },
+  {
+   "check": "episode length equals dataset_to - dataset_from",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "episodes tile the global index without gaps",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "rows per episode equal episodes.length",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "index column equals 0..N-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "frame_index per episode is 0..n-1",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "timestamp equals frame_index / fps",
+   "pass": true,
+   "detail": "max err 8.90e-07 s"
+  },
+  {
+   "check": "no NaN or inf in action, state, timestamp",
+   "pass": true,
+   "detail": "nan action 0, nan state 0"
+  },
+  {
+   "check": "joint values inside -180..180 deg and gripper 0..100",
+   "pass": true,
+   "detail": "action min [-26.2, -112.7, 89.8, 46.7, -57.7, 10.4] max [13.8, -82.7, 109.8, 62.7, -47.7, 30.4] | state min [-26.6, -113.1, 89.4, 46.3, -58.1, 10.0] max [13.4, -83.1, 109.4, 62.3, -48.1, 30.0]"
+  },
+  {
+   "check": "tasks.parquet text matches every episode",
+   "pass": true,
+   "detail": "tasks [\"move the red brick to the green plate\"]"
+  },
+  {
+   "check": "video file exists: observation.images.realsense 243722064316",
+   "pass": true,
+   "detail": "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4"
+  },
+  {
+   "check": "codec, pix_fmt, fps, size match team settings: observation.images.realsense 243722064316",
+   "pass": true,
+   "detail": "codec av1 pix yuv420p fps 30/1 size 640x480"
+  },
+  {
+   "check": "video packets equal total_frames: observation.images.realsense 243722064316",
+   "pass": true,
+   "detail": "1797 vs 1797"
+  },
+  {
+   "check": "episode video offsets match dataset index: observation.images.realsense 243722064316",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "video file exists: observation.images.realsense 243622061421",
+   "pass": true,
+   "detail": "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4"
+  },
+  {
+   "check": "codec, pix_fmt, fps, size match team settings: observation.images.realsense 243622061421",
+   "pass": true,
+   "detail": "codec av1 pix yuv420p fps 30/1 size 640x480"
+  },
+  {
+   "check": "video packets equal total_frames: observation.images.realsense 243622061421",
+   "pass": true,
+   "detail": "1797 vs 1797"
+  },
+  {
+   "check": "episode video offsets match dataset index: observation.images.realsense 243622061421",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "nearest camera frame within 2 frames of each joint sample (one dropped frame is allowed)",
+   "pass": true,
+   "detail": "{\"close\": 0.03311944007873535, \"top\": 0.03311944007873535}"
+  },
+  {
+   "check": "lerobot loads the dataset",
+   "pass": true,
+   "detail": "num_frames 1797 num_episodes 3 fps 30"
+  },
+  {
+   "check": "lerobot counts equal info",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "decoded frames are not blank: observation.images.realsense 243722064316",
+   "pass": true,
+   "detail": "pixel std per frame [71.5, 71.6, 71.8]"
+  },
+  {
+   "check": "decoded frames are not blank: observation.images.realsense 243622061421",
+   "pass": true,
+   "detail": "pixel std per frame [70.8, 70.7, 70.7]"
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "det2_ms": 58.0,
+ "hands": [],
+ "bricks": [
+  {
+   "id": 0,
+   "view": "top",
+   "colour": "pink",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    357,
+    148,
+    43,
+    45
+   ]
+  },
+  {
+   "id": 1,
+   "view": "top",
+   "colour": "blue",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    316,
+    168,
+    42,
+    44
+   ]
+  },
+  {
+   "id": 2,
+   "view": "top",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece",
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    419,
+    168,
+    38,
+    40
+   ]
+  },
+  {
+   "id": 3,
+   "view": "top",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece",
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    440,
+    208,
+    39,
+    41
+   ]
+  },
+  {
+   "id": 4,
+   "view": "top",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "tape_not_measured_top_view"
+   ],
+   "bbox": [
+    377,
+    207,
+    40,
+    41
+   ]
+  },
+  {
+   "id": 5,
+   "view": "top",
+   "colour": "yellow",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_two_hues",
+    "tape_not_measured_top_view",
+    "shape_unknown"
+   ],
+   "bbox": [
+    286,
+    219,
+    40,
+    42
+   ]
+  },
+  {
+   "id": 6,
+   "view": "close",
+   "colour": "blue",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_white_plus_colour"
+   ],
+   "bbox": [
+    177,
+    65,
+    180,
+    136
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 467.2
+  },
+  {
+   "id": 7,
+   "view": "close",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece"
+   ],
+   "bbox": [
+    401,
+    68,
+    104,
+    84
+   ],
+   "anom3": "DEFECT",
+   "anom3_score": 562.2
+  },
+  {
+   "id": 8,
+   "view": "close",
+   "colour": "red",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "colour_split_piece"
+   ],
+   "bbox": [
+    365,
+    138,
+    99,
+    94
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 513.0
+  },
+  {
+   "id": 9,
+   "view": "close",
+   "colour": "orange",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_two_hues",
+    "colour_split_piece"
+   ],
+   "bbox": [
+    494,
+    113,
+    120,
+    92
+   ],
+   "anom3": "DEFECT",
+   "anom3_score": 557.1
+  },
+  {
+   "id": 10,
+   "view": "close",
+   "colour": "yellow",
+   "det2": "UNCERTAIN",
+   "reasons": [
+    "merged_blob_white_plus_colour"
+   ],
+   "bbox": [
+    121,
+    204,
+    113,
+    114
+   ],
+   "anom3": "GOOD",
+   "anom3_score": 460.5
+  }
+ ]
+}

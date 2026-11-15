@@ -1,0 +1,55 @@
+{
+  "checked_at": 1794714083.6815522,
+  "jobs": [
+    {
+      "id": "smolvla-N-A0-R-seed0",
+      "latest_progress": [
+        "224",
+        "20000"
+      ],
+      "latest_metrics": "Training:   1%|          | 200/20000 [01:51<2:54:44,  1.89step/s]INFO 2026-11-15 03:41:10 ot_train.py:606 step:200 smpl:6K ep:17 epch:0.41 loss:0.421 grdn:3.606 lr:1.5e-05 updt_s:0.518 data_s:0.038 smp/s:58 mem_gb:7.86",
+      "traceback": false
+    },
+    {
+      "id": "act-N-A0-R-seed0",
+      "latest_progress": [
+        "791",
+        "100000"
+      ],
+      "latest_metrics": "Training:   1%|          | 600/100000 [01:45<4:32:56,  6.07step/s]INFO 2026-11-15 03:40:52 ot_train.py:606 step:600 smpl:5K ep:12 epch:0.30 loss:2.691 grdn:77.166 lr:1.0e-05 updt_s:0.145 data_s:0.017 smp/s:49 mem_gb:3.73",
+      "traceback": false
+    }
+  ],
+  "queue": {
+    "updated_at": 1794714082.9992027,
+    "running": [
+      {
+        "id": "act-N-A0-R-seed0",
+        "pid": 259860,
+        "gpu": "0"
+      },
+      {
+        "id": "smolvla-N-A0-R-seed0",
+        "pid": 259861,
+        "gpu": "0"
+      }
+    ],
+    "queued": [
+      "act-N-A1-R-seed0",
+      "smolvla-N-A1-R-seed0",
+      "act-N-A2-R-seed0",
+      "smolvla-N-A2-R-seed0",
+      "act-N-A3-R-seed0",
+      "smolvla-N-A3-R-seed0",
+      "act-X-A0-R-seed0",
+      "smolvla-X-A0-R-seed0",
+      "act-X-A1-R-seed0",
+      "smolvla-X-A1-R-seed0",
+      "act-X-A2-R-seed0",
+      "smolvla-X-A2-R-seed0",
+      "act-X-A3-R-seed0",
+      "smolvla-X-A3-R-seed0"
+    ],
+    "finished": []
+  }
+}

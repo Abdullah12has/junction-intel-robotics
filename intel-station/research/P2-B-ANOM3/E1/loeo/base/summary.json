@@ -1,0 +1,357 @@
+{
+ "tag": "base",
+ "variant": "base",
+ "size": 256,
+ "augmentations": 1,
+ "coreset_target": 2000,
+ "fit_budget_s": 180.0,
+ "manifest": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/multi/manifest.tsv",
+ "review_exclude": [
+  "close_multi any_1740/ep_0015 idx 93",
+  "close_multi any_1740/ep_0015 idx 95",
+  "close_multi any_1740/ep_0015 idx 97",
+  "close_multi any_1740/ep_0015 idx 98"
+ ],
+ "keep_review_flagged": false,
+ "views": {
+  "wrist_multi": {
+   "episodes": {
+    "any_1740/ep_0001": {
+     "label": "GOOD",
+     "clean": 17,
+     "flagged": 0
+    },
+    "any_1740/ep_0006": {
+     "label": "DEFECT",
+     "clean": 15,
+     "flagged": 0
+    },
+    "any_1740/ep_0014": {
+     "label": "GOOD",
+     "clean": 10,
+     "flagged": 0
+    },
+    "any_1740/ep_0015": {
+     "label": "GOOD",
+     "clean": 14,
+     "flagged": 0
+    },
+    "any_1740/ep_0017": {
+     "label": "DEFECT",
+     "clean": 17,
+     "flagged": 0
+    }
+   },
+   "folds": [
+    {
+     "heldout": "any_1740/ep_0001",
+     "label": "GOOD",
+     "fit": "wrist_multi__ep_0014+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0014",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 24,
+     "n_train_images": 24,
+     "device": "CPU",
+     "clean_n": 17,
+     "clean_mean": 617.257,
+     "clean_max": 645.109,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    },
+    {
+     "heldout": "any_1740/ep_0006",
+     "label": "DEFECT",
+     "fit": "wrist_multi__ep_0001+ep_0014+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0014",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 41,
+     "n_train_images": 41,
+     "device": "CPU",
+     "clean_n": 15,
+     "clean_mean": 548.121,
+     "clean_max": 614.388,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    },
+    {
+     "heldout": "any_1740/ep_0014",
+     "label": "GOOD",
+     "fit": "wrist_multi__ep_0001+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 31,
+     "n_train_images": 31,
+     "device": "CPU",
+     "clean_n": 10,
+     "clean_mean": 568.979,
+     "clean_max": 590.344,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    },
+    {
+     "heldout": "any_1740/ep_0015",
+     "label": "GOOD",
+     "fit": "wrist_multi__ep_0001+ep_0014",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0014"
+     ],
+     "n_train_crops": 27,
+     "n_train_images": 27,
+     "device": "CPU",
+     "clean_n": 14,
+     "clean_mean": 602.18,
+     "clean_max": 631.519,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    },
+    {
+     "heldout": "any_1740/ep_0017",
+     "label": "DEFECT",
+     "fit": "wrist_multi__ep_0001+ep_0014+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0014",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 41,
+     "n_train_images": 41,
+     "device": "CPU",
+     "clean_n": 17,
+     "clean_mean": 541.084,
+     "clean_max": 617.737,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    }
+   ],
+   "auroc_episode_mean": 0.0,
+   "episode_pairs": 6,
+   "n_good_episodes": 3,
+   "n_defect_episodes": 2,
+   "auroc_crop_pooled": 0.1456,
+   "n_clean_good_crops": 41,
+   "n_clean_defect_crops": 32
+  },
+  "close_multi": {
+   "episodes": {
+    "any_1740/ep_0001": {
+     "label": "GOOD",
+     "clean": 7,
+     "flagged": 1
+    },
+    "any_1740/ep_0006": {
+     "label": "DEFECT",
+     "clean": 10,
+     "flagged": 0
+    },
+    "any_1740/ep_0015": {
+     "label": "GOOD",
+     "clean": 2,
+     "flagged": 4
+    },
+    "any_1740/ep_0017": {
+     "label": "DEFECT",
+     "clean": 11,
+     "flagged": 0
+    }
+   },
+   "folds": [
+    {
+     "heldout": "any_1740/ep_0001",
+     "label": "GOOD",
+     "fit": "close_multi__ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 2,
+     "n_train_images": 2,
+     "device": "CPU",
+     "clean_n": 7,
+     "clean_mean": 442.45,
+     "clean_max": 446.611,
+     "flagged_n": 1,
+     "flagged_mean": 442.104,
+     "flagged_max": 442.104
+    },
+    {
+     "heldout": "any_1740/ep_0006",
+     "label": "DEFECT",
+     "fit": "close_multi__ep_0001+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 9,
+     "n_train_images": 9,
+     "device": "CPU",
+     "clean_n": 10,
+     "clean_mean": 527.786,
+     "clean_max": 546.38,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    },
+    {
+     "heldout": "any_1740/ep_0015",
+     "label": "GOOD",
+     "fit": "close_multi__ep_0001",
+     "train_episodes": [
+      "any_1740/ep_0001"
+     ],
+     "n_train_crops": 7,
+     "n_train_images": 7,
+     "device": "CPU",
+     "clean_n": 2,
+     "clean_mean": 496.711,
+     "clean_max": 512.771,
+     "flagged_n": 4,
+     "flagged_mean": 452.735,
+     "flagged_max": 458.334
+    },
+    {
+     "heldout": "any_1740/ep_0017",
+     "label": "DEFECT",
+     "fit": "close_multi__ep_0001+ep_0015",
+     "train_episodes": [
+      "any_1740/ep_0001",
+      "any_1740/ep_0015"
+     ],
+     "n_train_crops": 9,
+     "n_train_images": 9,
+     "device": "CPU",
+     "clean_n": 11,
+     "clean_mean": 406.745,
+     "clean_max": 425.197,
+     "flagged_n": 0,
+     "flagged_mean": null,
+     "flagged_max": null
+    }
+   ],
+   "auroc_episode_mean": 0.5,
+   "episode_pairs": 4,
+   "n_good_episodes": 2,
+   "n_defect_episodes": 2,
+   "auroc_crop_pooled": 0.4762,
+   "n_clean_good_crops": 9,
+   "n_clean_defect_crops": 21
+  }
+ },
+ "fits": [
+  {
+   "fit": "wrist_multi__ep_0014+ep_0015",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/wrist_multi__ep_0014+ep_0015/ir",
+   "train_episodes": [
+    "any_1740/ep_0014",
+    "any_1740/ep_0015"
+   ],
+   "n_train_crops": 24,
+   "n_train_images": 24,
+   "coreset_ratio": 0.08138,
+   "fit_s": 2.8,
+   "export_s": 3.2,
+   "fit_within_budget": true,
+   "wall_s": 10.6
+  },
+  {
+   "fit": "wrist_multi__ep_0001+ep_0014+ep_0015",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/wrist_multi__ep_0001+ep_0014+ep_0015/ir",
+   "train_episodes": [
+    "any_1740/ep_0001",
+    "any_1740/ep_0014",
+    "any_1740/ep_0015"
+   ],
+   "n_train_crops": 41,
+   "n_train_images": 41,
+   "coreset_ratio": 0.04764,
+   "fit_s": 5.4,
+   "export_s": 2.8,
+   "fit_within_budget": true,
+   "wall_s": 10.3
+  },
+  {
+   "fit": "wrist_multi__ep_0001+ep_0015",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/wrist_multi__ep_0001+ep_0015/ir",
+   "train_episodes": [
+    "any_1740/ep_0001",
+    "any_1740/ep_0015"
+   ],
+   "n_train_crops": 31,
+   "n_train_images": 31,
+   "coreset_ratio": 0.063,
+   "fit_s": 3.8,
+   "export_s": 3.0,
+   "fit_within_budget": true,
+   "wall_s": 8.8
+  },
+  {
+   "fit": "wrist_multi__ep_0001+ep_0014",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/wrist_multi__ep_0001+ep_0014/ir",
+   "train_episodes": [
+    "any_1740/ep_0001",
+    "any_1740/ep_0014"
+   ],
+   "n_train_crops": 27,
+   "n_train_images": 27,
+   "coreset_ratio": 0.07234,
+   "fit_s": 3.4,
+   "export_s": 2.7,
+   "fit_within_budget": true,
+   "wall_s": 9.3
+  },
+  {
+   "fit": "close_multi__ep_0015",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/close_multi__ep_0015/ir",
+   "train_episodes": [
+    "any_1740/ep_0015"
+   ],
+   "n_train_crops": 2,
+   "n_train_images": 2,
+   "coreset_ratio": 0.1,
+   "fit_s": 0.3,
+   "export_s": 2.9,
+   "fit_within_budget": true,
+   "wall_s": 14.6
+  },
+  {
+   "fit": "close_multi__ep_0001+ep_0015",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/close_multi__ep_0001+ep_0015/ir",
+   "train_episodes": [
+    "any_1740/ep_0001",
+    "any_1740/ep_0015"
+   ],
+   "n_train_crops": 9,
+   "n_train_images": 9,
+   "coreset_ratio": 0.1,
+   "fit_s": 0.9,
+   "export_s": 2.8,
+   "fit_within_budget": true,
+   "wall_s": 14.5
+  },
+  {
+   "fit": "close_multi__ep_0001",
+   "ir": "/home/intel/intel-junction-2026/work/P2-B-ANOM3/E1/scratch/loeo/base/close_multi__ep_0001/ir",
+   "train_episodes": [
+    "any_1740/ep_0001"
+   ],
+   "n_train_crops": 7,
+   "n_train_images": 7,
+   "coreset_ratio": 0.1,
+   "fit_s": 0.9,
+   "export_s": 2.7,
+   "fit_within_budget": true,
+   "wall_s": 5.6
+  }
+ ]
+}

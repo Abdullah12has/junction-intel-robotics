@@ -1,0 +1,29 @@
+{
+ "act": [
+  "torch",
+  "openvino",
+  "onnx",
+  "executorch"
+ ],
+ "molmoact2": [
+  "torch",
+  "openvino"
+ ],
+ "pi05": [
+  "torch",
+  "openvino"
+ ],
+ "rldx1": [
+  "torch",
+  "onnx",
+  "openvino"
+ ],
+ "smolvla": [
+  "torch",
+  "openvino"
+ ],
+ "xr0": [
+  "torch",
+  "openvino"
+ ]
+}

@@ -1,0 +1,46 @@
+{
+  "task": "move the brick to the inspection spot",
+  "current_task_family": "sorting",
+  "sorting_task_template": "move the {color} brick to the {plate} plate",
+  "sorting_colors": [
+    "red",
+    "yellow",
+    "orange",
+    "purple",
+    "white",
+    "cyan"
+  ],
+  "sorting_plates": [
+    "blue",
+    "green"
+  ],
+  "fps": 30,
+  "joint_names": [
+    "shoulder_pan.pos",
+    "shoulder_lift.pos",
+    "elbow_flex.pos",
+    "wrist_flex.pos",
+    "wrist_roll.pos",
+    "gripper.pos"
+  ],
+  "camera_rename_map": {
+    "observation.images.realsense 243622061421": "observation.images.camera1",
+    "observation.images.realsense 243722064316": "observation.images.camera2"
+  },
+  "real_action_units": "normalized; rotary joints -100..100, gripper 0..100",
+  "sim_action_units": "absolute joint target radians",
+  "real_to_sim_mapping": null,
+  "camera_extrinsics_verified": false,
+  "object_dimensions_verified": false,
+  "object_dimension_basis": "User confirmed approximately 32 mm-wide 2x2 blocks. Sorting uses DUPLO-style estimates in station_scene.py; other dimensions/mass unmeasured. Legacy inspection retains standard LEGO sizes.",
+  "camera_view_basis": "Fresh RealSense preview frames, visual fit only. Second view modeled fixed pending mounting verification. See STATION-RECONSTRUCTION.md",
+  "inspection_spot_fixed_confirmed": null,
+  "notes": "Camera roles are inferred from the handoff. Verify views before recording. Null mapping deliberately prevents declaring simulated data compatible with hardware. 2026-11-14 audit: range interpolation deprecated; new collection requires measured encoder-to-model mapping. Station unavailable for missing measurements.",
+  "normalized_sim_interface": {
+    "class": "normalized_env.NormalizedSortingEnv",
+    "config": "arm_config.json",
+    "action_units": "so101_station_normalized_v1",
+    "hardware_mapping_verified": false,
+    "mapping": "station_coordinates.NOMINAL: fixed 4096 ticks/rev, sign +1, zero at tick 2048; signs checked on the station 2026-11-14"
+  }
+}

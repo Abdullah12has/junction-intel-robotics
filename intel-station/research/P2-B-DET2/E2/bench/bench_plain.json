@@ -1,0 +1,49 @@
+{
+ "model": "work/P2-B-DET2/E2/anomalib/patchcore_plain_cpu/export_ov/weights/openvino/model.xml",
+ "input_shape": [
+  2,
+  3,
+  256,
+  256
+ ],
+ "devices_available": [
+  "CPU",
+  "GPU",
+  "NPU"
+ ],
+ "devices": {
+  "CPU": {
+   "full_name": "Intel(R) Core(TM) Ultra X9 388H",
+   "compile_s": 0.21,
+   "runs": 100,
+   "batch": 2,
+   "median_ms_per_crop": 142.52,
+   "median_ms": 285.05,
+   "p90_ms": 598.4,
+   "mean_ms": 351.77,
+   "fps_from_mean": 2.8
+  },
+  "GPU": {
+   "full_name": "Intel(R) Graphics [0xb080] (iGPU)",
+   "compile_s": 0.82,
+   "runs": 100,
+   "batch": 2,
+   "median_ms_per_crop": 2.97,
+   "median_ms": 5.94,
+   "p90_ms": 7.22,
+   "mean_ms": 6.26,
+   "fps_from_mean": 159.6
+  },
+  "NPU": {
+   "full_name": "Intel(R) AI Boost",
+   "compile_s": 0.03,
+   "runs": 100,
+   "batch": 2,
+   "median_ms_per_crop": 34.14,
+   "median_ms": 68.27,
+   "p90_ms": 70.55,
+   "mean_ms": 68.41,
+   "fps_from_mean": 14.6
+  }
+ }
+}

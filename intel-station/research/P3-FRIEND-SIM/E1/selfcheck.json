@@ -1,0 +1,117 @@
+{
+ "utc": "2026-11-14T20:01:13Z",
+ "passed": 22,
+ "total": 22,
+ "checks": [
+  {
+   "fact": "bowl centres in station_scene.py equal compare.json",
+   "pass": true,
+   "detail": "{'blue': (-0.105, -0.13), 'green': (0.235, -0.16)}"
+  },
+  {
+   "fact": "station base pos/quat as recorded",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "overhead look-at as recorded",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "overhead fovy 40",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "wrist camera is world-fixed (appended to world)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "friend's own comment: geometry visually fitted",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "150 attempts with metadata",
+   "pass": true,
+   "detail": "150"
+  },
+  {
+   "fact": "accepted, success, grasp verified for all",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "action_units = absolute_joint_radians for all",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "OD-10 contradictions recount = 73",
+   "pass": true,
+   "detail": "73"
+  },
+  {
+   "fact": "gate decisions as recorded (a NO-GO, c GO)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "manifest 762 entries, all verified",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "tar sha256 = 36fbe792...93780b",
+   "pass": true,
+   "detail": "36fbe79242afa86e"
+  },
+  {
+   "fact": "K pan recomputed = compare K[0]",
+   "pass": true,
+   "detail": "56.16"
+  },
+  {
+   "fact": "MJCF wrist_flex limit 1.658 rad -> 91.62 units",
+   "pass": true,
+   "detail": "1.658063"
+  },
+  {
+   "fact": "real Studio dataset: 16 episodes at 30 fps",
+   "pass": true,
+   "detail": "(16, 30)"
+  },
+  {
+   "fact": "real joints.csv: 15 used, 2 short files skipped",
+   "pass": true,
+   "detail": "15"
+  },
+  {
+   "fact": "release pans: green eps 8,10,14,15 near -52..-55; blue 7,11,12 near +32..+34",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "metrics.json equals compare.json for top blue px offset",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "image-based sim plate spacing within 3 mm of truth",
+   "pass": true,
+   "detail": "{'sim_world_truth_from_bowl_centres': 341.3, 'sim_image_via_model': 343.4, 'real_image_via_sim_model': 343.5}"
+  },
+  {
+   "fact": "live mirror identical to 2026-11-14 (compare.json)",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "fact": "twin status recorded in compare.json",
+   "pass": true,
+   "detail": "NOT COMPARED. R/twin was deleted at 2026-11-14T19:48Z (D-102). The coordinator (19:49Z) asked for the friend sim against the real recordings only; the team twin"
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "generated_utc": "2026-11-14T13:17:09Z",
+ "needs": {
+  "S1": {
+   "target": 40,
+   "minimum": 30,
+   "usable_now": 8,
+   "usable_ids": [
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:0",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:1",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:2",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:3",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:4",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:5",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:6",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:7"
+   ],
+   "shortfall_to_target": 32,
+   "shortfall_to_minimum": 22
+  },
+  "S2": {
+   "target": 30,
+   "minimum": 25,
+   "usable_now": 1,
+   "usable_ids": [
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:7"
+   ],
+   "shortfall_to_target": 29,
+   "shortfall_to_minimum": 24
+  },
+  "S3": {
+   "target": 30,
+   "minimum": 25,
+   "usable_now": 2,
+   "usable_ids": [
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:8",
+    "6d6bdce3-b382-478d-9697-fb9e573b97af:10"
+   ],
+   "shortfall_to_target": 28,
+   "shortfall_to_minimum": 23
+  }
+ },
+ "requests": {
+  "S1": [
+   "Record 32 more S1 parts to reach target 40 (minimum 30: 22 still missing). Full pick-and-place takes also count for S2/S3 (sub-episodes counted in the same way).",
+   "S1 part = start to 1.0 s after the grasp closes and the lift begins; the brick must be in the jaws at that cut.",
+   "Pending visual review (brick in jaws at S1 cut): [].",
+   "Grasp poses so far (pan at closure): -47.8 to -8.4 deg. Vary brick start positions outside this range.",
+   "Takes that start with the brick already held have no S1 part (2 episodes here).",
+   "Scene: Top camera 243622061421 at episode start shows several bricks (mixed colours) clustered on the mat between the blue and green plates."
+  ],
+  "S2": [
+   "Usable blue-plate S2/S3 parts now: 1 (target 30, minimum 25). Record 29 more; 24 needed for the minimum.",
+   "Release pan angles (deg, cluster): [('6d6bdce3-b382-478d-9697-fb9e573b97af:3', -5.4, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:4', -13.7, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:5', -12.6, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:6', -13.1, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:7', 32.1, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:8', -54.7, 'low'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:10', -51.8, 'low')]. Plate for each assigned from the top camera at the release frame; unassigned parts do not count."
+  ],
+  "S3": [
+   "Usable green-plate S2/S3 parts now: 2 (target 30, minimum 25). Record 28 more; 23 needed for the minimum.",
+   "Release pan angles (deg, cluster): [('6d6bdce3-b382-478d-9697-fb9e573b97af:3', -5.4, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:4', -13.7, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:5', -12.6, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:6', -13.1, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:7', 32.1, 'high'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:8', -54.7, 'low'), ('6d6bdce3-b382-478d-9697-fb9e573b97af:10', -51.8, 'low')]. Plate for each assigned from the top camera at the release frame; unassigned parts do not count."
+  ]
+ },
+ "reused_datasets": [
+  {
+   "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+   "studio_name": "Smoke test - inspection skill - 5 episodes",
+   "episodes_on_disk": 11,
+   "frames": 6693,
+   "caveats": [
+    "Studio name 'Smoke test - inspection skill - 5 episodes' says 5 episodes; disk has 11 (name stale)",
+    "task text is ['move the brick to the inspection spot', 'move the brick to the left plate'] for every episode; skill split is by gripper and motion events only"
+   ]
+  }
+ ],
+ "full_pick_and_place_episodes": 3,
+ "unusable_episodes": [],
+ "pending_review": {
+  "S1": [],
+  "S2/S3": [
+   "6d6bdce3-b382-478d-9697-fb9e573b97af:3",
+   "6d6bdce3-b382-478d-9697-fb9e573b97af:4",
+   "6d6bdce3-b382-478d-9697-fb9e573b97af:5",
+   "6d6bdce3-b382-478d-9697-fb9e573b97af:6"
+  ]
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "t": "06:13:47Z",
+ "jaw_tips": [
+  [
+   193.1,
+   283
+  ],
+  [
+   585.2,
+   283
+  ]
+ ],
+ "ref": [
+  [
+   235.7,
+   320
+  ],
+  [
+   544.6,
+   329
+  ]
+ ],
+ "gripper": 24.62,
+ "n_measurements": 3,
+ "spread_px": 25.5,
+ "shift_px": [
+  56.4,
+  61.4
+ ],
+ "gap_change_px": 83.7,
+ "common_shift_px": [
+  -1.0,
+  -41.5
+ ],
+ "gap_centre_x": 389.2,
+ "target_px": [
+  392.2,
+  226.5
+ ],
+ "bent_accepted": "jaw gap 84px from the tight reference, 25.5px spread over the rolls",
+ "warning": "jaw gap drifting (84px from the tight reference): tighten the fixed jaw at the next stop",
+ "ok": true
+}

@@ -1,0 +1,318 @@
+{
+ "purpose": "Checkpoint of the anom3 anomaly detector. Model weights stay out of git (.gitignore); this file pins every model file and every training and evaluation image by SHA-256.",
+ "created_utc": "2026-11-15T00:27:13Z",
+ "code_commit": "0ca93ee4f0f70f03a9f577dd1e451cd05881e046",
+ "stack": {
+  "anomalib": "2.7.0",
+  "openvino": "2026.4.1"
+ },
+ "promoted": null,
+ "path_roots": {
+  "files": "this repository",
+  "train_data and eval_data": "project root, the parent of this repository"
+ },
+ "versions": {
+  "v000": {
+   "source": "folder",
+   "views": {
+    "pre_close": {
+     "model": "PatchCore",
+     "coreset_ratio": 0.1,
+     "train_good": 6,
+     "train_device": "GPU",
+     "threshold": 534.8227233886719,
+     "threshold_rule": "max balanced accuracy on held-out GOOD+DEFECT; ties go to the higher threshold",
+     "score": "IR pred_score (FP16), DEFECT when score > threshold",
+     "heldout": {
+      "n_good": 12,
+      "n_defect": 7,
+      "auroc": 0.869047619047619,
+      "balanced_accuracy": 0.9285714285714286,
+      "threshold_fit_on_heldout": true
+     },
+     "loop_crops": {
+      "n_good": 2,
+      "n_defect": 2,
+      "auroc": 0.5,
+      "balanced_accuracy": 0.5,
+      "verdict": "KEEP",
+      "reason": "too few held-out items (GOOD 2, DEFECT 2, need 5 of each)"
+     }
+    }
+   },
+   "skipped_views": {
+    "wrist_hover": "only 0 GOOD train crops (min 4)",
+    "held_close": "only 0 GOOD train crops (min 4)"
+   },
+   "files": [
+    {
+     "path": "anomaly/anom3/models/v000/eval_loop_vs_none.json",
+     "bytes": 850,
+     "sha256": "66f21d243835077b6b8c60d172227cdd6fe3b3d4df3427f81c4abf957054a478"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/eval_vs_none.json",
+     "bytes": 749,
+     "sha256": "647a3ceeaf6ae6d13aa2c95e19b49dd8b5e412867175c79ded68170a902fc09e"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/disagreements.tsv",
+     "bytes": 245,
+     "sha256": "c68ca1eb5bab73651f25227eec05daa149cda0dfc3087c0109452c0be49cac44"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/eval_list.tsv",
+     "bytes": 3969,
+     "sha256": "100fd769b43d030c50d194a0f9f0857c6203b676e5808c99e5da89555ff8beaa"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/metrics.json",
+     "bytes": 962,
+     "sha256": "88bf5d351b014d4945faf8ec5cb7e11e5ddf3551477d75a81354a10565f0cf7b"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/model.bin",
+     "bytes": 51576666,
+     "sha256": "791a1386581771966eaaaf30168d9d88f9da1ee8037b94f2dd31addba8f99043"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/model.xml",
+     "bytes": 239908,
+     "sha256": "f97596022a0521ab4802682a1c23f68212ed3ad5b34fe46e8b1e436e717a5455"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/threshold.json",
+     "bytes": 378,
+     "sha256": "5c91f9a22424911f93a25f3871d8314bc14695d138336ab6ae9e51057cc38b3c"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/pre_close/train_list.txt",
+     "bytes": 1223,
+     "sha256": "9abcb5c1db7a5b302e0a4745b2dcb40f258dd500fda33fe8e15fab7dc1a745b1"
+    },
+    {
+     "path": "anomaly/anom3/models/v000/summary.json",
+     "bytes": 758,
+     "sha256": "ff86859e52e447fa94a6c131a3b9f3621a3eb1df8ebe37f2ae2664f320751b53"
+    }
+   ],
+   "train_data": [
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e03_end_243722064316_1.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e03_end_243722064316_1.png",
+     "sha256": "6b8d1e434a8ab63ca07a1be57a371415045d189abe77646d8fbdbfe23d600abf"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e03_end_243722064316_2.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e03_end_243722064316_2.png",
+     "sha256": "ea59b73afc86f30aec001a54577e9ed586dd32c6f13bc254acfaf645946b7c9e"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e03_start_243722064316_1.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e03_start_243722064316_1.png",
+     "sha256": "dd8f2cfc63982d154465b33b72c738069628edf528b7e2f4f4ddbaec0e5ad16c"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e04_start_243722064316_0.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e04_start_243722064316_0.png",
+     "sha256": "e77ab4dcaa2ece8fc3a678c6e71894e0e9ccb21d10d71801262c67512f9d697c"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e05_end_243722064316_0.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e05_end_243722064316_0.png",
+     "sha256": "179f5c82b70897edc9e5145fe86116c17c0c32f63624680aa935de20b25da3b3"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/train/good/6d6bdce3_e06_start_243722064316_0.png",
+     "label": "GOOD",
+     "group": "folder/6d6bdce3_e06_start_243722064316_0.png",
+     "sha256": "6f09cb345f96208957b177802bed6a6b8323bb3d6bd1c370cc648140a1237daf"
+    }
+   ],
+   "eval_data": [
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e07_start_243722064316_1.png",
+     "label": "GOOD",
+     "score": 481.818451,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e07_start_243722064316_1.png",
+     "sha256": "bc2f6ecd466141597d4ae5e1cd5291e675dcade44deb4a418cde1f7605d9ec83"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e07_start_243722064316_4.png",
+     "label": "GOOD",
+     "score": 505.920624,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e07_start_243722064316_4.png",
+     "sha256": "201495d744339d8680d9a048d18ee110b42dba8dff35d6d57c94d2a7741e135d"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e11_end_243722064316_0.png",
+     "label": "GOOD",
+     "score": 456.723938,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e11_end_243722064316_0.png",
+     "sha256": "b8644fbd442370b5f3be9a73d15a9e6f19595b5bb768a746b304efcc59693d91"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e11_end_243722064316_2.png",
+     "label": "GOOD",
+     "score": 461.451935,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e11_end_243722064316_2.png",
+     "sha256": "60cd2e27115135e73933688907853041c09161129a92948becab63b0ac192fdf"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e11_start_243722064316_0.png",
+     "label": "GOOD",
+     "score": 449.32489,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e11_start_243722064316_0.png",
+     "sha256": "f0732267f3511951eb9e95e5babafd0617fb28288c19ae09f81b0eacf56d7109"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e12_start_243722064316_0.png",
+     "label": "GOOD",
+     "score": 495.228149,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e12_start_243722064316_0.png",
+     "sha256": "f680e8ad26884223aff54fe84f2ec206f25f0a6c7876d226aedc18be69bae97e"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e12_start_243722064316_3.png",
+     "label": "GOOD",
+     "score": 506.101807,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e12_start_243722064316_3.png",
+     "sha256": "8af9bbe6dd90419584690efc68bc63a29db919ebc11fd479a5c514a84e85e5af"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e13_start_243722064316_0.png",
+     "label": "GOOD",
+     "score": 494.631012,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e13_start_243722064316_0.png",
+     "sha256": "425c271febcf6c2f7e01ddbe41f1273ed2bc5f2b1acb9c9331c8e384fd8ca722"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e13_start_243722064316_1.png",
+     "label": "GOOD",
+     "score": 364.19696,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e13_start_243722064316_1.png",
+     "sha256": "fb8d44a8572d63d62dafea5dd5c80550be3879f52579b7644c4ad05c7c84c7c4"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e13_start_243722064316_2.png",
+     "label": "GOOD",
+     "score": 465.468811,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e13_start_243722064316_2.png",
+     "sha256": "26564154d40ce8b6d6cbfbecd0852924358db8541228b3e279e02470a4611aa4"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e14_start_243722064316_0.png",
+     "label": "GOOD",
+     "score": 457.170685,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e14_start_243722064316_0.png",
+     "sha256": "c207a199291ff03373e526a59592a9064123f9dca19b837b92ff58831c6afd75"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/good/6d6bdce3_e14_start_243722064316_1.png",
+     "label": "GOOD",
+     "score": 429.97348,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e14_start_243722064316_1.png",
+     "sha256": "b16b8941873274f2753269d8be6f570df3ccbb6cc4cae0ab38ebe63f7282304a"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e07_start_243722064316_0.png",
+     "label": "DEFECT",
+     "score": 657.548096,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e07_start_243722064316_0.png",
+     "sha256": "d4eb7ea352cc2e9ea02eacc134e599c21a9e85e4f0cb6af631624d112adaf03d"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e07_start_243722064316_2.png",
+     "label": "DEFECT",
+     "score": 602.790588,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e07_start_243722064316_2.png",
+     "sha256": "321752762d49c818446fcb100956f7138b5dcd33928204c480109f2fad068203"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e07_start_243722064316_3.png",
+     "label": "DEFECT",
+     "score": 400.413177,
+     "pred": "GOOD",
+     "group": "folder/6d6bdce3_e07_start_243722064316_3.png",
+     "sha256": "7fd6e1116386c8fa8bf21336f060ade633447532a24f34d6c57efc546a985874"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e09_end_243722064316_0.png",
+     "label": "DEFECT",
+     "score": 563.54364,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e09_end_243722064316_0.png",
+     "sha256": "9acfeced1eac508c891634e4d20e83fefd5be0a6fce9be9aa3cce065af0fdfa8"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e11_end_243722064316_3.png",
+     "label": "DEFECT",
+     "score": 600.756226,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e11_end_243722064316_3.png",
+     "sha256": "e493183d1b2a76e273035cb72f79ed4c486275773eb8d308904a9d9ec9f2ca75"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e11_end_243722064316_4.png",
+     "label": "DEFECT",
+     "score": 614.150269,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e11_end_243722064316_4.png",
+     "sha256": "82e4afa83be6f592c091880615f160c311aff6e3eb2e05a8b2957b755a0f5f78"
+    },
+    {
+     "path": "work/P2-B-DET2/E2/anomalib/bricks_close/test/defect/6d6bdce3_e12_start_243722064316_2.png",
+     "label": "DEFECT",
+     "score": 608.215393,
+     "pred": "DEFECT",
+     "group": "folder/6d6bdce3_e12_start_243722064316_2.png",
+     "sha256": "451f99d950d6303dac27140ca51d813de53f269067e7614bdd549351776f42fc"
+    }
+   ]
+  },
+  "v001": {
+   "source": "episodes",
+   "excluded": {
+    "no label": 12,
+    "success false": 1
+   },
+   "skipped_views": {
+    "pre_close": "only 1 GOOD train crops (min 2)",
+    "wrist_hover": "only 1 GOOD train crops (min 2)",
+    "held_close": "only 1 GOOD train crops (min 2)",
+    "station_close": "only 0 GOOD train crops (min 2)"
+   },
+   "files": [
+    {
+     "path": "anomaly/anom3/models/v001/eval_vs_v000.json",
+     "bytes": 825,
+     "sha256": "389516419f20f023283a4159b82ee0d6bd70d5efd0f532e5226a46cebcaa3351"
+    },
+    {
+     "path": "anomaly/anom3/models/v001/summary.json",
+     "bytes": 1636,
+     "sha256": "c7bc2b0cc95fd3b018a0c28d6586c44d0a96932a0a3c35e952ba6a2a89d4aa25"
+    }
+   ]
+  }
+ }
+}

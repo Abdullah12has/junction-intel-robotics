@@ -1,0 +1,10 @@
+{
+  "no_overlap": true,
+  "all_16_real_runs_assigned": true,
+  "original_running_pids_preserved": [
+    259860,
+    259861
+  ],
+  "scheduler_dispatch_test": "passed",
+  "adopted_process_completion_test": "passed"
+}

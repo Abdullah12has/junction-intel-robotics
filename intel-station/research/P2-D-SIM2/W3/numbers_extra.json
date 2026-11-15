@@ -1,0 +1,65 @@
+{
+ "gripper_peaks": {
+  "sim_release_open_peak_rad_p50": 0.6978,
+  "sim_grasp_closed_state_rad_p50": 0.1534,
+  "sim_open_peak_units_theory": 29.809,
+  "sim_closed_units_theory": 6.629,
+  "two_point_slope_units_per_rad": 30.36,
+  "theory_slope_units_per_rad": 42.58,
+  "real_open_release_p50": 18.75,
+  "real_closed_on_brick_p50": 2.221,
+  "real_open_before_grasp_p50": 25.44,
+  "real_closed_empty": 0.98,
+  "sim_closed_command_units_theory": -3.308
+ },
+ "sim_lift_units_s+1": {
+  "p5": -20.01,
+  "p50": 31.26,
+  "p95": 54.42,
+  "min": -34.73,
+  "frac_frames_below_-90": 0.0
+ },
+ "smoothed_acceleration_deg_s2(MA9)": {
+  "shoulder_pan": {
+   "sim_acc_rms_degs2_smoothed": 16.7,
+   "real_acc_rms_degs2_smoothed": 38.7,
+   "sim_acc_p95": 46.3,
+   "real_acc_p95": 86.6
+  },
+  "shoulder_lift": {
+   "sim_acc_rms_degs2_smoothed": 21.5,
+   "real_acc_rms_degs2_smoothed": 69.7,
+   "sim_acc_p95": 47.4,
+   "real_acc_p95": 156.4
+  },
+  "elbow_flex": {
+   "sim_acc_rms_degs2_smoothed": 29.5,
+   "real_acc_rms_degs2_smoothed": 71.7,
+   "sim_acc_p95": 77.7,
+   "real_acc_p95": 159.3
+  },
+  "wrist_flex": {
+   "sim_acc_rms_degs2_smoothed": 24.3,
+   "real_acc_rms_degs2_smoothed": 59.9,
+   "sim_acc_p95": 58.5,
+   "real_acc_p95": 132.1
+  },
+  "wrist_roll": {
+   "sim_acc_rms_degs2_smoothed": 23.1,
+   "real_acc_rms_degs2_smoothed": 65.9,
+   "sim_acc_p95": 57.3,
+   "real_acc_p95": 141.3
+  },
+  "gripper": {
+   "sim_acc_rms_degs2_smoothed": 48.6,
+   "real_acc_rms_degs2_smoothed": 69.4,
+   "sim_acc_p95": 135.6,
+   "real_acc_p95": 156.3
+  }
+ },
+ "real_rest_coverage": {
+  "frac_frames_lift_below_-90": 0.1558,
+  "frac_frames_elbow_above_90": 0.1122,
+  "n_frames": 10158
+ }
+}

@@ -1,0 +1,2205 @@
+[
+ {
+  "episode": 0,
+  "length": 673,
+  "duration_s": 22.433,
+  "move_first_s": 2.033,
+  "move_last_s": 21.667,
+  "g_start": 16.264,
+  "g_end": 2.155,
+  "g_max": 16.264,
+  "g_min": 2.155,
+  "home_like_start": true,
+  "end_home": false,
+  "home_pose": [
+   -17.45,
+   -97.97,
+   97.73,
+   58.97,
+   -53.88,
+   16.26
+  ],
+  "end_pose": [
+   -3.32,
+   14.81,
+   26.41,
+   -2.84,
+   -64.13,
+   2.16
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 242,
+     "time_s": 8.067
+    }
+   ],
+   "grasp_closed_frame": 242,
+   "lift_begin_frame": 280,
+   "s1_cut_frame": 310,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 310,
+    "start_s": 0.0,
+    "end_s": 10.333
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 16.264,
+   "closed_on_brick_median": 2.482,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -19.6,
+     -2.56,
+     46.01,
+     49.05,
+     -62.3,
+     4.83
+    ],
+    "s1cut": [
+     -16.33,
+     -25.93,
+     43.47,
+     44.89,
+     -56.97,
+     2.29
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 673,
+  "length_meta": 673,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 22.433333,
+    "seg_frames": 673.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 22.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 8.067,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 10.333,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 22.433333,
+    "seg_frames": 673.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 22.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 8.067,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 10.333,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep0_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253
+   }
+  },
+  "labels": [
+   "S1"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "grasp and lift, brick held to episode end (no release)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed-on-brick median 2.48 (gripper evidence; 320px thumbnails inconclusive)"
+  }
+ },
+ {
+  "episode": 1,
+  "length": 580,
+  "duration_s": 19.333,
+  "move_first_s": 0.0,
+  "move_last_s": 19.3,
+  "g_start": 10.777,
+  "g_end": 2.155,
+  "g_max": 28.347,
+  "g_min": 2.155,
+  "home_like_start": true,
+  "end_home": false,
+  "home_pose": [
+   -24.08,
+   -86.68,
+   95.37,
+   56.85,
+   -38.82,
+   10.78
+  ],
+  "end_pose": [
+   -11.59,
+   -16.14,
+   64.34,
+   3.43,
+   -62.82,
+   2.16
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 84,
+     "time_s": 2.8
+    }
+   ],
+   "grasp_closed_frame": 84,
+   "lift_begin_frame": 100,
+   "s1_cut_frame": 130,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 130,
+    "start_s": 0.0,
+    "end_s": 4.333
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 28.347,
+   "closed_on_brick_median": 2.286,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -27.19,
+     -4.5,
+     47.37,
+     54.22,
+     -32.34,
+     4.7
+    ],
+    "s1cut": [
+     -17.45,
+     -16.14,
+     44.83,
+     25.31,
+     -46.41,
+     2.29
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 580,
+  "length_meta": 580,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4",
+    "exists": true,
+    "t0": 22.433333,
+    "t1": 41.766667,
+    "seg_frames": 580.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 22.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 41.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 25.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 26.767,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4",
+    "exists": true,
+    "t0": 22.433333,
+    "t1": 41.766667,
+    "seg_frames": 580.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 22.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 41.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 25.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 26.767,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep1_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 1253
+   }
+  },
+  "labels": [
+   "S1"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "grasp and lift, brick held to episode end (no release)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.29 (gripper evidence)"
+  }
+ },
+ {
+  "episode": 2,
+  "length": 544,
+  "duration_s": 18.133,
+  "move_first_s": 0.267,
+  "move_last_s": 17.567,
+  "g_start": 36.381,
+  "g_end": 2.286,
+  "g_max": 36.381,
+  "g_min": 2.286,
+  "home_like_start": true,
+  "end_home": false,
+  "home_pose": [
+   -10.81,
+   -98.59,
+   94.83,
+   66.94,
+   -46.82,
+   36.38
+  ],
+  "end_pose": [
+   -2.46,
+   22.13,
+   11.89,
+   24.37,
+   -62.14,
+   2.29
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 191,
+     "time_s": 6.367
+    }
+   ],
+   "grasp_closed_frame": 191,
+   "lift_begin_frame": 201,
+   "s1_cut_frame": 231,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 231,
+    "start_s": 0.0,
+    "end_s": 7.7
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 36.381,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -15.21,
+     -3.26,
+     45.37,
+     60.15,
+     -48.65,
+     3.92
+    ],
+    "s1cut": [
+     -6.76,
+     3.17,
+     18.06,
+     40.82,
+     -52.52,
+     2.35
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 544,
+  "length_meta": 544,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 18.133333,
+    "seg_frames": 544.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 18.1,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 6.367,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 7.7,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 18.133333,
+    "seg_frames": 544.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 18.1,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 6.367,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 7.7,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep2_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   }
+  },
+  "labels": [
+   "S1"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "grasp and lift, brick held to episode end (no release)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "no release; closed median 2.55 (gripper evidence)"
+  }
+ },
+ {
+  "episode": 3,
+  "length": 704,
+  "duration_s": 23.467,
+  "move_first_s": 4.333,
+  "move_last_s": 23.333,
+  "g_start": 21.163,
+  "g_end": 15.611,
+  "g_max": 21.163,
+  "g_min": 2.286,
+  "home_like_start": true,
+  "end_home": true,
+  "home_pose": [
+   1.94,
+   -99.03,
+   95.28,
+   67.27,
+   -45.88,
+   21.16
+  ],
+  "end_pose": [
+   -0.99,
+   -98.68,
+   97.01,
+   62.95,
+   -44.99,
+   15.61
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 249,
+     "time_s": 8.3
+    },
+    {
+     "kind": "open",
+     "frame": 610,
+     "time_s": 20.333
+    }
+   ],
+   "grasp_closed_frame": 249,
+   "lift_begin_frame": 262,
+   "s1_cut_frame": 292,
+   "release_frame": 610,
+   "rest_frame": 644,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 292,
+    "start_s": 0.0,
+    "end_s": 9.733
+   },
+   "s23_part": {
+    "start_frame": 292,
+    "end_frame": 644,
+    "start_s": 9.733,
+    "end_s": 21.467
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 21.163,
+   "closed_on_brick_median": 2.678,
+   "pan_at_release": -5.39,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -26.15,
+     -13.23,
+     56.35,
+     55.15,
+     -38.46,
+     4.9
+    ],
+    "s1cut": [
+     -18.48,
+     -36.42,
+     36.3,
+     67.27,
+     -38.35,
+     2.55
+    ],
+    "release": [
+     -5.39,
+     -60.67,
+     61.89,
+     66.51,
+     -45.57,
+     8.49
+    ],
+    "rest": [
+     -2.02,
+     -85.36,
+     90.74,
+     60.75,
+     -44.0,
+     15.15
+    ]
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 704,
+  "length_meta": 704,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 18.133333,
+    "t1": 41.6,
+    "seg_frames": 704.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 18.133,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 41.567,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 26.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 27.867,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 38.467,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 39.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243722064316_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 18.133333,
+    "t1": 41.6,
+    "seg_frames": 704.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 18.133,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 41.567,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 26.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 27.867,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 38.467,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 39.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep3_243622061421_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   }
+  },
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "full pick-and-place (grasp, lift, release, return)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -5.4 deg; top view at release frame does not show the gripper clearly over either plate"
+  }
+ },
+ {
+  "episode": 4,
+  "length": 706,
+  "duration_s": 23.533,
+  "move_first_s": 1.233,
+  "move_last_s": 23.5,
+  "g_start": 15.611,
+  "g_end": 18.419,
+  "g_max": 31.287,
+  "g_min": 2.547,
+  "home_like_start": true,
+  "end_home": false,
+  "home_pose": [
+   -3.58,
+   -98.68,
+   97.73,
+   61.09,
+   -47.4,
+   15.61
+  ],
+  "end_pose": [
+   -5.47,
+   -60.85,
+   85.75,
+   40.57,
+   -54.82,
+   18.42
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 277,
+     "time_s": 9.233
+    },
+    {
+     "kind": "open",
+     "frame": 634,
+     "time_s": 21.133
+    }
+   ],
+   "grasp_closed_frame": 277,
+   "lift_begin_frame": 289,
+   "s1_cut_frame": 319,
+   "release_frame": 634,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 319,
+    "start_s": 0.0,
+    "end_s": 10.633
+   },
+   "s23_part": {
+    "start_frame": 319,
+    "end_frame": 705,
+    "start_s": 10.633,
+    "end_s": 23.5
+   },
+   "type": "grasp, lift, release (no return to rest)",
+   "open_peak_before_grasp": 31.287,
+   "closed_on_brick_median": 2.678,
+   "pan_at_release": -13.66,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -15.38,
+     7.5,
+     32.49,
+     54.39,
+     -49.49,
+     4.51
+    ],
+    "s1cut": [
+     -10.04,
+     -12.43,
+     14.34,
+     66.26,
+     -47.92,
+     2.55
+    ],
+    "release": [
+     -13.66,
+     -60.58,
+     79.22,
+     43.2,
+     -51.27,
+     8.75
+    ],
+    "rest": null
+   },
+   "notes": [
+    "no return to rest after release (part ends at episode end)"
+   ]
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 706,
+  "length_meta": 706,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 41.6,
+    "t1": 65.133333,
+    "seg_frames": 706.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 41.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 65.1,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 50.833,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 52.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 62.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243722064316_release.png",
+      "err": null
+     },
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 41.6,
+    "t1": 65.133333,
+    "seg_frames": 706.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 41.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 65.1,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 50.833,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 52.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 62.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep4_243622061421_release.png",
+      "err": null
+     },
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   }
+  },
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "verdict": "WARN",
+  "reasons": [
+   "no return to rest"
+  ],
+  "flags": [
+   "grasp, lift, release (no return to rest)",
+   "no return to rest after release (part ends at episode end)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -13.7 deg; between plates in top view; no return to rest"
+  }
+ },
+ {
+  "episode": 5,
+  "length": 647,
+  "duration_s": 21.567,
+  "move_first_s": 2.1,
+  "move_last_s": 21.467,
+  "g_start": 20.379,
+  "g_end": 22.534,
+  "g_max": 30.83,
+  "g_min": 2.547,
+  "home_like_start": true,
+  "end_home": true,
+  "home_pose": [
+   -4.09,
+   -98.5,
+   99.27,
+   52.61,
+   -51.79,
+   20.38
+  ],
+  "end_pose": [
+   -3.32,
+   -98.5,
+   95.74,
+   62.27,
+   -49.39,
+   22.53
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 235,
+     "time_s": 7.833
+    },
+    {
+     "kind": "open",
+     "frame": 549,
+     "time_s": 18.3
+    }
+   ],
+   "grasp_closed_frame": 235,
+   "lift_begin_frame": 255,
+   "s1_cut_frame": 285,
+   "release_frame": 549,
+   "rest_frame": 618,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 285,
+    "start_s": 0.0,
+    "end_s": 9.5
+   },
+   "s23_part": {
+    "start_frame": 285,
+    "end_frame": 618,
+    "start_s": 9.5,
+    "end_s": 20.6
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 30.83,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": -12.62,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -21.07,
+     1.59,
+     41.11,
+     52.86,
+     -60.05,
+     4.7
+    ],
+    "s1cut": [
+     -15.3,
+     -23.9,
+     40.83,
+     52.95,
+     -55.03,
+     2.55
+    ],
+    "release": [
+     -12.62,
+     20.99,
+     -19.33,
+     69.73,
+     -40.44,
+     9.67
+    ],
+    "rest": [
+     -4.87,
+     -98.77,
+     85.84,
+     65.66,
+     -48.18,
+     22.53
+    ]
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 647,
+  "length_meta": 647,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 65.133333,
+    "t1": 86.7,
+    "seg_frames": 647.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 65.133,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 86.667,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 72.967,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 74.633,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 83.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 85.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243722064316_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 65.133333,
+    "t1": 86.7,
+    "seg_frames": 647.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 65.133,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 86.667,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 72.967,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 74.633,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 83.433,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 85.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep5_243622061421_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   }
+  },
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "full pick-and-place (grasp, lift, release, return)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -12.6 deg; between plates in top view"
+  }
+ },
+ {
+  "episode": 6,
+  "length": 512,
+  "duration_s": 17.067,
+  "move_first_s": 0.567,
+  "move_last_s": 16.567,
+  "g_start": 22.534,
+  "g_end": 18.942,
+  "g_max": 22.534,
+  "g_min": 2.547,
+  "home_like_start": true,
+  "end_home": true,
+  "home_pose": [
+   -6.94,
+   -98.32,
+   95.74,
+   60.32,
+   -47.82,
+   22.53
+  ],
+  "end_pose": [
+   -4.87,
+   -98.68,
+   95.92,
+   62.27,
+   -48.5,
+   18.94
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 173,
+     "time_s": 5.767
+    },
+    {
+     "kind": "open",
+     "frame": 425,
+     "time_s": 14.167
+    }
+   ],
+   "grasp_closed_frame": 173,
+   "lift_begin_frame": 196,
+   "s1_cut_frame": 226,
+   "release_frame": 425,
+   "rest_frame": 479,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 226,
+    "start_s": 0.0,
+    "end_s": 7.533
+   },
+   "s23_part": {
+    "start_frame": 226,
+    "end_frame": 479,
+    "start_s": 7.533,
+    "end_s": 15.967
+   },
+   "type": "full pick-and-place (grasp, lift, release, return)",
+   "open_peak_before_grasp": 22.534,
+   "closed_on_brick_median": 2.547,
+   "pan_at_release": -13.14,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -8.4,
+     32.01,
+     -2.9,
+     69.31,
+     -50.8,
+     4.05
+    ],
+    "s1cut": [
+     -9.69,
+     -9.35,
+     7.8,
+     57.52,
+     -51.16,
+     2.55
+    ],
+    "release": [
+     -13.14,
+     12.61,
+     1.27,
+     56.25,
+     -49.59,
+     8.43
+    ],
+    "rest": [
+     -5.3,
+     -98.85,
+     85.84,
+     65.41,
+     -47.82,
+     18.88
+    ]
+   },
+   "notes": []
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 512,
+  "length_meta": 512,
+  "frame_index_ok": true,
+  "ts_max_err_s": 1e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 86.7,
+    "t1": 103.766667,
+    "seg_frames": 512.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 86.7,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 103.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 92.467,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 94.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 100.867,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 102.667,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243722064316_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4",
+    "exists": true,
+    "t0": 86.7,
+    "t1": 103.766667,
+    "seg_frames": 512.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 86.7,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 103.733,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 92.467,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 94.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 100.867,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 102.667,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep6_243622061421_rest.png",
+      "err": null
+     }
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 3113
+   }
+  },
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "verdict": "OK",
+  "reasons": [],
+  "flags": [
+   "full pick-and-place (grasp, lift, release, return)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "unclear",
+   "release_clear": "unclear",
+   "notes": "release pan -13.1 deg; between plates in top view"
+  }
+ },
+ {
+  "episode": 7,
+  "length": 1306,
+  "duration_s": 43.533,
+  "move_first_s": 3.0,
+  "move_last_s": 41.933,
+  "g_start": 18.942,
+  "g_end": 18.158,
+  "g_max": 19.987,
+  "g_min": 2.155,
+  "home_like_start": true,
+  "end_home": false,
+  "home_pose": [
+   -6.07,
+   -98.68,
+   96.82,
+   60.41,
+   -48.81,
+   18.94
+  ],
+  "end_pose": [
+   27.1,
+   -9.08,
+   21.23,
+   72.45,
+   -36.78,
+   18.16
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "close",
+     "frame": 355,
+     "time_s": 11.833
+    },
+    {
+     "kind": "open",
+     "frame": 1212,
+     "time_s": 40.4
+    }
+   ],
+   "grasp_closed_frame": 355,
+   "lift_begin_frame": 383,
+   "s1_cut_frame": 413,
+   "release_frame": 1212,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 413,
+    "start_s": 0.0,
+    "end_s": 13.767
+   },
+   "s23_part": {
+    "start_frame": 413,
+    "end_frame": 1305,
+    "start_s": 13.767,
+    "end_s": 43.5
+   },
+   "type": "grasp, lift, release (no return to rest)",
+   "open_peak_before_grasp": 19.987,
+   "closed_on_brick_median": 2.482,
+   "pan_at_release": 32.1,
+   "pan_cluster": "high",
+   "poses": {
+    "grasp": [
+     -13.74,
+     -20.55,
+     62.07,
+     55.74,
+     -18.95,
+     3.79
+    ],
+    "s1cut": [
+     -13.74,
+     -27.87,
+     43.28,
+     76.26,
+     -25.12,
+     2.42
+    ],
+    "release": [
+     32.1,
+     5.47,
+     25.59,
+     61.85,
+     -36.78,
+     8.62
+    ],
+    "rest": null
+   },
+   "notes": [
+    "no return to rest after release (part ends at episode end)"
+   ]
+  },
+  "task": "move the brick to the inspection spot",
+  "rows_data": 1306,
+  "length_meta": 1306,
+  "frame_index_ok": true,
+  "ts_max_err_s": 2e-06,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 43.533333,
+    "seg_frames": 1306.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 43.5,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 11.833,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 13.767,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 40.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243722064316_release.png",
+      "err": null
+     },
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 0.0,
+    "t1": 43.533333,
+    "seg_frames": 1306.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 0.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 43.5,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 11.833,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 13.767,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 40.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep7_243622061421_release.png",
+      "err": null
+     },
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   }
+  },
+  "labels": [
+   "S1",
+   "S2/S3"
+  ],
+  "verdict": "WARN",
+  "reasons": [
+   "no return to rest"
+  ],
+  "flags": [
+   "grasp, lift, release (no return to rest)",
+   "no return to rest after release (part ends at episode end)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "yes",
+   "plate": "blue",
+   "release_clear": "yes",
+   "notes": "top view at release (t=40.40 s): gripper above the blue plate; no return to rest inside episode"
+  }
+ },
+ {
+  "episode": 8,
+  "length": 342,
+  "duration_s": 11.4,
+  "move_first_s": 1.067,
+  "move_last_s": 11.0,
+  "g_start": 2.155,
+  "g_end": 14.631,
+  "g_max": 14.631,
+  "g_min": 2.155,
+  "home_like_start": false,
+  "end_home": true,
+  "home_pose": [
+   -5.47,
+   17.64,
+   -8.35,
+   57.52,
+   -53.88,
+   2.16
+  ],
+  "end_pose": [
+   -9.26,
+   -90.12,
+   88.75,
+   61.93,
+   -47.08,
+   14.63
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 152,
+     "time_s": 5.067
+    }
+   ],
+   "grasp_closed_frame": null,
+   "lift_begin_frame": null,
+   "s1_cut_frame": null,
+   "release_frame": 152,
+   "rest_frame": 315,
+   "s1_part": null,
+   "s23_part": {
+    "start_frame": 0,
+    "end_frame": 315,
+    "start_s": 0.0,
+    "end_s": 10.5
+   },
+   "type": "starts with brick held (no grasp in episode): release and return",
+   "open_peak_before_grasp": null,
+   "closed_on_brick_median": null,
+   "pan_at_release": -54.67,
+   "pan_cluster": "low",
+   "poses": {
+    "grasp": null,
+    "s1cut": null,
+    "release": [
+     -54.67,
+     24.51,
+     1.91,
+     54.22,
+     -55.03,
+     8.95
+    ],
+    "rest": [
+     -9.18,
+     -88.45,
+     85.12,
+     61.76,
+     -45.57,
+     14.63
+    ]
+   },
+   "notes": []
+  },
+  "task": "move the brick to the left plate",
+  "rows_data": 342,
+  "length_meta": 342,
+  "frame_index_ok": true,
+  "ts_max_err_s": 0.0,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 43.533333,
+    "t1": 54.933333,
+    "seg_frames": 342.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 43.533,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 54.9,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243722064316_end.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 48.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243722064316_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 54.033,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243722064316_rest.png",
+      "err": null
+     },
+     "grasp": null,
+     "s1cut": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 43.533333,
+    "t1": 54.933333,
+    "seg_frames": 342.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 43.533,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 54.9,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243622061421_end.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 48.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243622061421_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 54.033,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep8_243622061421_rest.png",
+      "err": null
+     },
+     "grasp": null,
+     "s1cut": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   }
+  },
+  "labels": [
+   "S2/S3"
+  ],
+  "verdict": "WARN",
+  "reasons": [
+   "start pose not at home (lift/elbow)"
+  ],
+  "flags": [
+   "starts with brick held (no grasp in episode): release and return"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "na",
+   "plate": "green",
+   "release_clear": "yes",
+   "notes": "starts with brick held; top view at rest frame shows the brick on the green plate"
+  }
+ },
+ {
+  "episode": 9,
+  "length": 340,
+  "duration_s": 11.333,
+  "move_first_s": 1.067,
+  "move_last_s": 11.2,
+  "g_start": 1.96,
+  "g_end": 0.98,
+  "g_max": 19.726,
+  "g_min": 0.98,
+  "home_like_start": false,
+  "end_home": true,
+  "home_pose": [
+   -5.99,
+   22.4,
+   -20.87,
+   52.95,
+   -52.37,
+   1.96
+  ],
+  "end_pose": [
+   0.22,
+   -99.03,
+   97.01,
+   62.19,
+   -47.92,
+   0.98
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 190,
+     "time_s": 6.333
+    },
+    {
+     "kind": "close",
+     "frame": 224,
+     "time_s": 7.467
+    }
+   ],
+   "grasp_closed_frame": 224,
+   "lift_begin_frame": 230,
+   "s1_cut_frame": 260,
+   "release_frame": null,
+   "rest_frame": null,
+   "s1_part": {
+    "start_frame": 0,
+    "end_frame": 260,
+    "start_s": 0.0,
+    "end_s": 8.667
+   },
+   "s23_part": null,
+   "type": "grasp and lift, brick held to episode end (no release)",
+   "open_peak_before_grasp": 19.726,
+   "closed_on_brick_median": 0.98,
+   "pan_at_release": null,
+   "pan_cluster": null,
+   "poses": {
+    "grasp": [
+     -47.78,
+     -4.85,
+     6.53,
+     62.53,
+     -45.62,
+     3.53
+    ],
+    "s1cut": [
+     -1.25,
+     -29.63,
+     6.53,
+     69.48,
+     -48.81,
+     0.98
+    ],
+    "release": null,
+    "rest": null
+   },
+   "notes": []
+  },
+  "task": "move the brick to the left plate",
+  "rows_data": 340,
+  "length_meta": 340,
+  "frame_index_ok": true,
+  "ts_max_err_s": 0.0,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 54.933333,
+    "t1": 66.266667,
+    "seg_frames": 340.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 54.933,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 66.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243722064316_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 62.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243722064316_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 63.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243722064316_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 54.933333,
+    "t1": 66.266667,
+    "seg_frames": 340.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 54.933,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 66.233,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243622061421_end.png",
+      "err": null
+     },
+     "grasp": {
+      "ok": true,
+      "t_file_s": 62.4,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243622061421_grasp.png",
+      "err": null
+     },
+     "s1cut": {
+      "ok": true,
+      "t_file_s": 63.6,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep9_243622061421_s1cut.png",
+      "err": null
+     },
+     "release": null,
+     "rest": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   }
+  },
+  "labels": [
+   "S1"
+  ],
+  "verdict": "WARN",
+  "reasons": [
+   "start pose not at home (lift/elbow)"
+  ],
+  "flags": [
+   "grasp and lift, brick held to episode end (no release)"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "no",
+   "plate": "unassigned",
+   "release_clear": "na",
+   "notes": "closed median 0.98 (jaw closed with no brick); no release"
+  }
+ },
+ {
+  "episode": 10,
+  "length": 339,
+  "duration_s": 11.3,
+  "move_first_s": 1.033,
+  "move_last_s": 11.267,
+  "g_start": 2.155,
+  "g_end": 17.113,
+  "g_max": 17.113,
+  "g_min": 2.155,
+  "home_like_start": false,
+  "end_home": true,
+  "home_pose": [
+   -5.56,
+   20.63,
+   -39.75,
+   98.13,
+   -51.79,
+   2.16
+  ],
+  "end_pose": [
+   -3.15,
+   -98.68,
+   92.47,
+   65.75,
+   -46.51,
+   17.11
+  ],
+  "segments": {
+   "events": [
+    {
+     "kind": "open",
+     "frame": 142,
+     "time_s": 4.733
+    }
+   ],
+   "grasp_closed_frame": null,
+   "lift_begin_frame": null,
+   "s1_cut_frame": null,
+   "release_frame": 142,
+   "rest_frame": 301,
+   "s1_part": null,
+   "s23_part": {
+    "start_frame": 0,
+    "end_frame": 301,
+    "start_s": 0.0,
+    "end_s": 10.033
+   },
+   "type": "starts with brick held (no grasp in episode): release and return",
+   "open_peak_before_grasp": null,
+   "closed_on_brick_median": null,
+   "pan_at_release": -51.83,
+   "pan_cluster": "low",
+   "poses": {
+    "grasp": null,
+    "s1cut": null,
+    "release": [
+     -51.83,
+     47.71,
+     -49.82,
+     80.08,
+     -52.31,
+     8.75
+    ],
+    "rest": [
+     -3.23,
+     -85.71,
+     87.21,
+     60.75,
+     -46.56,
+     17.11
+    ]
+   },
+   "notes": []
+  },
+  "task": "move the brick to the left plate",
+  "rows_data": 339,
+  "length_meta": 339,
+  "frame_index_ok": true,
+  "ts_max_err_s": 0.0,
+  "data_range_ok": true,
+  "videos": {
+   "243722064316": {
+    "file": "videos/observation.images.realsense 243722064316/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 66.266667,
+    "t1": 77.566667,
+    "seg_frames": 339.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 66.267,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243722064316_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 77.533,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243722064316_end.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 71.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243722064316_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 76.3,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243722064316_rest.png",
+      "err": null
+     },
+     "grasp": null,
+     "s1cut": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   },
+   "243622061421": {
+    "file": "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4",
+    "exists": true,
+    "t0": 66.266667,
+    "t1": 77.566667,
+    "seg_frames": 339.0,
+    "keyframes": {
+     "start": {
+      "ok": true,
+      "t_file_s": 66.267,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243622061421_start.png",
+      "err": null
+     },
+     "end": {
+      "ok": true,
+      "t_file_s": 77.533,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243622061421_end.png",
+      "err": null
+     },
+     "release": {
+      "ok": true,
+      "t_file_s": 71.0,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243622061421_release.png",
+      "err": null
+     },
+     "rest": {
+      "ok": true,
+      "t_file_s": 76.3,
+      "png": "/home/intel/intel-junction-2026/work/P2-D-DATA/W2/results3/frames/6d6bdce3-b382-478d-9697-fb9e573b97af/ep10_243622061421_rest.png",
+      "err": null
+     },
+     "grasp": null,
+     "s1cut": null
+    },
+    "decode_first": true,
+    "decode_last": true,
+    "probe_ok": true,
+    "codec": "av1",
+    "wh": "640x480",
+    "probe_nb_frames": 2327
+   }
+  },
+  "labels": [
+   "S2/S3"
+  ],
+  "verdict": "WARN",
+  "reasons": [
+   "start pose not at home (lift/elbow)"
+  ],
+  "flags": [
+   "starts with brick held (no grasp in episode): release and return"
+  ],
+  "dataset_id": "6d6bdce3-b382-478d-9697-fb9e573b97af",
+  "review": {
+   "brick_held_at_s1cut": "na",
+   "plate": "green",
+   "release_clear": "yes",
+   "notes": "starts with brick held; top view at rest frame shows the white brick on the green plate"
+  }
+ }
+]

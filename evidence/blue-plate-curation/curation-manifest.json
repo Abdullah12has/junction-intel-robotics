@@ -1,0 +1,162 @@
+{
+  "source_dataset_id": "8a8bb05e-6f2c-44f5-bf4b-745c2028f7cf",
+  "source_name": "ALL-BLOCKS-BLUE - three cameras",
+  "output_name": "ALL-BLOCKS-BLUE - curated five successful episodes",
+  "curated_path": "/home/intel/junction-handoff/blue-plate-curation/ALL-BLOCKS-BLUE-curated-5",
+  "source_frames": 16943,
+  "curated_frames": 14651,
+  "fps": 30,
+  "source_episode_count": 6,
+  "curated_episode_count": 5,
+  "episode_map": [
+    {
+      "curated_episode": 0,
+      "source_episode": 0,
+      "kept_length": 2888,
+      "trimmed_leading_frames": 46,
+      "trimmed_seconds": 1.5333333333333334,
+      "retained_tail": "full"
+    },
+    {
+      "curated_episode": 1,
+      "source_episode": 1,
+      "kept_length": 3818,
+      "trimmed_leading_frames": 26,
+      "trimmed_seconds": 0.8666666666666667,
+      "retained_tail": "full"
+    },
+    {
+      "curated_episode": 2,
+      "source_episode": 3,
+      "kept_length": 2879,
+      "trimmed_leading_frames": 0,
+      "trimmed_seconds": 0.0,
+      "retained_tail": "full"
+    },
+    {
+      "curated_episode": 3,
+      "source_episode": 4,
+      "kept_length": 2584,
+      "trimmed_leading_frames": 0,
+      "trimmed_seconds": 0.0,
+      "retained_tail": "full"
+    },
+    {
+      "curated_episode": 4,
+      "source_episode": 5,
+      "kept_length": 2482,
+      "trimmed_leading_frames": 11,
+      "trimmed_seconds": 0.36666666666666664,
+      "retained_tail": "full"
+    }
+  ],
+  "excluded_review_holdout": {
+    "source_episode": 2,
+    "frames": 2209,
+    "reason": "partial attempt: overhead video at episode end shows red and white blocks still outside the blue plate near the green plate; retain in original source for review, exclude from success training copy"
+  },
+  "trim_policy": "Only verified stationary lead-in frames were removed. For episodes 0,1,2,5 the first >1 normalized-unit adjacent action/state change occurred at ~2.03,1.37,1.07,0.87 seconds; trim leaves 0.5 seconds before those changes. Start frames at candidate cuts matched initial overhead pose. Successful-copy trims: episode 0:46 frames; 1:26; 3:0; 4:0; 5:11. No episode tails or internal intervals were removed because motion continued near the recorded ends.",
+  "spatial_crop": "none",
+  "task": "pick up all the blocks and put them on the blue plate",
+  "camera_features": [
+    "observation.images.realsense 243722064316",
+    "observation.images.usb2_0_cam1 external camera",
+    "observation.images.realsense 243622061421"
+  ],
+  "video_copy": "All source video files were copied byte-for-byte without re-encoding. Dataset episode metadata references only selected successful clips with from_timestamp adjusted by the lead-in trim. Some physical video files contain an adjacent excluded source episode; that interval is not referenced by the curated episode table.",
+  "source_files": {
+    "data/chunk-000/file-000.parquet": {
+      "size_bytes": 787834,
+      "sha256": "d0fe690c59b3f6c01baddbbfc3e989468d123ab7f8dfdbbfef8f5f670b778f44"
+    },
+    "meta/episodes/chunk-000/file-000.parquet": {
+      "size_bytes": 73205,
+      "sha256": "77e968e9b288bdba089b2fce0656de319fa3d7c5f71e08e006d3522e3bab2cc4"
+    },
+    "meta/info.json": {
+      "size_bytes": 4587,
+      "sha256": "9852f08c2a77d1949e95a33adf683beb7b67bb517ed929d9a9e1625fa1fb645e"
+    },
+    "meta/stats.json": {
+      "size_bytes": 16115,
+      "sha256": "6bd862f5a91ab8776f3452716ff3eb7e6590d0b219e0f3f0a40e2804a0922644"
+    },
+    "meta/tasks.parquet": {
+      "size_bytes": 2255,
+      "sha256": "dd3ed4ddf81eab10cd040a2566ad591c10b44777456df92420b715c249b51190"
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4": {
+      "size_bytes": 90493248,
+      "sha256": "b8c9462bb84b798c8167017d490061967092a8c73de945971ceaf60f3353f94e"
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4": {
+      "size_bytes": 185440692,
+      "sha256": "b28d493f8fa22f6ddd68e935d8cca59c0c9ff99d44678b273ae3b10a1552174a"
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4": {
+      "size_bytes": 153456851,
+      "sha256": "f746585a9bb23913c883a81384b1d5db46a19e1fe6a00e67969faf83bcafd68c"
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-003.mp4": {
+      "size_bytes": 76326754,
+      "sha256": "5847ad9df4b88312b4222f0cb36143f684c988733d1ed90b2b9144288d4ccbd6"
+    },
+    "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4": {
+      "size_bytes": 196486732,
+      "sha256": "af518137afbc8ff76a4b7bfc9d44e70cb6a500809a3017704da7f40c770867b4"
+    },
+    "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4": {
+      "size_bytes": 167530302,
+      "sha256": "a46e3ba8adb2f2bff839215203b30feed6ed78587d30ce9e8ceba1f860f79000"
+    },
+    "videos/observation.images.usb2_0_cam1 external camera/chunk-000/file-000.mp4": {
+      "size_bytes": 117052988,
+      "sha256": "fa18a5bb3cb8efc7afa12de38929522d9fc5839c89a6adb7706efdb0f48e705d"
+    }
+  },
+  "video_file_hashes": {
+    "videos/observation.images.realsense 243622061421/chunk-000/file-000.mp4": {
+      "size_bytes": 90493248,
+      "sha256": "b8c9462bb84b798c8167017d490061967092a8c73de945971ceaf60f3353f94e",
+      "byte_identical": true
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-001.mp4": {
+      "size_bytes": 185440692,
+      "sha256": "b28d493f8fa22f6ddd68e935d8cca59c0c9ff99d44678b273ae3b10a1552174a",
+      "byte_identical": true
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-002.mp4": {
+      "size_bytes": 153456851,
+      "sha256": "f746585a9bb23913c883a81384b1d5db46a19e1fe6a00e67969faf83bcafd68c",
+      "byte_identical": true
+    },
+    "videos/observation.images.realsense 243622061421/chunk-000/file-003.mp4": {
+      "size_bytes": 76326754,
+      "sha256": "5847ad9df4b88312b4222f0cb36143f684c988733d1ed90b2b9144288d4ccbd6",
+      "byte_identical": true
+    },
+    "videos/observation.images.realsense 243722064316/chunk-000/file-000.mp4": {
+      "size_bytes": 196486732,
+      "sha256": "af518137afbc8ff76a4b7bfc9d44e70cb6a500809a3017704da7f40c770867b4",
+      "byte_identical": true
+    },
+    "videos/observation.images.realsense 243722064316/chunk-000/file-001.mp4": {
+      "size_bytes": 167530302,
+      "sha256": "a46e3ba8adb2f2bff839215203b30feed6ed78587d30ce9e8ceba1f860f79000",
+      "byte_identical": true
+    },
+    "videos/observation.images.usb2_0_cam1 external camera/chunk-000/file-000.mp4": {
+      "size_bytes": 117052988,
+      "sha256": "fa18a5bb3cb8efc7afa12de38929522d9fc5839c89a6adb7706efdb0f48e705d",
+      "byte_identical": true
+    }
+  },
+  "validation": {
+    "data_rows": 14651,
+    "episode_ranges_contiguous": true,
+    "all_action_and_state_finite": true,
+    "numeric_stats_recomputed_from_retained_rows": true,
+    "camera_stats_aggregated_from_selected_episode_stats": true,
+    "camera_stats_note": "Per-episode camera summaries originate from the source metadata, with counts adjusted to retained episode lengths; the small trimmed lead-ins are not decoded again for pixel-stat recomputation."
+  }
+}

@@ -74,4 +74,37 @@ describe('station controls', () => {
             control: { type: 'teleop', hz: 100, grace_s: 3 },
         });
     });
+    it('selects every camera by default and connects without a leader in manual mode', async () => {
+        server.use(
+            http.get('/api/projects/{project_id}/environments', () =>
+                HttpResponse.json([
+                    {
+                        id: 'env',
+                        name: 'Bench',
+                        robots: [{ robot_id: 'follower', tele_operator: { type: 'robot', robot_id: 'leader' } }],
+                        cameras: [],
+                    },
+                ])
+            ),
+            http.get('/api/projects/{project_id}/cameras', () =>
+                HttpResponse.json([
+                    { id: 'camera-a', name: 'Arm camera', driver: 'usb_camera', fingerprint: {index: 0}, hardware_name: 'Test camera', payload: {width:640, height:480, fps:30, exposure:null, gain:null} },
+                    { id: 'camera-b', name: 'Overhead camera', driver: 'usb_camera', fingerprint: {index: 0}, hardware_name: 'Test camera', payload: {width:640, height:480, fps:30, exposure:null, gain:null} },
+                ])
+            )
+        );
+        show();
+        const user = userEvent.setup();
+        await user.click(await screen.findByRole('button', { name: 'Connect arms & selected cameras' }));
+        expect(fixture.send).toHaveBeenCalledWith({
+            command: 'load_environment',
+            unload_incompatible: false,
+            environment: {
+                id: 'env',
+                name: 'Bench',
+                robots: [{ robot_id: 'follower', tele_operator: { type: 'none' } }],
+                cameras: [{ camera_id: 'camera-a' }, { camera_id: 'camera-b' }],
+            },
+        });
+    });
 });

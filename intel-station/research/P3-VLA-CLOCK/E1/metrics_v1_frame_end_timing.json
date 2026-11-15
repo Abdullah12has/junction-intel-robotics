@@ -1,0 +1,57 @@
+{
+ "stage": "clock-offsets-v1",
+ "utc": "2026-11-14T20:21:21Z",
+ "metrics": {
+  "wrist": {
+   "absolute_pairs": 15,
+   "relative_pairs": 0,
+   "abs_median_lag_ms": 24.092193522162663,
+   "abs_p25_lag_ms": 17.674638938825137,
+   "abs_p75_lag_ms": 28.626992770366076,
+   "abs_min_lag_ms": 0.7334529055453549,
+   "abs_max_lag_ms": 42.40191757074877,
+   "abs_std_lag_ms": 9.8257960495902,
+   "abs_median_peak": 0.6609241753518316,
+   "abs_event_agree_50ms": 14,
+   "abs_event_na": 0,
+   "abs_edge_hits": 0
+  },
+  "top": {
+   "absolute_pairs": 15,
+   "relative_pairs": 0,
+   "abs_median_lag_ms": 42.77465521757114,
+   "abs_p25_lag_ms": 37.826975658990136,
+   "abs_p75_lag_ms": 47.44462294924281,
+   "abs_min_lag_ms": 24.240221464402342,
+   "abs_max_lag_ms": 62.20025206289716,
+   "abs_std_lag_ms": 9.299720819321898,
+   "abs_median_peak": 0.6696577061090535,
+   "abs_event_agree_50ms": 14,
+   "abs_event_na": 0,
+   "abs_edge_hits": 0
+  },
+  "close": {
+   "absolute_pairs": 15,
+   "relative_pairs": 0,
+   "abs_median_lag_ms": 28.5750443868924,
+   "abs_p25_lag_ms": -12.108168328643107,
+   "abs_p75_lag_ms": 48.7815589158114,
+   "abs_min_lag_ms": -500.0,
+   "abs_max_lag_ms": 63.4008186000298,
+   "abs_std_lag_ms": 196.67797646252555,
+   "abs_median_peak": 0.2837817793607868,
+   "abs_event_agree_50ms": 9,
+   "abs_event_na": 0,
+   "abs_edge_hits": 1
+  }
+ },
+ "previous": {
+  "source": "work/P2-D-VLA1/E1/STATUS.md R4 (jaw-gap half-travel, different method)",
+  "any_1740/ep_0017 wrist vs goal5, lag_ms": -103.4,
+  "any_1740/ep_0017 wrist vs pos5, lag_ms": -160.7
+ },
+ "delta": {
+  "any_1740/ep_0017 wrist lag minus P2 goal5 value, ms": 117.6204820571572,
+  "any_1740/ep_0017 wrist lag minus P2 pos5 value, ms": 174.9204820571572
+ }
+}

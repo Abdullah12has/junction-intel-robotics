@@ -1,0 +1,137 @@
+.panel {
+    background: #191d23;
+    border: 1px solid #333b46;
+    border-radius: 16px;
+    padding: 24px;
+    color: #eef3f8;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+.header h2 {
+    margin: 4px 0 12px;
+    font-size: 23px;
+}
+.eyebrow {
+    color: #94b7d4;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    margin: 0;
+}
+.badge {
+    border: 1px solid #586576;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+.hint {
+    color: #b4c1ce;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.arm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    font-weight: 600;
+}
+.arm input {
+    width: 18px;
+    height: 18px;
+    accent-color: #83cced;
+}
+.pads {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+.group {
+    text-align: center;
+    border: 1px solid #333b46;
+    border-radius: 12px;
+    padding: 16px 8px;
+}
+.group h3 {
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+.pad {
+    display: grid;
+    grid-template: repeat(3, 48px) / repeat(3, 48px);
+    justify-content: center;
+    gap: 4px;
+}
+.direction {
+    border: 1px solid #63768a;
+    border-radius: 12px;
+    background: #2c3b4a;
+    color: #eef7ff;
+    font-size: 25px;
+    cursor: pointer;
+    touch-action: none;
+    user-select: none;
+}
+.direction:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+.direction[data-active='true'] {
+    background: #8ed8f5;
+    color: #102734;
+}
+.direction:focus-visible,
+.stop:focus-visible {
+    outline: 3px solid #bdeaff;
+    outline-offset: 3px;
+}
+.up {
+    grid-area: 1 / 2;
+}
+.left {
+    grid-area: 2 / 1;
+}
+.right {
+    grid-area: 2 / 3;
+}
+.down {
+    grid-area: 3 / 2;
+}
+.center {
+    grid-area: 2 / 2;
+    align-self: center;
+    color: #7b8d9e;
+}
+.legend {
+    color: #b4c1ce;
+    line-height: 1.7;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+.stop {
+    width: 100%;
+    background: #8c343b;
+    border: 1px solid #d37b82;
+    color: #fff;
+    border-radius: 8px;
+    padding: 13px;
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+}
+.stop:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.error {
+    color: #ffb6b6;
+}
+@media (max-width: 1000px) {
+    .pads {
+        grid-template-columns: 1fr;
+    }
+}

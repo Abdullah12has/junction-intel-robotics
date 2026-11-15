@@ -1,0 +1,47 @@
+{
+  "id": "4b37dcdc-fec5-4f51-8070-17d1ecafe3d3",
+  "ip": "86.38.238.100",
+  "private_ip": null,
+  "private_network_id": null,
+  "subnet_id": null,
+  "status": "provisioning",
+  "created_at": "2026-11-15T03:31:31.115Z",
+  "created_by_user_id": "d6011149-8d5d-4865-989e-1dda9fb60460",
+  "cpu": {
+    "description": "22 CPU",
+    "number_of_cores": 22
+  },
+  "gpu": {
+    "description": "1x A100 SXM4 40GB",
+    "number_of_gpus": 1
+  },
+  "gpu_memory": {
+    "description": "40GB GPU RAM",
+    "size_in_gigabytes": 40
+  },
+  "memory": {
+    "description": "120GB RAM",
+    "size_in_gigabytes": 120
+  },
+  "storage": {
+    "description": "dynamic"
+  },
+  "hostname": "junction-blue-plate-20261115",
+  "description": "Blue plate real-data ACT and SmolVLA campaign",
+  "tags": [],
+  "location": "FIN-02",
+  "price_per_hour": 1.699,
+  "is_spot": false,
+  "instance_type": "1A100.40S.22V",
+  "image": "24.04.cuda13.0.docker",
+  "os_name": "junction-blue-plate-campaign",
+  "startup_script_id": null,
+  "ssh_key_ids": [
+    "370a5b25-5f63-407b-b2b5-fae0e46b651f"
+  ],
+  "os_volume_id": "cfd3e072-b633-4446-8983-7432c5090071",
+  "jupyter_token": null,
+  "contract": "PAY_AS_YOU_GO",
+  "pricing": "FIXED_PRICE",
+  "volume_ids": []
+}

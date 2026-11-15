@@ -1,0 +1,73 @@
+{
+ "stage": "census-v1",
+ "utc": "2026-11-14T19:53:16Z",
+ "metrics": {
+  "catalogue_rows": 670,
+  "rows_by_kind": {
+   "episode": 175,
+   "video": 381,
+   "capture_session": 41,
+   "dataset": 37,
+   "image_set": 26,
+   "report": 10
+  },
+  "units_unique": 603,
+  "units_unique_by_kind": {
+   "episode": 172,
+   "video": 349,
+   "capture_session": 38,
+   "dataset": 14,
+   "image_set": 20,
+   "report": 10
+  },
+  "rows_deleted_twin_19_48Z": 31,
+  "rows_non_unique_copies": 36,
+  "video_files_unique": 349,
+  "video_hours_unique": 11.51,
+  "video_frames_unique": 1145965,
+  "episodes_unique": 172,
+  "sim_attempts": 150,
+  "sort_episodes": 22,
+  "lerobot_datasets_unique": 10,
+  "lerobot_episodes": 191,
+  "lerobot_frames": 89056,
+  "scope_files_logs_data_run": 3304,
+  "scope_bytes_logs_data_run": 38604389883,
+  "files_covered_by_unit_path": 3304,
+  "files_uncovered": 0,
+  "spot_frames_png": 1298,
+  "spot_frame_failures": 0,
+  "spot_video_files": 649,
+  "spot_contact_sheets": 55,
+  "spot_image_folders": 20,
+  "frame_flags_dark_flat_same_missing": 0,
+  "manifest_primary_ok": "762/762",
+  "manifest_live_ok": "762/762",
+  "sim_mirror_ok": "150/150",
+  "needs_labelling": {
+   "T1_episode_outcome_label": {
+    "sort_episodes_without_success_key": 7,
+    "lerobot_episodes_without_outcome": 191,
+    "twin_raw_episodes_without_outcome": 0
+   },
+   "T2_target_colour_plate_per_episode": {
+    "sort_episodes_without_colour_or_plate": 14,
+    "lerobot_episodes_colour_only_in_task_text": 191,
+    "twin_raw_episodes_without_colour_label": 0
+   },
+   "T3_frame_boxes_or_masks_per_video": {
+    "unique_video_files": 349,
+    "hours": 11.51
+   },
+   "T4_anomaly_defect_label_per_crop": {
+    "rows": 123,
+    "blank": 123
+   },
+   "T5_depth_height_ground_truth_per_session": {
+    "depth_capture_sessions": 15
+   }
+  }
+ },
+ "previous": null,
+ "delta": null
+}

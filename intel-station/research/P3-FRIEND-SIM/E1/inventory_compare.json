@@ -1,0 +1,298 @@
+{
+ "new_root": "/home/intel/intel-junction-2026/data/sim/live/2026-11-14",
+ "old_root": "/home/intel/intel-junction-2026/data/sim/2026-11-14",
+ "attempts": {
+  "new": 150,
+  "old": 150,
+  "common": 150,
+  "only_new": [],
+  "only_old": []
+ },
+ "tar_sha_equal": true,
+ "tar_sha256": "36fbe79242afa86ed29247fd32327041780e0937e586b1c014962bc74b93780b",
+ "manifest_new": true,
+ "manifest_old": true,
+ "raw_top_entries_new": [
+  "recording_context.json",
+  "source",
+  "summary.json",
+  "verification.json"
+ ],
+ "raw_top_entries_old": [
+  "recording_context.json",
+  "source",
+  "summary.json",
+  "verification.json"
+ ],
+ "file_hash": {
+  "metadata.json": {
+   "identical": 150,
+   "changed": 0,
+   "changed_attempts": []
+  },
+  "trajectory.npz": {
+   "identical": 150,
+   "changed": 0,
+   "changed_attempts": []
+  },
+  "trace.json": {
+   "identical": 150,
+   "changed": 0,
+   "changed_attempts": []
+  },
+  "overhead.mp4": {
+   "identical": 150,
+   "changed": 0,
+   "changed_attempts": []
+  },
+  "wrist.mp4": {
+   "identical": 150,
+   "changed": 0,
+   "changed_attempts": []
+  }
+ },
+ "metadata_fields_changed": {},
+ "metadata_field_examples": {},
+ "md_values_new": {
+  "task": {
+   "\"move the red brick to the blue plate\"": 13,
+   "\"move the orange brick to the blue plate\"": 13,
+   "\"move the cyan brick to the green plate\"": 13,
+   "\"move the white brick to the blue plate\"": 13,
+   "\"move the purple brick to the green plate\"": 13,
+   "\"move the yellow brick to the green plate\"": 13,
+   "\"move the orange brick to the green plate\"": 12,
+   "\"move the red brick to the green plate\"": 12,
+   "\"move the white brick to the green plate\"": 12,
+   "\"move the purple brick to the blue plate\"": 12,
+   "\"move the yellow brick to the blue plate\"": 12,
+   "\"move the cyan brick to the blue plate\"": 12
+  },
+  "target_color": {
+   "\"red\"": 25,
+   "\"orange\"": 25,
+   "\"cyan\"": 25,
+   "\"white\"": 25,
+   "\"purple\"": 25,
+   "\"yellow\"": 25
+  },
+  "destination": {
+   "\"blue\"": 75,
+   "\"green\"": 75
+  },
+  "brick_type": {
+   "\"2x2\"": 82,
+   "\"2x4\"": 68
+  },
+  "source": {
+   "\"mujoco_simulation\"": 150
+  },
+  "action_units": {
+   "\"absolute_joint_radians\"": 150
+  },
+  "accepted": {
+   "true": 150
+  },
+  "success": {
+   "true": 150
+  },
+  "physical_grasp_verified": {
+   "true": 150
+  },
+  "hardware_mapping_verified": {
+   "false": 150
+  },
+  "error": {
+   "null": 150
+  },
+  "mujoco_version": {
+   "\"4.0.1\"": 150
+  },
+  "reference_layout": {
+   "false": 150
+  },
+  "friction_provenance": {
+   "\"reconstructed from the exact recorder reset sequence; friction is unchanged during steps\"": 150
+  },
+  "fps": {
+   "30": 150
+  },
+  "frames": {
+   "361": 51,
+   "363": 33,
+   "362": 27,
+   "364": 14,
+   "365": 9,
+   "360": 7,
+   "366": 5,
+   "404": 1,
+   "405": 1,
+   "367": 1,
+   "403": 1
+  }
+ },
+ "md_values_old": {
+  "task": {
+   "\"move the red brick to the blue plate\"": 13,
+   "\"move the orange brick to the blue plate\"": 13,
+   "\"move the cyan brick to the green plate\"": 13,
+   "\"move the white brick to the blue plate\"": 13,
+   "\"move the purple brick to the green plate\"": 13,
+   "\"move the yellow brick to the green plate\"": 13,
+   "\"move the orange brick to the green plate\"": 12,
+   "\"move the red brick to the green plate\"": 12,
+   "\"move the white brick to the green plate\"": 12,
+   "\"move the purple brick to the blue plate\"": 12,
+   "\"move the yellow brick to the blue plate\"": 12,
+   "\"move the cyan brick to the blue plate\"": 12
+  },
+  "target_color": {
+   "\"red\"": 25,
+   "\"orange\"": 25,
+   "\"cyan\"": 25,
+   "\"white\"": 25,
+   "\"purple\"": 25,
+   "\"yellow\"": 25
+  },
+  "destination": {
+   "\"blue\"": 75,
+   "\"green\"": 75
+  },
+  "brick_type": {
+   "\"2x2\"": 82,
+   "\"2x4\"": 68
+  },
+  "source": {
+   "\"mujoco_simulation\"": 150
+  },
+  "action_units": {
+   "\"absolute_joint_radians\"": 150
+  },
+  "accepted": {
+   "true": 150
+  },
+  "success": {
+   "true": 150
+  },
+  "physical_grasp_verified": {
+   "true": 150
+  },
+  "hardware_mapping_verified": {
+   "false": 150
+  },
+  "error": {
+   "null": 150
+  },
+  "mujoco_version": {
+   "\"4.0.1\"": 150
+  },
+  "reference_layout": {
+   "false": 150
+  },
+  "friction_provenance": {
+   "\"reconstructed from the exact recorder reset sequence; friction is unchanged during steps\"": 150
+  },
+  "fps": {
+   "30": 150
+  },
+  "frames": {
+   "361": 51,
+   "363": 33,
+   "362": 27,
+   "364": 14,
+   "365": 9,
+   "360": 7,
+   "366": 5,
+   "404": 1,
+   "405": 1,
+   "367": 1,
+   "403": 1
+  }
+ },
+ "recording_context_keys_new": [
+  "action_units",
+  "preflight_sha256",
+  "source",
+  "source_hashes"
+ ],
+ "recording_context_changed_keys": [],
+ "source_files_new": {
+  "collect.py": [
+   9253,
+   "e112d26b6c2ee33e476e85cb86d812b6ee3757ae714f974eed90ad06f44abd63"
+  ],
+  "expert.py": [
+   5290,
+   "09e0826d38a8e4cee55078bc8815594f5c9949dd1c05b7aed62d811bfa7762c3"
+  ],
+  "setup_assets.py": [
+   1282,
+   "6548207a3238c969f92d499b7df0c4a41432398a3981ca859337309227950b7b"
+  ],
+  "so101_env.py": [
+   7686,
+   "b9b0c61464b69fb8c3e045198ff521648eb174dd4dd752309f121a91437cc4d0"
+  ],
+  "sorting_env.py": [
+   6082,
+   "5125a8da26a450dc257063dffd867552d13167dda8684847b688aa80bd2ad448"
+  ],
+  "station_scene.py": [
+   7412,
+   "5df6434228e33919d797acf8bced6fb7a3ac73b323bf25ac790c8d76a1051c00"
+  ],
+  "uv.lock": [
+   40276,
+   "f2b6b56e54806d5cac934c831d7bb6a7a260452b06e10efe6ba83916c01f26d0"
+  ]
+ },
+ "source_files_changed": [],
+ "outside_raw_only_new": [],
+ "outside_raw_only_old_count": 14,
+ "outside_raw_only_old_examples": [
+  [
+   "extract-lerobot/dataset-150/all_episode_stats.json",
+   13179
+  ],
+  [
+   "extract-lerobot/dataset-150/data/chunk-000/file-000.parquet",
+   3858907
+  ],
+  [
+   "extract-lerobot/dataset-150/meta/episodes/chunk-000/file-000.parquet",
+   617740
+  ],
+  [
+   "extract-lerobot/dataset-150/meta/info.json",
+   3708
+  ],
+  [
+   "extract-lerobot/dataset-150/meta/stats.json",
+   13194
+  ],
+  [
+   "extract-lerobot/dataset-150/meta/tasks.parquet",
+   2375
+  ]
+ ],
+ "brick_destination_pairs_new": {
+  "2x4->blue": 33,
+  "2x2->blue": 42,
+  "2x2->green": 40,
+  "2x4->green": 35
+ },
+ "brick_destination_pairs_old": {
+  "2x4->blue": 33,
+  "2x2->blue": 42,
+  "2x2->green": 40,
+  "2x4->green": 35
+ },
+ "od10_contradictions_new": 73,
+ "od10_contradictions_old": 73,
+ "trajectory_value_compare": {
+  "checked": 0,
+  "same_shape": 0,
+  "max_abs_diff": 0.0,
+  "attempts_differing": []
+ }
+}

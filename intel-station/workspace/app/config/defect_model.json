@@ -1,0 +1,9 @@
+{
+ "kappa_chroma": 15.872137546562588,
+ "kappa_light_top": 17.26549053192139,
+ "kappa_light_side": 24.112690925598148,
+ "provenance": {
+  "created_utc": "2026-11-15T06:15:13Z",
+  "how": "clean-only fit on 7 clean surveys (orange, white) incl. the demo runs; margin x largest required misfit per channel"
+ }
+}

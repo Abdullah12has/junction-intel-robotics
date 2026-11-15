@@ -1,0 +1,91 @@
+{
+ "model": "patchcore",
+ "mode": "plain",
+ "accel": "cpu",
+ "train_images": 6,
+ "train_seconds": 65.1,
+ "metrics": {
+  "image_AUROC": 0.8214285373687744,
+  "image_F1Score": 0.6000000238418579
+ },
+ "per_image": [
+  {
+   "image": "6d6bdce3_e07_start_243722064316_0.png",
+   "score": 0.7472937107086182
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_2.png",
+   "score": 0.18784630298614502
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_3.png",
+   "score": 0.5
+  },
+  {
+   "image": "6d6bdce3_e09_end_243722064316_0.png",
+   "score": 0.30901089310646057
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_3.png",
+   "score": 0.31329816579818726
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_4.png",
+   "score": 0.5190902352333069
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_2.png",
+   "score": 0.6250345706939697
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_1.png",
+   "score": 0.00044780969619750977
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_4.png",
+   "score": 0.0
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_0.png",
+   "score": 0.4621769189834595
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_2.png",
+   "score": 0.3105155825614929
+  },
+  {
+   "image": "6d6bdce3_e11_start_243722064316_0.png",
+   "score": 0.4532305598258972
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_0.png",
+   "score": 0.36505287885665894
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_3.png",
+   "score": 0.19769448041915894
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_0.png",
+   "score": 0.0
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_1.png",
+   "score": 0.17872586846351624
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_2.png",
+   "score": 0.33169645071029663
+  },
+  {
+   "image": "6d6bdce3_e14_start_243722064316_0.png",
+   "score": 0.0
+  },
+  {
+   "image": "6d6bdce3_e14_start_243722064316_1.png",
+   "score": 0.003433406352996826
+  }
+ ],
+ "export_ok": true,
+ "export_error": null
+}

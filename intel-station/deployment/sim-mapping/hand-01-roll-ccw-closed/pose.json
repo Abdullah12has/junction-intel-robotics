@@ -1,0 +1,55 @@
+{
+ "ticks": {
+  "shoulder_pan": [
+   1971,
+   1971,
+   1971,
+   1971,
+   1971
+  ],
+  "shoulder_lift": [
+   840,
+   840,
+   840,
+   840,
+   840
+  ],
+  "elbow_flex": [
+   3105,
+   3105,
+   3105,
+   3105,
+   3105
+  ],
+  "wrist_flex": [
+   2820,
+   2820,
+   2820,
+   2820,
+   2820
+  ],
+  "wrist_roll": [
+   2091,
+   2091,
+   2091,
+   2091,
+   2091
+  ],
+  "gripper": [
+   2025,
+   2025,
+   2025,
+   2025,
+   2025
+  ]
+ },
+ "torque_enable": {
+  "shoulder_pan": 0,
+  "shoulder_lift": 0,
+  "elbow_flex": 0,
+  "wrist_flex": 0,
+  "wrist_roll": 0,
+  "gripper": 0
+ },
+ "cameras": "RuntimeError('xioctl(VIDIOC_S_FMT) failed, errno=16 Last Error: Device or resource busy')"
+}

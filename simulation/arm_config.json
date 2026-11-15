@@ -1,0 +1,74 @@
+{
+  "robot_serial": "5B3D040939",
+  "joint_order": [
+    "shoulder_pan",
+    "shoulder_lift",
+    "elbow_flex",
+    "wrist_flex",
+    "wrist_roll",
+    "gripper"
+  ],
+  "calibration": {
+    "shoulder_pan": {
+      "id": 1,
+      "drive_mode": 0,
+      "homing_offset": -1727,
+      "range_min": 891,
+      "range_max": 3212
+    },
+    "shoulder_lift": {
+      "id": 2,
+      "drive_mode": 0,
+      "homing_offset": 1829,
+      "range_min": 822,
+      "range_max": 3090
+    },
+    "elbow_flex": {
+      "id": 3,
+      "drive_mode": 0,
+      "homing_offset": 1127,
+      "range_min": 898,
+      "range_max": 3102
+    },
+    "wrist_flex": {
+      "id": 4,
+      "drive_mode": 0,
+      "homing_offset": 1916,
+      "range_min": 812,
+      "range_max": 3171
+    },
+    "wrist_roll": {
+      "id": 5,
+      "drive_mode": 0,
+      "homing_offset": -1404,
+      "range_min": 74,
+      "range_max": 3899
+    },
+    "gripper": {
+      "id": 6,
+      "drive_mode": 0,
+      "homing_offset": 304,
+      "range_min": 2046,
+      "range_max": 3577
+    }
+  },
+  "calibration_sha256": "5582602c866311e898d6931050d8fac0f0006112a36c357e6f02cb2e635cbf62",
+  "source": "Saved read-only Studio capture; no hardware access",
+  "units": "normalized",
+  "rotary_bounds": [
+    -100,
+    100
+  ],
+  "gripper_bounds": [
+    0,
+    100
+  ],
+  "hardware_mapping_verified": false,
+  "model_mapping": "station_coordinates.NOMINAL: fixed encoder scale, sign +1, model zero at homed tick 2048. Signs checked on the station 2026-11-14; sim-side convention, not hardware calibration.",
+  "homing_offset_handling": "Already applied by device; never applied twice",
+  "physical_alignment": {
+    "zero_offsets": "unverified",
+    "joint_directions": "unverified; operator base out-and-back evidence saved separately",
+    "gripper_geometry": "unverified"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "files": 8,
+  "total_bytes": 2511813759,
+  "all_match": true,
+  "items": [
+    {
+      "path": "./exports/openvino/tokenizer.bin",
+      "sha256": "680f81b1bc826ac744f666c3aaeaba8a4652d8e2399405c428e37b1b3aafa7ea",
+      "match": true,
+      "bytes": 1853052
+    },
+    {
+      "path": "./exports/openvino/smolvla.bin",
+      "sha256": "bf916406979579b018b43382865acc0633115766f9daff6244ef011a9978726f",
+      "match": true,
+      "bytes": 793590174
+    },
+    {
+      "path": "./exports/openvino/tokenizer.xml",
+      "sha256": "0a88d82c002e26e68d17d60e38306f599b465437ef6fb0773aca83ea3c980dae",
+      "match": true,
+      "bytes": 25805
+    },
+    {
+      "path": "./exports/openvino/manifest.json",
+      "sha256": "7b580dce692517e8168c5218a3ef113cb8fed89ad88e8d6b3d00be40941193f5",
+      "match": true,
+      "bytes": 5988
+    },
+    {
+      "path": "./exports/openvino/smolvla.xml",
+      "sha256": "cdc03e3f1daa8a4cf06a0d1e500ca581148580cbc6e7b96ca713798a6d7829e6",
+      "match": true,
+      "bytes": 17840735
+    },
+    {
+      "path": "./version_0/hparams.yaml",
+      "sha256": "0a6386de7e6027cdb68471bc83dac9eba2e878186c7e090bf0252df09ecd1dc6",
+      "match": true,
+      "bytes": 2207
+    },
+    {
+      "path": "./version_0/metrics.csv",
+      "sha256": "34510cc3b58f19b30ae6ca7a17d308f27c7e3d2660e1737ef62cbb0147b76c86",
+      "match": true,
+      "bytes": 3113
+    },
+    {
+      "path": "./model.ckpt",
+      "sha256": "3af764cd0b1959d0be706ae8f73ed6c7da52b359cf4f44fcc00ca12baf771322",
+      "match": true,
+      "bytes": 1698492685
+    }
+  ]
+}

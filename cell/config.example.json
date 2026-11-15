@@ -1,0 +1,18 @@
+{
+  "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+  "environment_id": "FILL: the environment the dataset was recorded with",
+  "fps": 30,
+  "device": "CPU",
+  "execution": "sync",
+  "tasks": {
+    "inspect": "move the brick to the inspection spot",
+    "good": "put the brick in the green bowl",
+    "bad": "put the brick in the red bowl"
+  },
+  "models": {
+    "move the brick to the inspection spot": "FILL: model id",
+    "put the brick in the green bowl": "FILL: model id (same as above for SmolVLA)",
+    "put the brick in the red bowl": "FILL: model id (same as above for SmolVLA)"
+  },
+  "home": null
+}

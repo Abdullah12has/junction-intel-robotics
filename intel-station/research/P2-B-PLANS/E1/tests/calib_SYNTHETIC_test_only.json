@@ -1,0 +1,10 @@
+{
+  "_note": "SYNTHETIC test input for poses_from_calib.py. These are not taught or calibrated poses.",
+  "unit": "normalized",
+  "home": [0.0, -50.0, 50.0, 0.0, 0.0, 10.0],
+  "spot_release": [20.0, 10.0, -10.0, 30.0, 0.0, 80.0],
+  "hover": [20.0, -20.0, 0.0, 20.0, 0.0, 80.0],
+  "blue_drop": [-60.0, 20.0, -30.0, 40.0, 0.0, 80.0],
+  "green_drop": [60.0, 20.0, -30.0, 40.0, 0.0, 80.0],
+  "gripper": {"open": 80.0, "closed": 5.0}
+}

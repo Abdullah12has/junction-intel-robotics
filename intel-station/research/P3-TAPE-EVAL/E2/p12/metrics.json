@@ -1,0 +1,504 @@
+{
+ "variant": "p12",
+ "app_root": "/home/intel/intel-junction-2026/work/P3-TAPE-EVAL/E2/app_p12",
+ "utc": null,
+ "tape_ours_close": {
+  "overall": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 6
+    },
+    "no": {
+     "yes": 0,
+     "no": 7,
+     "uncertain": 10
+    }
+   },
+   "n": 23,
+   "decided": 7,
+   "correct": 7,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.6457,
+    1.0
+   ],
+   "uncertain": 16
+  },
+  "by_kind": {
+   "closed": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 2
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 7
+     }
+    },
+    "n": 9,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 9
+   },
+   "lifted": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 2
+     },
+     "no": {
+      "yes": 0,
+      "no": 2,
+      "uncertain": 3
+     }
+    },
+    "n": 7,
+    "decided": 2,
+    "correct": 2,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.3424,
+     1.0
+    ],
+    "uncertain": 5
+   },
+   "pre": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 2
+     },
+     "no": {
+      "yes": 0,
+      "no": 3,
+      "uncertain": 0
+     }
+    },
+    "n": 5,
+    "decided": 3,
+    "correct": 3,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.4385,
+     1.0
+    ],
+    "uncertain": 2
+   },
+   "station": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 2,
+      "uncertain": 0
+     }
+    },
+    "n": 2,
+    "decided": 2,
+    "correct": 2,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.3424,
+     1.0
+    ],
+    "uncertain": 0
+   }
+  },
+  "by_colour": {
+   "cream/yellow": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 6
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     }
+    },
+    "n": 6,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 6
+   },
+   "orange": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 3,
+      "uncertain": 3
+     }
+    },
+    "n": 6,
+    "decided": 3,
+    "correct": 3,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.4385,
+     1.0
+    ],
+    "uncertain": 3
+   },
+   "red": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 2,
+      "uncertain": 5
+     }
+    },
+    "n": 7,
+    "decided": 2,
+    "correct": 2,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.3424,
+     1.0
+    ],
+    "uncertain": 5
+   },
+   "white": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 2,
+      "uncertain": 2
+     }
+    },
+    "n": 4,
+    "decided": 2,
+    "correct": 2,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.3424,
+     1.0
+    ],
+    "uncertain": 2
+   }
+  }
+ },
+ "tape_studio_close_per_brick": {
+  "overall": {
+   "matrix": {
+    "yes": {
+     "yes": 0,
+     "no": 0,
+     "uncertain": 15
+    },
+    "no": {
+     "yes": 0,
+     "no": 10,
+     "uncertain": 90
+    }
+   },
+   "n": 115,
+   "decided": 10,
+   "correct": 10,
+   "accuracy_decided": 1.0,
+   "accuracy_ci95": [
+    0.7225,
+    1.0
+   ],
+   "uncertain": 105
+  },
+  "not_located": 86,
+  "by_stage": {
+   "carry": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 1,
+      "uncertain": 13
+     }
+    },
+    "n": 14,
+    "decided": 1,
+    "correct": 1,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.2065,
+     1.0
+    ],
+    "uncertain": 13
+   },
+   "end": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 1,
+      "uncertain": 14
+     }
+    },
+    "n": 16,
+    "decided": 1,
+    "correct": 1,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.2065,
+     1.0
+    ],
+    "uncertain": 15
+   },
+   "grasp": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 1,
+      "uncertain": 13
+     }
+    },
+    "n": 14,
+    "decided": 1,
+    "correct": 1,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.2065,
+     1.0
+    ],
+    "uncertain": 13
+   },
+   "p20": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     }
+    },
+    "n": 2,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 2
+   },
+   "p40": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     }
+    },
+    "n": 2,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 2
+   },
+   "p60": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     }
+    },
+    "n": 2,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 2
+   },
+   "p80": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     }
+    },
+    "n": 2,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 2
+   },
+   "pregrasp": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 2,
+      "uncertain": 12
+     }
+    },
+    "n": 14,
+    "decided": 2,
+    "correct": 2,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.3424,
+     1.0
+    ],
+    "uncertain": 12
+   },
+   "release": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 0
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 14
+     }
+    },
+    "n": 14,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 14
+   },
+   "start": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 1
+     },
+     "no": {
+      "yes": 0,
+      "no": 5,
+      "uncertain": 10
+     }
+    },
+    "n": 16,
+    "decided": 5,
+    "correct": 5,
+    "accuracy_decided": 1.0,
+    "accuracy_ci95": [
+     0.5655,
+     1.0
+    ],
+    "uncertain": 11
+   },
+   "x": {
+    "matrix": {
+     "yes": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 9
+     },
+     "no": {
+      "yes": 0,
+      "no": 0,
+      "uncertain": 10
+     }
+    },
+    "n": 19,
+    "decided": 0,
+    "correct": 0,
+    "accuracy_decided": null,
+    "accuracy_ci95": null,
+    "uncertain": 19
+   }
+  }
+ },
+ "routing_ours": {
+  "episodes_with_wrist": 11,
+  "replicated": 4,
+  "truth_known_and_replicated": 4,
+  "correct": 4,
+  "accuracy": 1.0,
+  "accuracy_ci95": [
+   0.5101,
+   1.0
+  ],
+  "not_replicable": [
+   "any_1731/ep_0001",
+   "any_1731/ep_0002",
+   "any_1740/ep_0004",
+   "any_1740/ep_0006",
+   "any_1740/ep_0007",
+   "any_1740/ep_0013",
+   "any_1740/ep_0017"
+  ]
+ },
+ "shape_ours_2x2_vs_not": {
+  "n": 4,
+  "correct": 4,
+  "accuracy": 1.0,
+  "accuracy_ci95": [
+   0.5101,
+   1.0
+  ]
+ }
+}

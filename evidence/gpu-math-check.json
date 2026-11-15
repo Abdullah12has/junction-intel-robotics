@@ -1,0 +1,27 @@
+{
+  "torch": "2.15.0+xpu",
+  "device": "Intel(R) Graphics [0xb080]",
+  "status": "passed",
+  "iterations": [
+    {
+      "loss": 1048576.0,
+      "gradient_mean": 4.0
+    },
+    {
+      "loss": 1048576.0,
+      "gradient_mean": 4.0
+    },
+    {
+      "loss": 1048576.0,
+      "gradient_mean": 4.0
+    },
+    {
+      "loss": 1048576.0,
+      "gradient_mean": 4.0
+    },
+    {
+      "loss": 1048576.0,
+      "gradient_mean": 4.0
+    }
+  ]
+}

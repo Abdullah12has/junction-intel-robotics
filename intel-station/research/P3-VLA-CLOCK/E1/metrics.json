@@ -1,0 +1,133 @@
+{
+ "stage": "clock-offsets-v1",
+ "utc": "2026-11-14T20:26:05Z",
+ "metrics": {
+  "rule": "reliable = absolute clock, peak >= 0.4, lag not at search edge",
+  "frame_ms": 33.333333333333336,
+  "cameras": {
+   "wrist": {
+    "pairs_all": 15,
+    "pairs_reliable": 15,
+    "pairs_unreliable_episodes": [],
+    "all_median_lag_ms": 7.498849362761084,
+    "all_min_lag_ms": -15.736502144262216,
+    "all_max_lag_ms": 25.584073630425838,
+    "median_lag_ms": 7.498849362761084,
+    "p25_lag_ms": 1.0236934387114607,
+    "p75_lag_ms": 11.922063295375885,
+    "iqr_lag_ms": 10.898369856664424,
+    "min_lag_ms": -15.736502144262216,
+    "max_lag_ms": 25.584073630425838,
+    "std_lag_ms": 9.769436367599337,
+    "within_1_frame_of_median": 15,
+    "median_peak": 0.66084628389385,
+    "split_half_abs_diff_median_ms": 9.972875643578906,
+    "event_agree_50ms": 14,
+    "event_with_estimate": 15,
+    "frac_variant_median_lag_ms": 10.123967997944888,
+    "dup_frac_median": 0.0
+   },
+   "top": {
+    "pairs_all": 15,
+    "pairs_reliable": 11,
+    "pairs_unreliable_episodes": [
+     "any_1731/ep_0001",
+     "any_1731/ep_0002",
+     "any_1740/ep_0001",
+     "any_1740/ep_0004"
+    ],
+    "all_median_lag_ms": 26.050138294279254,
+    "all_min_lag_ms": 7.39753598588908,
+    "all_max_lag_ms": 45.37358501921937,
+    "median_lag_ms": 21.529905209489808,
+    "p25_lag_ms": 20.058748200350877,
+    "p75_lag_ms": 30.437086602749016,
+    "iqr_lag_ms": 10.378338402398139,
+    "min_lag_ms": 7.39753598588908,
+    "max_lag_ms": 45.37358501921937,
+    "std_lag_ms": 10.678818818510873,
+    "within_1_frame_of_median": 11,
+    "median_peak": 0.7057771751889365,
+    "split_half_abs_diff_median_ms": 15.545040567254063,
+    "event_agree_50ms": 11,
+    "event_with_estimate": 11,
+    "frac_variant_median_lag_ms": 19.815590099156722,
+    "dup_frac_median": 0.0
+   },
+   "close": {
+    "pairs_all": 15,
+    "pairs_reliable": 3,
+    "pairs_unreliable_episodes": [
+     "any_1731/ep_0001",
+     "any_1731/ep_0002",
+     "any_1740/ep_0001",
+     "any_1740/ep_0004",
+     "any_1740/ep_0006",
+     "any_1740/ep_0007",
+     "any_1740/ep_0009",
+     "any_1740/ep_0011",
+     "any_1740/ep_0012",
+     "any_1740/ep_0014",
+     "any_1740/ep_0015",
+     "any_1740/ep_0017"
+    ],
+    "all_median_lag_ms": 11.84664950592948,
+    "all_min_lag_ms": -500.0,
+    "all_max_lag_ms": 45.21124420722805,
+    "median_lag_ms": -48.39377868609052,
+    "p25_lag_ms": -214.93537330408273,
+    "p75_lag_ms": -28.67666930127389,
+    "iqr_lag_ms": 186.25870400280883,
+    "min_lag_ms": -381.47696792207495,
+    "max_lag_ms": -8.959559916457254,
+    "std_lag_ms": 204.64142942751099,
+    "within_1_frame_of_median": 1,
+    "median_peak": 0.4622372840756834,
+    "split_half_abs_diff_median_ms": 96.9043974317774,
+    "event_agree_50ms": 2,
+    "event_with_estimate": 3,
+    "frac_variant_median_lag_ms": 10.42832961248119,
+    "dup_frac_median": 0.0
+   }
+  },
+  "paired_differences_reliable": {
+   "top_minus_wrist": {
+    "episodes": 11,
+    "median_ms": 19.708305124979812,
+    "std_ms": 13.213786669169139,
+    "per_episode_ms": {
+     "any_1740/ep_0006": 15.23,
+     "any_1740/ep_0007": 11.83,
+     "any_1740/ep_0009": 22.86,
+     "any_1740/ep_0010": 39.97,
+     "any_1740/ep_0011": 2.3,
+     "any_1740/ep_0012": 45.59,
+     "any_1740/ep_0013": 14.83,
+     "any_1740/ep_0014": 19.71,
+     "any_1740/ep_0015": 9.83,
+     "any_1740/ep_0016": 33.1,
+     "any_1740/ep_0017": 23.18
+    }
+   },
+   "close_minus_wrist": {
+    "episodes": 3,
+    "median_ms": -47.65302140973787,
+    "std_ms": 212.93256970202748,
+    "per_episode_ms": {
+     "any_1740/ep_0010": -5.8,
+     "any_1740/ep_0013": -47.65,
+     "any_1740/ep_0016": -393.75
+    }
+   }
+  }
+ },
+ "previous": {
+  "source": "work/P2-D-VLA1/E1/STATUS.md R4 (jaw-gap half-travel, different method)",
+  "any_1740/ep_0017 wrist vs goal5, lag_ms": -103.4,
+  "any_1740/ep_0017 wrist vs pos5, lag_ms": -160.7
+ },
+ "delta": {
+  "any_1740/ep_0017 wrist lag minus P2 goal5 value, ms": 100.91913218208018,
+  "any_1740/ep_0017 wrist lag minus P2 pos5 value, ms": 158.21913218208016
+ }
+}

@@ -1,0 +1,11 @@
+--- /home/intel/intel-junction-2026/app/anomaly/det2_f2/inspector.py	2026-11-14 18:14:26.243581651 +0200
++++ app_p12/anomaly/det2_f2/inspector.py	2026-11-14 22:49:27.688288177 +0200
+@@ -501,6 +501,8 @@
+     if score >= thr["defect"]:
+         if CLOSE_FRAGMENT_NO_CD and rec.get("split") and rec.get("aspect", 0.0) >= ELONGATED_CLOSE:
+             return "UNCERTAIN", reasons + ["close_fragment_tape_not_attributable"]  # F2: a cut fragment's tape is a neighbour's
++        if rec.get("merged"):  # P2: tape on a merged blob may belong to a touching neighbour brick
++            return "UNCERTAIN", reasons + ["merged_tape_not_attributable"]
+         return "CONFIDENT_DEFECT", ["tape_frac_high"] + reasons
+     if rec.get("merged") or rec.get("split") or rec.get("partial"):
+         return "UNCERTAIN", reasons

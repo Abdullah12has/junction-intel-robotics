@@ -1,0 +1,34 @@
+{
+  "root": "/root/blue-plate/campaign",
+  "runner": "/root/blue-plate/code/run.py",
+  "concurrency": 2,
+  "shard": "normal-images",
+  "experiments": [
+    "act-N-A0-R-seed0",
+    "smolvla-N-A0-R-seed0",
+    "act-N-A1-R-seed0",
+    "smolvla-N-A1-R-seed0",
+    "act-N-A2-R-seed0",
+    "smolvla-N-A2-R-seed0",
+    "act-N-A3-R-seed0",
+    "smolvla-N-A3-R-seed0"
+  ],
+  "adopt": [
+    {
+      "id": "act-N-A0-R-seed0",
+      "pid": 259860,
+      "gpu": "0",
+      "start_ticks": "37694"
+    },
+    {
+      "id": "smolvla-N-A0-R-seed0",
+      "pid": 259861,
+      "gpu": "0",
+      "start_ticks": "37694"
+    }
+  ],
+  "paused_supervisor": {
+    "pid": 259858,
+    "start_ticks": "37686"
+  }
+}

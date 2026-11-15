@@ -1,0 +1,3277 @@
+{
+ "stage": "fusion-v1",
+ "utc": "2026-11-14T21:21Z",
+ "scope": "32 close-view brick crops (index status ok after the eye check, 14 excluded). primary = verified labels only; sensitivity also keeps the unverified DEFECT (any_1740 ep_0017). LOEO over episodes (Studio: participant groups).",
+ "method": {
+  "n_boot": 2000,
+  "seed": 0,
+  "ci": "95% percentile, class-stratified bootstrap over crops (crops of one episode are correlated, so intervals are optimistic)",
+  "anomaly_threshold": "fold threshold = max score of the fold's training GOOD crops",
+  "fusion_fit": "LR on the training folds only, standardised, class-balanced, L2 1e-2, 3000 steps"
+ },
+ "adoption_rule": "candidate adopted only if, on every colour (each with DEFECT and GOOD crops), F1 >= best single (tape verdict, anomaly model) on the same crops and, for LR, AUROC >= best single score; overall F1 (and AUROC for LR) strictly above; at least 5 DEFECT episodes",
+ "decision": {
+  "primary": "NOT ADOPTED",
+  "sensitivity_incl_v1_unverified": "NOT ADOPTED"
+ },
+ "best_candidate_overall": {
+  "primary": "patchcore_OR",
+  "sensitivity_incl_v1_unverified": "patchcore_LR"
+ },
+ "label_sets": {
+  "primary": {
+   "n_crops": 31,
+   "n_good_crops": 30,
+   "n_defect_crops": 1,
+   "n_good_episodes": 17,
+   "n_defect_episodes": 1,
+   "defect_episodes": [
+    "any_1740/ep_0006"
+   ],
+   "colours": {
+    "blue": {
+     "n_good": 3,
+     "n_defect": 0
+    },
+    "orange": {
+     "n_good": 10,
+     "n_defect": 0
+    },
+    "red": {
+     "n_good": 11,
+     "n_defect": 0
+    },
+    "white": {
+     "n_good": 2,
+     "n_defect": 0
+    },
+    "yellow": {
+     "n_good": 4,
+     "n_defect": 1
+    }
+   },
+   "colours_assessable": [
+    "yellow"
+   ],
+   "adoption": {
+    "decision": "NOT ADOPTED",
+    "passing_candidates": [],
+    "candidate_failures": {
+     "patchcore_LR": [
+      "overall F1 0.0000 vs best single 0.0000",
+      "overall AUROC not defined",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 not defined",
+      "yellow AUROC not defined"
+     ],
+     "patchcore_AND": [
+      "overall F1 0.0000 vs best single 0.6667",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.0000 vs best single 1.0000"
+     ],
+     "patchcore_OR": [
+      "overall F1 0.5000 vs best single 0.6667",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)"
+     ],
+     "padim_LR": [
+      "overall F1 0.0000 vs best single 0.0000",
+      "overall AUROC not defined",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 not defined",
+      "yellow AUROC not defined"
+     ],
+     "padim_AND": [
+      "overall F1 0.0000 vs best single 0.6667",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.0000 vs best single 1.0000"
+     ],
+     "padim_OR": [
+      "overall F1 0.1429 vs best single 0.6667",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.6667 vs best single 1.0000"
+     ]
+    },
+    "reasons": [
+     "only 1 DEFECT episodes (at least 5 required)",
+     "no candidate passes every check"
+    ]
+   }
+  },
+  "sensitivity_incl_v1_unverified": {
+   "n_crops": 32,
+   "n_good_crops": 30,
+   "n_defect_crops": 2,
+   "n_good_episodes": 17,
+   "n_defect_episodes": 2,
+   "defect_episodes": [
+    "any_1740/ep_0006",
+    "any_1740/ep_0017"
+   ],
+   "colours": {
+    "blue": {
+     "n_good": 3,
+     "n_defect": 0
+    },
+    "orange": {
+     "n_good": 10,
+     "n_defect": 0
+    },
+    "red": {
+     "n_good": 11,
+     "n_defect": 0
+    },
+    "white": {
+     "n_good": 2,
+     "n_defect": 0
+    },
+    "yellow": {
+     "n_good": 4,
+     "n_defect": 2
+    }
+   },
+   "colours_assessable": [
+    "yellow"
+   ],
+   "adoption": {
+    "decision": "NOT ADOPTED",
+    "passing_candidates": [],
+    "candidate_failures": {
+     "patchcore_LR": [
+      "overall F1 0.8000 vs best single 0.8000",
+      "overall AUROC 1.0000 vs best single 1.0000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)"
+     ],
+     "patchcore_AND": [
+      "overall F1 0.0000 vs best single 0.8000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.0000 vs best single 1.0000"
+     ],
+     "patchcore_OR": [
+      "overall F1 0.6667 vs best single 0.8000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)"
+     ],
+     "padim_LR": [
+      "overall F1 0.8000 vs best single 0.8000",
+      "overall AUROC 1.0000 vs best single 1.0000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)"
+     ],
+     "padim_AND": [
+      "overall F1 0.0000 vs best single 0.8000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.0000 vs best single 1.0000"
+     ],
+     "padim_OR": [
+      "overall F1 0.2500 vs best single 0.8000",
+      "blue not assessable (no DEFECT or no GOOD crops)",
+      "orange not assessable (no DEFECT or no GOOD crops)",
+      "red not assessable (no DEFECT or no GOOD crops)",
+      "white not assessable (no DEFECT or no GOOD crops)",
+      "yellow F1 0.8000 vs best single 1.0000"
+     ]
+    },
+    "reasons": [
+     "only 2 DEFECT episodes (at least 5 required)",
+     "no candidate passes every check"
+    ]
+   }
+  }
+ },
+ "tables": {
+  "primary": {
+   "overall": {
+    "tape_score": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "tape_verdict": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "auroc": 0.9833,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      0.95,
+      1.0
+     ],
+     "f1": 0.6667,
+     "tp": 1,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.4,
+      1.0
+     ]
+    },
+    "patchcore": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "auroc": 0.9,
+     "aupr": 0.25,
+     "auroc_ci95": [
+      0.7667,
+      1.0
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 1,
+     "tn": 29,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "patchcore_LR": {
+     "n": 30,
+     "n_good": 30,
+     "n_defect": 0,
+     "auroc": null,
+     "aupr": null,
+     "auroc_ci95": [
+      null,
+      null
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      null,
+      null
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.0,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": null,
+      "anomaly_auroc": null
+     }
+    },
+    "patchcore_AND": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 1,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.9
+     }
+    },
+    "patchcore_OR": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.5,
+     "tp": 1,
+     "fp": 2,
+     "fn": 0,
+     "tn": 28,
+     "f1_ci95": [
+      0.2857,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.9
+     }
+    },
+    "padim": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "auroc": 0.3,
+     "aupr": 0.0455,
+     "auroc_ci95": [
+      0.1333,
+      0.4667
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 11,
+     "fn": 1,
+     "tn": 19,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "padim_LR": {
+     "n": 30,
+     "n_good": 30,
+     "n_defect": 0,
+     "auroc": null,
+     "aupr": null,
+     "auroc_ci95": [
+      null,
+      null
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      null,
+      null
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.0,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": null,
+      "anomaly_auroc": null
+     }
+    },
+    "padim_AND": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 1,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.3
+     }
+    },
+    "padim_OR": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.1429,
+     "tp": 1,
+     "fp": 12,
+     "fn": 0,
+     "tn": 18,
+     "f1_ci95": [
+      0.1053,
+      0.2222
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.3
+     }
+    }
+   },
+   "by_colour": {
+    "blue": {
+     "tape_score": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "tn": 0,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "tn": 0,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "orange": {
+     "tape_score": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 6,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 6,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "red": {
+     "tape_score": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "white": {
+     "tape_score": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "yellow": {
+     "tape_score": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ]
+     },
+     "tape_verdict": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ],
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ]
+     },
+     "patchcore": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "patchcore_LR": {
+      "n": 4,
+      "n_good": 4,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 1.0
+      }
+     },
+     "patchcore_OR": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "f1": 1.0,
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 1.0
+      }
+     },
+     "padim": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "auroc": 0.0,
+      "aupr": 0.2,
+      "auroc_ci95": [
+       0.0,
+       0.0
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 1,
+      "tn": 3,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "padim_LR": {
+      "n": 4,
+      "n_good": 4,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.0
+      }
+     },
+     "padim_OR": {
+      "n": 5,
+      "n_good": 4,
+      "n_defect": 1,
+      "f1": 0.6667,
+      "tp": 1,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       0.4,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.0
+      }
+     }
+    }
+   }
+  },
+  "sensitivity_incl_v1_unverified": {
+   "overall": {
+    "tape_score": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ]
+    },
+    "tape_verdict": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 0.9833,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      0.95,
+      1.0
+     ],
+     "f1": 0.8,
+     "tp": 2,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.5714,
+      1.0
+     ]
+    },
+    "patchcore": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 0.5333,
+     "aupr": 0.162,
+     "auroc_ci95": [
+      0.0667,
+      0.9667
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 2,
+     "tn": 29,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "patchcore_LR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ],
+     "f1": 0.8,
+     "tp": 2,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.5714,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "patchcore_AND": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 2,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "patchcore_OR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.6667,
+     "tp": 2,
+     "fp": 2,
+     "fn": 0,
+     "tn": 28,
+     "f1_ci95": [
+      0.4444,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "padim": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 0.15,
+     "aupr": 0.054,
+     "auroc_ci95": [
+      0.0,
+      0.4
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 11,
+     "fn": 2,
+     "tn": 19,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ]
+    },
+    "padim_LR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ],
+     "f1": 0.8,
+     "tp": 2,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.5714,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    },
+    "padim_AND": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 2,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    },
+    "padim_OR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.25,
+     "tp": 2,
+     "fp": 12,
+     "fn": 0,
+     "tn": 18,
+     "f1_ci95": [
+      0.1905,
+      0.3636
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    }
+   },
+   "by_colour": {
+    "blue": {
+     "tape_score": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "tn": 0,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 3,
+      "n_good": 3,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 3,
+      "fn": 0,
+      "tn": 0,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "orange": {
+     "tape_score": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 6,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 10,
+      "n_good": 10,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 6,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "red": {
+     "tape_score": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "tn": 10,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 11,
+      "n_good": 11,
+      "n_defect": 0,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "tn": 9,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": 0.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "white": {
+     "tape_score": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ]
+     },
+     "tape_verdict": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "patchcore_LR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_AND": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "patchcore_OR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ]
+     },
+     "padim_LR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "auroc": null,
+      "aupr": null,
+      "auroc_ci95": [
+       null,
+       null
+      ],
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_AND": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     },
+     "padim_OR": {
+      "n": 2,
+      "n_good": 2,
+      "n_defect": 0,
+      "f1": null,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "f1_ci95": [
+       null,
+       null
+      ],
+      "paired": {
+       "tape_verdict_f1": null,
+       "anomaly_f1": null,
+       "tape_score_auroc": null,
+       "anomaly_auroc": null
+      }
+     }
+    },
+    "yellow": {
+     "tape_score": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ]
+     },
+     "tape_verdict": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ],
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ]
+     },
+     "patchcore": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 0.625,
+      "aupr": 0.7,
+      "auroc_ci95": [
+       0.0,
+       1.0
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "patchcore_LR": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ],
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.625
+      }
+     },
+     "patchcore_AND": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.625
+      }
+     },
+     "patchcore_OR": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.625
+      }
+     },
+     "padim": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 0.0,
+      "aupr": 0.2667,
+      "auroc_ci95": [
+       0.0,
+       0.0
+      ],
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 1,
+      "fn": 2,
+      "tn": 3,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ]
+     },
+     "padim_LR": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "auroc": 1.0,
+      "aupr": 1.0,
+      "auroc_ci95": [
+       1.0,
+       1.0
+      ],
+      "f1": 1.0,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1_ci95": [
+       1.0,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.0
+      }
+     },
+     "padim_AND": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "f1": 0.0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 4,
+      "f1_ci95": [
+       0.0,
+       0.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.0
+      }
+     },
+     "padim_OR": {
+      "n": 6,
+      "n_good": 4,
+      "n_defect": 2,
+      "f1": 0.8,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "tn": 3,
+      "f1_ci95": [
+       0.5714,
+       1.0
+      ],
+      "paired": {
+       "tape_verdict_f1": 1.0,
+       "anomaly_f1": 0.0,
+       "tape_score_auroc": 1.0,
+       "anomaly_auroc": 0.0
+      }
+     }
+    }
+   }
+  }
+ },
+ "before_after": {
+  "primary": {
+   "before_tape_verdict": {
+    "n": 31,
+    "n_good": 30,
+    "n_defect": 1,
+    "auroc": 0.9833,
+    "aupr": 1.0,
+    "auroc_ci95": [
+     0.95,
+     1.0
+    ],
+    "f1": 0.6667,
+    "tp": 1,
+    "fp": 1,
+    "fn": 0,
+    "tn": 29,
+    "f1_ci95": [
+     0.4,
+     1.0
+    ]
+   },
+   "before_tape_score": {
+    "n": 31,
+    "n_good": 30,
+    "n_defect": 1,
+    "auroc": 1.0,
+    "aupr": 1.0,
+    "auroc_ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "before_patchcore": {
+    "n": 31,
+    "n_good": 30,
+    "n_defect": 1,
+    "auroc": 0.9,
+    "aupr": 0.25,
+    "auroc_ci95": [
+     0.7667,
+     1.0
+    ],
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 1,
+    "tn": 29,
+    "f1_ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "before_padim": {
+    "n": 31,
+    "n_good": 30,
+    "n_defect": 1,
+    "auroc": 0.3,
+    "aupr": 0.0455,
+    "auroc_ci95": [
+     0.1333,
+     0.4667
+    ],
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 11,
+    "fn": 1,
+    "tn": 19,
+    "f1_ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "after": {
+    "patchcore_LR": {
+     "n": 30,
+     "n_good": 30,
+     "n_defect": 0,
+     "auroc": null,
+     "aupr": null,
+     "auroc_ci95": [
+      null,
+      null
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      null,
+      null
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.0,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": null,
+      "anomaly_auroc": null
+     }
+    },
+    "patchcore_AND": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 1,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.9
+     }
+    },
+    "patchcore_OR": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.5,
+     "tp": 1,
+     "fp": 2,
+     "fn": 0,
+     "tn": 28,
+     "f1_ci95": [
+      0.2857,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.9
+     }
+    },
+    "padim_LR": {
+     "n": 30,
+     "n_good": 30,
+     "n_defect": 0,
+     "auroc": null,
+     "aupr": null,
+     "auroc_ci95": [
+      null,
+      null
+     ],
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      null,
+      null
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.0,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": null,
+      "anomaly_auroc": null
+     }
+    },
+    "padim_AND": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 1,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.3
+     }
+    },
+    "padim_OR": {
+     "n": 31,
+     "n_good": 30,
+     "n_defect": 1,
+     "f1": 0.1429,
+     "tp": 1,
+     "fp": 12,
+     "fn": 0,
+     "tn": 18,
+     "f1_ci95": [
+      0.1053,
+      0.2222
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.6667,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.3
+     }
+    }
+   }
+  },
+  "sensitivity_incl_v1_unverified": {
+   "before_tape_verdict": {
+    "n": 32,
+    "n_good": 30,
+    "n_defect": 2,
+    "auroc": 0.9833,
+    "aupr": 1.0,
+    "auroc_ci95": [
+     0.95,
+     1.0
+    ],
+    "f1": 0.8,
+    "tp": 2,
+    "fp": 1,
+    "fn": 0,
+    "tn": 29,
+    "f1_ci95": [
+     0.5714,
+     1.0
+    ]
+   },
+   "before_tape_score": {
+    "n": 32,
+    "n_good": 30,
+    "n_defect": 2,
+    "auroc": 1.0,
+    "aupr": 1.0,
+    "auroc_ci95": [
+     1.0,
+     1.0
+    ]
+   },
+   "before_patchcore": {
+    "n": 32,
+    "n_good": 30,
+    "n_defect": 2,
+    "auroc": 0.5333,
+    "aupr": 0.162,
+    "auroc_ci95": [
+     0.0667,
+     0.9667
+    ],
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 1,
+    "fn": 2,
+    "tn": 29,
+    "f1_ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "before_padim": {
+    "n": 32,
+    "n_good": 30,
+    "n_defect": 2,
+    "auroc": 0.15,
+    "aupr": 0.054,
+    "auroc_ci95": [
+     0.0,
+     0.4
+    ],
+    "f1": 0.0,
+    "tp": 0,
+    "fp": 11,
+    "fn": 2,
+    "tn": 19,
+    "f1_ci95": [
+     0.0,
+     0.0
+    ]
+   },
+   "after": {
+    "patchcore_LR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ],
+     "f1": 0.8,
+     "tp": 2,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.5714,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "patchcore_AND": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 2,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "patchcore_OR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.6667,
+     "tp": 2,
+     "fp": 2,
+     "fn": 0,
+     "tn": 28,
+     "f1_ci95": [
+      0.4444,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.5333
+     }
+    },
+    "padim_LR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "auroc": 1.0,
+     "aupr": 1.0,
+     "auroc_ci95": [
+      1.0,
+      1.0
+     ],
+     "f1": 0.8,
+     "tp": 2,
+     "fp": 1,
+     "fn": 0,
+     "tn": 29,
+     "f1_ci95": [
+      0.5714,
+      1.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    },
+    "padim_AND": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.0,
+     "tp": 0,
+     "fp": 0,
+     "fn": 2,
+     "tn": 30,
+     "f1_ci95": [
+      0.0,
+      0.0
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    },
+    "padim_OR": {
+     "n": 32,
+     "n_good": 30,
+     "n_defect": 2,
+     "f1": 0.25,
+     "tp": 2,
+     "fp": 12,
+     "fn": 0,
+     "tn": 18,
+     "f1_ci95": [
+      0.1905,
+      0.3636
+     ],
+     "paired": {
+      "tape_verdict_f1": 0.8,
+      "anomaly_f1": 0.0,
+      "tape_score_auroc": 1.0,
+      "anomaly_auroc": 0.15
+     }
+    }
+   }
+  }
+ },
+ "device_check": [
+  {
+   "model": "patchcore",
+   "device": "CPU",
+   "latency_ms_per_crop": 102.05,
+   "status": "ok",
+   "max_abs_diff_vs_cpu": 0.0,
+   "max_rel_diff_vs_cpu": 0.0,
+   "device_used": "CPU",
+   "n_crops": 32,
+   "first_scores": [
+    467.498,
+    536.7357,
+    440.3901
+   ]
+  },
+  {
+   "model": "patchcore",
+   "device": "GPU",
+   "latency_ms_per_crop": 25.73,
+   "status": "ok",
+   "max_abs_diff_vs_cpu": 0.00048828125,
+   "max_rel_diff_vs_cpu": 1.3699661130319653e-06,
+   "device_used": "GPU",
+   "n_crops": 32,
+   "first_scores": [
+    467.4982,
+    536.7352,
+    440.3899
+   ]
+  },
+  {
+   "model": "patchcore",
+   "device": "NPU",
+   "latency_ms_per_crop": 44.73,
+   "status": "ok",
+   "max_abs_diff_vs_cpu": 344.59228515625,
+   "max_rel_diff_vs_cpu": 0.5908471746750958,
+   "device_used": "NPU",
+   "n_crops": 32,
+   "first_scores": [
+    237.625,
+    236.875,
+    238.25
+   ]
+  },
+  {
+   "model": "padim",
+   "device": "CPU",
+   "latency_ms_per_crop": 35.3,
+   "status": "ok",
+   "max_abs_diff_vs_cpu": 0.0,
+   "max_rel_diff_vs_cpu": 0.0,
+   "device_used": "CPU",
+   "n_crops": 32,
+   "first_scores": [
+    356.7373,
+    369.8461,
+    307.7669
+   ]
+  },
+  {
+   "model": "padim",
+   "device": "GPU",
+   "latency_ms_per_crop": 124.8,
+   "status": "ok",
+   "max_abs_diff_vs_cpu": 0.00018310546875,
+   "max_rel_diff_vs_cpu": 5.132782078241221e-07,
+   "device_used": "GPU",
+   "n_crops": 32,
+   "first_scores": [
+    356.7371,
+    369.8461,
+    307.7669
+   ]
+  },
+  {
+   "model": "padim",
+   "device": "NPU",
+   "status": "aborted",
+   "error": "process aborted in the NPU compile (LLVM ERROR: Failed to infer result type(s), IE.Interpolate); no scores"
+  },
+  {
+   "model": "patchcore",
+   "device": "meta",
+   "threshold_all_good": 583.21728515625,
+   "n_train_crops": 30
+  },
+  {
+   "model": "padim",
+   "device": "meta",
+   "threshold_all_good": 468.472900390625,
+   "n_train_crops": 30
+  }
+ ],
+ "previous": {
+  "stage": "tape-eval-v1",
+  "utc": "2026-11-14T20:38Z",
+  "scope": "close-view tape verdict only, P3-LABEL-OURS labelled close frames (23 views); shape and OD-10 routing NOT evaluated; Studio frames NOT evaluated",
+  "metrics": {
+   "views_total": 23,
+   "decided": 7,
+   "correct": 7,
+   "accuracy_decided": 1.0,
+   "accuracy_decided_ci95": [
+    0.6457,
+    1.0
+   ],
+   "uncertain": 16,
+   "matrix_overall": {
+    "yes": {
+     "yes": 2,
+     "no": 0,
+     "uncertain": 4
+    },
+    "no": {
+     "yes": 0,
+     "no": 5,
+     "uncertain": 12
+    }
+   },
+   "by_colour": {
+    "cream/yellow": {
+     "n": 6,
+     "decided": 2,
+     "correct": 2,
+     "uncertain": 4
+    },
+    "orange": {
+     "n": 6,
+     "decided": 1,
+     "correct": 1,
+     "uncertain": 5
+    },
+    "red": {
+     "n": 7,
+     "decided": 2,
+     "correct": 2,
+     "uncertain": 5
+    },
+    "white": {
+     "n": 4,
+     "decided": 2,
+     "correct": 2,
+     "uncertain": 2
+    }
+   },
+   "by_kind": {
+    "closed": {
+     "n": 9,
+     "decided": 0,
+     "correct": 0,
+     "uncertain": 9
+    },
+    "lifted": {
+     "n": 7,
+     "decided": 0,
+     "correct": 0,
+     "uncertain": 7
+    },
+    "pre": {
+     "n": 5,
+     "decided": 5,
+     "correct": 5,
+     "uncertain": 0
+    },
+    "station": {
+     "n": 2,
+     "decided": 2,
+     "correct": 2,
+     "uncertain": 0
+    }
+   },
+   "errors_decided": 0,
+   "pre_views_excluded_no_loop_input_saved": 8
+  },
+  "source": "/home/intel/intel-junction-2026/work/P3-TAPE-EVAL/E1/metrics.json"
+ },
+ "delta_note": "before/after on the same crops is before_after (DET2 tape verdict and each Anomalib model alone vs each fused candidate). The tape-eval-v1 numbers are a different view set (23 OURS close frames, loop spot selection), so they are not differenced."
+}

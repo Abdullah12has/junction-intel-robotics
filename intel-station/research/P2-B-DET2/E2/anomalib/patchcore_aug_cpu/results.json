@@ -1,0 +1,91 @@
+{
+ "model": "patchcore",
+ "mode": "aug",
+ "accel": "cpu",
+ "train_images": 48,
+ "train_seconds": 290.7,
+ "metrics": {
+  "image_AUROC": 0.8095237612724304,
+  "image_F1Score": 0.6000000238418579
+ },
+ "per_image": [
+  {
+   "image": "6d6bdce3_e07_start_243722064316_0.png",
+   "score": 0.8219290971755981
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_2.png",
+   "score": 0.26323574781417847
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_3.png",
+   "score": 0.5
+  },
+  {
+   "image": "6d6bdce3_e09_end_243722064316_0.png",
+   "score": 0.2623937427997589
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_3.png",
+   "score": 0.37099364399909973
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_4.png",
+   "score": 0.5334708094596863
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_2.png",
+   "score": 0.6516779065132141
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_1.png",
+   "score": 0.06863957643508911
+  },
+  {
+   "image": "6d6bdce3_e07_start_243722064316_4.png",
+   "score": 0.0
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_0.png",
+   "score": 0.4883613586425781
+  },
+  {
+   "image": "6d6bdce3_e11_end_243722064316_2.png",
+   "score": 0.33909499645233154
+  },
+  {
+   "image": "6d6bdce3_e11_start_243722064316_0.png",
+   "score": 0.4477081298828125
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_0.png",
+   "score": 0.40769892930984497
+  },
+  {
+   "image": "6d6bdce3_e12_start_243722064316_3.png",
+   "score": 0.295171320438385
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_0.png",
+   "score": 0.022751718759536743
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_1.png",
+   "score": 0.2590235471725464
+  },
+  {
+   "image": "6d6bdce3_e13_start_243722064316_2.png",
+   "score": 0.4113784432411194
+  },
+  {
+   "image": "6d6bdce3_e14_start_243722064316_0.png",
+   "score": 0.0
+  },
+  {
+   "image": "6d6bdce3_e14_start_243722064316_1.png",
+   "score": 0.011547505855560303
+  }
+ ],
+ "export_ok": true,
+ "export_error": null
+}

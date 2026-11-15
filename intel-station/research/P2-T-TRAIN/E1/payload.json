@@ -1,0 +1,29 @@
+{
+  "training_target": "remote",
+  "remote_trainer_id": "ca5568b5-4542-4fe2-9932-c09a4c1bdbaa",
+  "modal_gpu": "A10G",
+  "project_id": "ab767473-d6fd-47ff-812e-8239c455dabb",
+  "dataset_id": "a4ba6ede-092c-450f-8c76-559f66991dbd",
+  "policy": "act",
+  "model_name": "S1 ACT curated v0 (Opus)",
+  "max_epochs": 8,
+  "batch_size": 8,
+  "num_workers": "auto",
+  "auto_scale_batch_size": false,
+  "precision": "bf16-mixed",
+  "compile_model": false,
+  "image_key_reorder_map": {},
+  "num_cameras": 0,
+  "export_backends": [
+    "openvino"
+  ],
+  "augment_images": false,
+  "lora_enabled": false,
+  "lora_rank": 32,
+  "lora_alpha": null,
+  "lora_dropout": 0.05,
+  "lora_use_dora": false,
+  "snapflow_enabled": false,
+  "snapflow_distill_epochs": 3,
+  "val_split": 0.1
+}

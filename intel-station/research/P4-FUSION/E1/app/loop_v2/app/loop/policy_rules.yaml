@@ -1,0 +1,86 @@
+# loop policy-mode rules (LOOP-CONTRACT section 8: OD-12, I-52, D-058; section 9 run_start fields). Read by loop.policy_live
+# only; the dry runs use the defaults in loop.policy_fakes. [unclear] marks a value no verified source fixes yet: calibrate it
+# on the laptop first. Live refuses while a plate model_id is a placeholder, det2.module_dir is null, the presence flag is
+# missing, or still.exposure is null.
+version: 2
+mode: policy
+
+paths:
+  root: /home/intel/intel-junction-2026
+  logs_root: /home/intel/intel-junction-2026/logs/loop_v2   # [unclear] LOOP-CONTRACT section 5 names R/logs/loop; not changed here
+  telemetry_dir: /home/intel/intel-junction-2026/logs/telemetry   # section 9: one YYYYMMDD.jsonl file per UTC day
+  presence_flag: /home/intel/intel-junction-2026/run/HASSAN_PRESENT
+  motion_dir: /home/intel/intel-junction-2026/app/motion   # candidate motion layer on the laptop (G15: open_follower_held)
+  follower_link: /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B3D040939-if00   # follower serial 5B3D040939 (FACTS-LIVE 13:42Z)
+
+studio:
+  base_url: http://127.0.0.1:7860
+  project_id: ab767473-d6fd-47ff-812e-8239c455dabb
+  environment_name: SO101 Recording - two cameras
+  follower_id: e5600356-6296-496e-8344-17995e419baf
+  camera_ids:
+    - 1d80a0dd-8f62-4f23-ae29-2f1fe406dde9   # RealSense 243722064316 (close low)
+    - b6e5da09-28f2-4208-9d15-526580074c75   # RealSense 243622061421 (top)
+  top_key: realsense 243622061421
+  close_key: realsense 243722064316
+  hz: 30
+
+plates:   # OD-10: GOOD -> BLUE (S2), DEFECTIVE and UNCERTAIN -> GREEN (S3); D-060: one model per plate, or one text model
+  BLUE:
+    skill: S2
+    model_id: PLACEHOLDER-BLUE-MODEL-ID   # the chain-test model id goes here (openvino export, Studio UUID)
+    task: move the red brick to the blue plate
+    backend: openvino
+    device: GPU   # D-080: explicit GPU on every load (auto resolves to CPU, 3-4x slower per query)
+    mode: sync
+    request_threshold: 0.5
+    grace_s: 3
+  GREEN:
+    skill: S3
+    model_id: PLACEHOLDER-GREEN-MODEL-ID
+    task: move the red brick to the green plate
+    backend: openvino
+    device: GPU   # D-080: explicit GPU on every load (auto resolves to CPU, 3-4x slower per query)
+    mode: sync
+    request_threshold: 0.5
+    grace_s: 3
+
+home_reference:   # rules reference.home_pose (ledger OD-8a); the gripper is not part of the home test
+  shoulder_lift.pos: -98.5
+  elbow_flex.pos: 96.0
+  wrist_flex.pos: 62.0
+
+timing:
+  home_tol: 10.0          # return = within 10 units of home on the reference joints (task P2-B-LOOP2)
+  still_s: 1.0            # still for 1.0 s counts as settled
+  motion_eps: 0.5         # [unclear] per-sample movement that still counts as still
+  grasp_below: 4.0        # grasp = gripper below 4 for grasp_hold_s after an approach
+  grasp_hold_s: 0.3
+  release_at: 6.0         # release = gripper at or above 6 after a grasp
+  act_timeout_s: 45.0     # policy timeout, then set_control null
+  home_wait_s: 5.0        # [unclear] how long the arm may take to settle at home before the scan
+  scan_retries: 2         # [unclear] re-scans before a hand is refused
+  scan_wait_s: 1.0        # [unclear]
+  verify_settle_s: 0.5    # [unclear] settle time before the verify frame
+  frames_ready_s: 10.0
+  max_cycles: 10          # [unclear] bricks per run
+
+triage:
+  uncertain_margin: 0.1   # [unclear] GOOD scores within 10% of the threshold become UNCERTAIN
+
+still:   # still inspection (D-058): unload_environment, then 1280x720 stills with locked exposure
+  width: 1280
+  height: 720
+  devices:   # [unclear] RealSense colour nodes (scripted cameras use /dev/video8 top and /dev/video14 close); verify on the laptop
+    top: /dev/video8
+    close: /dev/video14
+  exposure: null          # [unclear] locked exposure value; null refuses live until calibrated
+
+det2:   # P2-B-DET2 E2 scanner (app/anomaly/det2_e2/inspector.py): scan, scan_full, Inspector, find_target
+  module_dir: /home/intel/intel-junction-2026/app/anomaly/det2_e2
+  module: inspector   # reads BGR frames (the loop converts); raises HandsPresent for top-view hands; no close-view hand check yet
+
+detector:   # the deep check is the same DET2 module: Inspector.inspect_rgb per camera
+  backend: det2_e2
+  model_dir: null     # det2_e2 keeps its tape thresholds and bank in its own models/ folder
+  device: CPU

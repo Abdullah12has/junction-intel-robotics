@@ -1,0 +1,50 @@
+{
+ "bank_bricks": 6,
+ "bank_patches": 516,
+ "train_good_ids": [
+  "6d6bdce3_e03_end_243722064316_1",
+  "6d6bdce3_e03_end_243722064316_2",
+  "6d6bdce3_e03_start_243722064316_1",
+  "6d6bdce3_e04_start_243722064316_0",
+  "6d6bdce3_e05_end_243722064316_0",
+  "6d6bdce3_e06_start_243722064316_0"
+ ],
+ "loo_train_scores": [
+  0.1483,
+  0.0538,
+  0.0589,
+  0.0702,
+  0.1023,
+  0.0722
+ ],
+ "threshold_max_loo": 0.1483,
+ "test_good_scores": {
+  "6d6bdce3_e07_start_243722064316_1": 0.4456,
+  "6d6bdce3_e07_start_243722064316_4": 0.1487,
+  "6d6bdce3_e11_end_243722064316_0": 0.7584,
+  "6d6bdce3_e11_end_243722064316_2": 0.5114,
+  "6d6bdce3_e11_start_243722064316_0": 1.2247,
+  "6d6bdce3_e12_start_243722064316_0": 1.1088,
+  "6d6bdce3_e12_start_243722064316_3": 0.1372,
+  "6d6bdce3_e13_start_243722064316_0": 0.1028,
+  "6d6bdce3_e13_start_243722064316_1": 0.4393,
+  "6d6bdce3_e13_start_243722064316_2": 0.4277,
+  "6d6bdce3_e14_start_243722064316_0": 0.1041,
+  "6d6bdce3_e14_start_243722064316_1": 0.4624
+ },
+ "test_defect_scores": {
+  "6d6bdce3_e07_start_243722064316_0": 1.1708,
+  "6d6bdce3_e07_start_243722064316_2": 0.1344,
+  "6d6bdce3_e07_start_243722064316_3": 0.8106,
+  "6d6bdce3_e09_end_243722064316_0": 0.1784,
+  "6d6bdce3_e11_end_243722064316_3": 0.141,
+  "6d6bdce3_e11_end_243722064316_4": 0.7502,
+  "6d6bdce3_e12_start_243722064316_2": 0.785
+ },
+ "auroc_patch_knn_defect_vs_good": 0.5833,
+ "acc_at_threshold": 0.4211,
+ "n_test_good": 12,
+ "n_test_defect": 7,
+ "auroc_rule_off_frac": 0.6071,
+ "auroc_rule_glare_frac": 0.619
+}

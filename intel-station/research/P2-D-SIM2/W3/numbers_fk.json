@@ -1,0 +1,144 @@
+{
+ "mjcf_joint_ranges_deg": {
+  "shoulder_pan": [
+   -110.0,
+   110.0
+  ],
+  "shoulder_lift": [
+   -100.0,
+   100.0
+  ],
+  "elbow_flex": [
+   -96.8,
+   96.8
+  ],
+  "wrist_flex": [
+   -95.0,
+   95.0
+  ],
+  "wrist_roll": [
+   -157.2,
+   162.8
+  ],
+  "gripper": [
+   -10.0,
+   100.0
+  ]
+ },
+ "calibrated_half_range_rad_plus_minus100units": {
+  "shoulder_pan": 1.78,
+  "shoulder_lift": 1.74,
+  "elbow_flex": 1.69,
+  "wrist_flex": 1.809,
+  "wrist_roll": 2.934
+ },
+ "sim_release_check": {
+  "blue": {
+   "tip_world_xyz": [
+    -0.1054,
+    -0.1308,
+    0.0351
+   ],
+   "err_to_plate_mm": 0.9
+  },
+  "green": {
+   "tip_world_xyz": [
+    0.2342,
+    -0.1612,
+    0.0349
+   ],
+   "err_to_plate_mm": 1.4
+  }
+ },
+ "real_release_tips": {
+  "blue_ep7": {
+   "q_rad": [
+    0.578,
+    -0.045,
+    0.36,
+    1.033,
+    -1.173
+   ],
+   "tip_base_xyz": [
+    0.2189,
+    -0.1265,
+    0.0439
+   ],
+   "azimuth_deg": -30.0
+  },
+  "green_ep8": {
+   "q_rad": [
+    -0.967,
+    0.286,
+    -0.041,
+    0.895,
+    -1.708
+   ],
+   "tip_base_xyz": [
+    0.2067,
+    0.2293,
+    0.0483
+   ],
+   "azimuth_deg": 48.0
+  },
+  "green_ep9": {
+   "q_rad": [
+    -1.013,
+    0.182,
+    0.061,
+    0.568,
+    -1.638
+   ],
+   "tip_base_xyz": [
+    0.2129,
+    0.2638,
+    0.0826
+   ],
+   "azimuth_deg": 51.1
+  },
+  "green_ep10": {
+   "q_rad": [
+    -0.917,
+    0.69,
+    -0.915,
+    1.363,
+    -1.63
+   ],
+   "tip_base_xyz": [
+    0.2387,
+    0.2473,
+    0.0806
+   ],
+   "azimuth_deg": 46.0
+  }
+ },
+ "real_chord_blue_green_m(z-included)": 0.356,
+ "real_chord_xy_m": 0.356,
+ "sim_chord_xy_m_base_frame": 0.341,
+ "sim_azimuth_blue_green_deg": [
+  -40.4,
+  44.3
+ ],
+ "real_reach_radius_m_blue_green": [
+  0.2528,
+  0.3087
+ ],
+ "sim_reach_radius_m_blue_green": [
+  0.2226,
+  0.2796
+ ],
+ "real_home_rad": [
+  -0.1,
+  -1.851,
+  1.539,
+  1.005,
+  -1.526
+ ],
+ "real_home_inside_mjcf_range": {
+  "shoulder_pan": true,
+  "shoulder_lift": false,
+  "elbow_flex": true,
+  "wrist_flex": true,
+  "wrist_roll": true
+ }
+}

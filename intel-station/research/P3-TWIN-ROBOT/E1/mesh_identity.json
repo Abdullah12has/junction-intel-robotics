@@ -1,0 +1,127 @@
+{
+ "our_urdf_meshes": [
+  "base_motor_holder_so101_v1.stl",
+  "base_so101_v2.stl",
+  "motor_holder_so101_base_v1.stl",
+  "motor_holder_so101_wrist_v1.stl",
+  "moving_jaw_so101_v1.stl",
+  "rotation_pitch_so101_v1.stl",
+  "sts3215_03a_no_horn_v1.stl",
+  "sts3215_03a_v1.stl",
+  "under_arm_so101_v1.stl",
+  "upper_arm_so101_v1.stl",
+  "waveshare_mounting_plate_so101_v2.stl",
+  "wrist_roll_follower_so101_v1.stl",
+  "wrist_roll_pitch_so101_v2.stl"
+ ],
+ "all_identical": true,
+ "rows": [
+  {
+   "file": "base_motor_holder_so101_v1.stl",
+   "plugin_lfs_oid": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+   "plugin_size": 1877084,
+   "vendored_sha256": "8cd2f241037ea377af1191fffe0dd9d9006beea6dcc48543660ed41647072424",
+   "vendored_size": 1877084,
+   "identical": true
+  },
+  {
+   "file": "base_so101_v2.stl",
+   "plugin_lfs_oid": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+   "plugin_size": 471584,
+   "vendored_sha256": "bb12b7026575e1f70ccc7240051f9d943553bf34e5128537de6cd86fae33924d",
+   "vendored_size": 471584,
+   "identical": true
+  },
+  {
+   "file": "motor_holder_so101_base_v1.stl",
+   "plugin_lfs_oid": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+   "plugin_size": 1129384,
+   "vendored_sha256": "31242ae6fb59d8b15c66617b88ad8e9bded62d57c35d11c0c43a70d2f4caa95b",
+   "vendored_size": 1129384,
+   "identical": true
+  },
+  {
+   "file": "motor_holder_so101_wrist_v1.stl",
+   "plugin_lfs_oid": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+   "plugin_size": 1052184,
+   "vendored_sha256": "887f92e6013cb64ea3a1ab8675e92da1e0beacfd5e001f972523540545e08011",
+   "vendored_size": 1052184,
+   "identical": true
+  },
+  {
+   "file": "moving_jaw_so101_v1.stl",
+   "plugin_lfs_oid": "785a9dded2f474bc1d869e0d3dae398a3dcd9c0c345640040472210d2861fa9d",
+   "plugin_size": 1413584,
+   "vendored_sha256": "785a9dded2f474bc1d869e0d3dae398a3dcd9c0c345640040472210d2861fa9d",
+   "vendored_size": 1413584,
+   "identical": true
+  },
+  {
+   "file": "rotation_pitch_so101_v1.stl",
+   "plugin_lfs_oid": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+   "plugin_size": 883684,
+   "vendored_sha256": "9be900cc2a2bf718102841ef82ef8d2873842427648092c8ed2ca1e2ef4ffa34",
+   "vendored_size": 883684,
+   "identical": true
+  },
+  {
+   "file": "sts3215_03a_no_horn_v1.stl",
+   "plugin_lfs_oid": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+   "plugin_size": 865884,
+   "vendored_sha256": "75ef3781b752e4065891aea855e34dc161a38a549549cd0970cedd07eae6f887",
+   "vendored_size": 865884,
+   "identical": true
+  },
+  {
+   "file": "sts3215_03a_v1.stl",
+   "plugin_lfs_oid": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+   "plugin_size": 954084,
+   "vendored_sha256": "a37c871fb502483ab96c256baf457d36f2e97afc9205313d9c5ab275ef941cd0",
+   "vendored_size": 954084,
+   "identical": true
+  },
+  {
+   "file": "under_arm_so101_v1.stl",
+   "plugin_lfs_oid": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+   "plugin_size": 1975884,
+   "vendored_sha256": "d01d1f2de365651dcad9d6669e94ff87ff7652b5bb2d10752a66a456a86dbc71",
+   "vendored_size": 1975884,
+   "identical": true
+  },
+  {
+   "file": "upper_arm_so101_v1.stl",
+   "plugin_lfs_oid": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+   "plugin_size": 1303484,
+   "vendored_sha256": "475056e03a17e71919b82fd88ab9a0b898ab50164f2a7943652a6b2941bb2d4f",
+   "vendored_size": 1303484,
+   "identical": true
+  },
+  {
+   "file": "waveshare_mounting_plate_so101_v2.stl",
+   "plugin_lfs_oid": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+   "plugin_size": 62784,
+   "vendored_sha256": "e197e24005a07d01bbc06a8c42311664eaeda415bf859f68fa247884d0f1a6e9",
+   "vendored_size": 62784,
+   "identical": true
+  },
+  {
+   "file": "wrist_roll_follower_so101_v1.stl",
+   "plugin_lfs_oid": "4b17b410a12d64ec39554abc3e8054d8a97384b2dc4a8d95a5ecb2a93670f5f4",
+   "plugin_size": 1439884,
+   "vendored_sha256": "4b17b410a12d64ec39554abc3e8054d8a97384b2dc4a8d95a5ecb2a93670f5f4",
+   "vendored_size": 1439884,
+   "identical": true
+  },
+  {
+   "file": "wrist_roll_pitch_so101_v2.stl",
+   "plugin_lfs_oid": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+   "plugin_size": 2699784,
+   "vendored_sha256": "6c7ec5525b4d8b9e397a30ab4bb0037156a5d5f38a4adf2c7d943d6c56eda5ae",
+   "vendored_size": 2699784,
+   "identical": true
+  }
+ ],
+ "copied_to": "/home/intel/intel-junction-2026/sim/twin/robot/meshes",
+ "copied_files": 13,
+ "copy_source": "/home/intel/intel-junction-2026/twin/vendor/mujoco_menagerie/robotstudio_so101/assets"
+}

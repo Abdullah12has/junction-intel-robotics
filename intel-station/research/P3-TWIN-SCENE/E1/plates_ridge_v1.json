@@ -1,0 +1,97 @@
+{
+ "stage": "twin-scene-v1",
+ "method": "plates_ridge v1 (see docstring)",
+ "utc": "2026-11-14T19:48:01Z",
+ "source_depth": "/home/intel/intel-junction-2026/logs/depth/g1_162903/top_depth.npy",
+ "plane": {
+  "cam_to_mat_mm": 589.46
+ },
+ "plates": {
+  "ring_left": {
+   "centre_mat_mm": [
+    -119.55,
+    317.41
+   ],
+   "R_rim_top_fit_mm": 78.25,
+   "rim_top_rms_mm": 15.76,
+   "rim_top_axis_ratio_pca": 0.8895,
+   "rays_total": 180,
+   "rays_with_rim": 170,
+   "rim_peak_H_median_mm": 14.42,
+   "rim_peak_H_p10_p90_mm": [
+    7.24,
+    36.21
+   ],
+   "R_peak_median_mm": 79.25,
+   "R_outer_half_height_median_mm": 89.75,
+   "R_outer_half_height_p10_p90_mm": [
+    83.7,
+    102.85
+   ],
+   "R_inner_half_height_median_mm": 71.75,
+   "wall_width_half_height_mm": 18.0,
+   "diameter_outer_half_height_mm": 179.5,
+   "seed_px_depth": [
+    316,
+    145
+   ],
+   "window_px": [
+    176,
+    5,
+    456,
+    285
+   ],
+   "initial_centre_from_seed_mm": [
+    -126.31,
+    323.26
+   ],
+   "row_check_width_px_at_seed_row": 226,
+   "row_check_width_mm_at_seed_row": 223.71
+  },
+  "ring_right": {
+   "centre_mat_mm": [
+    219.43,
+    277.6
+   ],
+   "R_rim_top_fit_mm": 83.13,
+   "rim_top_rms_mm": 14.574,
+   "rim_top_axis_ratio_pca": 0.7893,
+   "rays_total": 180,
+   "rays_with_rim": 139,
+   "rim_peak_H_median_mm": 13.55,
+   "rim_peak_H_p10_p90_mm": [
+    5.4,
+    15.85
+   ],
+   "R_peak_median_mm": 83.63,
+   "R_outer_half_height_median_mm": 95.13,
+   "R_outer_half_height_p10_p90_mm": [
+    86.63,
+    127.63
+   ],
+   "R_inner_half_height_median_mm": 75.63,
+   "wall_width_half_height_mm": 19.5,
+   "diameter_outer_half_height_mm": 190.26,
+   "seed_px_depth": [
+    673,
+    170
+   ],
+   "window_px": [
+    533,
+    30,
+    813,
+    310
+   ],
+   "initial_centre_from_seed_mm": [
+    223.66,
+    293.59
+   ],
+   "row_check_width_px_at_seed_row": 20,
+   "row_check_width_mm_at_seed_row": 18.27
+  }
+ },
+ "left_is": "blue (smaller mat-x; image-left, matches colour frame)",
+ "separation_mm": 341.31,
+ "PLATES_XY_separation_mm": 304.49,
+ "separation_diff_mm": 36.82
+}
