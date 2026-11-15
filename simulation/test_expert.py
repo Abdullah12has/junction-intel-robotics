@@ -8,7 +8,7 @@ from sorting_env import BrickSortingEnv, PLATES
 @pytest.mark.parametrize('destination', ['blue','green'])
 def test_actual_contact_lift_release_and_placement(destination):
     env=BrickSortingEnv(horizon=1800)
-    env.reset(50,destination=destination)
+    env.reset(42,target_color='purple',destination=destination)
     start=env.data.body(env.brick_body_name).xpos.copy()
     expert=PickPlaceExpert(env)
     assert expert.run()

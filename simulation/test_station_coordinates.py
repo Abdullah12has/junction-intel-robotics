@@ -25,7 +25,9 @@ def test_nominal_mapping_has_encoder_scale_and_intersected_limits():
         np.testing.assert_allclose(c.from_model(q),n,atol=1e-10)
         # One normalized unit is the encoder's angle, never the model range's.
         np.testing.assert_allclose(c.to_model(n+1)-q,(c.tick_max-c.tick_min)/(c.high-c.low)*K,atol=1e-12)
-        np.testing.assert_allclose(c.from_model(np.zeros(6)),c.from_encoder_ticks(np.full(6,2048.),clip=False),atol=1e-10)
+        zero=np.array([NOMINAL['joints'][j]['zero_tick'] for j in JOINTS],float)
+        np.testing.assert_allclose(c.from_model(np.zeros(6)),c.from_encoder_ticks(zero,clip=False),atol=1e-10)
+        assert np.all(np.abs(zero-2048)<25)  # within about 2 degrees of the nominal homed midpoint
         # Common range never exceeds either the model's or the encoder's.
         assert np.all(c.to_model(c.command_low)>=env.limits[:,0]-1e-9) and np.all(c.to_model(c.command_high)<=env.limits[:,1]+1e-9)
         assert np.all(c.command_low>=c.low) and np.all(c.command_high<=c.high)

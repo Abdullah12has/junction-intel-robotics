@@ -31,7 +31,7 @@ Aim60/30/30episodes; fallback40/20/20. Start/end at HOME. Aim8–12s without rus
 Flush/check counts every30episodes. Vision work proceeds independently on a separately owned camera.
 
 NEXT GATES
-- Simulation coordinates: measured-fit gate replaced by fixed-scale nominal mapping (sim-side, unverified; wrist roll and gripper width still need a10-minute read-only station check).146/150 sim episodes converted to normalized units; no export or training run yet. See simulation/NORMALIZED-INTERFACE.md.
+- Simulation coordinates: fixed-scale mapping, all six joint signs checked on the station (hand moves + teleop captures); zeros good to ~5deg; gripper reads2.2real vs5.8sim holding a2x2brick.146/150 sim episodes converted to normalized units; no export or training yet. See simulation/NORMALIZED-INTERFACE.md.
 - Latest second60s SmolVLA repeat completed60.04s, stopped, no sessions; task outcome unconfirmed. Evidence smolvla-robot-60s-repeat2.json.
 - Requested60s SmolVLA repeat completed60.05s without guard faults; stopped, no sessions. Started from prior ending pose; task success unconfirmed. Evidence smolvla-robot-60s-test.json.
 - SmolVLA physical trial completed20s then stopped; operator reports missed/dropped brick. No active sessions. Raw output exceeded bounds; constrained export used. Collect more consistent successful grasps before claiming pick/place. See docs/VERDA-TRAINING.md.

@@ -11,10 +11,20 @@ ROOT = Path(__file__).parent
 # Only direction and zero are per-joint unknowns. Nominal: LeRobot homes the
 # mid-pose to tick 2048 and the Menagerie model's zero is that same mid-pose.
 # Sim-side convention only: this is NOT hardware calibration and changes none.
-# Evidence and open items (wrist roll, gripper width): NORMALIZED-INTERFACE.md.
-NOMINAL = {'status': 'nominal_unverified', 'ticks_per_revolution': 4096,
-           'joints': {j: {'sign': 1, 'zero_tick': 2048} for j in
-                      ('shoulder_pan', 'shoulder_lift', 'elbow_flex', 'wrist_flex', 'wrist_roll', 'gripper')}}
+# Signs were checked on the station 2026-11-14; zeros are good to about 5 degrees.
+# Known gap: holding a 32 mm brick reads 2.2 on the station (flexible fingers) and
+# 5.8 in the model (rigid jaw). Shifting the gripper zero to close that gap leaves
+# the model too little squeeze (expert success fell from 30/30 to 17/30), so it stays.
+# Evidence: NORMALIZED-INTERFACE.md.
+# Shoulder lift, elbow and wrist flex zeros come from the so101-mujoco touch calibration of this
+# same arm (six hand-guided fingertip touches on the table, fit rms 1.1 mm), converted from its
+# "range midpoint + offset" convention. They sit 0.3, 1.1 and 1.6 degrees from the nominal 2048.
+NOMINAL = {'status': 'station_checked', 'ticks_per_revolution': 4096,
+           'joints': {**{j: {'sign': 1, 'zero_tick': 2048} for j in
+                         ('shoulder_pan', 'wrist_roll', 'gripper')},
+                      'shoulder_lift': {'sign': 1, 'zero_tick': 2044.5},
+                      'elbow_flex': {'sign': 1, 'zero_tick': 2035.3},
+                      'wrist_flex': {'sign': 1, 'zero_tick': 2029.5}}}
 
 
 def fingerprint(value):

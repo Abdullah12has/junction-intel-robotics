@@ -1,0 +1,16 @@
+[Unit]
+Description=Blue plate normal experiment shard
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/blue-plate
+Environment=PYTHONUNBUFFERED=1
+Environment=OMP_NUM_THREADS=4
+Environment=TOKENIZERS_PARALLELISM=false
+ExecStart=/root/blue-plate/venv/bin/python /root/blue-plate/shard_queue.py --manifest /root/blue-plate/normal-shard.json
+Restart=no
+KillMode=control-group
+TimeoutStopSec=120
+StandardOutput=append:/root/blue-plate/shard-queue.log
+StandardError=append:/root/blue-plate/shard-queue.log

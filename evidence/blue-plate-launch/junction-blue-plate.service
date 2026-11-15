@@ -1,0 +1,20 @@
+[Unit]
+Description=Blue plate ACT and SmolVLA real-data experiment queue
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/blue-plate/code
+Environment=PYTHONUNBUFFERED=1
+Environment=TOKENIZERS_PARALLELISM=false
+Environment=OMP_NUM_THREADS=4
+ExecStart=/root/blue-plate/venv/bin/python /root/blue-plate/code/launch.py --root /root/blue-plate/campaign --domain R --devices 0 --jobs-per-gpu 2 --execute
+Restart=no
+KillMode=control-group
+TimeoutStopSec=120
+StandardOutput=append:/root/blue-plate/queue.log
+StandardError=append:/root/blue-plate/queue.log
+
+[Install]
+WantedBy=multi-user.target

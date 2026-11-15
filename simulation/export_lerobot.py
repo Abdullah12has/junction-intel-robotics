@@ -70,7 +70,8 @@ def main():
         n=len(states)
         if states.shape!=(n,6) or actions.shape!=(n,6) or n!=meta['frames'] or not np.isfinite(states).all() or not np.isfinite(actions).all():
             raise ValueError(f'Invalid trajectory in {path}')
-        if np.any(states < np.array([-100]*5+[0])) or np.any(states > 100) or np.any(actions < np.array([-100]*5+[0])) or np.any(actions > 100):
+        # States may overshoot slightly, as real readings do; commands may not.
+        if np.any(states < np.array([-102]*5+[-2])) or np.any(states > 102) or np.any(actions < np.array([-100]*5+[0])) or np.any(actions > 100):
             raise ValueError('Normalized state/action outside station bounds')
         videos=[av.open(str(path/f'{camera}.mp4')) for camera in ('overhead','wrist')]
         generators=[v.decode(video=0) for v in videos]

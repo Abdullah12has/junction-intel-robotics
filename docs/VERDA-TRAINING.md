@@ -1,5 +1,7 @@
 # Verda training handoff
 
+New Mac CLI access (15 November): [VERDA-CLI-HANDOFF.md](VERDA-CLI-HANDOFF.md). This default CLI profile is documented separately from the older API client below; verify the account before using historical resource IDs.
+
 Updated 2026-11-14. User requested replacing blocked Modal with Verda and explicitly authorized an inspection-only SmolVLA pilot on the seven existing episodes.
 
 ## Training allocation (released after completion)
@@ -49,3 +51,7 @@ Repeated the constrained SmolVLA GPU policy for60.05seconds at30Hz with3s gradua
 ### Second 60-second repeat
 
 User requested another repeat. Completed60.04s from current pose, same GPU export and guards, no range/feedback fault. Control stopped and subsequent session query empty. Task success remains unconfirmed. Evidence `evidence/smolvla-robot-60s-repeat2.json`; remote script `/home/intel/junction-cell/test_smolvla_60s_repeat2.py`.
+
+## Co-training run 01 (14 Nov 2026)
+
+SmolVLA from `lerobot/smolvla_base` on `COTRAIN-BLUE-real3x-sim150` (5 real blue-plate episodes plus E3 trimmed to frames 12–2069, real repeated 3×, plus 150 sim episodes; 168 episodes, 127,303 frames, real fraction 0.39). It ran directly with `lerobot-train` in the trainer container, not through Studio. RTX PRO 6000 CC instance `e91e67d6`, 15,000 steps, batch 32, 51 minutes, final loss 0.030 (0.50 at step 50). Mac backup with verified checksums: `station-backups/2026-11-15-smolvla-cotrain/run-01-step015000/`, including `loss.log`, `train.sh` and the dataset provenance. All checkpoints (2,500 to 15,000) are kept on the retained disk `2d4e8a6a` under the trainer volume's `cotrain/run-01`. The instance was deleted at 22:3x UTC and the disk was kept (detached). Not yet evaluated in sim or on the arm.

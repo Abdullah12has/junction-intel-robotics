@@ -23,18 +23,27 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument('--checkpoint',type=Path,default=root/'smolvla-150/checkpoints/002000/pretrained_model')
     p.add_argument('--dataset',type=Path,default=root/'dataset-150')
-    a=p.parse_args();checkpoint=a.checkpoint
-    contract=json.loads((a.dataset/'simulation_provenance.json').read_text())
+    p.add_argument('--contract',type=Path,help='JSON with action_units and mapping_sha256, instead of the training dataset')
+    p.add_argument('--device',default='cuda')
+    a=p.parse_args();checkpoint=a.checkpoint;device=a.device
+    if a.contract:   # checkpoint copied off the training machine: its stats live in the saved processors
+        contract=json.loads(a.contract.read_text())
+    else:
+        contract=json.loads((a.dataset/'simulation_provenance.json').read_text())
+        training_config=json.loads((checkpoint/'train_config.json').read_text())
+        if Path(training_config['dataset']['root']).resolve()!=a.dataset.resolve():raise ValueError('Dataset differs from checkpoint training configuration')
     units=contract['action_units']
     if units not in ('absolute_joint_radians','so101_station_normalized_v1'):raise ValueError('Unknown checkpoint units')
-    training_config=json.loads((checkpoint/'train_config.json').read_text())
-    if Path(training_config['dataset']['root']).resolve()!=a.dataset.resolve():raise ValueError('Dataset differs from checkpoint training configuration')
     cfg=PreTrainedConfig.from_pretrained(checkpoint)
-    cfg.pretrained_path=checkpoint;cfg.device='cuda'
-    meta=LeRobotDatasetMetadata('local/junction-sim-sorting',root=a.dataset)
-    policy=make_policy(cfg=cfg,ds_meta=meta).eval()
+    cfg.pretrained_path=checkpoint;cfg.device=device
+    if a.contract:
+        from lerobot.policies.smolvla.modeling_smolvla import SmolVLAPolicy
+        policy=SmolVLAPolicy.from_pretrained(checkpoint,config=cfg).to(device).eval()
+    else:
+        meta=LeRobotDatasetMetadata('local/junction-sim-sorting',root=a.dataset)
+        policy=make_policy(cfg=cfg,ds_meta=meta).eval()
     pre,post=make_pre_post_processors(policy_cfg=cfg,pretrained_path=checkpoint,
-                                    preprocessor_overrides={'device_processor':{'device':'cuda'}})
+                                    preprocessor_overrides={'device_processor':{'device':device}})
     emit({'ready':True,'chunk_size':cfg.chunk_size,'n_action_steps':cfg.n_action_steps,'checkpoint':str(checkpoint),'action_units':units,'mapping_sha256':contract.get('mapping_sha256')})
     for line in sys.stdin:
         try:
@@ -48,7 +57,7 @@ def main():
                 for name in ('camera1','camera2'):
                     batch['observation.images.'+name]=torch.from_numpy(arrays[name].copy()).permute(2,0,1).unsqueeze(0).float()/255.0
             start=time.monotonic()
-            with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
+            with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16,enabled=device=='cuda'):
                 normalized=policy.predict_action_chunk(pre(batch))
                 actions=post(normalized).float().cpu().numpy()[0,:cfg.n_action_steps]
             if actions.ndim!=2 or actions.shape[1]!=6 or not np.isfinite(actions).all():raise ValueError('Invalid policy output')

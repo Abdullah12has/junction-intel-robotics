@@ -1,0 +1,91 @@
+{
+  "currency": "USD",
+  "price_snapshot": "2026-11-15",
+  "runs": {
+    "smolvla": 16,
+    "act": 16
+  },
+  "historical_smolvla_only": {
+    "steps": 15000,
+    "batch_size": 32,
+    "minutes": 51,
+    "warning": "Different dataset/pipeline; not a campaign runtime benchmark"
+  },
+  "act_runtime_measured": false,
+  "formula": "gpu_hours = 16 * smolvla_hours_per_run + 16 * act_hours_per_run",
+  "rates_per_instance_hour": {
+    "single_cc": {
+      "spot": 1.446,
+      "on_demand": 2.893
+    },
+    "single_normal": {
+      "spot": 1.418,
+      "on_demand": 2.836
+    },
+    "eight_gpu": {
+      "spot": 11.34,
+      "on_demand": 22.69
+    }
+  },
+  "scenarios": [
+    {
+      "assumed_smolvla_hours": 1.1333333333333333,
+      "assumed_act_hours": 0.5,
+      "gpu_hours": 26.133333333333333,
+      "ideal_eight_gpu_hours": 3.2666666666666666,
+      "eight_gpu_spot_usd": 37.04,
+      "single_cc_spot_usd": 37.79,
+      "single_cc_on_demand_usd": 75.6
+    },
+    {
+      "assumed_smolvla_hours": 1.1333333333333333,
+      "assumed_act_hours": 1,
+      "gpu_hours": 34.13333333333333,
+      "ideal_eight_gpu_hours": 4.266666666666667,
+      "eight_gpu_spot_usd": 48.38,
+      "single_cc_spot_usd": 49.36,
+      "single_cc_on_demand_usd": 98.75
+    },
+    {
+      "assumed_smolvla_hours": 1.1333333333333333,
+      "assumed_act_hours": 2,
+      "gpu_hours": 50.13333333333333,
+      "ideal_eight_gpu_hours": 6.266666666666667,
+      "eight_gpu_spot_usd": 71.06,
+      "single_cc_spot_usd": 72.49,
+      "single_cc_on_demand_usd": 145.04
+    },
+    {
+      "assumed_smolvla_hours": 2.2666666666666666,
+      "assumed_act_hours": 2,
+      "gpu_hours": 68.26666666666667,
+      "ideal_eight_gpu_hours": 8.533333333333333,
+      "eight_gpu_spot_usd": 96.77,
+      "single_cc_spot_usd": 98.71,
+      "single_cc_on_demand_usd": 197.5
+    }
+  ],
+  "exclusions": [
+    "setup and idle time",
+    "retries",
+    "storage",
+    "taxes",
+    "transfer charges if any"
+  ],
+  "not_a_quote_or_guaranteed_bound": true,
+  "planned_steps": {
+    "smolvla": 20000,
+    "act": 100000
+  },
+  "scaled_smolvla_reference_hours": 1.1333333333333333,
+  "checkpoint_storage_estimate": {
+    "smolvla_total_params": 450046176,
+    "smolvla_trainable_params": 99880992,
+    "act_params": 51597190,
+    "checkpoint_count_per_run": 10,
+    "estimated_all_checkpoint_bytes": 514943827200,
+    "proposed_provisioned_units": 750,
+    "hourly_storage_usd": 0.2054794520547945,
+    "note": "Estimate from FP32 weights and Adam moments; measure before launch, no automatic retention deletion implemented"
+  }
+}

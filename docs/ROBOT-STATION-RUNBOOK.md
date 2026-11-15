@@ -1,5 +1,7 @@
 # Robot station runbook
 
+Latest access snapshot: [INTEL-LAPTOP-ACCESS-HANDOFF.md](INTEL-LAPTOP-ACCESS-HANDOFF.md), checked 15 November 2026. Includes current LAN/Tailscale IPs, three-camera setup and service status.
+
 Read the handoff first. Commands below are examples for this station, not automatic permission to start physical movement in a new task.
 
 ## Connect from the Mac

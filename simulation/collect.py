@@ -37,7 +37,8 @@ class EpisodeRecorder:
             target = self.coordinates.from_model(target)
             # Reject unrepresentable trajectories; never clip or relabel them.
             self.coordinates.to_model(target)
-            if np.any(state < self.coordinates.low) or np.any(state > self.coordinates.high):
+            # Measured positions overshoot a little, as on the real arm (hand-closed gripper reads -1.4).
+            if np.any(state < self.coordinates.low-2) or np.any(state > self.coordinates.high+2):
                 raise ValueError('Simulated state outside hardware encoder range')
         self.states.append(state)
         self.actions.append(target)

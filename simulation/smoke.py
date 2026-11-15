@@ -32,7 +32,7 @@ def main():
             obs, _, _, _, info = env.step(action)
         out = Path(__file__).parent / "outputs" / ("sorting" if args.scene == "sorting" else args.brick)
         out.mkdir(parents=True, exist_ok=True)
-        for camera in ("overhead", "wrist"):
+        for camera in ("overhead", "wrist", "wrist_mounted"):
             Image.fromarray(obs[f"observation.images.{camera}"]).save(out / f"{camera}.png")
         report = {"mujoco": mujoco.__version__, "brick": args.brick, "steps": 90, "sim_seconds": env.data.time,
                   "finite": bool(np.isfinite(env.data.qpos).all()), "state": obs["observation.state"].tolist(),
@@ -59,13 +59,13 @@ def main():
                     start = time.monotonic()
                     while not keys.empty():
                         key = keys.get()
-                        if key in (67, 49, 50, 51):
-                            camera_mode = (camera_mode + 1) % 3 if key == 67 else key - 49
+                        if key in (67, 49, 50, 51, 52):
+                            camera_mode = (camera_mode + 1) % 4 if key == 67 else key - 49
                             if camera_mode == 2:
                                 viewer.cam.type = mujoco.mjtCamera.mjCAMERA_FREE
                             else:
                                 viewer.cam.type = mujoco.mjtCamera.mjCAMERA_FIXED
-                                viewer.cam.fixedcamid = env.model.camera(("overhead", "wrist")[camera_mode]).id
+                                viewer.cam.fixedcamid = env.model.camera(("overhead", "wrist", None, "wrist_mounted")[camera_mode]).id
                         if key in (82, 86, 66, 71):
                             if key == 82:
                                 seed += 1
@@ -83,7 +83,7 @@ def main():
                     mujoco.mj_step(env.model, env.data, nstep=20)
                     if args.scene == "sorting":
                         viewer.set_texts((None, mujoco.mjtGridPos.mjGRID_BOTTOMLEFT,
-                                          env.instruction + "\n1: overhead | 2: close | 3: orbit | R: random | V: reference | B/G: plate\nVisual approximation - no trained policy", ""))
+                                          env.instruction + "\n1: overhead | 2: close | 3: orbit | 4: wrist mount (uncalibrated)\nR: random | V: reference | B/G: plate | No trained policy", ""))
                     viewer.sync()
                     time.sleep(max(0, 1 / 30 - (time.monotonic() - start)))
     finally:

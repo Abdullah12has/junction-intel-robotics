@@ -41,6 +41,6 @@
     "config": "arm_config.json",
     "action_units": "so101_station_normalized_v1",
     "hardware_mapping_verified": false,
-    "mapping": "station_coordinates.NOMINAL: fixed 4096 ticks/rev, sign +1, zero at tick 2048; unverified"
+    "mapping": "station_coordinates.NOMINAL: fixed 4096 ticks/rev, sign +1, zero at tick 2048; signs checked on the station 2026-11-14"
   }
 }

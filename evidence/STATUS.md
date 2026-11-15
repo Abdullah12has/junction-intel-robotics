@@ -1,3 +1,5 @@
+> Historical station snapshot. For submission claims, see [the submission overview](../docs/SUBMISSION.md) and [evidence index](README.md).
+
 # Verified station status
 
 Updated 14 November 2026, Helsinki. Historical statements are preserved in STATUS-HISTORICAL.md and superseded here.

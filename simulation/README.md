@@ -1,4 +1,4 @@
-> Coordinates (2026-11-14): read [NORMALIZED-INTERFACE.md](NORMALIZED-INTERFACE.md). Collection, export and training use station-normalized units through a fixed-scale nominal mapping (unverified on hardware; wrist roll open). 146 of the 150 radian episodes are converted in `outputs/dataset-150-normalized`. The radian artifacts described below are unchanged.
+> Coordinates (2026-11-14): read [NORMALIZED-INTERFACE.md](NORMALIZED-INTERFACE.md). Collection, export and training use station-normalized units through a fixed-scale nominal mapping (signs checked on the station; 3.6-unit gripper gap at grasp). 146 of the 150 radian episodes are converted in `outputs/dataset-150-normalized`. The radian artifacts described below are unchanged.
 
 Offline normalized interface: [usage and limitations](NORMALIZED-INTERFACE.md).
 

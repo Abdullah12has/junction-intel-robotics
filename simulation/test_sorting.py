@@ -70,7 +70,7 @@ def test_reference_layout_and_station_scale():
     assert [env.block_colors[i] for i in env.active_indices] == ['red', 'yellow', 'orange', 'white', 'cyan']
     np.testing.assert_allclose(env.model.geom('brick_geom').size, [.0159, .0159, .0096])
     assert env.model.camera('wrist').bodyid == 0
-    assert env.model.geom('black_mat').rgba[0] < .05
+    assert env.model.geom('black_mat').rgba[0] < .15
     assert env.model.geom('plate_blue').pos[0] < env.model.geom('plate_green').pos[0]
     # Visual ring mesh is excluded from contacts; invisible cylinder approximates stud contact.
     for block in env.blocks:

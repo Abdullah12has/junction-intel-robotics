@@ -1,0 +1,185 @@
+{
+  "delay_steps_30hz": 2,
+  "joints": {
+    "shoulder_pan": {
+      "kp": 0.0212,
+      "kv": 0.1093,
+      "damping": 0.2412,
+      "frictionloss": 2.9491
+    },
+    "shoulder_lift": {
+      "kp": 0.0206,
+      "kv": 0.0698,
+      "damping": 0.1386,
+      "frictionloss": 8.7889
+    },
+    "elbow_flex": {
+      "kp": 0.0134,
+      "kv": 0.0698,
+      "damping": 0.1012,
+      "frictionloss": 7.659
+    },
+    "wrist_flex": {
+      "kp": 0.3629,
+      "kv": 0.7237,
+      "damping": 3.6536,
+      "frictionloss": 0.0843
+    },
+    "wrist_roll": {
+      "kp": 0.2558,
+      "kv": 1.5448,
+      "damping": 0.0239,
+      "frictionloss": 8.4087
+    }
+  },
+  "episodes": {
+    "teleop": {
+      "fit": 6,
+      "held_out": 6
+    },
+    "autonomous": {
+      "fit": 6,
+      "held_out": 5
+    }
+  },
+  "delay_seconds_by_source": {
+    "teleop": 0.06666666666666667,
+    "autonomous": 0.07
+  },
+  "joint_rms_deg": {
+    "fit": {
+      "menagerie_default": [
+        0.618,
+        2.046,
+        2.228,
+        0.969,
+        0.444
+      ],
+      "shared_fit": [
+        0.808,
+        1.258,
+        1.454,
+        1.465,
+        0.478
+      ],
+      "per_joint_fit": [
+        0.38,
+        1.132,
+        1.064,
+        0.969,
+        0.391
+      ]
+    },
+    "held_out": {
+      "menagerie_default": [
+        0.357,
+        1.686,
+        1.932,
+        0.53,
+        0.404
+      ],
+      "shared_fit": [
+        0.402,
+        0.979,
+        1.209,
+        0.449,
+        0.418
+      ],
+      "per_joint_fit": [
+        0.365,
+        0.829,
+        0.881,
+        0.526,
+        0.357
+      ]
+    }
+  },
+  "note": "Per-joint multipliers on the Menagerie sts3215 actuator kp/kv and joint damping/frictionloss. Gripper not fitted. Shoulder pan keeps the shared fit: its per-joint result (friction x42, damping near zero) matched no better on held-out data and looked overfitted.",
+  "static_sag_check": [
+    {
+      "pose": "centre",
+      "real_sag_deg": [
+        0.44,
+        0.35,
+        2.99,
+        -0.53,
+        0.62
+      ],
+      "sim_sag_deg": [
+        -0.0,
+        0.89,
+        1.99,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "pose": "blue-bowl",
+      "real_sag_deg": [
+        -0.35,
+        0.26,
+        3.78,
+        -0.53,
+        -0.44
+      ],
+      "sim_sag_deg": [
+        0.0,
+        0.88,
+        2.03,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "pose": "near-left",
+      "real_sag_deg": [
+        0.18,
+        0.26,
+        2.72,
+        -0.53,
+        0.26
+      ],
+      "sim_sag_deg": [
+        0.0,
+        1.33,
+        1.92,
+        0.01,
+        -0.0
+      ]
+    },
+    {
+      "pose": "near-right",
+      "real_sag_deg": [
+        0.18,
+        0.7,
+        2.64,
+        -0.53,
+        0.26
+      ],
+      "sim_sag_deg": [
+        0.0,
+        1.63,
+        1.87,
+        0.01,
+        -0.0
+      ]
+    },
+    {
+      "pose": "green-bowl",
+      "real_sag_deg": [
+        0.44,
+        4.39,
+        0.18,
+        -0.18,
+        -0.35
+      ],
+      "sim_sag_deg": [
+        -0.0,
+        1.84,
+        1.16,
+        0.01,
+        0.0
+      ]
+    }
+  ]
+}

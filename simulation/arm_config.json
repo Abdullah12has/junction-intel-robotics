@@ -64,7 +64,7 @@
     100
   ],
   "hardware_mapping_verified": false,
-  "model_mapping": "station_coordinates.NOMINAL: fixed encoder scale, sign +1, model zero at homed tick 2048. Sim-side convention, unverified; not hardware calibration.",
+  "model_mapping": "station_coordinates.NOMINAL: fixed encoder scale, sign +1, model zero at homed tick 2048. Signs checked on the station 2026-11-14; sim-side convention, not hardware calibration.",
   "homing_offset_handling": "Already applied by device; never applied twice",
   "physical_alignment": {
     "zero_offsets": "unverified",

@@ -1,0 +1,198 @@
+{
+  "concurrency": 2,
+  "jobs": 16,
+  "commands": [
+    {
+      "id": "act-N-A0-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-N-A0-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-N-A0-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-N-A0-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-N-A1-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-N-A1-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-N-A1-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-N-A1-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-N-A2-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-N-A2-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-N-A2-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-N-A2-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-N-A3-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-N-A3-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-N-A3-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-N-A3-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-X-A0-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-X-A0-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-X-A0-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-X-A0-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-X-A1-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-X-A1-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-X-A1-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-X-A1-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-X-A2-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-X-A2-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-X-A2-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-X-A2-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "act-X-A3-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "act-X-A3-R-seed0",
+        "--train"
+      ]
+    },
+    {
+      "id": "smolvla-X-A3-R-seed0",
+      "argv": [
+        "/Users/abdullah/Desktop/junction/.venv-vla/bin/python",
+        "/Users/abdullah/Desktop/junction/junction-intel-robotics/training/blue_plate/run.py",
+        "--root",
+        "/Users/abdullah/Desktop/junction/station-backups/2026-11-15-best-left/campaign",
+        "--experiment",
+        "smolvla-X-A3-R-seed0",
+        "--train"
+      ]
+    }
+  ]
+}

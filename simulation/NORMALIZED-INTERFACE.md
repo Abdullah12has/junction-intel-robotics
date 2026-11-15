@@ -23,23 +23,28 @@ Commands are limited to the intersection of model limits and mapped encoder
 limits; nothing is stretched or clipped silently. To override a joint, pass a
 JSON file with the same shape as `NOMINAL` via `--mapping`.
 
-**This is a simulation-side convention. It changes no hardware calibration and
-is labelled `nominal_unverified`; `hardware_compatible` stays false.**
+**This is a simulation-side convention. It changes no hardware calibration;
+`hardware_compatible` stays false until a supervised real-arm trial.**
 
-## Evidence for the nominal mapping (no new station work)
+## Evidence (station checks, 2026-11-14)
+
+Captures are in `outputs/joint-mapping/` (ignored by Git; they show the workspace).
 
 | Joint | Evidence | Status |
 |---|---|---|
-| shoulder_lift, elbow_flex, wrist_flex | `check_real_replay.py` on the 7 real episodes (4,366 frames): grasp point never below 13 mm; at all 7 gripper-close events it is 13-29 mm above the table, i.e. brick height. Flipping any one of these signs drives it 30-85 mm through the table. Rest and forward captures render as the photographed poses. | supported |
-| shoulder_pan | Model axis points down; operator's counter-clockwise move decreased the reading and returned within 0.44 degrees. | supported, one move |
-| gripper | Model opens with increasing angle (expert closes at -0.08, opens at 0.7 rad). Calibrated closed tick is 2046. Real jaw travel is 134 degrees against the model's 100, so commands above ~74 are outside the common range. | direction supported, width unmeasured |
-| wrist_roll | Reads about -54 normalized in every capture; nothing constrains its sign or zero. | **open** |
+| shoulder_pan | Operator out-and-back earlier in the day; under teleoperation a swing to +36.8 put the gripper over the blue bowl in both the overhead camera and the mapped render (`teleop-02-pan-open`). | sign and zero confirmed |
+| shoulder_lift, elbow_flex, wrist_flex | `check_real_replay.py` on the 7 real episodes (4,366 frames): grasp point never below 13 mm, and 13-29 mm above the table at all 7 gripper-close events. Flipping any one sign drives it 30-85 mm through the table. Rest, forward and swung poses render as photographed. | sign and zero confirmed |
+| wrist_roll | Hand-turned a quarter turn counter-clockwise (viewed from the wrist toward the jaw tips): 1128 -> 2091 ticks, +85 degrees as predicted; render matches the camera before and after (`hand-01-roll-ccw-closed`). | sign and zero confirmed |
+| gripper | Hand-closed reads tick 2025 (-2 degrees). Holding a 2x2 brick across 32 mm reads 2.2 normalized on the station and 5.8 in the model (`teleop-01-brick`). | direction and closed confirmed; **3.6-unit gap at grasp** |
 
-Zero offsets are good to roughly 5-7 degrees (visual zero-pose capture), not better.
-
-Remaining station check, about ten minutes, read-only through Studio's existing
-session: one out-and-back on wrist roll, and the gripper opening in mm at two
-readings. Edit a copy of `NOMINAL` if either disagrees.
+Zeros are good to about 5 degrees, not better; nothing was measured with an
+instrument. The gripper gap comes from the station's flexible red fingers, which
+differ from the model's rigid jaw. Shifting the gripper zero by 55 ticks removes
+the gap but leaves the model too little squeeze (expert success fell from 30/30
+to 17/30), so the mapping keeps zero at 2048 and the gap is a known state offset
+while gripping. Real jaw travel is 134 degrees against the model's 100, so
+commands above ~74 are outside the common range. Fully-open width in mm was not
+measured.
 
 ## Converted dataset
 

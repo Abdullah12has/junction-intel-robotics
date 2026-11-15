@@ -1,0 +1,10 @@
+{
+  "model": "act",
+  "batch_size": 8,
+  "steps": 100,
+  "elapsed_s": 15.124318546999973,
+  "peak_allocated_bytes": 4006210048,
+  "peak_reserved_bytes": 4515168256,
+  "device": "NVIDIA A100-SXM4-80GB",
+  "checkpoint_saved": true
+}

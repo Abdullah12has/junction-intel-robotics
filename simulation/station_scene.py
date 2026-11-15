@@ -1,19 +1,29 @@
-"""Approximate reconstruction from the two RealSense frames, 2026-11-14.
+"""Station reconstruction, 2026-11-14.
 
-Geometry is visually fitted, not camera/robot calibration. No hardware access.
+Cameras come from fitted_cameras.json (fit_cameras.py). Bowl centres, the pick
+region and the start pose come from the real recordings mapped through the joint
+mapping (outputs/real-reference/episodes.json). Props, bowl shape and lighting
+are still visual approximations.
 """
+import json
+from pathlib import Path
 import math
 import xml.etree.ElementTree as ET
 
 import numpy as np
 
-BOWL_CENTERS = {"blue": (-0.105, -0.13), "green": (0.235, -0.16)}
+# Mean of three estimates that agree within about 2 cm: gripper position at release in the teleop
+# episodes, the same in the laptop agent's autonomous runs, and the bowls seen by the depth-fitted
+# overhead camera.
+BOWL_CENTERS = {"blue": (-0.073, -0.169), "green": (0.277, -0.168)}
+CAMERAS = json.loads(Path(__file__).with_name("fitted_cameras.json").read_text())
 BOWL_FLOOR = 0.004
 BRICK_HALF_HEIGHT = 0.0096
 REFERENCE_COLORS = ["red", "yellow", "orange", "purple", "white", "cyan"]
 REFERENCE_POSITIONS = [(0.035, -0.235), (0.12, -0.065), (0.105, -0.275),
                        (0.08, -0.33), (0.14, -0.235), (0.10, -0.16)]
-HOME = [0, -0.5, 0.8, 0.6, 0, 0.5]
+# Real folded rest pose, station readings about [-6, -98.5, 97, 61, -48, 18].
+HOME = [-0.101, -1.850, 1.585, 1.045, -1.502, 0.42]
 
 
 def vector(values):
@@ -56,11 +66,14 @@ def recreate_station(root):
     base = world.find("body[@name='base']")
     base.set("quat", "0.7071067812 0 0 -0.7071067812")
     base.set("pos", "0.0388353 0.0388353 0")
+    # The real arm folds past the model's shoulder-lift limit: its calibrated minimum (tick 822) is -107 degrees.
+    world.find(".//joint[@name='shoulder_lift']").set("range", "-1.90 1.7453293")
+    root.find("actuator/position[@name='shoulder_lift']").set("ctrlrange", "-1.90 1.74533")
     table = world.find("geom[@name='table']")
     table.set("pos", "0 0 -0.004")
     table.set("rgba", "0.62 0.37 0.16 1")
     ET.SubElement(world, "geom", name="black_mat", type="box", pos="0.035 -0.22 -0.002",
-                  size="0.265 0.27 0.002", rgba="0.025 0.028 0.03 1", friction="1 0.01 0.001")
+                  size="0.265 0.27 0.002", rgba="0.10 0.09 0.11 1", friction="1 0.01 0.001")
     # Match the observed black links and orange printed brackets.
     for material in asset.findall("material"):
         name = material.get("name", "")
@@ -71,19 +84,21 @@ def recreate_station(root):
         else:
             material.set("rgba", "0.065 0.065 0.07 1")
     overhead = world.find("camera[@name='overhead']")
-    camera_look_at(overhead, [-0.025, -0.46, 0.61], [-0.025, -0.22, 0])
-    overhead.set("fovy", "40")
-    # Match camera2's observed close view. Its actual mounting is unverified;
-    # represent it as a fixed camera until motion-based calibration establishes it.
+    # Sim "wrist" is the real FIXED close camera; it did not move with the arm.
     wrist = world.find(".//camera[@name='wrist']")
     world.find(".//body[@name='gripper']").remove(wrist)
     world.append(wrist)
-    camera_look_at(wrist, [0.025, -0.45, 0.22], [0.065, -0.22, 0.015])
-    wrist.set("fovy", "40")
+    for camera in (overhead, wrist):
+        fit = CAMERAS[camera.get("name")]
+        camera.attrib.pop("xyaxes", None)
+        camera.set("pos", vector(fit["pos"]))
+        camera.set("quat", vector(fit["quat_wxyz"]))
+        camera.set("fovy", str(fit["fovy_deg"]))
     light = world.find("light")
     light.set("pos", "-0.4 -0.2 1.5")
-    light.set("diffuse", "0.65 0.65 0.65")
-    ET.SubElement(root.find("visual"), "headlight", ambient="0.4 0.4 0.4", diffuse="0.4 0.4 0.4", specular="0.1 0.1 0.1")
+    # Real frames average about 90 (overhead) and 79 (close) on a 0-255 scale.
+    light.set("diffuse", "1 1 1")
+    ET.SubElement(root.find("visual"), "headlight", ambient="0.75 0.75 0.75", diffuse="0.6 0.6 0.6", specular="0.1 0.1 0.1")
     # Context objects are visual-only approximations, not robot collision geometry.
     def prop(name, pos, size, rgba):
         ET.SubElement(world, "geom", name=name, type="box", pos=vector(pos), size=vector(size),

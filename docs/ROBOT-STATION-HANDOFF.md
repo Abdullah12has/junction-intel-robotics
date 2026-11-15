@@ -1,5 +1,11 @@
 # Robot station handoff
 
+For Verda cloud CLI access on the Mac and the 15 November GPU availability snapshot, see [VERDA-CLI-HANDOFF.md](VERDA-CLI-HANDOFF.md). Credentials remain outside the repository.
+
+Latest frozen-policy improvement work: [FROZEN-POLICY-IMPROVEMENT-PLAN.md](FROZEN-POLICY-IMPROVEMENT-PLAN.md). Includes shorter execution, wrist diagnostics, calibration gates and paired simulation evidence.
+
+For laptop access, current IPs, SSH, tunnels and the 15 November service check, start with [INTEL-LAPTOP-ACCESS-HANDOFF.md](INTEL-LAPTOP-ACCESS-HANDOFF.md). It supersedes older connectivity/status observations below.
+
 Updated: 2026-11-14, Europe/Helsinki. This is a snapshot; query live state before controlling hardware.
 
 ## Task and current progress
@@ -166,3 +172,19 @@ After successful sudo authentication, installed `intel-driver-compiler-npu` and 
 Recording environment repeatedly failed with overhead serial 243622061421 `CaptureTimeoutError: no publisher responded within timeout`. USB devices were present, but no publisher workers survived. Stopped the failed runtime via supported endpoint; sent TERM to old backend 166596. After it remained stuck waiting for background tasks with serial/video devices released, killed that exact old process and started the existing backend unchanged. New log `/tmp/junction-backend-recording-recovery.log`; observed PID 241038 (re-query).
 
 Both RealSense cameras simultaneously delivered 286 frames each in roughly 10 seconds at 640x480/30 via librealsense. Overhead reports USB 2.1, arm USB 3.2. After restart, both Studio `/api/cameras/ws` streams delivered 30 valid JPEG frames each without timeout. Verification preview sockets were closed afterward. An attempted camera-only runtime test was rejected because runtime requires exactly one robot; no arms were loaded by that test. Full recording/encoding remains to be verified by the operator; no synthetic episodes were added.
+
+## Three-camera blue-plate demonstrations (2026-11-14 evening)
+
+See [BLUE-PLATE-DATA-CURATION.md](BLUE-PLATE-DATA-CURATION.md) for the latest recording and curation state. Six human episodes (16,943 frames) were finalized with both RealSense feeds plus USB2.0_CAM1; the original 987.7 MB dataset has a checksum-verified Mac backup. The separate cleaned copy has five episodes and 14,651 frames, imported as `e60f4087-d620-4f1d-885f-1620cefd54bd` (ALL-BLOCKS-BLUE - curated three cameras). Keep originals intact. Both RealSense cameras now report USB 3.2, superseding the USB 2.1 observation above. Studio was restarted through CLI; current logs are `/tmp/junction-backend-cli-restart.log` and `/tmp/junction-ui-cli-restart.log`. Recheck live processes/session ownership before acting.
+
+## Recording dashboard recovery — 15 Nov 02:55 Helsinki
+
+Restarted Studio backend/UI cleanly after stopping failed environment preview. Backend PID 2225270, UI 2225271 at that check; new logs `/tmp/junction-backend-recording-restart.log` and `/tmp/junction-ui-recording-restart.log`. Mac dashboard port 3001 had stopped; restarted from `studio-ui` with existing Node 24 and verified full rendered dashboard plus HTTP 200. Tunnel and backend health passed.
+
+The three-camera failure was `No camera found matching` USB2.0_CAM1. USB discovery and `/dev/v4l/by-id` confirmed the Sonix wrist camera absent, even after operator reconnect. Old video16 now belongs to a RealSense node; do not remap by index alone. Both RealSense SDK serials are detected. Operator asked to try a different/direct USB port. Wrist recording remains blocked until it enumerates and its fingerprint is refreshed if needed. No camera calibration changed; no new recording started by this recovery.
+
+Recovery verification: both RealSense cameras simultaneously started at 640x480/30 and each delivered five RGB frames; verification pipelines then closed. Wrist still absent after another-port attempt; kernel reports `usb 3-2.4-port3: connect-debounce failed` at 02:56:24. Port 3001 dashboard renders fully and is left disconnected, with only the two RealSense checkboxes selected. Saved recording environments were not changed. The optional `Top marked` MJPEG service on port 8090 was also not listening; it was not started because it exclusively owns the overhead device and would compete with raw RealSense recording. No recording was started.
+
+### Wrist feed disconnect — 15 Nov 03:03 Helsinki
+
+Kernel confirms Sonix USB2.0_CAM1 returned on USB 3-2.4.2 at 02:57:45, then disconnected at 03:02:35. Studio logged no frames at 03:02:36 and shut its UVC publisher down after five consecutive read failures. At 03:03, both lsusb and /dev/v4l/by-id show the wrist camera absent; both RealSense devices remain present. This is a USB-device disappearance, not merely a browser preview error. Possible cable/hub/power/camera fault remains unisolated. Saved wrist fingerprint still contains the previous bus/index; re-discover by serial after stable enumeration rather than assigning a guessed video number. No session, calibration or recording configuration changed during this diagnostic check.

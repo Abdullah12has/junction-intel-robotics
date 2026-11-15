@@ -1,0 +1,16 @@
+{
+  "root": "/root/blue-plate/campaign",
+  "runner": "/root/blue-plate/code/run.py",
+  "concurrency": 2,
+  "shard": "x-markers",
+  "experiments": [
+    "act-X-A0-R-seed0",
+    "smolvla-X-A0-R-seed0",
+    "act-X-A1-R-seed0",
+    "smolvla-X-A1-R-seed0",
+    "act-X-A2-R-seed0",
+    "smolvla-X-A2-R-seed0",
+    "act-X-A3-R-seed0",
+    "smolvla-X-A3-R-seed0"
+  ]
+}

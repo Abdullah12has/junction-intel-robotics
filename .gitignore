@@ -30,3 +30,17 @@ dist/
 coverage/
 *.log
 .DS_Store
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+MUJOCO_LOG.TXT
+# Keep training artifacts and private recordings outside source control.
+/checkpoints/
+/datasets/
+/runs/
+/campaign/
+*.safetensors
+*.onnx
+*.pt
+*.pth

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "station-backups/2026-11-15-smolvla-cotrain/run-01-step015000/pretrained_model",
+  "files_verified": [
+    "config.json",
+    "model.safetensors",
+    "policy_postprocessor.json",
+    "policy_postprocessor_step_0_unnormalizer_processor.safetensors",
+    "policy_preprocessor.json",
+    "policy_preprocessor_step_5_normalizer_processor.safetensors",
+    "train_config.json"
+  ],
+  "action_units": "so101_station_normalized_v1",
+  "mapping_sha256": "274ac9a0579f5bdf6b6ff4185d9e5c9f7feb2ce41a9671f8a4619976a773322c",
+  "trained_cameras": {
+    "observation.images.realsense 243622061421": "observation.images.camera1",
+    "observation.images.realsense 243722064316": "observation.images.camera2"
+  },
+  "unused_config_cameras": [
+    "observation.images.camera3"
+  ],
+  "real_tasks": [
+    "pick up all the blocks and put them on the blue plate"
+  ],
+  "chunk_size": 50
+}

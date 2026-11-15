@@ -32,6 +32,10 @@ def scene_xml(brick_type="2x4"):
     # Approximate camera placement for initial simulation; not station calibration.
     gripper = world.find(".//body[@name='gripper']")
     ET.SubElement(gripper, "camera", name="wrist", pos="0.10 0 -0.04", xyaxes="0 1 0 -0.669 0 0.743", fovy="75")
+    # Separate third feed, rigidly attached after wrist roll. Provisional mount;
+    # the legacy `wrist` feed remains the sorting scene's fixed close camera.
+    ET.SubElement(gripper, "camera", name="wrist_mounted", pos="0.10 0 -0.04",
+                  xyaxes="0 1 0 -0.669 0 0.743", fovy="75")
     brick = ET.SubElement(world, "body", name="brick", pos=f"0 -0.23 {half_size[2] + 0.001}")
     ET.SubElement(brick, "freejoint", name="brick_free")
     ET.SubElement(brick, "geom", name="brick_geom", type="box", size=" ".join(map(str, half_size)),
@@ -103,7 +107,7 @@ class BrickInspectionEnv:
     def observe(self):
         obs = {"observation.state": self.data.qpos[self.qadr].astype(np.float32).copy()}
         if self.renderer:
-            for name in ("overhead", "wrist"):
+            for name in ("overhead", "wrist", "wrist_mounted"):
                 self.renderer.update_scene(self.data, camera=name)
                 obs[f"observation.images.{name}"] = self.renderer.render().copy()
         return obs
@@ -126,7 +130,7 @@ class BrickInspectionEnv:
         target = self.model.site("inspection_target").pos
         velocity = self.data.qvel[self.model.joint(self.brick_joint_name).dofadr[0]:][:6]
         # Conservative center margin covers the rotated brick footprint.
-        placed = bool(np.all(np.abs(pos[:2] - target[:2]) < 0.015) and
+        placed = bool(np.all(np.abs(pos[:2] - target[:2]) < getattr(self, 'place_tolerance', 0.015)) and
                       abs(pos[2] - self.half_height - self.support_height) < 0.001 and np.linalg.norm(velocity) < 0.02)
         touching_arm = any((c.geom1 in self.brick_geoms or c.geom2 in self.brick_geoms) and
                            not self.support_geom_ids.intersection((c.geom1, c.geom2)) for c in self.data.contact)

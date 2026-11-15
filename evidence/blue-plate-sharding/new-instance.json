@@ -1,0 +1,11 @@
+{
+  "id": "e25219b3-dea2-4991-9cdd-ad2b2d37e2af",
+  "hostname": "junction-blue-plate-worker-20261115",
+  "status": "running",
+  "ip": "86.38.182.164",
+  "instance_type": "1A100.22V",
+  "price_per_hour": 2.386,
+  "is_spot": false,
+  "os_volume_id": "1d1f57ec-3c8f-4d00-b218-c7f088864bae",
+  "location": "FIN-03"
+}

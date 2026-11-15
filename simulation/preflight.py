@@ -34,7 +34,8 @@ def main():
             # Alternate target geometry while allowing all colors and layouts.
             index=3 if seed%2==0 else next(i for i in env.active_indices if i!=3)
             color=env.block_colors[index]
-            for destination in ('blue','green'):
+            # Station rule: squares (2x2) are good and go to blue; rectangles (2x4) are defective and go to green.
+            for destination in ({'2x2':'blue','2x4':'green'}[env.blocks[index]['type']],):
                 if counts[color,destination]>=quotas[color,destination]:continue
                 env.reset(seed,target_color=color,destination=destination)
                 expert=PickPlaceExpert(env)

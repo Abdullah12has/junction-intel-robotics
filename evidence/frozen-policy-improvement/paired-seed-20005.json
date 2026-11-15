@@ -1,0 +1,27 @@
+{
+  "scope": "paired single-scene smoke; not a success-rate estimate",
+  "trials": [
+    {
+      "execute_steps": 50,
+      "seed": 20005,
+      "task": "move the red brick to the blue plate",
+      "steps": 900,
+      "success": false,
+      "clipped_frames": 486,
+      "max_height_m": 0.009492244579967024,
+      "inference_mean_s": 0.28356572460486656,
+      "wall_seconds": 23.28210674971342
+    },
+    {
+      "execute_steps": 10,
+      "seed": 20005,
+      "task": "move the red brick to the blue plate",
+      "steps": 900,
+      "success": false,
+      "clipped_frames": 346,
+      "max_height_m": 0.009492244579967024,
+      "inference_mean_s": 0.27291176578857834,
+      "wall_seconds": 44.28470208263025
+    }
+  ]
+}

@@ -1,4 +1,7 @@
 """Language-conditioned LEGO placement: blue plate left, green plate right."""
+import json
+from collections import deque
+from pathlib import Path
 import xml.etree.ElementTree as ET
 
 import mujoco
@@ -16,6 +19,9 @@ COLORS = {
 PLATES = BOWL_CENTERS
 PLATE_TOP = BOWL_FLOOR
 BLOCK_TYPES = ["2x2", "2x2", "2x2", "2x4", "2x2", "2x2"]
+# Motor response fitted to real recordings by fit_dynamics.py: the real servos are far softer than
+# the model default and act about two control steps late.
+DYNAMICS = json.loads(Path(__file__).with_name("fitted_dynamics.json").read_text())
 
 
 def sorting_scene():
@@ -58,7 +64,27 @@ class BrickSortingEnv(BrickInspectionEnv):
                                 "conaffinity": self.model.geom_conaffinity[geoms].copy(),
                                 "type": BLOCK_TYPES[i]})
         self.active_indices = []
+        # Lying flat on the bowl floor counts, as it does for the operator: real releases
+        # landed 0.9-3.7 cm from the bowl centre; the floor's radius is 6.2 cm.
+        self.place_tolerance = 0.04
+        for name, scale in DYNAMICS["joints"].items():
+            actuator = self.model.actuator(name).id
+            dof = self.model.joint(name).dofadr[0]
+            self.model.actuator_gainprm[actuator, 0] *= scale["kp"]
+            self.model.actuator_biasprm[actuator, 1] *= scale["kp"]
+            self.model.actuator_biasprm[actuator, 2] *= scale["kv"]
+            self.model.dof_damping[dof] *= scale["damping"]
+            self.model.dof_frictionloss[dof] *= scale["frictionloss"]
+        self.pending = deque()
         self.initial_geom_friction = self.model.geom_friction.copy()
+        # Per-episode visual variation, so a policy tolerates the residual camera and lighting error.
+        self.camera_ids = [self.model.camera(n).id for n in ("overhead", "wrist")]
+        self.base_cam_pos = self.model.cam_pos[self.camera_ids].copy()
+        self.base_cam_quat = self.model.cam_quat[self.camera_ids].copy()
+        self.base_light = self.model.light_diffuse.copy()
+        self.base_headlight = self.model.vis.headlight.diffuse.copy()
+        self.base_ambient = self.model.vis.headlight.ambient.copy()
+        self.randomize = True
 
     def reset(self, seed=0, target_color=None, destination=None, count=None, reference=False):
         rng = np.random.default_rng(seed)
@@ -87,7 +113,8 @@ class BrickSortingEnv(BrickInspectionEnv):
                 self.active_indices[0] = required
                 self.active_indices.sort()
         # Separated cells with slight jitter: no overlapping brick footprints.
-        cells = np.array([(0,-.10),(.075,-.09),(0,-.25),(.075,-.27),(0,-.34),(.075,-.35)])
+        # Real pick-ups were at x 0.07..0.20, y -0.15..-0.30; cells stay clear of both bowls and the resting gripper.
+        cells = np.array([(.07,-.17),(.145,-.17),(.07,-.26),(.15,-.25),(.11,-.34),(.20,-.31)])
         rng.shuffle(cells)
         for i, block in enumerate(self.blocks):
             active = i in self.active_indices
@@ -116,8 +143,36 @@ class BrickSortingEnv(BrickInspectionEnv):
         self.support_geom_ids = {self.model.geom(f"plate_{self.destination}").id}
         self.model.site("inspection_target").pos[:] = [*PLATES[self.destination], PLATE_TOP]
         self.instruction = f"move the {self.target_color} brick to the {self.destination} plate"
+        self.pending = deque([np.array(HOME, float)] * DYNAMICS["delay_steps_30hz"])
+        visual = np.random.default_rng([seed, 7])          # separate stream: layouts stay as before
+        self.model.cam_pos[self.camera_ids] = self.base_cam_pos
+        self.model.cam_quat[self.camera_ids] = self.base_cam_quat
+        self.model.light_diffuse[:] = self.base_light
+        self.model.vis.headlight.diffuse[:] = self.base_headlight
+        self.model.vis.headlight.ambient[:] = self.base_ambient
+        if self.randomize and not reference:
+            for k, cam in enumerate(self.camera_ids):
+                # fitted camera error is about 1 cm and 1-2 degrees
+                self.model.cam_pos[cam] = self.base_cam_pos[k] + visual.uniform(-.01, .01, 3)
+                axis = visual.normal(size=3); axis /= np.linalg.norm(axis)
+                turn, out = np.zeros(4), np.zeros(4)
+                mujoco.mju_axisAngle2Quat(turn, axis, np.deg2rad(visual.uniform(0, 1.5)))
+                mujoco.mju_mulQuat(out, self.base_cam_quat[k], turn)
+                self.model.cam_quat[cam] = out
+            brightness = visual.uniform(.8, 1.2)
+            self.model.light_diffuse[:] = np.clip(self.base_light * brightness, 0, 1)
+            self.model.vis.headlight.diffuse[:] = np.clip(self.base_headlight * visual.uniform(.8, 1.2), 0, 1)
+            self.model.vis.headlight.ambient[:] = np.clip(self.base_ambient * brightness, 0, 1)
         mujoco.mj_forward(self.model, self.data)
         return self.observe()
+
+    def step(self, action):
+        # The recorded action is the command sent now; the motors act on it a few steps later.
+        action = np.asarray(action, dtype=float)
+        if action.shape != (6,) or not np.isfinite(action).all():
+            raise ValueError("Action must be six finite absolute joint targets in radians")
+        self.pending.append(action.copy())
+        return super().step(self.pending.popleft())
 
     def observe(self):
         obs = super().observe()
